@@ -59,7 +59,11 @@ export function NotifyButton({ city, className = "" }: NotifyButtonProps) {
       const res = await fetch("/api/notify", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, city })
+        body: JSON.stringify({
+          email,
+          city,
+          source: typeof window !== "undefined" ? window.location.pathname : null
+        })
       });
       const data = await res.json();
       if (!res.ok || !data.ok) {

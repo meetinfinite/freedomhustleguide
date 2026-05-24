@@ -1,38 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "node:fs/promises";
-import path from "node:path";
+import { getSupabaseAdmin } from "@/lib/supabase/admin";
 
 export const runtime = "nodejs";
 
-interface Entry {
-  email: string;
-  city: string;
-  ts: number;
-}
-
-interface WaitlistFile {
-  _note?: string;
-  entries: Entry[];
-}
-
-const FILE_PATH = path.join(process.cwd(), "config", "waitlist.json");
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-async function loadWaitlist(): Promise<WaitlistFile> {
-  try {
-    const raw = await fs.readFile(FILE_PATH, "utf8");
-    return JSON.parse(raw) as WaitlistFile;
-  } catch {
-    return { entries: [] };
-  }
-}
-
-async function saveWaitlist(data: WaitlistFile): Promise<void> {
-  await fs.writeFile(FILE_PATH, JSON.stringify(data, null, 2));
-}
-
 export async function POST(req: NextRequest) {
-  let body: { email?: string; city?: string };
+  let body: { email?: string; city?: string; source?: string };
   try {
     body = await req.json();
   } catch {
@@ -41,6 +15,7 @@ export async function POST(req: NextRequest) {
 
   const email = (body.email || "").trim().toLowerCase();
   const city = (body.city || "").trim();
+  const source = (body.source || "").trim() || null;
 
   if (!EMAIL_RE.test(email)) {
     return NextResponse.json(
@@ -55,24 +30,38 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  // Try the local-file path first. In serverless (Vercel) the FS is
-  // read-only, so we fall back to logging the signup — Vercel captures
-  // console logs and we can scrape them until a real ESP/DB is wired.
+  const supabase = getSupabaseAdmin();
+
   try {
-    const file = await loadWaitlist();
-    const already = file.entries.find(
-      (e) => e.email === email && e.city === city
-    );
-    if (!already) {
-      file.entries.push({ email, city, ts: Date.now() });
-      await saveWaitlist(file);
+    const { error } = await supabase
+      .from("waitlist")
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      .insert({ email, city, source } as any);
+
+    if (error) {
+      // 23505 = unique violation = already on the list
+      if (error.code === "23505") {
+        return NextResponse.json({ ok: true, alreadySubscribed: true });
+      }
+
+      // Anything else: log the entry so we don't lose it, but still
+      // return success so the user has a clean UX.
+      console.warn(
+        "[notify] supabase insert failed:",
+        error.message,
+        error.code
+      );
+      console.warn(
+        `[notify:fallback] ${JSON.stringify({ email, city, source, ts: Date.now() })}`
+      );
+      return NextResponse.json({ ok: true, alreadySubscribed: false });
     }
-    return NextResponse.json({ ok: true, alreadySubscribed: Boolean(already) });
+
+    return NextResponse.json({ ok: true, alreadySubscribed: false });
   } catch (err) {
-    // Serverless read-only FS — log the entry so we don't lose it,
-    // and tell the user it worked so they have a clean UX.
+    console.error("[notify] unexpected error", err);
     console.warn(
-      `[notify:fallback] ${JSON.stringify({ email, city, ts: Date.now() })}`
+      `[notify:fallback] ${JSON.stringify({ email, city, source, ts: Date.now() })}`
     );
     return NextResponse.json({ ok: true, alreadySubscribed: false });
   }
