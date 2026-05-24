@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -59,6 +60,16 @@ export default function RootLayout({
       </head>
       <body className="bg-sand-50 text-ink-900 min-h-screen antialiased">
         {children}
+        {/* Plausible Analytics — privacy-friendly, no cookies, no consent
+            banner needed. Doesn't track localhost by default. */}
+        <Script
+          defer
+          src="https://plausible.io/js/pa-vU2BISQRjQwCi37YxRzQu.js"
+          strategy="afterInteractive"
+        />
+        <Script id="plausible-init" strategy="afterInteractive">
+          {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
+        </Script>
       </body>
     </html>
   );
