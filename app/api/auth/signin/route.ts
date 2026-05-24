@@ -56,16 +56,26 @@ export async function POST(req: NextRequest) {
     });
     if (error) {
       console.warn("[auth/signin] otp send failed:", error.message);
-      return NextResponse.json(
-        { error: "Could not send the sign-in email. Try again in a moment." },
-        { status: 500 }
-      );
+      // Surface Supabase's actual error so it's debuggable
+      const msg = error.message.toLowerCase();
+      let friendly = error.message;
+      if (msg.includes("rate") || msg.includes("limit")) {
+        friendly =
+          "Too many sign-in attempts. Wait 30 minutes and try again, or check spam for an earlier email.";
+      } else if (msg.includes("smtp") || msg.includes("send")) {
+        friendly =
+          "Couldn't deliver the email. Try again in a few minutes.";
+      }
+      return NextResponse.json({ error: friendly }, { status: 500 });
     }
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("[auth/signin] unexpected error", err);
     return NextResponse.json(
-      { error: "Could not send the sign-in email." },
+      {
+        error:
+          err instanceof Error ? err.message : "Could not send the sign-in email."
+      },
       { status: 500 }
     );
   }
