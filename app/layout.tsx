@@ -2,10 +2,40 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Freedom Hustle — Digital Nomad Guides",
+  metadataBase: new URL("https://freedomhustleguide.com"),
+  title: {
+    default: "Freedom Hustle — Real guides for working abroad",
+    template: "%s | Freedom Hustle"
+  },
   description:
-    "Practical, premium digital nomad starter guides. Built by nomads, for nomads. First city: Bangkok.",
-  metadataBase: new URL("https://freedomhustle.example.com")
+    "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms — skip to the life you came for.",
+  applicationName: "Freedom Hustle",
+  authors: [{ name: "Arni & Valeria" }],
+  keywords: [
+    "digital nomad",
+    "Bangkok",
+    "remote work",
+    "Thailand",
+    "nomad guide",
+    "working abroad",
+    "coworking",
+    "Southeast Asia"
+  ],
+  openGraph: {
+    type: "website",
+    url: "https://freedomhustleguide.com",
+    siteName: "Freedom Hustle",
+    title: "Freedom Hustle — Real guides for working abroad",
+    description:
+      "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms — skip to the life you came for.",
+    locale: "en_GB"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Freedom Hustle — Real guides for working abroad",
+    description:
+      "Personal nomad playbooks. Skip to the life you came for."
+  }
 };
 
 export default function RootLayout({
