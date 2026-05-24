@@ -1,7 +1,6 @@
 import { redirect } from "next/navigation";
 import { getSupabaseServer } from "@/lib/supabase/server";
-import { getGuide } from "@/lib/guides";
-import { LockedAccess } from "@/components/LockedAccess";
+import { SignInForm } from "@/components/SignInForm";
 
 interface PageProps {
   searchParams: { next?: string };
@@ -10,9 +9,9 @@ interface PageProps {
 export const dynamic = "force-dynamic";
 
 /**
- * Global sign-in page. Reuses the LockedAccess UI but pinned to the
- * Bangkok guide as the "marketing context" since that's our only live
- * product right now. After sign-in, the user lands on /my by default.
+ * Brand-generic sign-in page. Used by the global "Sign in" link in the header.
+ * For guide-specific sign-in (used when access is denied for a specific guide),
+ * see /guides/[slug]/access which uses LockedAccess instead.
  */
 export default async function SignInPage({ searchParams }: PageProps) {
   const supabase = getSupabaseServer();
@@ -25,16 +24,5 @@ export default async function SignInPage({ searchParams }: PageProps) {
     redirect(searchParams.next || "/my");
   }
 
-  const guide = getGuide("bangkok");
-  if (!guide) {
-    // Shouldn't happen, but fail gracefully
-    redirect("/");
-  }
-
-  return (
-    <LockedAccess
-      guide={guide!}
-      nextPath={searchParams.next || "/my"}
-    />
-  );
+  return <SignInForm nextPath={searchParams.next || "/my"} />;
 }
