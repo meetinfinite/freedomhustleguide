@@ -2,14 +2,12 @@
  * Personal intro section. Sits under the hero on the homepage so first-time
  * visitors know who's recommending all these cafes and condos.
  *
- * Photo:
- *   - For now we use a stock travel photo as placeholder.
- *   - Drop your real founders photo at `public/founders.jpg` and change the
- *     src below to "/founders.jpg".
+ * Photo: served from /public/uploads/. Swap by either:
+ *   - Replacing the file at public/uploads/welcome.jpg, or
+ *   - Uploading a new one via Tina admin → updating the FOUNDERS_PHOTO path.
  */
 
-const PLACEHOLDER_PHOTO =
-  "https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1200&q=80";
+const FOUNDERS_PHOTO = "/uploads/welcome.jpg";
 
 export function FoundersIntro() {
   return (
@@ -19,7 +17,7 @@ export function FoundersIntro() {
         <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-card transform-gpu [clip-path:inset(0_round_1.5rem)]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={PLACEHOLDER_PHOTO}
+            src={FOUNDERS_PHOTO}
             alt="Arni and Valeria"
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
