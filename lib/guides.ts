@@ -26,6 +26,106 @@ export interface GuideSection {
   readingTime: string;
 }
 
+/**
+ * Generic 13-section template used on coming-soon city landing pages so
+ * waitlisters can see what they'll be getting. Copy is city-agnostic but
+ * intentionally mirrors the shape of the live BANGKOK_SECTIONS so the
+ * "What's inside" grid stays visually consistent across the catalogue.
+ */
+export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
+  {
+    slug: "overview",
+    title: "Overview",
+    description: "What the guide gets you in 60 seconds.",
+    icon: "🧭",
+    readingTime: "2 min"
+  },
+  {
+    slug: "areas-to-stay",
+    title: "Best Areas to Stay",
+    description: "Neighbourhoods compared honestly. Where to actually live.",
+    icon: "🏙️",
+    readingTime: "8 min"
+  },
+  {
+    slug: "first-24-hours",
+    title: "First 24 Hours",
+    description: "Airport to set-up. The exact order to do things in.",
+    icon: "⏱️",
+    readingTime: "5 min"
+  },
+  {
+    slug: "monthly-budget",
+    title: "Monthly Budget",
+    description: "Three real budget tiers + interactive calculator.",
+    icon: "💸",
+    readingTime: "6 min"
+  },
+  {
+    slug: "cafes",
+    title: "Cafes to Work From",
+    description: "WiFi-tested, plug-checked, call-friendly.",
+    icon: "☕",
+    readingTime: "7 min"
+  },
+  {
+    slug: "coworking",
+    title: "Coworking Spaces",
+    description: "Where it's worth it, where it's not.",
+    icon: "🧑‍💻",
+    readingTime: "5 min"
+  },
+  {
+    slug: "gyms",
+    title: "Gyms & Wellness",
+    description: "Strength, cardio, yoga, recovery — real prices.",
+    icon: "🥊",
+    readingTime: "5 min"
+  },
+  {
+    slug: "wifi-sim-apps",
+    title: "WiFi / SIM / Apps",
+    description: "Get connected in under an hour.",
+    icon: "📶",
+    readingTime: "4 min"
+  },
+  {
+    slug: "getting-around",
+    title: "Getting Around",
+    description: "Transit, ride-shares, taxis — honest rankings.",
+    icon: "🚇",
+    readingTime: "4 min"
+  },
+  {
+    slug: "scooter-reality-check",
+    title: "Scooter Reality Check",
+    description: "The honest version. Don't learn here.",
+    icon: "🛵",
+    readingTime: "3 min"
+  },
+  {
+    slug: "weekend-trips",
+    title: "Weekend Trips",
+    description: "Trips out of the city ranked by how worth it they are.",
+    icon: "🏝️",
+    readingTime: "6 min"
+  },
+  {
+    slug: "mistakes-to-avoid",
+    title: "Mistakes to Avoid",
+    description: "Every mistake we made, so you don't.",
+    icon: "⚠️",
+    readingTime: "4 min"
+  },
+  {
+    slug: "resource-vault",
+    title: "Resource Vault",
+    description: "Every link you'll actually use.",
+    icon: "🗂️",
+    readingTime: "3 min"
+  }
+];
+
 const BANGKOK_SECTIONS: GuideSection[] = [
   {
     slug: "overview",
