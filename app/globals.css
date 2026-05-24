@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fbf8f1;
+  --foreground: #0f0e0a;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: #c2562b;
+  color: white;
+}
+
+/* Subtle fade-in for premium feel */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fadeUp 0.5s ease-out both;
+}
+
+/* Premium prose styles for MDX */
+.prose-guide {
+  @apply text-ink-700 leading-relaxed;
+}
+.prose-guide h2 {
+  @apply font-display text-2xl sm:text-3xl text-ink-900 mt-12 mb-4 tracking-tight;
+}
+.prose-guide h3 {
+  @apply font-display text-xl sm:text-2xl text-ink-900 mt-10 mb-3 tracking-tight;
+}
+.prose-guide h4 {
+  @apply font-semibold text-base sm:text-lg text-ink-900 mt-8 mb-2;
+}
+.prose-guide p {
+  @apply text-base sm:text-[17px] leading-[1.75] my-4;
+}
+.prose-guide strong {
+  @apply text-ink-900 font-semibold;
+}
+.prose-guide ul {
+  @apply my-4 space-y-2;
+}
+.prose-guide ul > li {
+  @apply pl-5 relative;
+}
+.prose-guide ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #c2562b;
+}
+.prose-guide a {
+  @apply text-electric-600 underline decoration-electric-200 underline-offset-4 hover:decoration-electric-500;
+}
+.prose-guide hr {
+  @apply my-10 border-ink-100;
+}
+.prose-guide blockquote {
+  @apply border-l-4 border-sand-300 pl-5 italic text-ink-600 my-6;
+}
+
+/* Sticky nav blur backdrop */
+.glass {
+  backdrop-filter: saturate(180%) blur(14px);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  background: rgba(251, 248, 241, 0.72);
+}
+
+/* Hide scrollbar on horizontal scrollers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

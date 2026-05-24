@@ -1,0 +1,20 @@
+node_modules
+.next
+out
+dist
+.env
+.env.local
+.DS_Store
+*.log
+.vercel
+.turbo
+
+# TinaCMS — auto-generated, regenerated on every dev/build
+tina/__generated__
+public/admin
+
+# Place cache — re-fetched on demand
+tina/.place-cache.json
+
+# Waitlist signups — local-dev capture only, replace with Supabase/ESP in prod
+config/waitlist.json

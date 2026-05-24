@@ -1,0 +1,7 @@
+{
+  "_note": "MVP fallback list. Add buyer emails here OR set APPROVED_EMAILS env var OR use Supabase. All entries are normalised to lowercase server-side.",
+  "bangkok": [
+    "demo@freedomhustle.com",
+    "buyer@example.com"
+  ]
+}
