@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getGuide, listGuides } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
+import { GuidesDropdown } from "@/components/GuidesDropdown";
 
 export function generateStaticParams() {
   return listGuides()
@@ -56,19 +57,20 @@ export default function GuideLandingPage({
           <Link href="/" className="font-display text-lg tracking-tight">
             Freedom Hustle
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-5">
+            <GuidesDropdown guides={listGuides()} />
             <Link
               href={`/guides/${guide.slug}/access`}
-              className="text-sm text-ink-600 hover:text-ink-900"
+              className="hidden sm:inline text-sm text-ink-600 hover:text-ink-900"
             >
-              I already bought it
+              Sign in
             </Link>
-            <Link
-              href={checkoutUrl}
-              className="px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition"
+            <button
+              type="button"
+              className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
             >
-              Get the guide — {guide.price}
-            </Link>
+              Buy Lifetime Access
+            </button>
           </div>
         </div>
       </nav>
