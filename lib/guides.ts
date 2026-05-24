@@ -252,14 +252,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Ubud",
     country: "Bali",
     flag: "🇮🇩",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to land in Ubud and turn jungle-side rice fields into a productive base — without the WiFi roulette.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Wellness nomads" },
+      { label: "Monthly budget", value: "£800–£1,500" },
+      { label: "Internet", value: "Patchy — plan for it" },
+      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Slow, green, spiritual" }
+    ],
     sections: []
   },
   {
@@ -268,14 +276,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Chiang Mai",
     country: "Thailand",
     flag: "🇹🇭",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to settle into the original digital nomad city — cheap, easy, and far calmer than Bangkok.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Long-stay nomads" },
+      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Scooter / Grab" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Chill, creative, low-key" }
+    ],
     sections: []
   },
   {
@@ -284,14 +300,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Koh Samui",
     country: "Thailand",
     flag: "🇹🇭",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to make a tropical island actually work as a base — not just a holiday photo op.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Beach + work hybrids" },
+      { label: "Monthly budget", value: "£1,000–£2,000" },
+      { label: "Internet", value: "Good (area-dependent)" },
+      { label: "Transport", value: "Scooter / Bolt" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Tropical, slow, ocean-led" }
+    ],
     sections: []
   },
   {
@@ -300,14 +324,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Kuala Lumpur",
     country: "Malaysia",
     flag: "🇲🇾",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to set up in Southeast Asia's most underrated city — fast internet, world-class food, half the cost of Singapore.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Infrastructure-first" },
+      { label: "Monthly budget", value: "£800–£1,800" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "LRT / MRT / Grab" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Urban, multicultural, food-led" }
+    ],
     sections: []
   },
   {
@@ -316,14 +348,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Da Nang",
     country: "Vietnam",
     flag: "🇻🇳",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to land in Vietnam's quietly-rising coastal city — beach mornings, real WiFi, and a coffee scene that beats most capitals.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Coastal nomads" },
+      { label: "Monthly budget", value: "£700–£1,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Scooter / Grab / Be" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Coastal, growing, friendly" }
+    ],
     sections: []
   },
   {
@@ -332,14 +372,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Seoul",
     country: "South Korea",
     flag: "🇰🇷",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to navigate Seoul's intensity and turn one of the fastest cities on earth into a real base.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Tech + design nomads" },
+      { label: "Monthly budget", value: "£1,500–£3,000" },
+      { label: "Internet", value: "World-class" },
+      { label: "Transport", value: "Subway / KakaoT" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Fast, modern, intense" }
+    ],
     sections: []
   },
   {
@@ -348,14 +396,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Tokyo",
     country: "Japan",
     flag: "🇯🇵",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to live in Tokyo properly — neighbourhoods, work spots, transit, and the food places you'd never find on TikTok.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Culture + design nomads" },
+      { label: "Monthly budget", value: "£2,000–£3,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "JR / Metro / IC card" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Layered, refined, hyper-organised" }
+    ],
     sections: []
   },
   {
@@ -364,14 +420,22 @@ export const GUIDES: GuideMeta[] = [
     city: "Phuket",
     country: "Thailand",
     flag: "🇹🇭",
-    tagline: "Coming soon.",
+    tagline:
+      "Everything you need to live in Phuket properly — beach mornings, real WiFi, and the parts of the island that aren't all tourist.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [],
+    quickStats: [
+      { label: "Best for", value: "Beach + infrastructure" },
+      { label: "Monthly budget", value: "£1,000–£2,200" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Scooter / Bolt" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Tropical, polished, tourist-touched" }
+    ],
     sections: []
   }
 ];
