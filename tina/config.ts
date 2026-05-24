@@ -334,8 +334,7 @@ export default defineConfig({
   // until the editor explicitly opens the form.
   cmsCallback: (cms) => {
     if (cms.sidebar) {
-      // @ts-expect-error — runtime field, not in the TS types
-      cms.sidebar.hidden = true;
+      (cms.sidebar as { hidden?: boolean }).hidden = true;
     }
     return cms;
   },
