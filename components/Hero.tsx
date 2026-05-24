@@ -35,11 +35,11 @@ export function Hero({
       <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-24 sm:pt-32 sm:pb-32">
         <div className="max-w-3xl fade-up">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-sand-200 font-semibold mb-5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/15">
-            <span>{guide.flag}</span>
-            <span>{guide.city}, {guide.country}</span>
+            <span>Freedom Hustle Guide to&hellip;</span>
           </div>
           <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50">
-            {guide.title}
+            <span className="mr-3">{guide.flag}</span>
+            {guide.city}, {guide.country}
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed">
             {guide.tagline}

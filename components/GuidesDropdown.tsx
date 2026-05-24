@@ -88,7 +88,7 @@ export function GuidesDropdown({ guides }: GuidesDropdownProps) {
               </>
             );
 
-            return isLive ? (
+            return (
               <Link
                 key={g.slug}
                 href={`/guides/${g.slug}`}
@@ -98,15 +98,6 @@ export function GuidesDropdown({ guides }: GuidesDropdownProps) {
               >
                 {body}
               </Link>
-            ) : (
-              <div
-                key={g.slug}
-                role="menuitem"
-                aria-disabled
-                className="flex items-center gap-3 px-3 py-2.5 rounded-xl opacity-60 cursor-not-allowed"
-              >
-                {body}
-              </div>
             );
           })}
         </div>

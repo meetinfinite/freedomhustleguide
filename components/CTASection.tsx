@@ -24,12 +24,13 @@ export function CTASection({
 }: CTASectionProps) {
   const dark = variant === "dark";
   return (
-    <section
-      className={`rounded-3xl my-10 overflow-hidden ${
-        dark ? "bg-ink-900 text-sand-50" : "bg-white border border-ink-100"
-      }`}
-    >
-      <div className="px-8 py-12 sm:py-16 sm:px-14 text-center max-w-3xl mx-auto">
+    <div className="max-w-6xl mx-auto px-6 my-10">
+      <section
+        className={`rounded-3xl overflow-hidden ${
+          dark ? "bg-ink-900 text-sand-50" : "bg-white border border-ink-100"
+        }`}
+      >
+        <div className="px-8 py-12 sm:py-16 sm:px-14 text-center max-w-3xl mx-auto">
         <h3
           className={`font-display text-3xl sm:text-4xl tracking-tight !mt-0 !mb-3 ${
             dark ? "text-sand-50" : "text-ink-900"
@@ -74,7 +75,8 @@ export function CTASection({
             </Link>
           ) : null}
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   );
 }
