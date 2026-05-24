@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { listGuides } from "@/lib/guides";
 import { SocialProof } from "@/components/SocialProof";
-import { NotifyButton } from "@/components/NotifyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
@@ -147,8 +146,17 @@ export default async function HomePage() {
           {guides.map((g) => {
             const isLive = g.status === "live";
 
-            const cardInner = (
-              <>
+            // Card wrapper — uses clip-path for GPU-composited rounded clip
+            // (avoids the overflow-hidden + transform corner-flicker bug).
+            const cardClass =
+              "group relative aspect-[4/5] rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
+
+            return (
+              <Link
+                key={g.slug}
+                href={`/guides/${g.slug}`}
+                className={cardClass}
+              >
                 {g.cardImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -180,38 +188,18 @@ export default async function HomePage() {
                     {g.city}
                   </h3>
                   <div className="mt-4">
-                    {isLive ? (
-                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-electric-500 text-white text-sm font-semibold shadow-card">
-                        Explore →
-                      </span>
-                    ) : (
-                      <NotifyButton
-                        city={g.city}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-sand-50 text-ink-900 text-sm font-semibold hover:bg-white transition shadow-card"
-                      />
-                    )}
+                    <span
+                      className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card ${
+                        isLive
+                          ? "bg-electric-500 text-white"
+                          : "bg-sand-50 text-ink-900"
+                      }`}
+                    >
+                      Explore →
+                    </span>
                   </div>
                 </div>
-              </>
-            );
-
-            // Card wrapper — uses clip-path for GPU-composited rounded clip
-            // (avoids the overflow-hidden + transform corner-flicker bug).
-            const cardClass =
-              "group relative aspect-[4/5] rounded-3xl shadow-card [clip-path:inset(0_round_1.5rem)]";
-
-            return isLive ? (
-              <Link
-                key={g.slug}
-                href={`/guides/${g.slug}`}
-                className={`${cardClass} hover:shadow-pop transition`}
-              >
-                {cardInner}
               </Link>
-            ) : (
-              <div key={g.slug} className={cardClass}>
-                {cardInner}
-              </div>
             );
           })}
         </div>
