@@ -49,6 +49,16 @@ export function SectionNav({ guide, basePath }: SectionNavProps) {
           );
         })}
       </ul>
+
+      <div className="mt-6 pt-4 border-t border-ink-100">
+        <Link
+          href="/my"
+          className="flex items-center gap-2 px-3 py-2 rounded-lg text-ink-500 hover:text-ink-900 hover:bg-sand-100 transition"
+        >
+          <span>←</span>
+          <span>All my guides</span>
+        </Link>
+      </div>
     </nav>
   );
 }

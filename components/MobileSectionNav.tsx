@@ -71,6 +71,16 @@ export function MobileSectionNav({ guide, basePath }: MobileSectionNavProps) {
                 </li>
               ))}
             </ul>
+            <div className="border-t border-ink-200 mt-3 pt-3">
+              <Link
+                href="/my"
+                onClick={() => setOpen(false)}
+                className="flex items-center gap-2 px-3 py-3 rounded-xl text-ink-700 hover:bg-sand-100"
+              >
+                <span>←</span>
+                <span>All my guides</span>
+              </Link>
+            </div>
           </div>
         </div>
       ) : null}
