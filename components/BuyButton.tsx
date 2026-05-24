@@ -7,6 +7,8 @@ interface BuyButtonProps {
   product: string;
   /** Path the buyer returns to after Stripe Checkout (success or cancel) */
   returnPath?: string;
+  /** Pre-fill the email on Stripe Checkout (use when buyer is already signed in) */
+  customerEmail?: string;
   children: React.ReactNode;
   className?: string;
 }
@@ -14,6 +16,7 @@ interface BuyButtonProps {
 export function BuyButton({
   product,
   returnPath,
+  customerEmail,
   children,
   className = ""
 }: BuyButtonProps) {
@@ -41,7 +44,7 @@ export function BuyButton({
       const res = await fetch("/api/checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product, returnPath })
+        body: JSON.stringify({ product, returnPath, customerEmail })
       });
       const data = await res.json();
       if (!res.ok || !data.url) {

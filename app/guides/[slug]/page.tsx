@@ -3,9 +3,10 @@ import { notFound } from "next/navigation";
 import { getGuide, listGuides } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
-import { GuidesDropdown } from "@/components/GuidesDropdown";
 import { BuyButton } from "@/components/BuyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
+import { SiteHeader } from "@/components/SiteHeader";
+import { getSupabaseServer } from "@/lib/supabase/server";
 import { Suspense } from "react";
 
 export function generateStaticParams() {
@@ -41,7 +42,7 @@ const FAQ = [
   }
 ];
 
-export default function GuideLandingPage({
+export default async function GuideLandingPage({
   params
 }: {
   params: { slug: string };
@@ -49,34 +50,19 @@ export default function GuideLandingPage({
   const guide = getGuide(params.slug);
   if (!guide || guide.status !== "live") notFound();
 
+  // Pre-fill Stripe Checkout email when buyer is already signed in
+  const supabase = getSupabaseServer();
+  const {
+    data: { user }
+  } = await supabase.auth.getUser();
+  const customerEmail = user?.email;
+
   return (
     <main className="bg-sand-50 min-h-screen">
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
-      <nav className="glass sticky top-0 z-40 border-b border-ink-100">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-display text-lg tracking-tight">
-            Freedom Hustle
-          </Link>
-          <div className="flex items-center gap-5">
-            <GuidesDropdown guides={listGuides()} />
-            <Link
-              href={`/guides/${guide.slug}/access`}
-              className="hidden sm:inline text-sm text-ink-600 hover:text-ink-900"
-            >
-              Sign in
-            </Link>
-            <BuyButton
-              product="lifetime"
-              returnPath={`/guides/${guide.slug}`}
-              className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
-            >
-              Buy Lifetime Access
-            </BuyButton>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader />
 
       <Hero
         guide={guide}
@@ -84,12 +70,13 @@ export default function GuideLandingPage({
           <BuyButton
             product={guide.slug}
             returnPath={`/guides/${guide.slug}`}
+            customerEmail={customerEmail}
             className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition shadow-pop"
           >
             Get the guide — {guide.price}
           </BuyButton>
         }
-        secondaryHref={`/guides/${guide.slug}/access`}
+        secondaryHref="/signin"
         secondaryLabel="Sign in"
       />
 
@@ -213,12 +200,13 @@ export default function GuideLandingPage({
                 <BuyButton
                   product={guide.slug}
                   returnPath={`/guides/${guide.slug}`}
+                  customerEmail={customerEmail}
                   className="px-7 py-3.5 rounded-full bg-sand-50 text-ink-900 font-semibold hover:bg-white transition"
                 >
                   Get the guide — {guide.price}
                 </BuyButton>
                 <Link
-                  href={`/guides/${guide.slug}/access`}
+                  href="/signin"
                   className="px-6 py-3 rounded-full border border-sand-50/30 text-sand-50 font-medium hover:border-sand-50 transition"
                 >
                   Sign in
@@ -284,12 +272,13 @@ export default function GuideLandingPage({
           <BuyButton
             product={guide.slug}
             returnPath={`/guides/${guide.slug}`}
+            customerEmail={customerEmail}
             className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition"
           >
             Get the guide — {guide.price}
           </BuyButton>
         }
-        secondaryHref={`/guides/${guide.slug}/access`}
+        secondaryHref="/signin"
         secondaryLabel="Sign in"
       />
 

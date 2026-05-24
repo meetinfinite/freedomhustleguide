@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
-import { grantPurchase } from "@/lib/members";
+import { getMember, grantPurchase } from "@/lib/members";
 import type Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -58,6 +58,10 @@ export async function POST(req: NextRequest) {
   }
 
   try {
+    // Check if this is a first-time buyer or an upgrade
+    const existingMember = await getMember(email);
+    const isUpgrade = Boolean(existingMember);
+
     // 1. Record the purchase
     if (product === "lifetime") {
       await grantPurchase(email, { kind: "lifetime" }, stripeCustomerId);
@@ -71,28 +75,31 @@ export async function POST(req: NextRequest) {
       throw new Error(`unknown product shape: ${product} / ${guideSlug}`);
     }
 
-    // 2. Send the buyer a magic-link sign-in so they can access their guide.
-    //    signInWithOtp creates the auth user on click if they're new.
-    const supabase = getSupabaseAdmin();
-    const proto = req.headers.get("x-forwarded-proto") || "https";
-    const host = req.headers.get("host") || "freedomhustleguide.com";
-    const redirectTo = `${proto}://${host}/auth/callback?next=/guides/bangkok/app`;
+    // 2. For NEW buyers, send a magic-link so they can sign in for the first
+    //    time. Existing members already have an account + session — skip the
+    //    OTP send. Their dashboard will reflect the upgrade automatically.
+    if (!isUpgrade) {
+      const supabase = getSupabaseAdmin();
+      const proto = req.headers.get("x-forwarded-proto") || "https";
+      const host = req.headers.get("host") || "freedomhustleguide.com";
+      const redirectTo = `${proto}://${host}/auth/callback?next=/my`;
 
-    const { error: otpErr } = await supabase.auth.signInWithOtp({
-      email,
-      options: {
-        shouldCreateUser: true,
-        emailRedirectTo: redirectTo
+      const { error: otpErr } = await supabase.auth.signInWithOtp({
+        email,
+        options: {
+          shouldCreateUser: true,
+          emailRedirectTo: redirectTo
+        }
+      });
+      if (otpErr) {
+        // Purchase is recorded; sign-in email failed. Don't blow up the
+        // webhook (Stripe would retry forever), just log it.
+        console.warn(
+          "[stripe-webhook] purchase recorded but magic-link send failed",
+          otpErr.message,
+          email
+        );
       }
-    });
-    if (otpErr) {
-      // Purchase is recorded; sign-in email failed. Don't blow up the webhook
-      // (Stripe will retry on 500), just log so we can manually nudge the buyer.
-      console.warn(
-        "[stripe-webhook] purchase recorded but magic-link send failed",
-        otpErr.message,
-        email
-      );
     }
   } catch (err) {
     console.error("[stripe-webhook] processing failed", err);

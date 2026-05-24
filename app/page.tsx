@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { listGuides } from "@/lib/guides";
 import { SocialProof } from "@/components/SocialProof";
-import { GuidesDropdown } from "@/components/GuidesDropdown";
 import { NotifyButton } from "@/components/NotifyButton";
-import { BuyButton } from "@/components/BuyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
+import { SiteHeader } from "@/components/SiteHeader";
 import { Suspense } from "react";
 
 // Pexels free stock — swap for Valeria's own clip when ready.
@@ -27,29 +26,7 @@ export default function HomePage() {
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
-      <nav className="glass sticky top-0 z-40 border-b border-ink-100">
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <Link href="/" className="font-display text-lg tracking-tight">
-            Freedom Hustle
-          </Link>
-          <div className="flex items-center gap-5">
-            <GuidesDropdown guides={guides} />
-            <Link
-              href="/guides/bangkok/access"
-              className="hidden sm:inline text-sm text-ink-600 hover:text-ink-900"
-            >
-              Sign in
-            </Link>
-            <BuyButton
-              product="lifetime"
-              returnPath="/"
-              className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
-            >
-              Buy Lifetime Access
-            </BuyButton>
-          </div>
-        </div>
-      </nav>
+      <SiteHeader />
 
       {/* ----- Video hero ----- */}
       <section className="relative overflow-hidden bg-ink-900">

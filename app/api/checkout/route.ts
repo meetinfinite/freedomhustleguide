@@ -9,6 +9,8 @@ interface CheckoutBody {
   product: string;
   /** Where to send the buyer after checkout */
   returnPath?: string;
+  /** Pre-fill the email field on Stripe Checkout (used when signed-in user upgrades) */
+  customerEmail?: string;
 }
 
 export async function POST(req: NextRequest) {
@@ -63,9 +65,11 @@ export async function POST(req: NextRequest) {
       mode: "payment",
       payment_method_types: ["card"],
       line_items: [{ price: priceId, quantity: 1 }],
-      // Stripe collects the email at checkout — we read it from the webhook
-      // to provision the member and send their magic-link sign-in email.
       customer_creation: "always",
+      // Pre-fill email when buyer is already signed in
+      ...(body.customerEmail
+        ? { customer_email: body.customerEmail.trim().toLowerCase() }
+        : {}),
       allow_promotion_codes: true,
       metadata,
       success_url: `${origin}${returnPath}?purchase=success&session_id={CHECKOUT_SESSION_ID}`,
