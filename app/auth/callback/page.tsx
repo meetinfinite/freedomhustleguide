@@ -81,9 +81,38 @@ function AuthCallback() {
         return;
       }
 
-      // Branch 2 — Implicit / hash flow (#access_token=)
-      // The browser SDK auto-detects the hash on init. Either we already have
-      // a session, or one is being set as we speak. Listen for SIGNED_IN.
+      // Branch 2 — Implicit / hash flow (#access_token=...&refresh_token=...)
+      // We parse the hash ourselves rather than rely on SDK auto-detection
+      // because @supabase/ssr's createBrowserClient doesn't always auto-detect.
+      if (typeof window !== "undefined" && window.location.hash) {
+        const hashParams = new URLSearchParams(
+          window.location.hash.replace(/^#/, "")
+        );
+        const access_token = hashParams.get("access_token");
+        const refresh_token = hashParams.get("refresh_token");
+        if (access_token && refresh_token) {
+          const { error } = await supabase.auth.setSession({
+            access_token,
+            refresh_token
+          });
+          if (cancelled) return;
+          if (error) {
+            console.warn("[auth/callback] setSession failed:", error.message);
+            setError(error.message);
+            return;
+          }
+          // Clear the hash so it doesn't leak in browser history
+          window.history.replaceState(
+            null,
+            "",
+            window.location.pathname + window.location.search
+          );
+          router.replace(next);
+          return;
+        }
+      }
+
+      // Branch 3 — already signed in (e.g. opened the page directly)
       const { data: existing } = await supabase.auth.getSession();
       if (existing?.session) {
         if (cancelled) return;
@@ -91,29 +120,10 @@ function AuthCallback() {
         return;
       }
 
-      const { data: sub } = supabase.auth.onAuthStateChange(
-        (event: string, session: { user: unknown } | null) => {
-          if (event === "SIGNED_IN" && session && !cancelled) {
-            sub.subscription.unsubscribe();
-            router.replace(next);
-          }
-        }
+      // Nothing to work with
+      setError(
+        "Sign-in link expired or invalid. Request a new one and try again."
       );
-
-      // Belt-and-braces timeout
-      setTimeout(async () => {
-        if (cancelled) return;
-        const { data } = await supabase.auth.getSession();
-        if (data.session) {
-          sub.subscription.unsubscribe();
-          router.replace(next);
-        } else {
-          sub.subscription.unsubscribe();
-          setError(
-            "Sign-in link expired or invalid. Request a new one and try again."
-          );
-        }
-      }, 5000);
     }
 
     handle();
