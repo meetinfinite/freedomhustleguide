@@ -4,7 +4,10 @@ import { SocialProof } from "@/components/SocialProof";
 import { NotifyButton } from "@/components/NotifyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
+import { getSupabaseServer } from "@/lib/supabase/server";
+import { getMember } from "@/lib/members";
 import { Suspense } from "react";
 
 // Pexels free stock — swap for Valeria's own clip when ready.
@@ -19,14 +22,27 @@ const AVATARS = [
   "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&h=200&q=70"
 ];
 
-export default function HomePage() {
+export const dynamic = "force-dynamic";
+
+export default async function HomePage() {
   const guides = listGuides();
+
+  // Check member to decide whether to show the promo banner
+  const supabase = getSupabaseServer();
+  const {
+    data: { user }
+  } = await supabase.auth.getUser();
+  const member = user?.email ? await getMember(user.email) : null;
+  const showOffer = !member?.lifetime;
 
   return (
     <main className="min-h-screen bg-sand-50">
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
+      {showOffer ? (
+        <SpecialOfferBanner customerEmail={user?.email} />
+      ) : null}
       <SiteHeader />
 
       {/* ----- Video hero ----- */}

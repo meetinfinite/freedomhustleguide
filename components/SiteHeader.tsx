@@ -53,7 +53,7 @@ export async function SiteHeader() {
               <GuidesDropdown guides={guides} />
               <Link
                 href="/signin"
-                className="hidden sm:inline text-sm text-ink-600 hover:text-ink-900"
+                className="text-sm text-ink-600 hover:text-ink-900"
               >
                 Sign in
               </Link>

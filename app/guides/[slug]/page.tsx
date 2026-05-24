@@ -6,7 +6,9 @@ import { CTASection } from "@/components/CTASection";
 import { BuyButton } from "@/components/BuyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { getSupabaseServer } from "@/lib/supabase/server";
+import { getMember } from "@/lib/members";
 import { Suspense } from "react";
 
 export function generateStaticParams() {
@@ -56,12 +58,17 @@ export default async function GuideLandingPage({
     data: { user }
   } = await supabase.auth.getUser();
   const customerEmail = user?.email;
+  const member = customerEmail ? await getMember(customerEmail) : null;
+  const showOffer = !member?.lifetime;
 
   return (
     <main className="bg-sand-50 min-h-screen">
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
+      {showOffer ? (
+        <SpecialOfferBanner customerEmail={customerEmail} />
+      ) : null}
       <SiteHeader />
 
       <Hero
