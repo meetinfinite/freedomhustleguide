@@ -3,8 +3,10 @@ import Link from "next/link";
 interface CTASectionProps {
   title: string;
   subtitle?: string;
-  primaryHref: string;
-  primaryLabel: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  /** Optional custom primary action (e.g. BuyButton). Overrides primaryHref/Label when set. */
+  primaryAction?: React.ReactNode;
   secondaryHref?: string;
   secondaryLabel?: string;
   variant?: "dark" | "light";
@@ -15,6 +17,7 @@ export function CTASection({
   subtitle,
   primaryHref,
   primaryLabel,
+  primaryAction,
   secondaryHref,
   secondaryLabel,
   variant = "dark"
@@ -44,16 +47,20 @@ export function CTASection({
           </p>
         ) : null}
         <div className="mt-7 flex flex-wrap justify-center gap-3">
-          <Link
-            href={primaryHref}
-            className={`px-6 py-3 rounded-full font-medium transition ${
-              dark
-                ? "bg-sand-50 text-ink-900 hover:bg-white"
-                : "bg-ink-900 text-sand-50 hover:bg-ink-700"
-            }`}
-          >
-            {primaryLabel}
-          </Link>
+          {primaryAction ? (
+            primaryAction
+          ) : primaryHref && primaryLabel ? (
+            <Link
+              href={primaryHref}
+              className={`px-6 py-3 rounded-full font-medium transition ${
+                dark
+                  ? "bg-sand-50 text-ink-900 hover:bg-white"
+                  : "bg-ink-900 text-sand-50 hover:bg-ink-700"
+              }`}
+            >
+              {primaryLabel}
+            </Link>
+          ) : null}
           {secondaryHref && secondaryLabel ? (
             <Link
               href={secondaryHref}

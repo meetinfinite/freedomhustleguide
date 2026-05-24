@@ -49,10 +49,6 @@ export default function GuideLandingPage({
   const guide = getGuide(params.slug);
   if (!guide || guide.status !== "live") notFound();
 
-  const checkoutUrl =
-    process.env.NEXT_PUBLIC_CHECKOUT_URL ||
-    `/guides/${guide.slug}/access`;
-
   return (
     <main className="bg-sand-50 min-h-screen">
       <Suspense fallback={null}>
@@ -84,10 +80,17 @@ export default function GuideLandingPage({
 
       <Hero
         guide={guide}
-        primaryHref={checkoutUrl}
-        primaryLabel={`Get the guide — ${guide.price}`}
+        primaryAction={
+          <BuyButton
+            product={guide.slug}
+            returnPath={`/guides/${guide.slug}`}
+            className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition shadow-pop"
+          >
+            Get the guide — {guide.price}
+          </BuyButton>
+        }
         secondaryHref={`/guides/${guide.slug}/access`}
-        secondaryLabel="I already bought it"
+        secondaryLabel="Sign in"
       />
 
       {/* What's inside */}
@@ -207,17 +210,18 @@ export default function GuideLandingPage({
                 useful.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href={checkoutUrl}
+                <BuyButton
+                  product={guide.slug}
+                  returnPath={`/guides/${guide.slug}`}
                   className="px-7 py-3.5 rounded-full bg-sand-50 text-ink-900 font-semibold hover:bg-white transition"
                 >
                   Get the guide — {guide.price}
-                </Link>
+                </BuyButton>
                 <Link
                   href={`/guides/${guide.slug}/access`}
                   className="px-6 py-3 rounded-full border border-sand-50/30 text-sand-50 font-medium hover:border-sand-50 transition"
                 >
-                  I already bought it
+                  Sign in
                 </Link>
               </div>
             </div>
@@ -276,10 +280,17 @@ export default function GuideLandingPage({
       <CTASection
         title={`Ready to land in ${guide.city} properly?`}
         subtitle="Get the guide once. Use it for your whole stay."
-        primaryHref={checkoutUrl}
-        primaryLabel={`Get the guide — ${guide.price}`}
+        primaryAction={
+          <BuyButton
+            product={guide.slug}
+            returnPath={`/guides/${guide.slug}`}
+            className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition"
+          >
+            Get the guide — {guide.price}
+          </BuyButton>
+        }
         secondaryHref={`/guides/${guide.slug}/access`}
-        secondaryLabel="I already bought it"
+        secondaryLabel="Sign in"
       />
 
       <footer className="border-t border-ink-100 py-10">

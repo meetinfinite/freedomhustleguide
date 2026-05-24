@@ -34,6 +34,12 @@ export default function HomePage() {
           </Link>
           <div className="flex items-center gap-5">
             <GuidesDropdown guides={guides} />
+            <Link
+              href="/guides/bangkok/access"
+              className="hidden sm:inline text-sm text-ink-600 hover:text-ink-900"
+            >
+              Sign in
+            </Link>
             <BuyButton
               product="lifetime"
               returnPath="/"

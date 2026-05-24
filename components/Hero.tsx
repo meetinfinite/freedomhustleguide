@@ -3,8 +3,10 @@ import type { GuideMeta } from "@/lib/guides";
 
 interface HeroProps {
   guide: GuideMeta;
-  primaryHref: string;
-  primaryLabel: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  /** Optional custom primary action (e.g. a BuyButton). Overrides primaryHref/Label when set. */
+  primaryAction?: React.ReactNode;
   secondaryHref?: string;
   secondaryLabel?: string;
 }
@@ -13,6 +15,7 @@ export function Hero({
   guide,
   primaryHref,
   primaryLabel,
+  primaryAction,
   secondaryHref,
   secondaryLabel
 }: HeroProps) {
@@ -43,12 +46,16 @@ export function Hero({
           </p>
 
           <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              href={primaryHref}
-              className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition"
-            >
-              {primaryLabel}
-            </Link>
+            {primaryAction ? (
+              primaryAction
+            ) : primaryHref && primaryLabel ? (
+              <Link
+                href={primaryHref}
+                className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition"
+              >
+                {primaryLabel}
+              </Link>
+            ) : null}
             {secondaryHref && secondaryLabel ? (
               <Link
                 href={secondaryHref}

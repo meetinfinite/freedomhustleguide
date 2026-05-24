@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface BuyButtonProps {
   /** "lifetime" or a guide slug like "bangkok" */
@@ -19,6 +19,19 @@ export function BuyButton({
 }: BuyButtonProps) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Reset loading if the browser restored us via back/forward cache (bfcache),
+  // e.g. when the user hit Back from Stripe. Otherwise the button stays "Loading…".
+  useEffect(() => {
+    function onPageShow(e: PageTransitionEvent) {
+      if (e.persisted) {
+        setLoading(false);
+        setError(null);
+      }
+    }
+    window.addEventListener("pageshow", onPageShow);
+    return () => window.removeEventListener("pageshow", onPageShow);
+  }, []);
 
   async function onClick(e: React.MouseEvent) {
     e.preventDefault();

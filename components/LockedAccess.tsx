@@ -3,10 +3,10 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import type { GuideMeta } from "@/lib/guides";
+import { BuyButton } from "./BuyButton";
 
 interface LockedAccessProps {
   guide: GuideMeta;
-  checkoutUrl?: string;
   /** Path the user should land on after clicking the magic link */
   nextPath?: string;
   /** When true, show "no access" hint above the form */
@@ -15,7 +15,6 @@ interface LockedAccessProps {
 
 export function LockedAccess({
   guide,
-  checkoutUrl,
   nextPath,
   noAccess
 }: LockedAccessProps) {
@@ -104,15 +103,14 @@ export function LockedAccess({
                 {noAccess ? (
                   <div className="rounded-xl bg-sand-100 border border-sand-200 text-ink-700 text-sm px-4 py-3 mt-5">
                     You're signed in, but this email doesn't have access to
-                    the {guide.city} guide. Need to buy it?{" "}
-                    {checkoutUrl ? (
-                      <a
-                        href={checkoutUrl}
-                        className="text-electric-600 font-medium hover:underline"
-                      >
-                        Get it here.
-                      </a>
-                    ) : null}
+                    the {guide.city} guide.{" "}
+                    <BuyButton
+                      product={guide.slug}
+                      returnPath={`/guides/${guide.slug}`}
+                      className="text-electric-600 font-medium hover:underline cursor-pointer"
+                    >
+                      Buy it now — {guide.price} →
+                    </BuyButton>
                   </div>
                 ) : null}
 
@@ -148,16 +146,23 @@ export function LockedAccess({
                   </button>
                 </form>
 
-                <div className="mt-6 text-sm text-ink-500">
-                  Don't have it yet?{" "}
-                  {checkoutUrl ? (
-                    <a
-                      href={checkoutUrl}
-                      className="text-electric-600 font-medium hover:underline"
-                    >
-                      Get the {guide.city} guide — {guide.price}
-                    </a>
-                  ) : null}
+                <div className="mt-6 text-sm text-ink-500 flex flex-wrap items-center gap-2">
+                  <span>Don't have it yet?</span>
+                  <BuyButton
+                    product={guide.slug}
+                    returnPath={`/guides/${guide.slug}`}
+                    className="text-electric-600 font-medium hover:underline cursor-pointer"
+                  >
+                    Get the {guide.city} guide — {guide.price}
+                  </BuyButton>
+                  <span className="text-ink-400">·</span>
+                  <BuyButton
+                    product="lifetime"
+                    returnPath={`/guides/${guide.slug}`}
+                    className="text-ink-600 font-medium hover:underline cursor-pointer"
+                  >
+                    Or get Lifetime
+                  </BuyButton>
                 </div>
 
                 <p className="mt-8 text-xs text-ink-400 leading-relaxed">
