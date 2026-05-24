@@ -5,6 +5,8 @@ import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
 import { GuidesDropdown } from "@/components/GuidesDropdown";
 import { BuyButton } from "@/components/BuyButton";
+import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
+import { Suspense } from "react";
 
 export function generateStaticParams() {
   return listGuides()
@@ -53,6 +55,9 @@ export default function GuideLandingPage({
 
   return (
     <main className="bg-sand-50 min-h-screen">
+      <Suspense fallback={null}>
+        <PurchaseSuccessBanner />
+      </Suspense>
       <nav className="glass sticky top-0 z-40 border-b border-ink-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-display text-lg tracking-tight">

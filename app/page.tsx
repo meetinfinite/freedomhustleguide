@@ -4,6 +4,8 @@ import { SocialProof } from "@/components/SocialProof";
 import { GuidesDropdown } from "@/components/GuidesDropdown";
 import { NotifyButton } from "@/components/NotifyButton";
 import { BuyButton } from "@/components/BuyButton";
+import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
+import { Suspense } from "react";
 
 // Pexels free stock — swap for Valeria's own clip when ready.
 const HERO_VIDEO_SRC = "https://www.pexels.com/download/video/6981375/";
@@ -22,6 +24,9 @@ export default function HomePage() {
 
   return (
     <main className="min-h-screen bg-sand-50">
+      <Suspense fallback={null}>
+        <PurchaseSuccessBanner />
+      </Suspense>
       <nav className="glass sticky top-0 z-40 border-b border-ink-100">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="font-display text-lg tracking-tight">
