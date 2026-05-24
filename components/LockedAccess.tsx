@@ -1,51 +1,50 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 import Link from "next/link";
-import { hasAccess, storeAccess } from "@/lib/clientAccess";
 import type { GuideMeta } from "@/lib/guides";
 
 interface LockedAccessProps {
   guide: GuideMeta;
-  checkoutUrl: string;
+  checkoutUrl?: string;
+  /** Path the user should land on after clicking the magic link */
+  nextPath?: string;
+  /** When true, show "no access" hint above the form */
+  noAccess?: boolean;
 }
 
-export function LockedAccess({ guide, checkoutUrl }: LockedAccessProps) {
-  const router = useRouter();
+export function LockedAccess({
+  guide,
+  checkoutUrl,
+  nextPath,
+  noAccess
+}: LockedAccessProps) {
   const [email, setEmail] = useState("");
   const [submitting, setSubmitting] = useState(false);
+  const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (hasAccess(guide.slug)) {
-      router.replace(`/guides/${guide.slug}/app`);
-    }
-  }, [guide.slug, router]);
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault();
     setError(null);
     setSubmitting(true);
-
     try {
-      const res = await fetch("/api/access", {
+      const res = await fetch("/api/auth/signin", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, guideSlug: guide.slug })
+        body: JSON.stringify({
+          email,
+          next: nextPath || `/guides/${guide.slug}/app`
+        })
       });
       const data = await res.json();
-      if (!res.ok || !data.ok) {
-        setError(
-          data.message ||
-            "Access not found. Please use the email you purchased with."
-        );
+      if (!res.ok) {
+        setError(data.error || "Could not send the sign-in email.");
         return;
       }
-      storeAccess(guide.slug, email.trim().toLowerCase(), data.token);
-      router.push(`/guides/${guide.slug}/app`);
+      setSent(true);
     } catch {
-      setError("Something went wrong. Try again in a moment.");
+      setError("Network error. Try again.");
     } finally {
       setSubmitting(false);
     }
@@ -67,62 +66,106 @@ export function LockedAccess({ guide, checkoutUrl }: LockedAccessProps) {
             <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
               {guide.flag} {guide.city} guide
             </p>
-            <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-              Unlock your guide.
-            </h1>
-            <p className="text-ink-600 mt-3 leading-relaxed">
-              Enter the email you used to purchase. We'll match it against our
-              records and unlock the guide on this device.
-            </p>
 
-            <form onSubmit={onSubmit} className="mt-8 space-y-3">
-              <label className="block">
-                <span className="text-xs uppercase tracking-wider text-ink-500 font-semibold">
-                  Purchase email
-                </span>
-                <input
-                  type="email"
-                  required
-                  autoFocus
-                  autoComplete="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="you@example.com"
-                  className="mt-1 w-full px-4 py-3 rounded-xl border border-ink-200 bg-white focus:border-electric-500 focus:outline-none focus:ring-4 focus:ring-electric-100 transition"
-                />
-              </label>
+            {sent ? (
+              <>
+                <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
+                  Check your inbox.
+                </h1>
+                <p className="text-ink-600 mt-3 leading-relaxed">
+                  We've sent a sign-in link to <strong>{email}</strong>. Click
+                  it and you'll be in.
+                </p>
+                <p className="text-sm text-ink-500 mt-6">
+                  Didn't get it? Check spam, or{" "}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setSent(false);
+                      setEmail("");
+                    }}
+                    className="text-electric-600 underline underline-offset-4 hover:text-electric-700"
+                  >
+                    try a different email
+                  </button>
+                  .
+                </p>
+              </>
+            ) : (
+              <>
+                <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
+                  Sign in.
+                </h1>
+                <p className="text-ink-600 mt-3 leading-relaxed">
+                  Enter the email you used to buy. We'll send a one-tap
+                  sign-in link — no password.
+                </p>
 
-              {error ? (
-                <div className="rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm px-4 py-3">
-                  {error}
+                {noAccess ? (
+                  <div className="rounded-xl bg-sand-100 border border-sand-200 text-ink-700 text-sm px-4 py-3 mt-5">
+                    You're signed in, but this email doesn't have access to
+                    the {guide.city} guide. Need to buy it?{" "}
+                    {checkoutUrl ? (
+                      <a
+                        href={checkoutUrl}
+                        className="text-electric-600 font-medium hover:underline"
+                      >
+                        Get it here.
+                      </a>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                <form onSubmit={onSubmit} className="mt-8 space-y-3">
+                  <label className="block">
+                    <span className="text-xs uppercase tracking-wider text-ink-500 font-semibold">
+                      Purchase email
+                    </span>
+                    <input
+                      type="email"
+                      required
+                      autoFocus
+                      autoComplete="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="you@example.com"
+                      className="mt-1 w-full px-4 py-3 rounded-xl border border-ink-200 bg-white focus:border-electric-500 focus:outline-none focus:ring-4 focus:ring-electric-100 transition"
+                    />
+                  </label>
+
+                  {error ? (
+                    <div className="rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-sm px-4 py-3">
+                      {error}
+                    </div>
+                  ) : null}
+
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full px-6 py-3.5 rounded-xl bg-ink-900 text-sand-50 font-semibold hover:bg-ink-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
+                  >
+                    {submitting ? "Sending…" : "Send sign-in link"}
+                  </button>
+                </form>
+
+                <div className="mt-6 text-sm text-ink-500">
+                  Don't have it yet?{" "}
+                  {checkoutUrl ? (
+                    <a
+                      href={checkoutUrl}
+                      className="text-electric-600 font-medium hover:underline"
+                    >
+                      Get the {guide.city} guide — {guide.price}
+                    </a>
+                  ) : null}
                 </div>
-              ) : null}
 
-              <button
-                type="submit"
-                disabled={submitting}
-                className="w-full px-6 py-3.5 rounded-xl bg-ink-900 text-sand-50 font-semibold hover:bg-ink-700 disabled:opacity-50 disabled:cursor-not-allowed transition"
-              >
-                {submitting ? "Checking…" : "Unlock the guide"}
-              </button>
-            </form>
-
-            <div className="mt-6 text-sm text-ink-500">
-              Don't have it yet?{" "}
-              <a
-                href={checkoutUrl}
-                className="text-electric-600 font-medium hover:underline"
-              >
-                Get the guide — {guide.price}
-              </a>
-            </div>
-
-            <p className="mt-8 text-xs text-ink-400 leading-relaxed">
-              Your email is checked against our purchase list. Access is stored
-              in your browser, so you'll stay signed in here. No password
-              required for MVP — we'll add proper accounts when payments are
-              live.
-            </p>
+                <p className="mt-8 text-xs text-ink-400 leading-relaxed">
+                  We send a one-time sign-in link to your email. No passwords
+                  to remember. Sessions last 30 days.
+                </p>
+              </>
+            )}
           </div>
         </div>
       </section>

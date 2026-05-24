@@ -1,49 +1,32 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import type { GuideMeta } from "@/lib/guides";
 import { SectionNav } from "./SectionNav";
 import { MobileSectionNav } from "./MobileSectionNav";
-import { clearAccess, readAccess } from "@/lib/clientAccess";
+import { getSupabaseBrowser } from "@/lib/supabase/client";
 
 interface GuideAppShellProps {
   guide: GuideMeta;
   basePath: string;
+  userEmail: string;
   children: React.ReactNode;
 }
 
 export function GuideAppShell({
   guide,
   basePath,
+  userEmail,
   children
 }: GuideAppShellProps) {
   const router = useRouter();
-  const [ready, setReady] = useState(false);
-  const [email, setEmail] = useState<string | null>(null);
 
-  useEffect(() => {
-    const session = readAccess(guide.slug);
-    if (!session?.token) {
-      router.replace(`/guides/${guide.slug}/access`);
-      return;
-    }
-    setEmail(session.email);
-    setReady(true);
-  }, [guide.slug, router]);
-
-  function signOut() {
-    clearAccess(guide.slug);
+  async function signOut() {
+    const supabase = getSupabaseBrowser();
+    await supabase.auth.signOut();
     router.push(`/guides/${guide.slug}`);
-  }
-
-  if (!ready) {
-    return (
-      <div className="min-h-screen grid place-items-center bg-sand-50 text-ink-500 text-sm">
-        Unlocking your guide…
-      </div>
-    );
+    router.refresh();
   }
 
   return (
@@ -56,7 +39,7 @@ export function GuideAppShell({
           </Link>
           <div className="flex items-center gap-3">
             <span className="hidden sm:inline text-xs text-ink-500">
-              {email}
+              {userEmail}
             </span>
             <button
               onClick={signOut}
