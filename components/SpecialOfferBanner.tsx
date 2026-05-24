@@ -71,7 +71,7 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
         </span>
 
         <span className="font-display tracking-tight text-[15px] sm:text-base">
-          Launch offer{" "}
+          Lifetime access to every guide{" "}
           <span className="text-ink-400 line-through">£129</span>{" "}
           £79
         </span>
