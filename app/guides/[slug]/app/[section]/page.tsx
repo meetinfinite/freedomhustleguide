@@ -1,20 +1,32 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, getSection } from "@/lib/guides";
-import { loadGuideSectionMdx } from "@/lib/mdx";
-import { MdxRenderer } from "@/components/MdxRenderer";
+import client from "@/tina/__generated__/client";
+import { GuideSectionView } from "@/components/GuideSectionView";
 
 interface PageProps {
   params: { slug: string; section: string };
 }
 
-export default function GuideSectionPage({ params }: PageProps) {
+export const dynamic = "force-dynamic";
+
+export default async function GuideSectionPage({ params }: PageProps) {
   const guide = getGuide(params.slug);
   if (!guide || guide.status !== "live") notFound();
   const section = getSection(params.slug, params.section);
   if (!section) notFound();
-  const mdx = loadGuideSectionMdx(params.slug, params.section);
-  if (!mdx) notFound();
+
+  let tinaResult;
+  try {
+    tinaResult = await client.queries.section({
+      relativePath: `${params.slug}/${params.section}.mdx`
+    });
+  } catch (err) {
+    console.error(
+      `[tina] failed to fetch ${params.slug}/${params.section}.mdx`,
+      err
+    );
+    notFound();
+  }
 
   const sections = guide.sections;
   const idx = sections.findIndex((s) => s.slug === section.slug);
@@ -23,63 +35,17 @@ export default function GuideSectionPage({ params }: PageProps) {
   const basePath = `/guides/${guide.slug}/app`;
 
   return (
-    <div>
-      <div className="mb-8 flex items-center gap-3 text-sm text-ink-500">
-        <Link href={basePath} className="hover:text-ink-900">
-          ← Dashboard
-        </Link>
-        <span>·</span>
-        <span>{section.readingTime}</span>
-      </div>
-
-      <header className="mb-8">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-12 h-12 rounded-2xl bg-sand-100 grid place-items-center text-2xl">
-            {section.icon}
-          </div>
-        </div>
-        <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-          {(mdx.frontmatter.title as string) || section.title}
-        </h1>
-        {mdx.frontmatter.description ? (
-          <p className="text-ink-600 mt-3 text-lg">
-            {mdx.frontmatter.description as string}
-          </p>
-        ) : null}
-      </header>
-
-      <MdxRenderer source={mdx.source} />
-
-      <div className="mt-16 grid sm:grid-cols-2 gap-4">
-        {prev ? (
-          <Link
-            href={`${basePath}/${prev.slug}`}
-            className="group rounded-2xl bg-white border border-ink-100 shadow-card p-5 hover:shadow-pop transition"
-          >
-            <p className="text-[11px] uppercase tracking-wider text-ink-400 font-semibold">
-              Previous
-            </p>
-            <p className="font-display text-lg tracking-tight mt-1">
-              ← {prev.title}
-            </p>
-          </Link>
-        ) : (
-          <span />
-        )}
-        {next ? (
-          <Link
-            href={`${basePath}/${next.slug}`}
-            className="group rounded-2xl bg-white border border-ink-100 shadow-card p-5 hover:shadow-pop transition sm:text-right"
-          >
-            <p className="text-[11px] uppercase tracking-wider text-ink-400 font-semibold">
-              Next
-            </p>
-            <p className="font-display text-lg tracking-tight mt-1">
-              {next.title} →
-            </p>
-          </Link>
-        ) : null}
-      </div>
-    </div>
+    <GuideSectionView
+      data={tinaResult.data}
+      query={tinaResult.query}
+      variables={tinaResult.variables}
+      nav={{
+        basePath,
+        icon: section.icon,
+        readingTime: section.readingTime,
+        prev,
+        next
+      }}
+    />
   );
 }
