@@ -4,6 +4,7 @@ import { getGuide, listGuides } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
 import { GuidesDropdown } from "@/components/GuidesDropdown";
+import { BuyButton } from "@/components/BuyButton";
 
 export function generateStaticParams() {
   return listGuides()
@@ -65,12 +66,13 @@ export default function GuideLandingPage({
             >
               Sign in
             </Link>
-            <button
-              type="button"
+            <BuyButton
+              product="lifetime"
+              returnPath={`/guides/${guide.slug}`}
               className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
             >
               Buy Lifetime Access
-            </button>
+            </BuyButton>
           </div>
         </div>
       </nav>

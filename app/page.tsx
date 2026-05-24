@@ -3,6 +3,7 @@ import { listGuides } from "@/lib/guides";
 import { SocialProof } from "@/components/SocialProof";
 import { GuidesDropdown } from "@/components/GuidesDropdown";
 import { NotifyButton } from "@/components/NotifyButton";
+import { BuyButton } from "@/components/BuyButton";
 
 // Pexels free stock — swap for Valeria's own clip when ready.
 const HERO_VIDEO_SRC = "https://www.pexels.com/download/video/6981375/";
@@ -28,12 +29,13 @@ export default function HomePage() {
           </Link>
           <div className="flex items-center gap-5">
             <GuidesDropdown guides={guides} />
-            <button
-              type="button"
+            <BuyButton
+              product="lifetime"
+              returnPath="/"
               className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
             >
               Buy Lifetime Access
-            </button>
+            </BuyButton>
           </div>
         </div>
       </nav>

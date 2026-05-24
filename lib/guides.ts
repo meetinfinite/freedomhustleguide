@@ -8,6 +8,8 @@ export interface GuideMeta {
   flag: string;
   tagline: string;
   price: string;
+  /** Stripe Price ID for the single-guide product. null = no Stripe product yet. */
+  stripePriceId: string | null;
   status: GuideStatus;
   heroImage: string;
   /** Square-ish image used on the homepage guide card. */
@@ -127,7 +129,8 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "Everything you need to confidently spend your first 30–90 days living and working remotely in Bangkok.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
     heroImage:
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2400&q=80",
@@ -150,7 +153,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -165,7 +169,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -180,7 +185,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -195,7 +201,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Malaysia",
     flag: "🇲🇾",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -210,7 +217,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -225,7 +233,8 @@ export const GUIDES: GuideMeta[] = [
     country: "South Korea",
     flag: "🇰🇷",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -240,7 +249,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
@@ -255,7 +265,8 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline: "Coming soon.",
-    price: "£49",
+    price: "£29",
+    stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
