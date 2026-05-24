@@ -6,6 +6,7 @@ import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
+import { SiteFooter } from "@/components/SiteFooter";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { Suspense } from "react";
@@ -62,8 +63,8 @@ export default async function HomePage() {
 
         <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-28 sm:pt-32 sm:pb-40">
           <div className="max-w-3xl fade-up">
-            <p className="text-xs uppercase tracking-[0.18em] text-electric-300 font-semibold mb-4">
-              Digital nomad starter guides
+            <p className="text-xs uppercase tracking-[0.18em] text-sand-50 font-semibold mb-4">
+              Digital nomad travel guides
             </p>
             <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50">
               <span className="text-electric-300">Everything</span> we wish
@@ -219,13 +220,7 @@ export default async function HomePage() {
       {/* ----- Social proof ----- */}
       <SocialProof />
 
-      {/* ----- Footer ----- */}
-      <footer className="border-t border-ink-100 py-10">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink-500">
-          <p>© {new Date().getFullYear()} Freedom Hustle</p>
-          <p>Built for nomads who actually work.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

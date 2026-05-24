@@ -16,3 +16,6 @@ public/admin
 # Place cache — re-fetched on demand
 tina/.place-cache.json
 
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+

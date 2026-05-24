@@ -4,6 +4,7 @@ import { listGuides } from "@/lib/guides";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { BuyButton } from "@/components/BuyButton";
 
 export const dynamic = "force-dynamic";
@@ -196,12 +197,7 @@ export default async function MyDashboardPage() {
         </section>
       ) : null}
 
-      <footer className="border-t border-ink-100 py-10 mt-8">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink-500">
-          <p>© {new Date().getFullYear()} Freedom Hustle</p>
-          <p>Built for nomads who actually work.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

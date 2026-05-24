@@ -8,7 +8,7 @@ interface SpecialOfferBannerProps {
 }
 
 /**
- * Full-width black promo banner that sits above the sticky header.
+ * Full-width promo banner that sits above the sticky header.
  * Clicking it opens Stripe Checkout for the lifetime product directly.
  *
  * Hidden for lifetime members (controlled by parent page).
@@ -54,22 +54,39 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
       type="button"
       onClick={onClick}
       disabled={loading}
-      aria-label="Special launch offer — Lifetime access for £79"
-      className="block w-full bg-ink-900 text-sand-50 py-3 px-4 text-[13px] sm:text-sm hover:bg-ink-800 active:bg-ink-700 transition cursor-pointer disabled:opacity-70 disabled:cursor-wait"
+      aria-label="Launch offer — Lifetime access for £79, save 38%"
+      className="group block w-full bg-ink-900 text-sand-50 py-2.5 px-4 text-[13px] sm:text-sm hover:bg-ink-800 active:bg-ink-700 transition cursor-pointer disabled:opacity-70 disabled:cursor-wait relative overflow-hidden"
     >
-      <div className="flex items-center justify-center gap-x-2 gap-y-1 flex-wrap leading-tight">
-        <span className="text-base leading-none">🎉</span>
-        <span className="hidden sm:inline font-bold tracking-wide">
-          LAUNCH OFFER
+      {/* Subtle terracotta glow behind content */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] max-w-[640px] bg-gradient-to-r from-transparent via-electric-500/15 to-transparent blur-2xl"
+      />
+
+      <div className="relative flex items-center justify-center gap-x-3 gap-y-1 flex-wrap leading-tight text-sand-50">
+        {/* Pulsing dot */}
+        <span aria-hidden className="relative inline-flex w-2 h-2 shrink-0">
+          <span className="absolute inset-0 rounded-full bg-electric-400 opacity-75 animate-ping" />
+          <span className="relative inline-flex w-2 h-2 rounded-full bg-electric-500" />
         </span>
-        <span className="hidden sm:inline text-sand-400/70">·</span>
-        <span className="hidden sm:inline">Lifetime access</span>
-        <span className="text-sand-400/80 line-through">£129</span>
-        <span className="font-bold text-[15px] sm:text-base">£79</span>
-        <span className="sm:hidden text-sand-200">Lifetime</span>
-        <span className="text-sand-400/70">·</span>
-        <span className="text-electric-300 font-semibold">Save 38%</span>
-        <span className="ml-0.5 text-base leading-none">→</span>
+
+        <span className="font-display tracking-tight text-[15px] sm:text-base">
+          Launch offer{" "}
+          <span className="text-ink-400 line-through">£129</span>{" "}
+          £79
+        </span>
+
+        {/* Pill badge — the one element allowed to stand out */}
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-electric-500 text-white text-[11px] font-bold tracking-wider uppercase">
+          Save 38%
+        </span>
+
+        <span
+          aria-hidden
+          className="transition-transform duration-200 group-hover:translate-x-1"
+        >
+          →
+        </span>
       </div>
     </button>
   );

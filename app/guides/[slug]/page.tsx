@@ -6,6 +6,7 @@ import { CTASection } from "@/components/CTASection";
 import { BuyButton } from "@/components/BuyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
@@ -289,12 +290,7 @@ export default async function GuideLandingPage({
         secondaryLabel="Sign in"
       />
 
-      <footer className="border-t border-ink-100 py-10">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-ink-500">
-          <p>© {new Date().getFullYear()} Freedom Hustle</p>
-          <p>Built for nomads who actually work.</p>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
