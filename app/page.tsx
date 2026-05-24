@@ -4,6 +4,7 @@ import { SocialProof } from "@/components/SocialProof";
 import { NotifyButton } from "@/components/NotifyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
+import { FoundersIntro } from "@/components/FoundersIntro";
 import { Suspense } from "react";
 
 // Pexels free stock — swap for Valeria's own clip when ready.
@@ -107,6 +108,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ----- Founders intro ----- */}
+      <FoundersIntro />
 
       {/* ----- Available guides ----- */}
       <section

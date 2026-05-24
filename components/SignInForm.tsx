@@ -141,8 +141,14 @@ export function SignInForm({ nextPath }: SignInFormProps) {
       </section>
 
       {/* Right: brand visual */}
-      <section className="hidden lg:block relative bg-ink-900">
-        <div className="absolute inset-0 bg-hero-grad opacity-50" />
+      <section
+        className="hidden lg:block relative bg-cover bg-center bg-ink-900"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2000&q=80')"
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900/40 via-ink-900/55 to-ink-900/90" />
         <div className="relative h-full flex flex-col justify-end p-12 text-sand-50">
           <p className="text-xs uppercase tracking-[0.18em] text-sand-200 font-semibold mb-2">
             Inside Freedom Hustle
