@@ -46,6 +46,28 @@ function AuthCallback() {
     let cancelled = false;
 
     async function handle() {
+      // First, check the URL hash for an explicit Supabase error
+      // (e.g. expired link, invalid token). Format: #error=...&error_description=...
+      if (typeof window !== "undefined" && window.location.hash) {
+        const hashParams = new URLSearchParams(
+          window.location.hash.replace(/^#/, "")
+        );
+        const err = hashParams.get("error_description") || hashParams.get("error");
+        if (err) {
+          console.warn("[auth/callback] supabase returned error in hash:", err);
+          setError(err.replace(/\+/g, " "));
+          return;
+        }
+      }
+      // Same check for query-string error
+      const queryError =
+        params.get("error_description") || params.get("error");
+      if (queryError) {
+        console.warn("[auth/callback] supabase returned error in query:", queryError);
+        setError(queryError);
+        return;
+      }
+
       // Branch 1 — PKCE / server flow (?code=)
       const code = params.get("code");
       if (code) {
