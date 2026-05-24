@@ -88,9 +88,9 @@ export function PurchaseSuccessBanner() {
           <ul className="list-disc pl-5 space-y-1 !my-0">
             <li>Check spam — first emails sometimes land there.</li>
             <li>
-              It comes from <code>noreply@mail.app.supabase.io</code>.
+              It comes from <code>noreply@freedomhustleguide.com</code>.
             </li>
-            <li>Subject: "Confirm your email address".</li>
+            <li>Look for "Confirm your email" or "Sign in".</li>
           </ul>
         </div>
 
