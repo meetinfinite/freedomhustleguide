@@ -175,7 +175,7 @@ export default async function GuideLandingPage({
                 Who it's for
               </p>
               <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                First-time nomads or seasoned pros.
+                First-time nomads or experienced travellers.
               </h2>
               <p className="text-ink-600 mt-4 text-lg leading-relaxed">
                 If you're moving abroad to keep your remote job, freelance, or
