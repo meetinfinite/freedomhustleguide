@@ -113,11 +113,17 @@ export default async function MyDashboardPage() {
                   Upgrade
                 </p>
                 <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                  Unlock every guide for £79.
+                  Unlock every guide.{" "}
+                  <span className="text-sand-300/80 line-through">£299</span>{" "}
+                  <span className="text-sand-50">£79</span>
                 </h2>
                 <p className="text-sand-200 mt-3 leading-relaxed">
                   All current cities, every future city. One purchase. No
-                  re-buys, no upgrades, no fuss.
+                  re-buys, no upgrades, no fuss. Use code{" "}
+                  <span className="font-bold tracking-wider text-electric-300">
+                    FREEDOM
+                  </span>{" "}
+                  at checkout.
                 </p>
                 <div className="mt-6">
                   <BuyButton
@@ -126,7 +132,7 @@ export default async function MyDashboardPage() {
                     customerEmail={user.email}
                     className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-semibold hover:bg-white transition"
                   >
-                    Get Lifetime — £79
+                    Get Lifetime →
                   </BuyButton>
                 </div>
               </div>

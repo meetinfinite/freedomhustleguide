@@ -25,10 +25,17 @@ export function LifetimeUpsellBanner({
             Members upgrade
           </p>
           <h3 className="font-display text-xl sm:text-2xl tracking-tight !mt-0 !mb-1">
-            Unlock every guide for £79.
+            Unlock every guide.{" "}
+            <span className="text-sand-300/80 line-through">£299</span>{" "}
+            <span className="text-sand-50">£79</span>
           </h3>
           <p className="text-sand-200/90 text-sm leading-snug">
             All current cities + every future one. One purchase, no re-buys.
+            Use code{" "}
+            <span className="font-bold tracking-wider text-electric-300">
+              FREEDOM
+            </span>{" "}
+            at checkout.
           </p>
         </div>
         <div className="shrink-0 self-end sm:self-center">

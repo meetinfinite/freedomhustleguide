@@ -54,7 +54,7 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
       type="button"
       onClick={onClick}
       disabled={loading}
-      aria-label="Launch offer — Lifetime access for £79, save 38%"
+      aria-label="Launch offer — Lifetime access for £79 with code FREEDOM, save 74%"
       className="group block w-full bg-ink-900 text-sand-50 py-2.5 px-4 text-[13px] sm:text-sm hover:bg-ink-800 active:bg-ink-700 transition cursor-pointer disabled:opacity-70 disabled:cursor-wait relative overflow-hidden"
     >
       {/* Subtle terracotta glow behind content */}
@@ -72,13 +72,20 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
 
         <span className="font-display tracking-tight text-[15px] sm:text-base uppercase">
           All guides. Forever.{" "}
-          <span className="text-ink-400 line-through normal-case">£129</span>{" "}
+          <span className="text-ink-400 line-through normal-case">£299</span>{" "}
           £79
+        </span>
+
+        <span className="hidden sm:inline text-sand-300/90 text-[12px] normal-case">
+          with code{" "}
+          <span className="font-bold tracking-wider text-sand-50">
+            FREEDOM
+          </span>
         </span>
 
         {/* Pill badge — the one element allowed to stand out */}
         <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-electric-500 text-white text-[11px] font-bold tracking-wider uppercase">
-          Save 38%
+          Save 74%
         </span>
 
         <span

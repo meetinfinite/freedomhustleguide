@@ -8,6 +8,7 @@ import { NotifyButton } from "@/components/NotifyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { MoreCities } from "@/components/MoreCities";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
@@ -368,6 +369,8 @@ export default async function GuideLandingPage({
           "px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition cursor-pointer"
         )}
       />
+
+      <MoreCities currentSlug={guide.slug} />
 
       <SiteFooter />
     </main>
