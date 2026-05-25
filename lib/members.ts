@@ -25,7 +25,20 @@ export async function getMember(email: string): Promise<Member | null> {
     console.warn("[members] lookup error:", error.message);
     return null;
   }
-  return (data as unknown as Member) || null;
+  if (!data) return null;
+  // Normalise defensively — Supabase columns can be nullable even when our
+  // type declares them as required. A null `guides` array would crash any
+  // caller using `.includes()`.
+  const row = data as unknown as Partial<Member>;
+  return {
+    id: row.id ?? "",
+    email: row.email ?? email.toLowerCase().trim(),
+    lifetime: Boolean(row.lifetime),
+    guides: Array.isArray(row.guides) ? row.guides : [],
+    stripe_customer_id: row.stripe_customer_id ?? null,
+    created_at: row.created_at ?? "",
+    updated_at: row.updated_at ?? ""
+  };
 }
 
 /**
