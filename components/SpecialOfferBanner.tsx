@@ -55,7 +55,7 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
       onClick={onClick}
       disabled={loading}
       aria-label="Launch offer — Lifetime access for £79 with code FREEDOM, save 74%"
-      className="group block w-full bg-teal-800 text-white py-2.5 px-4 text-[13px] sm:text-sm hover:bg-teal-900 active:bg-teal-950 transition cursor-pointer disabled:opacity-70 disabled:cursor-wait relative overflow-hidden"
+      className="group block w-full bg-emerald-900 text-white py-2.5 px-4 text-[13px] sm:text-sm hover:bg-emerald-950 active:bg-black transition cursor-pointer disabled:opacity-70 disabled:cursor-wait relative overflow-hidden"
     >
       <div className="relative flex items-center justify-center gap-x-2.5 gap-y-1 flex-wrap leading-tight text-[13px] sm:text-sm">
         {/* Pulsing dot */}
@@ -76,8 +76,8 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
           <span className="font-bold text-white">FREEDOM</span>
         </span>
 
-        {/* The one accent — white pill on terracotta */}
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-white text-electric-600 font-bold uppercase text-[11px] sm:text-[12px] tracking-wider">
+        {/* The one accent — black pill, white text */}
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-ink-900 text-white font-bold uppercase text-[11px] sm:text-[12px] tracking-wider">
           Save 74%
         </span>
 
