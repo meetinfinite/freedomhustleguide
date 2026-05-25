@@ -74,8 +74,8 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
           <span className="font-bold text-white">FREEDOM</span>
         </span>
 
-        {/* The one accent — black pill, white text */}
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-ink-900 text-white font-bold uppercase text-[11px] sm:text-[12px] tracking-wider">
+        {/* Tonal pill — pale emerald bg, deep emerald text (same as bar) */}
+        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-bold uppercase text-[11px] sm:text-[12px] tracking-wider">
           Save 74%
         </span>
 
