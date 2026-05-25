@@ -2,6 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import Link from "next/link";
+import { BrandLogo } from "./BrandLogo";
 
 interface SignInFormProps {
   /** Path the user should land on after clicking the magic link */
@@ -43,9 +44,10 @@ export function SignInForm({ nextPath }: SignInFormProps) {
       <section className="flex flex-col p-6 sm:p-12">
         <Link
           href="/"
-          className="font-display text-lg tracking-tight text-ink-900"
+          aria-label="Freedom Hustle — home"
+          className="inline-flex self-start"
         >
-          Freedom Hustle
+          <BrandLogo size={40} />
         </Link>
 
         <div className="flex-1 flex items-center">

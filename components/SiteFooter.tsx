@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { listGuides } from "@/lib/guides";
 import { FooterSubscribe } from "./FooterSubscribe";
+import { BrandLogo } from "./BrandLogo";
 
 /**
  * Site-wide footer.
@@ -22,11 +23,12 @@ export function SiteFooter() {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              className="font-display text-xl tracking-tight text-ink-900"
+              aria-label="Freedom Hustle — home"
+              className="inline-flex"
             >
-              Freedom Hustle
+              <BrandLogo size={44} />
             </Link>
-            <p className="text-ink-500 text-sm mt-3 mb-4 max-w-sm leading-relaxed">
+            <p className="text-ink-500 text-sm mt-4 mb-4 max-w-sm leading-relaxed">
               New city drops, travel finds, and the occasional discount —
               delivered when there's something genuinely worth saying.
             </p>

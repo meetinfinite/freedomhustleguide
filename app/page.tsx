@@ -13,13 +13,12 @@ import { Suspense } from "react";
 // Pexels free stock — swap for Valeria's own clip when ready.
 const HERO_VIDEO_SRC = "https://www.pexels.com/download/video/6981375/";
 
-// Stock portrait avatars for the hero social-proof row.
-// Swap for AI-generated brand avatars when ready.
+// Brand-owned portrait avatars (local). Shown on the hero social-proof row.
 const AVATARS = [
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&h=200&q=70",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&h=200&q=70",
-  "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&h=200&q=70",
-  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&h=200&q=70"
+  "/uploads/Avatar-1.png",
+  "/uploads/Avatar-2.png",
+  "/uploads/Avatar-3.png",
+  "/uploads/Avatar-4.png"
 ];
 
 export const dynamic = "force-dynamic";

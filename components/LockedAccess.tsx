@@ -4,6 +4,7 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 import type { GuideMeta } from "@/lib/guides";
 import { BuyButton } from "./BuyButton";
+import { BrandLogo } from "./BrandLogo";
 
 interface LockedAccessProps {
   guide: GuideMeta;
@@ -55,9 +56,10 @@ export function LockedAccess({
       <section className="flex flex-col p-6 sm:p-12">
         <Link
           href="/"
-          className="font-display text-lg tracking-tight text-ink-900"
+          aria-label="Freedom Hustle — home"
+          className="inline-flex self-start"
         >
-          Freedom Hustle
+          <BrandLogo size={40} />
         </Link>
 
         <div className="flex-1 flex items-center">

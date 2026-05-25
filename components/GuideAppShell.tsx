@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { GuideMeta } from "@/lib/guides";
 import { SectionNav } from "./SectionNav";
 import { MobileSectionNav } from "./MobileSectionNav";
+import { BrandLogo } from "./BrandLogo";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 
 interface GuideAppShellProps {
@@ -35,8 +36,12 @@ export function GuideAppShell({
       <header className="glass sticky top-0 z-40 border-b border-ink-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-5">
-            <Link href="/my" className="font-display text-base tracking-tight">
-              Freedom Hustle
+            <Link
+              href="/my"
+              aria-label="Freedom Hustle — my guides"
+              className="flex items-center"
+            >
+              <BrandLogo size={32} />
             </Link>
             <Link
               href="/my"

@@ -6,6 +6,7 @@ import { GuidesDropdown } from "./GuidesDropdown";
 import { MyGuidesDropdown } from "./MyGuidesDropdown";
 import { SignOutButton } from "./SignOutButton";
 import { BuyButton } from "./BuyButton";
+import { BrandLogo } from "./BrandLogo";
 
 /**
  * Site-wide header. Auth-aware — detects the signed-in user server-side
@@ -23,8 +24,12 @@ export async function SiteHeader() {
   return (
     <nav className="glass sticky top-0 z-40 border-b border-ink-100">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="font-display text-lg tracking-tight">
-          Freedom Hustle
+        <Link
+          href="/"
+          aria-label="Freedom Hustle — home"
+          className="flex items-center"
+        >
+          <BrandLogo size={36} />
         </Link>
 
         <div className="flex items-center gap-5">

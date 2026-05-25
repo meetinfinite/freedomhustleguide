@@ -12,8 +12,7 @@ const TESTIMONIALS: Testimonial[] = [
       "I landed in Bangkok at 11pm with a SIM, a Grab, and a cafe lined up for the morning. Everything in the first-24-hours checklist just worked. No wasted days.",
     name: "Sarah K.",
     role: "Brand designer · remote",
-    avatar:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=200&h=200&q=70",
+    avatar: "/uploads/Avatar-5.png",
     city: "London → Bangkok"
   },
   {
@@ -21,8 +20,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Honestly, the areas-to-stay section alone paid for the guide. I almost booked a month in Khao San. Would have ruined my whole stay.",
     name: "Marco D.",
     role: "Founder · 2-person SaaS",
-    avatar:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=200&h=200&q=70",
+    avatar: "/uploads/Avatar-6.png",
     city: "Berlin → Bangkok"
   },
   {
@@ -30,8 +28,7 @@ const TESTIMONIALS: Testimonial[] = [
       "Every recommendation actually works. The cafes have plugs. The gyms exist. It's not a regurgitated tourist blog — feels like a friend texting you the answers.",
     name: "Priya S.",
     role: "Product lead · Notion",
-    avatar:
-      "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=200&h=200&q=70",
+    avatar: "/uploads/Avatar-7.png",
     city: "NYC → Bangkok"
   }
 ];
