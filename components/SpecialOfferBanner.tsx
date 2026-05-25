@@ -57,21 +57,19 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
       aria-label="Launch offer — Lifetime access for £79 with code FREEDOM, save 74%"
       className="group block w-full bg-emerald-900 text-white py-2.5 px-4 text-[13px] sm:text-sm hover:bg-emerald-950 active:bg-black transition cursor-pointer disabled:opacity-70 disabled:cursor-wait relative overflow-hidden"
     >
-      <div className="relative flex items-center justify-center gap-x-2.5 gap-y-1 flex-wrap leading-tight text-[13px] sm:text-sm">
-        {/* Pulsing dot */}
-        <span aria-hidden className="relative inline-flex w-2 h-2 shrink-0">
-          <span className="absolute inset-0 rounded-full bg-white opacity-75 animate-ping" />
-          <span className="relative inline-flex w-2 h-2 rounded-full bg-white" />
+      <div className="relative flex items-center justify-center gap-x-1.5 gap-y-1 sm:gap-x-2.5 flex-wrap leading-tight text-[13px] sm:text-sm">
+        <span aria-hidden className="text-base leading-none">
+          🎉
         </span>
 
         <span className="uppercase text-white tracking-wide font-semibold">
-          All guides. Forever.
+          All guides. Forever
         </span>
 
         <span className="text-white/60 line-through">£299</span>
         <span className="font-bold text-white">£79</span>
 
-        <span className="hidden sm:inline text-white/60">
+        <span className="text-white/60">
           with code{" "}
           <span className="font-bold text-white">FREEDOM</span>
         </span>
