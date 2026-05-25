@@ -4,6 +4,7 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { GuideDashboard } from "@/components/GuideDashboard";
 import { LifetimeUpsellBanner } from "@/components/LifetimeUpsellBanner";
+import { MyMapEmbed } from "@/components/MyMapEmbed";
 
 export const dynamic = "force-dynamic";
 
@@ -32,6 +33,9 @@ export default async function GuideAppDashboard({
           userEmail={user.email}
           returnPath={basePath}
         />
+      ) : null}
+      {guide.myMapsId ? (
+        <MyMapEmbed mid={guide.myMapsId} city={guide.city} />
       ) : null}
       <GuideDashboard guide={guide} basePath={basePath} />
     </>

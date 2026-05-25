@@ -16,6 +16,12 @@ export interface GuideMeta {
    * e.g. set to "In progress" for cities actively being researched.
    */
   progressLabel?: string;
+  /**
+   * Optional Google My Maps ID (the `mid=…` value from the embed URL).
+   * When set, the in-app dashboard renders an embedded city map above the
+   * section grid — one map per city, all categories colour-coded.
+   */
+  myMapsId?: string;
   heroImage: string;
   /** Square-ish image used on the homepage guide card. */
   cardImage: string;
@@ -217,6 +223,9 @@ export const GUIDES: GuideMeta[] = [
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
+    // Using the Samui map for testing — swap to a Bangkok-specific
+    // myMapsId when one's authored.
+    myMapsId: "1mkxNxqvgcALEmmfsXFd-wU3ETVfUExg",
     heroImage:
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2400&q=80",
     cardImage:
