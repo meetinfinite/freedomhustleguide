@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, listGuides } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
@@ -86,6 +87,10 @@ export default async function GuideLandingPage({
   const customerEmail = user?.email;
   const member = customerEmail ? await getMember(customerEmail) : null;
   const showOffer = !member?.lifetime;
+  // Owns this specific guide via Lifetime OR a single-guide purchase.
+  const ownsGuide = Boolean(
+    isLive && member && (member.lifetime || member.guides.includes(guide.slug))
+  );
 
   // Soon guides have no heroImage — fall back to cardImage so the hero
   // still feels like a real landing page.
@@ -101,20 +106,32 @@ export default async function GuideLandingPage({
 
   const faq = isLive ? FAQ_LIVE : buildSoonFAQ(guide.city);
 
-  // Primary CTA = Buy (live) or Get notified (soon).
-  const primaryCTA = (className: string, label?: string) =>
-    isLive ? (
-      <BuyButton
-        product={guide.slug}
-        returnPath={`/guides/${guide.slug}`}
-        customerEmail={customerEmail}
-        className={className}
-      >
-        {label ?? `Get the guide — ${guide.price}`}
-      </BuyButton>
-    ) : (
-      <NotifyButton city={guide.city} className={className} />
-    );
+  // Primary CTA branches on three states:
+  //  - owned (live + signed in + entitled) → straight to the app
+  //  - live, not owned → Stripe Checkout
+  //  - soon → waitlist modal
+  const primaryCTA = (className: string, label?: string) => {
+    if (ownsGuide) {
+      return (
+        <Link href={`/guides/${guide.slug}/app`} className={className}>
+          {label ?? "View guide →"}
+        </Link>
+      );
+    }
+    if (isLive) {
+      return (
+        <BuyButton
+          product={guide.slug}
+          returnPath={`/guides/${guide.slug}`}
+          customerEmail={customerEmail}
+          className={className}
+        >
+          {label ?? `Get the guide — ${guide.price}`}
+        </BuyButton>
+      );
+    }
+    return <NotifyButton city={guide.city} className={className} />;
+  };
 
   return (
     <main className="bg-sand-50 min-h-screen">
@@ -254,17 +271,25 @@ export default async function GuideLandingPage({
           <div className="relative grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-electric-300 font-semibold mb-3">
-                {isLive ? "One-time payment" : "Waitlist"}
+                {ownsGuide
+                  ? "You own this"
+                  : isLive
+                    ? "One-time payment"
+                    : "Waitlist"}
               </p>
               <h2 className="font-display text-4xl sm:text-5xl tracking-tight">
-                {isLive
-                  ? `Get the ${guide.city} guide.`
-                  : `Be first when ${guide.city} drops.`}
+                {ownsGuide
+                  ? `Jump back into ${guide.city}.`
+                  : isLive
+                    ? `Get the ${guide.city} guide.`
+                    : `Be first when ${guide.city} drops.`}
               </h2>
               <p className="text-sand-200 mt-4 text-lg leading-relaxed">
-                {isLive
-                  ? "Instant access. Regular updates as the city changes."
-                  : `Get the ${guide.city} guide the moment it's ready, with a founders discount only the waitlist gets.`}
+                {ownsGuide
+                  ? "You've got the full guide — pick up wherever you left off."
+                  : isLive
+                    ? "Instant access. Regular updates as the city changes."
+                    : `Get the ${guide.city} guide the moment it's ready, with a founders discount only the waitlist gets.`}
               </p>
               <div className="mt-7">
                 {primaryCTA(
@@ -326,14 +351,18 @@ export default async function GuideLandingPage({
 
       <CTASection
         title={
-          isLive
-            ? `Ready to land in ${guide.city} properly?`
-            : `Want the ${guide.city} guide first?`
+          ownsGuide
+            ? `Ready to dive back into ${guide.city}?`
+            : isLive
+              ? `Ready to land in ${guide.city} properly?`
+              : `Want the ${guide.city} guide first?`
         }
         subtitle={
-          isLive
-            ? "Get the guide once. Use it for your whole stay."
-            : "We'll email you the moment it's live, with a founders discount."
+          ownsGuide
+            ? "Pick up wherever you left off."
+            : isLive
+              ? "Get the guide once. Use it for your whole stay."
+              : "We'll email you the moment it's live, with a founders discount."
         }
         primaryAction={primaryCTA(
           "px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition cursor-pointer"
