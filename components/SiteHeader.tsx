@@ -29,7 +29,7 @@ export async function SiteHeader() {
           aria-label="Freedom Hustle — home"
           className="flex items-center"
         >
-          <BrandLogo size={36} />
+          <BrandLogo size={56} />
         </Link>
 
         <div className="flex items-center gap-5">

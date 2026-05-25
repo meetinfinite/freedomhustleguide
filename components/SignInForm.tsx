@@ -47,7 +47,7 @@ export function SignInForm({ nextPath }: SignInFormProps) {
           aria-label="Freedom Hustle — home"
           className="inline-flex self-start"
         >
-          <BrandLogo size={40} />
+          <BrandLogo size={64} />
         </Link>
 
         <div className="flex-1 flex items-center">

@@ -41,7 +41,7 @@ export function GuideAppShell({
               aria-label="Freedom Hustle — my guides"
               className="flex items-center"
             >
-              <BrandLogo size={32} />
+              <BrandLogo size={52} />
             </Link>
             <Link
               href="/my"

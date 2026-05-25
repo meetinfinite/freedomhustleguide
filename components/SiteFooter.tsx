@@ -26,7 +26,7 @@ export function SiteFooter() {
               aria-label="Freedom Hustle — home"
               className="inline-flex"
             >
-              <BrandLogo size={44} />
+              <BrandLogo size={72} />
             </Link>
             <p className="text-ink-500 text-sm mt-4 mb-4 max-w-sm leading-relaxed">
               New city drops, travel finds, and the occasional discount —
