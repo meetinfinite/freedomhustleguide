@@ -63,34 +63,37 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
         className="pointer-events-none absolute inset-y-0 left-1/2 -translate-x-1/2 w-[60%] max-w-[640px] bg-gradient-to-r from-transparent via-electric-500/15 to-transparent blur-2xl"
       />
 
-      <div className="relative flex items-center justify-center gap-x-3 gap-y-1 flex-wrap leading-tight text-sand-50">
+      <div className="relative flex items-center justify-center gap-x-3 gap-y-1 flex-wrap leading-tight">
         {/* Pulsing dot */}
         <span aria-hidden className="relative inline-flex w-2 h-2 shrink-0">
           <span className="absolute inset-0 rounded-full bg-electric-400 opacity-75 animate-ping" />
           <span className="relative inline-flex w-2 h-2 rounded-full bg-electric-500" />
         </span>
 
-        <span className="font-display tracking-tight text-[15px] sm:text-base uppercase">
-          All guides. Forever.{" "}
-          <span className="text-ink-400 line-through normal-case">£299</span>{" "}
-          £79
+        {/* Small uppercase label */}
+        <span className="text-[11px] uppercase tracking-[0.18em] text-sand-300 font-semibold">
+          Lifetime
         </span>
 
-        <span className="hidden sm:inline text-sand-300/90 text-[12px] normal-case">
-          with code{" "}
-          <span className="font-bold tracking-wider text-sand-50">
-            FREEDOM
+        {/* Strikethrough old + bold new price — the visual anchor */}
+        <span className="flex items-baseline gap-2">
+          <span className="text-sand-400/70 line-through text-[13px]">
+            £299
+          </span>
+          <span className="text-sand-50 font-bold text-[17px] sm:text-lg tracking-tight">
+            £79
           </span>
         </span>
 
-        {/* Pill badge — the one element allowed to stand out */}
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-electric-500 text-white text-[11px] font-bold tracking-wider uppercase">
-          Save 74%
+        {/* Pill = the code. Everything else points here. */}
+        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-electric-500 text-white text-[11px] font-bold tracking-[0.12em]">
+          <span className="opacity-80">CODE</span>
+          <span>FREEDOM</span>
         </span>
 
         <span
           aria-hidden
-          className="transition-transform duration-200 group-hover:translate-x-1"
+          className="text-sand-50 transition-transform duration-200 group-hover:translate-x-1"
         >
           →
         </span>
