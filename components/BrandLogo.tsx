@@ -3,22 +3,28 @@ import Image from "next/image";
 interface BrandLogoProps {
   /** Use the white-on-dark variant — for dark backgrounds. Default is the black logo. */
   variant?: "black" | "white";
-  /** Rendered pixel size (square). Defaults to 32. */
-  size?: number;
-  /** Optional className passed to the wrapper for layout tweaks. */
+  /** Rendered pixel height. Width is derived from the source aspect ratio. */
+  height?: number;
+  /** Optional className passed through to the <Image>. */
   className?: string;
 }
 
+// Source PNG dimensions — the filename still says "square" but the asset
+// is actually a horizontal lockup. Width derives from this ratio.
+const NATURAL_W = 1400;
+const NATURAL_H = 754;
+
 /**
- * Site-wide brand mark. Wraps the square PNG in next/image so it's
- * served as WebP/AVIF at the right pixel density per device.
+ * Site-wide brand mark. Renders the source PNG at the height you ask for
+ * and lets the width follow naturally from the source aspect ratio
+ * (≈1.857 : 1) — no squishing, no manual width math at each call site.
  *
- * We pass `width`/`height` at 2× the rendered size so Retina screens
- * get the sharp version without manually authoring an @2x asset.
+ * Wraps next/image so the asset is served as WebP/AVIF at the right
+ * pixel density per device.
  */
 export function BrandLogo({
   variant = "black",
-  size = 32,
+  height = 40,
   className = ""
 }: BrandLogoProps) {
   const src =
@@ -30,12 +36,12 @@ export function BrandLogo({
     <Image
       src={src}
       alt="Freedom Hustle"
-      width={size * 2}
-      height={size * 2}
+      width={NATURAL_W}
+      height={NATURAL_H}
       priority
-      sizes={`${size}px`}
+      sizes={`${Math.round(height * (NATURAL_W / NATURAL_H))}px`}
       className={className}
-      style={{ width: size, height: size }}
+      style={{ height, width: "auto" }}
     />
   );
 }
