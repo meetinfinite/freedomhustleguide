@@ -67,7 +67,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   },
   {
     slug: "cafes",
-    title: "Cafes to Work From",
+    title: "Cafés",
     description: "WiFi-tested, plug-checked, call-friendly.",
     icon: "☕",
     readingTime: "7 min"
@@ -77,6 +77,20 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     title: "Coworking Spaces",
     description: "Where it's worth it, where it's not.",
     icon: "🧑‍💻",
+    readingTime: "5 min"
+  },
+  {
+    slug: "restaurants",
+    title: "Restaurants",
+    description: "Real Thai food, expat favourites, the ones worth the trip.",
+    icon: "🍜",
+    readingTime: "6 min"
+  },
+  {
+    slug: "nightlife",
+    title: "Nightlife",
+    description: "Rooftops, dive bars, dance floors — who they're for.",
+    icon: "🍸",
     readingTime: "5 min"
   },
   {
@@ -157,6 +171,14 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
   },
   cafes: {
     description: "WiFi-tested, plug-checked, call-friendly."
+  },
+  restaurants: {
+    description:
+      "From street-stall legends to Michelin nods. What to skip on Sukhumvit."
+  },
+  nightlife: {
+    description:
+      "Rooftops, dive bars, the night markets that aren't tourist traps."
   },
   gyms: {
     description: "Commercial, Muay Thai, yoga, massage. Real prices."
