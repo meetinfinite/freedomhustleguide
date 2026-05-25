@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getGuide, listGuides, SHARED_SECTIONS_TEMPLATE } from "@/lib/guides";
+import { getGuide, listGuides } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
 import { BuyButton } from "@/components/BuyButton";
@@ -93,10 +93,11 @@ export default async function GuideLandingPage({
     ? guide
     : { ...guide, heroImage: guide.heroImage || guide.cardImage };
 
-  // Sections grid — live guides use their authored sections (sliced past
-  // the overview), soon guides use the shared template so waitlisters can
-  // see what they'll be getting.
-  const sectionsForGrid = isLive ? guide.sections.slice(1) : SHARED_SECTIONS_TEMPLATE.slice(1);
+  // Every guide now declares sections via buildSections() from the shared
+  // template — live and soon look identical structurally. Soon-city
+  // MDX content doesn't exist yet (gated by status check on the app),
+  // but the landing-page preview always renders the full template.
+  const sectionsForGrid = guide.sections;
 
   const faq = isLive ? FAQ_LIVE : buildSoonFAQ(guide.city);
 

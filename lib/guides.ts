@@ -32,12 +32,18 @@ export interface GuideSection {
 }
 
 /**
- * Generic 13-section template used on coming-soon city landing pages so
- * waitlisters can see what they'll be getting. Copy is city-agnostic but
- * intentionally mirrors the shape of the live BANGKOK_SECTIONS so the
- * "What's inside" grid stays visually consistent across the catalogue.
+ * Single source of truth for guide structure.
+ *
+ * Every city starts from this template. A city can override individual
+ * section fields via buildSections() — e.g. Bangkok tightens "Best Areas
+ * to Stay" to "Eight neighborhoods compared" because that's the actual
+ * count. New cities inherit the template wholesale until they have local
+ * tweaks worth committing.
+ *
+ * Adding a section here adds it to every guide. Renaming/reordering
+ * here propagates to every guide. That's the point.
  */
-export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
+export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "first-24-hours",
     title: "First 24 Hours",
@@ -119,87 +125,63 @@ export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
   }
 ];
 
-const BANGKOK_SECTIONS: GuideSection[] = [
-  {
-    slug: "first-24-hours",
-    title: "First 24 Hours",
-    description: "Airport to set-up. The exact order to do things in.",
-    icon: "⏱️",
-    readingTime: "5 min"
+/**
+ * Per-section overrides keyed by section slug. Anything you set here wins
+ * over the template default for that city. Anything you leave out falls
+ * back to the template.
+ *
+ * Use for genuinely city-specific tweaks (numbers, local transit names,
+ * cultural references). Don't use it to drift the structure — if you
+ * change the same field on every city, promote it to the template.
+ */
+type SectionOverrides = Partial<Record<string, Partial<GuideSection>>>;
+
+/** Apply per-section overrides to the template, preserving order. */
+export function buildSections(
+  overrides: SectionOverrides = {}
+): GuideSection[] {
+  return SECTION_TEMPLATE.map((s) => ({
+    ...s,
+    ...overrides[s.slug]
+  }));
+}
+
+/**
+ * Bangkok-specific tweaks. Anything not listed here uses the template
+ * verbatim. These are real differences worth surfacing on the landing
+ * page (e.g. "Eight neighborhoods" because we counted them).
+ */
+const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
+  "areas-to-stay": {
+    description: "Eight neighborhoods compared. Where to actually live."
   },
-  {
-    slug: "areas-to-stay",
-    title: "Best Areas to Stay",
-    description: "Eight neighborhoods compared. Where to actually live.",
-    icon: "🏙️",
-    readingTime: "8 min"
+  cafes: {
+    description: "WiFi-tested, plug-checked, call-friendly."
   },
-  {
-    slug: "monthly-budget",
-    title: "Monthly Budget",
-    description: "Three real budget tiers + interactive calculator.",
-    icon: "💸",
-    readingTime: "6 min"
+  gyms: {
+    description: "Commercial, Muay Thai, yoga, massage. Real prices."
   },
-  {
-    slug: "cafes",
-    title: "Cafes to Work From",
-    description: "WiFi-tested, plug-checked, call-friendly.",
-    icon: "☕",
-    readingTime: "7 min"
-  },
-  {
-    slug: "coworking",
-    title: "Coworking Spaces",
-    description: "Where it's worth it, where it's not.",
-    icon: "🧑‍💻",
-    readingTime: "5 min"
-  },
-  {
-    slug: "gyms",
-    title: "Gyms & Wellness",
-    description: "Commercial, Muay Thai, yoga, massage. Real prices.",
-    icon: "🥊",
-    readingTime: "5 min"
-  },
-  {
-    slug: "wifi-sim-apps",
-    title: "WiFi / SIM / Apps",
-    description: "Get connected in under an hour.",
-    icon: "📶",
-    readingTime: "4 min"
-  },
-  {
-    slug: "getting-around",
-    title: "Getting Around",
+  "getting-around": {
     description:
-      "BTS, MRT, Grab, taxis, scooters — honest rankings plus the safety stuff nobody else says.",
-    icon: "🚇",
-    readingTime: "6 min"
+      "BTS, MRT, Grab, taxis, scooters — honest rankings plus the safety stuff nobody else says."
   },
-  {
-    slug: "trips-and-activities",
-    title: "Trips & Activities",
-    description: "Trip gems and tourist traps. What's actually worth a weekend.",
-    icon: "🏝️",
-    readingTime: "6 min"
-  },
-  {
-    slug: "mistakes-to-avoid",
-    title: "Mistakes to Avoid",
-    description: "Every mistake we made, so you don't.",
-    icon: "⚠️",
-    readingTime: "4 min"
-  },
-  {
-    slug: "digital-nomad-toolkit",
-    title: "Digital Nomad Toolkit",
+  "trips-and-activities": {
     description:
-      "Apps, gear, banking, insurance and tools we actually use day-to-day.",
-    icon: "🧰",
-    readingTime: "4 min"
+      "Trip gems and tourist traps. What's actually worth a weekend."
+  },
+  "digital-nomad-toolkit": {
+    description:
+      "Apps, gear, banking, insurance and tools we actually use day-to-day."
   }
-];
+};
+
+const BANGKOK_SECTIONS = buildSections(BANGKOK_SECTION_OVERRIDES);
+
+/**
+ * @deprecated Use `SECTION_TEMPLATE` directly, or call `buildSections()`
+ * to get a fresh copy. Kept as an alias so older imports don't break.
+ */
+export const SHARED_SECTIONS_TEMPLATE = SECTION_TEMPLATE;
 
 export const GUIDES: GuideMeta[] = [
   {
@@ -250,7 +232,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Slow, green, spiritual" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "chiang-mai",
@@ -274,7 +256,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Chill, creative, low-key" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "koh-samui",
@@ -298,7 +280,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, slow, ocean-led" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "kuala-lumpur",
@@ -322,7 +304,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Urban, multicultural, food-led" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "da-nang",
@@ -346,7 +328,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Coastal, growing, friendly" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "seoul",
@@ -370,7 +352,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Fast, modern, intense" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "tokyo",
@@ -394,7 +376,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Layered, refined, hyper-organised" }
     ],
-    sections: []
+    sections: buildSections()
   },
   {
     slug: "phuket",
@@ -418,7 +400,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, polished, tourist-touched" }
     ],
-    sections: []
+    sections: buildSections()
   }
 ];
 
