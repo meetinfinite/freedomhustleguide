@@ -16,7 +16,7 @@ export function MobileSectionNav({ guide, basePath }: MobileSectionNavProps) {
 
   const current =
     guide.sections.find((s) => pathname === `${basePath}/${s.slug}`) ||
-    { title: "Dashboard", icon: "🧭" };
+    { title: "Overview", icon: "🧭" };
 
   return (
     <>
@@ -55,7 +55,7 @@ export function MobileSectionNav({ guide, basePath }: MobileSectionNavProps) {
               className="flex items-center gap-2 px-3 py-3 rounded-xl text-ink-800 hover:bg-sand-100"
             >
               <span>🧭</span>
-              <span>Dashboard</span>
+              <span>Overview</span>
             </Link>
             <ul className="mt-1">
               {guide.sections.map((s) => (

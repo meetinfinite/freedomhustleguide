@@ -30,7 +30,7 @@ export default async function GuideSectionPage({ params }: PageProps) {
     <div>
       <div className="mb-8 flex items-center gap-3 text-sm text-ink-500">
         <Link href={basePath} className="hover:text-ink-900">
-          ← Dashboard
+          ← Overview
         </Link>
         <span>·</span>
         <span>{section.readingTime}</span>

@@ -34,10 +34,12 @@ export default async function GuideAppDashboard({
           returnPath={basePath}
         />
       ) : null}
-      {guide.myMapsId ? (
-        <MyMapEmbed mid={guide.myMapsId} city={guide.city} />
-      ) : null}
       <GuideDashboard guide={guide} basePath={basePath} />
+      {guide.myMapsId ? (
+        <div className="mt-12">
+          <MyMapEmbed mid={guide.myMapsId} city={guide.city} />
+        </div>
+      ) : null}
     </>
   );
 }

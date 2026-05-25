@@ -23,7 +23,7 @@ export function SectionNav({ guide, basePath }: SectionNavProps) {
         }`}
       >
         <span>🧭</span>
-        <span>Dashboard</span>
+        <span>Overview</span>
       </Link>
       <div className="mt-4 mb-2 px-3 text-[11px] uppercase tracking-wider text-ink-400 font-semibold">
         Sections
