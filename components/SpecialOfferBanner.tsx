@@ -70,9 +70,9 @@ export function SpecialOfferBanner({ customerEmail }: SpecialOfferBannerProps) {
           <span className="relative inline-flex w-2 h-2 rounded-full bg-electric-500" />
         </span>
 
-        <span className="font-display tracking-tight text-[15px] sm:text-base">
-          Lifetime access to every guide{" "}
-          <span className="text-ink-400 line-through">£129</span>{" "}
+        <span className="font-display tracking-tight text-[15px] sm:text-base uppercase">
+          All guides. Forever.{" "}
+          <span className="text-ink-400 line-through normal-case">£129</span>{" "}
           £79
         </span>
 

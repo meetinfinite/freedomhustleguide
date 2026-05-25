@@ -161,7 +161,7 @@ export function SignInForm({ nextPath }: SignInFormProps) {
               "Personal nomad recommendations — cafes, coworking, gyms, neighbourhoods",
               "Honest reviews, lived experience, no tourist fluff",
               "Interactive checklists that save your progress",
-              "Lifetime updates — the city changes, so does the guide"
+              "Regular updates — the city changes, so does the guide"
             ].map((x) => (
               <li key={x} className="flex items-start gap-2">
                 <span className="text-electric-300 mt-1">✓</span>

@@ -11,6 +11,11 @@ export interface GuideMeta {
   /** Stripe Price ID for the single-guide product. null = no Stripe product yet. */
   stripePriceId: string | null;
   status: GuideStatus;
+  /**
+   * Optional override for the "Coming soon" pill on cards/badges.
+   * e.g. set to "In progress" for cities actively being researched.
+   */
+  progressLabel?: string;
   heroImage: string;
   /** Square-ish image used on the homepage guide card. */
   cardImage: string;
@@ -34,11 +39,11 @@ export interface GuideSection {
  */
 export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
   {
-    slug: "overview",
-    title: "Overview",
-    description: "What the guide gets you in 60 seconds.",
-    icon: "🧭",
-    readingTime: "2 min"
+    slug: "first-24-hours",
+    title: "First 24 Hours",
+    description: "Airport to set-up. The exact order to do things in.",
+    icon: "⏱️",
+    readingTime: "5 min"
   },
   {
     slug: "areas-to-stay",
@@ -46,13 +51,6 @@ export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
     description: "Neighbourhoods compared honestly. Where to actually live.",
     icon: "🏙️",
     readingTime: "8 min"
-  },
-  {
-    slug: "first-24-hours",
-    title: "First 24 Hours",
-    description: "Airport to set-up. The exact order to do things in.",
-    icon: "⏱️",
-    readingTime: "5 min"
   },
   {
     slug: "monthly-budget",
@@ -92,21 +90,15 @@ export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
   {
     slug: "getting-around",
     title: "Getting Around",
-    description: "Transit, ride-shares, taxis — honest rankings.",
+    description:
+      "Transit, ride-shares, taxis, scooters — honest rankings plus the safety stuff nobody else says.",
     icon: "🚇",
-    readingTime: "4 min"
+    readingTime: "6 min"
   },
   {
-    slug: "scooter-reality-check",
-    title: "Scooter Reality Check",
-    description: "The honest version. Don't learn here.",
-    icon: "🛵",
-    readingTime: "3 min"
-  },
-  {
-    slug: "weekend-trips",
-    title: "Weekend Trips",
-    description: "Trips out of the city ranked by how worth it they are.",
+    slug: "trips-and-activities",
+    title: "Trips & Activities",
+    description: "Trip gems and tourist traps. What's worth your weekend.",
     icon: "🏝️",
     readingTime: "6 min"
   },
@@ -118,21 +110,22 @@ export const SHARED_SECTIONS_TEMPLATE: GuideSection[] = [
     readingTime: "4 min"
   },
   {
-    slug: "resource-vault",
-    title: "Resource Vault",
-    description: "Every link you'll actually use.",
-    icon: "🗂️",
-    readingTime: "3 min"
+    slug: "digital-nomad-toolkit",
+    title: "Digital Nomad Toolkit",
+    description:
+      "Our tested apps, gear, banking, insurance and tools — the stack that actually works.",
+    icon: "🧰",
+    readingTime: "4 min"
   }
 ];
 
 const BANGKOK_SECTIONS: GuideSection[] = [
   {
-    slug: "overview",
-    title: "Overview",
-    description: "What this guide gets you in 60 seconds.",
-    icon: "🧭",
-    readingTime: "2 min"
+    slug: "first-24-hours",
+    title: "First 24 Hours",
+    description: "Airport to set-up. The exact order to do things in.",
+    icon: "⏱️",
+    readingTime: "5 min"
   },
   {
     slug: "areas-to-stay",
@@ -140,13 +133,6 @@ const BANGKOK_SECTIONS: GuideSection[] = [
     description: "Eight neighborhoods compared. Where to actually live.",
     icon: "🏙️",
     readingTime: "8 min"
-  },
-  {
-    slug: "first-24-hours",
-    title: "First 24 Hours",
-    description: "Airport to set-up. The exact order to do things in.",
-    icon: "⏱️",
-    readingTime: "5 min"
   },
   {
     slug: "monthly-budget",
@@ -186,21 +172,15 @@ const BANGKOK_SECTIONS: GuideSection[] = [
   {
     slug: "getting-around",
     title: "Getting Around",
-    description: "BTS, MRT, Grab, taxis — honest rankings.",
+    description:
+      "BTS, MRT, Grab, taxis, scooters — honest rankings plus the safety stuff nobody else says.",
     icon: "🚇",
-    readingTime: "4 min"
+    readingTime: "6 min"
   },
   {
-    slug: "scooter-reality-check",
-    title: "Scooter Reality Check",
-    description: "The honest version. Don't learn here.",
-    icon: "🛵",
-    readingTime: "3 min"
-  },
-  {
-    slug: "weekend-trips",
-    title: "Weekend Trips",
-    description: "Ten trips ranked by how worth it they are.",
+    slug: "trips-and-activities",
+    title: "Trips & Activities",
+    description: "Trip gems and tourist traps. What's actually worth a weekend.",
     icon: "🏝️",
     readingTime: "6 min"
   },
@@ -212,11 +192,12 @@ const BANGKOK_SECTIONS: GuideSection[] = [
     readingTime: "4 min"
   },
   {
-    slug: "resource-vault",
-    title: "Resource Vault",
-    description: "Every link you'll actually use.",
-    icon: "🗂️",
-    readingTime: "3 min"
+    slug: "digital-nomad-toolkit",
+    title: "Digital Nomad Toolkit",
+    description:
+      "Apps, gear, banking, insurance and tools we actually use day-to-day.",
+    icon: "🧰",
+    readingTime: "4 min"
   }
 ];
 
@@ -257,6 +238,7 @@ export const GUIDES: GuideMeta[] = [
     price: "£29",
     stripePriceId: null,
     status: "soon",
+    progressLabel: "In progress",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",

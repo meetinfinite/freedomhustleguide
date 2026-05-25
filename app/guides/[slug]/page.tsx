@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, listGuides, SHARED_SECTIONS_TEMPLATE } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
@@ -28,19 +27,15 @@ const FAQ_LIVE = [
   },
   {
     q: "How fresh is the information?",
-    a: "Reviewed quarterly. Prices, areas, and apps change — we update without you needing to re-buy."
+    a: "Updated regularly. Prices, areas, and apps change — we update without you needing to re-buy."
   },
   {
     q: "Do I need it if I've already been there as a tourist?",
     a: "Living and working in a place is genuinely different. Things like where to actually rent for a month, which cafes have plugs, and what to do about WiFi only matter when you stay."
   },
   {
-    q: "Is there a refund?",
-    a: "Yes — 7-day no-questions refund if it isn't useful."
-  },
-  {
     q: "Will there be more cities?",
-    a: "Yes. Ubud, Chiang Mai, Koh Samui and Kuala Lumpur are next. Each guide is bought separately."
+    a: "Yes. Ubud, Chiang Mai, Koh Samui and Kuala Lumpur are next. Each guide is bought separately, or Lifetime unlocks every current and future city."
   }
 ];
 
@@ -56,7 +51,7 @@ function buildSoonFAQ(city: string) {
     },
     {
       q: "How fresh is the information?",
-      a: "We do the research on the ground and review every guide quarterly after launch. Prices, areas, and apps change — we update without you needing to re-buy."
+      a: "We do the research on the ground and update every guide regularly after launch. Prices, areas, and apps change — we update without you needing to re-buy."
     },
     {
       q: `Will the ${city} guide cover everything Bangkok does?`,
@@ -135,8 +130,6 @@ export default async function GuideLandingPage({
         primaryAction={primaryCTA(
           "px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition shadow-pop"
         )}
-        secondaryHref="/signin"
-        secondaryLabel="Sign in"
       />
 
       {/* What's inside */}
@@ -182,7 +175,7 @@ export default async function GuideLandingPage({
                 Who it's for
               </p>
               <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                Built for nomads who actually work.
+                First-time nomads or seasoned pros.
               </h2>
               <p className="text-ink-600 mt-4 text-lg leading-relaxed">
                 If you're moving abroad to keep your remote job, freelance, or
@@ -225,7 +218,7 @@ export default async function GuideLandingPage({
               d: "We name the areas to skip, the cafes that look great but have terrible WiFi, and the trips that aren't worth it."
             },
             {
-              t: "Updated quarterly",
+              t: "Updated regularly",
               d: "Cities change. Prices change. Apps change. You get updates without re-buying."
             }
           ].map((x) => (
@@ -269,29 +262,23 @@ export default async function GuideLandingPage({
               </h2>
               <p className="text-sand-200 mt-4 text-lg leading-relaxed">
                 {isLive
-                  ? "Instant access. Lifetime updates. 7-day refund if it isn't useful."
+                  ? "Instant access. Regular updates as the city changes."
                   : `Get the ${guide.city} guide the moment it's ready, with a founders discount only the waitlist gets.`}
               </p>
-              <div className="mt-7 flex flex-wrap gap-3">
+              <div className="mt-7">
                 {primaryCTA(
                   "px-7 py-3.5 rounded-full bg-sand-50 text-ink-900 font-semibold hover:bg-white transition cursor-pointer"
                 )}
-                <Link
-                  href="/signin"
-                  className="px-6 py-3 rounded-full border border-sand-50/30 text-sand-50 font-medium hover:border-sand-50 transition"
-                >
-                  Sign in
-                </Link>
               </div>
             </div>
             <ul className="space-y-3">
               {[
-                "13 full sections, mobile-friendly app",
+                "Every section, mobile-friendly app",
                 "Interactive budget calculator",
                 "Living checklists that save your progress",
                 "Real cafe + coworking + gym data",
-                "Honest reviews of weekend trips",
-                "Lifetime updates as the city changes"
+                "Trip gems and tourist traps, ranked",
+                "Regular updates as the city changes"
               ].map((x) => (
                 <li
                   key={x}
@@ -350,8 +337,6 @@ export default async function GuideLandingPage({
         primaryAction={primaryCTA(
           "px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition cursor-pointer"
         )}
-        secondaryHref="/signin"
-        secondaryLabel="Sign in"
       />
 
       <SiteFooter />

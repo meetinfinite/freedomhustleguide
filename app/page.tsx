@@ -63,15 +63,16 @@ export default async function HomePage() {
         <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-28 sm:pt-32 sm:pb-40">
           <div className="max-w-3xl fade-up">
             <p className="text-xs uppercase tracking-[0.18em] text-sand-50 font-semibold mb-4">
-              Digital nomad travel guides
+              By Arni &amp; Valeria · Personal city playbooks
             </p>
             <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50">
-              <span className="text-electric-300">Everything</span> we wish
-              someone had told us.
+              Travel guides for{" "}
+              <span className="text-electric-300">digital nomads</span>.
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed">
-              Personal nomad playbooks from years of living it. Cafes,
-              coworking, neighbourhoods, gyms — skip to the life you came for.
+              Built from years of living it — not researched from a desk.
+              Cafes, coworking, neighbourhoods, gyms — skip to the life you
+              came for.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
@@ -116,7 +117,7 @@ export default async function HomePage() {
                     <span className="font-semibold ml-1">4.9</span>
                   </div>
                   <div className="text-sand-200/80 text-xs">
-                    1,200+ nomads landed
+                    1,200+ happy nomads
                   </div>
                 </div>
               </div>
@@ -174,7 +175,7 @@ export default async function HomePage() {
                 {!isLive ? (
                   <div className="absolute top-4 right-4">
                     <span className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-ink-900/60 backdrop-blur text-sand-200">
-                      Coming soon
+                      {g.progressLabel ?? "Coming soon"}
                     </span>
                   </div>
                 ) : null}

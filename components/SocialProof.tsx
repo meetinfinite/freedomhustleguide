@@ -37,10 +37,10 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const STATS = [
-  { value: "1,200+", label: "Nomads landed" },
+  { value: "1,200+", label: "Happy nomads" },
   { value: "4.9★", label: "Avg buyer rating" },
   { value: "30+", label: "Countries shipped to" },
-  { value: "100%", label: "7-day refund rate" }
+  { value: "9", label: "Cities live or in progress" }
 ];
 
 export function SocialProof() {
