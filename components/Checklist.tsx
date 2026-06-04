@@ -5,10 +5,28 @@ import { useEffect, useState } from "react";
 interface ChecklistProps {
   id: string;
   title?: string;
-  items: string[];
+  /**
+   * Pipe-delimited list of items. Authored as a plain string so Tina's
+   * MDX parser can read it — the previous array-of-strings prop tripped
+   * Tina and made the editor render blank.
+   * Example: items="Land safely|Buy a SIM|Find an ATM"
+   */
+  items: string | string[];
+}
+
+/** Parse a pipe-delimited string into an array, trimming each item.
+ *  Accepts arrays too for back-compat during the refactor. */
+function parseItems(items: string | string[]): string[] {
+  if (Array.isArray(items)) return items;
+  if (!items) return [];
+  return items
+    .split("|")
+    .map((s) => s.trim())
+    .filter(Boolean);
 }
 
 export function Checklist({ id, title, items }: ChecklistProps) {
+  const list = parseItems(items);
   const storageKey = `fh:checklist:${id}`;
   const [done, setDone] = useState<Record<number, boolean>>({});
   const [mounted, setMounted] = useState(false);
@@ -34,7 +52,7 @@ export function Checklist({ id, title, items }: ChecklistProps) {
   }
 
   const completed = Object.values(done).filter(Boolean).length;
-  const pct = items.length ? Math.round((completed / items.length) * 100) : 0;
+  const pct = list.length ? Math.round((completed / list.length) * 100) : 0;
 
   return (
     <div className="rounded-3xl bg-white border border-ink-100 shadow-card p-6 my-6">
@@ -45,7 +63,7 @@ export function Checklist({ id, title, items }: ChecklistProps) {
           </h4>
           {mounted ? (
             <span className="text-xs font-semibold text-ink-500">
-              {completed}/{items.length} done
+              {completed}/{list.length} done
             </span>
           ) : null}
         </div>
@@ -59,7 +77,7 @@ export function Checklist({ id, title, items }: ChecklistProps) {
       </div>
 
       <ul className="space-y-2 list-none !pl-0">
-        {items.map((item, i) => {
+        {list.map((item, i) => {
           const isDone = mounted && done[i];
           return (
             <li

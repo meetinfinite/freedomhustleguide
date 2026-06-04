@@ -150,7 +150,15 @@ const checklistTemplate: Template = {
       description: "Used as the localStorage key. Don't change after publishing or users lose progress."
     },
     { name: "title", label: "Title", type: "string" },
-    { name: "items", label: "Items", type: "string", list: true, required: true }
+    {
+      name: "items",
+      label: "Items",
+      type: "string",
+      required: true,
+      ui: { component: "textarea" },
+      description:
+        "Separate each item with a pipe character |  e.g. Land safely|Buy a SIM|Find an ATM"
+    }
   ]
 };
 
