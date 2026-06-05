@@ -192,7 +192,7 @@ export function LockedAccess({
             Inside the guide
           </p>
           <h2 className="font-display text-3xl tracking-tight">
-            13 sections. One clean app.
+            {guide.sections.length} sections. One clean app.
           </h2>
           <ul className="mt-6 grid grid-cols-2 gap-2 text-sm">
             {guide.sections.slice(0, 8).map((s) => (

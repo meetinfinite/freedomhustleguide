@@ -185,25 +185,32 @@ If you want guide metadata (price, hero quick stats, FAQ) editable in Tina too, 
 
 ## Content (file reference)
 
-All guide content lives in `content/guides/<slug>/*.mdx`. The Bangkok guide
-has 13 sections:
+The guide's section list is defined in `lib/guides.ts` (`SECTION_TEMPLATE` +
+per-city overrides). The Bangkok guide has 14 sections. Source of truth for
+each section's body is its Notion page (`notionPageId` in the overrides); the
+matching `content/guides/<slug>/*.mdx` file is the fallback used when Notion
+isn't configured or fails to load.
 
 ```
 content/guides/bangkok/
-  overview.mdx
-  areas-to-stay.mdx
   first-24-hours.mdx
+  areas-to-stay.mdx
   monthly-budget.mdx
   cafes.mdx
   coworking.mdx
+  restaurants.mdx
+  nightlife.mdx
   gyms.mdx
-  wifi-sim-apps.mdx
+  wifi-sim-apps.mdx        # currently the live source — no Notion page yet
   getting-around.mdx
-  scooter-reality-check.mdx
-  weekend-trips.mdx
+  trips-and-activities.mdx
   mistakes-to-avoid.mdx
-  resource-vault.mdx
+  digital-nomad-toolkit.mdx
 ```
+
+> `visa-immigration` renders from Notion only — it has no MDX fallback file,
+> so if Notion is unavailable that section 404s. Export its Notion content to
+> `content/guides/bangkok/visa-immigration.mdx` if you want it covered too.
 
 Each file is plain MDX — write markdown, drop in components, ship.
 
