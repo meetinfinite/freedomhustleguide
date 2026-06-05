@@ -3,6 +3,7 @@ import type { NotionBlock } from "@/lib/notion";
 import { WarningCard } from "./WarningCard";
 import { ProTip } from "./ProTip";
 import { Checklist } from "./Checklist";
+import { PlaceCard } from "./PlaceCard";
 
 /**
  * Render a Notion page's blocks as React.
@@ -175,6 +176,41 @@ function checklistId(sectionPageId: string, index: number) {
   return `notion-${sectionPageId.slice(-6)}-${index}`;
 }
 
+/** Match Google Maps URLs we know how to resolve into PlaceCards. */
+const GMAPS_HOST_RE =
+  /^https?:\/\/(www\.)?(google\.[^/]+\/maps|maps\.google\.[^/]+|maps\.app\.goo\.gl|goo\.gl\/maps)/i;
+
+/**
+ * If a bulleted_list_item begins with a bold rich-text segment whose
+ * href is a Google Maps URL, treat the whole bullet as a venue entry
+ * and surface it as a PlaceCard. The rest of the rich text (after the
+ * bold link) becomes the descriptive notes.
+ */
+interface VenueBullet {
+  url: string;
+  name: string;
+  /** Rest of the bullet — area, "—" separator, free-form description, "(our pick)" etc. */
+  notes: NotionRichText[];
+  /** True when the team marked the entry "(our pick)" — we use it to set a default rating. */
+  isPick: boolean;
+}
+
+function parseVenueBullet(rt: NotionRichText[] | undefined): VenueBullet | null {
+  if (!rt || rt.length === 0) return null;
+  const first = rt[0];
+  if (!first.href || !GMAPS_HOST_RE.test(first.href)) return null;
+  if (!first.annotations?.bold) return null;
+
+  const name = (first.plain_text || "").trim();
+  if (!name) return null;
+
+  const notes = rt.slice(1);
+  const tail = richTextToString(notes).toLowerCase();
+  const isPick = tail.includes("our pick");
+
+  return { url: first.href, name, notes, isPick };
+}
+
 export function NotionRenderer({
   pageId,
   blocks
@@ -207,6 +243,34 @@ export function NotionRenderer({
         />
       );
       continue;
+    }
+
+    // Venue bullets — when a bulleted_list_item starts with a bold
+    // text segment linking to a Google Maps URL, render the bullet as
+    // a PlaceCard. Consecutive venue bullets render as a stack of
+    // cards (one PlaceCard each).
+    if (b.type === "bulleted_list_item") {
+      const venue = parseVenueBullet(blockText(b));
+      if (venue) {
+        // Build the descriptive notes by stripping the leading " · "
+        // separator the team uses between the area and the description.
+        const notesText = richTextToString(venue.notes)
+          .replace(/^\s*[·•]\s*/, "")
+          .trim();
+        out.push(
+          <PlaceCard
+            key={`venue-${i}`}
+            url={venue.url}
+            name={venue.name}
+            ourRating={venue.isPick ? 9 : undefined}
+            loveLabel="Why we love it"
+            lovePoints={notesText ? [notesText] : undefined}
+          />
+        );
+        i++;
+        continue;
+      }
+      // Fall through to default <ul><li> handling below.
     }
 
     // Quote handling — a tagged quote (DON'T —, PRO TIP —, etc.)

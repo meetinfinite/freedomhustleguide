@@ -145,6 +145,30 @@ function extractName(url: string): string | null {
   }
 }
 
+/** Pulls a search query from a /maps/search/<query> URL. Used when the
+ *  team pastes a Maps search link rather than an opened place link. */
+function extractSearchQuery(url: string): string | null {
+  // Path form: /maps/search/Foo+Bar
+  const path = url.match(/\/maps\/search\/([^/?@]+)/);
+  if (path) {
+    try {
+      return decodeURIComponent(path[1]).replace(/\+/g, " ");
+    } catch {
+      return path[1];
+    }
+  }
+  // Query form: /maps/search/?api=1&query=Foo+Bar
+  const query = url.match(/[?&]query=([^&]+)/);
+  if (query) {
+    try {
+      return decodeURIComponent(query[1]).replace(/\+/g, " ");
+    } catch {
+      return query[1];
+    }
+  }
+  return null;
+}
+
 // ---------------------------------------------------------------------------
 // Google Places API (New)
 // ---------------------------------------------------------------------------
@@ -291,10 +315,13 @@ export async function getPlaceFromUrl(
   // 2. Find Place ID
   let placeId = extractPlaceId(resolved);
   if (!placeId) {
+    // Try in order: /place/<name>, /maps/search/<query>, lat/lng coords
     const name = extractName(resolved);
+    const searchQuery = extractSearchQuery(resolved);
     const coords = extractCoords(resolved);
-    if (name) {
-      placeId = await findPlaceByText(name, coords ?? undefined);
+    const query = name || searchQuery;
+    if (query) {
+      placeId = await findPlaceByText(query, coords ?? undefined);
     } else if (coords) {
       placeId = await findPlaceByText(`${coords.lat},${coords.lng}`, coords);
     }
