@@ -268,7 +268,7 @@ export function NotionRenderer({
             url={venue.url}
             name={venue.name}
             ourPick={venue.isPick}
-            loveLabel="Why we love it"
+            loveLabel="Good to know"
             lovePoints={notesText ? [notesText] : undefined}
             prefetched={places[venue.url]}
           />
