@@ -60,49 +60,86 @@ function richTextToReact(rt: NotionRichText[] | undefined) {
 
 // ---------- Quote → callout mapping ----------
 
-function renderQuote(rt: NotionRichText[] | undefined, key: string) {
-  const text = richTextToString(rt).trim();
-  const m = text.match(/^([A-Z][A-Z'\s]+)\s*[—–-]\s*(.*)/s);
-  if (m) {
-    const tag = m[1].trim().toUpperCase();
-    const remainder = m[2];
+/** Detect a "tagged" quote — one whose text starts with an uppercase tag
+ *  followed by an em-dash, hyphen or en-dash (DON'T — …, PRO TIP — …). */
+const TAGGED_QUOTE_REGEX = /^([A-Z][A-Z'\s]+?)\s*[—–-]\s*(.*)/s;
 
-    if (tag.startsWith("DON'T") || tag === "AVOID" || tag === "WARNING") {
-      return (
-        <WarningCard key={key} title={tag} severity="warn">
-          {remainder}
-        </WarningCard>
-      );
-    }
-    if (tag.startsWith("DANGER") || tag === "NEVER") {
-      return (
-        <WarningCard key={key} title={tag} severity="danger">
-          {remainder}
-        </WarningCard>
-      );
-    }
-    if (tag.startsWith("PRO TIP")) {
-      return (
-        <ProTip key={key} label="Pro tip">
-          {remainder}
-        </ProTip>
-      );
-    }
-    if (tag.startsWith("GOOD TO KNOW") || tag === "FYI" || tag === "NOTE") {
-      return (
-        <ProTip key={key} label="Good to know">
-          {remainder}
-        </ProTip>
-      );
-    }
-  }
-  // Fallback — render as a real blockquote
+function parseQuoteTag(
+  rt: NotionRichText[] | undefined
+): { tag: string; title: string } | null {
+  const text = richTextToString(rt).trim();
+  const m = text.match(TAGGED_QUOTE_REGEX);
+  if (!m) return null;
+  return { tag: m[1].trim().toUpperCase(), title: m[2].trim() };
+}
+
+/** Render an untagged quote block as a plain styled blockquote. */
+function renderPlainQuote(rt: NotionRichText[] | undefined, key: string) {
   return (
     <blockquote
       key={key}
       className="border-l-4 border-electric-500 pl-4 italic text-ink-700 my-4"
     >
       {richTextToReact(rt)}
+    </blockquote>
+  );
+}
+
+/** Render a tagged quote (DON'T / PRO TIP / GOOD TO KNOW / DANGER) with
+ *  optional body blocks (consecutive untagged quotes that immediately
+ *  follow it — that's the team's authoring convention in Notion). */
+function renderTaggedCallout(
+  tag: string,
+  title: string,
+  bodyBlocks: NotionBlock[],
+  key: string
+) {
+  const body = bodyBlocks.length ? (
+    <>
+      {bodyBlocks.map((qb, idx) => (
+        <p key={idx}>{richTextToReact(blockText(qb))}</p>
+      ))}
+    </>
+  ) : null;
+
+  if (tag.startsWith("DON'T") || tag === "AVOID" || tag === "WARNING") {
+    return (
+      <WarningCard key={key} title={title} severity="warn">
+        {body}
+      </WarningCard>
+    );
+  }
+  if (tag.startsWith("DANGER") || tag === "NEVER") {
+    return (
+      <WarningCard key={key} title={title} severity="danger">
+        {body}
+      </WarningCard>
+    );
+  }
+  if (tag.startsWith("PRO TIP")) {
+    return (
+      <ProTip key={key} label="Pro tip">
+        {title ? <p className="!font-semibold text-ink-900">{title}</p> : null}
+        {body}
+      </ProTip>
+    );
+  }
+  if (tag.startsWith("GOOD TO KNOW") || tag === "FYI" || tag === "NOTE") {
+    return (
+      <ProTip key={key} label="Good to know">
+        {title ? <p className="!font-semibold text-ink-900">{title}</p> : null}
+        {body}
+      </ProTip>
+    );
+  }
+  // Unknown tag — fall back to a plain blockquote of the whole thing
+  return (
+    <blockquote
+      key={key}
+      className="border-l-4 border-electric-500 pl-4 italic text-ink-700 my-4"
+    >
+      <strong>{tag}</strong> — {title}
+      {body}
     </blockquote>
   );
 }
@@ -172,6 +209,33 @@ export function NotionRenderer({
       continue;
     }
 
+    // Quote handling — a tagged quote (DON'T —, PRO TIP —, etc.)
+    // absorbs the subsequent consecutive untagged quote blocks as its
+    // body. That matches the team's authoring pattern in Notion: one
+    // quote with the tag + title, then more quote blocks underneath
+    // for the body paragraphs.
+    if (b.type === "quote") {
+      const parsed = parseQuoteTag(blockText(b));
+      if (parsed) {
+        const bodyBlocks: NotionBlock[] = [];
+        let j = i + 1;
+        while (j < blocks.length && blocks[j].type === "quote") {
+          if (parseQuoteTag(blockText(blocks[j]))) break;
+          bodyBlocks.push(blocks[j]);
+          j++;
+        }
+        out.push(
+          renderTaggedCallout(parsed.tag, parsed.title, bodyBlocks, `cb-${i}`)
+        );
+        i = j;
+        continue;
+      }
+      // Untagged quote — plain blockquote
+      out.push(renderPlainQuote(blockText(b), `b-${i}`));
+      i++;
+      continue;
+    }
+
     out.push(renderBlock(b, `b-${i}`));
     i++;
   }
@@ -207,7 +271,10 @@ function renderBlock(b: NotionBlock, key: string): React.ReactNode {
         </ol>
       );
     case "quote":
-      return renderQuote(blockText(b), key);
+      // Untagged quotes only reach here as a defensive fallback —
+      // the main loop already handles all quote blocks (tagged and
+      // untagged) ahead of this switch.
+      return renderPlainQuote(blockText(b), key);
     case "divider":
       return <hr key={key} className="my-8 border-ink-100" />;
     case "image": {
