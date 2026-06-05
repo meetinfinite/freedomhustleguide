@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { PlaceData as ServerPlaceData } from "@/lib/places";
 
 interface PlaceCardProps {
   url: string;
@@ -20,6 +21,12 @@ interface PlaceCardProps {
   loveLabel?: string;
   /** Your bullet points — why you like it. */
   lovePoints?: string[];
+  /**
+   * Pre-resolved place data from the server (NotionRenderer passes
+   * this in). When set, the component skips its own /api/place fetch
+   * and renders directly — much faster when many cards share a page.
+   */
+  prefetched?: ServerPlaceData;
 }
 
 interface CarouselPhoto {
@@ -50,13 +57,24 @@ export function PlaceCard({
   ourPick,
   ownPhotos,
   loveLabel,
-  lovePoints
+  lovePoints,
+  prefetched
 }: PlaceCardProps) {
-  const [state, setState] = useState<FetchState>({ status: "idle" });
+  // If place data was resolved server-side, start in "ok" with the
+  // data baked in — no client fetch, no loading flash, no API round-
+  // trip. Falls through to the client fetch only when prefetched is
+  // not supplied (legacy MDX content path).
+  const [state, setState] = useState<FetchState>(() =>
+    prefetched
+      ? { status: "ok", place: prefetched as PlaceData }
+      : { status: "idle" }
+  );
   const [photoIdx, setPhotoIdx] = useState(0);
 
   useEffect(() => {
     if (!url) return;
+    // Already prefetched — nothing to do
+    if (prefetched) return;
     let cancelled = false;
     setState({ status: "loading" });
     setPhotoIdx(0);
@@ -78,7 +96,7 @@ export function PlaceCard({
     return () => {
       cancelled = true;
     };
-  }, [url]);
+  }, [url, prefetched]);
 
   // ----- Loading skeleton -----
   if (state.status === "loading" || state.status === "idle") {

@@ -42,7 +42,13 @@ export default async function GuideSectionPage({ params }: PageProps) {
     // Pulled from the italic first paragraph by fetchSectionPage. The
     // body blocks already have that paragraph removed.
     description = notionPage.description;
-    body = <NotionRenderer pageId={notionPage.id} blocks={notionPage.blocks} />;
+    body = (
+      <NotionRenderer
+        pageId={notionPage.id}
+        blocks={notionPage.blocks}
+        places={notionPage.places}
+      />
+    );
   } else {
     const mdx = await readSection(params.slug, params.section);
     if (!mdx) notFound();

@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import type { NotionBlock } from "@/lib/notion";
+import type { PlaceData } from "@/lib/places";
 import { WarningCard } from "./WarningCard";
 import { ProTip } from "./ProTip";
 import { Checklist } from "./Checklist";
@@ -213,10 +214,14 @@ function parseVenueBullet(rt: NotionRichText[] | undefined): VenueBullet | null 
 
 export function NotionRenderer({
   pageId,
-  blocks
+  blocks,
+  places = {}
 }: {
   pageId: string;
   blocks: NotionBlock[];
+  /** URL → prefetched place data, supplied by fetchSectionPage so the
+   *  client doesn't need to round-trip /api/place for each card. */
+  places?: Record<string, PlaceData>;
 }) {
   // First pass: group consecutive to_do blocks into Checklist clusters.
   const out: React.ReactNode[] = [];
@@ -265,6 +270,7 @@ export function NotionRenderer({
             ourPick={venue.isPick}
             loveLabel="Why we love it"
             lovePoints={notesText ? [notesText] : undefined}
+            prefetched={places[venue.url]}
           />
         );
         i++;

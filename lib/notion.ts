@@ -1,4 +1,9 @@
 import { Client } from "@notionhq/client";
+import { getPlaceFromUrl, type PlaceData } from "./places";
+
+/** URL pattern: links the team uses for venue place lookups. */
+const GMAPS_HOST_RE =
+  /^https?:\/\/(www\.)?(google\.[^/]+\/maps|maps\.google\.[^/]+|maps\.app\.goo\.gl|goo\.gl\/maps)/i;
 
 let cachedClient: Client | null = null;
 
@@ -43,6 +48,14 @@ export interface NotionPage {
    */
   description?: string;
   blocks: NotionBlock[];
+  /**
+   * Place data pre-resolved at fetch time for every venue bullet's
+   * Google Maps URL. The PlaceCard component renders straight from
+   * this map instead of doing its own client-side /api/place fetch,
+   * which collapses 18+ Cafés-page round-trips into one server-side
+   * batch that's cached for the section's revalidate window.
+   */
+  places: Record<string, PlaceData>;
 }
 
 // ---------------------------------------------------------------------------
@@ -138,5 +151,56 @@ export async function fetchSectionPage(pageId: string): Promise<NotionPage | nul
     }
   }
 
-  return { id: pageId, title, description, blocks };
+  // Prefetch place data for every venue bullet in parallel (capped at
+  // 5 concurrent requests so we don't slam Google Places or our own
+  // file-cache during a single page render).
+  const places = await prefetchVenuePlaces(blocks);
+
+  return { id: pageId, title, description, blocks, places };
+}
+
+/** Walk the blocks, find venue-style bullets (bold + linked text whose
+ *  href looks like a Google Maps URL), resolve each href to PlaceData
+ *  via the existing places client. Returns a URL → place map. */
+async function prefetchVenuePlaces(
+  blocks: NotionBlock[]
+): Promise<Record<string, PlaceData>> {
+  // Collect distinct venue URLs from the page
+  const urls: string[] = [];
+  for (const b of blocks) {
+    if (b.type !== "bulleted_list_item") continue;
+    const rt = (
+      b.data as {
+        rich_text?: {
+          plain_text?: string;
+          href?: string | null;
+          annotations?: { bold?: boolean };
+        }[];
+      }
+    )?.rich_text;
+    const first = rt?.[0];
+    if (!first || !first.annotations?.bold) continue;
+    if (!first.href || !GMAPS_HOST_RE.test(first.href)) continue;
+    if (!urls.includes(first.href)) urls.push(first.href);
+  }
+  if (urls.length === 0) return {};
+
+  const out: Record<string, PlaceData> = {};
+  const queue = urls.slice();
+  const concurrency = Math.min(5, queue.length);
+  await Promise.all(
+    Array.from({ length: concurrency }, async () => {
+      while (queue.length) {
+        const url = queue.shift();
+        if (!url) return;
+        try {
+          const data = await getPlaceFromUrl(url);
+          if (data) out[url] = data;
+        } catch (err) {
+          console.warn(`[notion] place prefetch failed for ${url}:`, err);
+        }
+      }
+    })
+  );
+  return out;
 }
