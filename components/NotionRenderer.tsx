@@ -381,6 +381,61 @@ function renderBlock(b: NotionBlock, key: string): React.ReactNode {
         </p>
       );
     }
+    case "table": {
+      interface TableData {
+        table_width?: number;
+        has_column_header?: boolean;
+      }
+      interface TableRowData {
+        cells?: NotionRichText[][];
+      }
+      const tbl = b.data as TableData;
+      const rows = (b.children || []).filter((c) => c.type === "table_row");
+      if (rows.length === 0) return null;
+      const hasHeader = Boolean(tbl.has_column_header);
+      return (
+        <div key={key} className="my-6 overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            {hasHeader ? (
+              <thead>
+                <tr className="bg-sand-100">
+                  {((rows[0].data as TableRowData).cells || []).map((cell, j) => (
+                    <th
+                      key={j}
+                      className="px-3 py-2 text-left font-semibold text-ink-900 border-b border-ink-200"
+                    >
+                      {richTextToReact(cell)}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+            ) : null}
+            <tbody>
+              {(hasHeader ? rows.slice(1) : rows).map((row, ri) => {
+                const cells = (row.data as TableRowData).cells || [];
+                return (
+                  <tr
+                    key={ri}
+                    className="border-b border-ink-100 last:border-0"
+                  >
+                    {cells.map((cell, ci) => (
+                      <td
+                        key={ci}
+                        className={`px-3 py-2 align-top ${
+                          ci === 0 ? "font-medium text-ink-900" : "text-ink-700"
+                        }`}
+                      >
+                        {richTextToReact(cell)}
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+      );
+    }
     case "code": {
       const text = richTextToString(blockText(b));
       return (

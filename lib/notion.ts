@@ -35,6 +35,8 @@ export interface NotionBlock {
   data: unknown;
   /** True if the block has nested children (we currently don't recurse). */
   hasChildren: boolean;
+  /** Pre-fetched children — populated for tables (rows live as children). */
+  children?: NotionBlock[];
 }
 
 export interface NotionPage {
@@ -150,6 +152,32 @@ export async function fetchSectionPage(pageId: string): Promise<NotionPage | nul
       blocks.shift();
     }
   }
+
+  // For block types whose meaningful content lives in their children
+  // (tables → rows, etc.), fetch one level deep so the renderer has
+  // everything it needs without doing a second pass.
+  await Promise.all(
+    blocks
+      .filter((b) => b.hasChildren && b.type === "table")
+      .map(async (b) => {
+        try {
+          const res = await notion.blocks.children.list({
+            block_id: b.id,
+            page_size: 100
+          });
+          b.children = res.results
+            .filter((r): r is typeof r & { type: string } => "type" in r)
+            .map((r) => ({
+              id: r.id,
+              type: r.type,
+              data: (r as unknown as Record<string, unknown>)[r.type],
+              hasChildren: Boolean((r as { has_children?: boolean }).has_children)
+            }));
+        } catch (err) {
+          console.warn(`[notion] children fetch failed for ${b.id}:`, err);
+        }
+      })
+  );
 
   // Prefetch place data for every venue bullet in parallel (capped at
   // 5 concurrent requests so we don't slam Google Places or our own
