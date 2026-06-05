@@ -2,19 +2,27 @@
 
 A small, premium-feeling product website for paid digital nomad city guides.
 
-**Bangkok** is the first guide. The architecture is built so you can add Ubud,
-Chiang Mai, Koh Samui, Kuala Lumpur (and more) by dropping in new MDX files and
-metadata — no template-rewriting needed.
+**Bangkok** is the first (and currently only *live*) guide. The architecture is
+built so you can add Ubud, Chiang Mai, Koh Samui, Kuala Lumpur and more by
+adding metadata in `lib/guides.ts` and authoring the content in Notion — no
+template-rewriting needed.
 
 ---
 
 ## Stack
 
 - **Next.js 14** (App Router) + **TypeScript**
-- **Tailwind CSS** with a premium black / off-white / warm sand / electric blue palette
-- **MDX** content files (rendered via `next-mdx-remote`)
-- **Supabase** (optional) for email-gated access — with a JSON/env-var fallback for MVP
-- No CMS, no auth library, no DB required to run locally
+- **Tailwind CSS** — premium black / off-white / warm sand / electric blue palette
+- **Notion** is the source of truth for guide content, fetched via the official
+  `@notionhq/client` and rendered block-by-block to React. Each section can fall
+  back to an **MDX** file when no Notion page is configured (or Notion is down).
+- **Supabase** — magic-link auth + a `members` table that records who bought what
+- **Stripe** — Checkout for single-guide and lifetime purchases; a webhook grants
+  access on `checkout.session.completed`
+- **Resend** — delivers the magic-link email, configured as Supabase Auth's
+  custom SMTP provider (not called directly from app code)
+- **Google Places** — enriches venue cards (optional)
+- **Vercel** auto-deploys the `main` branch on every push
 
 ---
 
@@ -22,174 +30,92 @@ metadata — no template-rewriting needed.
 
 ```bash
 npm install
-cp .env.example .env.local        # optional — works fine without
-npm run dev                       # starts TinaCMS + Next.js together
+cp .env.example .env.local        # fill in the keys you need (see below)
+npm run dev                        # next dev on http://localhost:3000
 ```
 
-Open <http://localhost:3000>.
+The app degrades gracefully when keys are missing:
 
-**Edit content visually:** open <http://localhost:3000/admin/index.html> — that's the TinaCMS editor (see [Content management](#content-management) below).
+- **No `NOTION_TOKEN`** → sections render from their MDX fallback files.
+- **No Stripe / Supabase keys** → the marketing pages and content render; only
+  checkout and sign-in are unavailable.
 
-Routes you can hit immediately:
+Routes you can hit:
 
-- `/` — root marketing page (lists all guides)
+- `/` — home (lists all guides)
 - `/guides/bangkok` — public landing page (hero, what's inside, FAQ, CTA)
-- `/guides/bangkok/access` — email gate
-- `/guides/bangkok/app` — protected guide dashboard
-- `/guides/bangkok/app/areas-to-stay` (or any of the 13 section slugs)
-
-Test the gate with one of the demo emails in `config/approvedEmails.json`:
-
-- `demo@freedomhustle.com`
-- `buyer@example.com`
+- `/guides/bangkok/access` — buy / sign-in gate
+- `/signin` — magic-link sign-in for existing buyers
+- `/my` — signed-in member dashboard
+- `/guides/bangkok/app` — protected guide overview
+- `/guides/bangkok/app/<section>` — a section page (14 section slugs)
 
 ---
 
-## How gating works (MVP)
+## Content
 
-When someone enters their email on the access page, the client POSTs to
-`/api/access`, which runs `verifyAccess()` from [`lib/access.ts`](lib/access.ts).
-Resolution order:
+### Source of truth: Notion → falls back to MDX
 
-1. **`APPROVED_EMAILS` env var** (comma-separated, applies to all guides) — easiest for one-off launches
-2. **`config/approvedEmails.json`** (per-guide list) — easiest for MVP
-3. **Supabase `purchases` table** (if `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` are set) — recommended once you have real buyers
+The section list is defined in [`lib/guides.ts`](lib/guides.ts) (`SECTION_TEMPLATE`
+plus per-city overrides). For each section, the renderer route
+([`app/guides/[slug]/app/[section]/page.tsx`](app/guides/[slug]/app/[section]/page.tsx))
+resolves the body in this order:
 
-On success, the client stores a small token in `localStorage` under
-`fh:access:<guideSlug>` and redirects to `/guides/<slug>/app`. The protected app
-shell ([`components/GuideAppShell.tsx`](components/GuideAppShell.tsx)) reads
-that token on mount and bounces unauthenticated users back to `/access`.
+1. **Notion** — if the section's override sets a `notionPageId`, the page is
+   fetched via [`lib/notion.ts`](lib/notion.ts) and rendered by
+   [`components/NotionRenderer.tsx`](components/NotionRenderer.tsx). Cached with
+   `revalidate = 60`.
+2. **MDX fallback** — otherwise (or if the Notion fetch fails) it reads
+   `content/guides/<slug>/<section>.mdx` via [`lib/mdx.ts`](lib/mdx.ts) and
+   renders it with [`components/MdxRenderer.tsx`](components/MdxRenderer.tsx).
 
-> This is intentionally simple. It's a validation MVP — not a fortress. Anyone
-> with the URL and the right email can unlock. Swap to a real session/JWT once
-> you bolt on payments.
+The Bangkok `notionPageId`s live in `BANGKOK_SECTION_OVERRIDES` in `lib/guides.ts`.
+To repoint a section at a different Notion page, change its ID there. To capture a
+page's ID, run `scripts/notion-probe.mjs` (needs `NOTION_TOKEN` + the integration
+shared with the page).
 
-### Adding buyer emails (MVP)
+> The Notion integration must be connected to the "Bangkok — The Freedom Hustle
+> Guide" parent page: in Notion, open the page → `•••` → **Connections** → add the
+> integration.
 
-The fastest way:
+### Notion authoring conventions
 
-```jsonc
-// config/approvedEmails.json
-{
-  "bangkok": [
-    "demo@freedomhustle.com",
-    "real-buyer-1@example.com",
-    "real-buyer-2@example.com"
-  ]
-}
-```
+`NotionRenderer` maps plain Notion blocks to rich components by convention:
 
-Or via env (`.env.local`):
-
-```bash
-APPROVED_EMAILS=demo@freedomhustle.com,real-buyer-1@example.com
-```
-
-### Adding Supabase (recommended once you launch)
-
-1. Create a Supabase project.
-2. Create a `purchases` table:
-
-```sql
-create table purchases (
-  id uuid primary key default gen_random_uuid(),
-  email text not null,
-  guide_slug text not null,
-  access_granted boolean default true,
-  created_at timestamptz default now()
-);
-create index on purchases (email, guide_slug);
-```
-
-3. Add to `.env.local`:
-
-```bash
-NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=eyJ...
-```
-
-The service role key bypasses RLS, so **keep it server-side only** — it's only
-read in `lib/access.ts` which runs in the API route runtime.
-
-4. Manually add buyer emails for now:
-
-```sql
-insert into purchases (email, guide_slug) values ('buyer@example.com', 'bangkok');
-```
-
-### Adding Stripe / Lemon Squeezy webhook (later)
-
-Once you're ready for real payments:
-
-1. Set up a checkout link on Lemon Squeezy / Stripe.
-2. Set `NEXT_PUBLIC_CHECKOUT_URL` in `.env.local` so all "Get the guide" buttons point to it.
-3. Add a webhook endpoint at `app/api/webhooks/lemon-squeezy/route.ts` (or `stripe`) that:
-   - Verifies the webhook signature.
-   - On `order_created` / `checkout.session.completed`, inserts the customer email + guide slug into the Supabase `purchases` table.
-   - Optionally sends a "your guide is ready" email.
-
-`lib/access.ts` already checks Supabase, so no other changes are needed — once
-the buyer's email lands in the table, they can unlock the guide.
-
----
-
-## Content management
-
-You have two ways to edit content:
-
-### Option 1 — TinaCMS visual editor (recommended for non-devs)
-
-```bash
-npm run dev
-# then open http://localhost:3000/admin/index.html
-```
-
-You'll get a side-by-side editor:
-
-- Left: tree of all guide sections (`Guide Sections → bangkok → <section>`)
-- Right: visual form. Text edits inline. Each custom block (AreaCard, CafeCard, Checklist, etc.) shows up as a draggable card with a proper form — no JSX, no curly braces, no quotes.
-
-Click **Save** and Tina writes the change straight back to the `.mdx` file on disk. Next.js hot-reloads, so you see the result on the live site within a second.
-
-### Option 2 — edit the MDX files directly
-
-If you're comfortable with markdown, open any `content/guides/bangkok/*.mdx` in VS Code. Same outcome, faster for bulk edits, but you'll need to write the JSX for custom blocks yourself. See the [components reference](#mdx-components-available) below.
-
-### Going to production with Tina (for non-dev editors)
-
-The local editor writes to your laptop. For a deployed setup where someone else can edit from a browser without git:
-
-1. Sign up at [app.tina.io](https://app.tina.io) (free for solo / small teams).
-2. Create a project, connect it to your GitHub repo.
-3. Copy the two env vars into `.env.local` *and* Vercel:
-   ```bash
-   NEXT_PUBLIC_TINA_CLIENT_ID=...
-   TINA_TOKEN=...
-   ```
-4. Redeploy. Now `/admin/index.html` on the live site lets logged-in editors save — Tina commits the change to GitHub, Vercel rebuilds, content is live in ~60s.
-
-No code changes needed — `tina/config.ts` already reads those env vars and falls back to local-only mode if they're missing.
-
-### Files Tina manages
-
-| Path | Editable in Tina? |
+| In Notion | Renders as |
 |---|---|
-| `content/guides/bangkok/*.mdx` | ✅ Yes — section title, description, body, all custom blocks |
-| `lib/guides.ts` (guide metadata, sections list, quick stats) | ❌ No — code, edit manually |
-| `config/approvedEmails.json` (MVP buyer list) | ❌ No — edit manually or move to Supabase |
-| FAQ on landing page (in `app/guides/[slug]/page.tsx`) | ❌ No — could be moved to MDX later if it changes often |
+| First paragraph fully *italic* | The section's intro/description (lifted out of the body) |
+| Consecutive `to-do` checkboxes | An interactive `<Checklist>` (progress saved in localStorage) |
+| Quote starting `DON'T —` / `AVOID —` | `<WarningCard severity="warn">` |
+| Quote starting `DANGER —` / `NEVER —` | `<WarningCard severity="danger">` |
+| Quote starting `PRO TIP —` | `<ProTip>` |
+| Quote starting `GOOD TO KNOW —` | `<ProTip label="Good to know">` |
+| Bullet whose **bold** lead text links to a Google Maps URL | A `<PlaceCard>` (place data prefetched server-side) |
+| Headings / paragraphs / lists / tables / images / dividers | Plain HTML equivalents |
 
-If you want guide metadata (price, hero quick stats, FAQ) editable in Tina too, that's a follow-up: move those from TypeScript into a `content/guides/<slug>/_meta.json` collection and add it to the schema.
+### MDX components (for fallback files)
 
----
+When a section renders from MDX, these components are available (wired in
+[`components/MdxRenderer.tsx`](components/MdxRenderer.tsx)):
 
-## Content (file reference)
+| Component | Use it for |
+|---|---|
+| `<AreaCard />` | Neighborhood comparison (vibe, rent, pros/cons, score) |
+| `<BudgetCard />` | Budget tier (Budget / Comfortable / Premium) |
+| `<BudgetCalculator />` | Interactive monthly budget sliders |
+| `<CafeCard />` | Cafés with WiFi/plug/noise/call ratings |
+| `<CoworkingCard />` | Coworking spaces with day-pass + pros/cons |
+| `<GymCard />` | Gyms / Muay Thai / yoga / wellness |
+| `<Checklist />` | Interactive checklist (saves progress in localStorage) |
+| `<WarningCard severity="warn\|danger\|info" />` | Highlighted callout |
+| `<ResourceCard />` | External link with category |
+| `<TripCard />` | Weekend trip with verdict (Yes / Maybe / Skip) |
+| `<ProTip />` | A blue-highlighted tip block |
+| `<PlaceCard url="..." />` | Google Maps URL → auto-fills name, photo, rating, address (needs `GOOGLE_PLACES_API_KEY`; degrades to a link card without it) |
 
-The guide's section list is defined in `lib/guides.ts` (`SECTION_TEMPLATE` +
-per-city overrides). The Bangkok guide has 14 sections. Source of truth for
-each section's body is its Notion page (`notionPageId` in the overrides); the
-matching `content/guides/<slug>/*.mdx` file is the fallback used when Notion
-isn't configured or fails to load.
+### Section / fallback-file reference
+
+The Bangkok guide has **14 sections**. All read from Notion except where noted:
 
 ```
 content/guides/bangkok/
@@ -201,57 +127,107 @@ content/guides/bangkok/
   restaurants.mdx
   nightlife.mdx
   gyms.mdx
-  wifi-sim-apps.mdx        # currently the live source — no Notion page yet
+  wifi-sim-apps.mdx        # MDX is the live source — no Notion page yet
   getting-around.mdx
   trips-and-activities.mdx
   mistakes-to-avoid.mdx
   digital-nomad-toolkit.mdx
 ```
 
-> `visa-immigration` renders from Notion only — it has no MDX fallback file,
-> so if Notion is unavailable that section 404s. Export its Notion content to
-> `content/guides/bangkok/visa-immigration.mdx` if you want it covered too.
+> `visa-immigration` (section #9) renders from Notion **only** — it has no MDX
+> fallback file, so if Notion is unavailable that section 404s. Export its Notion
+> content to `content/guides/bangkok/visa-immigration.mdx` if you want it covered.
 
-Each file is plain MDX — write markdown, drop in components, ship.
+---
 
-### MDX components available
+## Access & payments
 
-Wired up automatically in [`components/MdxRenderer.tsx`](components/MdxRenderer.tsx):
+There's no homegrown auth — it's Supabase magic-link sessions plus a `members`
+table, with Stripe driving who gets access.
 
-| Component | Use it for |
-|---|---|
-| `<AreaCard />` | Neighborhood comparison (vibe, rent, pros/cons, score) |
-| `<BudgetCard />` | Budget tier (Budget / Comfortable / Premium) |
-| `<BudgetCalculator />` | Interactive monthly budget sliders |
-| `<CafeCard />` | Cafes with WiFi/plug/noise/call ratings |
-| `<CoworkingCard />` | Coworking spaces with day-pass + pros/cons |
-| `<GymCard />` | Gyms / Muay Thai / yoga / wellness |
-| `<Checklist />` | Interactive checklist (saves progress in localStorage) |
-| `<WarningCard severity="warn\|danger\|info" />` | Highlighted callout |
-| `<ResourceCard />` | External link with category |
-| `<TripCard />` | Weekend trip with verdict (Yes / Maybe / Skip) |
-| `<VideoBlock />` | Placeholder for your own video content |
-| `<ProTip />` | A blue-highlighted tip block |
-| `<MapPlaceholder />` | Faux map (swap for a real embed later) |
-| `<PlaceCard url="..." />` | Paste any Google Maps URL → auto-fills name, photo, rating, address (requires `GOOGLE_PLACES_API_KEY`; degrades to a basic link card without it) |
+**Buying** (`app/api/checkout/route.ts`): the client POSTs a `product`
+(`"bangkok"` for the single guide, or `"lifetime"`). The route creates a Stripe
+Checkout session for the matching Price ID, with `allow_promotion_codes: true`
+(that's how the `FREEDOM` coupon applies). Purchase metadata (`product`,
+`guide_slug`) rides along on the session.
 
-Editing a section is just:
+**Granting access** (`app/api/webhooks/stripe/route.ts`): on
+`checkout.session.completed`, the webhook verifies the signature and calls
+`grantPurchase()` ([`lib/members.ts`](lib/members.ts)) to upsert the buyer into the
+`members` table — `lifetime = true` for lifetime, or appending the slug to
+`guides[]` for a single guide. For **new** buyers it also sends a Supabase
+magic-link so they can sign in the first time.
+
+**Signing in** (`app/api/auth/signin/route.ts`): existing members request a magic
+link, which only sends if their email is already in `members` (blocks random
+sign-up spam). The link lands on `/auth/callback`, which sets the session cookie.
+
+**Checking access**: `hasGuideAccess(email, slug)` in `lib/members.ts` — lifetime
+members get everything; single-guide buyers get their slug. `middleware.ts`
+refreshes the Supabase session on every request.
+
+### Supabase `members` table
+
+```sql
+create table members (
+  id uuid primary key default gen_random_uuid(),
+  email text not null unique,
+  lifetime boolean default false,
+  guides text[] default '{}',
+  stripe_customer_id text,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+```
+
+The service-role key bypasses RLS and is **server-side only** (`lib/members.ts`,
+`lib/supabase/admin.ts`). The anon key + URL are used by the SSR client in
+`middleware.ts`.
+
+### Stripe local testing
 
 ```bash
-# Save the file. Next will hot-reload.
-nano content/guides/bangkok/cafes.mdx
+stripe listen --forward-to localhost:3000/api/webhooks/stripe
+# use the printed whsec_... as STRIPE_WEBHOOK_SECRET
 ```
+
+Stripe is in **test mode**. The `FREEDOM` promotion code discounts the £299
+lifetime price to £79 in test mode.
+
+---
+
+## Environment variables
+
+See [`.env.example`](.env.example) for the full, annotated list. Summary:
+
+| Var | Purpose | Read in |
+|---|---|---|
+| `NOTION_TOKEN` | Fetch guide content | `lib/notion.ts` |
+| `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` | SSR auth client | `middleware.ts`, `lib/supabase/*` |
+| `SUPABASE_SERVICE_ROLE_KEY` | Admin DB access (server only) | `lib/members.ts`, webhooks |
+| `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` | Checkout + webhook | `lib/stripe.ts`, `app/api/*` |
+| `STRIPE_PRICE_BANGKOK` / `STRIPE_PRICE_LIFETIME` | Product Price IDs | `lib/guides.ts`, `lib/stripe.ts` |
+| `GOOGLE_PLACES_API_KEY` | Enrich `<PlaceCard>` venues | `lib/places.ts` |
+
+> **Local vs. cloud:** `.env.local` is gitignored and lives only on the machine
+> that created it. For Vercel and for Claude Code on the web sessions, set the
+> same variables in that platform's environment-variable config so every build /
+> container gets them. Transactional email (the magic link) is sent by Supabase
+> Auth's SMTP — configure Resend as the custom SMTP provider in the Supabase
+> dashboard; there is no `RESEND_API_KEY` in this app.
 
 ---
 
 ## Adding a new guide
 
-1. Add the guide metadata to `lib/guides.ts` (or flip `status` from `"soon"` to `"live"`).
-2. Create `content/guides/<new-slug>/` with one MDX file per section in the metadata.
-3. Add the buyer emails to `config/approvedEmails.json` (or Supabase).
+1. In `lib/guides.ts`: add (or flip `status: "soon"` → `"live"` on) the guide
+   metadata, and set its `stripePriceId` via a `STRIPE_PRICE_<SLUG>` env var.
+2. Author the section content in Notion and set each section's `notionPageId` in
+   that city's overrides — or drop MDX files into `content/guides/<slug>/`.
+3. Create the matching Stripe Price (test + live).
 
-That's it. Both the landing page (`/guides/<slug>`), the access page, and the
-protected app (`/guides/<slug>/app/<section>`) work off the same metadata.
+Both the landing page (`/guides/<slug>`), the access gate, and the protected app
+(`/guides/<slug>/app/<section>`) work off the same metadata.
 
 ---
 
@@ -259,38 +235,38 @@ protected app (`/guides/<slug>/app/<section>`) work off the same metadata.
 
 ```
 app/
-  layout.tsx                    # Global layout + fonts
-  page.tsx                      # Home (lists guides)
-  globals.css                   # Tailwind + prose styles
-  api/access/route.ts           # POST /api/access — gating endpoint
+  layout.tsx                         # Global layout + fonts
+  page.tsx                           # Home (lists guides)
+  signin/page.tsx                    # Magic-link sign-in
+  my/page.tsx                        # Signed-in member dashboard
+  auth/callback/page.tsx             # Magic-link landing → sets session
+  api/
+    checkout/route.ts                # Create Stripe Checkout session
+    webhooks/stripe/route.ts         # Grant access on payment
+    auth/signin/route.ts             # Send magic link to members
+    place/ , place-photo/ , notify/  # Places enrichment + notify
   guides/[slug]/
-    page.tsx                    # Public landing page
-    access/page.tsx             # Email gate (client form)
+    page.tsx                         # Public landing page
+    access/page.tsx                  # Buy / sign-in gate
     app/
-      layout.tsx                # Protected shell (sidebar + access check)
-      page.tsx                  # Dashboard (section cards)
-      [section]/page.tsx        # MDX-rendered section page
+      layout.tsx                     # Protected shell (sidebar + access check)
+      page.tsx                       # Guide overview (section cards + map)
+      [section]/page.tsx             # Section page (Notion → MDX fallback)
 components/
-  AreaCard.tsx                  # ...one file per MDX component
-  BudgetCalculator.tsx          # Interactive sliders
-  Checklist.tsx                 # Saves progress to localStorage
-  GuideAppShell.tsx             # Client-side gate + layout
-  GuideDashboard.tsx            # Section grid
-  Hero.tsx                      # Landing hero
-  LockedAccess.tsx              # Access page form
-  MdxRenderer.tsx               # MDX → React with all components wired
-  MobileSectionNav.tsx          # Bottom drawer nav on mobile
-  SectionNav.tsx                # Sticky desktop sidebar
-  ... (and more — CafeCard, CoworkingCard, etc.)
-config/
-  approvedEmails.json           # MVP fallback access list
-content/
-  guides/bangkok/*.mdx          # All 13 Bangkok sections
+  NotionRenderer.tsx                 # Notion blocks → React
+  MdxRenderer.tsx                    # MDX → React (fallback)
+  GuideAppShell.tsx , GuideDashboard.tsx , LockedAccess.tsx , SignInForm.tsx
+  PlaceCard.tsx , Checklist.tsx , WarningCard.tsx , ProTip.tsx ... (and more)
 lib/
-  access.ts                     # verifyAccess() — env → JSON → Supabase
-  clientAccess.ts               # localStorage helpers
-  guides.ts                     # Guide metadata + section registry
-  mdx.ts                        # MDX file loader (gray-matter)
+  guides.ts                          # Guide metadata + section registry + overrides
+  notion.ts                          # Notion fetch + place prefetch + italic rule
+  mdx.ts                             # MDX file loader (gray-matter)
+  members.ts                         # members table: lookup / access / grant
+  stripe.ts                          # Stripe client + Price IDs
+  places.ts                          # Google Places lookup + cache
+  supabase/                          # admin / server / client SSR helpers
+content/guides/bangkok/*.mdx         # Per-section MDX fallbacks
+scripts/                             # notion-probe, lookup-places, admin-signin, ...
 ```
 
 ---
@@ -306,16 +282,14 @@ lib/
 - **Motion.** A subtle fade-up on hero load; hover lift on cards. Nothing
   flashy — Apple/Linear/Arc territory.
 - **Cards everywhere.** Rounded `2xl`/`3xl`, soft shadows, off-white surfaces.
-  No corporate grids, no SaaS gradients.
 
 ---
 
 ## What's deliberately *not* here
 
-Things you might expect that we left out, on purpose:
-
-- **No auth library** (NextAuth, Clerk). Pure email-match MVP.
-- **No CMS.** Editing is `git` + a text editor. Add Sanity/Contentlayer later if you want.
-- **No SSO / passwords.** Sessions are localStorage-only. Real session security comes with real payments.
-- **No tests yet.** Add Playwright once the routes settle.
+- **No auth library** (NextAuth, Clerk). Supabase magic-link sessions only.
+- **No passwords.** Sign-in is email magic-link; access is gated by the
+  `members` table.
+- **No tests / CI yet.** Add Playwright + a GitHub Actions workflow once the
+  routes settle.
 - **No analytics.** Plug in Plausible or PostHog when launching.
