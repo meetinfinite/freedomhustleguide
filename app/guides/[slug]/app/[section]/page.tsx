@@ -39,6 +39,9 @@ export default async function GuideSectionPage({ params }: PageProps) {
     // The page title in Notion looks like "01 · First 24 Hours" — strip
     // the leading number so the H1 is clean.
     title = notionPage.title.replace(/^\d+\s*[·.\-]\s*/, "").trim() || section.title;
+    // Pulled from the italic first paragraph by fetchSectionPage. The
+    // body blocks already have that paragraph removed.
+    description = notionPage.description;
     body = <NotionRenderer pageId={notionPage.id} blocks={notionPage.blocks} />;
   } else {
     const mdx = await readSection(params.slug, params.section);

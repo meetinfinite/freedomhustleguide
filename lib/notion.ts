@@ -35,6 +35,13 @@ export interface NotionBlock {
 export interface NotionPage {
   id: string;
   title: string;
+  /**
+   * Optional one-line description — pulled from the first paragraph
+   * block on the page when every segment of its rich text is italic.
+   * That's the team's convention: italicise the lead sentence and it
+   * becomes the page subtitle.
+   */
+  description?: string;
   blocks: NotionBlock[];
 }
 
@@ -108,5 +115,28 @@ export async function fetchSectionPage(pageId: string): Promise<NotionPage | nul
     cursor = res.has_more ? res.next_cursor || undefined : undefined;
   } while (cursor);
 
-  return { id: pageId, title, blocks };
+  // Convention: if the first block is a paragraph whose every
+  // non-empty rich-text segment is italic, treat it as the page
+  // description and remove it from the body.
+  let description: string | undefined;
+  const first = blocks[0];
+  if (first?.type === "paragraph") {
+    const rt =
+      (first.data as { rich_text?: { plain_text?: string; annotations?: { italic?: boolean } }[] })
+        ?.rich_text || [];
+    const segments = rt.filter((r) => (r.plain_text || "").trim().length > 0);
+    if (
+      segments.length > 0 &&
+      segments.every((r) => Boolean(r.annotations?.italic))
+    ) {
+      description = rt
+        .map((r) => r.plain_text || "")
+        .join("")
+        .trim();
+      // Drop the description block from the body so it isn't rendered twice
+      blocks.shift();
+    }
+  }
+
+  return { id: pageId, title, description, blocks };
 }
