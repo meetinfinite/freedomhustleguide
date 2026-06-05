@@ -262,7 +262,7 @@ export function NotionRenderer({
             key={`venue-${i}`}
             url={venue.url}
             name={venue.name}
-            ourRating={venue.isPick ? 9 : undefined}
+            ourPick={venue.isPick}
             loveLabel="Why we love it"
             lovePoints={notesText ? [notesText] : undefined}
           />

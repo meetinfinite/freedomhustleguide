@@ -28,7 +28,11 @@ export default async function GuideSectionPage({ params }: PageProps) {
     : null;
 
   let title = section.title;
-  let description: string | undefined = section.description;
+  // Description only comes from MDX frontmatter (or the template fallback
+  // when MDX is used). When the section reads from Notion, the team
+  // owns the intro prose at the top of the page — we don't surface a
+  // separate description tagline.
+  let description: string | undefined;
   let body: React.ReactNode;
 
   if (notionPage) {

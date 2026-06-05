@@ -8,6 +8,12 @@ interface PlaceCardProps {
   name?: string;
   /** Your personal score (0–10). Shown next to Google's crowd rating. */
   ourRating?: number;
+  /**
+   * Render a round "Our pick" stamp where the score normally sits.
+   * Use when you want to flag a recommended venue without scoring it
+   * (e.g. the team writes "(our pick)" in Notion).
+   */
+  ourPick?: boolean;
   /** Your own photos (paths or URLs). Lead the carousel, badged "Original". */
   ownPhotos?: string[];
   /** Heading above your bullet points. Defaults to "Why we love it". */
@@ -41,6 +47,7 @@ export function PlaceCard({
   url,
   name: nameOverride,
   ourRating,
+  ourPick,
   ownPhotos,
   loveLabel,
   lovePoints
@@ -213,7 +220,28 @@ export function PlaceCard({
       ) : null}
 
       <div className="p-5 sm:p-7 relative">
-        {typeof ourRating === "number" ? (
+        {ourPick ? (
+          <div
+            className="absolute top-4 sm:top-5 right-4 sm:right-5 shrink-0"
+            aria-label="Our pick"
+          >
+            <div
+              className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full bg-electric-500 text-white flex items-center justify-center text-center font-display tracking-tight shadow-card rotate-[-8deg]"
+              style={{ lineHeight: 1.05 }}
+            >
+              <div>
+                <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] font-semibold opacity-90">
+                  Our
+                </div>
+                <div className="!text-[18px] sm:!text-[22px] font-semibold !leading-none mt-0.5">
+                  Pick
+                </div>
+              </div>
+              {/* Subtle stitched-stamp ring */}
+              <div className="absolute inset-1.5 rounded-full border border-white/30 pointer-events-none" />
+            </div>
+          </div>
+        ) : typeof ourRating === "number" ? (
           <div className="absolute top-5 sm:top-7 right-5 sm:right-7 text-right shrink-0">
             <div className="!text-[10px] uppercase !tracking-wider !text-electric-600 !font-semibold !my-0">
               Our score
@@ -227,7 +255,7 @@ export function PlaceCard({
 
         <h4
           className={`font-display !text-[20px] sm:!text-[24px] !tracking-tight !mt-0 !mb-0 !text-ink-900 !leading-tight ${
-            typeof ourRating === "number" ? "pr-20 sm:pr-24" : ""
+            ourPick || typeof ourRating === "number" ? "pr-20 sm:pr-24" : ""
           }`}
         >
           {displayName}
