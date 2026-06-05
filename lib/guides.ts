@@ -35,6 +35,13 @@ export interface GuideSection {
   description: string;
   icon: string;
   readingTime: string;
+  /**
+   * Notion page ID that holds the actual content for this section.
+   * When set, the section page fetches from Notion and renders via
+   * NotionRenderer. When unset, it falls back to the MDX file at
+   * content/guides/<city>/<slug>.mdx.
+   */
+  notionPageId?: string;
 }
 
 /**
@@ -107,6 +114,13 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     readingTime: "5 min"
   },
   {
+    slug: "visa-immigration",
+    title: "Visa & Immigration",
+    description: "Getting in, staying longer, the paperwork that matters.",
+    icon: "🛂",
+    readingTime: "5 min"
+  },
+  {
     slug: "wifi-sim-apps",
     title: "WiFi / SIM / Apps",
     description: "Get connected in under an hour.",
@@ -170,37 +184,66 @@ export function buildSections(
  * Bangkok-specific tweaks. Anything not listed here uses the template
  * verbatim. These are real differences worth surfacing on the landing
  * page (e.g. "Eight neighborhoods" because we counted them).
+ *
+ * The `notionPageId` values come from the "Bangkok — The Freedom Hustle
+ * Guide" parent page in Notion. Each child page's ID was captured via
+ * scripts/notion-probe.mjs.
  */
 const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
+  "first-24-hours": {
+    notionPageId: "41c57b19-7874-82d8-a0fc-81a76e3afe32"
+  },
   "areas-to-stay": {
-    description: "Eight neighborhoods compared. Where to actually live."
+    description: "Eight neighborhoods compared. Where to actually live.",
+    notionPageId: "19757b19-7874-83f8-8ef4-01042223d5c8"
+  },
+  "monthly-budget": {
+    notionPageId: "ac857b19-7874-8272-a9ac-817abd4eb90d"
+  },
+  "visa-immigration": {
+    notionPageId: "c8857b19-7874-82ac-9e36-8163000015ff"
   },
   cafes: {
-    description: "WiFi-tested, plug-checked, call-friendly."
+    description: "WiFi-tested, plug-checked, call-friendly.",
+    notionPageId: "e0257b19-7874-827c-bde8-01a45090e104"
+  },
+  coworking: {
+    notionPageId: "24f57b19-7874-8316-9134-81296fa6c75e"
   },
   restaurants: {
     description:
-      "From street-stall legends to Michelin nods. What to skip on Sukhumvit."
+      "From street-stall legends to Michelin nods. What to skip on Sukhumvit.",
+    notionPageId: "f8c57b19-7874-83e2-b583-81026df41457"
   },
   nightlife: {
     description:
-      "Rooftops, dive bars, the night markets that aren't tourist traps."
+      "Rooftops, dive bars, the night markets that aren't tourist traps.",
+    notionPageId: "55d57b19-7874-833c-bf83-818526bd6d10"
   },
   gyms: {
-    description: "Commercial, Muay Thai, yoga, massage. Real prices."
+    description: "Commercial, Muay Thai, yoga, massage. Real prices.",
+    notionPageId: "1e457b19-7874-83f0-8e85-819c82ed7813"
   },
   "getting-around": {
     description:
-      "BTS, MRT, Grab, taxis, scooters — honest rankings plus the safety stuff nobody else says."
+      "BTS, MRT, Grab, taxis, scooters — honest rankings plus the safety stuff nobody else says.",
+    notionPageId: "68457b19-7874-83d5-861a-817db24f8eaf"
   },
   "trips-and-activities": {
     description:
-      "Trip gems and tourist traps. What's actually worth a weekend."
+      "Trip gems and tourist traps. What's actually worth a weekend.",
+    notionPageId: "4bd57b19-7874-8270-8da1-81275a34360a"
+  },
+  "mistakes-to-avoid": {
+    notionPageId: "93157b19-7874-822c-a41d-810992e78d2f"
   },
   "digital-nomad-toolkit": {
     description:
-      "Apps, gear, banking, insurance and tools we actually use day-to-day."
-  }
+      "Apps, gear, banking, insurance and tools we actually use day-to-day.",
+    notionPageId: "6d557b19-7874-837b-ac7b-015afb44ff64"
+  },
+  // WiFi / SIM / Apps Notion page ID may not exist yet — left for now
+  "wifi-sim-apps": {}
 };
 
 const BANGKOK_SECTIONS = buildSections(BANGKOK_SECTION_OVERRIDES);

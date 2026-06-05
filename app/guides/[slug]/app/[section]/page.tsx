@@ -2,13 +2,17 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getGuide, getSection } from "@/lib/guides";
 import { readSection } from "@/lib/mdx";
+import { fetchSectionPage } from "@/lib/notion";
 import { MdxRenderer } from "@/components/MdxRenderer";
+import { NotionRenderer } from "@/components/NotionRenderer";
 
 interface PageProps {
   params: { slug: string; section: string };
 }
 
-export const dynamic = "force-dynamic";
+// Re-fetch Notion content at most every 60s. Cached between requests
+// to stay inside Notion's rate limits while still feeling live.
+export const revalidate = 60;
 
 export default async function GuideSectionPage({ params }: PageProps) {
   const guide = getGuide(params.slug);
@@ -17,8 +21,28 @@ export default async function GuideSectionPage({ params }: PageProps) {
   const section = getSection(params.slug, params.section);
   if (!section) notFound();
 
-  const mdx = await readSection(params.slug, params.section);
-  if (!mdx) notFound();
+  // Prefer Notion when the section has a page ID. Fall back to MDX if
+  // Notion fails or no ID is configured.
+  const notionPage = section.notionPageId
+    ? await fetchSectionPage(section.notionPageId)
+    : null;
+
+  let title = section.title;
+  let description: string | undefined = section.description;
+  let body: React.ReactNode;
+
+  if (notionPage) {
+    // The page title in Notion looks like "01 · First 24 Hours" — strip
+    // the leading number so the H1 is clean.
+    title = notionPage.title.replace(/^\d+\s*[·.\-]\s*/, "").trim() || section.title;
+    body = <NotionRenderer pageId={notionPage.id} blocks={notionPage.blocks} />;
+  } else {
+    const mdx = await readSection(params.slug, params.section);
+    if (!mdx) notFound();
+    title = mdx.title;
+    description = mdx.description ?? section.description;
+    body = <MdxRenderer source={mdx.body} />;
+  }
 
   const sections = guide.sections;
   const idx = sections.findIndex((s) => s.slug === section.slug);
@@ -43,14 +67,14 @@ export default async function GuideSectionPage({ params }: PageProps) {
           </div>
         </div>
         <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-          {mdx.title}
+          {title}
         </h1>
-        {mdx.description ? (
-          <p className="text-ink-600 mt-3 text-lg">{mdx.description}</p>
+        {description ? (
+          <p className="text-ink-600 mt-3 text-lg">{description}</p>
         ) : null}
       </header>
 
-      <MdxRenderer source={mdx.body} />
+      {body}
 
       <div className="mt-16 grid sm:grid-cols-2 gap-4">
         {prev ? (
