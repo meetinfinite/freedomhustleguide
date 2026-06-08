@@ -121,13 +121,6 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     readingTime: "5 min"
   },
   {
-    slug: "wifi-sim-apps",
-    title: "WiFi / SIM / Apps",
-    description: "Get connected in under an hour.",
-    icon: "📶",
-    readingTime: "4 min"
-  },
-  {
     slug: "getting-around",
     title: "Getting Around",
     description:
@@ -241,9 +234,8 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
     description:
       "Apps, gear, banking, insurance and tools we actually use day-to-day.",
     notionPageId: "6d557b19-7874-837b-ac7b-015afb44ff64"
-  },
-  // WiFi / SIM / Apps Notion page ID may not exist yet — left for now
-  "wifi-sim-apps": {}
+  }
+  // WiFi / SIM / Apps merged into Digital Nomad Toolkit — section removed.
 };
 
 const BANGKOK_SECTIONS = buildSections(BANGKOK_SECTION_OVERRIDES);

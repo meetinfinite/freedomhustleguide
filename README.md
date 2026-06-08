@@ -115,7 +115,7 @@ When a section renders from MDX, these components are available (wired in
 
 ### Section / fallback-file reference
 
-The Bangkok guide has **14 sections**. All read from Notion except where noted:
+The Bangkok guide has **13 sections**, all reading from Notion:
 
 ```
 content/guides/bangkok/
@@ -127,12 +127,14 @@ content/guides/bangkok/
   restaurants.mdx
   nightlife.mdx
   gyms.mdx
-  wifi-sim-apps.mdx        # MDX is the live source — no Notion page yet
   getting-around.mdx
   trips-and-activities.mdx
   mistakes-to-avoid.mdx
   digital-nomad-toolkit.mdx
 ```
+
+> (WiFi / SIM / Apps was merged into Digital Nomad Toolkit and removed as a
+> standalone section.)
 
 > `visa-immigration` (section #9) renders from Notion **only** — it has no MDX
 > fallback file, so if Notion is unavailable that section 404s. Export its Notion
