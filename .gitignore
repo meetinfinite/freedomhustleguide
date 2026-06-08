@@ -13,8 +13,9 @@ dist
 tina/__generated__
 public/admin
 
-# Place cache — re-fetched on demand
+# Place / embed caches — re-fetched on demand
 tina/.place-cache.json
+tina/.embed-cache.json
 
 # TypeScript incremental build cache
 tsconfig.tsbuildinfo
