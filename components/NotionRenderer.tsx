@@ -88,6 +88,31 @@ function renderPlainQuote(rt: NotionRichText[] | undefined, key: string) {
   );
 }
 
+/** Tags that are negative instructions — their lead word must stay in the
+ *  card title or it inverts the meaning ("DON'T — Get pulled in by taxi
+ *  touts" must read "Don't get pulled in by taxi touts", not "Get pulled
+ *  in by taxi touts"). Maps the parsed tag → the word to prepend. */
+const NEGATION_PREFIX: Record<string, string> = {
+  "DON'T": "Don't",
+  DONT: "Don't",
+  AVOID: "Avoid",
+  NEVER: "Never"
+};
+
+/** Build the callout title, re-attaching the negation word for DON'T-style
+ *  tags. Lowercases the first letter of the body so it flows ("Don't get
+ *  …"), but leaves acronyms / all-caps starts intact ("Don't ATM …"). */
+function calloutTitle(tag: string, title: string): string {
+  const lead = NEGATION_PREFIX[tag];
+  if (!lead) return title;
+  if (!title) return lead;
+  const firstWord = title.split(/\s+/)[0] || "";
+  const body = /^[A-Z]{2,}/.test(firstWord)
+    ? title
+    : title.charAt(0).toLowerCase() + title.slice(1);
+  return `${lead} ${body}`;
+}
+
 /** Render a tagged quote (DON'T / PRO TIP / GOOD TO KNOW / DANGER) with
  *  optional body blocks (consecutive untagged quotes that immediately
  *  follow it — that's the team's authoring convention in Notion). */
@@ -113,14 +138,18 @@ function renderTaggedCallout(
     tag === "CAUTION"
   ) {
     return (
-      <WarningCard key={key} title={title} severity="warn">
+      <WarningCard key={key} title={calloutTitle(tag, title)} severity="warn">
         {body}
       </WarningCard>
     );
   }
   if (tag.startsWith("DANGER") || tag === "NEVER") {
     return (
-      <WarningCard key={key} title={title} severity="danger">
+      <WarningCard
+        key={key}
+        title={calloutTitle(tag, title)}
+        severity="danger"
+      >
         {body}
       </WarningCard>
     );
