@@ -47,6 +47,7 @@ export default async function GuideSectionPage({ params }: PageProps) {
         pageId={notionPage.id}
         blocks={notionPage.blocks}
         places={notionPage.places}
+        embeds={notionPage.embeds}
       />
     );
   } else {

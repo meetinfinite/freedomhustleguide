@@ -1,5 +1,10 @@
 import { Client } from "@notionhq/client";
 import { getPlaceFromUrl, type PlaceData } from "./places";
+import {
+  getEmbedFromUrl,
+  embedKindForUrl,
+  type EmbedData
+} from "./embeds";
 
 /** URL pattern: links the team uses for venue place lookups. */
 const GMAPS_HOST_RE =
@@ -58,6 +63,11 @@ export interface NotionPage {
    * batch that's cached for the section's revalidate window.
    */
   places: Record<string, PlaceData>;
+  /**
+   * Same idea as `places`, but for Airbnb / GetYourGuide bullets — keyed
+   * by the link URL. EmbedCard renders straight from this map.
+   */
+  embeds: Record<string, EmbedData>;
 }
 
 // ---------------------------------------------------------------------------
@@ -179,12 +189,57 @@ export async function fetchSectionPage(pageId: string): Promise<NotionPage | nul
       })
   );
 
-  // Prefetch place data for every venue bullet in parallel (capped at
-  // 5 concurrent requests so we don't slam Google Places or our own
-  // file-cache during a single page render).
-  const places = await prefetchVenuePlaces(blocks);
+  // Prefetch place + embed data for every venue / accommodation / activity
+  // bullet in parallel, so the client renders straight from these maps.
+  const [places, embeds] = await Promise.all([
+    prefetchVenuePlaces(blocks),
+    prefetchEmbeds(blocks)
+  ]);
 
-  return { id: pageId, title, description, blocks, places };
+  return { id: pageId, title, description, blocks, places, embeds };
+}
+
+/** Walk the blocks, find Airbnb / GetYourGuide bullets (a link to one of
+ *  those hosts), resolve each to EmbedData. Returns a URL → embed map. */
+async function prefetchEmbeds(
+  blocks: NotionBlock[]
+): Promise<Record<string, EmbedData>> {
+  // Collect distinct embed URLs + the editor's link text (title fallback).
+  const found = new Map<string, string>(); // url → link text
+  for (const b of blocks) {
+    if (b.type !== "bulleted_list_item") continue;
+    const rt = (
+      b.data as {
+        rich_text?: { plain_text?: string; href?: string | null }[];
+      }
+    )?.rich_text;
+    const first = rt?.[0];
+    if (!first?.href || !embedKindForUrl(first.href)) continue;
+    if (!found.has(first.href)) {
+      found.set(first.href, (first.plain_text || "").trim());
+    }
+  }
+  if (found.size === 0) return {};
+
+  const out: Record<string, EmbedData> = {};
+  const queue = Array.from(found.entries());
+  const concurrency = Math.min(5, queue.length);
+  await Promise.all(
+    Array.from({ length: concurrency }, async () => {
+      while (queue.length) {
+        const next = queue.shift();
+        if (!next) return;
+        const [url, fallbackTitle] = next;
+        try {
+          const data = await getEmbedFromUrl(url, { fallbackTitle });
+          if (data) out[url] = data;
+        } catch (err) {
+          console.warn(`[notion] embed prefetch failed for ${url}:`, err);
+        }
+      }
+    })
+  );
+  return out;
 }
 
 /** Walk the blocks, find venue-style bullets (bold + linked text whose

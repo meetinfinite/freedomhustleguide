@@ -18,6 +18,12 @@ instead of reconstructing it each time.
 | **Stripe** | Payments — lifetime + per-city | one Stripe account | `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_LIFETIME`, `STRIPE_PRICE_<CITY>` |
 | **Resend** | Sends sign-in / magic-link emails | Resend account | `RESEND_API_KEY`, `RESEND_FROM_EMAIL` |
 | **Google Places** | `<PlaceCard>` venue lookups (name, photo, rating) | Google Cloud project | `GOOGLE_PLACES_API_KEY` |
+| **GetYourGuide** (optional) | Affiliate attribution on activity-link cards | partner.getyourguide.com | `GETYOURGUIDE_PARTNER_ID` |
+
+Airbnb / GetYourGuide links pasted into Notion render as native cards (see
+[NOTION_CARDS.md](NOTION_CARDS.md)). Airbnb reads the listing page directly
+(no key). GetYourGuide is a plain link card until `GETYOURGUIDE_PARTNER_ID`
+is set, which adds affiliate tracking — `❌ not set` today.
 
 ## Per-city Stripe prices (individual sales)
 

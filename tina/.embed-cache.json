@@ -1,0 +1,18 @@
+{
+  "https://www.airbnb.com/rooms/20669368": {
+    "kind": "airbnb",
+    "url": "https://www.airbnb.com/rooms/20669368",
+    "title": "Little Country Houses - Finley's Fort + hot tub",
+    "subtitle": "Tiny home in Mickleton",
+    "image": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MjA2NjkzNjg=/original/ef4bb1ec-8db0-4f46-8746-da01735c8b32.jpeg?im_w=720&width=720&quality=70&auto=webp",
+    "rating": 4.9,
+    "details": "1 bedroom · 1 bed · 1 private bath",
+    "fetchedAt": 1780944986651
+  },
+  "https://www.getyourguide.com/bangkok-l169/grand-palace-t419372/": {
+    "kind": "getyourguide",
+    "url": "https://www.getyourguide.com/bangkok-l169/grand-palace-t419372/",
+    "title": "Grand Palace & Wat Pho Tour",
+    "fetchedAt": 1780945011560
+  }
+}

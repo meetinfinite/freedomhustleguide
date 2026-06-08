@@ -1,10 +1,12 @@
 import { Fragment } from "react";
 import type { NotionBlock } from "@/lib/notion";
 import type { PlaceData } from "@/lib/places";
+import { embedKindForUrl, type EmbedData, type EmbedKind } from "@/lib/embeds";
 import { WarningCard } from "./WarningCard";
 import { ProTip } from "./ProTip";
 import { Checklist } from "./Checklist";
 import { PlaceCard } from "./PlaceCard";
+import { EmbedCard } from "./EmbedCard";
 
 /**
  * Render a Notion page's blocks as React.
@@ -248,16 +250,48 @@ function parseVenueBullet(rt: NotionRichText[] | undefined): VenueBullet | null 
   return { url: first.href, name, notes, isPick };
 }
 
+interface EmbedBullet {
+  url: string;
+  kind: EmbedKind;
+  /** Editor's link text — title fallback for the card. */
+  name: string;
+  /** Rest of the bullet (after the link) → card notes. */
+  notes: NotionRichText[];
+}
+
+/**
+ * If a bulleted_list_item's first rich-text segment links to an Airbnb or
+ * GetYourGuide URL, treat the bullet as an accommodation / activity entry
+ * and surface it as an EmbedCard. Unlike venue bullets, the link need not
+ * be bold — editors often just paste the link.
+ */
+function parseEmbedBullet(rt: NotionRichText[] | undefined): EmbedBullet | null {
+  if (!rt || rt.length === 0) return null;
+  const first = rt[0];
+  if (!first.href) return null;
+  const kind = embedKindForUrl(first.href);
+  if (!kind) return null;
+  return {
+    url: first.href,
+    kind,
+    name: (first.plain_text || "").trim(),
+    notes: rt.slice(1)
+  };
+}
+
 export function NotionRenderer({
   pageId,
   blocks,
-  places = {}
+  places = {},
+  embeds = {}
 }: {
   pageId: string;
   blocks: NotionBlock[];
   /** URL → prefetched place data, supplied by fetchSectionPage so the
    *  client doesn't need to round-trip /api/place for each card. */
   places?: Record<string, PlaceData>;
+  /** URL → prefetched Airbnb / GetYourGuide embed data. */
+  embeds?: Record<string, EmbedData>;
 }) {
   // First pass: group consecutive to_do blocks into Checklist clusters.
   const out: React.ReactNode[] = [];
@@ -307,6 +341,25 @@ export function NotionRenderer({
             loveLabel="Good to know"
             lovePoints={notesText ? [notesText] : undefined}
             prefetched={places[venue.url]}
+          />
+        );
+        i++;
+        continue;
+      }
+      // Airbnb / GetYourGuide bullets → EmbedCard.
+      const embed = parseEmbedBullet(blockText(b));
+      if (embed) {
+        const noteText = richTextToString(embed.notes)
+          .replace(/^\s*[·•—–-]\s*/, "")
+          .trim();
+        out.push(
+          <EmbedCard
+            key={`embed-${i}`}
+            url={embed.url}
+            kind={embed.kind}
+            name={embed.name}
+            notes={noteText ? [noteText] : undefined}
+            prefetched={embeds[embed.url]}
           />
         );
         i++;
