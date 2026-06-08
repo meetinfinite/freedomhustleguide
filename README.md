@@ -197,7 +197,6 @@ content/guides/bangkok/
   cafes.mdx
   coworking.mdx
   gyms.mdx
-  wifi-sim-apps.mdx
   getting-around.mdx
   scooter-reality-check.mdx
   weekend-trips.mdx
@@ -239,12 +238,13 @@ nano content/guides/bangkok/cafes.mdx
 
 ## Adding a new guide
 
-1. Add the guide metadata to `lib/guides.ts` (or flip `status` from `"soon"` to `"live"`).
-2. Create `content/guides/<new-slug>/` with one MDX file per section in the metadata.
-3. Add the buyer emails to `config/approvedEmails.json` (or Supabase).
+Content now lives in **Notion** (read via the "Freedom Hustle Site"
+integration), not MDX. The full step-by-step — Notion authoring, pulling
+section page IDs, wiring `lib/guides.ts`, Stripe, access, verify, deploy —
+is in **[docs/GUIDE_ROLLOUT.md](docs/GUIDE_ROLLOUT.md)**.
 
-That's it. Both the landing page (`/guides/<slug>`), the access page, and the
-protected app (`/guides/<slug>/app/<section>`) work off the same metadata.
+Key gotcha: a status flip in `lib/guides.ts` only goes live in production
+**after deploy** — editing locally does nothing for the live site.
 
 ---
 

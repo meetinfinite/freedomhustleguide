@@ -121,13 +121,6 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     readingTime: "5 min"
   },
   {
-    slug: "wifi-sim-apps",
-    title: "WiFi / SIM / Apps",
-    description: "Get connected in under an hour.",
-    icon: "📶",
-    readingTime: "4 min"
-  },
-  {
     slug: "getting-around",
     title: "Getting Around",
     description:
@@ -241,12 +234,60 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
     description:
       "Apps, gear, banking, insurance and tools we actually use day-to-day.",
     notionPageId: "6d557b19-7874-837b-ac7b-015afb44ff64"
-  },
-  // WiFi / SIM / Apps Notion page ID may not exist yet — left for now
-  "wifi-sim-apps": {}
+  }
 };
 
 const BANGKOK_SECTIONS = buildSections(BANGKOK_SECTION_OVERRIDES);
+
+/**
+ * Chiang Mai-specific tweaks. The `notionPageId` values come from the
+ * "Master Chiang Mai - The Freedom Hustle Guide" parent page in Notion,
+ * captured via scripts/notion-probe.mjs (master id
+ * 37857b19-7874-81d5-b56b-f42a8603b3b9).
+ */
+const CHIANG_MAI_SECTION_OVERRIDES: SectionOverrides = {
+  "first-24-hours": {
+    notionPageId: "37857b19-7874-815d-b0f6-c59cda0ab6c2"
+  },
+  "visa-immigration": {
+    notionPageId: "37857b19-7874-81c1-bc20-fb76c157940b"
+  },
+  "areas-to-stay": {
+    notionPageId: "37857b19-7874-819f-aaf3-ccabbb12d9d5"
+  },
+  "monthly-budget": {
+    notionPageId: "37857b19-7874-8185-af95-ff116f2fd435"
+  },
+  cafes: {
+    notionPageId: "37857b19-7874-81c1-bc1a-ddfd6968b6ca"
+  },
+  coworking: {
+    notionPageId: "37857b19-7874-8166-bf1a-eef353d2fed2"
+  },
+  restaurants: {
+    notionPageId: "37857b19-7874-81af-b462-ce13adde1306"
+  },
+  nightlife: {
+    notionPageId: "37857b19-7874-816d-877f-e68e0d2d6060"
+  },
+  gyms: {
+    notionPageId: "37857b19-7874-81a2-b99b-d3c1848d40f9"
+  },
+  "getting-around": {
+    notionPageId: "37857b19-7874-81f5-8cb9-f8fc6e96ce99"
+  },
+  "trips-and-activities": {
+    notionPageId: "37857b19-7874-81f8-8a03-ff67ba20ead4"
+  },
+  "mistakes-to-avoid": {
+    notionPageId: "37857b19-7874-8123-92ed-e16157895287"
+  },
+  "digital-nomad-toolkit": {
+    notionPageId: "37857b19-7874-81d6-afaf-e7fe710be7bc"
+  }
+};
+
+const CHIANG_MAI_SECTIONS = buildSections(CHIANG_MAI_SECTION_OVERRIDES);
 
 /**
  * @deprecated Use `SECTION_TEMPLATE` directly, or call `buildSections()`
@@ -317,8 +358,8 @@ export const GUIDES: GuideMeta[] = [
     tagline:
       "Everything you need to settle into the original digital nomad city — cheap, easy, and far calmer than Bangkok.",
     price: "£29",
-    stripePriceId: null,
-    status: "soon",
+    stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
+    status: "live",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80",
@@ -330,7 +371,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Chill, creative, low-key" }
     ],
-    sections: buildSections()
+    sections: CHIANG_MAI_SECTIONS
   },
   {
     slug: "koh-samui",

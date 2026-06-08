@@ -14,6 +14,7 @@ import { PlaceCard } from "./PlaceCard";
  *     localStorage progress tracking.
  *   - `quote` blocks read their leading text to choose a style:
  *       "DON'T —"        → <WarningCard severity="warn">
+ *       "HEADS UP —"     → <WarningCard severity="warn">
  *       "PRO TIP —"      → <ProTip>
  *       "GOOD TO KNOW —" → <ProTip label="Good to know">
  *       anything else    → styled <blockquote>
@@ -104,7 +105,13 @@ function renderTaggedCallout(
     </>
   ) : null;
 
-  if (tag.startsWith("DON'T") || tag === "AVOID" || tag === "WARNING") {
+  if (
+    tag.startsWith("DON'T") ||
+    tag.startsWith("HEADS UP") ||
+    tag === "AVOID" ||
+    tag === "WARNING" ||
+    tag === "CAUTION"
+  ) {
     return (
       <WarningCard key={key} title={title} severity="warn">
         {body}
