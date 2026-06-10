@@ -320,63 +320,93 @@ export function NotionRenderer({
       continue;
     }
 
-    // Venue bullets — when a bulleted_list_item starts with a bold
-    // text segment linking to a Google Maps URL, render the bullet as
-    // a PlaceCard. Consecutive venue bullets render as a stack of
-    // cards (one PlaceCard each).
+    // Venue bullets — a bulleted_list_item starting with a bold Google
+    // Maps link → PlaceCard. Consecutive venues lay out two-up in a grid;
+    // a lone one stays full-width.
     if (b.type === "bulleted_list_item") {
-      const venue = parseVenueBullet(blockText(b));
-      if (venue) {
-        // Build the descriptive notes by stripping the leading " · "
-        // separator the team uses between the area and the description.
-        const notesText = richTextToString(venue.notes)
-          .replace(/^\s*[·•]\s*/, "")
-          .trim();
+      if (parseVenueBullet(blockText(b))) {
+        const run: VenueBullet[] = [];
+        let j = i;
+        while (j < blocks.length && blocks[j].type === "bulleted_list_item") {
+          const v = parseVenueBullet(blockText(blocks[j]));
+          if (!v) break;
+          run.push(v);
+          j++;
+        }
+        const gridded = run.length > 1;
+        const cards = run.map((v, k) => {
+          // Strip the leading " · " separator the team uses between the
+          // area and the description.
+          const notesText = richTextToString(v.notes)
+            .replace(/^\s*[·•]\s*/, "")
+            .trim();
+          return (
+            <PlaceCard
+              key={`venue-${i}-${k}`}
+              url={v.url}
+              name={v.name}
+              ourPick={v.isPick}
+              loveLabel="Good to know"
+              lovePoints={notesText ? [notesText] : undefined}
+              prefetched={places[v.url]}
+              bare={gridded}
+            />
+          );
+        });
         out.push(
-          <PlaceCard
-            key={`venue-${i}`}
-            url={venue.url}
-            name={venue.name}
-            ourPick={venue.isPick}
-            loveLabel="Good to know"
-            lovePoints={notesText ? [notesText] : undefined}
-            prefetched={places[venue.url]}
-          />
+          gridded ? (
+            <div
+              key={`venue-grid-${i}`}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6"
+            >
+              {cards}
+            </div>
+          ) : (
+            cards[0]
+          )
         );
-        i++;
+        i = j;
         continue;
       }
       // Airbnb / GetYourGuide bullets → native EmbedCard. Consecutive ones
-      // are grouped into a responsive two-up grid (not one card per line).
+      // lay out two-up in a grid; a lone one stays full-width.
       if (parseEmbedBullet(blockText(b))) {
-        const cards: React.ReactNode[] = [];
+        const run: EmbedBullet[] = [];
         let j = i;
         while (j < blocks.length && blocks[j].type === "bulleted_list_item") {
           const e = parseEmbedBullet(blockText(blocks[j]));
           if (!e) break;
+          run.push(e);
+          j++;
+        }
+        const gridded = run.length > 1;
+        const cards = run.map((e, k) => {
           const noteText = richTextToString(e.notes)
             .replace(/^\s*[·•—–-]\s*/, "")
             .trim();
-          cards.push(
+          return (
             <EmbedCard
-              key={`embed-${j}`}
+              key={`embed-${i}-${k}`}
               url={e.url}
               kind={e.kind}
               name={e.name}
               notes={noteText ? [noteText] : undefined}
               prefetched={embeds[e.url]}
-              bare
+              bare={gridded}
             />
           );
-          j++;
-        }
+        });
         out.push(
-          <div
-            key={`embed-grid-${i}`}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6"
-          >
-            {cards}
-          </div>
+          gridded ? (
+            <div
+              key={`embed-grid-${i}`}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6"
+            >
+              {cards}
+            </div>
+          ) : (
+            cards[0]
+          )
         );
         i = j;
         continue;

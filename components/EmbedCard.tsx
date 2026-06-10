@@ -24,20 +24,32 @@ interface FetchState {
   embed?: EmbedData;
 }
 
-const BRAND: Record<EmbedKind, { label: string; cta: string; accent: string; chip: string }> = {
+const BRAND: Record<
+  EmbedKind,
+  { label: string; cta: string; accent: string; chip: string; logo: string; logoClass: string }
+> = {
   airbnb: {
     label: "Airbnb",
     cta: "View on Airbnb",
     accent: "#FF5A5F",
-    chip: "bg-[#FF5A5F]/10 text-[#E0484D]"
+    chip: "bg-[#FF5A5F]/10 text-[#E0484D]",
+    logo: "/uploads/airbnb.png",
+    logoClass: "h-5" // wide wordmark
   },
   getyourguide: {
     label: "GetYourGuide",
     cta: "Book on GetYourGuide",
     accent: "#FF5533",
-    chip: "bg-[#FF5533]/10 text-[#D8431F]"
+    chip: "bg-[#FF5533]/10 text-[#D8431F]",
+    logo: "/uploads/gyg-logo.png",
+    logoClass: "h-9" // stacked mark
   }
 };
+
+/** Soft dark vignette anchored in the top-left corner — gives the white
+ *  logo something to sit on, fading to nothing toward the card centre. */
+const CORNER_GRADIENT =
+  "radial-gradient(ellipse 55% 65% at top left, rgba(17,24,39,0.62), rgba(17,24,39,0))";
 
 export function EmbedCard({
   url,
@@ -132,23 +144,23 @@ export function EmbedCard({
     </span>
   );
 
-  // Badge shown over the photo. GetYourGuide gets its white logo on a soft
-  // corner gradient (for legibility over any image); others get the chip.
-  const ImageBadge =
-    resolvedKind === "getyourguide" ? (
-      <>
-        <div className="absolute top-0 left-0 w-44 h-20 bg-gradient-to-br from-ink-900/60 to-transparent pointer-events-none" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src="/uploads/gyg-logo.png"
-          alt="GetYourGuide"
-          className="absolute top-3 left-3 h-6 w-auto"
-          style={{ filter: "brightness(0) invert(1)" }}
-        />
-      </>
-    ) : (
-      <div className="absolute top-3 left-3">{HostChip}</div>
-    );
+  // Badge shown over the photo: the host's white logo on a soft corner
+  // gradient (legible over any image).
+  const ImageBadge = (
+    <>
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: CORNER_GRADIENT }}
+      />
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={brand.logo}
+        alt={brand.label}
+        className={`absolute top-3 left-3 w-auto ${brand.logoClass}`}
+        style={{ filter: "brightness(0) invert(1)" }}
+      />
+    </>
+  );
 
   const Cta = (
     <a

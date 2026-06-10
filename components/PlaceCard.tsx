@@ -27,6 +27,9 @@ interface PlaceCardProps {
    * and renders directly — much faster when many cards share a page.
    */
   prefetched?: ServerPlaceData;
+  /** Drop the card's own vertical margin + use a grid-friendly image
+   *  aspect (when laid out two-up in a grid). */
+  bare?: boolean;
 }
 
 interface CarouselPhoto {
@@ -58,8 +61,13 @@ export function PlaceCard({
   ownPhotos,
   loveLabel,
   lovePoints,
-  prefetched
+  prefetched,
+  bare
 }: PlaceCardProps) {
+  const my = bare ? "" : "my-6";
+  const imgAspect = bare
+    ? "aspect-[16/10]"
+    : "aspect-[16/9] sm:aspect-[21/9]";
   // If place data was resolved server-side, start in "ok" with the
   // data baked in — no client fetch, no loading flash, no API round-
   // trip. Falls through to the client fetch only when prefetched is
@@ -101,8 +109,8 @@ export function PlaceCard({
   // ----- Loading skeleton -----
   if (state.status === "loading" || state.status === "idle") {
     return (
-      <div className="rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card my-6 animate-pulse">
-        <div className="aspect-[16/9] w-full bg-sand-100" />
+      <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card animate-pulse ${my}`}>
+        <div className={`${imgAspect} w-full bg-sand-100`} />
         <div className="p-5 space-y-3">
           <div className="h-5 bg-sand-100 rounded w-2/3" />
           <div className="h-3 bg-sand-100 rounded w-1/3" />
@@ -119,7 +127,7 @@ export function PlaceCard({
         href={url}
         target="_blank"
         rel="noreferrer"
-        className="block rounded-2xl border border-ink-100 bg-white shadow-card p-5 my-5 !no-underline hover:shadow-pop transition"
+        className={`block rounded-2xl border border-ink-100 bg-white shadow-card p-5 !no-underline hover:shadow-pop transition ${my}`}
       >
         <div className="flex items-start justify-between gap-3">
           <div>
@@ -162,9 +170,9 @@ export function PlaceCard({
   const points = (lovePoints || []).filter((x) => x && x.trim().length > 0);
 
   return (
-    <div className="rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card my-6">
+    <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
       {hasPhotos && currentPhoto ? (
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden bg-ink-900 group">
+        <div className={`relative ${imgAspect} w-full overflow-hidden bg-ink-900 group`}>
           {/* Blurred fill behind the photo — handles portrait photos in a landscape frame */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
