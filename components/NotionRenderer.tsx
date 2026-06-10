@@ -320,73 +320,58 @@ export function NotionRenderer({
       continue;
     }
 
-    // Venue bullets — a bulleted_list_item starting with a bold Google
-    // Maps link → PlaceCard. Consecutive venues lay out two-up in a grid;
-    // a lone one stays full-width.
+    // Card bullets — a bulleted_list_item that's a Google Maps venue
+    // (PlaceCard) or an Airbnb / GetYourGuide link (EmbedCard). A run of
+    // consecutive card bullets — mixed types allowed — lays out two-up in
+    // one shared grid; a lone card stays full-width.
     if (b.type === "bulleted_list_item") {
-      if (parseVenueBullet(blockText(b))) {
-        const run: VenueBullet[] = [];
+      const asCard = (blk: NotionBlock) => {
+        const rt = blockText(blk);
+        const venue = parseVenueBullet(rt);
+        if (venue) return { venue } as const;
+        const embed = parseEmbedBullet(rt);
+        if (embed) return { embed } as const;
+        return null;
+      };
+      if (asCard(b)) {
+        const run: NotionBlock[] = [];
         let j = i;
-        while (j < blocks.length && blocks[j].type === "bulleted_list_item") {
-          const v = parseVenueBullet(blockText(blocks[j]));
-          if (!v) break;
-          run.push(v);
+        while (
+          j < blocks.length &&
+          blocks[j].type === "bulleted_list_item" &&
+          asCard(blocks[j])
+        ) {
+          run.push(blocks[j]);
           j++;
         }
         const gridded = run.length > 1;
-        const cards = run.map((v, k) => {
-          // Strip the leading " · " separator the team uses between the
-          // area and the description.
-          const notesText = richTextToString(v.notes)
-            .replace(/^\s*[·•]\s*/, "")
-            .trim();
-          return (
-            <PlaceCard
-              key={`venue-${i}-${k}`}
-              url={v.url}
-              name={v.name}
-              ourPick={v.isPick}
-              loveLabel="Good to know"
-              lovePoints={notesText ? [notesText] : undefined}
-              prefetched={places[v.url]}
-              bare={gridded}
-            />
-          );
-        });
-        out.push(
-          gridded ? (
-            <div
-              key={`venue-grid-${i}`}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6"
-            >
-              {cards}
-            </div>
-          ) : (
-            cards[0]
-          )
-        );
-        i = j;
-        continue;
-      }
-      // Airbnb / GetYourGuide bullets → native EmbedCard. Consecutive ones
-      // lay out two-up in a grid; a lone one stays full-width.
-      if (parseEmbedBullet(blockText(b))) {
-        const run: EmbedBullet[] = [];
-        let j = i;
-        while (j < blocks.length && blocks[j].type === "bulleted_list_item") {
-          const e = parseEmbedBullet(blockText(blocks[j]));
-          if (!e) break;
-          run.push(e);
-          j++;
-        }
-        const gridded = run.length > 1;
-        const cards = run.map((e, k) => {
+        const cards = run.map((blk, k) => {
+          const venue = parseVenueBullet(blockText(blk));
+          if (venue) {
+            // Strip the leading " · " separator between area and description.
+            const notesText = richTextToString(venue.notes)
+              .replace(/^\s*[·•]\s*/, "")
+              .trim();
+            return (
+              <PlaceCard
+                key={`card-${i}-${k}`}
+                url={venue.url}
+                name={venue.name}
+                ourPick={venue.isPick}
+                loveLabel="Good to know"
+                lovePoints={notesText ? [notesText] : undefined}
+                prefetched={places[venue.url]}
+                bare={gridded}
+              />
+            );
+          }
+          const e = parseEmbedBullet(blockText(blk))!;
           const noteText = richTextToString(e.notes)
             .replace(/^\s*[·•—–-]\s*/, "")
             .trim();
           return (
             <EmbedCard
-              key={`embed-${i}-${k}`}
+              key={`card-${i}-${k}`}
               url={e.url}
               kind={e.kind}
               name={e.name}
@@ -399,7 +384,7 @@ export function NotionRenderer({
         out.push(
           gridded ? (
             <div
-              key={`embed-grid-${i}`}
+              key={`card-grid-${i}`}
               className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6"
             >
               {cards}
