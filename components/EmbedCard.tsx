@@ -132,6 +132,24 @@ export function EmbedCard({
     </span>
   );
 
+  // Badge shown over the photo. GetYourGuide gets its white logo on a soft
+  // corner gradient (for legibility over any image); others get the chip.
+  const ImageBadge =
+    resolvedKind === "getyourguide" ? (
+      <>
+        <div className="absolute top-0 left-0 w-44 h-20 bg-gradient-to-br from-ink-900/60 to-transparent pointer-events-none" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/uploads/gyg-logo.png"
+          alt="GetYourGuide"
+          className="absolute top-3 left-3 h-6 w-auto"
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      </>
+    ) : (
+      <div className="absolute top-3 left-3">{HostChip}</div>
+    );
+
   const Cta = (
     <a
       href={href}
@@ -157,7 +175,7 @@ export function EmbedCard({
             className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
-          <div className="absolute top-3 left-3">{HostChip}</div>
+          {ImageBadge}
         </div>
         <div className="p-5 flex flex-col flex-1">
           <h4 className="font-display !text-[18px] sm:!text-[20px] !tracking-tight !mt-0 !mb-1 !text-ink-900 !leading-tight">
