@@ -8,7 +8,7 @@ the first thing in a bullet point**, optionally followed by a note.
 |---|---|
 | Google Maps place | A venue card — photo, ★ Google rating, address, Directions button |
 | **Airbnb** listing (`airbnb.com/rooms/…`) | An accommodation card — photo, listing name, ★ rating, beds/baths, "View on Airbnb" |
-| **GetYourGuide** activity (`getyourguide.com/…`) | An activity card — "Book on GetYourGuide" (becomes a full photo/price card once a partner key is added) |
+| **GetYourGuide** activity (`getyourguide.com/…`) | GetYourGuide's own native activity card — photo, ★ rating, duration, "Book" button — with your affiliate ID attached |
 
 ### How to write the bullet
 
@@ -27,8 +27,11 @@ That's it. Save in Notion, and the live site shows the card within ~60s.
 
 ---
 
-**Behind the scenes (for devs):** detection + rendering live in
-`components/NotionRenderer.tsx`; data resolution in `lib/places.ts`
-(Google) and `lib/embeds.ts` (Airbnb/GetYourGuide). GetYourGuide affiliate
-attribution is gated on `GETYOURGUIDE_PARTNER_ID` — see
-[CONNECTIONS.md](CONNECTIONS.md).
+**Behind the scenes (for devs):** detection + routing in
+`components/NotionRenderer.tsx`. Google → `lib/places.ts` + `PlaceCard`.
+Airbnb → `lib/embeds.ts` (Open Graph) + `EmbedCard`. GetYourGuide →
+`lib/embeds.parseGetYourGuide()` pulls the tour id + partner id straight
+from the link and `components/GygWidget.tsx` renders GYG's official
+`activities.frame` widget (loader `pa.umd…` script, self-hydrates on
+client nav). Partner id comes from the link's `partner_id`, falling back
+to `GETYOURGUIDE_PARTNER_ID` — see [CONNECTIONS.md](CONNECTIONS.md).

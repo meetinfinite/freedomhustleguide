@@ -59,6 +59,30 @@ export function embedKindForUrl(url: string): EmbedKind | null {
   return null;
 }
 
+/**
+ * Pull what the GetYourGuide activity widget needs straight out of one of
+ * Valeria's affiliate links — both pieces are already in the URL:
+ *   .../<slug>-t177729/?partner_id=JGBJRKR&...
+ *                ^tourId          ^partnerId
+ * Falls back to GETYOURGUIDE_PARTNER_ID for the partner id when the link
+ * doesn't carry one. Returns null if there's no tour id to render.
+ */
+export function parseGetYourGuide(
+  url: string
+): { tourId: string; partnerId: string } | null {
+  if (embedKindForUrl(url) !== "getyourguide") return null;
+  const m = url.match(/-t(\d+)(?:\/|\?|#|$)/);
+  if (!m) return null;
+  let partnerId = process.env.GETYOURGUIDE_PARTNER_ID || "";
+  try {
+    const fromUrl = new URL(url).searchParams.get("partner_id");
+    if (fromUrl) partnerId = fromUrl;
+  } catch {
+    /* leave partnerId as the env fallback */
+  }
+  return { tourId: m[1], partnerId };
+}
+
 // ---------------------------------------------------------------------------
 // Cache
 // ---------------------------------------------------------------------------

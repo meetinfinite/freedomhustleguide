@@ -1,12 +1,18 @@
 import { Fragment } from "react";
 import type { NotionBlock } from "@/lib/notion";
 import type { PlaceData } from "@/lib/places";
-import { embedKindForUrl, type EmbedData, type EmbedKind } from "@/lib/embeds";
+import {
+  embedKindForUrl,
+  parseGetYourGuide,
+  type EmbedData,
+  type EmbedKind
+} from "@/lib/embeds";
 import { WarningCard } from "./WarningCard";
 import { ProTip } from "./ProTip";
 import { Checklist } from "./Checklist";
 import { PlaceCard } from "./PlaceCard";
 import { EmbedCard } from "./EmbedCard";
+import { GygWidget } from "./GygWidget";
 
 /**
  * Render a Notion page's blocks as React.
@@ -346,12 +352,27 @@ export function NotionRenderer({
         i++;
         continue;
       }
-      // Airbnb / GetYourGuide bullets → EmbedCard.
+      // Airbnb → native EmbedCard. GetYourGuide → GYG's own activity
+      // widget (their card design), generated from the tour id in the link.
       const embed = parseEmbedBullet(blockText(b));
       if (embed) {
         const noteText = richTextToString(embed.notes)
           .replace(/^\s*[·•—–-]\s*/, "")
           .trim();
+        const gyg =
+          embed.kind === "getyourguide" ? parseGetYourGuide(embed.url) : null;
+        if (gyg) {
+          out.push(
+            <div key={`gyg-${i}`}>
+              {noteText ? (
+                <p className="!text-sm !text-ink-600 !mb-2">{noteText}</p>
+              ) : null}
+              <GygWidget tourId={gyg.tourId} partnerId={gyg.partnerId} />
+            </div>
+          );
+          i++;
+          continue;
+        }
         out.push(
           <EmbedCard
             key={`embed-${i}`}
