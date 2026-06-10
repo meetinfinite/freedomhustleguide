@@ -85,8 +85,8 @@ export function EmbedCard({
   // ----- Loading skeleton -----
   if (state.status === "loading" || state.status === "idle") {
     return (
-      <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card animate-pulse ${my}`}>
-        <div className="aspect-[3/2] w-full bg-sand-100" />
+      <div className={`rounded-2xl overflow-hidden border border-ink-100 bg-white shadow-card animate-pulse ${my}`}>
+        <div className="aspect-[16/10] w-full bg-sand-100" />
         <div className="p-5 space-y-3">
           <div className="h-5 bg-sand-100 rounded w-2/3" />
           <div className="h-3 bg-sand-100 rounded w-1/3" />
@@ -148,20 +148,13 @@ export function EmbedCard({
   // ----- Rich card (has a photo) -----
   if (hasImage) {
     return (
-      <div className={`flex flex-col rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
-        <div className="relative aspect-[3/2] w-full overflow-hidden bg-ink-900">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={e!.image}
-            alt=""
-            aria-hidden
-            className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60 pointer-events-none"
-          />
+      <div className={`flex flex-col rounded-2xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
+        <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink-900">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={e!.image}
             alt={title}
-            className="relative w-full h-full object-contain"
+            className="absolute inset-0 w-full h-full object-cover"
             loading="lazy"
           />
           <div className="absolute top-3 left-3">{HostChip}</div>
