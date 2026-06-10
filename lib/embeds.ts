@@ -37,7 +37,11 @@ export interface EmbedData {
   image?: string;
   /** Star rating 0–5 when the source exposes one. */
   rating?: number;
-  /** Compact detail string — e.g. "1 bedroom · 1 bed · 1 bath". */
+  /** Number of reviews behind the rating, when known. */
+  reviewCount?: number;
+  /** Formatted "from" price, e.g. "€53". */
+  price?: string;
+  /** Compact detail string — e.g. "1 bedroom · 1 bed · 1 bath" or "4 hours". */
   details?: string;
   fetchedAt: number;
 }
@@ -281,32 +285,57 @@ async function resolveAirbnb(resolvedUrl: string): Promise<EmbedData | null> {
 }
 
 /**
- * GetYourGuide → link-only card today (the page is bot-protected). When a
- * partner key is configured we append it for affiliate attribution, and
- * this is the seam where the official Partner API response would populate
- * image/rating/price to upgrade the card to rich automatically.
+ * GetYourGuide → rich card built from the activity *widget frame*.
+ *
+ * The public activity page is bot-protected (403), but the widget's
+ * `activities.frame` endpoint returns the activity data (title, photos,
+ * stars, review count, price) to a server fetch — no sha or auth needed,
+ * just the tour id + partner id, both already in Valeria's links. We parse
+ * that and render it in our OWN card (no "Powered by", our layout).
  */
-function resolveGetYourGuide(
+async function resolveGetYourGuide(
   originalUrl: string,
   fallbackTitle?: string
-): EmbedData {
-  const partnerId = process.env.GETYOURGUIDE_PARTNER_ID;
-  let url = originalUrl;
-  if (partnerId) {
-    try {
-      const u = new URL(originalUrl);
-      if (!u.searchParams.has("partner_id")) {
-        u.searchParams.set("partner_id", partnerId);
-        url = u.toString();
-      }
-    } catch {
-      /* leave url as-is */
-    }
-  }
+): Promise<EmbedData | null> {
+  const parsed = parseGetYourGuide(originalUrl);
+  if (!parsed) return null;
+  const { tourId, partnerId } = parsed;
+
+  const frame =
+    "https://widget.getyourguide.com/default/activities.frame" +
+    `?locale_code=en-GB&widget=activities&number_of_items=1` +
+    `&partner_id=${encodeURIComponent(partnerId)}&tour_ids=${encodeURIComponent(tourId)}`;
+  const html = await fetchHtml(frame);
+  if (!html) return null;
+  const dec = decodeEntities(html);
+
+  const pick = (re: RegExp) => dec.match(re)?.[1];
+  const title = pick(/"title":\[0,"([^"]+)"\]/);
+  const stars = pick(/"stars":\[0,([\d.]+)\]/);
+  const reviewCount = pick(/"reviewCount":\[0,(\d+)\]/);
+  const price = pick(/"formattedStartingPrice":\[0,"([^"]+)"\]/);
+  const duration = pick(/"duration":\[0,"([^"]*)"\]/);
+
+  // First tour image. GYG serves two URL shapes — "<base>.jpeg/<size>.jpg"
+  // and a bare "<base>.jpg" (which 404s without a size code). Normalise
+  // both to a large "/99.jpg" render.
+  const imgMatch = dec.match(
+    /https:\/\/cdn\.getyourguide\.com\/img\/tour\/[^"\\ ]+?\.jpe?g(?:\/\d+\.jpg)?/
+  );
+  const image = imgMatch
+    ? imgMatch[0].replace(/\/\d+\.jpg$/, "") + "/99.jpg"
+    : undefined;
+
+  // Keep the editor's affiliate link (carries partner_id + utm) as the CTA.
   return {
     kind: "getyourguide",
-    url,
-    title: fallbackTitle?.trim() || "GetYourGuide activity",
+    url: originalUrl,
+    title: title || fallbackTitle?.trim() || "GetYourGuide activity",
+    image,
+    rating: stars ? parseFloat(stars) : undefined,
+    reviewCount: reviewCount ? parseInt(reviewCount, 10) : undefined,
+    price: price || undefined,
+    details: duration || undefined,
     fetchedAt: Date.now()
   };
 }
@@ -328,16 +357,7 @@ export async function getEmbedFromUrl(
   const kind = embedKindForUrl(rawUrl);
   if (!kind) return null;
 
-  // GetYourGuide does no network fetch — it's pure URL manipulation
-  // (incl. the affiliate param), so resolve it fresh every time rather
-  // than caching a URL that would go stale the moment a partner key is
-  // added.
-  if (kind === "getyourguide") {
-    const resolved = await resolveShortUrl(rawUrl);
-    return resolveGetYourGuide(resolved, opts.fallbackTitle);
-  }
-
-  // Airbnb — cache the fetched Open Graph data on disk.
+  // Both hosts now do a network fetch, so both are cached on disk.
   const key = cacheKeyFor(rawUrl);
   const cache = await loadCache();
   const cached = cache[key];
@@ -350,13 +370,25 @@ export async function getEmbedFromUrl(
   }
 
   const resolvedUrl = await resolveShortUrl(rawUrl);
-  const data: EmbedData = (await resolveAirbnb(resolvedUrl)) ?? {
-    // Fall back to a bare link card if the listing couldn't be read.
-    kind: "airbnb",
-    url: resolvedUrl,
-    title: opts.fallbackTitle?.trim() || "Airbnb stay",
-    fetchedAt: Date.now()
-  };
+
+  let data: EmbedData;
+  if (kind === "airbnb") {
+    data = (await resolveAirbnb(resolvedUrl)) ?? {
+      // Bare link card if the listing couldn't be read.
+      kind: "airbnb",
+      url: resolvedUrl,
+      title: opts.fallbackTitle?.trim() || "Airbnb stay",
+      fetchedAt: Date.now()
+    };
+  } else {
+    data = (await resolveGetYourGuide(resolvedUrl, opts.fallbackTitle)) ?? {
+      // Bare link card if the frame couldn't be read.
+      kind: "getyourguide",
+      url: resolvedUrl,
+      title: opts.fallbackTitle?.trim() || "GetYourGuide activity",
+      fetchedAt: Date.now()
+    };
+  }
 
   cache[key] = data;
   await saveCache(cache);

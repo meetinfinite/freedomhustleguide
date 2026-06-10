@@ -214,10 +214,7 @@ async function prefetchEmbeds(
       }
     )?.rich_text;
     const first = rt?.[0];
-    // Only Airbnb needs a server-side metadata fetch. GetYourGuide renders
-    // via its own client widget (lib/embeds.parseGetYourGuide), so it's
-    // skipped here.
-    if (!first?.href || embedKindForUrl(first.href) !== "airbnb") continue;
+    if (!first?.href || !embedKindForUrl(first.href)) continue;
     if (!found.has(first.href)) {
       found.set(first.href, (first.plain_text || "").trim());
     }

@@ -1,18 +1,12 @@
 import { Fragment } from "react";
 import type { NotionBlock } from "@/lib/notion";
 import type { PlaceData } from "@/lib/places";
-import {
-  embedKindForUrl,
-  parseGetYourGuide,
-  type EmbedData,
-  type EmbedKind
-} from "@/lib/embeds";
+import { embedKindForUrl, type EmbedData, type EmbedKind } from "@/lib/embeds";
 import { WarningCard } from "./WarningCard";
 import { ProTip } from "./ProTip";
 import { Checklist } from "./Checklist";
 import { PlaceCard } from "./PlaceCard";
 import { EmbedCard } from "./EmbedCard";
-import { GygWidget } from "./GygWidget";
 
 /**
  * Render a Notion page's blocks as React.
@@ -352,38 +346,39 @@ export function NotionRenderer({
         i++;
         continue;
       }
-      // Airbnb → native EmbedCard. GetYourGuide → GYG's own activity
-      // widget (their card design), generated from the tour id in the link.
-      const embed = parseEmbedBullet(blockText(b));
-      if (embed) {
-        const noteText = richTextToString(embed.notes)
-          .replace(/^\s*[·•—–-]\s*/, "")
-          .trim();
-        const gyg =
-          embed.kind === "getyourguide" ? parseGetYourGuide(embed.url) : null;
-        if (gyg) {
-          out.push(
-            <div key={`gyg-${i}`}>
-              {noteText ? (
-                <p className="!text-sm !text-ink-600 !mb-2">{noteText}</p>
-              ) : null}
-              <GygWidget tourId={gyg.tourId} partnerId={gyg.partnerId} />
-            </div>
+      // Airbnb / GetYourGuide bullets → native EmbedCard. Consecutive ones
+      // are grouped into a responsive two-up grid (not one card per line).
+      if (parseEmbedBullet(blockText(b))) {
+        const cards: React.ReactNode[] = [];
+        let j = i;
+        while (j < blocks.length && blocks[j].type === "bulleted_list_item") {
+          const e = parseEmbedBullet(blockText(blocks[j]));
+          if (!e) break;
+          const noteText = richTextToString(e.notes)
+            .replace(/^\s*[·•—–-]\s*/, "")
+            .trim();
+          cards.push(
+            <EmbedCard
+              key={`embed-${j}`}
+              url={e.url}
+              kind={e.kind}
+              name={e.name}
+              notes={noteText ? [noteText] : undefined}
+              prefetched={embeds[e.url]}
+              bare
+            />
           );
-          i++;
-          continue;
+          j++;
         }
         out.push(
-          <EmbedCard
-            key={`embed-${i}`}
-            url={embed.url}
-            kind={embed.kind}
-            name={embed.name}
-            notes={noteText ? [noteText] : undefined}
-            prefetched={embeds[embed.url]}
-          />
+          <div
+            key={`embed-grid-${i}`}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-5 my-6"
+          >
+            {cards}
+          </div>
         );
-        i++;
+        i = j;
         continue;
       }
       // Fall through to default <ul><li> handling below.

@@ -15,6 +15,8 @@ interface EmbedCardProps {
   notes?: string[];
   /** Server-resolved data (NotionRenderer passes this in to skip the fetch). */
   prefetched?: EmbedData;
+  /** Drop the card's own vertical margin (when laid out in a grid). */
+  bare?: boolean;
 }
 
 interface FetchState {
@@ -43,8 +45,10 @@ export function EmbedCard({
   name: nameOverride,
   notesLabel,
   notes,
-  prefetched
+  prefetched,
+  bare
 }: EmbedCardProps) {
+  const my = bare ? "" : "my-6";
   const [state, setState] = useState<FetchState>(() =>
     prefetched ? { status: "ok", embed: prefetched } : { status: "idle" }
   );
@@ -81,8 +85,8 @@ export function EmbedCard({
   // ----- Loading skeleton -----
   if (state.status === "loading" || state.status === "idle") {
     return (
-      <div className="rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card my-6 animate-pulse">
-        <div className="aspect-[16/9] w-full bg-sand-100" />
+      <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card animate-pulse ${my}`}>
+        <div className="aspect-[3/2] w-full bg-sand-100" />
         <div className="p-5 space-y-3">
           <div className="h-5 bg-sand-100 rounded w-2/3" />
           <div className="h-3 bg-sand-100 rounded w-1/3" />
@@ -141,11 +145,11 @@ export function EmbedCard({
     </a>
   );
 
-  // ----- Rich card (has a photo — Airbnb today) -----
+  // ----- Rich card (has a photo) -----
   if (hasImage) {
     return (
-      <div className="rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card my-6">
-        <div className="relative aspect-[16/9] sm:aspect-[21/9] w-full overflow-hidden bg-ink-900">
+      <div className={`flex flex-col rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
+        <div className="relative aspect-[3/2] w-full overflow-hidden bg-ink-900">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={e!.image}
@@ -162,21 +166,27 @@ export function EmbedCard({
           />
           <div className="absolute top-3 left-3">{HostChip}</div>
         </div>
-        <div className="p-5 sm:p-7">
-          <h4 className="font-display !text-[20px] sm:!text-[24px] !tracking-tight !mt-0 !mb-1 !text-ink-900 !leading-tight">
+        <div className="p-5 flex flex-col flex-1">
+          <h4 className="font-display !text-[18px] sm:!text-[20px] !tracking-tight !mt-0 !mb-1 !text-ink-900 !leading-tight">
             {title}
           </h4>
           <div className="flex items-center flex-wrap gap-x-3 gap-y-1">
-            {typeof e?.rating === "number" ? <Stars rating={e.rating} /> : null}
+            {typeof e?.rating === "number" ? (
+              <Stars rating={e.rating} count={e?.reviewCount} />
+            ) : null}
             {e?.subtitle ? (
               <span className="!text-[13px] !text-ink-500">{e.subtitle}</span>
             ) : null}
           </div>
-          {e?.details ? (
-            <p className="!text-[12px] !text-ink-400 !mt-1.5 !mb-0">{e.details}</p>
+          {e?.details || e?.price ? (
+            <p className="!text-[12px] !text-ink-500 !mt-1.5 !mb-0">
+              {[e?.details, e?.price ? `from ${e.price}` : null]
+                .filter(Boolean)
+                .join("  ·  ")}
+            </p>
           ) : null}
           {NotesBox}
-          <div className="mt-6">{Cta}</div>
+          <div className="mt-auto pt-4">{Cta}</div>
         </div>
       </div>
     );
@@ -184,7 +194,7 @@ export function EmbedCard({
 
   // ----- Link card (no photo — GetYourGuide today, or Airbnb fetch miss) -----
   return (
-    <div className="rounded-2xl border border-ink-100 bg-white shadow-card p-5 sm:p-6 my-5">
+    <div className={`rounded-2xl border border-ink-100 bg-white shadow-card p-5 sm:p-6 ${my}`}>
       <div className="mb-2">{HostChip}</div>
       <h4 className="font-display !text-[18px] sm:!text-[20px] !tracking-tight !mt-0 !mb-1 !text-ink-900 !leading-tight">
         {title}
@@ -200,11 +210,11 @@ export function EmbedCard({
 
 // ---------------------------------------------------------------------------
 
-function Stars({ rating }: { rating: number }) {
+function Stars({ rating, count }: { rating: number; count?: number }) {
   return (
     <span
-      className="inline-flex items-center gap-1"
-      aria-label={`${rating.toFixed(2)} out of 5`}
+      className="inline-flex items-center gap-1.5"
+      aria-label={`${rating.toFixed(2)} out of 5${count ? `, ${count} reviews` : ""}`}
     >
       <span className="inline-flex items-center gap-0.5">
         {[1, 2, 3, 4, 5].map((i) => (
@@ -214,6 +224,11 @@ function Stars({ rating }: { rating: number }) {
       <span className="!font-semibold !text-ink-900 !text-[13px] !leading-none">
         {rating.toFixed(2)}
       </span>
+      {count ? (
+        <span className="!text-[13px] !text-ink-500 !leading-none">
+          ({count.toLocaleString()})
+        </span>
+      ) : null}
     </span>
   );
 }
