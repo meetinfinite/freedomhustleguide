@@ -135,7 +135,7 @@ export default async function HomePage() {
       >
         <div className="mb-10">
           <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
-            Available guides
+            Available city guides
           </p>
           <h2 className="font-display text-2xl sm:text-3xl tracking-tight">
             Freedom Hustle Guide to…
