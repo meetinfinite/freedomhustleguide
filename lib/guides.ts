@@ -307,9 +307,7 @@ export const GUIDES: GuideMeta[] = [
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
-    // Using the Samui map for testing — swap to a Bangkok-specific
-    // myMapsId when one's authored.
-    myMapsId: "1mkxNxqvgcALEmmfsXFd-wU3ETVfUExg",
+    myMapsId: "14Gx_CAxOgKx5VuHQvQAWPM5qQQdMltI",
     heroImage:
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2400&q=80",
     cardImage:
