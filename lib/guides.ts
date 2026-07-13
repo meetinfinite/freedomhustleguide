@@ -360,7 +360,7 @@ export const GUIDES: GuideMeta[] = [
     status: "live",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1528181304800-259b08848526?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1661929249555-0fa9921b6aef?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Long-stay nomads" },
       { label: "Monthly budget", value: "£700–£1,400" },
@@ -480,7 +480,7 @@ export const GUIDES: GuideMeta[] = [
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1741850826368-12d515927617?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Culture + design nomads" },
       { label: "Monthly budget", value: "£2,000–£3,500" },
