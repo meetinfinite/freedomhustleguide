@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
 import { StatsBar } from "@/components/StatsBar";
+import { WorkFromAnywhereStrip } from "@/components/WorkFromAnywhereStrip";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
@@ -211,6 +212,9 @@ export default async function HomePage() {
 
       {/* ----- Social proof ----- */}
       <SocialProof />
+
+      {/* ----- Work from Anywhere photo strip ----- */}
+      <WorkFromAnywhereStrip />
 
       <SiteFooter />
     </main>

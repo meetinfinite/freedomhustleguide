@@ -13,6 +13,10 @@ dist
 tina/__generated__
 public/admin
 
+# Original photo drops (kept locally, only the *-web.jpg copies get shipped)
+public/uploads/wfa*.JPG
+!public/uploads/wfa*-web.jpg
+
 # Place / embed caches — re-fetched on demand
 tina/.place-cache.json
 tina/.embed-cache.json

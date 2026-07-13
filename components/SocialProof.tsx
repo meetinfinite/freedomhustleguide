@@ -77,24 +77,6 @@ export function SocialProof() {
         ))}
       </div>
 
-      {/* As featured in */}
-      <div className="mt-16 text-center">
-        <p className="text-[11px] uppercase tracking-[0.2em] text-ink-400 font-semibold mb-5">
-          As featured in
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 opacity-60">
-          {["Nomad List", "Indie Hackers", "Product Hunt", "RemoteOK", "Levels.io Newsletter"].map(
-            (logo) => (
-              <span
-                key={logo}
-                className="font-display text-lg sm:text-xl text-ink-700 tracking-tight"
-              >
-                {logo}
-              </span>
-            )
-          )}
-        </div>
-      </div>
     </section>
   );
 }
