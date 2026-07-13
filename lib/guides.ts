@@ -357,7 +357,6 @@ export const GUIDES: GuideMeta[] = [
     price: "£29",
     stripePriceId: null,
     status: "soon",
-    progressLabel: "In progress",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",
@@ -384,7 +383,7 @@ export const GUIDES: GuideMeta[] = [
     status: "live",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1661929249555-0fa9921b6aef?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1582118315324-a1af6b1c0582?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Long-stay nomads" },
       { label: "Monthly budget", value: "£700–£1,400" },
