@@ -1,0 +1,26 @@
+# CODEOWNERS — who must approve before a change can merge to main.
+#
+# Only the code that touches real money (Stripe) and customer logins
+# (Supabase auth) is gated to @meetinfinite. EVERYTHING ELSE — guides,
+# content, components, styling, homepage, which cities are live — any
+# collaborator (e.g. Valeria) can merge and ship on their own, no wait.
+#
+# NOTE: this only has teeth if branch protection on `main` has
+# "Require review from Code Owners" enabled (with required approvals = 0
+# so non-gated changes still self-merge).
+
+# Payments & checkout
+/lib/stripe.ts            @meetinfinite
+/app/api/checkout/        @meetinfinite
+/app/api/webhooks/        @meetinfinite
+
+# Accounts, access, login
+/lib/members.ts           @meetinfinite
+/lib/supabase/            @meetinfinite
+/app/api/auth/            @meetinfinite
+/app/auth/                @meetinfinite
+/middleware.ts            @meetinfinite
+
+# These rules themselves — so the payments/auth gate can't be silently
+# removed (as just happened).
+/.github/CODEOWNERS       @meetinfinite
