@@ -45,7 +45,7 @@ export function FoundersIntro() {
           <div className="mt-6 space-y-4 text-ink-700 text-base sm:text-lg leading-relaxed">
             <p>
               We've spent the last few years bouncing between Bangkok, Bali,
-              Chiang Mai, Koh Samui, Tokyo and back — working remotely, living
+              Chiang Mai, Koh Samui, Tokyo and back - working remotely, living
               slow, learning every new place the long way.
             </p>
             <p>
@@ -58,7 +58,7 @@ export function FoundersIntro() {
             </p>
             <p className="text-ink-900 font-medium">
               So we wrote it down properly. These guides are the playbook we
-              wish someone had handed us in week one — every cafe, every area,
+              wish someone had handed us in week one - every cafe, every area,
               every mistake we made so you don't have to.
             </p>
           </div>
