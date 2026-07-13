@@ -25,7 +25,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Every recommendation actually works. The cafes have plugs. The gyms exist. It's not a regurgitated tourist blog — feels like a friend texting you the answers.",
+      "Love how transparent you are with how much you spent in each location. This helps a lot. Feels like a friend texting you the answers.",
     name: "Priya S.",
     role: "Product lead · Notion",
     avatar: "/uploads/Avatar-7.png",
@@ -34,10 +34,10 @@ const TESTIMONIALS: Testimonial[] = [
 ];
 
 const STATS = [
-  { value: "1,200+", label: "Happy nomads" },
+  { value: "560+", label: "Happy nomads" },
   { value: "4.9★", label: "Avg buyer rating" },
   { value: "30+", label: "Countries shipped to" },
-  { value: "9+", label: "Value-packed guides" }
+  { value: "30+", label: "Value-packed guides coming soon" }
 ];
 
 export function SocialProof() {
