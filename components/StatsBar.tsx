@@ -1,7 +1,7 @@
 const STATS = [
   { value: "560+", label: "Happy nomads" },
   { value: "4.9★", label: "Avg buyer rating" },
-  { value: "30+", label: "Countries shipped to" },
+  { value: "7", label: "Countries shipped to" },
   { value: "30+", label: "Value-packed guides coming soon" }
 ];
 
