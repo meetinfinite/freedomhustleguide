@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const IMAGES = Array.from(
   { length: 12 },
   (_, i) => `/uploads/wfa${i + 1}-web.jpg`
@@ -23,14 +25,14 @@ export function WorkFromAnywhereStrip() {
           {doubled.map((src, i) => (
             <div
               key={i}
-              className="w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card"
+              className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={src}
                 alt=""
-                className="w-full h-full object-cover"
-                loading="lazy"
+                fill
+                sizes="(min-width: 640px) 220px, 180px"
+                className="object-cover"
               />
             </div>
           ))}
