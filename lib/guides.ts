@@ -657,6 +657,294 @@ export const GUIDES: GuideMeta[] = [
       { label: "Vibe", value: "Surf, café, cosmopolitan" }
     ],
     sections: buildSections()
+  },
+  {
+    slug: "uluwatu",
+    title: "Freedom Hustle Guide to Uluwatu",
+    city: "Uluwatu",
+    country: "Bali",
+    flag: "🇮🇩",
+    tagline:
+      "Everything you need to base in Bali's south — cliffs, sunset temples, world-class surf, and cafés built for the laptop crowd.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1664918706173-6349ca225dd0?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Surfers + creators" },
+      { label: "Monthly budget", value: "£900–£1,800" },
+      { label: "Internet", value: "Very good" },
+      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Cliff, surf, sunset" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "osaka",
+    title: "Freedom Hustle Guide to Osaka",
+    city: "Osaka",
+    country: "Japan",
+    flag: "🇯🇵",
+    tagline:
+      "Everything you need to make Osaka a base — Japan's warmest, loudest, most food-obsessed city, at half the pace of Tokyo.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1571242352061-7611fbafbd42?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Food + culture nomads" },
+      { label: "Monthly budget", value: "£1,600–£3,000" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Subway / JR" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Neon, food, playful" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "hoi-an",
+    title: "Freedom Hustle Guide to Hoi An",
+    city: "Hoi An",
+    country: "Vietnam",
+    flag: "🇻🇳",
+    tagline:
+      "Everything you need to slow down in Vietnam's lantern-lit old town — historic riverside, real WiFi, and coffee-fuelled writing weeks.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1526139334526-f591a54b477c?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Writers + slow travellers" },
+      { label: "Monthly budget", value: "£600–£1,300" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Bike / motorbike" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Historic, lanterns, riverside" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "krabi",
+    title: "Freedom Hustle Guide to Krabi",
+    city: "Krabi",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Everything you need to live in Krabi properly — Railay's limestone cliffs, longtail boat runs, and a laptop-friendly town base.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Beach + climb" },
+      { label: "Monthly budget", value: "£800–£1,600" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Scooter / songthaew" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Cliff, beach, laid-back" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "singapore",
+    title: "Freedom Hustle Guide to Singapore",
+    city: "Singapore",
+    country: "Singapore",
+    flag: "🇸🇬",
+    tagline:
+      "Everything you need to base in Southeast Asia's cleanest, fastest city — hawker food, world-class transit, and the best coworking scene in the region.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Global-hub nomads" },
+      { label: "Monthly budget", value: "£2,500–£4,500" },
+      { label: "Internet", value: "World-class" },
+      { label: "Transport", value: "MRT" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Efficient, futuristic, expensive" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "koh-phangan",
+    title: "Freedom Hustle Guide to Koh Phangan",
+    city: "Koh Phangan",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Everything you need to work from Phangan's quieter side — jungle mornings, sunset beach evenings, and yes, actual WiFi.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1579211975029-8aa27c32fa75?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Wellness + community" },
+      { label: "Monthly budget", value: "£700–£1,500" },
+      { label: "Internet", value: "Improving" },
+      { label: "Transport", value: "Scooter" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Yoga, jungle, sunset" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "hanoi",
+    title: "Freedom Hustle Guide to Hanoi",
+    city: "Hanoi",
+    country: "Vietnam",
+    flag: "🇻🇳",
+    tagline:
+      "Everything you need to base in Hanoi's Old Quarter — chaotic, romantic, cheap, and quietly one of Asia's best café cities.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "City + coffee nomads" },
+      { label: "Monthly budget", value: "£700–£1,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Grab / motorbike" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Chaotic, romantic, historic" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "gili-islands",
+    title: "Freedom Hustle Guide to the Gili Islands",
+    city: "Gili Islands",
+    country: "Indonesia",
+    flag: "🇮🇩",
+    tagline:
+      "Everything you need to slow-work on the Gilis — no cars, turquoise water, and mornings that start slow enough to actually think.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1619681216575-d6b3964fc278?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Disconnect + focus" },
+      { label: "Monthly budget", value: "£800–£1,600" },
+      { label: "Internet", value: "Passable, café-dependent" },
+      { label: "Transport", value: "Bike / cidomo" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Sleepy, tropical, no-cars" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "dubai",
+    title: "Freedom Hustle Guide to Dubai",
+    city: "Dubai",
+    country: "UAE",
+    flag: "🇦🇪",
+    tagline:
+      "Everything you need to base in Dubai without the Instagram version — real neighbourhoods, real cafés, and the tax + visa side that matters.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Founders + freelancers" },
+      { label: "Monthly budget", value: "£2,000–£4,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Metro / taxi" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Fast, polished, tax-friendly" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "koh-tao",
+    title: "Freedom Hustle Guide to Koh Tao",
+    city: "Koh Tao",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Everything you need to base on Koh Tao — dive-focused mornings, laptop-friendly afternoons, and Thailand's most affordable island life.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1688625548814-d7bb114d344e?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Divers + budget nomads" },
+      { label: "Monthly budget", value: "£600–£1,300" },
+      { label: "Internet", value: "Good in town" },
+      { label: "Transport", value: "Scooter" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Diving, island, low-key" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "ho-chi-minh",
+    title: "Freedom Hustle Guide to Ho Chi Minh City",
+    city: "Ho Chi Minh City",
+    country: "Vietnam",
+    flag: "🇻🇳",
+    tagline:
+      "Everything you need to live in Saigon properly — District 1 to District 7, the coworking scene, and the food streets locals actually eat on.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1580835267732-2d232d3d2655?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Urban nomads" },
+      { label: "Monthly budget", value: "£700–£1,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Grab / motorbike" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Energetic, cheap, food-led" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "hikkaduwa",
+    title: "Freedom Hustle Guide to Hikkaduwa",
+    city: "Hikkaduwa",
+    country: "Sri Lanka",
+    flag: "🇱🇰",
+    tagline:
+      "Everything you need to base in Sri Lanka's south coast surf and dive town — reef mornings, café afternoons, sunset every night.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1661884711767-e3818515a6a5?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Surf + snorkel" },
+      { label: "Monthly budget", value: "£600–£1,300" },
+      { label: "Internet", value: "Good in cafés" },
+      { label: "Transport", value: "Scooter / tuk-tuk" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Surf, reef, coastal" }
+    ],
+    sections: buildSections()
   }
 ];
 
