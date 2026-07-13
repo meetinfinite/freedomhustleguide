@@ -69,8 +69,8 @@ export default async function HomePage() {
               <span className="text-electric-300">digital nomads</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed">
-              Built from years of travelling full time. Best Cafes, Best
-              places to stay, Best restaurants — and everything you need to
+              Built from years of travelling full time. Best cafes, best
+              places to stay, best restaurants — and everything you need to
               know before travelling.
             </p>
 
@@ -116,7 +116,7 @@ export default async function HomePage() {
                     <span className="font-semibold ml-1">4.9</span>
                   </div>
                   <div className="text-sand-200/80 text-xs">
-                    1,200+ happy nomads
+                    560 happy travellers
                   </div>
                 </div>
               </div>

@@ -45,15 +45,16 @@ export function FoundersIntro() {
           <div className="mt-6 space-y-4 text-ink-700 text-base sm:text-lg leading-relaxed">
             <p>
               We've spent the last few years bouncing between Bangkok, Bali,
-              Chiang Mai and back — working remotely, living slow, learning
-              every new city the long way.
+              Chiang Mai, Koh Samui, Tokyo and back — working remotely, living
+              slow, learning every new place the long way.
             </p>
             <p>
               Every time we landed somewhere new, the same questions came up
-              from friends: <em>where do I actually live? which cafes have
-              plugs? how do I get a SIM that doesn't suck?</em> The internet
-              had a thousand half-answers, mostly from people who'd been there
-              for a long weekend.
+              from friends: <em>where is the best place to stay? best
+              restaurants? what's the best season to travel? how do I get a
+              SIM that doesn't suck?</em> The internet had a thousand
+              half-answers, mostly from people who'd been there for a long
+              weekend.
             </p>
             <p className="text-ink-900 font-medium">
               So we wrote it down properly. These guides are the playbook we
@@ -62,20 +63,6 @@ export function FoundersIntro() {
             </p>
           </div>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3 text-sm text-ink-500">
-            <span className="inline-flex items-center gap-1.5">
-              <span className="text-electric-500">●</span> 6 years nomading
-            </span>
-            <span className="text-ink-300">·</span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="text-electric-500">●</span> 14 cities lived in
-            </span>
-            <span className="text-ink-300">·</span>
-            <span className="inline-flex items-center gap-1.5">
-              <span className="text-electric-500">●</span> Too many bad cafes
-              tested
-            </span>
-          </div>
         </div>
       </div>
     </section>
