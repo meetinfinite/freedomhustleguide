@@ -18,7 +18,7 @@ export function SiteFooter() {
     <footer className="border-t border-ink-100 bg-sand-50 mt-8">
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Top: brand + nav */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 mb-10">
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 mb-10">
           {/* Brand + subscribe */}
           <div className="lg:col-span-1">
             <Link
@@ -36,11 +36,11 @@ export function SiteFooter() {
           </div>
 
           {/* Cities */}
-          <div>
+          <div className="lg:col-span-2">
             <h4 className="text-xs uppercase tracking-[0.16em] text-ink-400 font-semibold mb-3">
               Cities
             </h4>
-            <ul className="space-y-2 text-sm text-ink-600">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-ink-600">
               {guides.map((g) => (
                 <li key={g.slug}>
                   <Link
