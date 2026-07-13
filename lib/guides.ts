@@ -923,26 +923,26 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "hikkaduwa",
-    title: "Freedom Hustle Guide to Hikkaduwa",
-    city: "Hikkaduwa",
+    slug: "hiriketiya",
+    title: "Freedom Hustle Guide to Hiriketiya",
+    city: "Hiriketiya",
     country: "Sri Lanka",
     flag: "🇱🇰",
     tagline:
-      "Everything you need to base in Sri Lanka's south coast surf and dive town — reef mornings, café afternoons, sunset every night.",
+      "Everything you need to base in Sri Lanka's horseshoe bay — surf mornings, yoga afternoons, and one of the best small nomad scenes on the south coast.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1661884711767-e3818515a6a5?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1752498227583-504500ef2122?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Surf + snorkel" },
-      { label: "Monthly budget", value: "£600–£1,300" },
-      { label: "Internet", value: "Good in cafés" },
+      { label: "Best for", value: "Surf + yoga nomads" },
+      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Internet", value: "Good in coworks" },
       { label: "Transport", value: "Scooter / tuk-tuk" },
       { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Surf, reef, coastal" }
+      { label: "Vibe", value: "Bay, surf, slow" }
     ],
     sections: buildSections()
   }
