@@ -323,6 +323,30 @@ export const GUIDES: GuideMeta[] = [
     sections: BANGKOK_SECTIONS
   },
   {
+    slug: "da-nang",
+    title: "Freedom Hustle Guide to Da Nang",
+    city: "Da Nang",
+    country: "Vietnam",
+    flag: "🇻🇳",
+    tagline:
+      "Everything you need to land in Vietnam's quietly-rising coastal city — beach mornings, real WiFi, and a coffee scene that beats most capitals.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Coastal nomads" },
+      { label: "Monthly budget", value: "£700–£1,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Scooter / Grab / Be" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Coastal, growing, friendly" }
+    ],
+    sections: buildSections()
+  },
+  {
     slug: "ubud",
     title: "Freedom Hustle Guide to Ubud",
     city: "Ubud",
@@ -420,30 +444,6 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "da-nang",
-    title: "Freedom Hustle Guide to Da Nang",
-    city: "Da Nang",
-    country: "Vietnam",
-    flag: "🇻🇳",
-    tagline:
-      "Everything you need to land in Vietnam's quietly-rising coastal city — beach mornings, real WiFi, and a coffee scene that beats most capitals.",
-    price: "£29",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Coastal nomads" },
-      { label: "Monthly budget", value: "£700–£1,500" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Scooter / Grab / Be" },
-      { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Coastal, growing, friendly" }
-    ],
-    sections: buildSections()
-  },
-  {
     slug: "seoul",
     title: "Freedom Hustle Guide to Seoul",
     city: "Seoul",
@@ -512,6 +512,150 @@ export const GUIDES: GuideMeta[] = [
       { label: "Transport", value: "Scooter / Bolt" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, polished, tourist-touched" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "coron",
+    title: "Freedom Hustle Guide to Coron",
+    city: "Coron",
+    country: "Philippines",
+    flag: "🇵🇭",
+    tagline:
+      "Everything you need to base yourself in Palawan's most cinematic corner — turquoise lagoons, karst cliffs, and enough WiFi to still get work done.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Island escapes" },
+      { label: "Monthly budget", value: "£800–£1,600" },
+      { label: "Internet", value: "Improving — plan for it" },
+      { label: "Transport", value: "Tricycle / boat" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Wild, cinematic, remote" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "el-nido",
+    title: "Freedom Hustle Guide to El Nido",
+    city: "El Nido",
+    country: "Philippines",
+    flag: "🇵🇭",
+    tagline:
+      "Everything you need to turn El Nido into more than a bucket-list stop — real workable weeks between the Bacuit lagoon runs.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1728042880915-0dd755899018?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Nature-first nomads" },
+      { label: "Monthly budget", value: "£900–£1,700" },
+      { label: "Internet", value: "Patchy — SIM + backup" },
+      { label: "Transport", value: "Tricycle / boat" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Wild, paradise, slow" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "kyoto",
+    title: "Freedom Hustle Guide to Kyoto",
+    city: "Kyoto",
+    country: "Japan",
+    flag: "🇯🇵",
+    tagline:
+      "Everything you need to live in Kyoto slowly — old-world neighbourhoods, refined cafés, and the temples locals actually go to.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1558862107-d49ef2a04d72?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Culture + design nomads" },
+      { label: "Monthly budget", value: "£1,700–£3,000" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Bus / bike / JR" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Quiet, elegant, deep" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "boracay",
+    title: "Freedom Hustle Guide to Boracay",
+    city: "Boracay",
+    country: "Philippines",
+    flag: "🇵🇭",
+    tagline:
+      "Everything you need to work from Boracay's White Beach without falling for the tourist strip — real cafés, real rentals, real weeks.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1567335991483-fc7088c63506?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Beach + work hybrids" },
+      { label: "Monthly budget", value: "£900–£1,800" },
+      { label: "Internet", value: "Good (area-dependent)" },
+      { label: "Transport", value: "Tricycle / e-scooter" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Tropical, social, sunset-led" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "mirissa",
+    title: "Freedom Hustle Guide to Mirissa",
+    city: "Mirissa",
+    country: "Sri Lanka",
+    flag: "🇱🇰",
+    tagline:
+      "Everything you need to base in Sri Lanka's south coast surf town — palm-shaded cafés, whale season, and long slow mornings.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Slow-travel nomads" },
+      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Internet", value: "Good in cafés" },
+      { label: "Transport", value: "Scooter / tuk-tuk" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Surf, chill, coastal" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "canggu",
+    title: "Freedom Hustle Guide to Canggu",
+    city: "Canggu",
+    country: "Bali",
+    flag: "🇮🇩",
+    tagline:
+      "Everything you need to base in Bali's remote-work capital — cafés, coworking, surf breaks, and the parts of Canggu locals still love.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1578724859357-7cbb8670ccdc?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Nomad-hub regulars" },
+      { label: "Monthly budget", value: "£1,000–£2,000" },
+      { label: "Internet", value: "Very good" },
+      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Surf, café, cosmopolitan" }
     ],
     sections: buildSections()
   }
