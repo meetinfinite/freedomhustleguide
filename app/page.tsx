@@ -5,6 +5,7 @@ import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
+import { StatsBar } from "@/components/StatsBar";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
@@ -70,7 +71,7 @@ export default async function HomePage() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed">
               Built from years of travelling full time. Best cafes, best
-              places to stay, best restaurants — and everything you need to
+              places to stay, best restaurants - and everything you need to
               know before travelling.
             </p>
 
@@ -124,9 +125,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ----- Founders intro ----- */}
-      <FoundersIntro />
 
       {/* ----- Available guides ----- */}
       <section
@@ -204,6 +202,12 @@ export default async function HomePage() {
           })}
         </div>
       </section>
+
+      {/* ----- Stats bar ----- */}
+      <StatsBar />
+
+      {/* ----- Founders intro ----- */}
+      <FoundersIntro />
 
       {/* ----- Social proof ----- */}
       <SocialProof />

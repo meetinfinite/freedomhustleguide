@@ -25,7 +25,7 @@ const TESTIMONIALS: Testimonial[] = [
   },
   {
     quote:
-      "Love how transparent you are with how much you spent in each location. This helps a lot. Feels like a friend texting you the answers.",
+      "Love how transparent you are with how much money you spent in each location. This helps a lot. Feels like a friend texting you the answers.",
     name: "Priya S.",
     role: "Product lead · Notion",
     avatar: "/uploads/Avatar-7.png",
@@ -33,32 +33,9 @@ const TESTIMONIALS: Testimonial[] = [
   }
 ];
 
-const STATS = [
-  { value: "560+", label: "Happy nomads" },
-  { value: "4.9★", label: "Avg buyer rating" },
-  { value: "30+", label: "Countries shipped to" },
-  { value: "30+", label: "Value-packed guides coming soon" }
-];
-
 export function SocialProof() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20">
-      {/* Stats bar */}
-      <div className="rounded-3xl bg-white border border-ink-100 shadow-card overflow-hidden mb-16">
-        <div className="grid grid-cols-2 sm:grid-cols-4 divide-y sm:divide-y-0 sm:divide-x divide-ink-100">
-          {STATS.map((s) => (
-            <div key={s.label} className="p-6 text-center">
-              <div className="font-display text-3xl sm:text-4xl text-electric-600 tracking-tight">
-                {s.value}
-              </div>
-              <div className="text-xs uppercase tracking-wider text-ink-500 font-semibold mt-1">
-                {s.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Testimonials */}
       <div className="text-center max-w-2xl mx-auto mb-10">
         <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
