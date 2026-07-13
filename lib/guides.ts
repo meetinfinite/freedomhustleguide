@@ -599,7 +599,7 @@ export const GUIDES: GuideMeta[] = [
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1567335991483-fc7088c63506?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1684419206253-3a934ec0bd6d?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Beach + work hybrids" },
       { label: "Monthly budget", value: "£900–£1,800" },
@@ -863,7 +863,7 @@ export const GUIDES: GuideMeta[] = [
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1635857161777-2383f2e4a82d?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Founders + freelancers" },
       { label: "Monthly budget", value: "£2,000–£4,500" },
