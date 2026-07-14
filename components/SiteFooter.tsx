@@ -14,6 +14,21 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
   const guides = listGuides();
 
+  // Group by country so the footer scans like a real destination list.
+  // "Bali" collapses under "Indonesia" so Ubud/Canggu/Uluwatu/Gili Islands sit together.
+  const countryGroups = guides.reduce<
+    Array<{ country: string; flag: string; cities: typeof guides }>
+  >((acc, g) => {
+    const country = g.country === "Bali" ? "Indonesia" : g.country;
+    const existing = acc.find((x) => x.country === country);
+    if (existing) {
+      existing.cities.push(g);
+    } else {
+      acc.push({ country, flag: g.flag, cities: [g] });
+    }
+    return acc;
+  }, []);
+
   return (
     <footer className="border-t border-ink-100 bg-sand-50 mt-8">
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -35,29 +50,38 @@ export function SiteFooter() {
             <FooterSubscribe />
           </div>
 
-          {/* Cities */}
+          {/* Cities — grouped by country */}
           <div className="lg:col-span-2">
             <h4 className="text-xs uppercase tracking-[0.16em] text-ink-400 font-semibold mb-3">
               Cities
             </h4>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-ink-600">
-              {guides.map((g) => (
-                <li key={g.slug}>
-                  <Link
-                    href={`/guides/${g.slug}`}
-                    className="hover:text-ink-900 transition inline-flex items-center gap-2"
-                  >
-                    <span aria-hidden>{g.flag}</span>
-                    <span>{g.city}</span>
-                    {g.status !== "live" ? (
-                      <span className="text-[10px] uppercase tracking-wider text-ink-400 font-semibold">
-                        {g.progressLabel ?? "Soon"}
-                      </span>
-                    ) : null}
-                  </Link>
-                </li>
+            <div className="columns-1 sm:columns-2 gap-x-6 text-sm text-ink-600 [&>div]:break-inside-avoid [&>div]:mb-5">
+              {countryGroups.map((group) => (
+                <div key={group.country}>
+                  <p className="text-[11px] uppercase tracking-[0.14em] text-ink-500 font-semibold mb-2 inline-flex items-center gap-1.5">
+                    <span aria-hidden>{group.flag}</span>
+                    <span>{group.country}</span>
+                  </p>
+                  <ul className="space-y-1.5">
+                    {group.cities.map((g) => (
+                      <li key={g.slug}>
+                        <Link
+                          href={`/guides/${g.slug}`}
+                          className="hover:text-ink-900 transition inline-flex items-center gap-2"
+                        >
+                          <span>{g.city}</span>
+                          {g.status !== "live" ? (
+                            <span className="text-[10px] uppercase tracking-wider text-ink-400 font-semibold">
+                              {g.progressLabel ?? "Soon"}
+                            </span>
+                          ) : null}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Support */}
@@ -157,7 +181,7 @@ export function SiteFooter() {
           <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3 text-xs text-ink-500 leading-relaxed">
             <p>Copyright © 2019–{year} Infinite Studio Ltd. All Rights Reserved.</p>
             <p className="sm:text-right">
-              Company registered in England and Wales. Company number 11804978.
+              Company registered in England and Wales.
             </p>
           </div>
         </div>
