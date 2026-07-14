@@ -339,7 +339,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Blend of city + beach" },
-      { label: "Monthly budget", value: "£700–£1,300" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "Scooter / Grab / Be" },
       { label: "Difficulty", value: "Beginner-friendly" },
@@ -363,7 +363,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Wellness + jungle slow living" },
-      { label: "Monthly budget", value: "£800–£1,500" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
       { label: "Internet", value: "Patchy — plan for it" },
       { label: "Transport", value: "Scooter / Gojek" },
       { label: "Difficulty", value: "Beginner-friendly" },
@@ -387,7 +387,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1582118315324-a1af6b1c0582?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "First base + long stays" },
-      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "Scooter / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
@@ -435,7 +435,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "City comfort on a budget" },
-      { label: "Monthly budget", value: "£800–£1,500" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "LRT / MRT / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
@@ -531,7 +531,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Island-hopping + diving" },
-      { label: "Monthly budget", value: "£800–£1,600" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
       { label: "Internet", value: "Improving — plan for it" },
       { label: "Transport", value: "Tricycle / boat" },
       { label: "Difficulty", value: "Intermediate" },
@@ -555,7 +555,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1728042880915-0dd755899018?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Lagoons + off-grid resets" },
-      { label: "Monthly budget", value: "£900–£1,700" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
       { label: "Internet", value: "Patchy — SIM + backup" },
       { label: "Transport", value: "Tricycle / boat" },
       { label: "Difficulty", value: "Intermediate" },
@@ -603,7 +603,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1684419206253-3a934ec0bd6d?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Beach days + social nights" },
-      { label: "Monthly budget", value: "£900–£1,800" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
       { label: "Internet", value: "Good (area-dependent)" },
       { label: "Transport", value: "Tricycle / e-scooter" },
       { label: "Difficulty", value: "Easy" },
@@ -627,7 +627,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Surf + whale season" },
-      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good in cafés" },
       { label: "Transport", value: "Scooter / tuk-tuk" },
       { label: "Difficulty", value: "Beginner-friendly" },
@@ -675,7 +675,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1664918706173-6349ca225dd0?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Surf + clifftop sunsets" },
-      { label: "Monthly budget", value: "£900–£1,800" },
+      { label: "Monthly budget", value: "£1,000–£1,900" },
       { label: "Internet", value: "Very good" },
       { label: "Transport", value: "Scooter / Gojek" },
       { label: "Difficulty", value: "Easy" },
@@ -723,7 +723,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1526139334526-f591a54b477c?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Old-town charm + slow weeks" },
-      { label: "Monthly budget", value: "£600–£1,200" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good" },
       { label: "Transport", value: "Bike / motorbike" },
       { label: "Difficulty", value: "Easy" },
@@ -747,7 +747,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Beaches + rock climbing" },
-      { label: "Monthly budget", value: "£800–£1,600" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
       { label: "Internet", value: "Good" },
       { label: "Transport", value: "Scooter / songthaew" },
       { label: "Difficulty", value: "Easy" },
@@ -795,7 +795,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1579211975029-8aa27c32fa75?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Yoga + beach community" },
-      { label: "Monthly budget", value: "£700–£1,500" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Improving" },
       { label: "Transport", value: "Scooter" },
       { label: "Difficulty", value: "Easy" },
@@ -819,7 +819,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Café culture + street food" },
-      { label: "Monthly budget", value: "£600–£1,300" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "Grab / motorbike" },
       { label: "Difficulty", value: "Intermediate" },
@@ -843,7 +843,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1619681216575-d6b3964fc278?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Car-free island decompression" },
-      { label: "Monthly budget", value: "£800–£1,600" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Passable, café-dependent" },
       { label: "Transport", value: "Bike / cidomo" },
       { label: "Difficulty", value: "Easy" },
@@ -891,7 +891,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1688625548814-d7bb114d344e?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Diving + budget island life" },
-      { label: "Monthly budget", value: "£600–£1,300" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good in town" },
       { label: "Transport", value: "Scooter" },
       { label: "Difficulty", value: "Easy" },
@@ -915,7 +915,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1580835267732-2d232d3d2655?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Big-city hustle on a budget" },
-      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "Grab / motorbike" },
       { label: "Difficulty", value: "Intermediate" },
@@ -939,7 +939,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1752498227583-504500ef2122?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Surf + yoga in one bay" },
-      { label: "Monthly budget", value: "£700–£1,400" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good in coworks" },
       { label: "Transport", value: "Scooter / tuk-tuk" },
       { label: "Difficulty", value: "Beginner-friendly" },
@@ -963,7 +963,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Boat days + beach nights" },
-      { label: "Monthly budget", value: "£900–£1,800" },
+      { label: "Monthly budget", value: "£1,100–£1,900" },
       { label: "Internet", value: "Patchy — SIM + backup" },
       { label: "Transport", value: "Longtail / walking" },
       { label: "Difficulty", value: "Intermediate" },
