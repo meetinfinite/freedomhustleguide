@@ -52,22 +52,21 @@ export default async function HomePage() {
           preload="auto"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/55 via-ink-900/65 to-ink-900/90" />
-        {/* Left-side boost - the headline sits over the frame's brightest
-            area (sky + valley), so darken that side a touch more */}
-        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/45 via-ink-900/15 to-transparent" />
+        {/* Keep the video vivid - legibility comes from the text shadows
+            below, not from darkening the whole frame */}
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/35 via-ink-900/45 to-ink-900/80" />
         <div className="absolute inset-0 bg-hero-grad opacity-40 pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-28 sm:pt-32 sm:pb-40">
           <div className="max-w-3xl fade-up">
-            <p className="text-xs uppercase tracking-[0.18em] text-sand-50 font-semibold mb-4">
+            <p className="text-xs uppercase tracking-[0.18em] text-sand-50 font-semibold mb-4 [text-shadow:0_1px_12px_rgba(15,14,10,0.85)]">
               Lived In. Researched. Experienced
             </p>
-            <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50">
+            <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50 [text-shadow:0_2px_28px_rgba(15,14,10,0.85),0_1px_4px_rgba(15,14,10,0.55)]">
               Travel guides for{" "}
               <span className="text-electric-300">digital nomads</span>
             </h1>
-            <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed">
+            <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed [text-shadow:0_1px_14px_rgba(15,14,10,0.9)]">
               Built from years of travelling full time. Best cafes, best
               places to stay, best restaurants - and everything you need to
               know before travelling.
