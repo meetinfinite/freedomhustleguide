@@ -44,6 +44,7 @@ export default async function HomePage() {
         <video
           className="absolute inset-0 w-full h-full object-cover bg-ink-900"
           src={HERO_VIDEO_SRC}
+          poster="/uploads/hero-poster.jpg"
           autoPlay
           muted
           loop
