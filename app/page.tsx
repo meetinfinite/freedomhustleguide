@@ -12,8 +12,9 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { Suspense } from "react";
 
-// Pexels free stock - swap for Valeria's own clip when ready.
-const HERO_VIDEO_SRC = "https://www.pexels.com/download/video/6981375/";
+// Valeria's own hero clip (H.264, muted, ~10s loop). Source master
+// lives locally as public/uploads/Hero.mp4 (gitignored, HEVC).
+const HERO_VIDEO_SRC = "/uploads/hero-web.mp4";
 
 export const dynamic = "force-dynamic";
 
