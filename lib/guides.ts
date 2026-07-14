@@ -110,7 +110,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "gyms",
     title: "Gyms & Wellness",
-    description: "Strength, cardio, yoga, recovery - real prices.",
+    description: "Strength, cardio, yoga, recovery.",
     icon: "🥊",
     readingTime: "5 min"
   },
@@ -215,7 +215,7 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
     notionPageId: "55d57b19-7874-833c-bf83-818526bd6d10"
   },
   gyms: {
-    description: "Commercial, Muay Thai, yoga, massage. Real prices.",
+    description: "Commercial, Muay Thai, yoga, massage.",
     notionPageId: "1e457b19-7874-83f0-8e85-819c82ed7813"
   },
   "getting-around": {
@@ -317,7 +317,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "City energy + max convenience" },
       { label: "Monthly budget", value: "£1,000–£2,000" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "BTS / MRT / Grab" },
+      { label: "Transport", value: "BTS / MRT / Grab / Bolt" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Fast, social, convenient" }
     ],
@@ -365,7 +365,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Wellness + jungle slow living" },
       { label: "Monthly budget", value: "£1,000–£1,800" },
       { label: "Internet", value: "Patchy - plan for it" },
-      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Transport", value: "Scooter / Gojek / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Slow, green, spiritual" }
     ],
@@ -389,7 +389,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "First base + long stays" },
       { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Scooter / Grab" },
+      { label: "Transport", value: "Scooter / Grab / Bolt" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Chill, creative, low-key" }
     ],
@@ -413,7 +413,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Island life without roughing it" },
       { label: "Monthly budget", value: "£1,000–£2,000" },
       { label: "Internet", value: "Good (area-dependent)" },
-      { label: "Transport", value: "Scooter / Bolt" },
+      { label: "Transport", value: "Scooter / Bolt / ferry + flights" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, slow, ocean-led" }
     ],
@@ -461,7 +461,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Fast city + café culture" },
       { label: "Monthly budget", value: "£1,500–£3,000" },
       { label: "Internet", value: "World-class" },
-      { label: "Transport", value: "Subway / KakaoT" },
+      { label: "Transport", value: "Subway / Kakao T" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Fast, modern, intense" }
     ],
@@ -509,7 +509,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Beach life + full infrastructure" },
       { label: "Monthly budget", value: "£1,000–£2,200" },
       { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Scooter / Bolt" },
+      { label: "Transport", value: "Scooter / Grab / Bolt" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, polished, tourist-touched" }
     ],
@@ -533,7 +533,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Island-hopping + diving" },
       { label: "Monthly budget", value: "£1,000–£1,700" },
       { label: "Internet", value: "Improving - plan for it" },
-      { label: "Transport", value: "Tricycle / boat" },
+      { label: "Transport", value: "Tricycle / boats / domestic flights" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Wild, cinematic, remote" }
     ],
@@ -557,7 +557,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Lagoons + off-grid resets" },
       { label: "Monthly budget", value: "£1,000–£1,800" },
       { label: "Internet", value: "Patchy - SIM + backup" },
-      { label: "Transport", value: "Tricycle / boat" },
+      { label: "Transport", value: "Tricycle / boats / domestic flights" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Wild, paradise, slow" }
     ],
@@ -605,7 +605,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Beach days + social nights" },
       { label: "Monthly budget", value: "£1,000–£1,800" },
       { label: "Internet", value: "Good (area-dependent)" },
-      { label: "Transport", value: "Tricycle / e-scooter" },
+      { label: "Transport", value: "E-trike / ferry + flights" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, social, sunset-led" }
     ],
@@ -629,7 +629,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Surf + whale season" },
       { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good in cafés" },
-      { label: "Transport", value: "Scooter / tuk-tuk" },
+      { label: "Transport", value: "Scooter / tuk-tuk / PickMe" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Surf, chill, coastal" }
     ],
@@ -653,7 +653,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Nomad scene + surf" },
       { label: "Monthly budget", value: "£1,000–£2,000" },
       { label: "Internet", value: "Very good" },
-      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Transport", value: "Scooter / Gojek / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Surf, café, cosmopolitan" }
     ],
@@ -677,7 +677,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Surf + clifftop sunsets" },
       { label: "Monthly budget", value: "£1,000–£1,900" },
       { label: "Internet", value: "Very good" },
-      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Transport", value: "Scooter / Gojek / Grab" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Cliff, surf, sunset" }
     ],
@@ -725,7 +725,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Old-town charm + slow weeks" },
       { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Bike / motorbike" },
+      { label: "Transport", value: "Bike / scooter / Grab" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Historic, lanterns, riverside" }
     ],
@@ -749,7 +749,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Beaches + rock climbing" },
       { label: "Monthly budget", value: "£1,000–£1,700" },
       { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Scooter / songthaew" },
+      { label: "Transport", value: "Scooter / Grab / longtail" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Cliff, beach, laid-back" }
     ],
@@ -773,7 +773,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Speed, safety + business" },
       { label: "Monthly budget", value: "£2,500–£4,500" },
       { label: "Internet", value: "World-class" },
-      { label: "Transport", value: "MRT" },
+      { label: "Transport", value: "MRT / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Efficient, futuristic, expensive" }
     ],
@@ -797,7 +797,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Yoga + beach community" },
       { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Improving" },
-      { label: "Transport", value: "Scooter" },
+      { label: "Transport", value: "Scooter / songthaew / ferry" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Yoga, jungle, sunset" }
     ],
@@ -821,7 +821,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Café culture + street food" },
       { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Grab / motorbike" },
+      { label: "Transport", value: "Scooter / Grab / Be" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Chaotic, romantic, historic" }
     ],
@@ -845,7 +845,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Car-free island decompression" },
       { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Passable, café-dependent" },
-      { label: "Transport", value: "Bike / cidomo" },
+      { label: "Transport", value: "Bike / cidomo / fast boat" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Sleepy, tropical, no-cars" }
     ],
@@ -869,7 +869,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Tax-friendly base + big-city polish" },
       { label: "Monthly budget", value: "£2,000–£4,500" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Metro / taxi" },
+      { label: "Transport", value: "Metro / Careem / Uber" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Fast, polished, tax-friendly" }
     ],
@@ -893,7 +893,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Diving + budget island life" },
       { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good in town" },
-      { label: "Transport", value: "Scooter" },
+      { label: "Transport", value: "Scooter / ferry" },
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Diving, island, low-key" }
     ],
@@ -917,7 +917,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Big-city hustle on a budget" },
       { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Grab / motorbike" },
+      { label: "Transport", value: "Scooter / Grab / Be" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Energetic, cheap, food-led" }
     ],
@@ -941,7 +941,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Surf + yoga in one bay" },
       { label: "Monthly budget", value: "£1,000–£1,500" },
       { label: "Internet", value: "Good in coworks" },
-      { label: "Transport", value: "Scooter / tuk-tuk" },
+      { label: "Transport", value: "Scooter / tuk-tuk / PickMe" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Bay, surf, slow" }
     ],
@@ -965,7 +965,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Boat days + beach nights" },
       { label: "Monthly budget", value: "£1,100–£1,900" },
       { label: "Internet", value: "Patchy - SIM + backup" },
-      { label: "Transport", value: "Longtail / walking" },
+      { label: "Transport", value: "Walking / longtail / ferry" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Turquoise, cliffs, party" }
     ],
@@ -989,7 +989,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Quiet culture + Kyoto next door" },
       { label: "Monthly budget", value: "£1,400–£2,500" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "JR / bike" },
+      { label: "Transport", value: "JR / bus / bike" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Ancient, quiet, green" }
     ],
@@ -1013,7 +1013,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Beach clubs + polished comfort" },
       { label: "Monthly budget", value: "£1,200–£2,400" },
       { label: "Internet", value: "Very good" },
-      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Transport", value: "Scooter / Gojek / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Beach clubs, sunset, refined" }
     ],
