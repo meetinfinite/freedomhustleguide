@@ -50,10 +50,10 @@ export function SiteFooter() {
             <FooterSubscribe />
           </div>
 
-          {/* Cities — grouped by country */}
+          {/* Destinations — grouped by country */}
           <div className="lg:col-span-2">
             <h4 className="text-xs uppercase tracking-[0.16em] text-ink-400 font-semibold mb-3">
-              Cities
+              Destinations
             </h4>
             <div className="columns-1 sm:columns-2 gap-x-6 text-sm text-ink-600 [&>div]:break-inside-avoid [&>div]:mb-5">
               {countryGroups.map((group) => (
