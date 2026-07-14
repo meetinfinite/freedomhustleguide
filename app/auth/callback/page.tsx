@@ -32,7 +32,7 @@ export default function AuthCallbackPageWrapper() {
  *
  * Magic links sent from a service-role admin client end up using the implicit
  * flow (token in the hash), so we must run client-side to read it. The browser
- * Supabase client has detectSessionInUrl on by default - it will pick up the
+ * Supabase client has detectSessionInUrl on by default — it will pick up the
  * hash, set the session cookie, fire SIGNED_IN, and clear the hash from the URL.
  */
 function AuthCallback() {
@@ -68,7 +68,7 @@ function AuthCallback() {
         return;
       }
 
-      // Branch 1 - PKCE / server flow (?code=)
+      // Branch 1 — PKCE / server flow (?code=)
       const code = params.get("code");
       if (code) {
         const { error } = await supabase.auth.exchangeCodeForSession(code);
@@ -81,7 +81,7 @@ function AuthCallback() {
         return;
       }
 
-      // Branch 2 - Implicit / hash flow (#access_token=...&refresh_token=...)
+      // Branch 2 — Implicit / hash flow (#access_token=...&refresh_token=...)
       // We parse the hash ourselves rather than rely on SDK auto-detection
       // because @supabase/ssr's createBrowserClient doesn't always auto-detect.
       if (typeof window !== "undefined" && window.location.hash) {
@@ -112,7 +112,7 @@ function AuthCallback() {
         }
       }
 
-      // Branch 3 - already signed in (e.g. opened the page directly)
+      // Branch 3 — already signed in (e.g. opened the page directly)
       const { data: existing } = await supabase.auth.getSession();
       if (existing?.session) {
         if (cancelled) return;

@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
     }
 
     // 2. For NEW buyers, send a magic-link so they can sign in for the first
-    //    time. Existing members already have an account + session - skip the
+    //    time. Existing members already have an account + session — skip the
     //    OTP send. Their dashboard will reflect the upgrade automatically.
     if (!isUpgrade) {
       const supabase = getSupabaseAdmin();

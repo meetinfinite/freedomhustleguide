@@ -12,7 +12,7 @@ export interface Member {
 
 /**
  * Look up a member by email. Returns null if not found.
- * Uses the admin client (bypasses RLS) - call only from server-side code.
+ * Uses the admin client (bypasses RLS) — call only from server-side code.
  */
 export async function getMember(email: string): Promise<Member | null> {
   const supabase = getSupabaseAdmin();
@@ -26,7 +26,7 @@ export async function getMember(email: string): Promise<Member | null> {
     return null;
   }
   if (!data) return null;
-  // Normalise defensively - Supabase columns can be nullable even when our
+  // Normalise defensively — Supabase columns can be nullable even when our
   // type declares them as required. A null `guides` array would crash any
   // caller using `.includes()`.
   const row = data as unknown as Partial<Member>;

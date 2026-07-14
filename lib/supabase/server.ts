@@ -20,7 +20,7 @@ export function getSupabaseServer() {
           try {
             cookieStore.set({ name, value, ...options });
           } catch {
-            // Called from a server component - set() is a no-op there.
+            // Called from a server component — set() is a no-op there.
             // The middleware refreshes the session cookie on each request.
           }
         },
