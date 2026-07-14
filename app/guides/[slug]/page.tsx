@@ -29,15 +29,15 @@ const FAQ_LIVE = [
   },
   {
     q: "How fresh is the information?",
-    a: "Updated regularly. Prices, areas, and apps change — we update without you needing to re-buy."
+    a: "We wrote this from living there — every price, cafe and area was checked on the ground by us, not compiled from other people's blogs."
   },
   {
     q: "Do I need it if I've already been there as a tourist?",
     a: "Living and working in a place is genuinely different. Things like where to actually rent for a month, which cafes have plugs, and what to do about WiFi only matter when you stay."
   },
   {
-    q: "Will there be more cities?",
-    a: "Yes. Ubud, Chiang Mai, Koh Samui and Kuala Lumpur are next. Each guide is bought separately, or Lifetime unlocks every current and future city."
+    q: "Will there be more destinations?",
+    a: "Yes — 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Each guide is bought separately, or Lifetime unlocks every current and future one."
   }
 ];
 
@@ -53,7 +53,7 @@ function buildSoonFAQ(city: string) {
     },
     {
       q: "How fresh is the information?",
-      a: "We do the research on the ground and update every guide regularly after launch. Prices, areas, and apps change — we update without you needing to re-buy."
+      a: "We do the research on the ground, living there ourselves — the guide only launches once every price, cafe and area has been checked in person."
     },
     {
       q: `Will the ${city} guide cover everything Bangkok does?`,
@@ -64,8 +64,8 @@ function buildSoonFAQ(city: string) {
       a: "Waitlisters get a meaningful discount on launch day — historically around 30%. You'll see the exact number in the launch email."
     },
     {
-      q: "Will there be more cities?",
-      a: "Yes. We're working on Ubud, Chiang Mai, Koh Samui, Kuala Lumpur, Da Nang, Seoul, Tokyo and Phuket. Each guide is bought separately, or you can grab Lifetime to get everything."
+      q: "Will there be more destinations?",
+      a: "Yes — 30 destinations across Asia and beyond are on the roadmap. Each guide is bought separately, or you can grab Lifetime to get everything."
     }
   ];
 }
@@ -194,22 +194,23 @@ export default async function GuideLandingPage({
                 Who it's for
               </p>
               <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                First-time nomads or experienced travellers.
+                Digital nomads, remote workers, experienced travellers.
               </h2>
               <p className="text-ink-600 mt-4 text-lg leading-relaxed">
-                If you're moving abroad to keep your remote job, freelance, or
-                build something — and you want to land properly instead of
-                guessing for two weeks — this is for you.
+                Freedom Hustle isn't a travel blog. It's a collection of deep
+                destination guides for people who want to base themselves
+                somewhere and work remotely — and land properly instead of
+                guessing for two weeks.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "First-time digital nomads",
-                "Remote employees relocating for a quarter",
-                "Freelancers running on client time zones",
-                "Founders who need fast WiFi and a good chair",
-                "People who hate generic travel-blog fluff",
-                "Anyone tired of buying a flight before they have a plan"
+                "First-time digital nomads planning their first base abroad",
+                "Remote employees taking a quarter somewhere warmer",
+                "Freelancers who need to be online for client time zones from day one",
+                "Founders who need fast WiFi and a good chair by Monday",
+                "Experienced travellers who want depth, not another top-10 listicle",
+                "Anyone tired of booking the flight before they have a plan"
               ].map((x) => (
                 <div
                   key={x}
@@ -237,8 +238,8 @@ export default async function GuideLandingPage({
               d: "We name the areas to skip, the cafes that look great but have terrible WiFi, and the trips that aren't worth it."
             },
             {
-              t: "Updated regularly",
-              d: "Cities change. Prices change. Apps change. You get updates without re-buying."
+              t: "Short on purpose",
+              d: "These aren't 52-page PDFs of fluff — who has time to read that? Not us. Skimmable sections, straight answers, done."
             }
           ].map((x) => (
             <div
@@ -289,7 +290,7 @@ export default async function GuideLandingPage({
                 {ownsGuide
                   ? "You've got the full guide — pick up wherever you left off."
                   : isLive
-                    ? "Instant access. Regular updates as the city changes."
+                    ? "Instant access. Use it for your whole stay."
                     : `Get the ${guide.city} guide the moment it's ready, with a founders discount only the waitlist gets.`}
               </p>
               <div className="mt-7">
@@ -305,7 +306,7 @@ export default async function GuideLandingPage({
                 "Living checklists that save your progress",
                 "Real cafe + coworking + gym data",
                 "Trip gems and tourist traps, ranked",
-                "Regular updates as the city changes"
+                "Written from months of living there, not a weekend visit"
               ].map((x) => (
                 <li
                   key={x}
