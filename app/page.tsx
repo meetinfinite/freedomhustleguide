@@ -15,14 +15,6 @@ import { Suspense } from "react";
 // Pexels free stock — swap for Valeria's own clip when ready.
 const HERO_VIDEO_SRC = "https://www.pexels.com/download/video/6981375/";
 
-// Brand-owned portrait avatars (local). Shown on the hero social-proof row.
-const AVATARS = [
-  "/uploads/Avatar-1.png",
-  "/uploads/Avatar-2.png",
-  "/uploads/Avatar-3.png",
-  "/uploads/Avatar-4.png"
-];
-
 export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
@@ -100,18 +92,6 @@ export default async function HomePage() {
 
               {/* Hero social-proof strip */}
               <div className="flex items-center gap-3 text-sand-100">
-                <div className="flex -space-x-2">
-                  {AVATARS.map((src, i) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      key={i}
-                      src={src}
-                      alt=""
-                      className="w-9 h-9 rounded-full object-cover border-2 border-ink-900/60 shadow-card"
-                      loading="lazy"
-                    />
-                  ))}
-                </div>
                 <div className="text-sm">
                   <div className="flex items-center gap-1 text-sand-50">
                     <Stars />
