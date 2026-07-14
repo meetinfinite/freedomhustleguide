@@ -52,7 +52,10 @@ export default async function HomePage() {
           preload="auto"
           aria-hidden
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/40 via-ink-900/55 to-ink-900/85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-ink-900/55 via-ink-900/65 to-ink-900/90" />
+        {/* Left-side boost - the headline sits over the frame's brightest
+            area (sky + valley), so darken that side a touch more */}
+        <div className="absolute inset-0 bg-gradient-to-r from-ink-900/45 via-ink-900/15 to-transparent" />
         <div className="absolute inset-0 bg-hero-grad opacity-40 pointer-events-none" />
 
         <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-28 sm:pt-32 sm:pb-40">
