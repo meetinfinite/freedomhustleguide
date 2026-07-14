@@ -945,6 +945,78 @@ export const GUIDES: GuideMeta[] = [
       { label: "Vibe", value: "Bay, surf, slow" }
     ],
     sections: buildSections()
+  },
+  {
+    slug: "phi-phi-islands",
+    title: "Freedom Hustle Guide to the Phi Phi Islands",
+    city: "Phi Phi Islands",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Everything you need to base on Phi Phi — Maya Bay mornings, longtail boat runs, and the parts of the islands that aren't just tourist hell.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Island escapes" },
+      { label: "Monthly budget", value: "£900–£1,800" },
+      { label: "Internet", value: "Patchy — SIM + backup" },
+      { label: "Transport", value: "Longtail / walking" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Turquoise, cliffs, party" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "nara",
+    title: "Freedom Hustle Guide to Nara",
+    city: "Nara",
+    country: "Japan",
+    flag: "🇯🇵",
+    tagline:
+      "Everything you need to base in Nara — Japan's original capital, the deer park, and a slower, cheaper alternative to Kyoto next door.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1550303435-1703d8811aaa?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Culture + slow nomads" },
+      { label: "Monthly budget", value: "£1,400–£2,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "JR / bike" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Ancient, quiet, green" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "seminyak",
+    title: "Freedom Hustle Guide to Seminyak",
+    city: "Seminyak",
+    country: "Bali",
+    flag: "🇮🇩",
+    tagline:
+      "Everything you need to base in Seminyak — Bali's polished stretch of beach clubs, boutique villas, and sunset-facing cafés built for laptops.",
+    price: "£29",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1571984405176-5958bd9ac31d?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Polished-tropical nomads" },
+      { label: "Monthly budget", value: "£1,200–£2,400" },
+      { label: "Internet", value: "Very good" },
+      { label: "Transport", value: "Scooter / Gojek" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Beach clubs, sunset, refined" }
+    ],
+    sections: buildSections()
   }
 ];
 
