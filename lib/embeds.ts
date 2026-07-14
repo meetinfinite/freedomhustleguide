@@ -3,7 +3,7 @@ import https from "node:https";
 import path from "node:path";
 
 /**
- * Link-embed integration — the Airbnb / GetYourGuide counterpart to the
+ * Link-embed integration - the Airbnb / GetYourGuide counterpart to the
  * Google-Places flow in lib/places.ts.
  *
  * Takes an accommodation (Airbnb) or activity (GetYourGuide) URL and
@@ -16,11 +16,11 @@ import path from "node:path";
  *                     we render a clean branded link card. When a partner
  *                     key is configured (GETYOURGUIDE_PARTNER_ID + the
  *                     official Partner API), this is where rich GYG data
- *                     would slot in — the card already upgrades itself the
+ *                     would slot in - the card already upgrades itself the
  *                     moment `image`/`rating` are present.
  *
  * Results are cached to disk (best-effort; ephemeral on serverless, which
- * is fine — the section route revalidates every 60s).
+ * is fine - the section route revalidates every 60s).
  */
 
 export type EmbedKind = "airbnb" | "getyourguide";
@@ -31,7 +31,7 @@ export interface EmbedData {
   url: string;
   /** Card heading. */
   title: string;
-  /** Secondary line — e.g. "Tiny home in Mickleton" for an Airbnb. */
+  /** Secondary line - e.g. "Tiny home in Mickleton" for an Airbnb. */
   subtitle?: string;
   /** Hero image (og:image). Absent for link-only cards (e.g. GYG today). */
   image?: string;
@@ -41,7 +41,7 @@ export interface EmbedData {
   reviewCount?: number;
   /** Formatted "from" price, e.g. "€53". */
   price?: string;
-  /** Compact detail string — e.g. "1 bedroom · 1 bed · 1 bath" or "4 hours". */
+  /** Compact detail string - e.g. "1 bedroom · 1 bed · 1 bath" or "4 hours". */
   details?: string;
   fetchedAt: number;
 }
@@ -65,7 +65,7 @@ export function embedKindForUrl(url: string): EmbedKind | null {
 
 /**
  * Pull what the GetYourGuide activity widget needs straight out of one of
- * Valeria's affiliate links — both pieces are already in the URL:
+ * Valeria's affiliate links - both pieces are already in the URL:
  *   .../<slug>-t177729/?partner_id=JGBJRKR&...
  *                ^tourId          ^partnerId
  * Falls back to GETYOURGUIDE_PARTNER_ID for the partner id when the link
@@ -128,7 +128,7 @@ function cacheKeyFor(url: string): string {
 }
 
 // ---------------------------------------------------------------------------
-// Short-link resolution (abnb.me / gyg.me) — same trick as lib/places.ts:
+// Short-link resolution (abnb.me / gyg.me) - same trick as lib/places.ts:
 // Next's fetch wrapper swallows 30x, so we read Location via node:https.
 // ---------------------------------------------------------------------------
 
@@ -214,7 +214,7 @@ async function fetchHtml(url: string): Promise<string | null> {
     const res = await fetch(url, {
       redirect: "follow",
       headers: {
-        // A browser-like UA — Airbnb serves OG tags to these but not to
+        // A browser-like UA - Airbnb serves OG tags to these but not to
         // bare bots.
         "User-Agent":
           "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
@@ -289,7 +289,7 @@ async function resolveAirbnb(resolvedUrl: string): Promise<EmbedData | null> {
  *
  * The public activity page is bot-protected (403), but the widget's
  * `activities.frame` endpoint returns the activity data (title, photos,
- * stars, review count, price) to a server fetch — no sha or auth needed,
+ * stars, review count, price) to a server fetch - no sha or auth needed,
  * just the tour id + partner id, both already in Valeria's links. We parse
  * that and render it in our OWN card (no "Powered by", our layout).
  */
@@ -316,7 +316,7 @@ async function resolveGetYourGuide(
   const price = pick(/"formattedStartingPrice":\[0,"([^"]+)"\]/);
   const duration = pick(/"duration":\[0,"([^"]*)"\]/);
 
-  // First tour image. GYG serves two URL shapes — "<base>.jpeg/<size>.jpg"
+  // First tour image. GYG serves two URL shapes - "<base>.jpeg/<size>.jpg"
   // and a bare "<base>.jpg" (which 404s without a size code). Normalise
   // both to a large "/99.jpg" render.
   const imgMatch = dec.match(
@@ -346,7 +346,7 @@ async function resolveGetYourGuide(
 
 /**
  * Resolve an Airbnb / GetYourGuide URL into card data. `fallbackTitle` is
- * the link text the editor wrote in Notion — used when we can't (or don't)
+ * the link text the editor wrote in Notion - used when we can't (or don't)
  * fetch a richer title. Returns null only when the URL isn't a supported
  * host or an Airbnb fetch yields nothing usable.
  */

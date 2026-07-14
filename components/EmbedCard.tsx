@@ -7,11 +7,11 @@ interface EmbedCardProps {
   url: string;
   /** Host, when known up front (lets us brand the loading/fallback state). */
   kind?: EmbedKind;
-  /** Editor's link text from Notion — used as the title fallback. */
+  /** Editor's link text from Notion - used as the title fallback. */
   name?: string;
   /** Heading above the notes list. Defaults to "Good to know". */
   notesLabel?: string;
-  /** Editor's bullet notes — why they recommend it. */
+  /** Editor's bullet notes - why they recommend it. */
   notes?: string[];
   /** Server-resolved data (NotionRenderer passes this in to skip the fetch). */
   prefetched?: EmbedData;
@@ -46,7 +46,7 @@ const BRAND: Record<
   }
 };
 
-/** Soft dark vignette anchored in the top-left corner — gives the white
+/** Soft dark vignette anchored in the top-left corner - gives the white
  *  logo something to sit on, fading to nothing toward the card centre. */
 const CORNER_GRADIENT =
   "radial-gradient(ellipse 55% 65% at top left, rgba(17,24,39,0.62), rgba(17,24,39,0))";
@@ -215,7 +215,7 @@ export function EmbedCard({
     );
   }
 
-  // ----- Link card (no photo — GetYourGuide today, or Airbnb fetch miss) -----
+  // ----- Link card (no photo - GetYourGuide today, or Airbnb fetch miss) -----
   return (
     <div className={`rounded-2xl border border-ink-100 bg-white shadow-card p-5 sm:p-6 ${my}`}>
       <div className="mb-2">{HostChip}</div>

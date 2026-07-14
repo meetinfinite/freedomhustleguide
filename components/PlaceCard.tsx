@@ -19,12 +19,12 @@ interface PlaceCardProps {
   ownPhotos?: string[];
   /** Heading above your bullet points. Defaults to "Why we love it". */
   loveLabel?: string;
-  /** Your bullet points — why you like it. */
+  /** Your bullet points - why you like it. */
   lovePoints?: string[];
   /**
    * Pre-resolved place data from the server (NotionRenderer passes
    * this in). When set, the component skips its own /api/place fetch
-   * and renders directly — much faster when many cards share a page.
+   * and renders directly - much faster when many cards share a page.
    */
   prefetched?: ServerPlaceData;
   /** Drop the card's own vertical margin + use a grid-friendly image
@@ -69,7 +69,7 @@ export function PlaceCard({
     ? "aspect-[16/10]"
     : "aspect-[16/9] sm:aspect-[21/9]";
   // If place data was resolved server-side, start in "ok" with the
-  // data baked in — no client fetch, no loading flash, no API round-
+  // data baked in - no client fetch, no loading flash, no API round-
   // trip. Falls through to the client fetch only when prefetched is
   // not supplied (legacy MDX content path).
   const [state, setState] = useState<FetchState>(() =>
@@ -81,7 +81,7 @@ export function PlaceCard({
 
   useEffect(() => {
     if (!url) return;
-    // Already prefetched — nothing to do
+    // Already prefetched - nothing to do
     if (prefetched) return;
     let cancelled = false;
     setState({ status: "loading" });
@@ -120,7 +120,7 @@ export function PlaceCard({
     );
   }
 
-  // ----- No data — clean fallback card -----
+  // ----- No data - clean fallback card -----
   if (state.status !== "ok" || !state.place) {
     return (
       <a
@@ -173,7 +173,7 @@ export function PlaceCard({
     <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
       {hasPhotos && currentPhoto ? (
         <div className={`relative ${imgAspect} w-full overflow-hidden bg-ink-900 group`}>
-          {/* Blurred fill behind the photo — handles portrait photos in a landscape frame */}
+          {/* Blurred fill behind the photo - handles portrait photos in a landscape frame */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={currentPhoto.src}
@@ -185,12 +185,12 @@ export function PlaceCard({
           <img
             key={currentPhoto.src}
             src={currentPhoto.src}
-            alt={`${displayName} — photo ${safeIdx + 1} of ${photos.length}`}
+            alt={`${displayName} - photo ${safeIdx + 1} of ${photos.length}`}
             className="relative w-full h-full object-contain fade-up"
             loading="lazy"
           />
 
-          {/* "Original" badge — only on photos the editor uploaded */}
+          {/* "Original" badge - only on photos the editor uploaded */}
           {currentPhoto.isOwn ? (
             <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-electric-500/95 backdrop-blur text-[10px] font-bold text-white uppercase tracking-wider shadow-card flex items-center gap-1.5">
               <CameraTick />
@@ -386,7 +386,7 @@ function FractionalStar({ fill }: { fill: number }) {
         className="absolute inset-0 overflow-hidden"
         style={{ width: `${fill * 100}%` }}
       >
-        {/* Google's actual star gold — #FBBC04 */}
+        {/* Google's actual star gold - #FBBC04 */}
         <svg
           viewBox="0 0 24 24"
           className="w-[14px] h-[14px]"

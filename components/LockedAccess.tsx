@@ -56,7 +56,7 @@ export function LockedAccess({
       <section className="flex flex-col p-6 sm:p-12">
         <Link
           href="/"
-          aria-label="Freedom Hustle — home"
+          aria-label="Freedom Hustle - home"
           className="inline-flex self-start"
         >
           <BrandLogo height={48} />
@@ -99,7 +99,7 @@ export function LockedAccess({
                 </h1>
                 <p className="text-ink-600 mt-3 leading-relaxed">
                   Enter the email you used to buy. We'll send a one-tap
-                  sign-in link — no password.
+                  sign-in link - no password.
                 </p>
 
                 {noAccess ? (
@@ -111,7 +111,7 @@ export function LockedAccess({
                       returnPath={`/guides/${guide.slug}`}
                       className="text-electric-600 font-medium hover:underline cursor-pointer"
                     >
-                      Buy it now — {guide.price} →
+                      Buy it now - {guide.price} →
                     </BuyButton>
                   </div>
                 ) : null}
@@ -155,7 +155,7 @@ export function LockedAccess({
                     returnPath={`/guides/${guide.slug}`}
                     className="text-electric-600 font-medium hover:underline cursor-pointer"
                   >
-                    Get the {guide.city} guide — {guide.price}
+                    Get the {guide.city} guide - {guide.price}
                   </BuyButton>
                   <span className="text-ink-400">·</span>
                   <BuyButton

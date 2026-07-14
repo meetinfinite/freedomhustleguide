@@ -74,7 +74,7 @@ export function MyGuidesDropdown({ guides, member }: MyGuidesDropdownProps) {
           className="absolute right-0 top-full mt-3 w-72 rounded-2xl bg-white border border-ink-100 shadow-pop p-2 fade-up z-50"
         >
           <div className="px-3 py-2 text-[10px] uppercase tracking-wider text-electric-600 font-semibold">
-            {ownsAll ? "Lifetime — all guides unlocked" : "Your guides"}
+            {ownsAll ? "Lifetime - all guides unlocked" : "Your guides"}
           </div>
 
           {unlocked.length === 0 ? (

@@ -1,14 +1,14 @@
 interface MyMapEmbedProps {
   /** The `mid` value from a Google My Maps embed URL. */
   mid: string;
-  /** City name — shown in the small caption + the larger-map link label. */
+  /** City name - shown in the small caption + the larger-map link label. */
   city: string;
 }
 
 /**
  * Responsive Google My Maps embed for the guide dashboard.
  *
- * Renders a single map per city — colour-coded layers for cafés,
+ * Renders a single map per city - colour-coded layers for cafés,
  * restaurants, nightlife, etc. Built so the in-use experience is
  * "open guide → see whole city → drill into section content as needed",
  * rather than a separate map per section.
@@ -27,7 +27,7 @@ export function MyMapEmbed({ mid, city }: MyMapEmbedProps) {
             Your {city} map
           </p>
           <h2 className="font-display text-xl tracking-tight !mt-0 !mb-0">
-            Cafés, food, bars, gyms — all the picks, on one map.
+            Cafés, food, bars, gyms - all the picks, on one map.
           </h2>
         </div>
         <a
@@ -43,7 +43,7 @@ export function MyMapEmbed({ mid, city }: MyMapEmbedProps) {
       <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] rounded-2xl overflow-hidden shadow-card border border-ink-100 bg-sand-100">
         <iframe
           src={embedUrl}
-          title={`${city} — interactive map`}
+          title={`${city} - interactive map`}
           loading="lazy"
           allow="fullscreen"
           referrerPolicy="no-referrer-when-downgrade"

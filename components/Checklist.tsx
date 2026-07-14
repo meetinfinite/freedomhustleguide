@@ -7,7 +7,7 @@ interface ChecklistProps {
   title?: string;
   /**
    * Pipe-delimited list of items. Authored as a plain string so Tina's
-   * MDX parser can read it — the previous array-of-strings prop tripped
+   * MDX parser can read it - the previous array-of-strings prop tripped
    * Tina and made the editor render blank.
    * Example: items="Land safely|Buy a SIM|Find an ATM"
    */

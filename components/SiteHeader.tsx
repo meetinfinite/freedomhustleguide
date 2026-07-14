@@ -9,7 +9,7 @@ import { BuyButton } from "./BuyButton";
 import { BrandLogo } from "./BrandLogo";
 
 /**
- * Site-wide header. Auth-aware — detects the signed-in user server-side
+ * Site-wide header. Auth-aware - detects the signed-in user server-side
  * and switches between "Sign in / Buy" and "My Guides / Sign out" layouts.
  */
 export async function SiteHeader() {
@@ -26,7 +26,7 @@ export async function SiteHeader() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           href="/"
-          aria-label="Freedom Hustle — home"
+          aria-label="Freedom Hustle - home"
           className="flex items-center"
         >
           <BrandLogo height={40} />

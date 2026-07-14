@@ -12,7 +12,7 @@ const GMAPS_HOST_RE =
 
 let cachedClient: Client | null = null;
 
-/** Lazy-singleton — instantiated on first use, on the server only. */
+/** Lazy-singleton - instantiated on first use, on the server only. */
 function getClient(): Client {
   if (!cachedClient) {
     const token = process.env.NOTION_TOKEN;
@@ -27,7 +27,7 @@ function getClient(): Client {
 }
 
 // ---------------------------------------------------------------------------
-// Types — simplified shape we care about. Notion's full types are huge.
+// Types - simplified shape we care about. Notion's full types are huge.
 // ---------------------------------------------------------------------------
 
 export interface NotionBlock {
@@ -40,7 +40,7 @@ export interface NotionBlock {
   data: unknown;
   /** True if the block has nested children (we currently don't recurse). */
   hasChildren: boolean;
-  /** Pre-fetched children — populated for tables (rows live as children). */
+  /** Pre-fetched children - populated for tables (rows live as children). */
   children?: NotionBlock[];
 }
 
@@ -48,7 +48,7 @@ export interface NotionPage {
   id: string;
   title: string;
   /**
-   * Optional one-line description — pulled from the first paragraph
+   * Optional one-line description - pulled from the first paragraph
    * block on the page when every segment of its rich text is italic.
    * That's the team's convention: italicise the lead sentence and it
    * becomes the page subtitle.
@@ -64,7 +64,7 @@ export interface NotionPage {
    */
   places: Record<string, PlaceData>;
   /**
-   * Same idea as `places`, but for Airbnb / GetYourGuide bullets — keyed
+   * Same idea as `places`, but for Airbnb / GetYourGuide bullets - keyed
    * by the link URL. EmbedCard renders straight from this map.
    */
   embeds: Record<string, EmbedData>;

@@ -30,13 +30,13 @@ export default async function GuideSectionPage({ params }: PageProps) {
   let title = section.title;
   // Description only comes from MDX frontmatter (or the template fallback
   // when MDX is used). When the section reads from Notion, the team
-  // owns the intro prose at the top of the page — we don't surface a
+  // owns the intro prose at the top of the page - we don't surface a
   // separate description tagline.
   let description: string | undefined;
   let body: React.ReactNode;
 
   if (notionPage) {
-    // The page title in Notion looks like "01 · First 24 Hours" — strip
+    // The page title in Notion looks like "01 · First 24 Hours" - strip
     // the leading number so the H1 is clean.
     title = notionPage.title.replace(/^\d+\s*[·.\-]\s*/, "").trim() || section.title;
     // Pulled from the italic first paragraph by fetchSectionPage. The

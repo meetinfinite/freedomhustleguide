@@ -12,7 +12,7 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { Suspense } from "react";
 
-// Pexels free stock — swap for Valeria's own clip when ready.
+// Pexels free stock - swap for Valeria's own clip when ready.
 const HERO_VIDEO_SRC = "https://www.pexels.com/download/video/6981375/";
 
 export const dynamic = "force-dynamic";
@@ -125,7 +125,7 @@ export default async function HomePage() {
           {guides.map((g) => {
             const isLive = g.status === "live";
 
-            // Card wrapper — uses clip-path for GPU-composited rounded clip
+            // Card wrapper - uses clip-path for GPU-composited rounded clip
             // (avoids the overflow-hidden + transform corner-flicker bug).
             const cardClass =
               "group relative aspect-[4/5] rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";

@@ -5,11 +5,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://freedomhustleguide.com"),
   title: {
-    default: "Freedom Hustle — Real guides for working abroad",
+    default: "Freedom Hustle - Real guides for working abroad",
     template: "%s | Freedom Hustle"
   },
   description:
-    "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms — skip to the life you came for.",
+    "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms - skip to the life you came for.",
   applicationName: "Freedom Hustle",
   authors: [{ name: "Arni & Valeria" }],
   keywords: [
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://freedomhustleguide.com",
     siteName: "Freedom Hustle",
-    title: "Freedom Hustle — Real guides for working abroad",
+    title: "Freedom Hustle - Real guides for working abroad",
     description:
-      "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms — skip to the life you came for.",
+      "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms - skip to the life you came for.",
     locale: "en_GB"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Freedom Hustle — Real guides for working abroad",
+    title: "Freedom Hustle - Real guides for working abroad",
     description:
       "Personal nomad playbooks. Skip to the life you came for."
   }
@@ -60,7 +60,7 @@ export default function RootLayout({
       </head>
       <body className="bg-sand-50 text-ink-900 min-h-screen antialiased">
         {children}
-        {/* Plausible Analytics — privacy-friendly, no cookies, no consent
+        {/* Plausible Analytics - privacy-friendly, no cookies, no consent
             banner needed. Doesn't track localhost by default. */}
         <Script
           defer

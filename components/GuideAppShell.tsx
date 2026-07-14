@@ -38,7 +38,7 @@ export function GuideAppShell({
           <div className="flex items-center gap-5">
             <Link
               href="/my"
-              aria-label="Freedom Hustle — my guides"
+              aria-label="Freedom Hustle - my guides"
               className="flex items-center"
             >
               <BrandLogo height={36} />

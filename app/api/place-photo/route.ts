@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
   return new Response(result.bytes, {
     headers: {
       "Content-Type": result.contentType,
-      // Cache aggressively — these images don't change often
+      // Cache aggressively - these images don't change often
       "Cache-Control": "public, max-age=86400, s-maxage=86400, immutable"
     }
   });

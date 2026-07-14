@@ -45,7 +45,7 @@ export default async function MyDashboardPage() {
         </h1>
         <p className="text-ink-600 mt-3 text-lg">
           {ownsAll
-            ? "You have lifetime access to every guide — current and future."
+            ? "You have lifetime access to every guide - current and future."
             : `You own ${unlocked.length} ${
                 unlocked.length === 1 ? "guide" : "guides"
               }. Click below to open or buy more.`}
@@ -140,7 +140,7 @@ export default async function MyDashboardPage() {
                 {upgradable.slice(0, 4).map((g) => (
                   <li key={g.slug} className="flex items-center gap-2">
                     <span>{g.flag}</span>
-                    <span>{g.city} — currently {g.price}</span>
+                    <span>{g.city} - currently {g.price}</span>
                   </li>
                 ))}
                 {upcoming.slice(0, 3).map((g) => (
@@ -149,7 +149,7 @@ export default async function MyDashboardPage() {
                     className="flex items-center gap-2 text-sand-200/70"
                   >
                     <span>{g.flag}</span>
-                    <span>{g.city} — coming soon, included</span>
+                    <span>{g.city} - coming soon, included</span>
                   </li>
                 ))}
               </ul>
@@ -194,7 +194,7 @@ export default async function MyDashboardPage() {
                     customerEmail={user.email}
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-electric-500 text-white text-sm font-semibold shadow-card"
                   >
-                    Buy — {g.price}
+                    Buy - {g.price}
                   </BuyButton>
                 </div>
               </div>

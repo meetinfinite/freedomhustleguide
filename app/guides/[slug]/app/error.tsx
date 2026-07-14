@@ -30,7 +30,7 @@ export default function GuideAppError({
           We hit an error loading this page.
         </h1>
         <p className="text-ink-600 mt-3 leading-relaxed">
-          Not your fault. Try again — and if it keeps happening, email{" "}
+          Not your fault. Try again - and if it keeps happening, email{" "}
           <a
             href="mailto:support@freedomhustleguide.com"
             className="underline hover:text-ink-900"

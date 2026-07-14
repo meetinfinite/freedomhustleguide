@@ -25,11 +25,11 @@ const FAQ_LIVE = [
   },
   {
     q: "Is this just a Notion doc?",
-    a: "No. It's a full guide app — sticky navigation, interactive checklists, a budget calculator, and section pages designed to be skimmed on a phone."
+    a: "No. It's a full guide app - sticky navigation, interactive checklists, a budget calculator, and section pages designed to be skimmed on a phone."
   },
   {
     q: "How fresh is the information?",
-    a: "We wrote this from living there — every price, cafe and area was checked on the ground by us, not compiled from other people's blogs."
+    a: "We wrote this from living there - every price, cafe and area was checked on the ground by us, not compiled from other people's blogs."
   },
   {
     q: "Do I need it if I've already been there as a tourist?",
@@ -37,7 +37,7 @@ const FAQ_LIVE = [
   },
   {
     q: "Will there be more destinations?",
-    a: "Yes — 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Each guide is bought separately, or Lifetime unlocks every current and future one."
+    a: "Yes - 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Each guide is bought separately, or Lifetime unlocks every current and future one."
   }
 ];
 
@@ -49,23 +49,23 @@ function buildSoonFAQ(city: string) {
     },
     {
       q: "Is this just a Notion doc?",
-      a: "No. It's a full guide app — sticky navigation, interactive checklists, a budget calculator, and section pages designed to be skimmed on a phone."
+      a: "No. It's a full guide app - sticky navigation, interactive checklists, a budget calculator, and section pages designed to be skimmed on a phone."
     },
     {
       q: "How fresh is the information?",
-      a: "We do the research on the ground, living there ourselves — the guide only launches once every price, cafe and area has been checked in person."
+      a: "We do the research on the ground, living there ourselves - the guide only launches once every price, cafe and area has been checked in person."
     },
     {
       q: `Will the ${city} guide cover everything Bangkok does?`,
-      a: "Yes — same structure: areas to stay, cafes, coworking, gyms, transport, weekend trips, mistakes to avoid, the lot. Tailored to the city, not copy-pasted."
+      a: "Yes - same structure: areas to stay, cafes, coworking, gyms, transport, weekend trips, mistakes to avoid, the lot. Tailored to the city, not copy-pasted."
     },
     {
       q: "What does the founders discount look like?",
-      a: "Waitlisters get a meaningful discount on launch day — historically around 30%. You'll see the exact number in the launch email."
+      a: "Waitlisters get a meaningful discount on launch day - historically around 30%. You'll see the exact number in the launch email."
     },
     {
       q: "Will there be more destinations?",
-      a: "Yes — 30 destinations across Asia and beyond are on the roadmap. Each guide is bought separately, or you can grab Lifetime to get everything."
+      a: "Yes - 30 destinations across Asia and beyond are on the roadmap. Each guide is bought separately, or you can grab Lifetime to get everything."
     }
   ];
 }
@@ -93,14 +93,14 @@ export default async function GuideLandingPage({
     isLive && member && (member.lifetime || member.guides.includes(guide.slug))
   );
 
-  // Soon guides have no heroImage — fall back to cardImage so the hero
+  // Soon guides have no heroImage - fall back to cardImage so the hero
   // still feels like a real landing page.
   const heroGuide = isLive
     ? guide
     : { ...guide, heroImage: guide.heroImage || guide.cardImage };
 
   // Every guide now declares sections via buildSections() from the shared
-  // template — live and soon look identical structurally. Soon-city
+  // template - live and soon look identical structurally. Soon-city
   // MDX content doesn't exist yet (gated by status check on the app),
   // but the landing-page preview always renders the full template.
   const sectionsForGrid = guide.sections;
@@ -127,7 +127,7 @@ export default async function GuideLandingPage({
           customerEmail={customerEmail}
           className={className}
         >
-          {label ?? `Get the guide — ${guide.price}`}
+          {label ?? `Get the guide - ${guide.price}`}
         </BuyButton>
       );
     }
@@ -199,7 +199,7 @@ export default async function GuideLandingPage({
               <p className="text-ink-600 mt-4 text-lg leading-relaxed">
                 Freedom Hustle isn't a travel blog. It's a collection of deep
                 destination guides for people who want to base themselves
-                somewhere and work remotely — and land properly instead of
+                somewhere and work remotely - and land properly instead of
                 guessing for two weeks.
               </p>
             </div>
@@ -231,7 +231,7 @@ export default async function GuideLandingPage({
           {[
             {
               t: "Lived, not researched",
-              d: "Every recommendation comes from actually living there for months — not a 4-day trip and a Google search."
+              d: "Every recommendation comes from actually living there for months - not a 4-day trip and a Google search."
             },
             {
               t: "Honest, not aesthetic",
@@ -239,7 +239,7 @@ export default async function GuideLandingPage({
             },
             {
               t: "Short on purpose",
-              d: "These aren't 52-page PDFs of fluff — who has time to read that? Not us. Skimmable sections, straight answers, done."
+              d: "These aren't 52-page PDFs of fluff - who has time to read that? Not us. Skimmable sections, straight answers, done."
             }
           ].map((x) => (
             <div
@@ -253,7 +253,7 @@ export default async function GuideLandingPage({
         </div>
       </section>
 
-      {/* Price / waitlist — dark panel with city image hinted in the background */}
+      {/* Price / waitlist - dark panel with city image hinted in the background */}
       <section className="max-w-6xl mx-auto px-6 py-16">
         <div className="rounded-3xl bg-ink-900 text-sand-50 p-8 sm:p-14 relative overflow-hidden">
           {/* City photo hint at the bottom of the layer stack */}
@@ -288,7 +288,7 @@ export default async function GuideLandingPage({
               </h2>
               <p className="text-sand-200 mt-4 text-lg leading-relaxed">
                 {ownsGuide
-                  ? "You've got the full guide — pick up wherever you left off."
+                  ? "You've got the full guide - pick up wherever you left off."
                   : isLive
                     ? "Instant access. Use it for your whole stay."
                     : `Get the ${guide.city} guide the moment it's ready, with a founders discount only the waitlist gets.`}

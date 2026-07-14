@@ -10,7 +10,7 @@ interface LifetimeUpsellBannerProps {
 
 /**
  * Premium dark banner that nudges single-guide buyers toward lifetime.
- * Renders nothing for lifetime members — show conditionally in the parent.
+ * Renders nothing for lifetime members - show conditionally in the parent.
  */
 export function LifetimeUpsellBanner({
   userEmail,

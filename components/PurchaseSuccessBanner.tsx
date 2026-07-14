@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 /**
  * Shows a fullscreen overlay after Stripe Checkout success, telling the buyer
  * to check their email for the sign-in link. Closes itself when dismissed.
- * Triggers off ?purchase=success in the URL — same param Stripe redirects to.
+ * Triggers off ?purchase=success in the URL - same param Stripe redirects to.
  */
 export function PurchaseSuccessBanner() {
   const router = useRouter();
@@ -77,7 +77,7 @@ export function PurchaseSuccessBanner() {
           You're in.
         </h2>
         <p className="text-ink-600 mt-3 leading-relaxed">
-          Payment received. We've just emailed you a one-tap sign-in link —
+          Payment received. We've just emailed you a one-tap sign-in link -
           click it to open your guide.
         </p>
 
@@ -86,7 +86,7 @@ export function PurchaseSuccessBanner() {
             Can't see the email?
           </p>
           <ul className="list-disc pl-5 space-y-1 !my-0">
-            <li>Check spam — first emails sometimes land there.</li>
+            <li>Check spam - first emails sometimes land there.</li>
             <li>
               It comes from <code>noreply@freedomhustleguide.com</code>.
             </li>

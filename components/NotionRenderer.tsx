@@ -15,10 +15,10 @@ import { EmbedCard } from "./EmbedCard";
  *   - Consecutive `to_do` blocks are grouped into one <Checklist> with
  *     localStorage progress tracking.
  *   - `quote` blocks read their leading text to choose a style:
- *       "DON'T —"        → <WarningCard severity="warn">
- *       "HEADS UP —"     → <WarningCard severity="warn">
- *       "PRO TIP —"      → <ProTip>
- *       "GOOD TO KNOW —" → <ProTip label="Good to know">
+ *       "DON'T -"        → <WarningCard severity="warn">
+ *       "HEADS UP -"     → <WarningCard severity="warn">
+ *       "PRO TIP -"      → <ProTip>
+ *       "GOOD TO KNOW -" → <ProTip label="Good to know">
  *       anything else    → styled <blockquote>
  *   - paragraphs / headings / lists / images render as plain HTML.
  */
@@ -65,8 +65,8 @@ function richTextToReact(rt: NotionRichText[] | undefined) {
 
 // ---------- Quote → callout mapping ----------
 
-/** Detect a "tagged" quote — one whose text starts with an uppercase tag
- *  followed by an em-dash, hyphen or en-dash (DON'T — …, PRO TIP — …). */
+/** Detect a "tagged" quote - one whose text starts with an uppercase tag
+ *  followed by an em-dash, hyphen or en-dash (DON'T - …, PRO TIP - …). */
 const TAGGED_QUOTE_REGEX = /^([A-Z][A-Z'\s]+?)\s*[—–-]\s*(.*)/s;
 
 function parseQuoteTag(
@@ -90,8 +90,8 @@ function renderPlainQuote(rt: NotionRichText[] | undefined, key: string) {
   );
 }
 
-/** Tags that are negative instructions — their lead word must stay in the
- *  card title or it inverts the meaning ("DON'T — Get pulled in by taxi
+/** Tags that are negative instructions - their lead word must stay in the
+ *  card title or it inverts the meaning ("DON'T - Get pulled in by taxi
  *  touts" must read "Don't get pulled in by taxi touts", not "Get pulled
  *  in by taxi touts"). Maps the parsed tag → the word to prepend. */
 const NEGATION_PREFIX: Record<string, string> = {
@@ -117,7 +117,7 @@ function calloutTitle(tag: string, title: string): string {
 
 /** Render a tagged quote (DON'T / PRO TIP / GOOD TO KNOW / DANGER) with
  *  optional body blocks (consecutive untagged quotes that immediately
- *  follow it — that's the team's authoring convention in Notion). */
+ *  follow it - that's the team's authoring convention in Notion). */
 function renderTaggedCallout(
   tag: string,
   title: string,
@@ -172,13 +172,13 @@ function renderTaggedCallout(
       </ProTip>
     );
   }
-  // Unknown tag — fall back to a plain blockquote of the whole thing
+  // Unknown tag - fall back to a plain blockquote of the whole thing
   return (
     <blockquote
       key={key}
       className="border-l-4 border-electric-500 pl-4 italic text-ink-700 my-4"
     >
-      <strong>{tag}</strong> — {title}
+      <strong>{tag}</strong> - {title}
       {body}
     </blockquote>
   );
@@ -228,9 +228,9 @@ const GMAPS_HOST_RE =
 interface VenueBullet {
   url: string;
   name: string;
-  /** Rest of the bullet — area, "—" separator, free-form description, "(our pick)" etc. */
+  /** Rest of the bullet - area, "-" separator, free-form description, "(our pick)" etc. */
   notes: NotionRichText[];
-  /** True when the team marked the entry "(our pick)" — we use it to set a default rating. */
+  /** True when the team marked the entry "(our pick)" - we use it to set a default rating. */
   isPick: boolean;
 }
 
@@ -253,7 +253,7 @@ function parseVenueBullet(rt: NotionRichText[] | undefined): VenueBullet | null 
 interface EmbedBullet {
   url: string;
   kind: EmbedKind;
-  /** Editor's link text — title fallback for the card. */
+  /** Editor's link text - title fallback for the card. */
   name: string;
   /** Rest of the bullet (after the link) → card notes. */
   notes: NotionRichText[];
@@ -263,7 +263,7 @@ interface EmbedBullet {
  * If a bulleted_list_item's first rich-text segment links to an Airbnb or
  * GetYourGuide URL, treat the bullet as an accommodation / activity entry
  * and surface it as an EmbedCard. Unlike venue bullets, the link need not
- * be bold — editors often just paste the link.
+ * be bold - editors often just paste the link.
  */
 function parseEmbedBullet(rt: NotionRichText[] | undefined): EmbedBullet | null {
   if (!rt || rt.length === 0) return null;
@@ -320,9 +320,9 @@ export function NotionRenderer({
       continue;
     }
 
-    // Card bullets — a bulleted_list_item that's a Google Maps venue
+    // Card bullets - a bulleted_list_item that's a Google Maps venue
     // (PlaceCard) or an Airbnb / GetYourGuide link (EmbedCard). A run of
-    // consecutive card bullets — mixed types allowed — lays out two-up in
+    // consecutive card bullets - mixed types allowed - lays out two-up in
     // one shared grid; a lone card stays full-width.
     if (b.type === "bulleted_list_item") {
       const asCard = (blk: NotionBlock) => {
@@ -399,7 +399,7 @@ export function NotionRenderer({
       // Fall through to default <ul><li> handling below.
     }
 
-    // Quote handling — a tagged quote (DON'T —, PRO TIP —, etc.)
+    // Quote handling - a tagged quote (DON'T -, PRO TIP -, etc.)
     // absorbs the subsequent consecutive untagged quote blocks as its
     // body. That matches the team's authoring pattern in Notion: one
     // quote with the tag + title, then more quote blocks underneath
@@ -420,7 +420,7 @@ export function NotionRenderer({
         i = j;
         continue;
       }
-      // Untagged quote — plain blockquote
+      // Untagged quote - plain blockquote
       out.push(renderPlainQuote(blockText(b), `b-${i}`));
       i++;
       continue;
@@ -461,7 +461,7 @@ function renderBlock(b: NotionBlock, key: string): React.ReactNode {
         </ol>
       );
     case "quote":
-      // Untagged quotes only reach here as a defensive fallback —
+      // Untagged quotes only reach here as a defensive fallback -
       // the main loop already handles all quote blocks (tagged and
       // untagged) ahead of this switch.
       return renderPlainQuote(blockText(b), key);
@@ -565,7 +565,7 @@ function renderBlock(b: NotionBlock, key: string): React.ReactNode {
       );
     }
     default:
-      // Unknown block type — silent skip in prod, log in dev
+      // Unknown block type - silent skip in prod, log in dev
       if (process.env.NODE_ENV !== "production") {
         console.warn(`[notion-renderer] unmapped block type: ${b.type}`);
       }

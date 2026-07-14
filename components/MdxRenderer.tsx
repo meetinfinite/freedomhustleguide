@@ -20,7 +20,7 @@ import { PlaceCard } from "./PlaceCard";
  *
  * Uses @mdx-js/mdx's `evaluate` directly instead of next-mdx-remote/rsc.
  * next-mdx-remote/rsc v6 silently drops every JSX expression attribute
- * (`lines={[…]}`, `items={[…]}`) — only string and boolean literals
+ * (`lines={[…]}`, `items={[…]}`) - only string and boolean literals
  * survive. Our authoring style is heavy on array/object props, so that
  * was a non-starter. `evaluate` compiles MDX into a real React component
  * with full expression support and is the underlying primitive most
