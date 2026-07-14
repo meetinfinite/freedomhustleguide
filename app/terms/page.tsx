@@ -60,7 +60,7 @@ export default function TermsPage() {
               2. What you&apos;re buying
             </h2>
             <p>
-              A Freedom Hustle guide is a digital product — a
+              A Freedom Hustle guide is a digital product - a
               browser-accessible guide app containing written content, interactive
               tools, and curated venue recommendations. There is no physical
               product, no download required, and no app to install.
@@ -131,7 +131,7 @@ export default function TermsPage() {
             </h2>
             <p>
               Access is tied to the email address used at checkout. Don&apos;t
-              share your magic-link emails with anyone — anyone with the link
+              share your magic-link emails with anyone - anyone with the link
               can sign in as you. If you lose access to your purchase email,
               contact support and we&apos;ll help you migrate to a new one.
             </p>
@@ -170,7 +170,7 @@ export default function TermsPage() {
               8. Content disclaimer
             </h2>
             <p>
-              Our guides are personal opinion and lived experience — they are
+              Our guides are personal opinion and lived experience - they are
               not professional travel, legal, medical, financial, or
               immigration advice. Prices, venues, visa rules, and local
               conditions change. Verify anything safety-critical with an

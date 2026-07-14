@@ -1,7 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
 /**
- * Server-only admin client. Uses the service-role key — bypasses RLS.
+ * Server-only admin client. Uses the service-role key - bypasses RLS.
  * Use ONLY in API routes / webhooks / server actions, never in client code.
  */
 let _admin: ReturnType<typeof createClient> | null = null;

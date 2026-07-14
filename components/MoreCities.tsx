@@ -2,7 +2,7 @@ import Link from "next/link";
 import { listGuides } from "@/lib/guides";
 
 interface MoreCitiesProps {
-  /** Slug of the guide we're currently on — excluded from the list. */
+  /** Slug of the guide we're currently on - excluded from the list. */
   currentSlug: string;
   /** How many other cities to show. Default 3. */
   count?: number;
@@ -18,7 +18,7 @@ export function MoreCities({ currentSlug, count = 3 }: MoreCitiesProps) {
   const currentIdx = all.findIndex((g) => g.slug === currentSlug);
   if (currentIdx === -1) return null;
 
-  // Wrap around — start at the next guide after the current one.
+  // Wrap around - start at the next guide after the current one.
   const next: typeof all = [];
   for (let i = 1; i <= count; i++) {
     next.push(all[(currentIdx + i) % all.length]);

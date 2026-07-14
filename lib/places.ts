@@ -305,7 +305,7 @@ export async function getPlaceFromUrl(
 
   const apiKey = await getApiKey();
   if (!apiKey) {
-    // No API key — return null so the UI shows a basic fallback.
+    // No API key - return null so the UI shows a basic fallback.
     return null;
   }
 

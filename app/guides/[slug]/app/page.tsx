@@ -16,7 +16,7 @@ export default async function GuideAppDashboard({
   const guide = getGuide(params.slug);
   if (!guide || guide.status !== "live") notFound();
 
-  // Auth already enforced by the parent layout — re-fetch member to decide
+  // Auth already enforced by the parent layout - re-fetch member to decide
   // whether to show the lifetime upsell. Free + fast (one Supabase call).
   const supabase = getSupabaseServer();
   const {

@@ -5,18 +5,18 @@ import matter from "gray-matter";
 const CONTENT_ROOT = path.join(process.cwd(), "content", "guides");
 
 export interface SectionSource {
-  /** Frontmatter title — falls back to the section meta title if missing */
+  /** Frontmatter title - falls back to the section meta title if missing */
   title: string;
-  /** Frontmatter description — appears under the H1 */
+  /** Frontmatter description - appears under the H1 */
   description?: string;
-  /** Raw MDX content body (post-frontmatter) — handed to compileMDX */
+  /** Raw MDX content body (post-frontmatter) - handed to compileMDX */
   body: string;
 }
 
 /**
  * Read a guide section's MDX file from disk and split out the frontmatter.
  *
- * Returns `null` when the file doesn't exist — the caller is expected to
+ * Returns `null` when the file doesn't exist - the caller is expected to
  * `notFound()` in that case. Throws on IO errors other than ENOENT so we
  * don't accidentally render a half-broken page when the disk is at fault.
  */

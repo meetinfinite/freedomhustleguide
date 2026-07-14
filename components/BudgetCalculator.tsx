@@ -98,7 +98,7 @@ export function BudgetCalculator() {
             Your monthly estimate
           </h4>
           <p className="text-sm text-ink-500 !my-0">
-            Adjust the sliders. Saves nothing — just for vibes.
+            Adjust the sliders. Saves nothing - just for vibes.
           </p>
         </div>
         <div className="text-right">

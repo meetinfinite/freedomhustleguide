@@ -63,22 +63,22 @@ export default function PrivacyPage() {
             </h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Email address</strong> — when you buy a guide, sign in
+                <strong>Email address</strong> - when you buy a guide, sign in
                 with a magic link, or join a waitlist.
               </li>
               <li>
-                <strong>Payment details</strong> — handled directly by Stripe.
+                <strong>Payment details</strong> - handled directly by Stripe.
                 We never see or store your card number; we only receive a
                 confirmation that payment succeeded, plus the last 4 digits and
                 card brand for our records.
               </li>
               <li>
-                <strong>Anonymous usage stats</strong> — page views and
+                <strong>Anonymous usage stats</strong> - page views and
                 referrer (via Plausible Analytics, cookie-free, no personal
                 profiling).
               </li>
               <li>
-                <strong>Authentication cookies</strong> — set by Supabase Auth
+                <strong>Authentication cookies</strong> - set by Supabase Auth
                 to keep you signed in. Strictly necessary; expires when your
                 session ends.
               </li>
@@ -91,20 +91,20 @@ export default function PrivacyPage() {
             </h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>To deliver what you paid for</strong> — granting access
+                <strong>To deliver what you paid for</strong> - granting access
                 to your guides (legal basis: contract).
               </li>
               <li>
-                <strong>To send transactional emails</strong> — purchase
+                <strong>To send transactional emails</strong> - purchase
                 confirmation, magic-link sign-in (legal basis: contract).
               </li>
               <li>
-                <strong>To improve the product</strong> — aggregated traffic
+                <strong>To improve the product</strong> - aggregated traffic
                 analytics, no individual profiling (legal basis: legitimate
                 interest).
               </li>
               <li>
-                <strong>To notify you about new guides</strong> — only if you
+                <strong>To notify you about new guides</strong> - only if you
                 explicitly joined a waitlist (legal basis: consent).
               </li>
             </ul>
@@ -124,27 +124,27 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-6 space-y-2 mt-3">
               <li>
-                <strong>Stripe</strong> (Ireland / US) — payment processing.
+                <strong>Stripe</strong> (Ireland / US) - payment processing.
               </li>
               <li>
-                <strong>Supabase</strong> (US/EU) — authentication and database.
+                <strong>Supabase</strong> (US/EU) - authentication and database.
               </li>
               <li>
-                <strong>Resend</strong> (US) — transactional email delivery.
+                <strong>Resend</strong> (US) - transactional email delivery.
               </li>
               <li>
-                <strong>Vercel</strong> (US) — website hosting.
+                <strong>Vercel</strong> (US) - website hosting.
               </li>
               <li>
-                <strong>Plausible Analytics</strong> (EU) — cookie-free,
+                <strong>Plausible Analytics</strong> (EU) - cookie-free,
                 privacy-friendly analytics.
               </li>
               <li>
-                <strong>ImprovMX</strong> (EU) — email forwarding for our
+                <strong>ImprovMX</strong> (EU) - email forwarding for our
                 support inbox.
               </li>
               <li>
-                <strong>Google Places API</strong> (US) — venue data shown
+                <strong>Google Places API</strong> (US) - venue data shown
                 inside the guides (we do not share your personal data with
                 Google).
               </li>
@@ -161,18 +161,18 @@ export default function PrivacyPage() {
             </h2>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Purchase records</strong> — 7 years (UK tax /
+                <strong>Purchase records</strong> - 7 years (UK tax /
                 accounting requirements).
               </li>
               <li>
-                <strong>Account &amp; access data</strong> — for as long as you
+                <strong>Account &amp; access data</strong> - for as long as you
                 hold access to a guide.
               </li>
               <li>
-                <strong>Waitlist emails</strong> — until you unsubscribe.
+                <strong>Waitlist emails</strong> - until you unsubscribe.
               </li>
               <li>
-                <strong>Analytics</strong> — aggregated, no personal identifiers
+                <strong>Analytics</strong> - aggregated, no personal identifiers
                 retained.
               </li>
             </ul>

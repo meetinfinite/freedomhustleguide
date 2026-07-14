@@ -114,7 +114,7 @@ export function FooterSubscribe() {
             </h3>
             <p className="text-ink-600 mt-2 leading-relaxed">
               {status === "already"
-                ? "Thanks — we'll only email you when we have something genuinely worth saying."
+                ? "Thanks - we'll only email you when we have something genuinely worth saying."
                 : "We'll only email you when we have something genuinely worth saying."}
             </p>
             <button
@@ -138,7 +138,7 @@ export function FooterSubscribe() {
             </h3>
             <p className="text-ink-600 mt-2 leading-relaxed">
               New city drops, travel finds, the occasional founders
-              discount. No spam, no fluff — only when there&apos;s something
+              discount. No spam, no fluff - only when there&apos;s something
               genuinely worth sending.
             </p>
 
@@ -175,7 +175,7 @@ export function FooterSubscribe() {
             </form>
 
             <p className="mt-4 text-xs text-ink-400 text-center">
-              Unsubscribe anytime. We don&apos;t share your email — ever.
+              Unsubscribe anytime. We don&apos;t share your email - ever.
             </p>
           </>
         )}

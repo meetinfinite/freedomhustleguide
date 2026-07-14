@@ -19,7 +19,7 @@ export interface GuideMeta {
   /**
    * Optional Google My Maps ID (the `mid=…` value from the embed URL).
    * When set, the in-app dashboard renders an embedded city map above the
-   * section grid — one map per city, all categories colour-coded.
+   * section grid - one map per city, all categories colour-coded.
    */
   myMapsId?: string;
   heroImage: string;
@@ -48,7 +48,7 @@ export interface GuideSection {
  * Single source of truth for guide structure.
  *
  * Every city starts from this template. A city can override individual
- * section fields via buildSections() — e.g. Bangkok tightens "Best Areas
+ * section fields via buildSections() - e.g. Bangkok tightens "Best Areas
  * to Stay" to "Eight neighborhoods compared" because that's the actual
  * count. New cities inherit the template wholesale until they have local
  * tweaks worth committing.
@@ -75,7 +75,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "monthly-budget",
     title: "Monthly Budget",
     description:
-      "What we actually spent per month — a real figure from mid-range full-time travellers.",
+      "What we actually spent per month - a real figure from mid-range full-time travellers.",
     icon: "💸",
     readingTime: "6 min"
   },
@@ -103,14 +103,14 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "nightlife",
     title: "Nightlife",
-    description: "Rooftops, dive bars, dance floors — who they're for.",
+    description: "Rooftops, dive bars, dance floors - who they're for.",
     icon: "🍸",
     readingTime: "5 min"
   },
   {
     slug: "gyms",
     title: "Gyms & Wellness",
-    description: "Strength, cardio, yoga, recovery — real prices.",
+    description: "Strength, cardio, yoga, recovery - real prices.",
     icon: "🥊",
     readingTime: "5 min"
   },
@@ -125,7 +125,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "getting-around",
     title: "Getting Around",
     description:
-      "Transit, ride-shares, taxis, scooters — honest rankings plus the safety stuff nobody else says.",
+      "Transit, ride-shares, taxis, scooters - honest rankings plus the safety stuff nobody else says.",
     icon: "🚇",
     readingTime: "6 min"
   },
@@ -147,7 +147,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "digital-nomad-toolkit",
     title: "Digital Nomad Toolkit",
     description:
-      "Our tested apps, gear, banking, insurance and tools — the stack that actually works.",
+      "Our tested apps, gear, banking, insurance and tools - the stack that actually works.",
     icon: "🧰",
     readingTime: "4 min"
   }
@@ -159,7 +159,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
  * back to the template.
  *
  * Use for genuinely city-specific tweaks (numbers, local transit names,
- * cultural references). Don't use it to drift the structure — if you
+ * cultural references). Don't use it to drift the structure - if you
  * change the same field on every city, promote it to the template.
  */
 type SectionOverrides = Partial<Record<string, Partial<GuideSection>>>;
@@ -179,7 +179,7 @@ export function buildSections(
  * verbatim. These are real differences worth surfacing on the landing
  * page (e.g. "Eight neighborhoods" because we counted them).
  *
- * The `notionPageId` values come from the "Bangkok — The Freedom Hustle
+ * The `notionPageId` values come from the "Bangkok - The Freedom Hustle
  * Guide" parent page in Notion. Each child page's ID was captured via
  * scripts/notion-probe.mjs.
  */
@@ -220,7 +220,7 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
   },
   "getting-around": {
     description:
-      "BTS, MRT, Grab, taxis, scooters — honest rankings plus the safety stuff nobody else says.",
+      "BTS, MRT, Grab, taxis, scooters - honest rankings plus the safety stuff nobody else says.",
     notionPageId: "68457b19-7874-83d5-861a-817db24f8eaf"
   },
   "trips-and-activities": {
@@ -330,7 +330,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to land in Vietnam's quietly-rising coastal city — beach mornings, real WiFi, and a coffee scene that beats most capitals.",
+      "Everything you need to land in Vietnam's quietly-rising coastal city - beach mornings, real WiFi, and a coffee scene that beats most capitals.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -354,7 +354,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to land in Ubud and turn jungle-side rice fields into a productive base — without the WiFi roulette.",
+      "Everything you need to land in Ubud and turn jungle-side rice fields into a productive base - without the WiFi roulette.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -364,7 +364,7 @@ export const GUIDES: GuideMeta[] = [
     quickStats: [
       { label: "Best for", value: "Wellness + jungle slow living" },
       { label: "Monthly budget", value: "£1,000–£1,800" },
-      { label: "Internet", value: "Patchy — plan for it" },
+      { label: "Internet", value: "Patchy - plan for it" },
       { label: "Transport", value: "Scooter / Gojek" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Slow, green, spiritual" }
@@ -378,7 +378,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to settle into the original digital nomad city — cheap, easy, and far calmer than Bangkok.",
+      "Everything you need to settle into the original digital nomad city - cheap, easy, and far calmer than Bangkok.",
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
     status: "live",
@@ -402,7 +402,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to make a tropical island actually work as a base — not just a holiday photo op.",
+      "Everything you need to make a tropical island actually work as a base - not just a holiday photo op.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -426,7 +426,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Malaysia",
     flag: "🇲🇾",
     tagline:
-      "Everything you need to set up in Southeast Asia's most underrated city — fast internet, world-class food, half the cost of Singapore.",
+      "Everything you need to set up in Southeast Asia's most underrated city - fast internet, world-class food, half the cost of Singapore.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -474,7 +474,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to live in Tokyo properly — neighbourhoods, work spots, transit, and the food places you'd never find on TikTok.",
+      "Everything you need to live in Tokyo properly - neighbourhoods, work spots, transit, and the food places you'd never find on TikTok.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -498,7 +498,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to live in Phuket properly — beach mornings, real WiFi, and the parts of the island that aren't all tourist.",
+      "Everything you need to live in Phuket properly - beach mornings, real WiFi, and the parts of the island that aren't all tourist.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -522,7 +522,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Philippines",
     flag: "🇵🇭",
     tagline:
-      "Everything you need to base yourself in Palawan's most cinematic corner — turquoise lagoons, karst cliffs, and enough WiFi to still get work done.",
+      "Everything you need to base yourself in Palawan's most cinematic corner - turquoise lagoons, karst cliffs, and enough WiFi to still get work done.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -532,7 +532,7 @@ export const GUIDES: GuideMeta[] = [
     quickStats: [
       { label: "Best for", value: "Island-hopping + diving" },
       { label: "Monthly budget", value: "£1,000–£1,700" },
-      { label: "Internet", value: "Improving — plan for it" },
+      { label: "Internet", value: "Improving - plan for it" },
       { label: "Transport", value: "Tricycle / boat" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Wild, cinematic, remote" }
@@ -546,7 +546,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Philippines",
     flag: "🇵🇭",
     tagline:
-      "Everything you need to turn El Nido into more than a bucket-list stop — real workable weeks between the Bacuit lagoon runs.",
+      "Everything you need to turn El Nido into more than a bucket-list stop - real workable weeks between the Bacuit lagoon runs.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -556,7 +556,7 @@ export const GUIDES: GuideMeta[] = [
     quickStats: [
       { label: "Best for", value: "Lagoons + off-grid resets" },
       { label: "Monthly budget", value: "£1,000–£1,800" },
-      { label: "Internet", value: "Patchy — SIM + backup" },
+      { label: "Internet", value: "Patchy - SIM + backup" },
       { label: "Transport", value: "Tricycle / boat" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Wild, paradise, slow" }
@@ -570,7 +570,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to live in Kyoto slowly — old-world neighbourhoods, refined cafés, and the temples locals actually go to.",
+      "Everything you need to live in Kyoto slowly - old-world neighbourhoods, refined cafés, and the temples locals actually go to.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -594,7 +594,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Philippines",
     flag: "🇵🇭",
     tagline:
-      "Everything you need to work from Boracay's White Beach without falling for the tourist strip — real cafés, real rentals, real weeks.",
+      "Everything you need to work from Boracay's White Beach without falling for the tourist strip - real cafés, real rentals, real weeks.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -618,7 +618,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Sri Lanka",
     flag: "🇱🇰",
     tagline:
-      "Everything you need to base in Sri Lanka's south coast surf town — palm-shaded cafés, whale season, and long slow mornings.",
+      "Everything you need to base in Sri Lanka's south coast surf town - palm-shaded cafés, whale season, and long slow mornings.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -642,7 +642,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to base in Bali's remote-work capital — cafés, coworking, surf breaks, and the parts of Canggu locals still love.",
+      "Everything you need to base in Bali's remote-work capital - cafés, coworking, surf breaks, and the parts of Canggu locals still love.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -666,7 +666,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to base in Bali's south — cliffs, sunset temples, world-class surf, and cafés built for the laptop crowd.",
+      "Everything you need to base in Bali's south - cliffs, sunset temples, world-class surf, and cafés built for the laptop crowd.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -690,7 +690,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to make Osaka a base — Japan's warmest, loudest, most food-obsessed city, at half the pace of Tokyo.",
+      "Everything you need to make Osaka a base - Japan's warmest, loudest, most food-obsessed city, at half the pace of Tokyo.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -714,7 +714,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to slow down in Vietnam's lantern-lit old town — historic riverside, real WiFi, and coffee-fuelled writing weeks.",
+      "Everything you need to slow down in Vietnam's lantern-lit old town - historic riverside, real WiFi, and coffee-fuelled writing weeks.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -738,7 +738,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to live in Krabi properly — Railay's limestone cliffs, longtail boat runs, and a laptop-friendly town base.",
+      "Everything you need to live in Krabi properly - Railay's limestone cliffs, longtail boat runs, and a laptop-friendly town base.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -762,7 +762,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Singapore",
     flag: "🇸🇬",
     tagline:
-      "Everything you need to base in Southeast Asia's cleanest, fastest city — hawker food, world-class transit, and the best coworking scene in the region.",
+      "Everything you need to base in Southeast Asia's cleanest, fastest city - hawker food, world-class transit, and the best coworking scene in the region.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -786,7 +786,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to work from Phangan's quieter side — jungle mornings, sunset beach evenings, and yes, actual WiFi.",
+      "Everything you need to work from Phangan's quieter side - jungle mornings, sunset beach evenings, and yes, actual WiFi.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -810,7 +810,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to base in Hanoi's Old Quarter — chaotic, romantic, cheap, and quietly one of Asia's best café cities.",
+      "Everything you need to base in Hanoi's Old Quarter - chaotic, romantic, cheap, and quietly one of Asia's best café cities.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -834,7 +834,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Indonesia",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to slow-work on the Gilis — no cars, turquoise water, and mornings that start slow enough to actually think.",
+      "Everything you need to slow-work on the Gilis - no cars, turquoise water, and mornings that start slow enough to actually think.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -858,7 +858,7 @@ export const GUIDES: GuideMeta[] = [
     country: "UAE",
     flag: "🇦🇪",
     tagline:
-      "Everything you need to base in Dubai without the Instagram version — real neighbourhoods, real cafés, and the tax + visa side that matters.",
+      "Everything you need to base in Dubai without the Instagram version - real neighbourhoods, real cafés, and the tax + visa side that matters.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -882,7 +882,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to base on Koh Tao — dive-focused mornings, laptop-friendly afternoons, and Thailand's most affordable island life.",
+      "Everything you need to base on Koh Tao - dive-focused mornings, laptop-friendly afternoons, and Thailand's most affordable island life.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -906,7 +906,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to live in Saigon properly — District 1 to District 7, the coworking scene, and the food streets locals actually eat on.",
+      "Everything you need to live in Saigon properly - District 1 to District 7, the coworking scene, and the food streets locals actually eat on.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -930,7 +930,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Sri Lanka",
     flag: "🇱🇰",
     tagline:
-      "Everything you need to base in Sri Lanka's horseshoe bay — surf mornings, yoga afternoons, and one of the best small nomad scenes on the south coast.",
+      "Everything you need to base in Sri Lanka's horseshoe bay - surf mornings, yoga afternoons, and one of the best small nomad scenes on the south coast.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -954,7 +954,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to base on Phi Phi — Maya Bay mornings, longtail boat runs, and the parts of the islands that aren't just tourist hell.",
+      "Everything you need to base on Phi Phi - Maya Bay mornings, longtail boat runs, and the parts of the islands that aren't just tourist hell.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -964,7 +964,7 @@ export const GUIDES: GuideMeta[] = [
     quickStats: [
       { label: "Best for", value: "Boat days + beach nights" },
       { label: "Monthly budget", value: "£1,100–£1,900" },
-      { label: "Internet", value: "Patchy — SIM + backup" },
+      { label: "Internet", value: "Patchy - SIM + backup" },
       { label: "Transport", value: "Longtail / walking" },
       { label: "Difficulty", value: "Intermediate" },
       { label: "Vibe", value: "Turquoise, cliffs, party" }
@@ -978,7 +978,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to base in Nara — Japan's original capital, the deer park, and a slower, cheaper alternative to Kyoto next door.",
+      "Everything you need to base in Nara - Japan's original capital, the deer park, and a slower, cheaper alternative to Kyoto next door.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -1002,7 +1002,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to base in Seminyak — Bali's polished stretch of beach clubs, boutique villas, and sunset-facing cafés built for laptops.",
+      "Everything you need to base in Seminyak - Bali's polished stretch of beach clubs, boutique villas, and sunset-facing cafés built for laptops.",
     price: "£29",
     stripePriceId: null,
     status: "soon",

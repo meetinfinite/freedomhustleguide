@@ -44,7 +44,7 @@ export function SignInForm({ nextPath }: SignInFormProps) {
       <section className="flex flex-col p-6 sm:p-12">
         <Link
           href="/"
-          aria-label="Freedom Hustle — home"
+          aria-label="Freedom Hustle - home"
           className="inline-flex self-start"
         >
           <BrandLogo height={48} />
@@ -87,7 +87,7 @@ export function SignInForm({ nextPath }: SignInFormProps) {
                 </h1>
                 <p className="text-ink-600 mt-3 leading-relaxed">
                   Enter the email you used to buy any Freedom Hustle guide.
-                  We'll send a one-tap sign-in link — no password.
+                  We'll send a one-tap sign-in link - no password.
                 </p>
 
                 <form onSubmit={onSubmit} className="mt-8 space-y-3">
@@ -160,10 +160,10 @@ export function SignInForm({ nextPath }: SignInFormProps) {
           </h2>
           <ul className="mt-7 space-y-2 text-sm text-sand-100">
             {[
-              "Personal nomad recommendations — cafes, coworking, gyms, neighbourhoods",
+              "Personal nomad recommendations - cafes, coworking, gyms, neighbourhoods",
               "Honest reviews, lived experience, no tourist fluff",
               "Interactive checklists that save your progress",
-              "Regular updates — the city changes, so does the guide"
+              "Regular updates - the city changes, so does the guide"
             ].map((x) => (
               <li key={x} className="flex items-start gap-2">
                 <span className="text-electric-300 mt-1">✓</span>

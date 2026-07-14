@@ -127,7 +127,7 @@ export function NotifyButton({ city, className = "" }: NotifyButtonProps) {
                     : `You're on the list for ${city}.`}
                 </h3>
                 <p className="text-ink-600 mt-2 leading-relaxed">
-                  We'll email you the second the {city} guide goes live —
+                  We'll email you the second the {city} guide goes live -
                   usually a few weeks ahead of public launch with a small
                   founders discount.
                 </p>
@@ -151,7 +151,7 @@ export function NotifyButton({ city, className = "" }: NotifyButtonProps) {
                   Get the {city} guide first.
                 </h3>
                 <p className="text-ink-600 mt-2 leading-relaxed">
-                  Drop your email and we'll send it the moment it's ready —
+                  Drop your email and we'll send it the moment it's ready -
                   with a founders discount that only the waitlist gets.
                 </p>
 

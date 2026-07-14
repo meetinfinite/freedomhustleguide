@@ -38,19 +38,19 @@ export function SiteFooter() {
           <div className="lg:col-span-1">
             <Link
               href="/"
-              aria-label="Freedom Hustle — home"
+              aria-label="Freedom Hustle - home"
               className="inline-flex"
             >
               <BrandLogo height={56} />
             </Link>
             <p className="text-ink-500 text-sm mt-4 mb-4 max-w-sm leading-relaxed">
-              New city drops, travel finds, and the occasional discount —
+              New city drops, travel finds, and the occasional discount -
               delivered when there's something genuinely worth saying.
             </p>
             <FooterSubscribe />
           </div>
 
-          {/* Destinations — grouped by country */}
+          {/* Destinations - grouped by country */}
           <div className="lg:col-span-2">
             <h4 className="text-xs uppercase tracking-[0.16em] text-ink-400 font-semibold mb-3">
               Destinations
