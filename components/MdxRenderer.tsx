@@ -14,6 +14,7 @@ import { ProTip } from "./ProTip";
 import { MapPlaceholder } from "./MapPlaceholder";
 import { BudgetCalculator } from "./BudgetCalculator";
 import { PlaceCard } from "./PlaceCard";
+import { EmbedCard } from "./EmbedCard";
 
 /**
  * Server-component MDX renderer.
@@ -41,7 +42,8 @@ const components = {
   ProTip,
   MapPlaceholder,
   BudgetCalculator,
-  PlaceCard
+  PlaceCard,
+  EmbedCard
 };
 
 export async function MdxRenderer({ source }: { source: string }) {
