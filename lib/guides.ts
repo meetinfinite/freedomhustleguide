@@ -383,9 +383,9 @@ export const GUIDES: GuideMeta[] = [
     stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
     status: "live",
     heroImage:
-      "https://images.unsplash.com/photo-1512553353614-82a7370096dc?auto=format&fit=crop&w=2400&q=80",
+      "https://images.pexels.com/photos/16986826/pexels-photo-16986826.jpeg?auto=compress&cs=tinysrgb&w=2400",
     cardImage:
-      "https://images.unsplash.com/photo-1512553353614-82a7370096dc?auto=format&fit=crop&w=1400&q=80",
+      "https://images.pexels.com/photos/16986826/pexels-photo-16986826.jpeg?auto=compress&cs=tinysrgb&w=1400",
     quickStats: [
       { label: "Best for", value: "Nature, outdoors + long stays" },
       { label: "Monthly budget", value: "£1,000–£1,600" },
