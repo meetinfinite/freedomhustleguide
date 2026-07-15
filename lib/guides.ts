@@ -139,8 +139,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "top-ten",
     title: "Top 10 Things to Experience",
-    description:
-      "Ten experiences that tell the story of the place - a few days or a few months, cover these.",
+    description: "If you only do ten things, do these.",
     icon: "⭐",
     readingTime: "6 min"
   },
