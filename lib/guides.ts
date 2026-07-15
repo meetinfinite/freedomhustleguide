@@ -138,9 +138,9 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   },
   {
     slug: "top-ten",
-    title: "Top Ten",
+    title: "Top 10 Things to Experience",
     description:
-      "The best things to cover while you experience the city.",
+      "Ten experiences that tell the story of the place - a few days or a few months, cover these.",
     icon: "⭐",
     readingTime: "6 min"
   },
