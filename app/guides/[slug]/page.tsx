@@ -211,7 +211,7 @@ export default async function GuideLandingPage({
                 "Remote employees taking a quarter somewhere warmer",
                 "Freelancers who need to be online for client time zones from day one",
                 "Founders who need fast WiFi and a good chair by Monday",
-                "Experienced travellers who want depth, not another top-10 listicle",
+                "Experienced travellers who want depth, not recycled blog fluff",
                 "Anyone tired of booking the flight before they have a plan"
               ].map((x) => (
                 <div
