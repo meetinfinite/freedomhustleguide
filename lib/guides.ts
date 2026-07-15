@@ -67,7 +67,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "areas-to-stay",
     title: "Best Areas to Stay",
-    description: "Neighbourhoods compared honestly. Where to actually live.",
+    description: "Neighbourhoods compared. Where to actually live.",
     icon: "🏙️",
     readingTime: "8 min"
   },
