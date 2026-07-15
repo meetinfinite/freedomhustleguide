@@ -117,6 +117,11 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
 
   return (
     <figure className="my-8">
+      {map.intro ? (
+        <p className="text-ink-700 text-base sm:text-lg leading-relaxed mb-5">
+          {map.intro}
+        </p>
+      ) : null}
       <div className="relative rounded-2xl overflow-hidden border border-ink-100 shadow-card">
         <div ref={containerRef} className="h-[380px] sm:h-[460px] w-full z-0" />
 
