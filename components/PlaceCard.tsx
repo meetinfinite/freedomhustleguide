@@ -155,7 +155,10 @@ export function PlaceCard({
   const p = state.place;
   const displayName = nameOverride || p.name;
   const ownList = (ownPhotos || []).filter((x) => x && x.trim().length > 0);
-  const googleList = p.photoNames || [];
+  // When the editor supplies their own photos, show ONLY those - mixing a
+  // curated shot with random Google review photos reads as a glitch.
+  // Google's gallery is the fallback for venues without our own photo.
+  const googleList = ownList.length > 0 ? [] : p.photoNames || [];
   const photos: CarouselPhoto[] = [
     ...ownList.map((src) => ({ src, isOwn: true })),
     ...googleList.map((name) => ({
