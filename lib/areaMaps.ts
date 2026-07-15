@@ -24,6 +24,8 @@ export interface AreaDef {
 export interface CityAreaMap {
   center: [number, number];
   zoom: number;
+  /** Short scene-setting paragraph rendered above the map. */
+  intro?: string;
   areas: AreaDef[];
 }
 
@@ -31,6 +33,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
   "chiang-mai": {
     center: [18.793, 98.988],
     zoom: 13,
+    intro:
+      'Chiang Mai is small, and that changes everything. There\'s no BTS or MRT here - the city is a handful of walkable pockets that you ride between - so "which area" really means "which ten minutes of the city do you want on your doorstep". Nimman is the nomad default and the easiest landing, the Old City is the atmospheric one, and Santitham is where people quietly move in month two once they\'ve seen Nimman\'s prices.',
     areas: [
       {
         name: "Old City",
