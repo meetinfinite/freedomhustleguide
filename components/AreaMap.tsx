@@ -7,25 +7,91 @@ import type { CityAreaMap } from "@/lib/areaMaps";
 /**
  * Interactive neighbourhood map for "Best Areas to Stay".
  *
- * Real OpenStreetMap basemap with brand-coloured area polygons and a
- * legend. Scroll-wheel zoom stays off so the page keeps scrolling
- * normally; pinch/double-click zoom still work.
+ * Preferred engine: Google Maps JS API with `language=en` - an
+ * English-labelled, familiar basemap (matches the reference maps the
+ * team likes). Used whenever NEXT_PUBLIC_GOOGLE_MAPS_KEY is set.
  *
- * Leaflet is loaded inside useEffect (dynamic import) because it
- * touches `window` and can't run during server rendering.
+ * Fallback engine: Leaflet + OpenStreetMap (no key needed) so the map
+ * still renders before the key exists / if Google fails to load. OSM
+ * labels are in the local language, which is why Google is preferred.
  */
+
+const GOOGLE_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
+
+/** Load the Google Maps JS API once, in English. */
+function loadGoogleMaps(key: string): Promise<void> {
+  const w = window as any;
+  if (w.google?.maps) return Promise.resolve();
+  const existing = document.getElementById(
+    "gmaps-js"
+  ) as HTMLScriptElement | null;
+  if (existing) {
+    return new Promise((resolve) => {
+      existing.addEventListener("load", () => resolve());
+      if (w.google?.maps) resolve();
+    });
+  }
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    s.id = "gmaps-js";
+    s.src = `https://maps.googleapis.com/maps/api/js?key=${key}&language=en&loading=async`;
+    s.async = true;
+    s.onload = () => resolve();
+    s.onerror = () => reject(new Error("Google Maps failed to load"));
+    document.head.appendChild(s);
+  });
+}
+
 export function AreaMap({ map }: { map: CityAreaMap }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let disposed = false;
-    let instance: import("leaflet").Map | null = null;
+    let leafletMap: import("leaflet").Map | null = null;
 
-    (async () => {
+    async function initGoogle(key: string) {
+      await loadGoogleMaps(key);
+      if (disposed || !containerRef.current) return;
+      const g = (window as any).google;
+
+      const gmap = new g.maps.Map(containerRef.current, {
+        center: { lat: map.center[0], lng: map.center[1] },
+        zoom: map.zoom,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: true,
+        gestureHandling: "cooperative",
+        clickableIcons: false
+      });
+
+      const info = new g.maps.InfoWindow();
+      for (const area of map.areas) {
+        const poly = new g.maps.Polygon({
+          paths: area.polygon.map(([lat, lng]) => ({ lat, lng })),
+          strokeColor: area.color,
+          strokeWeight: 2,
+          strokeOpacity: 0.9,
+          fillColor: area.color,
+          fillOpacity: 0.35,
+          map: gmap
+        });
+        poly.addListener("click", (e: any) => {
+          info.setContent(
+            `<div><strong>${area.name}</strong>${
+              area.hint ? `<br/>${area.hint}` : ""
+            }</div>`
+          );
+          info.setPosition(e.latLng);
+          info.open(gmap);
+        });
+      }
+    }
+
+    async function initLeaflet() {
       const L = (await import("leaflet")).default;
       if (disposed || !containerRef.current) return;
 
-      instance = L.map(containerRef.current, {
+      leafletMap = L.map(containerRef.current, {
         center: map.center,
         zoom: map.zoom,
         scrollWheelZoom: false,
@@ -36,7 +102,7 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
         maxZoom: 18,
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(instance);
+      }).addTo(leafletMap);
 
       for (const area of map.areas) {
         const poly = L.polygon(area.polygon, {
@@ -44,17 +110,27 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
           weight: 2,
           fillColor: area.color,
           fillOpacity: 0.35
-        }).addTo(instance);
+        }).addTo(leafletMap);
         poly.bindTooltip(
           `<strong>${area.name}</strong>${area.hint ? `<br/>${area.hint}` : ""}`,
           { sticky: true }
         );
       }
-    })();
+    }
+
+    if (GOOGLE_KEY) {
+      initGoogle(GOOGLE_KEY).catch(() => {
+        // Key missing scopes / blocked referrer - keep the section usable.
+        if (!disposed) initLeaflet();
+      });
+    } else {
+      initLeaflet();
+    }
 
     return () => {
       disposed = true;
-      instance?.remove();
+      leafletMap?.remove();
+      // Google Maps has no destroy API; unmounting the DOM node is enough.
     };
   }, [map]);
 
@@ -70,7 +146,10 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
           </p>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
             {map.areas.map((a) => (
-              <li key={a.name} className="flex items-center gap-2 text-xs text-ink-800">
+              <li
+                key={a.name}
+                className="flex items-center gap-2 text-xs text-ink-800"
+              >
                 <span
                   aria-hidden
                   className="w-3 h-3 rounded-sm shrink-0"
