@@ -30,6 +30,102 @@ export interface CityAreaMap {
 }
 
 export const AREA_MAPS: Record<string, CityAreaMap> = {
+  bangkok: {
+    center: [13.74, 100.565],
+    zoom: 12.4,
+    intro:
+      "Bangkok is enormous, but the BTS and MRT shrink it - live near a station and the whole city opens up; live far from one and every plan starts with a taxi negotiation. Asoke and Phrom Phong are the easy first landings, Thonglor-Ekkamai is where the food and nightlife live, Ari is the local-cool pocket, and On Nut is the budget move that keeps you on the train line.",
+    areas: [
+      {
+        name: "Asoke",
+        color: "#e07a5f",
+        hint: "Central, connected, easiest first landing",
+        polygon: [
+          [13.7448, 100.556],
+          [13.7448, 100.5668],
+          [13.731, 100.5668],
+          [13.731, 100.556]
+        ]
+      },
+      {
+        name: "Phrom Phong",
+        color: "#d16ba5",
+        hint: "Upscale Sukhumvit, parks + cafés",
+        polygon: [
+          [13.7405, 100.5645],
+          [13.7405, 100.5758],
+          [13.722, 100.5758],
+          [13.722, 100.5645]
+        ]
+      },
+      {
+        name: "Thonglor",
+        color: "#7c6bd1",
+        hint: "Food + nightlife, trendier money",
+        polygon: [
+          [13.742, 100.576],
+          [13.742, 100.588],
+          [13.722, 100.588],
+          [13.722, 100.576]
+        ]
+      },
+      {
+        name: "Ekkamai",
+        color: "#d4b85a",
+        hint: "Thonglor's calmer neighbour",
+        polygon: [
+          [13.74, 100.588],
+          [13.74, 100.598],
+          [13.716, 100.598],
+          [13.716, 100.588]
+        ]
+      },
+      {
+        name: "Ari",
+        color: "#5fc98a",
+        hint: "Local-cool, café pocket",
+        polygon: [
+          [13.79, 100.535],
+          [13.79, 100.552],
+          [13.772, 100.552],
+          [13.772, 100.535]
+        ]
+      },
+      {
+        name: "On Nut",
+        color: "#5fb8c9",
+        hint: "Budget move, still on the BTS",
+        polygon: [
+          [13.716, 100.595],
+          [13.716, 100.612],
+          [13.698, 100.612],
+          [13.698, 100.595]
+        ]
+      },
+      {
+        name: "Silom / Sathorn",
+        color: "#e0975f",
+        hint: "Offices, parks, old-school Bangkok",
+        polygon: [
+          [13.732, 100.512],
+          [13.732, 100.54],
+          [13.712, 100.54],
+          [13.712, 100.512]
+        ]
+      },
+      {
+        name: "Rama 9",
+        color: "#a8c95f",
+        hint: "New CBD, MRT-side value condos",
+        polygon: [
+          [13.768, 100.558],
+          [13.768, 100.578],
+          [13.748, 100.578],
+          [13.748, 100.558]
+        ]
+      }
+    ]
+  },
   "chiang-mai": {
     center: [18.793, 98.988],
     zoom: 13,
