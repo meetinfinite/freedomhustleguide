@@ -15,8 +15,10 @@ export interface AreaDef {
   name: string;
   /** Fill/stroke colour for the polygon + legend swatch. */
   color: string;
-  /** One-liner shown in the polygon tooltip, e.g. "Cafés + nomad hub". */
+  /** Vibe one-liner shown in the polygon tooltip, e.g. "Cafés + nomad hub". */
   hint?: string;
+  /** "Best for: …" line in the tooltip - who should stay here. */
+  bestFor?: string;
   /**
    * Mark as a "visit, don't stay" zone - rendered grey/dashed and listed
    * separately in the legend, so famous-but-wrong areas (Khao San etc.)
@@ -45,7 +47,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Asoke",
         color: "#e07a5f",
-        hint: "Central, connected, easiest first landing",
+        hint: "Central, business-y, well-connected",
+        bestFor: "First-timers who want to be in the middle of everything",
         polygon: [
           [13.7448, 100.556],
           [13.7448, 100.5668],
@@ -56,7 +59,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Phrom Phong",
         color: "#d16ba5",
-        hint: "Upscale Sukhumvit, parks + cafés",
+        hint: "Cleaner, more upscale Sukhumvit - malls, parks, serviced condos",
+        bestFor: "Nomads who want comfort + walkability, families",
         polygon: [
           [13.7405, 100.5645],
           [13.7405, 100.5758],
@@ -67,7 +71,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Thonglor",
         color: "#7c6bd1",
-        hint: "Food + nightlife, trendier money",
+        hint: "Bangkok's design / nightlife district",
+        bestFor: "Nomads who go out, food people, second-time visitors",
         polygon: [
           [13.742, 100.576],
           [13.742, 100.588],
@@ -78,7 +83,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Ekkamai",
         color: "#d4b85a",
-        hint: "Thonglor's calmer neighbour",
+        hint: "Slightly quieter, slightly cooler Thonglor",
+        bestFor: "Nomads who like Thonglor's vibe minus the chaos",
         polygon: [
           [13.74, 100.588],
           [13.74, 100.598],
@@ -89,7 +95,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Ari",
         color: "#5fc98a",
-        hint: "Local-cool, café pocket",
+        hint: "The hipster, local-feeling, leafy side of Bangkok",
+        bestFor: "Repeat visitors, nomads who want a 'real' neighborhood",
         polygon: [
           [13.79, 100.535],
           [13.79, 100.552],
@@ -100,7 +107,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "On Nut",
         color: "#5fb8c9",
-        hint: "Budget move, still on the BTS",
+        hint: "The 'living long-term' area",
+        bestFor: "Budget nomads, longer stays (2+ months)",
         polygon: [
           [13.716, 100.595],
           [13.716, 100.612],
@@ -111,7 +119,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Silom / Sathorn",
         color: "#e0975f",
-        hint: "Offices, parks, old-school Bangkok",
+        hint: "Financial district + Lumpini Park",
+        bestFor: "Nomads on corporate hours, runners, park people",
         polygon: [
           [13.732, 100.512],
           [13.732, 100.54],
@@ -122,7 +131,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Rama 9",
         color: "#a8c95f",
-        hint: "New CBD, MRT-side value condos",
+        hint: "New, fast-growing CBD",
+        bestFor: "Modern condo lovers, MRT-focused commuters",
         polygon: [
           [13.768, 100.558],
           [13.768, 100.578],
@@ -133,7 +143,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Khao San",
         color: "#8a8170",
-        hint: "Backpacker central - visit, don't stay",
+        hint: "Backpacker party central - hostels, buckets, live music",
+        bestFor: "A big night out - exhausting for a month's stay",
         avoid: true,
         polygon: [
           [13.765, 100.494],
@@ -145,7 +156,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Pratunam",
         color: "#8a8170",
-        hint: "Market chaos - visit, don't stay",
+        hint: "Wholesale markets + tourist malls, full-on commerce",
+        bestFor: "Bargain shopping days - a hard place to live",
         avoid: true,
         polygon: [
           [13.758, 100.535],
@@ -157,7 +169,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       {
         name: "Chinatown",
         color: "#8a8170",
-        hint: "Incredible food, tough living - visit, don't stay",
+        hint: "Yaowarat - Bangkok's best street-food strip, old shophouses",
+        bestFor: "Eating your way through an evening; few livable condos",
         avoid: true,
         polygon: [
           [13.746, 100.505],
@@ -178,6 +191,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Old City",
         color: "#e07a5f",
         hint: "Temples, cafés, walkable moat square",
+        bestFor: "First-timers who want atmosphere on the doorstep",
         polygon: [
           [18.7962, 98.9768],
           [18.7962, 98.9936],
@@ -189,6 +203,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Nimman",
         color: "#d16ba5",
         hint: "Cafés, coworking, the nomad hub",
+        bestFor: "The easiest landing - everything easy, prices to match",
         polygon: [
           [18.8052, 98.9636],
           [18.8055, 98.9724],
@@ -200,6 +215,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Santitham",
         color: "#7c6bd1",
         hint: "Local, cheap eats, quieter",
+        bestFor: "Month two - Nimman access at local prices",
         polygon: [
           [18.8108, 98.9724],
           [18.8112, 98.9834],
@@ -211,6 +227,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Suthep",
         color: "#e0975f",
         hint: "Green, near the university + mountain",
+        bestFor: "Nature people, runners, temple walks",
         polygon: [
           [18.8002, 98.9448],
           [18.8004, 98.9604],
@@ -222,6 +239,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Jed Yod",
         color: "#d4b85a",
         hint: "Residential, easy highway access",
+        bestFor: "Longer stays with a scooter",
         polygon: [
           [18.8162, 98.9618],
           [18.8164, 98.9762],
@@ -233,6 +251,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Night Bazaar",
         color: "#5fb8c9",
         hint: "Markets, central, touristy",
+        bestFor: "Short stays close to the action",
         polygon: [
           [18.7902, 98.9968],
           [18.7904, 99.0024],
@@ -244,6 +263,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Riverside",
         color: "#5fc98a",
         hint: "Ping river cafés + restaurants",
+        bestFor: "Slow mornings, riverside dinners",
         polygon: [
           [18.7992, 99.0002],
           [18.7994, 99.0092],
@@ -255,6 +275,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
         name: "Central Festival",
         color: "#a8c95f",
         hint: "Mall comforts, long-stay condos",
+        bestFor: "Modern-condo convenience on the highway side",
         polygon: [
           [18.8102, 99.0138],
           [18.8104, 99.0252],

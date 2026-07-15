@@ -69,6 +69,7 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
               properties: {
                 name: a.name,
                 hint: a.hint ?? "",
+                bestFor: a.bestFor ?? "",
                 color: a.color,
                 avoid: a.avoid ?? false
               },
@@ -114,20 +115,44 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
           }
         });
 
-        instance.on("click", "areas-fill", (e) => {
+        // One shared popup: follows the cursor on desktop hover, and
+        // opens on tap for touch devices (no hover there).
+        const popup = new maplibregl.Popup({
+          closeButton: false,
+          maxWidth: "280px"
+        });
+        const showCard = (e: maplibregl.MapLayerMouseEvent) => {
           const f = e.features?.[0];
           if (!f || !instance) return;
-          const { name, hint } = f.properties as { name: string; hint: string };
-          new maplibregl.Popup({ closeButton: false })
+          const { name, hint, bestFor } = f.properties as {
+            name: string;
+            hint: string;
+            bestFor: string;
+          };
+          popup
             .setLngLat(e.lngLat)
-            .setHTML(`<strong>${name}</strong>${hint ? `<br/>${hint}` : ""}`)
+            .setHTML(
+              `<div style="line-height:1.45">` +
+                `<strong style="font-size:13px">${name}</strong>` +
+                (hint
+                  ? `<br/><em style="color:#5a5346">${hint}</em>`
+                  : "") +
+                (bestFor
+                  ? `<br/><span><strong>Best for:</strong> ${bestFor}</span>`
+                  : "") +
+                `</div>`
+            )
             .addTo(instance);
-        });
-        instance.on("mouseenter", "areas-fill", () => {
+        };
+        instance.on("click", "areas-fill", showCard);
+        instance.on("mousemove", "areas-fill", (e) => {
           if (instance) instance.getCanvas().style.cursor = "pointer";
+          showCard(e);
         });
         instance.on("mouseleave", "areas-fill", () => {
-          if (instance) instance.getCanvas().style.cursor = "";
+          if (!instance) return;
+          instance.getCanvas().style.cursor = "";
+          popup.remove();
         });
       });
     })();
