@@ -5,6 +5,8 @@ import { readSection } from "@/lib/mdx";
 import { fetchSectionPage } from "@/lib/notion";
 import { MdxRenderer } from "@/components/MdxRenderer";
 import { NotionRenderer } from "@/components/NotionRenderer";
+import { AreaMap } from "@/components/AreaMap";
+import { AREA_MAPS } from "@/lib/areaMaps";
 
 interface PageProps {
   params: { slug: string; section: string };
@@ -87,6 +89,10 @@ export default async function GuideSectionPage({ params }: PageProps) {
           <p className="text-ink-600 mt-3 text-lg">{description}</p>
         ) : null}
       </header>
+
+      {section.slug === "areas-to-stay" && AREA_MAPS[guide.slug] ? (
+        <AreaMap map={AREA_MAPS[guide.slug]} />
+      ) : null}
 
       {body}
 
