@@ -132,7 +132,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "top-ten",
     title: "Top 10 Things To Do",
-    description: "Best things to do, ranked.",
+    description: "Best things to do.",
     icon: "⭐",
     readingTime: "6 min"
   },
