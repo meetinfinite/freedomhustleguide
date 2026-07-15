@@ -93,11 +93,13 @@ export default async function GuideLandingPage({
     isLive && member && (member.lifetime || member.guides.includes(guide.slug))
   );
 
-  // Soon guides have no heroImage - fall back to cardImage so the hero
-  // still feels like a real landing page.
-  const heroGuide = isLive
-    ? guide
-    : { ...guide, heroImage: guide.heroImage || guide.cardImage };
+  // Most guides declare no heroImage - fall back to cardImage so the
+  // hero always has a photo (live guides included; Chiang Mai shipped
+  // live with an empty heroImage and rendered a blank hero).
+  const heroGuide = {
+    ...guide,
+    heroImage: guide.heroImage || guide.cardImage
+  };
 
   // Every guide now declares sections via buildSections() from the shared
   // template - live and soon look identical structurally. Soon-city

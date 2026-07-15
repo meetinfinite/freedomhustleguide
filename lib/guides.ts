@@ -382,11 +382,12 @@ export const GUIDES: GuideMeta[] = [
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
     status: "live",
-    heroImage: "",
+    heroImage:
+      "https://images.unsplash.com/photo-1582118315324-a1af6b1c0582?auto=format&fit=crop&w=2400&q=80",
     cardImage:
       "https://images.unsplash.com/photo-1582118315324-a1af6b1c0582?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "First base + long stays" },
+      { label: "Best for", value: "Nature, outdoors + long stays" },
       { label: "Monthly budget", value: "£1,000–£1,600" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "Scooter / Grab / Bolt" },
