@@ -1,136 +1,117 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import "leaflet/dist/leaflet.css";
+import "maplibre-gl/dist/maplibre-gl.css";
 import type { CityAreaMap } from "@/lib/areaMaps";
 
 /**
  * Interactive neighbourhood map for "Best Areas to Stay".
  *
- * Preferred engine: Google Maps JS API with `language=en` - an
- * English-labelled, familiar basemap (matches the reference maps the
- * team likes). Used whenever NEXT_PUBLIC_GOOGLE_MAPS_KEY is set.
+ * MapLibre GL + OpenFreeMap vector tiles - free, no API key. Every
+ * label is forced to English (name:en) with a Latin transliteration
+ * fallback (name:latin), so the basemap reads in English worldwide -
+ * verified against Chiang Mai, which the raster options rendered in
+ * Thai.
  *
- * Fallback engine: Leaflet + OpenStreetMap (no key needed) so the map
- * still renders before the key exists / if Google fails to load. OSM
- * labels are in the local language, which is why Google is preferred.
+ * cooperativeGestures keeps normal page scrolling (Cmd/two-finger to
+ * zoom). Areas are clickable for a one-line take.
  */
-
-const GOOGLE_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
-
-/** Load the Google Maps JS API once, in English. */
-function loadGoogleMaps(key: string): Promise<void> {
-  const w = window as any;
-  if (w.google?.maps) return Promise.resolve();
-  const existing = document.getElementById(
-    "gmaps-js"
-  ) as HTMLScriptElement | null;
-  if (existing) {
-    return new Promise((resolve) => {
-      existing.addEventListener("load", () => resolve());
-      if (w.google?.maps) resolve();
-    });
-  }
-  return new Promise((resolve, reject) => {
-    const s = document.createElement("script");
-    s.id = "gmaps-js";
-    s.src = `https://maps.googleapis.com/maps/api/js?key=${key}&language=en&loading=async`;
-    s.async = true;
-    s.onload = () => resolve();
-    s.onerror = () => reject(new Error("Google Maps failed to load"));
-    document.head.appendChild(s);
-  });
-}
-
 export function AreaMap({ map }: { map: CityAreaMap }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let disposed = false;
-    let leafletMap: import("leaflet").Map | null = null;
+    let instance: import("maplibre-gl").Map | null = null;
 
-    async function initGoogle(key: string) {
-      await loadGoogleMaps(key);
-      if (disposed || !containerRef.current) return;
-      const g = (window as any).google;
-
-      const gmap = new g.maps.Map(containerRef.current, {
-        center: { lat: map.center[0], lng: map.center[1] },
-        zoom: map.zoom,
-        mapTypeControl: false,
-        streetViewControl: false,
-        fullscreenControl: true,
-        gestureHandling: "cooperative",
-        clickableIcons: false
-      });
-
-      const info = new g.maps.InfoWindow();
-      for (const area of map.areas) {
-        const poly = new g.maps.Polygon({
-          paths: area.polygon.map(([lat, lng]) => ({ lat, lng })),
-          strokeColor: area.color,
-          strokeWeight: 2,
-          strokeOpacity: 0.9,
-          fillColor: area.color,
-          fillOpacity: 0.35,
-          map: gmap
-        });
-        poly.addListener("click", (e: any) => {
-          info.setContent(
-            `<div><strong>${area.name}</strong>${
-              area.hint ? `<br/>${area.hint}` : ""
-            }</div>`
-          );
-          info.setPosition(e.latLng);
-          info.open(gmap);
-        });
-      }
-    }
-
-    async function initLeaflet() {
-      const L = (await import("leaflet")).default;
+    (async () => {
+      const maplibregl = (await import("maplibre-gl")).default;
       if (disposed || !containerRef.current) return;
 
-      leafletMap = L.map(containerRef.current, {
-        center: map.center,
-        zoom: map.zoom,
-        scrollWheelZoom: false,
-        attributionControl: true
+      instance = new maplibregl.Map({
+        container: containerRef.current,
+        style: "https://tiles.openfreemap.org/styles/liberty",
+        center: [map.center[1], map.center[0]],
+        zoom: map.zoom - 0.4,
+        cooperativeGestures: true
       });
+      instance.addControl(
+        new maplibregl.NavigationControl({ showCompass: false }),
+        "top-right"
+      );
 
-      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-        maxZoom: 18,
-        attribution:
-          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(leafletMap);
+      // Force English labels (fall back to Latin transliteration, then
+      // whatever the local name is). Re-applied on every styledata event
+      // so late-loading style layers get covered too.
+      const anglicise = () => {
+        if (!instance) return;
+        for (const layer of instance.getStyle().layers) {
+          if (layer.type !== "symbol") continue;
+          if (!instance.getLayoutProperty(layer.id, "text-field")) continue;
+          instance.setLayoutProperty(layer.id, "text-field", [
+            "coalesce",
+            ["get", "name:en"],
+            ["get", "name:latin"],
+            ["get", "name"]
+          ]);
+        }
+      };
+      instance.on("styledata", anglicise);
 
-      for (const area of map.areas) {
-        const poly = L.polygon(area.polygon, {
-          color: area.color,
-          weight: 2,
-          fillColor: area.color,
-          fillOpacity: 0.35
-        }).addTo(leafletMap);
-        poly.bindTooltip(
-          `<strong>${area.name}</strong>${area.hint ? `<br/>${area.hint}` : ""}`,
-          { sticky: true }
-        );
-      }
-    }
+      instance.on("load", () => {
+        if (!instance) return;
 
-    if (GOOGLE_KEY) {
-      initGoogle(GOOGLE_KEY).catch(() => {
-        // Key missing scopes / blocked referrer - keep the section usable.
-        if (!disposed) initLeaflet();
+        instance.addSource("areas", {
+          type: "geojson",
+          data: {
+            type: "FeatureCollection",
+            features: map.areas.map((a) => ({
+              type: "Feature" as const,
+              properties: { name: a.name, hint: a.hint ?? "", color: a.color },
+              geometry: {
+                type: "Polygon" as const,
+                // GeoJSON wants [lng, lat] and a closed ring
+                coordinates: [
+                  [...a.polygon, a.polygon[0]].map(([lat, lng]) => [lng, lat])
+                ]
+              }
+            }))
+          }
+        });
+
+        instance.addLayer({
+          id: "areas-fill",
+          type: "fill",
+          source: "areas",
+          paint: { "fill-color": ["get", "color"], "fill-opacity": 0.35 }
+        });
+        instance.addLayer({
+          id: "areas-line",
+          type: "line",
+          source: "areas",
+          paint: { "line-color": ["get", "color"], "line-width": 2 }
+        });
+
+        instance.on("click", "areas-fill", (e) => {
+          const f = e.features?.[0];
+          if (!f || !instance) return;
+          const { name, hint } = f.properties as { name: string; hint: string };
+          new maplibregl.Popup({ closeButton: false })
+            .setLngLat(e.lngLat)
+            .setHTML(`<strong>${name}</strong>${hint ? `<br/>${hint}` : ""}`)
+            .addTo(instance);
+        });
+        instance.on("mouseenter", "areas-fill", () => {
+          if (instance) instance.getCanvas().style.cursor = "pointer";
+        });
+        instance.on("mouseleave", "areas-fill", () => {
+          if (instance) instance.getCanvas().style.cursor = "";
+        });
       });
-    } else {
-      initLeaflet();
-    }
+    })();
 
     return () => {
       disposed = true;
-      leafletMap?.remove();
-      // Google Maps has no destroy API; unmounting the DOM node is enough.
+      instance?.remove();
     };
   }, [map]);
 
