@@ -17,6 +17,12 @@ export interface AreaDef {
   color: string;
   /** One-liner shown in the polygon tooltip, e.g. "Cafés + nomad hub". */
   hint?: string;
+  /**
+   * Mark as a "visit, don't stay" zone - rendered grey/dashed and listed
+   * separately in the legend, so famous-but-wrong areas (Khao San etc.)
+   * are on the map without reading as recommendations.
+   */
+  avoid?: boolean;
   /** Polygon outline as [lat, lng] pairs. */
   polygon: [number, number][];
 }
@@ -122,6 +128,42 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
           [13.768, 100.578],
           [13.748, 100.578],
           [13.748, 100.558]
+        ]
+      },
+      {
+        name: "Khao San",
+        color: "#8a8170",
+        hint: "Backpacker central - visit, don't stay",
+        avoid: true,
+        polygon: [
+          [13.765, 100.494],
+          [13.765, 100.502],
+          [13.757, 100.502],
+          [13.757, 100.494]
+        ]
+      },
+      {
+        name: "Pratunam",
+        color: "#8a8170",
+        hint: "Market chaos - visit, don't stay",
+        avoid: true,
+        polygon: [
+          [13.758, 100.535],
+          [13.758, 100.545],
+          [13.748, 100.545],
+          [13.748, 100.535]
+        ]
+      },
+      {
+        name: "Chinatown",
+        color: "#8a8170",
+        hint: "Incredible food, tough living - visit, don't stay",
+        avoid: true,
+        polygon: [
+          [13.746, 100.505],
+          [13.746, 100.518],
+          [13.737, 100.518],
+          [13.737, 100.505]
         ]
       }
     ]

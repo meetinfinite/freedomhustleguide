@@ -66,7 +66,12 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
             type: "FeatureCollection",
             features: map.areas.map((a) => ({
               type: "Feature" as const,
-              properties: { name: a.name, hint: a.hint ?? "", color: a.color },
+              properties: {
+                name: a.name,
+                hint: a.hint ?? "",
+                color: a.color,
+                avoid: a.avoid ?? false
+              },
               geometry: {
                 type: "Polygon" as const,
                 // GeoJSON wants [lng, lat] and a closed ring
@@ -82,13 +87,31 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
           id: "areas-fill",
           type: "fill",
           source: "areas",
-          paint: { "fill-color": ["get", "color"], "fill-opacity": 0.35 }
+          paint: {
+            "fill-color": ["get", "color"],
+            // Avoid-zones stay faint - present but clearly not the point
+            "fill-opacity": ["case", ["get", "avoid"], 0.16, 0.35]
+          }
         });
         instance.addLayer({
           id: "areas-line",
           type: "line",
           source: "areas",
+          filter: ["!=", ["get", "avoid"], true],
           paint: { "line-color": ["get", "color"], "line-width": 2 }
+        });
+        // line-dasharray can't be data-driven, so avoid-zones get their
+        // own dashed outline layer.
+        instance.addLayer({
+          id: "areas-line-avoid",
+          type: "line",
+          source: "areas",
+          filter: ["==", ["get", "avoid"], true],
+          paint: {
+            "line-color": ["get", "color"],
+            "line-width": 1.5,
+            "line-dasharray": [2, 2]
+          }
         });
 
         instance.on("click", "areas-fill", (e) => {
@@ -128,23 +151,49 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
         {/* Legend */}
         <div className="absolute bottom-3 right-3 z-[500] rounded-xl bg-white/95 backdrop-blur border border-ink-100 shadow-card px-4 py-3">
           <p className="text-[10px] uppercase tracking-[0.14em] text-ink-400 font-semibold mb-2">
-            Areas
+            Stay here
           </p>
           <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
-            {map.areas.map((a) => (
-              <li
-                key={a.name}
-                className="flex items-center gap-2 text-xs text-ink-800"
-              >
-                <span
-                  aria-hidden
-                  className="w-3 h-3 rounded-sm shrink-0"
-                  style={{ backgroundColor: a.color }}
-                />
-                <span>{a.name}</span>
-              </li>
-            ))}
+            {map.areas
+              .filter((a) => !a.avoid)
+              .map((a) => (
+                <li
+                  key={a.name}
+                  className="flex items-center gap-2 text-xs text-ink-800"
+                >
+                  <span
+                    aria-hidden
+                    className="w-3 h-3 rounded-sm shrink-0"
+                    style={{ backgroundColor: a.color }}
+                  />
+                  <span>{a.name}</span>
+                </li>
+              ))}
           </ul>
+          {map.areas.some((a) => a.avoid) ? (
+            <>
+              <p className="text-[10px] uppercase tracking-[0.14em] text-ink-400 font-semibold mt-3 mb-2">
+                Visit, don&apos;t stay
+              </p>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
+                {map.areas
+                  .filter((a) => a.avoid)
+                  .map((a) => (
+                    <li
+                      key={a.name}
+                      className="flex items-center gap-2 text-xs text-ink-500"
+                    >
+                      <span
+                        aria-hidden
+                        className="w-3 h-3 rounded-sm shrink-0 border border-dashed"
+                        style={{ borderColor: a.color, backgroundColor: `${a.color}40` }}
+                      />
+                      <span>{a.name}</span>
+                    </li>
+                  ))}
+              </ul>
+            </>
+          ) : null}
         </div>
       </div>
       <figcaption className="text-xs text-ink-400 mt-2">
