@@ -315,7 +315,7 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "City energy + max convenience" },
-      { label: "Monthly budget", value: "£1,000–£2,000" },
+      { label: "Monthly budget", value: "£1,200–£2,000+" },
       { label: "Internet", value: "Excellent" },
       { label: "Transport", value: "BTS / MRT / Grab / Bolt" },
       { label: "Difficulty", value: "Beginner-friendly" },
