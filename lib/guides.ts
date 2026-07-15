@@ -130,17 +130,17 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     readingTime: "6 min"
   },
   {
-    slug: "top-ten",
-    title: "Top 10 Things To Do",
-    description: "Best things to do.",
-    icon: "⭐",
-    readingTime: "6 min"
-  },
-  {
     slug: "trips-and-activities",
     title: "Trips & Activities",
     description: "Trip gems and tourist traps. What's worth your weekend.",
     icon: "🏝️",
+    readingTime: "6 min"
+  },
+  {
+    slug: "top-ten",
+    title: "Top 10 Things To Do",
+    description: "Best things to do.",
+    icon: "⭐",
     readingTime: "6 min"
   },
   {
