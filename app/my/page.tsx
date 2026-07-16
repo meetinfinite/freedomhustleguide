@@ -83,7 +83,7 @@ export default async function MyDashboardPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900/85 via-ink-900/20 to-ink-900/10" />
                 <div className="absolute top-4 right-4">
                   <span className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-electric-500/95 backdrop-blur text-white">
-                    {g.status === "live" ? "Unlocked" : "Preview"}
+                    Unlocked
                   </span>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6">

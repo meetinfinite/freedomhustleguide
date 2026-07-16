@@ -178,7 +178,7 @@ export default async function HomePage() {
                   <div className="mt-4">
                     <span
                       className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card ${
-                        isLive
+                        isLive || previewSlugs.has(g.slug)
                           ? "bg-electric-500 text-white"
                           : "bg-sand-50 text-ink-900"
                       }`}
