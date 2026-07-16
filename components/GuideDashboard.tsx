@@ -39,7 +39,9 @@ export function GuideDashboard({ guide, basePath }: GuideDashboardProps) {
             <h3 className="font-display text-lg tracking-tight text-ink-900">
               {s.title}
             </h3>
-            <p className="text-sm text-ink-500 mt-1">{s.description}</p>
+            <p className="text-sm text-ink-500 mt-1">
+              {s.description.replace("{city}", guide.city)}
+            </p>
             <p className="text-sm font-medium text-electric-600 mt-4 group-hover:translate-x-0.5 transition">
               Open →
             </p>
