@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { listGuides } from "@/lib/guides";
+import { listGuides, listPreviewGuides } from "@/lib/guides";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -24,9 +24,11 @@ export default async function MyDashboardPage() {
   const liveGuides = guides.filter((g) => g.status === "live");
   const ownsAll = Boolean(member?.lifetime);
   const ownedSlugs = new Set(member?.guides || []);
-  const unlocked = liveGuides.filter(
-    (g) => ownsAll || ownedSlugs.has(g.slug)
-  );
+  const unlocked = [
+    ...liveGuides.filter((g) => ownsAll || ownedSlugs.has(g.slug)),
+    // Founders see in-progress guides here too, badged "Preview".
+    ...(ownsAll ? listPreviewGuides() : [])
+  ];
   const upgradable = liveGuides.filter(
     (g) => !ownsAll && !ownedSlugs.has(g.slug)
   );
@@ -81,7 +83,7 @@ export default async function MyDashboardPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900/85 via-ink-900/20 to-ink-900/10" />
                 <div className="absolute top-4 right-4">
                   <span className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-electric-500/95 backdrop-blur text-white">
-                    Unlocked
+                    {g.status === "live" ? "Unlocked" : "Preview"}
                   </span>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 p-6">
