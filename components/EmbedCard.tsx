@@ -13,6 +13,8 @@ interface EmbedCardProps {
   notesLabel?: string;
   /** Editor's bullet notes - why they recommend it. */
   notes?: string[];
+  /** Round "Our pick" stamp - set when the editor writes "(our pick)". */
+  ourPick?: boolean;
   /** Server-resolved data (NotionRenderer passes this in to skip the fetch). */
   prefetched?: EmbedData;
   /** Drop the card's own vertical margin (when laid out in a grid). */
@@ -58,7 +60,8 @@ export function EmbedCard({
   notesLabel,
   notes,
   prefetched,
-  bare
+  bare,
+  ourPick
 }: EmbedCardProps) {
   const my = bare ? "" : "my-6";
   const [state, setState] = useState<FetchState>(() =>
@@ -132,6 +135,29 @@ export function EmbedCard({
       </div>
     ) : null;
 
+
+  const PickStamp = ourPick ? (
+    <div
+      className="absolute top-4 right-4 shrink-0 z-10"
+      aria-label="Our pick"
+    >
+      <div
+        className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full bg-electric-500 text-white flex items-center justify-center text-center font-display tracking-tight shadow-card rotate-[-8deg]"
+        style={{ lineHeight: 1.05 }}
+      >
+        <div>
+          <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] font-semibold opacity-90">
+            Our
+          </div>
+          <div className="!text-[18px] sm:!text-[22px] font-semibold !leading-none mt-0.5">
+            Pick
+          </div>
+        </div>
+        <div className="absolute inset-1.5 rounded-full border border-white/30 pointer-events-none" />
+      </div>
+    </div>
+  ) : null;
+
   const HostChip = (
     <span
       className={`inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider font-bold px-2.5 py-1 rounded-full ${brand.chip}`}
@@ -188,6 +214,7 @@ export function EmbedCard({
             loading="lazy"
           />
           {ImageBadge}
+          {PickStamp}
         </div>
         <div className="p-5 flex flex-col flex-1">
           <h4 className="font-display !text-[18px] sm:!text-[20px] !tracking-tight !mt-0 !mb-1 !text-ink-900 !leading-tight">
@@ -217,7 +244,8 @@ export function EmbedCard({
 
   // ----- Link card (no photo - GetYourGuide today, or Airbnb fetch miss) -----
   return (
-    <div className={`rounded-2xl border border-ink-100 bg-white shadow-card p-5 sm:p-6 ${my}`}>
+    <div className={`relative rounded-2xl border border-ink-100 bg-white shadow-card p-5 sm:p-6 ${my}`}>
+      {PickStamp}
       <div className="mb-2">{HostChip}</div>
       <h4 className="font-display !text-[18px] sm:!text-[20px] !tracking-tight !mt-0 !mb-1 !text-ink-900 !leading-tight">
         {title}
