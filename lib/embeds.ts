@@ -23,7 +23,7 @@ import path from "node:path";
  * is fine - the section route revalidates every 60s).
  */
 
-export type EmbedKind = "airbnb" | "getyourguide";
+export type EmbedKind = "airbnb" | "getyourguide" | "booking";
 
 export interface EmbedData {
   kind: EmbedKind;
@@ -54,12 +54,14 @@ const AIRBNB_HOST_RE =
   /^https?:\/\/(www\.)?(airbnb\.[a-z.]+|abnb\.me)\//i;
 const GYG_HOST_RE =
   /^https?:\/\/(www\.)?(getyourguide\.[a-z.]+|gyg\.me)\//i;
+const BOOKING_HOST_RE = /^https?:\/\/(www\.)?booking\.[a-z.]+\//i;
 
 /** Classify a URL as an embeddable host, or null if it's neither. */
 export function embedKindForUrl(url: string): EmbedKind | null {
   if (!url) return null;
   if (AIRBNB_HOST_RE.test(url)) return "airbnb";
   if (GYG_HOST_RE.test(url)) return "getyourguide";
+  if (BOOKING_HOST_RE.test(url)) return "booking";
   return null;
 }
 
@@ -340,6 +342,36 @@ async function resolveGetYourGuide(
   };
 }
 
+
+/**
+ * Booking.com property → EmbedData from Open Graph tags. Booking's OG
+ * title is usually the property name; og:image is the lead photo.
+ * Booking is aggressive about bots - when the fetch is blocked we fall
+ * back to a branded link card upstream.
+ */
+async function resolveBooking(resolvedUrl: string): Promise<EmbedData | null> {
+  const html = await fetchHtml(resolvedUrl);
+  if (!html) return null;
+
+  const ogTitle = metaContent(html, "og:title");
+  const ogDesc = metaContent(html, "og:description");
+  const ogImage = metaContent(html, "og:image");
+  if (!ogTitle && !ogImage) return null;
+
+  const title = (ogTitle || "")
+    .replace(/\s*[-|·]\s*Booking\.com.*$/i, "")
+    .trim();
+
+  return {
+    kind: "booking",
+    url: resolvedUrl,
+    title: title || "Booking.com stay",
+    subtitle: ogDesc ? ogDesc.split(/[.!]\s/)[0].slice(0, 120) : undefined,
+    image: ogImage || undefined,
+    fetchedAt: Date.now()
+  };
+}
+
 // ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
@@ -372,7 +404,14 @@ export async function getEmbedFromUrl(
   const resolvedUrl = await resolveShortUrl(rawUrl);
 
   let data: EmbedData;
-  if (kind === "airbnb") {
+  if (kind === "booking") {
+    data = (await resolveBooking(resolvedUrl)) ?? {
+      kind: "booking",
+      url: resolvedUrl,
+      title: opts.fallbackTitle?.trim() || "Booking.com stay",
+      fetchedAt: Date.now()
+    };
+  } else if (kind === "airbnb") {
     data = (await resolveAirbnb(resolvedUrl)) ?? {
       // Bare link card if the listing couldn't be read.
       kind: "airbnb",
