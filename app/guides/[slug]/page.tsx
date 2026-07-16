@@ -92,6 +92,9 @@ export default async function GuideLandingPage({
   const ownsGuide = Boolean(
     isLive && member && (member.lifetime || member.guides.includes(guide.slug))
   );
+  // Founders (lifetime members) get a preview link into soon guides -
+  // matches the preview gate on the /app pages.
+  const canPreview = Boolean(!isLive && member?.lifetime);
 
   // Most guides declare no heroImage - fall back to cardImage so the
   // hero always has a photo (live guides included; Chiang Mai shipped
@@ -114,10 +117,10 @@ export default async function GuideLandingPage({
   //  - live, not owned → Stripe Checkout
   //  - soon → waitlist modal
   const primaryCTA = (className: string, label?: string) => {
-    if (ownsGuide) {
+    if (ownsGuide || canPreview) {
       return (
         <Link href={`/guides/${guide.slug}/app`} className={className}>
-          {label ?? "View guide →"}
+          {label ?? (canPreview ? "Preview guide →" : "View guide →")}
         </Link>
       );
     }
