@@ -367,7 +367,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Best for", value: "Blend of city + beach" },
       { label: "Monthly budget", value: "£900–£1,600+" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Grab / scooter / domestic flights" },
+      { label: "Transport", value: "Grab / scooter / city airport" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Coastal, growing, friendly" }
     ],
