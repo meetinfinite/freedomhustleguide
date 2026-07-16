@@ -312,7 +312,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Welcome to the Big Mango - excitement on every level, from street stalls to sky bars. Bangkok isn't just a city, it's a feeling.",
+      "Welcome to the Big Mango - excitement on every level, from street stalls to sky bars, golden temples at sunrise, rooftops at midnight, and the best street food on earth in between. The excitement starts here...",
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
