@@ -60,14 +60,16 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "first-24-hours",
     title: "First 24 Hours",
-    description: "Airport to set-up. The exact order to do things in.",
+    description:
+      "Airport to set-up. The exact order to do things in. Start right and make the journey smooth.",
     icon: "⏱️",
     readingTime: "5 min"
   },
   {
     slug: "areas-to-stay",
     title: "Best Areas to Stay",
-    description: "Neighbourhoods compared. Where to actually live.",
+    description:
+      "Where to actually live. Location is key for the best experience and quality of your travels.",
     icon: "🏙️",
     readingTime: "8 min"
   },
@@ -82,35 +84,38 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "cafes",
     title: "Cafés",
-    description: "WiFi-tested, plug-checked, call-friendly.",
+    description:
+      "Love coffee? Start every day right. Recommendations from coffee lovers.",
     icon: "☕",
     readingTime: "7 min"
   },
   {
     slug: "coworking",
     title: "Coworking Spaces",
-    description: "Where it's worth it, where it's not.",
+    description: "Where it's worth it, where it's not. Is it worth your money?",
     icon: "🧑‍💻",
     readingTime: "5 min"
   },
   {
     slug: "restaurants",
     title: "Restaurants",
-    description: "Local legends, expat favourites, the ones worth the trip.",
+    description:
+      "From street-stall legends to Michelin nods. The ones worth the trip.",
     icon: "🍜",
     readingTime: "6 min"
   },
   {
     slug: "nightlife",
     title: "Nightlife",
-    description: "Rooftops, dive bars, dance floors - who they're for.",
+    description:
+      "Rooftop bars, cocktail places, live music - where to have the best time.",
     icon: "🍸",
     readingTime: "5 min"
   },
   {
     slug: "gyms",
     title: "Gyms & Wellness",
-    description: "Strength, cardio, yoga, recovery.",
+    description: "Spa, gyms, strength - relax and stay fit while you travel.",
     icon: "🥊",
     readingTime: "5 min"
   },
@@ -125,7 +130,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "getting-around",
     title: "Getting Around",
     description:
-      "Transit, ride-shares, taxis, scooters - honest rankings plus the safety stuff nobody else says.",
+      "Transit, ride-shares, taxis, scooters - the boring part that's actually important.",
     icon: "🚇",
     readingTime: "6 min"
   },
@@ -155,7 +160,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "digital-nomad-toolkit",
     title: "Digital Nomad Toolkit",
     description:
-      "Our tested apps, gear, banking, insurance and tools - the stack that actually works.",
+      "What apps to use, gear, banking, insurance and tools - the stack that actually works.",
     icon: "🧰",
     readingTime: "4 min"
   }
@@ -196,7 +201,6 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
     notionPageId: "41c57b19-7874-82d8-a0fc-81a76e3afe32"
   },
   "areas-to-stay": {
-    description: "Eight neighborhoods compared. Where to actually live.",
     notionPageId: "19757b19-7874-83f8-8ef4-01042223d5c8"
   },
   "monthly-budget": {
@@ -206,42 +210,30 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
     notionPageId: "c8857b19-7874-82ac-9e36-8163000015ff"
   },
   cafes: {
-    description: "WiFi-tested, plug-checked, call-friendly.",
     notionPageId: "e0257b19-7874-827c-bde8-01a45090e104"
   },
   coworking: {
     notionPageId: "24f57b19-7874-8316-9134-81296fa6c75e"
   },
   restaurants: {
-    description:
-      "From street-stall legends to Michelin nods. What to skip on Sukhumvit.",
     notionPageId: "f8c57b19-7874-83e2-b583-81026df41457"
   },
   nightlife: {
-    description:
-      "Rooftops, dive bars, the night markets that aren't tourist traps.",
     notionPageId: "55d57b19-7874-833c-bf83-818526bd6d10"
   },
   gyms: {
-    description: "Commercial, Muay Thai, yoga, massage.",
     notionPageId: "1e457b19-7874-83f0-8e85-819c82ed7813"
   },
   "getting-around": {
-    description:
-      "BTS, MRT, Grab, taxis, scooters - honest rankings plus the safety stuff nobody else says.",
     notionPageId: "68457b19-7874-83d5-861a-817db24f8eaf"
   },
   "trips-and-activities": {
-    description:
-      "Trip gems and tourist traps. What's actually worth a weekend.",
     notionPageId: "4bd57b19-7874-8270-8da1-81275a34360a"
   },
   "mistakes-to-avoid": {
     notionPageId: "93157b19-7874-822c-a41d-810992e78d2f"
   },
   "digital-nomad-toolkit": {
-    description:
-      "Apps, gear, banking, insurance and tools we actually use day-to-day.",
     notionPageId: "6d557b19-7874-837b-ac7b-015afb44ff64"
   }
 };
