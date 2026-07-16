@@ -7,6 +7,8 @@ import { MdxRenderer } from "@/components/MdxRenderer";
 import { NotionRenderer } from "@/components/NotionRenderer";
 import { AreaMap } from "@/components/AreaMap";
 import { AREA_MAPS } from "@/lib/areaMaps";
+import { getSupabaseServer } from "@/lib/supabase/server";
+import { getMember } from "@/lib/members";
 
 interface PageProps {
   params: { slug: string; section: string };
@@ -18,7 +20,18 @@ export const revalidate = 60;
 
 export default async function GuideSectionPage({ params }: PageProps) {
   const guide = getGuide(params.slug);
-  if (!guide || guide.status !== "live") notFound();
+  if (!guide) notFound();
+
+  // Soon guides are team-preview only (lifetime members) - mirrors the
+  // dashboard guard so founders can proof sections before launch.
+  if (guide.status !== "live") {
+    const supabase = getSupabaseServer();
+    const {
+      data: { user }
+    } = await supabase.auth.getUser();
+    const member = user?.email ? await getMember(user.email) : null;
+    if (!member?.lifetime) notFound();
+  }
 
   const section = getSection(params.slug, params.section);
   if (!section) notFound();
