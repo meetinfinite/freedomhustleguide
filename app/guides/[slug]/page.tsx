@@ -204,8 +204,7 @@ export default async function GuideLandingPage({
                 Freedom Hustle isn't a travel blog. It's a collection of deep
                 destination guides for people who want to base themselves
                 somewhere and work remotely - and land properly instead of
-                guessing for two weeks. No time to do the research? This is
-                everything in one place. Made easy.
+                guessing for two weeks.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
@@ -215,7 +214,7 @@ export default async function GuideLandingPage({
                 "Freelancers who need to be online for client time zones from day one",
                 "Founders who need fast WiFi and a good chair by Monday",
                 "Experienced travellers who want depth, not recycled blog fluff",
-                "Anyone tired of booking the flight before they have a plan"
+                "For those not having enough time to do the research - everything in one place. Made easy"
               ].map((x) => (
                 <div
                   key={x}
