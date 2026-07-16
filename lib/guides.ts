@@ -139,7 +139,8 @@ export const SECTION_TEMPLATE: GuideSection[] = [
   {
     slug: "top-ten",
     title: "Top 10 Things to Experience",
-    description: "If you only do ten things, do these.",
+    // "{city}" is swapped for the guide's city name at render time.
+    description: "{city} made simple. Best things to do and experience.",
     icon: "⭐",
     readingTime: "6 min"
   },

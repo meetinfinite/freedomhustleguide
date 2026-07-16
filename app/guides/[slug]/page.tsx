@@ -181,7 +181,9 @@ export default async function GuideLandingPage({
               <h3 className="font-display text-lg tracking-tight text-ink-900">
                 {s.title}
               </h3>
-              <p className="text-sm text-ink-500 mt-1">{s.description}</p>
+              <p className="text-sm text-ink-500 mt-1">
+                {s.description.replace("{city}", guide.city)}
+              </p>
             </div>
           ))}
         </div>
