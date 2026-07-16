@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { listGuides } from "@/lib/guides";
+import { listGuides, listPreviewGuides } from "@/lib/guides";
 import { SocialProof } from "@/components/SocialProof";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -28,6 +28,11 @@ export default async function HomePage() {
   } = await supabase.auth.getUser();
   const member = user?.email ? await getMember(user.email) : null;
   const showOffer = !member?.lifetime;
+  // Founders see in-progress guides without the "Coming soon" badge -
+  // for them these cards behave like launched guides.
+  const previewSlugs = new Set(
+    member?.lifetime ? listPreviewGuides().map((g) => g.slug) : []
+  );
 
   return (
     <main className="min-h-screen bg-sand-50">
@@ -154,7 +159,7 @@ export default async function HomePage() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900/85 via-ink-900/20 to-ink-900/10" />
 
-                {!isLive ? (
+                {!isLive && !previewSlugs.has(g.slug) ? (
                   <div className="absolute top-4 right-4">
                     <span className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-ink-900/60 backdrop-blur text-sand-200">
                       {g.progressLabel ?? "Coming soon"}

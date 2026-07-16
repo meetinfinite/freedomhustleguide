@@ -92,9 +92,10 @@ export default async function GuideLandingPage({
   const ownsGuide = Boolean(
     isLive && member && (member.lifetime || member.guides.includes(guide.slug))
   );
-  // Founders (lifetime members) get a preview link into soon guides -
-  // matches the preview gate on the /app pages.
+  // Founders (lifetime members) get the full owned experience on soon
+  // guides - matches the preview gate on the /app pages.
   const canPreview = Boolean(!isLive && member?.lifetime);
+  const ownedView = ownsGuide || canPreview;
 
   // Most guides declare no heroImage - fall back to cardImage so the
   // hero always has a photo (live guides included; Chiang Mai shipped
@@ -117,10 +118,10 @@ export default async function GuideLandingPage({
   //  - live, not owned → Stripe Checkout
   //  - soon → waitlist modal
   const primaryCTA = (className: string, label?: string) => {
-    if (ownsGuide || canPreview) {
+    if (ownedView) {
       return (
         <Link href={`/guides/${guide.slug}/app`} className={className}>
-          {label ?? (canPreview ? "Preview guide →" : "View guide →")}
+          {label ?? "View guide →"}
         </Link>
       );
     }
@@ -280,21 +281,21 @@ export default async function GuideLandingPage({
           <div className="relative grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.18em] text-electric-300 font-semibold mb-3">
-                {ownsGuide
+                {ownedView
                   ? "You own this"
                   : isLive
                     ? "One-time payment"
                     : "Waitlist"}
               </p>
               <h2 className="font-display text-4xl sm:text-5xl tracking-tight">
-                {ownsGuide
+                {ownedView
                   ? `Jump back into ${guide.city}.`
                   : isLive
                     ? `Get the ${guide.city} guide.`
                     : `Be first when ${guide.city} drops.`}
               </h2>
               <p className="text-sand-200 mt-4 text-lg leading-relaxed">
-                {ownsGuide
+                {ownedView
                   ? "You've got the full guide - pick up wherever you left off."
                   : isLive
                     ? "Instant access. Use it for your whole stay."
@@ -360,14 +361,14 @@ export default async function GuideLandingPage({
 
       <CTASection
         title={
-          ownsGuide
+          ownedView
             ? `Ready to dive back into ${guide.city}?`
             : isLive
               ? `Ready to land in ${guide.city} properly?`
               : `Want the ${guide.city} guide first?`
         }
         subtitle={
-          ownsGuide
+          ownedView
             ? "Pick up wherever you left off."
             : isLive
               ? "Get the guide once. Use it for your whole stay."
