@@ -69,7 +69,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "areas-to-stay",
     title: "Best Areas to Stay",
     description:
-      "Where to actually live. Location is key for the best experience and quality of your travels.",
+      "Where to actually stay. Location is key for the best experience and quality of your travels.",
     icon: "🏙️",
     readingTime: "8 min"
   },
