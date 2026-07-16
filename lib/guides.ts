@@ -299,25 +299,25 @@ export const SHARED_SECTIONS_TEMPLATE = SECTION_TEMPLATE;
 
 /**
  * Da Nang - Notion page IDs from the "Master Da Nang - The Freedom
- * Hustle Guide" tree (created 2026-07-15 via the Notion MCP connection).
+ * Hustle Guide" tree Valeria authored via Claude Cowork.
  * Guide stays status:"soon" while Valeria writes; lifetime members can
  * preview the in-app pages before launch.
  */
 const DA_NANG_SECTION_OVERRIDES: SectionOverrides = {
-  "first-24-hours": { notionPageId: "39f57b19-7874-8160-a40b-cc87b05e4b49" },
-  "areas-to-stay": { notionPageId: "39f57b19-7874-81e1-954c-ded749599975" },
-  "monthly-budget": { notionPageId: "39f57b19-7874-8166-91ba-eb36e6b5619a" },
-  cafes: { notionPageId: "39f57b19-7874-81f6-ad98-f09af930741f" },
-  coworking: { notionPageId: "39f57b19-7874-81e3-815c-fb0b42bfccf8" },
-  restaurants: { notionPageId: "39f57b19-7874-81dc-bbff-dc015a87b8de" },
-  nightlife: { notionPageId: "39f57b19-7874-8122-9023-fd84d67e7b1c" },
-  gyms: { notionPageId: "39f57b19-7874-81c0-8e57-f178000ab2dc" },
-  "visa-immigration": { notionPageId: "39f57b19-7874-811f-9e64-f5b0e16b90cc" },
-  "getting-around": { notionPageId: "39f57b19-7874-81dd-9d7e-ccac42bccd2f" },
-  "trips-and-activities": { notionPageId: "39f57b19-7874-812f-b0d3-caf6115ae0f6" },
-  "top-ten": { notionPageId: "39f57b19-7874-81b2-9687-f27ab2e976c8" },
-  "mistakes-to-avoid": { notionPageId: "39f57b19-7874-81b5-a1cb-d47b7d6550b4" },
-  "digital-nomad-toolkit": { notionPageId: "39f57b19-7874-81e0-a4b5-ed0ba33390f5" }
+  "first-24-hours": { notionPageId: "39f57b19-7874-81b7-93ad-ddf129007262" },
+  "areas-to-stay": { notionPageId: "39f57b19-7874-81f8-9a65-e798c53b184e" },
+  "monthly-budget": { notionPageId: "39f57b19-7874-815a-b6b3-de7710a64fef" },
+  cafes: { notionPageId: "39f57b19-7874-814e-8605-c28b84ca0b7f" },
+  coworking: { notionPageId: "39f57b19-7874-81e2-a993-de69d9cf8df9" },
+  restaurants: { notionPageId: "39f57b19-7874-8157-ab51-c6e5c90015ee" },
+  nightlife: { notionPageId: "39f57b19-7874-81aa-b4d7-fe3cb29ffabb" },
+  gyms: { notionPageId: "39f57b19-7874-81d4-9d5b-ea2b9c3c3d5c" },
+  "visa-immigration": { notionPageId: "39f57b19-7874-81bc-b357-f40cc0d4a757" },
+  "getting-around": { notionPageId: "39f57b19-7874-811b-b413-c5ead8b6ddf9" },
+  "trips-and-activities": { notionPageId: "39f57b19-7874-81c6-b632-f7d25e4d9645" },
+  "top-ten": { notionPageId: "39f57b19-7874-818a-96ff-d049dfc3dbc8" },
+  "mistakes-to-avoid": { notionPageId: "39f57b19-7874-81e7-b930-dc3d8b7d7955" },
+  "digital-nomad-toolkit": { notionPageId: "39f57b19-7874-8150-a8c4-c7891e907138" }
 };
 
 const DA_NANG_SECTIONS = buildSections(DA_NANG_SECTION_OVERRIDES);
