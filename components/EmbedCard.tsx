@@ -45,6 +45,14 @@ const BRAND: Record<
     chip: "bg-[#FF5533]/10 text-[#D8431F]",
     logo: "/uploads/gyg-logo.png",
     logoClass: "h-9" // stacked mark
+  },
+  booking: {
+    label: "Booking.com",
+    cta: "View on Booking.com",
+    accent: "#003b95",
+    chip: "bg-[#003b95]/10 text-[#003b95]",
+    logo: "", // no asset - badge falls back to the wordmark text
+    logoClass: ""
   }
 };
 
@@ -178,13 +186,19 @@ export function EmbedCard({
         className="absolute inset-0 pointer-events-none"
         style={{ background: CORNER_GRADIENT }}
       />
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={brand.logo}
-        alt={brand.label}
-        className={`absolute top-3 left-3 w-auto ${brand.logoClass}`}
-        style={{ filter: "brightness(0) invert(1)" }}
-      />
+      {brand.logo ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={brand.logo}
+          alt={brand.label}
+          className={`absolute top-3 left-3 w-auto ${brand.logoClass}`}
+          style={{ filter: "brightness(0) invert(1)" }}
+        />
+      ) : (
+        <span className="absolute top-3 left-3 text-white font-semibold text-sm tracking-tight">
+          {brand.label}
+        </span>
+      )}
     </>
   );
 
