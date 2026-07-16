@@ -257,6 +257,7 @@ interface EmbedBullet {
   name: string;
   /** Rest of the bullet (after the link) → card notes. */
   notes: NotionRichText[];
+  isPick: boolean;
 }
 
 /**
@@ -275,7 +276,8 @@ function parseEmbedBullet(rt: NotionRichText[] | undefined): EmbedBullet | null 
     url: first.href,
     kind,
     name: (first.plain_text || "").trim(),
-    notes: rt.slice(1)
+    notes: rt.slice(1),
+    isPick: richTextToString(rt.slice(1)).toLowerCase().includes("our pick")
   };
 }
 
@@ -376,6 +378,7 @@ export function NotionRenderer({
               kind={e.kind}
               name={e.name}
               notes={noteText ? [noteText] : undefined}
+              ourPick={e.isPick}
               prefetched={embeds[e.url]}
               bare={gridded}
             />
