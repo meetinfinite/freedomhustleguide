@@ -71,7 +71,7 @@ function cacheKeyFor(url: string): string {
 // ---------------------------------------------------------------------------
 
 /**
- * Follows short Google links (maps.app.goo.gl, goo.gl/maps) to their final URL.
+ * Follows short Google links (maps.app.goo.gl, goo.gl/maps, share.google) to their final URL.
  *
  * Manually walks the redirect chain: Next.js wraps `fetch` in a way that
  * suppresses `redirect: 'follow'` for these URLs, so we hop Location headers
@@ -109,13 +109,13 @@ function headLocation(targetUrl: string): Promise<string | null> {
 }
 
 async function resolveShortUrl(url: string): Promise<string> {
-  if (!/goo\.gl|maps\.app\.goo\.gl/.test(url)) return url;
+  if (!/goo\.gl|maps\.app\.goo\.gl|share\.google/.test(url)) return url;
   let current = url;
   for (let hops = 0; hops < 5; hops++) {
     const loc = await headLocation(current);
     if (!loc) return current;
     current = new URL(loc, current).toString();
-    if (!/goo\.gl|maps\.app\.goo\.gl/.test(current)) return current;
+    if (!/goo\.gl|maps\.app\.goo\.gl|share\.google/.test(current)) return current;
   }
   return current;
 }
