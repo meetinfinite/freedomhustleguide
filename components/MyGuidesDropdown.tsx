@@ -102,13 +102,8 @@ export function MyGuidesDropdown({ guides, member }: MyGuidesDropdownProps) {
                       {g.flag}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-sm text-ink-900 truncate flex items-center gap-1.5">
+                      <div className="font-semibold text-sm text-ink-900 truncate">
                         {g.city}
-                        {g.status !== "live" ? (
-                          <span className="text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded bg-sand-100 text-ink-500 shrink-0">
-                            Preview
-                          </span>
-                        ) : null}
                       </div>
                       <div className="text-[11px] text-ink-500 truncate">
                         {g.country}
