@@ -2,7 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import { getGuide } from "@/lib/guides";
 import { GuideAppShell } from "@/components/GuideAppShell";
 import { getSupabaseServer } from "@/lib/supabase/server";
-import { hasGuideAccess } from "@/lib/members";
+import { getMember, hasGuideAccess } from "@/lib/members";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +14,7 @@ export default async function GuideAppLayout({
   params: { slug: string };
 }) {
   const guide = getGuide(params.slug);
-  if (!guide || guide.status !== "live") notFound();
+  if (!guide) notFound();
 
   // Session check
   const supabase = getSupabaseServer();
@@ -24,6 +24,13 @@ export default async function GuideAppLayout({
 
   if (!user || !user.email) {
     redirect(`/guides/${guide.slug}/access?next=/guides/${guide.slug}/app`);
+  }
+
+  // Soon guides are founder-preview only: lifetime members get the full
+  // app while the guide is being written; everyone else 404s.
+  if (guide.status !== "live") {
+    const member = await getMember(user.email);
+    if (!member?.lifetime) notFound();
   }
 
   // Member access check (lifetime OR has this specific guide)
