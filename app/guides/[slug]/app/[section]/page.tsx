@@ -67,10 +67,33 @@ export default async function GuideSectionPage({ params }: PageProps) {
     );
   } else {
     const mdx = await readSection(params.slug, params.section);
-    if (!mdx) notFound();
-    title = mdx.title;
-    description = mdx.description ?? section.description;
-    body = <MdxRenderer source={mdx.body} />;
+    if (mdx) {
+      title = mdx.title;
+      description = mdx.description ?? section.description;
+      body = <MdxRenderer source={mdx.body} />;
+    } else if (guide.status !== "live") {
+      // Founder preview (the status gate above already filtered everyone
+      // else out): no Notion content reachable and no MDX fallback.
+      // Render a diagnostic panel instead of a dead 404.
+      description = undefined;
+      body = (
+        <div className="rounded-2xl bg-white border border-ink-100 shadow-card p-8 text-ink-600 leading-relaxed">
+          <p className="font-semibold text-ink-900 mb-2">
+            The site can&apos;t read this section from Notion yet.
+          </p>
+          <p>
+            Two usual causes: the guide&apos;s Notion master page isn&apos;t
+            connected to the <strong>&quot;Freedom Hustle Site&quot;</strong>{" "}
+            integration (open the master page &rarr; &bull;&bull;&bull; menu
+            &rarr; Connections &rarr; add it - subpages inherit it), or this
+            section&apos;s page was moved/deleted. Once connected, content
+            appears here within a minute of saving in Notion.
+          </p>
+        </div>
+      );
+    } else {
+      notFound();
+    }
   }
 
   const sections = guide.sections;
