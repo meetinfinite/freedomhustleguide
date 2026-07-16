@@ -1052,6 +1052,17 @@ export function listGuides(): GuideMeta[] {
   return GUIDES;
 }
 
+/**
+ * Soon guides with Notion content wired - the founders' work-in-progress
+ * set. Lifetime members see these as "Preview" in My Guides while the
+ * public still gets the waitlist.
+ */
+export function listPreviewGuides(): GuideMeta[] {
+  return GUIDES.filter(
+    (g) => g.status !== "live" && g.sections.some((sec) => sec.notionPageId)
+  );
+}
+
 export function getGuide(slug: string): GuideMeta | undefined {
   return GUIDES.find((g) => g.slug === slug);
 }

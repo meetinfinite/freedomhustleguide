@@ -36,9 +36,16 @@ export function MyGuidesDropdown({ guides, member }: MyGuidesDropdownProps) {
   const ownedSlugs = new Set(member.guides);
   const ownsAll = member.lifetime;
   const liveGuides = guides.filter((g) => g.status === "live");
-  const unlocked = liveGuides.filter(
-    (g) => ownsAll || ownedSlugs.has(g.slug)
-  );
+  const unlocked = [
+    ...liveGuides.filter((g) => ownsAll || ownedSlugs.has(g.slug)),
+    // Founders (lifetime) also see in-progress guides, badged Preview.
+    ...(ownsAll
+      ? guides.filter(
+          (g) =>
+            g.status !== "live" && g.sections.some((sec) => sec.notionPageId)
+        )
+      : [])
+  ];
 
   return (
     <div className="relative" ref={ref}>
@@ -95,8 +102,13 @@ export function MyGuidesDropdown({ guides, member }: MyGuidesDropdownProps) {
                       {g.flag}
                     </span>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-sm text-ink-900 truncate">
+                      <div className="font-semibold text-sm text-ink-900 truncate flex items-center gap-1.5">
                         {g.city}
+                        {g.status !== "live" ? (
+                          <span className="text-[9px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded bg-sand-100 text-ink-500 shrink-0">
+                            Preview
+                          </span>
+                        ) : null}
                       </div>
                       <div className="text-[11px] text-ink-500 truncate">
                         {g.country}
