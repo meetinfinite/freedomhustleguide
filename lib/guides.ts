@@ -311,7 +311,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to confidently spend your first 30–90 days living and working remotely in Bangkok.",
+      "One city that's really ten - golden temples at sunrise, rooftops at midnight, and the best street food on earth in between.",
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
@@ -337,7 +337,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to land in Vietnam's quietly-rising coastal city - beach mornings, real WiFi, and a coffee scene that beats most capitals.",
+      "Vietnam's easiest life - beach mornings, mountain weekends, and a coffee scene that outclasses most capitals.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -361,7 +361,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to land in Ubud and turn jungle-side rice fields into a productive base - without the WiFi roulette.",
+      "Jungle mornings, rice-terrace walks and a green kind of quiet that rewires you.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -385,7 +385,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to settle into the original digital nomad city - cheap, easy, and far calmer than Bangkok.",
+      "The mountain city that turns two-week trips into two-year stays - temples, coffee and cool air.",
     price: "£29",
     stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
     status: "live",
@@ -410,7 +410,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to make a tropical island actually work as a base - not just a holiday photo op.",
+      "Island life with the edges sanded off - palm roads, quiet coves and real comfort.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -434,7 +434,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Malaysia",
     flag: "🇲🇾",
     tagline:
-      "Everything you need to set up in Southeast Asia's most underrated city - fast internet, world-class food, half the cost of Singapore.",
+      "Three cuisines deep and half the price of Singapore - Asia's most underrated big city.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -458,7 +458,7 @@ export const GUIDES: GuideMeta[] = [
     country: "South Korea",
     flag: "🇰🇷",
     tagline:
-      "Everything you need to navigate Seoul's intensity and turn one of the fastest cities on earth into a real base.",
+      "A city moving at double speed - neon nights, mountain trails at the metro's end, and café culture done seriously.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -482,7 +482,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to live in Tokyo properly - neighbourhoods, work spots, transit, and the food places you'd never find on TikTok.",
+      "The city that does everything better - and still finds ways to surprise you on day ninety.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -506,7 +506,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to live in Phuket properly - beach mornings, real WiFi, and the parts of the island that aren't all tourist.",
+      "Thailand's big island - fifty beaches, jungle viewpoints and sunsets that earn the hype.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -530,7 +530,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Philippines",
     flag: "🇵🇭",
     tagline:
-      "Everything you need to base yourself in Palawan's most cinematic corner - turquoise lagoons, karst cliffs, and enough WiFi to still get work done.",
+      "Lagoons so blue they look edited - Palawan's wild, cinematic corner.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -554,7 +554,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Philippines",
     flag: "🇵🇭",
     tagline:
-      "Everything you need to turn El Nido into more than a bucket-list stop - real workable weeks between the Bacuit lagoon runs.",
+      "Karst cliffs, hidden beaches and island-hopping that ruins other beaches for you.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -578,7 +578,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to live in Kyoto slowly - old-world neighbourhoods, refined cafés, and the temples locals actually go to.",
+      "A thousand years of Japan within walking distance - temples, tea houses and streets that slow your pulse.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -602,7 +602,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Philippines",
     flag: "🇵🇭",
     tagline:
-      "Everything you need to work from Boracay's White Beach without falling for the tourist strip - real cafés, real rentals, real weeks.",
+      "Four kilometres of powder-white sand and the friendliest sunsets in the Philippines.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -626,7 +626,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Sri Lanka",
     flag: "🇱🇰",
     tagline:
-      "Everything you need to base in Sri Lanka's south coast surf town - palm-shaded cafés, whale season, and long slow mornings.",
+      "Whales at breakfast, surf at noon, Coconut Tree Hill at sunset - Sri Lanka's south at its sweetest.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -650,7 +650,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to base in Bali's remote-work capital - cafés, coworking, surf breaks, and the parts of Canggu locals still love.",
+      "Surf before breakfast, smoothie bowls after - Bali's busiest little village of big plans.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -674,7 +674,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to base in Bali's south - cliffs, sunset temples, world-class surf, and cafés built for the laptop crowd.",
+      "Clifftop sunsets, world-class waves and temples hanging over the sea.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -698,7 +698,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to make Osaka a base - Japan's warmest, loudest, most food-obsessed city, at half the pace of Tokyo.",
+      "Japan's kitchen and its loudest laugh - neon canyons, street food and zero pretension.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -722,7 +722,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to slow down in Vietnam's lantern-lit old town - historic riverside, real WiFi, and coffee-fuelled writing weeks.",
+      "Lantern light on the river and an old town that glows after dark - Vietnam at its most romantic.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -746,7 +746,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to live in Krabi properly - Railay's limestone cliffs, longtail boat runs, and a laptop-friendly town base.",
+      "Limestone towers, jungle trails and longtail rides to beaches with no roads.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -770,7 +770,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Singapore",
     flag: "🇸🇬",
     tagline:
-      "Everything you need to base in Southeast Asia's cleanest, fastest city - hawker food, world-class transit, and the best coworking scene in the region.",
+      "The future, air-conditioned - hawker food, garden towers and a city where everything simply works.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -794,7 +794,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to work from Phangan's quieter side - jungle mornings, sunset beach evenings, and yes, actual WiFi.",
+      "The island of full moons and slow mornings - jungle, yoga and beaches that empty by ten.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -818,7 +818,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to base in Hanoi's Old Quarter - chaotic, romantic, cheap, and quietly one of Asia's best café cities.",
+      "A thousand years of street life - egg coffee, ancient alleys and motorbike ballet.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -842,7 +842,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Indonesia",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to slow-work on the Gilis - no cars, turquoise water, and mornings that start slow enough to actually think.",
+      "No cars, no traffic lights, no hurry - three islands running on bicycle time.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -866,7 +866,7 @@ export const GUIDES: GuideMeta[] = [
     country: "UAE",
     flag: "🇦🇪",
     tagline:
-      "Everything you need to base in Dubai without the Instagram version - real neighbourhoods, real cafés, and the tax + visa side that matters.",
+      "A glass skyline out of the desert - beach mornings, souk evenings and a city built on ambition.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -890,7 +890,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to base on Koh Tao - dive-focused mornings, laptop-friendly afternoons, and Thailand's most affordable island life.",
+      "A dive licence, a scooter loop and sunsets from Sairee - island life at its simplest.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -914,7 +914,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Vietnam",
     flag: "🇻🇳",
     tagline:
-      "Everything you need to live in Saigon properly - District 1 to District 7, the coworking scene, and the food streets locals actually eat on.",
+      "Eight million motorbikes and energy that never quits - Vietnam's engine room, heavily caffeinated.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -938,7 +938,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Sri Lanka",
     flag: "🇱🇰",
     tagline:
-      "Everything you need to base in Sri Lanka's horseshoe bay - surf mornings, yoga afternoons, and one of the best small nomad scenes on the south coast.",
+      "One horseshoe bay, one surf break, one perfect routine - Sri Lanka's slowest little town.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -962,7 +962,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Everything you need to base on Phi Phi - Maya Bay mornings, longtail boat runs, and the parts of the islands that aren't just tourist hell.",
+      "Cliffs rising straight from turquoise water - the island postcard that's real.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -986,7 +986,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Japan",
     flag: "🇯🇵",
     tagline:
-      "Everything you need to base in Nara - Japan's original capital, the deer park, and a slower, cheaper alternative to Kyoto next door.",
+      "Sacred deer, giant Buddhas and Japan's first capital - an hour from Kyoto, a world quieter.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
@@ -1010,7 +1010,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Bali",
     flag: "🇮🇩",
     tagline:
-      "Everything you need to base in Seminyak - Bali's polished stretch of beach clubs, boutique villas, and sunset-facing cafés built for laptops.",
+      "Bali, polished - beach clubs, boutique villas and sunsets with table service.",
     price: "£29",
     stripePriceId: null,
     status: "soon",
