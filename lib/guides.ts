@@ -365,9 +365,9 @@ export const GUIDES: GuideMeta[] = [
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
       { label: "Best for", value: "Blend of city + beach" },
-      { label: "Monthly budget", value: "£1,000–£1,600" },
+      { label: "Monthly budget", value: "£900–£1,600+" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Scooter / Grab / Be" },
+      { label: "Transport", value: "Grab / scooter / domestic flights" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Coastal, growing, friendly" }
     ],
