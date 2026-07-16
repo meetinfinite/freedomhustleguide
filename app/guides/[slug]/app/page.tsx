@@ -14,7 +14,7 @@ export default async function GuideAppDashboard({
   params: { slug: string };
 }) {
   const guide = getGuide(params.slug);
-  if (!guide || guide.status !== "live") notFound();
+  if (!guide) notFound();
 
   // Auth already enforced by the parent layout - re-fetch member to decide
   // whether to show the lifetime upsell. Free + fast (one Supabase call).
@@ -23,6 +23,10 @@ export default async function GuideAppDashboard({
     data: { user }
   } = await supabase.auth.getUser();
   const member = user?.email ? await getMember(user.email) : null;
+
+  // Soon guides are team-preview only: lifetime members (the founders)
+  // can watch content render while it's being written; everyone else 404s.
+  if (guide.status !== "live" && !member?.lifetime) notFound();
   const showUpsell = Boolean(member && !member.lifetime);
   const basePath = `/guides/${guide.slug}/app`;
 

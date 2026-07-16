@@ -296,6 +296,32 @@ const CHIANG_MAI_SECTIONS = buildSections(CHIANG_MAI_SECTION_OVERRIDES);
  */
 export const SHARED_SECTIONS_TEMPLATE = SECTION_TEMPLATE;
 
+
+/**
+ * Da Nang - Notion page IDs from the "Master Da Nang - The Freedom
+ * Hustle Guide" tree (created 2026-07-15 via the Notion MCP connection).
+ * Guide stays status:"soon" while Valeria writes; lifetime members can
+ * preview the in-app pages before launch.
+ */
+const DA_NANG_SECTION_OVERRIDES: SectionOverrides = {
+  "first-24-hours": { notionPageId: "39f57b19-7874-8160-a40b-cc87b05e4b49" },
+  "areas-to-stay": { notionPageId: "39f57b19-7874-81e1-954c-ded749599975" },
+  "monthly-budget": { notionPageId: "39f57b19-7874-8166-91ba-eb36e6b5619a" },
+  cafes: { notionPageId: "39f57b19-7874-81f6-ad98-f09af930741f" },
+  coworking: { notionPageId: "39f57b19-7874-81e3-815c-fb0b42bfccf8" },
+  restaurants: { notionPageId: "39f57b19-7874-81dc-bbff-dc015a87b8de" },
+  nightlife: { notionPageId: "39f57b19-7874-8122-9023-fd84d67e7b1c" },
+  gyms: { notionPageId: "39f57b19-7874-81c0-8e57-f178000ab2dc" },
+  "visa-immigration": { notionPageId: "39f57b19-7874-811f-9e64-f5b0e16b90cc" },
+  "getting-around": { notionPageId: "39f57b19-7874-81dd-9d7e-ccac42bccd2f" },
+  "trips-and-activities": { notionPageId: "39f57b19-7874-812f-b0d3-caf6115ae0f6" },
+  "top-ten": { notionPageId: "39f57b19-7874-81b2-9687-f27ab2e976c8" },
+  "mistakes-to-avoid": { notionPageId: "39f57b19-7874-81b5-a1cb-d47b7d6550b4" },
+  "digital-nomad-toolkit": { notionPageId: "39f57b19-7874-81e0-a4b5-ed0ba33390f5" }
+};
+
+const DA_NANG_SECTIONS = buildSections(DA_NANG_SECTION_OVERRIDES);
+
 export const GUIDES: GuideMeta[] = [
   {
     slug: "bangkok",
@@ -345,7 +371,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Coastal, growing, friendly" }
     ],
-    sections: buildSections()
+    sections: DA_NANG_SECTIONS
   },
   {
     slug: "ubud",
