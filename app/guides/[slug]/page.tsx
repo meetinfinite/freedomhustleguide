@@ -202,7 +202,8 @@ export default async function GuideLandingPage({
                 Freedom Hustle isn't a travel blog. It's a collection of deep
                 destination guides for people who want to base themselves
                 somewhere and work remotely - and land properly instead of
-                guessing for two weeks.
+                guessing for two weeks. No time to do the research? This is
+                everything in one place. Made easy.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
