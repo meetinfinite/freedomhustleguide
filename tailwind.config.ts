@@ -44,7 +44,7 @@ const config: Config = {
         }
       },
       fontFamily: {
-        display: ["'Fraunces'", "Georgia", "serif"],
+        display: ["var(--font-calgary)", "'Fraunces'", "Georgia", "serif"],
         sans: [
           "'Inter'",
           "ui-sans-serif",
