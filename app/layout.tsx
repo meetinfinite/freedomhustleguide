@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import localFont from "next/font/local";
 import "./globals.css";
-
-// Display font for big titles (H1s, city names, section headings).
-// ⚠️ DEMO license - buy the full Calgary license before launch and swap
-// the file in app/fonts/.
-const calgary = localFont({
-  src: "./fonts/Calgary_DEMO.ttf",
-  variable: "--font-calgary",
-  display: "swap"
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://freedomhustleguide.com"),
@@ -55,7 +45,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={calgary.variable}>
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
