@@ -351,7 +351,7 @@ export default async function GuideLandingPage({
                 "Living checklists that save your progress",
                 "Best Cafes + Restaurants + Top Ten Activities",
                 "Best Areas to Stay + Gyms & Wellness + Mistakes to Avoid",
-                "Written from tons of researching and experiencing it ourselves"
+                "Written from tons of researching and experiencing it"
               ].map((x) => (
                 <li
                   key={x}
