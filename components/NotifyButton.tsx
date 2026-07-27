@@ -91,14 +91,25 @@ export function NotifyButton({ city, className = "" }: NotifyButtonProps) {
   const modal = open ? (
     <div
       className="fixed inset-0 z-[60] grid place-items-center p-5 bg-ink-900/60 backdrop-blur-sm"
-      onClick={reset}
+      onClick={(e) => {
+        // The modal portals to <body>, but React events still bubble up
+        // the component tree - to the homepage card <Link> when this
+        // button lives inside one. Kill both, or closing the modal also
+        // navigates to the guide landing.
+        e.preventDefault();
+        e.stopPropagation();
+        reset();
+      }}
     >
           <div
             role="dialog"
             aria-modal="true"
             aria-labelledby="notify-title"
             className="w-full max-w-md rounded-3xl bg-white shadow-pop p-6 sm:p-8 fade-up"
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
           >
             {status === "ok" || status === "already" ? (
               <div className="text-center">
