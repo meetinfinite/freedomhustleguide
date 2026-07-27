@@ -25,6 +25,12 @@ export interface GuideMeta {
   heroImage: string;
   /** Square-ish image used on the homepage guide card. */
   cardImage: string;
+  /**
+   * A real photo of Arni + Valeria in this city, shown beside the trust
+   * cards on the pre-purchase landing page ("we've been here" proof).
+   * Optional - guides without one keep the plain 3-card layout.
+   */
+  foundersPhoto?: { src: string; caption: string };
   quickStats: { label: string; value: string }[];
   sections: GuideSection[];
 }
