@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
 import { StatsBar } from "@/components/StatsBar";
+import { NotifyButton } from "@/components/NotifyButton";
 import { WorkFromAnywhereStrip } from "@/components/WorkFromAnywhereStrip";
 import { SiteFooter } from "@/components/SiteFooter";
 import { getSupabaseServer } from "@/lib/supabase/server";
@@ -176,17 +177,18 @@ export default async function HomePage() {
                     {g.city}
                   </h3>
                   <div className="mt-4">
-                    <span
-                      className={`inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card ${
-                        isLive || previewSlugs.has(g.slug)
-                          ? "bg-electric-500 text-white"
-                          : "bg-sand-50 text-ink-900"
-                      }`}
-                    >
-                      {isLive || previewSlugs.has(g.slug)
-                        ? "Explore →"
-                        : "Get notified"}
-                    </span>
+                    {isLive || previewSlugs.has(g.slug) ? (
+                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-electric-500 text-white">
+                        Explore →
+                      </span>
+                    ) : (
+                      // Opens the waitlist popup in place - the button
+                      // stops propagation so the card link never fires.
+                      <NotifyButton
+                        city={g.city}
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-sand-50 text-ink-900 hover:bg-white transition"
+                      />
+                    )}
                   </div>
                 </div>
               </Link>
