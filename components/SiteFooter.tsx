@@ -33,7 +33,7 @@ export function SiteFooter() {
     <footer className="border-t border-ink-100 bg-sand-50 mt-8">
       <div className="max-w-6xl mx-auto px-6 py-12">
         {/* Top: brand + nav */}
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5 mb-10">
+        <div className="grid gap-10 lg:gap-x-14 sm:grid-cols-2 lg:grid-cols-[1fr_2fr_1.15fr_0.75fr] mb-10">
           {/* Brand + subscribe */}
           <div className="lg:col-span-1">
             <Link
