@@ -21,7 +21,7 @@ export function generateStaticParams() {
 const TRUST_CARDS = [
   {
     t: "Lived, not researched",
-    d: "Every recommendation comes from actually living there for months - not a 4-day trip and a Google search."
+    d: "Every recommendation comes from actually travelling and working - not just a Google search."
   },
   {
     t: "Honest, not aesthetic",
