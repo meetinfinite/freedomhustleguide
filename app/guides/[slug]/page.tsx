@@ -18,6 +18,21 @@ export function generateStaticParams() {
   return listGuides().map((g) => ({ slug: g.slug }));
 }
 
+const TRUST_CARDS = [
+  {
+    t: "Lived, not researched",
+    d: "Every recommendation comes from actually living there for months - not a 4-day trip and a Google search."
+  },
+  {
+    t: "Honest, not aesthetic",
+    d: "We name the areas to skip, the cafes that look great but have terrible WiFi, and the trips that aren't worth it."
+  },
+  {
+    t: "Short on purpose",
+    d: "These aren't 52-page PDFs of fluff - who has time to read that? Not us. Skimmable sections, straight answers, done."
+  }
+];
+
 const FAQ_LIVE = [
   {
     q: "When do I get access?",
@@ -235,21 +250,42 @@ export default async function GuideLandingPage({
 
       {/* Why trust */}
       <section className="max-w-6xl mx-auto px-6 py-12">
+        {guide.foundersPhoto ? (
+          <div className="grid lg:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
+            {/* Real proof: Arni + Valeria in this exact city */}
+            <div className="relative rounded-3xl overflow-hidden shadow-card min-h-[320px] [clip-path:inset(0_round_1.5rem)]">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={guide.foundersPhoto.src}
+                alt={`Arni and Valeria in ${guide.city}`}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink-900/70 to-transparent" />
+              <div className="absolute bottom-4 left-5 right-5 text-sand-50">
+                <p className="text-[10px] uppercase tracking-[0.18em] font-semibold opacity-90">
+                  We were here
+                </p>
+                <p className="font-display text-lg tracking-tight mt-0.5">
+                  {guide.foundersPhoto.caption}
+                </p>
+              </div>
+            </div>
+            <div className="grid gap-6">
+              {TRUST_CARDS.map((x) => (
+                <div
+                  key={x.t}
+                  className="rounded-2xl bg-white border border-ink-100 shadow-card p-7"
+                >
+                  <h3 className="font-display text-xl tracking-tight">{x.t}</h3>
+                  <p className="text-ink-600 mt-2 leading-relaxed">{x.d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
         <div className="grid lg:grid-cols-3 gap-6">
-          {[
-            {
-              t: "Lived, not researched",
-              d: "Every recommendation comes from actually living there for months - not a 4-day trip and a Google search."
-            },
-            {
-              t: "Honest, not aesthetic",
-              d: "We name the areas to skip, the cafes that look great but have terrible WiFi, and the trips that aren't worth it."
-            },
-            {
-              t: "Short on purpose",
-              d: "These aren't 52-page PDFs of fluff - who has time to read that? Not us. Skimmable sections, straight answers, done."
-            }
-          ].map((x) => (
+          {TRUST_CARDS.map((x) => (
             <div
               key={x.t}
               className="rounded-2xl bg-white border border-ink-100 shadow-card p-7"
@@ -259,6 +295,7 @@ export default async function GuideLandingPage({
             </div>
           ))}
         </div>
+        )}
       </section>
 
       {/* Price / waitlist - dark panel with city image hinted in the background */}
