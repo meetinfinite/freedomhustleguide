@@ -40,15 +40,15 @@ const FAQ_LIVE = [
   },
   {
     q: "Is this just a Notion doc?",
-    a: "No. It's a full guide app - sticky navigation, interactive checklists, a budget calculator, and section pages designed to be skimmed on a phone."
+    a: "No. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
   },
   {
-    q: "How fresh is the information?",
-    a: "We wrote this from living there - every price, cafe and area was checked on the ground by us, not compiled from other people's blogs."
+    q: "Is this just a PDF?",
+    a: "No. This is not a PDF with fluff and pictures of us. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
   },
   {
     q: "Do I need it if I've already been there as a tourist?",
-    a: "Living and working in a place is genuinely different. Things like where to actually rent for a month, which cafes have plugs, and what to do about WiFi only matter when you stay."
+    a: "Travelling somewhere and actually staying there are different games. Where to base yourself for longer, which cafes you can work from, what to do about WiFi - that only matters once you're there for more than a holiday. And if you're not working? The guide still earns its keep: the best cafes, restaurants and places to stay, everything explained simply - the same picks we'd give a friend."
   },
   {
     q: "Will there be more destinations?",
@@ -64,11 +64,11 @@ function buildSoonFAQ(city: string) {
     },
     {
       q: "Is this just a Notion doc?",
-      a: "No. It's a full guide app - sticky navigation, interactive checklists, a budget calculator, and section pages designed to be skimmed on a phone."
+      a: "No. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
     },
     {
-      q: "How fresh is the information?",
-      a: "We do the research on the ground, living there ourselves - the guide only launches once every price, cafe and area has been checked in person."
+      q: "Is this just a PDF?",
+      a: "No. This is not a PDF with fluff and pictures of us. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
     },
     {
       q: `Will the ${city} guide cover everything Bangkok does?`,
@@ -347,11 +347,11 @@ export default async function GuideLandingPage({
             <ul className="space-y-3">
               {[
                 "Every section, mobile-friendly app",
-                "Interactive budget calculator",
+                "Monthly + weekly budget of how much we actually spent",
                 "Living checklists that save your progress",
                 "Real cafe + coworking + gym data",
-                "Trip gems and tourist traps, ranked",
-                "Written from months of living there, not a weekend visit"
+                "Trip gems and tourist traps",
+                "Written from tons of researching and experiencing it ourselves"
               ].map((x) => (
                 <li
                   key={x}
