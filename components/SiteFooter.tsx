@@ -51,7 +51,7 @@ export function SiteFooter() {
           </div>
 
           {/* Destinations - grouped by country */}
-          <div className="lg:col-span-2">
+          <div>
             <h4 className="text-xs uppercase tracking-[0.16em] text-ink-400 font-semibold mb-3">
               Destinations
             </h4>
