@@ -65,7 +65,7 @@ export function GuidesDropdown({ guides }: GuidesDropdownProps) {
           className="absolute right-0 top-full mt-3 w-72 rounded-2xl bg-white border border-ink-100 shadow-pop p-2 fade-up z-50"
         >
           {guides.map((g) => {
-            const isLive = g.status === "live";
+            const isLive = g.status === "live" || Boolean(g.launching);
 
             const body = (
               <>

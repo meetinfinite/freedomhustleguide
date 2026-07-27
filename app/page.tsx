@@ -133,7 +133,10 @@ export default async function HomePage() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {guides.map((g) => {
-            const isLive = g.status === "live";
+            // Launching guides (written, awaiting Stripe) and founder
+            // previews present exactly like live ones on the card.
+            const showReady =
+              g.status === "live" || g.launching || previewSlugs.has(g.slug);
 
             // Card wrapper - uses clip-path for GPU-composited rounded clip
             // (avoids the overflow-hidden + transform corner-flicker bug).
@@ -160,7 +163,7 @@ export default async function HomePage() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-ink-900/85 via-ink-900/20 to-ink-900/10" />
 
-                {!isLive && !previewSlugs.has(g.slug) ? (
+                {!showReady ? (
                   <div className="absolute top-4 right-4">
                     <span className="text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full bg-ink-900/60 backdrop-blur text-sand-200">
                       {g.progressLabel ?? "Coming soon"}
@@ -177,7 +180,7 @@ export default async function HomePage() {
                     {g.city}
                   </h3>
                   <div className="mt-4">
-                    {isLive || previewSlugs.has(g.slug) ? (
+                    {showReady ? (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-electric-500 text-white">
                         Explore →
                       </span>
