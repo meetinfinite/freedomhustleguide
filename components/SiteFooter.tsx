@@ -70,7 +70,7 @@ export function SiteFooter() {
                           className="hover:text-ink-900 transition inline-flex items-center gap-2"
                         >
                           <span>{g.city}</span>
-                          {g.status !== "live" ? (
+                          {g.status !== "live" && !g.launching ? (
                             <span className="text-[10px] uppercase tracking-wider text-ink-400 font-semibold">
                               {g.progressLabel ?? "Soon"}
                             </span>

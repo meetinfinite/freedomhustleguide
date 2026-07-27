@@ -12,6 +12,15 @@ export interface GuideMeta {
   stripePriceId: string | null;
   status: GuideStatus;
   /**
+   * Launch-window presentation: the guide is written and part of the
+   * launch trio, but purchase isn't wired yet (no Stripe price). Cards,
+   * dropdowns and the footer show it exactly like a live guide - orange
+   * Explore, no Soon badges - while the landing page keeps the waitlist
+   * CTA. Flip status to "live" (and drop this flag) once the Stripe
+   * price exists; the flag never unlocks gated app content.
+   */
+  launching?: boolean;
+  /**
    * Optional override for the "Coming soon" pill on cards/badges.
    * e.g. set to "In progress" for cities actively being researched.
    */
@@ -356,6 +365,31 @@ export const GUIDES: GuideMeta[] = [
     sections: BANGKOK_SECTIONS
   },
   {
+    slug: "chiang-mai",
+    title: "Freedom Hustle Guide to Chiang Mai",
+    city: "Chiang Mai",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "The mountain city that turns two-week trips into two-year stays - temples, coffee and cool air.",
+    price: "£29",
+    stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
+    status: "live",
+    heroImage:
+      "https://images.pexels.com/photos/16986826/pexels-photo-16986826.jpeg?auto=compress&cs=tinysrgb&w=2400",
+    cardImage:
+      "https://images.pexels.com/photos/16986826/pexels-photo-16986826.jpeg?auto=compress&cs=tinysrgb&w=1400",
+    quickStats: [
+      { label: "Best for", value: "Nature, outdoors + long stays" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Scooter / Grab / Bolt" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Chill, creative, low-key" }
+    ],
+    sections: CHIANG_MAI_SECTIONS
+  },
+  {
     slug: "da-nang",
     title: "Freedom Hustle Guide to Da Nang",
     city: "Da Nang",
@@ -366,6 +400,9 @@ export const GUIDES: GuideMeta[] = [
     price: "£29",
     stripePriceId: null,
     status: "soon",
+    // Launch trio: guide is written; flip status to "live" and drop this
+    // flag once Arni adds STRIPE_PRICE_DA_NANG.
+    launching: true,
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
@@ -402,31 +439,6 @@ export const GUIDES: GuideMeta[] = [
       { label: "Vibe", value: "Slow, green, spiritual" }
     ],
     sections: buildSections()
-  },
-  {
-    slug: "chiang-mai",
-    title: "Freedom Hustle Guide to Chiang Mai",
-    city: "Chiang Mai",
-    country: "Thailand",
-    flag: "🇹🇭",
-    tagline:
-      "The mountain city that turns two-week trips into two-year stays - temples, coffee and cool air.",
-    price: "£29",
-    stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
-    status: "live",
-    heroImage:
-      "https://images.pexels.com/photos/16986826/pexels-photo-16986826.jpeg?auto=compress&cs=tinysrgb&w=2400",
-    cardImage:
-      "https://images.pexels.com/photos/16986826/pexels-photo-16986826.jpeg?auto=compress&cs=tinysrgb&w=1400",
-    quickStats: [
-      { label: "Best for", value: "Nature, outdoors + long stays" },
-      { label: "Monthly budget", value: "£1,000–£1,600" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Scooter / Grab / Bolt" },
-      { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Chill, creative, low-key" }
-    ],
-    sections: CHIANG_MAI_SECTIONS
   },
   {
     slug: "koh-samui",

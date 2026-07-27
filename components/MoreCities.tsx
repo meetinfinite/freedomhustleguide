@@ -37,7 +37,7 @@ export function MoreCities({ currentSlug, count = 3 }: MoreCitiesProps) {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {next.map((g) => {
-          const isLive = g.status === "live";
+          const isLive = g.status === "live" || Boolean(g.launching);
           return (
             <Link
               key={g.slug}
