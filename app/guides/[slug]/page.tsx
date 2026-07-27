@@ -347,10 +347,10 @@ export default async function GuideLandingPage({
             <ul className="space-y-3">
               {[
                 "Every section, mobile-friendly app",
-                "Monthly + weekly budget of how much we actually spent",
+                "Monthly/Weekly budget of how much we actually spent",
                 "Living checklists that save your progress",
-                "Real cafe + coworking + gym data",
-                "Trip gems and tourist traps",
+                "Best Cafes + Restaurants + Top Ten Activities",
+                "Best Areas to Stay + Gyms & Wellness + Mistakes to Avoid",
                 "Written from tons of researching and experiencing it ourselves"
               ].map((x) => (
                 <li
