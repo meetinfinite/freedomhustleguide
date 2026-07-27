@@ -183,7 +183,9 @@ export default async function HomePage() {
                           : "bg-sand-50 text-ink-900"
                       }`}
                     >
-                      Explore →
+                      {isLive || previewSlugs.has(g.slug)
+                        ? "Explore →"
+                        : "Get notified"}
                     </span>
                   </div>
                 </div>
