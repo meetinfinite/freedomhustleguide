@@ -70,7 +70,7 @@ export default async function HomePage() {
             </p>
             <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50 [text-shadow:0_2px_28px_rgba(15,14,10,0.85),0_1px_4px_rgba(15,14,10,0.55)]">
               Travel guides for{" "}
-              <span className="block text-electric-300">digital nomads</span>
+              <span className="block text-[#F1FF69]">digital nomads</span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed [text-shadow:0_1px_14px_rgba(15,14,10,0.9)]">
               Built from years of travelling full time. Best cafes, best
@@ -143,12 +143,8 @@ export default async function HomePage() {
             const cardClass =
               "group relative aspect-[4/5] rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
 
-            return (
-              <Link
-                key={g.slug}
-                href={`/guides/${g.slug}`}
-                className={cardClass}
-              >
+            const cardBody = (
+              <>
                 {g.cardImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
@@ -194,7 +190,23 @@ export default async function HomePage() {
                     )}
                   </div>
                 </div>
+              </>
+            );
+
+            // Not-ready guides aren't clickable - their landing pages
+            // aren't finished, so the popup is the only action.
+            return showReady ? (
+              <Link
+                key={g.slug}
+                href={`/guides/${g.slug}`}
+                className={cardClass}
+              >
+                {cardBody}
               </Link>
+            ) : (
+              <div key={g.slug} className={cardClass}>
+                {cardBody}
+              </div>
             );
           })}
         </div>

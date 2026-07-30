@@ -63,21 +63,30 @@ export function SiteFooter() {
                     <span>{group.country}</span>
                   </p>
                   <ul className="space-y-1.5">
-                    {group.cities.map((g) => (
-                      <li key={g.slug}>
-                        <Link
-                          href={`/guides/${g.slug}`}
-                          className="hover:text-ink-900 transition inline-flex items-center gap-2"
-                        >
-                          <span>{g.city}</span>
-                          {g.status !== "live" && !g.launching ? (
-                            <span className="text-[10px] uppercase tracking-wider text-ink-400 font-semibold">
-                              {g.progressLabel ?? "Soon"}
+                    {group.cities.map((g) => {
+                      const ready = g.status === "live" || g.launching;
+                      // Not-ready guides are plain text - their landing
+                      // pages aren't finished, so no path leads there.
+                      return (
+                        <li key={g.slug}>
+                          {ready ? (
+                            <Link
+                              href={`/guides/${g.slug}`}
+                              className="hover:text-ink-900 transition"
+                            >
+                              {g.city}
+                            </Link>
+                          ) : (
+                            <span className="inline-flex items-center gap-2 text-ink-400">
+                              <span>{g.city}</span>
+                              <span className="text-[10px] uppercase tracking-wider font-semibold">
+                                {g.progressLabel ?? "Soon"}
+                              </span>
                             </span>
-                          ) : null}
-                        </Link>
-                      </li>
-                    ))}
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
                 </div>
               ))}
