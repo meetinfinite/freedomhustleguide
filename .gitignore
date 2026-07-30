@@ -25,3 +25,5 @@ tina/.embed-cache.json
 # TypeScript incremental build cache
 tsconfig.tsbuildinfo
 
+public/uploads/bangkok*
+!public/uploads/bangkok-*-web.jpg

@@ -9,6 +9,7 @@ import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MoreCities } from "@/components/MoreCities";
+import { FoundersCityStrip } from "@/components/FoundersCityStrip";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
@@ -297,6 +298,11 @@ export default async function GuideLandingPage({
         </div>
         )}
       </section>
+
+      {/* Founders photo strip - our own shots from this city */}
+      {guide.foundersStrip ? (
+        <FoundersCityStrip city={guide.city} images={guide.foundersStrip} />
+      ) : null}
 
       {/* Price / waitlist - dark panel with city image hinted in the background */}
       <section className="max-w-6xl mx-auto px-6 py-16">

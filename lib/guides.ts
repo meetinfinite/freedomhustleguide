@@ -40,6 +40,13 @@ export interface GuideMeta {
    * Optional - guides without one keep the plain 3-card layout.
    */
   foundersPhoto?: { src: string; caption: string };
+  /**
+   * The founders' own photos from this city - rendered as the
+   * auto-scrolling "Our {city}" strip on the pre-purchase landing page,
+   * between the trust cards and the price panel. ~12 images, web-compressed
+   * copies only (originals stay gitignored in public/uploads).
+   */
+  foundersStrip?: { src: string; alt: string }[];
   quickStats: { label: string; value: string }[];
   sections: GuideSection[];
 }
@@ -361,6 +368,22 @@ export const GUIDES: GuideMeta[] = [
       { label: "Transport", value: "BTS / MRT / Grab / Bolt" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Fast, social, convenient" }
+    ],
+    // Order alternates temples / work / food / views so the marquee
+    // never shows two similar scenes side by side.
+    foundersStrip: [
+      { src: "/uploads/bangkok-2-web.jpg", alt: "Arni at a rooftop bar overlooking Wat Arun at sunset" },
+      { src: "/uploads/bangkok-7-web.jpg", alt: "Morning coffee while working from our Bangkok apartment" },
+      { src: "/uploads/bangkok-1-web.jpg", alt: "Arni and Valeria at the Grand Palace" },
+      { src: "/uploads/bangkok-4-web.jpg", alt: "Breakfast at a classic Thai street-food cafe" },
+      { src: "/uploads/bangkok-8-web.jpg", alt: "Valeria in a rooftop pool above the Bangkok skyline" },
+      { src: "/uploads/bangkok-3-web.jpg", alt: "Canal-side coffee under the Big Buddha" },
+      { src: "/uploads/bangkok-11-web.jpg", alt: "Arni drinking a fresh coconut in Chinatown" },
+      { src: "/uploads/bangkok-6-web.jpg", alt: "Valeria at the Reclining Buddha, Wat Pho" },
+      { src: "/uploads/bangkok-9-web.jpg", alt: "Valeria beside the train at Maeklong Railway Market" },
+      { src: "/uploads/bangkok-12-web.jpg", alt: "Valeria at a rooftop bar with the Mahanakhon tower at night" },
+      { src: "/uploads/bangkok-10-web.jpg", alt: "Fruit boat at the floating market" },
+      { src: "/uploads/bangkok-5-web.jpg", alt: "Ringside at a Muay Thai fight night" }
     ],
     sections: BANGKOK_SECTIONS
   },
