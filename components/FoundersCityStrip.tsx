@@ -26,12 +26,8 @@ export function FoundersCityStrip({
           Discover the best of {city}
         </p>
         <h2 className="font-display text-2xl sm:text-3xl tracking-tight mt-2">
-          Straight from our camera roll.
+          Your {city} could look like this.
         </h2>
-        <p className="text-ink-600 mt-3 max-w-xl mx-auto leading-relaxed">
-          The best of what you see here is pinned inside the guide - ready
-          for you to experience yourself.
-        </p>
       </div>
 
       <div className="relative overflow-hidden marquee-mask">
