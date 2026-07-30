@@ -88,6 +88,21 @@ export function GuidesDropdown({ guides }: GuidesDropdownProps) {
               </>
             );
 
+            // Not-ready guides are shown but not clickable - their
+            // landing pages aren't finished yet.
+            if (!isLive) {
+              return (
+                <div
+                  key={g.slug}
+                  role="menuitem"
+                  aria-disabled="true"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl cursor-default"
+                >
+                  {body}
+                </div>
+              );
+            }
+
             return (
               <Link
                 key={g.slug}

@@ -38,12 +38,10 @@ export function MoreCities({ currentSlug, count = 3 }: MoreCitiesProps) {
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {next.map((g) => {
           const isLive = g.status === "live" || Boolean(g.launching);
-          return (
-            <Link
-              key={g.slug}
-              href={`/guides/${g.slug}`}
-              className="group relative aspect-[5/4] rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]"
-            >
+          const cardClass =
+            "group relative aspect-[5/4] rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
+          const cardBody = (
+            <>
               {g.cardImage ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
@@ -77,7 +75,19 @@ export function MoreCities({ currentSlug, count = 3 }: MoreCitiesProps) {
                   {isLive ? "Explore →" : "Coming soon"}
                 </p>
               </div>
+            </>
+          );
+
+          // Not-ready guides are a preview, not a destination - no link
+          // until their landing page is finished.
+          return isLive ? (
+            <Link key={g.slug} href={`/guides/${g.slug}`} className={cardClass}>
+              {cardBody}
             </Link>
+          ) : (
+            <div key={g.slug} className={cardClass}>
+              {cardBody}
+            </div>
           );
         })}
       </div>
