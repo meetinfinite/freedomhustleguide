@@ -72,17 +72,15 @@ export function SiteFooter() {
                           {ready ? (
                             <Link
                               href={`/guides/${g.slug}`}
-                              className="hover:text-ink-900 transition"
+                              className="font-semibold text-ink-900 hover:text-electric-600 transition inline-flex items-center gap-1.5"
                             >
-                              {g.city}
+                              <span>{g.city}</span>
+                              <span aria-hidden className="text-electric-600">
+                                →
+                              </span>
                             </Link>
                           ) : (
-                            <span className="inline-flex items-center gap-2 text-ink-400">
-                              <span>{g.city}</span>
-                              <span className="text-[10px] uppercase tracking-wider font-semibold">
-                                {g.progressLabel ?? "Soon"}
-                              </span>
-                            </span>
+                            <span className="text-ink-400">{g.city}</span>
                           )}
                         </li>
                       );
