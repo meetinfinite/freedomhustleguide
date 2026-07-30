@@ -22,11 +22,8 @@ export function FoundersCityStrip({
   return (
     <section className="py-12">
       <div className="max-w-6xl mx-auto px-6 mb-8 text-center">
-        <p className="text-[11px] uppercase tracking-[0.2em] text-electric-600 font-semibold">
+        <h2 className="font-display text-2xl sm:text-3xl tracking-tight">
           Discover the best of {city}
-        </p>
-        <h2 className="font-display text-2xl sm:text-3xl tracking-tight mt-2">
-          Your {city} could look like this.
         </h2>
       </div>
 
