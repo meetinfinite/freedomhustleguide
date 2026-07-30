@@ -23,11 +23,15 @@ export function FoundersCityStrip({
     <section className="py-12">
       <div className="max-w-6xl mx-auto px-6 mb-8 text-center">
         <p className="text-[11px] uppercase tracking-[0.2em] text-electric-600 font-semibold">
-          Our {city}
+          Discover the best of {city}
         </p>
         <h2 className="font-display text-2xl sm:text-3xl tracking-tight mt-2">
           Straight from our camera roll.
         </h2>
+        <p className="text-ink-600 mt-3 max-w-xl mx-auto leading-relaxed">
+          The best of what you see here is pinned inside the guide - ready
+          for you to experience yourself.
+        </p>
       </div>
 
       <div className="relative overflow-hidden marquee-mask">
