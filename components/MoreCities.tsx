@@ -74,7 +74,7 @@ export function MoreCities({ currentSlug, count = 3 }: MoreCitiesProps) {
                   {g.city}
                 </h3>
                 <p className="text-[11px] uppercase tracking-wider font-semibold text-sand-100/90 mt-3 group-hover:translate-x-0.5 transition">
-                  {isLive ? "Explore →" : "Take a look →"}
+                  {isLive ? "Explore →" : "Coming soon"}
                 </p>
               </div>
             </Link>
