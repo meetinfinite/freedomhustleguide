@@ -257,6 +257,11 @@ const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
   },
   "digital-nomad-toolkit": {
     notionPageId: "6d557b19-7874-837b-ac7b-015afb44ff64"
+  },
+  // Valeria's Notion Top Ten is the live source since 2026-08-02; the
+  // MDX version is a stale fallback.
+  "top-ten": {
+    notionPageId: "39f57b19-7874-813b-a716-e86187b8da94"
   }
 };
 
@@ -307,6 +312,11 @@ const CHIANG_MAI_SECTION_OVERRIDES: SectionOverrides = {
   },
   "digital-nomad-toolkit": {
     notionPageId: "37857b19-7874-81d6-afaf-e7fe710be7bc"
+  },
+  // Valeria's Notion Top Ten is the live source since 2026-08-02; the
+  // MDX version is a stale fallback.
+  "top-ten": {
+    notionPageId: "39f57b19-7874-81ac-8fdd-e79ba59b9e03"
   }
 };
 
