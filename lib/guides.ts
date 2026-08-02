@@ -312,12 +312,11 @@ const CHIANG_MAI_SECTION_OVERRIDES: SectionOverrides = {
   },
   "digital-nomad-toolkit": {
     notionPageId: "37857b19-7874-81d6-afaf-e7fe710be7bc"
-  },
-  // Valeria's Notion Top Ten is the live source since 2026-08-02; the
-  // MDX version is a stale fallback.
-  "top-ten": {
-    notionPageId: "39f57b19-7874-81ac-8fdd-e79ba59b9e03"
   }
+  // top-ten deliberately NOT wired to Notion: the Notion draft
+  // (39f57b19-7874-81ac-8fdd-e79ba59b9e03) diverged from the curated
+  // content, so the MDX version is the source of truth (Valeria,
+  // 2026-08-02). Mirror the MDX into Notion before rewiring.
 };
 
 const CHIANG_MAI_SECTIONS = buildSections(CHIANG_MAI_SECTION_OVERRIDES);
