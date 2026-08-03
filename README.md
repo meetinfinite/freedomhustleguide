@@ -312,3 +312,5 @@ Things you might expect that we left out, on purpose:
 - **No SSO / passwords.** Sessions are localStorage-only. Real session security comes with real payments.
 - **No tests yet.** Add Playwright once the routes settle.
 - **No analytics.** Plug in Plausible or PostHog when launching.
+
+<!-- deploy: cache refresh 2026-08-03 -->
