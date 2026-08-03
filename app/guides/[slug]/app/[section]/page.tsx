@@ -127,7 +127,7 @@ export default async function GuideSectionPage({ params }: PageProps) {
       </header>
 
       {section.slug === "areas-to-stay" && AREA_MAPS[guide.slug] ? (
-        <AreaMap map={AREA_MAPS[guide.slug]} />
+        <AreaMap map={AREA_MAPS[guide.slug]} showIntro={!notionPage} />
       ) : null}
 
       {body}
