@@ -16,7 +16,18 @@ import type { CityAreaMap } from "@/lib/areaMaps";
  * cooperativeGestures keeps normal page scrolling (Cmd/two-finger to
  * zoom). Areas are clickable for a one-line take.
  */
-export function AreaMap({ map }: { map: CityAreaMap }) {
+export function AreaMap({
+  map,
+  showIntro = true
+}: {
+  map: CityAreaMap;
+  /**
+   * The map's built-in intro caption predates Notion-authored sections.
+   * Pages whose prose comes from Notion pass false - Valeria's Notion
+   * copy owns all narrative text there (it duplicated on Chiang Mai).
+   */
+  showIntro?: boolean;
+}) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -165,7 +176,7 @@ export function AreaMap({ map }: { map: CityAreaMap }) {
 
   return (
     <figure className="my-8">
-      {map.intro ? (
+      {showIntro && map.intro ? (
         <p className="text-ink-700 text-base sm:text-lg leading-relaxed mb-5">
           {map.intro}
         </p>
