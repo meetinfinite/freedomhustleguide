@@ -481,7 +481,7 @@ function renderBlock(b: NotionBlock, key: string): React.ReactNode {
           <img
             src={src}
             alt={caption || ""}
-            className="rounded-2xl w-full h-auto"
+            className="rounded-2xl max-w-full max-h-[520px] w-auto mx-auto"
           />
           {caption ? (
             <figcaption className="text-sm text-ink-500 mt-2">
