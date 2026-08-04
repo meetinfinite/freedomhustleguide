@@ -420,6 +420,22 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Chill, creative, low-key" }
     ],
+    // Order alternates temples / elephants / food / work so the marquee
+    // never shows two similar scenes side by side.
+    foundersStrip: [
+      { src: "/uploads/chiangmai-2-web.jpg", alt: "Arni climbing the blue naga staircase of the Silver Temple" },
+      { src: "/uploads/chiangmai-1-web.jpg", alt: "Arni in the mud bath with a rescued elephant" },
+      { src: "/uploads/chiangmai-7-web.jpg", alt: "Flower-covered breakfast at a Chiang Mai cafe" },
+      { src: "/uploads/chiangmai-9-web.jpg", alt: "Arni working from a Chiang Mai coffee shop" },
+      { src: "/uploads/chiangmai-4-web.jpg", alt: "Arni at the golden chedis of Wat Phra Singh" },
+      { src: "/uploads/chiangmai-5-web.jpg", alt: "Valeria bamboo rafting down the Mae Wang river" },
+      { src: "/uploads/chiangmai-8-web.jpg", alt: "Arni with a potato spiral at the night market" },
+      { src: "/uploads/chiangmai-11-web.jpg", alt: "Valeria on the swing in the coconut grove" },
+      { src: "/uploads/chiangmai-12-web.jpg", alt: "Arni eating noodles with a mountain view" },
+      { src: "/uploads/chiangmai-10-web.jpg", alt: "Valeria at Wat Sri Suphan, the Silver Temple" },
+      { src: "/uploads/chiangmai-3-web.jpg", alt: "An elephant reaching into a tree at the sanctuary" },
+      { src: "/uploads/chiangmai-6-web.jpg", alt: "Poling a bamboo raft down the river" }
+    ],
     sections: CHIANG_MAI_SECTIONS
   },
   {
