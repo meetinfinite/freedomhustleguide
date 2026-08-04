@@ -463,6 +463,25 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Coastal, growing, friendly" }
     ],
+    // 15 photos for Da Nang (her call) - order alternates beach / work /
+    // sights / food so the marquee never repeats a mood back-to-back.
+    foundersStrip: [
+      { src: "/uploads/danang-6-web.jpg", alt: "Valeria and Arni at the Golden Bridge, Ba Na Hills" },
+      { src: "/uploads/danang-10-web.jpg", alt: "Fresh coconut overlooking My Khe Beach" },
+      { src: "/uploads/danang-2-web.jpg", alt: "Arni working from our Da Nang apartment" },
+      { src: "/uploads/danang-3-web.jpg", alt: "Coffee at a beachfront cart under the lanterns" },
+      { src: "/uploads/danang-1-web.jpg", alt: "Riding across the Dragon Bridge at sunset" },
+      { src: "/uploads/danang-4-web.jpg", alt: "Valeria at a My Khe beach club" },
+      { src: "/uploads/danang-7-web.jpg", alt: "Banh mi que stall by the beach" },
+      { src: "/uploads/danang-12-web.jpg", alt: "Valeria in the French Village at Ba Na Hills" },
+      { src: "/uploads/danang-8-web.jpg", alt: "Arni at ART Coffee on Thach Lam" },
+      { src: "/uploads/danang-11-web.jpg", alt: "The Lady Buddha on the Son Tra Peninsula" },
+      { src: "/uploads/danang-5-web.jpg", alt: "Valeria in the surf at My Khe Beach" },
+      { src: "/uploads/danang-14-web.jpg", alt: "Croissant and lattes at Station cafe" },
+      { src: "/uploads/danang-13-web.jpg", alt: "Arni in a flag-lined alley near the beach" },
+      { src: "/uploads/danang-15-web.jpg", alt: "Palms and parasols on My Khe Beach" },
+      { src: "/uploads/danang-9-web.jpg", alt: "Scooter traffic on a Da Nang evening" }
+    ],
     sections: DA_NANG_SECTIONS
   },
   {
