@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStripe, PRICES } from "@/lib/stripe";
 import { getGuide } from "@/lib/guides";
+import { notifyCheckoutStarted } from "@/lib/slack";
 
 export const runtime = "nodejs";
 
@@ -59,6 +60,13 @@ export async function POST(req: NextRequest) {
   const origin = `${proto}://${host}`;
   const returnPath = body.returnPath || "/";
 
+  // Lifetime is advertised as "£180 → £79 with code FREEDOM". Apply that
+  // coupon automatically so the buyer never has to type it (and can never
+  // be charged the full £180 by missing it). Stripe forbids combining
+  // `discounts` with `allow_promotion_codes`, so it's one or the other.
+  const freedomCoupon = process.env.STRIPE_COUPON_FREEDOM;
+  const autoDiscount = product === "lifetime" && Boolean(freedomCoupon);
+
   try {
     const stripe = getStripe();
     const session = await stripe.checkout.sessions.create({
@@ -70,7 +78,9 @@ export async function POST(req: NextRequest) {
       ...(body.customerEmail
         ? { customer_email: body.customerEmail.trim().toLowerCase() }
         : {}),
-      allow_promotion_codes: true,
+      ...(autoDiscount
+        ? { discounts: [{ coupon: freedomCoupon as string }] }
+        : { allow_promotion_codes: true }),
       metadata,
       success_url: `${origin}${returnPath}?purchase=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}${returnPath}?purchase=cancelled`
@@ -82,6 +92,14 @@ export async function POST(req: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Best-effort Slack ping — never blocks or fails the checkout.
+    await notifyCheckoutStarted({
+      productLabel: label,
+      amountMinor: session.amount_total,
+      currency: session.currency ?? "gbp",
+      email: body.customerEmail ?? null
+    });
 
     return NextResponse.json({ url: session.url, label });
   } catch (err) {

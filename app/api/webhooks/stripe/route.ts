@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStripe } from "@/lib/stripe";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
 import { getMember, grantPurchase } from "@/lib/members";
+import { getGuide } from "@/lib/guides";
+import { notifyPurchase } from "@/lib/slack";
 import type Stripe from "stripe";
 
 export const runtime = "nodejs";
@@ -74,6 +76,20 @@ export async function POST(req: NextRequest) {
     } else {
       throw new Error(`unknown product shape: ${product} / ${guideSlug}`);
     }
+
+    // Ping #freedom-hustle-billing. Best-effort — a Slack failure must not
+    // make this webhook 500, or Stripe would retry an already-granted
+    // purchase.
+    await notifyPurchase({
+      productLabel:
+        product === "lifetime"
+          ? "Lifetime Access"
+          : `${getGuide(guideSlug || "")?.city ?? guideSlug} guide`,
+      amountMinor: session.amount_total,
+      currency: session.currency ?? "gbp",
+      email,
+      isUpgrade
+    });
 
     // 2. For NEW buyers, send a magic-link so they can sign in for the first
     //    time. Existing members already have an account + session — skip the

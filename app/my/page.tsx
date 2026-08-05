@@ -116,7 +116,7 @@ export default async function MyDashboardPage() {
                 </p>
                 <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
                   Unlock every guide.{" "}
-                  <span className="text-sand-300/80 line-through">£299</span>{" "}
+                  <span className="text-sand-300/80 line-through">£180</span>{" "}
                   <span className="text-sand-50">£79</span>
                 </h2>
                 <p className="text-sand-200 mt-3 leading-relaxed">
