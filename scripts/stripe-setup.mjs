@@ -123,8 +123,21 @@ if (!coupon && COMMIT) {
     duration: "once",
     metadata: { fh_key: "freedom" }
   });
-  // A promotion code makes "FREEDOM" typeable by customers too.
-  await stripe.promotionCodes.create({ coupon: coupon.id, code: "FREEDOM" });
+}
+// A promotion code makes "FREEDOM" typeable by customers too. Optional —
+// the coupon is auto-applied at checkout regardless — so never let this
+// step abort the rest of the setup (the API shape has changed between
+// Stripe versions).
+if (coupon && COMMIT) {
+  try {
+    const existing = await stripe.promotionCodes.list({ code: "FREEDOM", limit: 1 });
+    if (!existing.data.length) {
+      await stripe.promotionCodes.create({ coupon: coupon.id, code: "FREEDOM" });
+      console.log("  ＋ promotion code FREEDOM");
+    }
+  } catch (err) {
+    console.log(`  ⚠️  promotion code skipped (${err.message.split("\n")[0]})`);
+  }
 }
 env.STRIPE_COUPON_FREEDOM = coupon?.id || "(dry-run)";
 console.log(`  ${coupon ? "=" : "＋"} coupon id         ${env.STRIPE_COUPON_FREEDOM}`);
