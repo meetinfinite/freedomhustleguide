@@ -38,10 +38,16 @@ export async function notifyWaitlist(opts: {
   source?: string | null;
 }): Promise<void> {
   const where = opts.source ? `  ·  _${opts.source}_` : "";
+  // The footer form posts the sentinel city "Newsletter" (see
+  // FooterSubscribe) — label it as such instead of "Waitlist — Newsletter".
+  const isNewsletter = opts.city.toLowerCase().startsWith("newsletter");
+  const headline = isNewsletter
+    ? `📮 *Newsletter signup* — ${opts.email}`
+    : `📬 *Waitlist* — ${opts.city} — ${opts.email}`;
   await post(
     process.env.SLACK_WAITLIST_WEBHOOK_URL ||
       process.env.SLACK_BILLING_WEBHOOK_URL,
-    `📬 *Waitlist* — ${opts.city} — ${opts.email}${where}`
+    `${headline}${where}`
   );
 }
 
