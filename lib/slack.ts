@@ -24,7 +24,29 @@ export function formatMoney(
 
 /** Post a plain-text line to the billing channel. Never throws. */
 export async function notifyBilling(text: string): Promise<void> {
-  const url = process.env.SLACK_BILLING_WEBHOOK_URL;
+  return post(process.env.SLACK_BILLING_WEBHOOK_URL, text);
+}
+
+/**
+ * Post to the waitlist channel (a different Incoming Webhook → a different
+ * channel). Falls back to the billing channel if no dedicated URL is set,
+ * so signups are never silently lost.
+ */
+export async function notifyWaitlist(opts: {
+  city: string;
+  email: string;
+  source?: string | null;
+}): Promise<void> {
+  const where = opts.source ? `  ·  _${opts.source}_` : "";
+  await post(
+    process.env.SLACK_WAITLIST_WEBHOOK_URL ||
+      process.env.SLACK_BILLING_WEBHOOK_URL,
+    `📬 *Waitlist* — ${opts.city} — ${opts.email}${where}`
+  );
+}
+
+/** Shared sender. Never throws; a no-op when the URL is unset. */
+async function post(url: string | undefined, text: string): Promise<void> {
   if (!url) return;
   try {
     const res = await fetch(url, {

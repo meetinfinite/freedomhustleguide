@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase/admin";
+import { notifyWaitlist } from "@/lib/slack";
 
 export const runtime = "nodejs";
 
@@ -54,9 +55,16 @@ export async function POST(req: NextRequest) {
       console.warn(
         `[notify:fallback] ${JSON.stringify({ email, city, source, ts: Date.now() })}`
       );
+      // The DB write failed, so Slack is the only record of this signup.
+      await notifyWaitlist({
+        city: `${city} ⚠️ NOT SAVED TO DB`,
+        email,
+        source
+      });
       return NextResponse.json({ ok: true, alreadySubscribed: false });
     }
 
+    await notifyWaitlist({ city, email, source });
     return NextResponse.json({ ok: true, alreadySubscribed: false });
   } catch (err) {
     console.error("[notify] unexpected error", err);
