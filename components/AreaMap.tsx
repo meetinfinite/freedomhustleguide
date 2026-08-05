@@ -181,7 +181,10 @@ export function AreaMap({
           {map.intro}
         </p>
       ) : null}
-      <div className="relative rounded-2xl overflow-hidden border border-ink-100 shadow-card">
+      {/* isolate: MapLibre + the legend use high z-indexes internally;
+          without a contained stacking context they paint over the
+          sticky site header on scroll (mobile bug, 2026-08-05) */}
+      <div className="relative isolate z-0 rounded-2xl overflow-hidden border border-ink-100 shadow-card">
         <div ref={containerRef} className="h-[380px] sm:h-[460px] w-full z-0" />
 
         {/* Legend */}
