@@ -46,6 +46,15 @@ export async function POST(req: NextRequest) {
     if (!guide) {
       return NextResponse.json({ error: "Unknown product" }, { status: 404 });
     }
+    // Every city has a Stripe price, but only written guides are on sale.
+    // Without this, a direct POST could buy a "coming soon" city and land
+    // the buyer on 404 chapters.
+    if (guide.status !== "live") {
+      return NextResponse.json(
+        { error: `The ${guide.city} guide isn't on sale yet.` },
+        { status: 409 }
+      );
+    }
     // Prefer the explicitly-wired price, else fall back to the per-city
     // env var (STRIPE_PRICE_CHIANG_MAI etc). The fallback means a new city
     // only needs its env var set — no code change.
