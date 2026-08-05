@@ -14,6 +14,12 @@ interface CheckoutBody {
   customerEmail?: string;
 }
 
+/** Look up a city's Stripe Price ID by convention: STRIPE_PRICE_<SLUG>. */
+function envPriceFor(slug: string): string | null {
+  const key = `STRIPE_PRICE_${slug.toUpperCase().replace(/-/g, "_")}`;
+  return process.env[key] || null;
+}
+
 export async function POST(req: NextRequest) {
   let body: CheckoutBody;
   try {
@@ -40,7 +46,10 @@ export async function POST(req: NextRequest) {
     if (!guide) {
       return NextResponse.json({ error: "Unknown product" }, { status: 404 });
     }
-    priceId = guide.stripePriceId;
+    // Prefer the explicitly-wired price, else fall back to the per-city
+    // env var (STRIPE_PRICE_CHIANG_MAI etc). The fallback means a new city
+    // only needs its env var set — no code change.
+    priceId = guide.stripePriceId || envPriceFor(guide.slug);
     label = `${guide.city} guide`;
     metadata = { product: "guide", guide_slug: guide.slug };
   }
