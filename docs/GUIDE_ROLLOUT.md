@@ -4,6 +4,16 @@ Step-by-step for taking a new city guide from "soon" to live. Worked
 example: **Chiang Mai**. Replace `<city>` / `<CITY>` accordingly
 (slug `chiang-mai`, env suffix `CHIANG_MAI`).
 
+> **Payments are already done for every city.** All 30 cities in
+> `lib/guides.ts` have a live £5.99 Stripe price, and its `STRIPE_PRICE_<CITY>`
+> is already set in Vercel (created by `scripts/stripe-setup.mjs`). So a new
+> guide needs **no Stripe work** — it becomes sellable the moment its
+> `status` flips to `"live"`. `/api/checkout` refuses any guide that isn't
+> live, so an unwritten city can never be bought by accident.
+>
+> **The whole job for a new city is: write it in Notion → connect it →
+> wire the page IDs → flip status → deploy.** Steps 1–3, 6, 7 below.
+
 The single source of truth for guide content is **Notion**, read via the
 `NOTION_TOKEN` integration **"Freedom Hustle Site"** (workspace *Infinite
 Studio*). The site reads structure from `lib/guides.ts`.
@@ -53,15 +63,17 @@ A template section with neither renders a dead 404 card on the dashboard.
 (The `wifi-sim-apps` section was removed from `SECTION_TEMPLATE` for exactly
 this reason — its content now lives in Digital Nomad Toolkit. Don't re-add it.)
 
-## 4. Stripe — only for individual sales (lifetime is automatic)
+## 4. Stripe — nothing to do
 
-- Create a Product + Price for the city in Stripe.
-- Set `STRIPE_PRICE_<CITY>` (e.g. `STRIPE_PRICE_CHIANG_MAI`) in **both**
-  `.env.local` and **Vercel**. `app/api/checkout/route.ts` reads
-  `guide.stripePriceId`; without it, single-guide checkout returns a 500
-  with a "No Stripe price configured" message.
-- **Lifetime members need nothing here** — the dashboard shows every live
-  guide to them automatically.
+Every city already has a live £5.99 price and its `STRIPE_PRICE_<CITY>`
+env var in Vercel. Checkout resolves the price by convention
+(`STRIPE_PRICE_` + the slug in caps, dashes → underscores), so no code or
+env change is needed.
+
+Only relevant if you add a **brand-new city** that isn't in `lib/guides.ts`
+yet: re-run `node scripts/stripe-setup.mjs --commit` to create its price,
+then add the printed `STRIPE_PRICE_<CITY>` to Vercel. The script is
+idempotent — it never duplicates what already exists.
 
 ## 5. Access / members
 
