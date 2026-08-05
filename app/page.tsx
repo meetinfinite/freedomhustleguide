@@ -5,7 +5,6 @@ import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
-import { StatsBar } from "@/components/StatsBar";
 import { NotifyButton } from "@/components/NotifyButton";
 import { WorkFromAnywhereStrip } from "@/components/WorkFromAnywhereStrip";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -200,8 +199,9 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ----- Stats bar ----- */}
-      <StatsBar />
+      {/* Stats bar removed for launch (2026-08-06) - claiming 560 buyers
+          while announcing a launch reads wrong. Restore ~2026-09-06 with
+          real numbers: re-add <StatsBar /> here. */}
 
       {/* ----- Founders intro ----- */}
       <FoundersIntro />
