@@ -447,11 +447,8 @@ export const GUIDES: GuideMeta[] = [
     tagline:
       "Vietnam's easiest life - beach mornings, mountain weekends, and a coffee scene that outclasses most capitals.",
     price: "£29",
-    stripePriceId: null,
-    status: "soon",
-    // Launch trio: guide is written; flip status to "live" and drop this
-    // flag once Arni adds STRIPE_PRICE_DA_NANG.
-    launching: true,
+    stripePriceId: process.env.STRIPE_PRICE_DA_NANG || null,
+    status: "live",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",
