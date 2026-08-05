@@ -1,95 +1,84 @@
-interface Testimonial {
-  quote: string;
-  name: string;
-  role: string;
-  avatar: string;
-  city: string;
+/**
+ * "Why trust these guides" — the honest replacement for the invented
+ * testimonials that used to live here.
+ *
+ * Do NOT put reviews in this file. Real customer quotes only, with the
+ * customer's permission, once there are real customers. Fabricated reviews
+ * breach Meta's Community Standards (Fraud, scams and deceptive practices)
+ * and UK consumer law (DMCC Act 2024) — they got the site's Instagram link
+ * blocked once already.
+ */
+
+interface TrustPoint {
+  title: string;
+  body: string;
+  icon: "map" | "camera" | "refresh";
 }
 
-const TESTIMONIALS: Testimonial[] = [
+const TRUST_POINTS: TrustPoint[] = [
   {
-    quote:
-      "I landed in Bangkok at 11pm with a SIM, a Grab, and a cafe lined up for the morning. Everything in the first-24-hours checklist just worked. No wasted days.",
-    name: "Sarah K.",
-    role: "Brand designer · remote",
-    avatar: "/uploads/Avatar-5.png",
-    city: "London → Bangkok"
+    title: "We lived in every city",
+    body: "These aren't researched from a desk. We've spent months at a time in each city — the recommendations are the ones we actually use.",
+    icon: "map"
   },
   {
-    quote:
-      "Honestly, the areas-to-stay section alone paid for the guide. I almost booked a month in Khao San. Would have ruined my whole stay.",
-    name: "Marco D.",
-    role: "Founder · 2-person SaaS",
-    avatar: "/uploads/Avatar-6.png",
-    city: "Berlin → Bangkok"
+    title: "Every place is one we've been to",
+    body: "Cafés with plugs we've worked from, gyms we've trained at, neighbourhoods we've rented in. If we haven't been, it isn't in the guide.",
+    icon: "camera"
   },
   {
-    quote:
-      "Love how transparent you are with how much money you spent in each location. This helps a lot. Feels like a friend texting you the answers.",
-    name: "Priya S.",
-    role: "Product lead · Notion",
-    avatar: "/uploads/Avatar-7.png",
-    city: "NYC → Bangkok"
+    title: "Kept up to date",
+    body: "Places close and prices change. We update the guides as we go, and you get every update — no re-buying a new edition.",
+    icon: "refresh"
   }
 ];
 
 export function SocialProof() {
   return (
     <section className="max-w-6xl mx-auto px-6 py-20">
-      {/* Testimonials */}
       <div className="text-center max-w-2xl mx-auto mb-10">
         <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
-          What buyers actually say
+          Why trust these guides
         </p>
         <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-          Not from random reviewers. From nomads who used it.
+          Written from the ground, not from a search engine.
         </h2>
       </div>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {TESTIMONIALS.map((t) => (
-          <figure
-            key={t.name}
+        {TRUST_POINTS.map((t) => (
+          <div
+            key={t.title}
             className="rounded-2xl bg-white border border-ink-100 shadow-card p-7 flex flex-col"
           >
-            <Quote />
-            <blockquote className="text-ink-800 leading-relaxed text-[15px] mt-3 flex-1">
-              "{t.quote}"
-            </blockquote>
-            <figcaption className="flex items-center gap-3 mt-6 pt-5 border-t border-ink-100">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={t.avatar}
-                alt=""
-                className="w-10 h-10 rounded-full object-cover shrink-0"
-                loading="lazy"
-              />
-              <div>
-                <div className="font-semibold text-ink-900 text-sm">
-                  {t.name}
-                </div>
-                <div className="text-xs text-ink-500">
-                  {t.role} · {t.city}
-                </div>
-              </div>
-            </figcaption>
-          </figure>
+            <Icon kind={t.icon} />
+            <h3 className="font-display text-xl tracking-tight mt-4 mb-2 text-ink-900">
+              {t.title}
+            </h3>
+            <p className="text-ink-700 leading-relaxed text-[15px]">{t.body}</p>
+          </div>
         ))}
       </div>
-
     </section>
   );
 }
 
-function Quote() {
+function Icon({ kind }: { kind: TrustPoint["icon"] }) {
+  const paths: Record<TrustPoint["icon"], string> = {
+    map: "M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z",
+    camera:
+      "M9 2L7.17 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-3.17L15 2H9zm3 15a5 5 0 110-10 5 5 0 010 10z",
+    refresh:
+      "M17.65 6.35A7.96 7.96 0 0012 4a8 8 0 108 8h-2a6 6 0 11-6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+  };
   return (
     <svg
       viewBox="0 0 24 24"
       fill="currentColor"
-      className="w-6 h-6 text-electric-500"
+      className="w-7 h-7 text-electric-500"
       aria-hidden
     >
-      <path d="M6 17h3l2-4V7H5v6h3l-2 4zm8 0h3l2-4V7h-6v6h3l-2 4z" />
+      <path d={paths[kind]} />
     </svg>
   );
 }

@@ -48,6 +48,14 @@ This is the "staging": every PR gets its own throwaway preview site.
 
 ## Golden rules
 
+0. **Never invent social proof.** No testimonials, review counts, star
+   ratings, customer numbers or "was" prices unless they are real and
+   evidenced. Fabricated ones breach Meta's Community Standards (Fraud,
+   scams and deceptive practices) and UK consumer law (DMCC Act 2024) —
+   invented testimonials on the homepage got the site's Instagram link
+   blocked for a month in Aug 2026. A struck-through price must be one we
+   genuinely charged. If asked for social proof and there's none yet, say
+   so and write something true instead.
 1. Content → Notion. Structure → code → PR → merge → deploy.
 2. Any new env var goes in **both** `.env.local` and Vercel.
 3. Only register a guide section that has Notion (or MDX) content, or it

@@ -201,7 +201,7 @@ export default async function HomePage() {
 
       {/* Stats bar removed for launch (2026-08-06) - claiming 560 buyers
           while announcing a launch reads wrong. Restore ~2026-09-06 with
-          real numbers: re-add <StatsBar /> here. */}
+          real numbers: re-add <StatsBar stats={...} /> here with FIGURES YOU CAN EVIDENCE. */}
 
       {/* ----- Founders intro ----- */}
       <FoundersIntro />
