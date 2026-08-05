@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { listGuides, listPreviewGuides } from "@/lib/guides";
-import { SocialProof } from "@/components/SocialProof";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
@@ -207,7 +206,9 @@ export default async function HomePage() {
       <FoundersIntro />
 
       {/* ----- Social proof ----- */}
-      <SocialProof />
+      {/* Social-proof section hidden until there are real customer reviews
+          to show. Do not re-add invented testimonials — see golden rule 0
+          in CLAUDE.md. */}
 
       {/* ----- Work from Anywhere photo strip ----- */}
       <WorkFromAnywhereStrip />
