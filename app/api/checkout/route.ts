@@ -14,13 +14,6 @@ interface CheckoutBody {
   customerEmail?: string;
 }
 
-/**
- * What buyers see on their bank statement. Overrides the Stripe account's
- * own descriptor, which belongs to a different business sharing this
- * account. Stripe limit: 22 chars, no < > \ ' " *
- */
-const STATEMENT_DESCRIPTOR = "FREEDOMHUSTLE";
-
 /** Look up a city's Stripe Price ID by convention: STRIPE_PRICE_<SLUG>. */
 function envPriceFor(slug: string): string | null {
   const key = `STRIPE_PRICE_${slug.toUpperCase().replace(/-/g, "_")}`;
@@ -106,11 +99,11 @@ export async function POST(req: NextRequest) {
       ...(autoDiscount
         ? { discounts: [{ coupon: freedomCoupon as string }] }
         : { allow_promotion_codes: true }),
-      // This Stripe account is shared with another business, whose
-      // account-level descriptor ("FEATHER") would otherwise appear on
-      // guide buyers' bank statements — unrecognisable, and a chargeback
-      // risk. Override it per payment. Max 22 chars, no < > \ ' " *
-      payment_intent_data: { statement_descriptor: STATEMENT_DESCRIPTOR },
+      // NOTE: what buyers see on their bank statement comes from the
+      // Stripe *account* descriptor (Settings → Business → Public details).
+      // Per-payment overrides don't work here — this account silently
+      // ignores both `statement_descriptor` and `..._suffix` (verified
+      // against the live API), so it can only be changed in the dashboard.
       metadata,
       success_url: `${origin}${returnPath}?purchase=success&session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}${returnPath}?purchase=cancelled`
