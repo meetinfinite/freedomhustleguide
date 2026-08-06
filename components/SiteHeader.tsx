@@ -5,7 +5,6 @@ import { getMember } from "@/lib/members";
 import { GuidesDropdown } from "./GuidesDropdown";
 import { MyGuidesDropdown } from "./MyGuidesDropdown";
 import { SignOutButton } from "./SignOutButton";
-import { BuyButton } from "./BuyButton";
 import { BrandLogo } from "./BrandLogo";
 
 /**
@@ -44,14 +43,12 @@ export async function SiteHeader() {
             <>
               <GuidesDropdown guides={guides} />
               <SignOutButton email={user.email!} />
-              <BuyButton
-                product="lifetime"
-                returnPath="/my"
-                customerEmail={user.email!}
-                className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
+              <Link
+                href="/#guides"
+                className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition"
               >
-                Buy Lifetime Access
-              </BuyButton>
+                Explore guides
+              </Link>
             </>
           ) : (
             <>
@@ -62,13 +59,12 @@ export async function SiteHeader() {
               >
                 Sign in
               </Link>
-              <BuyButton
-                product="lifetime"
-                returnPath="/"
-                className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition cursor-pointer"
+              <Link
+                href="/#guides"
+                className="hidden sm:inline-flex px-4 py-2 rounded-full bg-ink-900 text-sand-50 text-sm font-medium hover:bg-ink-700 transition"
               >
-                Buy Lifetime Access
-              </BuyButton>
+                Explore guides
+              </Link>
             </>
           )}
         </div>

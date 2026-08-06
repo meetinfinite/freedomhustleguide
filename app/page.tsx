@@ -2,7 +2,6 @@ import Link from "next/link";
 import { listGuides, listPreviewGuides } from "@/lib/guides";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
-import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { FoundersIntro } from "@/components/FoundersIntro";
 import { NotifyButton } from "@/components/NotifyButton";
 import { WorkFromAnywhereStrip } from "@/components/WorkFromAnywhereStrip";
@@ -26,7 +25,6 @@ export default async function HomePage() {
     data: { user }
   } = await supabase.auth.getUser();
   const member = user?.email ? await getMember(user.email) : null;
-  const showOffer = !member?.lifetime;
   // Founders see in-progress guides without the "Coming soon" badge -
   // for them these cards behave like launched guides.
   const previewSlugs = new Set(
@@ -38,9 +36,8 @@ export default async function HomePage() {
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
-      {showOffer ? (
-        <SpecialOfferBanner customerEmail={user?.email} />
-      ) : null}
+      {/* Lifetime offer paused until the guide library is bigger
+          (Valeria, 2026-08-05) - restore SpecialOfferBanner here. */}
       <SiteHeader />
 
       {/* ----- Video hero ----- */}

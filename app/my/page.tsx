@@ -104,62 +104,8 @@ export default async function MyDashboardPage() {
         )}
       </section>
 
-      {/* Upsell to lifetime (only if user is not lifetime) */}
-      {!ownsAll ? (
-        <section className="max-w-6xl mx-auto px-6 pb-16">
-          <div className="rounded-3xl bg-ink-900 text-sand-50 p-8 sm:p-12 relative overflow-hidden">
-            <div className="absolute inset-0 bg-hero-grad opacity-60" />
-            <div className="relative grid lg:grid-cols-2 gap-8 items-center">
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-electric-300 font-semibold mb-3">
-                  Upgrade
-                </p>
-                <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                  Unlock every guide.{" "}
-            <span className="text-sand-300/80 line-through">£180</span>{" "}
-            <span className="text-sand-50">£79</span>
-                </h2>
-                <p className="text-sand-200 mt-3 leading-relaxed">
-                  All current cities, every future city. One purchase. No
-                  re-buys, no upgrades, no fuss. Use code{" "}
-                  <span className="font-bold tracking-wider text-electric-300">
-                    FREEDOM
-                  </span>{" "}
-                  at checkout.
-                </p>
-                <div className="mt-6">
-                  <BuyButton
-                    product="lifetime"
-                    returnPath="/my"
-                    customerEmail={user.email}
-                    className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-semibold hover:bg-white transition"
-                  >
-                    Get Lifetime →
-                  </BuyButton>
-                </div>
-              </div>
-              <ul className="space-y-2 text-sand-100 text-sm">
-                {upgradable.slice(0, 4).map((g) => (
-                  <li key={g.slug} className="flex items-center gap-2">
-                    <span>{g.flag}</span>
-                    <span>{g.city} - currently {g.price}</span>
-                  </li>
-                ))}
-                {upcoming.slice(0, 3).map((g) => (
-                  <li
-                    key={g.slug}
-                    className="flex items-center gap-2 text-sand-200/70"
-                  >
-                    <span>{g.flag}</span>
-                    <span>{g.city} - coming soon, included</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </section>
-      ) : null}
-
+      {/* Lifetime upsell paused until the guide library is bigger
+          (Valeria, 2026-08-05) - restore the dark Upgrade panel here. */}
       {/* Buy more individually (only if not lifetime, and there are upgradable singles) */}
       {!ownsAll && upgradable.length > 0 ? (
         <section className="max-w-6xl mx-auto px-6 pb-16">
