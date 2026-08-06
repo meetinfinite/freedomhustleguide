@@ -10,7 +10,6 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MoreCities } from "@/components/MoreCities";
 import { FoundersCityStrip } from "@/components/FoundersCityStrip";
-import { SpecialOfferBanner } from "@/components/SpecialOfferBanner";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { Suspense } from "react";
@@ -53,7 +52,7 @@ const FAQ_LIVE = [
   },
   {
     q: "Will there be more destinations?",
-    a: "Yes - 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Each guide is bought separately, or Lifetime unlocks every current and future one."
+    a: "Yes - 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Each guide is bought separately - pick the city you need, when you need it."
   }
 ];
 
@@ -81,7 +80,7 @@ function buildSoonFAQ(city: string) {
     },
     {
       q: "Will there be more destinations?",
-      a: "Yes - 30 destinations across Asia and beyond are on the roadmap. Each guide is bought separately, or you can grab Lifetime to get everything."
+      a: "Yes - 30 destinations across Asia and beyond are on the roadmap. Each guide is bought separately - pick the city you need, when you need it."
     }
   ];
 }
@@ -161,9 +160,6 @@ export default async function GuideLandingPage({
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
-      {showOffer ? (
-        <SpecialOfferBanner customerEmail={customerEmail} />
-      ) : null}
       <SiteHeader />
 
       <Hero

@@ -3,7 +3,6 @@ import { getGuide } from "@/lib/guides";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { GuideDashboard } from "@/components/GuideDashboard";
-import { LifetimeUpsellBanner } from "@/components/LifetimeUpsellBanner";
 import { MyMapEmbed } from "@/components/MyMapEmbed";
 
 export const dynamic = "force-dynamic";
@@ -32,12 +31,8 @@ export default async function GuideAppDashboard({
 
   return (
     <>
-      {showUpsell && user?.email ? (
-        <LifetimeUpsellBanner
-          userEmail={user.email}
-          returnPath={basePath}
-        />
-      ) : null}
+      {/* Lifetime upsell paused until the guide library is bigger
+          (Valeria, 2026-08-05) - restore LifetimeUpsellBanner here. */}
       <GuideDashboard guide={guide} basePath={basePath} />
       {guide.myMapsId ? (
         <div className="mt-12">
