@@ -10,6 +10,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MoreCities } from "@/components/MoreCities";
 import { FoundersCityStrip } from "@/components/FoundersCityStrip";
+import { LaunchOfferBanner } from "@/components/LaunchOfferBanner";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { Suspense } from "react";
@@ -160,6 +161,7 @@ export default async function GuideLandingPage({
       <Suspense fallback={null}>
         <PurchaseSuccessBanner />
       </Suspense>
+      <LaunchOfferBanner />
       <SiteHeader />
 
       <Hero
