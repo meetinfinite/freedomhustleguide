@@ -43,7 +43,11 @@ export default async function MyDashboardPage() {
           Your dashboard
         </p>
         <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-          Welcome back, {user.email.split("@")[0]}.
+          {greetingName(user.email) ? (
+            <>Welcome back, {greetingName(user.email)}.</>
+          ) : (
+            <>Welcome back.</>
+          )}
         </h1>
         <p className="text-ink-600 mt-3 text-lg">
           {ownsAll
@@ -154,4 +158,23 @@ export default async function MyDashboardPage() {
       <SiteFooter />
     </main>
   );
+}
+
+/**
+ * Best-effort first name from an email address, for the dashboard
+ * greeting: "valeria.raduct90" → "Valeria", "ana.m.savu94" → "Ana".
+ * Returns null when no plausible name is found (numeric or cryptic
+ * handles), so the caller can fall back to a plain "Welcome back."
+ */
+function greetingName(email: string): string | null {
+  const local = email.split("@")[0];
+  // Split on common separators, strip digits from each token, and take
+  // the first one that still looks like a name (3+ letters).
+  for (const raw of local.split(/[._\-+]/)) {
+    const word = raw.replace(/\d+/g, "");
+    if (/^[a-zA-Z]{3,}$/.test(word)) {
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    }
+  }
+  return null;
 }
