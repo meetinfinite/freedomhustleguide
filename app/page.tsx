@@ -3,6 +3,7 @@ import { listGuides, listPreviewGuides } from "@/lib/guides";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
 import { FoundersIntro } from "@/components/FoundersIntro";
+import { LaunchOfferBanner } from "@/components/LaunchOfferBanner";
 import { NotifyButton } from "@/components/NotifyButton";
 import { WorkFromAnywhereStrip } from "@/components/WorkFromAnywhereStrip";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -38,6 +39,7 @@ export default async function HomePage() {
       </Suspense>
       {/* Lifetime offer paused until the guide library is bigger
           (Valeria, 2026-08-05) - restore SpecialOfferBanner here. */}
+      <LaunchOfferBanner />
       <SiteHeader />
 
       {/* ----- Video hero ----- */}
