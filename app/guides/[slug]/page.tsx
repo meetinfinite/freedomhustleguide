@@ -142,15 +142,26 @@ export default async function GuideLandingPage({
       );
     }
     if (isLive) {
+      // The small sign-in link below the CTA is the escape hatch for
+      // buyers who come back signed-out (new device, cleared session) -
+      // without it they see only a buy button and purchase again.
       return (
-        <BuyButton
-          product={guide.slug}
-          returnPath={`/guides/${guide.slug}`}
-          customerEmail={customerEmail}
-          className={className}
-        >
-          {label ?? `Get the guide - ${guide.price}`}
-        </BuyButton>
+        <div className="flex flex-col items-start gap-2">
+          <BuyButton
+            product={guide.slug}
+            returnPath={`/guides/${guide.slug}`}
+            customerEmail={customerEmail}
+            className={className}
+          >
+            {label ?? `Get the guide - ${guide.price}`}
+          </BuyButton>
+          <Link
+            href="/signin"
+            className="text-xs text-sand-200/80 hover:text-sand-50 transition [text-shadow:0_1px_8px_rgba(15,14,10,0.7)]"
+          >
+            Already bought it? Sign in →
+          </Link>
+        </div>
       );
     }
     return <NotifyButton city={guide.city} className={className} />;
