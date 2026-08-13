@@ -77,8 +77,9 @@ export function PurchaseSuccessBanner() {
           You're in.
         </h2>
         <p className="text-ink-600 mt-3 leading-relaxed">
-          Payment received. We've just emailed you a one-tap sign-in link -
-          click it to open your guide.
+          Your guide is unlocked. We've just emailed you a one-tap sign-in
+          link - it signs you in on whichever device you open it, so open
+          it here if you want to read on this one.
         </p>
 
         <div className="rounded-2xl bg-sand-50 p-4 mt-6 text-left text-sm text-ink-700 leading-relaxed">
@@ -90,7 +91,13 @@ export function PurchaseSuccessBanner() {
             <li>
               It comes from <code>noreply@freedomhustleguide.com</code>.
             </li>
-            <li>Look for "Confirm your email" or "Sign in".</li>
+            <li>
+              No need to buy again - get a fresh link any time at{" "}
+              <a href="/signin" className="font-semibold underline">
+                the sign-in page
+              </a>
+              .
+            </li>
           </ul>
         </div>
 

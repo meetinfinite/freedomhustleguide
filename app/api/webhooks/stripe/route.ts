@@ -91,10 +91,12 @@ export async function POST(req: NextRequest) {
       isUpgrade
     });
 
-    // 2. For NEW buyers, send a magic-link so they can sign in for the first
-    //    time. Existing members already have an account + session — skip the
-    //    OTP send. Their dashboard will reflect the upgrade automatically.
-    if (!isUpgrade) {
+    // 2. Send a magic-link on EVERY purchase, new or repeat. A repeat
+    //    purchase usually means the buyer is stuck signed-out (bought on
+    //    one device, opened the first link on another - launch day showed
+    //    a real customer buying twice for exactly this reason), so
+    //    re-delivering the sign-in email is the rescue they need.
+    {
       const supabase = getSupabaseAdmin();
       const proto = req.headers.get("x-forwarded-proto") || "https";
       const host = req.headers.get("host") || "freedomhustleguide.com";
