@@ -157,14 +157,10 @@ export function LockedAccess({
                   >
                     Get the {guide.city} guide - {guide.price}
                   </BuyButton>
-                  <span className="text-ink-400">·</span>
-                  <BuyButton
-                    product="lifetime"
-                    returnPath={`/guides/${guide.slug}`}
-                    className="text-ink-600 font-medium hover:underline cursor-pointer"
-                  >
-                    Or get Lifetime
-                  </BuyButton>
+                  {/* Lifetime offer paused until the guide library is bigger
+                      (Valeria, 2026-08-05) - this CTA was missed by #131 and
+                      kept the £79 checkout reachable. Restore alongside
+                      SpecialOfferBanner. */}
                 </div>
 
                 <p className="mt-8 text-xs text-ink-400 leading-relaxed">
