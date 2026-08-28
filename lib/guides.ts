@@ -354,6 +354,31 @@ const DA_NANG_SECTION_OVERRIDES: SectionOverrides = {
 
 const DA_NANG_SECTIONS = buildSections(DA_NANG_SECTION_OVERRIDES);
 
+/**
+ * Koh Samui - Notion page IDs from the "Master Koh Samui - The Freedom
+ * Hustle Guide" tree (master 3ca57b19-7874-81fa-bb79-c0607978459c, 🥥),
+ * scaffolded 2026-08-28. Guide stays status:"soon" while Valeria writes;
+ * lifetime members preview it, the public keeps the waitlist.
+ */
+const KOH_SAMUI_SECTION_OVERRIDES: SectionOverrides = {
+  "first-24-hours": { notionPageId: "3ca57b19-7874-81db-b8d6-d6ae97ac73b6" },
+  "visa-immigration": { notionPageId: "3ca57b19-7874-8139-baf0-f18cba2b4e94" },
+  "areas-to-stay": { notionPageId: "3ca57b19-7874-81cd-ba94-dc5e54588255" },
+  "monthly-budget": { notionPageId: "3ca57b19-7874-81a9-8059-de32a5822362" },
+  cafes: { notionPageId: "3ca57b19-7874-8136-b9a8-fa442e0268dc" },
+  coworking: { notionPageId: "3ca57b19-7874-8114-9793-d7775d7d8c80" },
+  restaurants: { notionPageId: "3ca57b19-7874-81b6-a074-e57516e552be" },
+  nightlife: { notionPageId: "3ca57b19-7874-81f5-9fd2-db491dc41ad7" },
+  gyms: { notionPageId: "3ca57b19-7874-8155-8692-f44655186299" },
+  "getting-around": { notionPageId: "3ca57b19-7874-81ba-a8ff-c2cab4e4b66a" },
+  "trips-and-activities": { notionPageId: "3ca57b19-7874-81f2-ba3d-de01e0d32ccb" },
+  "top-ten": { notionPageId: "3ca57b19-7874-81e6-b033-e7bdf3e5bc86" },
+  "mistakes-to-avoid": { notionPageId: "3ca57b19-7874-81b8-ab92-c02938bf1a3f" },
+  "digital-nomad-toolkit": { notionPageId: "3ca57b19-7874-81ac-b93f-ef2ed36e989b" }
+};
+
+const KOH_SAMUI_SECTIONS = buildSections(KOH_SAMUI_SECTION_OVERRIDES);
+
 export const GUIDES: GuideMeta[] = [
   {
     slug: "bangkok",
@@ -527,7 +552,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, slow, ocean-led" }
     ],
-    sections: buildSections()
+    sections: KOH_SAMUI_SECTIONS
   },
   {
     slug: "kuala-lumpur",
