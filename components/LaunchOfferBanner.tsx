@@ -1,20 +1,18 @@
 import Link from "next/link";
 
 /**
- * Launch-week promo strip: the Bangkok guide free with code LAUNCH.
- * The Stripe promotion code (100% off, Bangkok product only) expires
- * 31 Aug 2026 23:59 UTC - LAUNCH_OFFER_ENDS matches it so the banner
- * takes itself down when the code stops working.
+ * Evergreen promo strip: the Bangkok guide free with code LAUNCH.
+ * The Stripe promotion code (100% off, Bangkok product only) has no
+ * expiry since 2026-09-02 (Valeria's call) - to end the offer, archive
+ * the code in Stripe AND remove this banner's mounts on the homepage
+ * and guide landing pages.
+ * £5.99 struck through is the genuine list price (golden rule 0).
  */
-const LAUNCH_OFFER_ENDS = Date.UTC(2026, 7, 31, 23, 59, 59);
-
 export function LaunchOfferBanner() {
-  if (Date.now() > LAUNCH_OFFER_ENDS) return null;
-
   return (
     <Link
       href="/guides/bangkok"
-      aria-label="Launch offer - the Bangkok guide free with code LAUNCH until 31 August"
+      aria-label="The Bangkok guide free with code LAUNCH"
       className="group block w-full bg-emerald-900 text-white py-2.5 px-4 text-[13px] sm:text-sm hover:bg-emerald-950 active:bg-black transition relative overflow-hidden !no-underline"
     >
       <div className="relative flex items-center justify-center gap-x-1.5 gap-y-1 sm:gap-x-2.5 flex-wrap leading-tight text-[13px] sm:text-sm">
@@ -23,7 +21,7 @@ export function LaunchOfferBanner() {
         </span>
 
         <span className="uppercase text-white tracking-wide font-semibold">
-          Launch week
+          Free guide
         </span>
 
         <span className="text-white/90">The Bangkok guide</span>
@@ -31,8 +29,8 @@ export function LaunchOfferBanner() {
         <span className="font-bold text-white">FREE</span>
 
         <span className="text-white/60">
-          with code <span className="font-bold text-white">LAUNCH</span>{" "}
-          · until 31 Aug
+          with code <span className="font-bold text-white">LAUNCH</span> at
+          checkout
         </span>
 
         <span
