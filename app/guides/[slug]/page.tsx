@@ -182,6 +182,13 @@ export default async function GuideLandingPage({
         )}
       />
 
+      {/* Founders photo strip - our own shots from this city, right
+          under the hero so the page feels personal before it sells
+          (moved up from below the trust cards, Valeria 2026-09-16) */}
+      {guide.foundersStrip ? (
+        <FoundersCityStrip city={guide.city} images={guide.foundersStrip} />
+      ) : null}
+
       {/* What's inside */}
       <section className="max-w-6xl mx-auto px-6 py-20">
         <div className="max-w-2xl mb-12">
@@ -307,11 +314,6 @@ export default async function GuideLandingPage({
         </div>
         )}
       </section>
-
-      {/* Founders photo strip - our own shots from this city */}
-      {guide.foundersStrip ? (
-        <FoundersCityStrip city={guide.city} images={guide.foundersStrip} />
-      ) : null}
 
       {/* Price / waitlist - dark panel with city image hinted in the background */}
       <section className="max-w-6xl mx-auto px-6 py-16">
