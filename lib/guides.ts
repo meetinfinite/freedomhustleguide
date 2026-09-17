@@ -11,12 +11,6 @@ export interface GuideMeta {
    * uses `country`.
    */
   region?: string;
-  /**
-   * Homepage-only: guides sharing a gridGroup render under one combined
-   * heading (e.g. Seoul + Singapore side by side instead of two
-   * one-card blocks). Footer and dropdown still group by `country`.
-   */
-  gridGroup?: { label: string; flag: string };
   flag: string;
   tagline: string;
   price: string;
@@ -1152,9 +1146,8 @@ export const GUIDES: GuideMeta[] = [
   {
     slug: "sri-lanka-loop",
     title: "Freedom Hustle Guide to the Sri Lanka Loop",
-    city: "The Sri Lanka Loop",
+    city: "Sri Lanka Loop",
     country: "Sri Lanka",
-    region: "Full-country route",
     flag: "🇱🇰",
     tagline:
       "The whole island in one circle - tea-country trains, leopard safaris, ancient cities and the south-coast surf, in the order that actually works.",
@@ -1178,7 +1171,6 @@ export const GUIDES: GuideMeta[] = [
     slug: "seoul",
     title: "Freedom Hustle Guide to Seoul",
     city: "Seoul",
-    gridGroup: { label: "South Korea & Singapore", flag: "🇰🇷 🇸🇬" },
     country: "South Korea",
     flag: "🇰🇷",
     tagline:
@@ -1203,7 +1195,6 @@ export const GUIDES: GuideMeta[] = [
     slug: "singapore",
     title: "Freedom Hustle Guide to Singapore",
     city: "Singapore",
-    gridGroup: { label: "South Korea & Singapore", flag: "🇰🇷 🇸🇬" },
     country: "Singapore",
     flag: "🇸🇬",
     tagline:
