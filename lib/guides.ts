@@ -11,6 +11,12 @@ export interface GuideMeta {
    * uses `country`.
    */
   region?: string;
+  /**
+   * Homepage-only: guides sharing a gridGroup render under one combined
+   * heading (e.g. Seoul + Singapore side by side instead of two
+   * one-card blocks). Footer and dropdown still group by `country`.
+   */
+  gridGroup?: { label: string; flag: string };
   flag: string;
   tagline: string;
   price: string;
@@ -975,55 +981,6 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "kuala-lumpur",
-    title: "Freedom Hustle Guide to Kuala Lumpur",
-    city: "Kuala Lumpur",
-    country: "Malaysia",
-    flag: "🇲🇾",
-    tagline:
-      "Three cuisines deep and half the price of Singapore - Asia's most underrated big city.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "City comfort on a budget" },
-      { label: "Monthly budget", value: "£1,000–£1,700" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "LRT / MRT / Grab" },
-      { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Urban, multicultural, food-led" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "kota-kinabalu",
-    title: "Freedom Hustle Guide to Kota Kinabalu",
-    city: "Kota Kinabalu",
-    country: "Malaysia",
-    region: "Sabah, Borneo",
-    flag: "🇲🇾",
-    tagline:
-      "Borneo's easy-going capital - island-hopping mornings, the famous waterfront sunsets and Mount Kinabalu on the horizon.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1692617993977-eced61646e20?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Nature + islands on a budget" },
-      { label: "Monthly budget", value: "£900–£1,500" },
-      { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Grab / scooter" },
-      { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Laid-back, outdoorsy, friendly" }
-    ],
-    sections: buildSections()
-  },
-  {
     slug: "coron",
     title: "Freedom Hustle Guide to Coron",
     city: "Coron",
@@ -1096,6 +1053,55 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
+    slug: "kuala-lumpur",
+    title: "Freedom Hustle Guide to Kuala Lumpur",
+    city: "Kuala Lumpur",
+    country: "Malaysia",
+    flag: "🇲🇾",
+    tagline:
+      "Three cuisines deep and half the price of Singapore - Asia's most underrated big city.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "City comfort on a budget" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "LRT / MRT / Grab" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Urban, multicultural, food-led" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "kota-kinabalu",
+    title: "Freedom Hustle Guide to Kota Kinabalu",
+    city: "Kota Kinabalu",
+    country: "Malaysia",
+    region: "Sabah, Borneo",
+    flag: "🇲🇾",
+    tagline:
+      "Borneo's easy-going capital - island-hopping mornings, the famous waterfront sunsets and Mount Kinabalu on the horizon.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1692617993977-eced61646e20?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Nature + islands on a budget" },
+      { label: "Monthly budget", value: "£900–£1,500" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Grab / scooter" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Laid-back, outdoorsy, friendly" }
+    ],
+    sections: buildSections()
+  },
+  {
     slug: "mirissa",
     title: "Freedom Hustle Guide to Mirissa",
     city: "Mirissa",
@@ -1144,9 +1150,35 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
+    slug: "sri-lanka-loop",
+    title: "Freedom Hustle Guide to the Sri Lanka Loop",
+    city: "The Sri Lanka Loop",
+    country: "Sri Lanka",
+    region: "Full-country route",
+    flag: "🇱🇰",
+    tagline:
+      "The whole island in one circle - tea-country trains, leopard safaris, ancient cities and the south-coast surf, in the order that actually works.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1578519050142-afb511e518de?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "A 2-4 week loop of the island" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
+      { label: "Internet", value: "Good in towns" },
+      { label: "Transport", value: "Trains / tuk-tuks / driver" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Tea hills, surf, wildlife" }
+    ],
+    sections: buildSections()
+  },
+  {
     slug: "seoul",
     title: "Freedom Hustle Guide to Seoul",
     city: "Seoul",
+    gridGroup: { label: "South Korea & Singapore", flag: "🇰🇷 🇸🇬" },
     country: "South Korea",
     flag: "🇰🇷",
     tagline:
@@ -1171,6 +1203,7 @@ export const GUIDES: GuideMeta[] = [
     slug: "singapore",
     title: "Freedom Hustle Guide to Singapore",
     city: "Singapore",
+    gridGroup: { label: "South Korea & Singapore", flag: "🇰🇷 🇸🇬" },
     country: "Singapore",
     flag: "🇸🇬",
     tagline:
