@@ -145,7 +145,7 @@ export default async function HomePage() {
                 </span>
                 <span>{group.country}</span>
               </p>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {group.guides.map((g) => {
             // Launching guides (written, awaiting Stripe) and founder
             // previews present exactly like live ones on the card.
@@ -184,7 +184,7 @@ export default async function HomePage() {
                 <div className="absolute inset-x-0 bottom-0 p-6">
                   <div className="flex items-center gap-2 text-sand-100/80 text-xs uppercase tracking-wider font-semibold mb-2">
                     <span className="text-base leading-none">{g.flag}</span>
-                    <span>{g.country}</span>
+                    <span>{g.region ?? g.country}</span>
                   </div>
                   <h3 className="font-display text-3xl sm:text-4xl tracking-tight text-sand-50 leading-none">
                     {g.city}

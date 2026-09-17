@@ -66,7 +66,7 @@ export function MoreCities({ currentSlug, count = 3 }: MoreCitiesProps) {
               <div className="absolute inset-x-0 bottom-0 p-5">
                 <div className="flex items-center gap-2 text-sand-100/80 text-[11px] uppercase tracking-wider font-semibold mb-1.5">
                   <span className="text-base leading-none">{g.flag}</span>
-                  <span>{g.country}</span>
+                  <span>{g.region ?? g.country}</span>
                 </div>
                 <h3 className="font-display text-2xl sm:text-3xl tracking-tight text-sand-50 leading-none">
                   {g.city}

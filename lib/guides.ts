@@ -5,6 +5,12 @@ export interface GuideMeta {
   title: string;
   city: string;
   country: string;
+  /**
+   * Shown on the card instead of `country` when set - e.g. "Bali" or
+   * "Lombok" under Indonesia. Grouping (homepage eyebrows, footer) always
+   * uses `country`.
+   */
+  region?: string;
   flag: string;
   tagline: string;
   price: string;
@@ -822,7 +828,8 @@ export const GUIDES: GuideMeta[] = [
     slug: "ubud",
     title: "Freedom Hustle Guide to Ubud",
     city: "Ubud",
-    country: "Bali",
+    country: "Indonesia",
+    region: "Bali",
     flag: "🇮🇩",
     tagline:
       "Jungle mornings, rice-terrace walks and a green kind of quiet that rewires you.",
@@ -846,7 +853,8 @@ export const GUIDES: GuideMeta[] = [
     slug: "canggu",
     title: "Freedom Hustle Guide to Canggu",
     city: "Canggu",
-    country: "Bali",
+    country: "Indonesia",
+    region: "Bali",
     flag: "🇮🇩",
     tagline:
       "Surf before breakfast, smoothie bowls after - Bali's busiest little village of big plans.",
@@ -870,7 +878,8 @@ export const GUIDES: GuideMeta[] = [
     slug: "uluwatu",
     title: "Freedom Hustle Guide to Uluwatu",
     city: "Uluwatu",
-    country: "Bali",
+    country: "Indonesia",
+    region: "Bali",
     flag: "🇮🇩",
     tagline:
       "Clifftop sunsets, world-class waves and temples hanging over the sea.",
@@ -894,7 +903,8 @@ export const GUIDES: GuideMeta[] = [
     slug: "seminyak",
     title: "Freedom Hustle Guide to Seminyak",
     city: "Seminyak",
-    country: "Bali",
+    country: "Indonesia",
+    region: "Bali",
     flag: "🇮🇩",
     tagline:
       "Bali, polished - beach clubs, boutique villas and sunsets with table service.",
@@ -915,34 +925,11 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "gili-islands",
-    title: "Freedom Hustle Guide to the Gili Islands",
-    city: "Gili Islands",
-    country: "Indonesia",
-    flag: "🇮🇩",
-    tagline:
-      "No cars, no traffic lights, no hurry - three islands running on bicycle time.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1619681216575-d6b3964fc278?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Car-free island decompression" },
-      { label: "Monthly budget", value: "£1,000–£1,600" },
-      { label: "Internet", value: "Passable, café-dependent" },
-      { label: "Transport", value: "Bike / cidomo / fast boat" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Sleepy, tropical, no-cars" }
-    ],
-    sections: buildSections()
-  },
-  {
     slug: "sidemen",
     title: "Freedom Hustle Guide to Sidemen",
     city: "Sidemen",
-    country: "Bali",
+    country: "Indonesia",
+    region: "Bali",
     flag: "\ud83c\uddee\ud83c\udde9",
     tagline:
       "Bali before the crowds - emerald rice terraces, Mount Agung mornings and a valley that still moves at village speed.",
@@ -959,6 +946,31 @@ export const GUIDES: GuideMeta[] = [
       { label: "Transport", value: "Scooter" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Quiet, green, village-pace" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "gili-islands",
+    title: "Freedom Hustle Guide to the Gili Islands",
+    city: "Gili Islands",
+    country: "Indonesia",
+    region: "Lombok",
+    flag: "🇮🇩",
+    tagline:
+      "No cars, no traffic lights, no hurry - three islands running on bicycle time.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1619681216575-d6b3964fc278?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Car-free island decompression" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
+      { label: "Internet", value: "Passable, café-dependent" },
+      { label: "Transport", value: "Bike / cidomo / fast boat" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Sleepy, tropical, no-cars" }
     ],
     sections: buildSections()
   },
@@ -987,26 +999,27 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "seoul",
-    title: "Freedom Hustle Guide to Seoul",
-    city: "Seoul",
-    country: "South Korea",
-    flag: "🇰🇷",
+    slug: "kota-kinabalu",
+    title: "Freedom Hustle Guide to Kota Kinabalu",
+    city: "Kota Kinabalu",
+    country: "Malaysia",
+    region: "Sabah, Borneo",
+    flag: "🇲🇾",
     tagline:
-      "A city moving at double speed - neon nights, mountain trails at the metro's end, and café culture done seriously.",
+      "Borneo's easy-going capital - island-hopping mornings, the famous waterfront sunsets and Mount Kinabalu on the horizon.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1692617993977-eced61646e20?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Fast city + café culture" },
-      { label: "Monthly budget", value: "£1,500–£3,000" },
-      { label: "Internet", value: "World-class" },
-      { label: "Transport", value: "Subway / Kakao T" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Fast, modern, intense" }
+      { label: "Best for", value: "Nature + islands on a budget" },
+      { label: "Monthly budget", value: "£900–£1,500" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Grab / scooter" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Laid-back, outdoorsy, friendly" }
     ],
     sections: buildSections()
   },
@@ -1127,6 +1140,30 @@ export const GUIDES: GuideMeta[] = [
       { label: "Transport", value: "Scooter / tuk-tuk / PickMe" },
       { label: "Difficulty", value: "Beginner-friendly" },
       { label: "Vibe", value: "Bay, surf, slow" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "seoul",
+    title: "Freedom Hustle Guide to Seoul",
+    city: "Seoul",
+    country: "South Korea",
+    flag: "🇰🇷",
+    tagline:
+      "A city moving at double speed - neon nights, mountain trails at the metro's end, and café culture done seriously.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Fast city + café culture" },
+      { label: "Monthly budget", value: "£1,500–£3,000" },
+      { label: "Internet", value: "World-class" },
+      { label: "Transport", value: "Subway / Kakao T" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Fast, modern, intense" }
     ],
     sections: buildSections()
   },
