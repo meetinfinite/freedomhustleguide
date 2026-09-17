@@ -177,14 +177,14 @@ export default async function HomePage() {
                 ) : null}
 
                 <div className="absolute inset-x-0 bottom-0 p-6">
-                  <div className="flex items-center gap-2 text-sand-100/80 text-xs uppercase tracking-wider font-semibold mb-2">
+                  <div className="flex items-center gap-2 text-sand-100/80 text-xs uppercase tracking-wider font-semibold mb-1.5">
                     <span className="text-base leading-none">{g.flag}</span>
                     <span>{g.region ?? g.country}</span>
                   </div>
                   <h3 className="font-display text-3xl sm:text-4xl tracking-tight text-sand-50 leading-none">
                     {g.city}
                   </h3>
-                  <div className="mt-4">
+                  <div className="mt-2">
                     {showReady ? (
                       <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-electric-500 text-white">
                         Explore →
