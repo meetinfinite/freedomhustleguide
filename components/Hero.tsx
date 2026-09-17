@@ -32,7 +32,7 @@ export function Hero({
       <div className="absolute inset-0 bg-gradient-to-b from-ink-900/40 via-ink-900/60 to-ink-900/95" />
       <div className="absolute inset-0 bg-hero-grad opacity-50" />
 
-      <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-24 sm:pt-32 sm:pb-32">
+      <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16 sm:pt-32 sm:pb-20">
         <div className="max-w-3xl fade-up">
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-sand-200 font-semibold mb-5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/15">
             <span>Freedom Hustle Guide to&hellip;</span>
@@ -67,23 +67,6 @@ export function Hero({
           </div>
         </div>
 
-        {guide.quickStats.length ? (
-          <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 max-w-5xl">
-            {guide.quickStats.map((s) => (
-              <div
-                key={s.label}
-                className="rounded-2xl bg-white/10 backdrop-blur border border-white/15 p-4"
-              >
-                <p className="text-[11px] uppercase tracking-wider text-sand-200 font-semibold">
-                  {s.label}
-                </p>
-                <p className="text-sand-50 font-semibold text-sm sm:text-base mt-1">
-                  {s.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : null}
       </div>
     </section>
   );

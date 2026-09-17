@@ -20,7 +20,7 @@ export function FoundersCityStrip({
   const doubled = [...images, ...images];
 
   return (
-    <section className="py-12">
+    <section className="pt-8 pb-10 sm:pt-10 sm:pb-12">
       <div className="max-w-6xl mx-auto px-6 mb-8 text-center">
         <h2 className="font-display text-2xl sm:text-3xl tracking-tight">
           Discover the best of {city}
