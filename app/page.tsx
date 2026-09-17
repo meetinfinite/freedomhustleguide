@@ -77,7 +77,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink-900/35 via-ink-900/45 to-ink-900/80" />
         <div className="absolute inset-0 bg-hero-grad opacity-40 pointer-events-none" />
 
-        <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16 sm:pt-32 sm:pb-40">
+        <div className="relative w-full max-w-6xl mx-auto px-6 pt-24 pb-16 sm:pt-32 sm:pb-40">
           <div className="max-w-3xl fade-up">
             <p className="text-xs uppercase tracking-[0.18em] text-sand-50 font-semibold mb-4 [text-shadow:0_1px_12px_rgba(15,14,10,0.85)]">
               Lived In. Researched. Experienced
