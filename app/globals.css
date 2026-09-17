@@ -148,3 +148,43 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Hero CTA: a warm gold sheen sweeping across the button plus a soft
+   pulsing glow - the "scroll me" cue on the full-height homepage hero.
+   Honours reduced-motion. */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+  animation: btn-glow-pulse 3s ease-in-out infinite;
+}
+.btn-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255, 214, 120, 0.75) 50%,
+    transparent 65%
+  );
+  transform: translateX(-130%);
+  animation: btn-sheen 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes btn-sheen {
+  0% { transform: translateX(-130%); }
+  55%, 100% { transform: translateX(130%); }
+}
+@keyframes btn-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(15, 14, 10, 0.25),
+      0 0 0 0 rgba(255, 214, 120, 0);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(15, 14, 10, 0.25),
+      0 0 26px 6px rgba(255, 214, 120, 0.55);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow, .btn-glow::after { animation: none; }
+}

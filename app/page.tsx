@@ -60,7 +60,7 @@ export default async function HomePage() {
       <SiteHeader />
 
       {/* ----- Video hero ----- */}
-      <section className="relative overflow-hidden bg-ink-900">
+      <section className="relative overflow-hidden bg-ink-900 lg:min-h-[calc(100svh-7.5rem)] lg:flex lg:flex-col lg:justify-center">
         <video
           className="absolute inset-0 w-full h-full object-cover bg-ink-900"
           src={HERO_VIDEO_SRC}
@@ -98,7 +98,7 @@ export default async function HomePage() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#guides"
-                className="px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition shadow-pop inline-flex items-center gap-2"
+                className="btn-glow px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition shadow-pop inline-flex items-center gap-2"
               >
                 Explore guides
                 <svg
