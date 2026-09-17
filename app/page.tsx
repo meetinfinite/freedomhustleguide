@@ -35,21 +35,17 @@ export default async function HomePage() {
   // Group guides by country for the grid - the registry keeps each
   // country's cities contiguous, so first-appearance order is the
   // display order (Thailand and Vietnam lead with the finished guides).
-  // A guide's gridGroup (e.g. "South Korea & Singapore") overrides its
-  // country so one-city countries can share a block.
   const countryGroups: {
     country: string;
     flag: string;
     guides: typeof guides;
   }[] = [];
   for (const g of guides) {
-    const label = g.gridGroup?.label ?? g.country;
-    const flag = g.gridGroup?.flag ?? g.flag;
     const last = countryGroups[countryGroups.length - 1];
-    if (last && last.country === label) {
+    if (last && last.country === g.country) {
       last.guides.push(g);
     } else {
-      countryGroups.push({ country: label, flag, guides: [g] });
+      countryGroups.push({ country: g.country, flag: g.flag, guides: [g] });
     }
   }
 
