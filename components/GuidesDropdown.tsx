@@ -75,7 +75,7 @@ export function GuidesDropdown({ guides }: GuidesDropdownProps) {
                     {g.city}
                   </div>
                   <div className="text-[11px] text-ink-500 truncate">
-                    {g.country}
+                    {g.region ?? g.country}
                   </div>
                 </div>
                 {isLive ? (
