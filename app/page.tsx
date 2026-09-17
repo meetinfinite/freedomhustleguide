@@ -81,7 +81,7 @@ export default async function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-b from-ink-900/35 via-ink-900/45 to-ink-900/80" />
         <div className="absolute inset-0 bg-hero-grad opacity-40 pointer-events-none" />
 
-        <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-28 sm:pt-32 sm:pb-40">
+        <div className="relative max-w-6xl mx-auto px-6 pt-24 pb-16 sm:pt-32 sm:pb-40">
           <div className="max-w-3xl fade-up">
             <p className="text-xs uppercase tracking-[0.18em] text-sand-50 font-semibold mb-4 [text-shadow:0_1px_12px_rgba(15,14,10,0.85)]">
               Lived In. Researched. Experienced
@@ -129,22 +129,22 @@ export default async function HomePage() {
       {/* ----- Available guides ----- */}
       <section
         id="guides"
-        className="max-w-6xl mx-auto px-6 pt-20 pb-12 scroll-mt-20"
+        className="max-w-6xl mx-auto px-6 pt-10 sm:pt-20 pb-12 scroll-mt-20"
       >
-        <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-8">
+        <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-4 sm:mb-8">
           Guide to…
         </p>
 
-        <div className="space-y-14">
+        <div className="space-y-10 sm:space-y-14">
           {countryGroups.map((group) => (
             <div key={group.country}>
-              <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-5 flex items-center gap-3">
+              <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-3 sm:mb-5 flex items-center gap-3">
                 <span aria-hidden className="text-2xl leading-none">
                   {group.flag}
                 </span>
                 <span>{group.country}</span>
               </h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0">
           {group.guides.map((g) => {
             // Launching guides (written, awaiting Stripe) and founder
             // previews present exactly like live ones on the card.
@@ -154,7 +154,7 @@ export default async function HomePage() {
             // Card wrapper - uses clip-path for GPU-composited rounded clip
             // (avoids the overflow-hidden + transform corner-flicker bug).
             const cardClass =
-              "group relative aspect-[4/5] rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
+              "group relative aspect-[4/5] w-[44vw] shrink-0 snap-start sm:w-auto rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
 
             const cardBody = (
               <>
@@ -180,17 +180,17 @@ export default async function HomePage() {
                   </div>
                 ) : null}
 
-                <div className="absolute inset-x-0 bottom-0 p-6">
+                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
                   <div className="flex items-center gap-2 text-sand-100/80 text-xs uppercase tracking-wider font-semibold mb-1.5">
                     <span className="text-base leading-none">{g.flag}</span>
                     <span>{g.region ?? g.country}</span>
                   </div>
-                  <h3 className="font-display text-3xl sm:text-4xl tracking-tight text-sand-50 leading-none">
+                  <h3 className="font-display text-2xl sm:text-4xl tracking-tight text-sand-50 leading-none">
                     {g.city}
                   </h3>
                   <div className="mt-2">
                     {showReady ? (
-                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-electric-500 text-white">
+                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-card bg-electric-500 text-white">
                         Explore →
                       </span>
                     ) : (
@@ -198,7 +198,7 @@ export default async function HomePage() {
                       // stops propagation so the card link never fires.
                       <NotifyButton
                         city={g.city}
-                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-sand-50 text-ink-900 hover:bg-white transition"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-card bg-sand-50 text-ink-900 hover:bg-white transition"
                       />
                     )}
                   </div>
