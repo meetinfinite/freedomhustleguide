@@ -140,7 +140,7 @@ export default async function HomePage() {
                 </span>
                 <span>{group.country}</span>
               </h2>
-              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory -mx-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0">
+              <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory scroll-pl-6 -mx-6 px-6 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 sm:gap-4 sm:overflow-visible sm:mx-0 sm:px-0 sm:pb-0">
           {group.guides.map((g) => {
             // Launching guides (written, awaiting Stripe) and founder
             // previews present exactly like live ones on the card.
@@ -150,7 +150,7 @@ export default async function HomePage() {
             // Card wrapper - uses clip-path for GPU-composited rounded clip
             // (avoids the overflow-hidden + transform corner-flicker bug).
             const cardClass =
-              "group relative aspect-[4/5] w-[44vw] shrink-0 snap-start sm:w-auto rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
+              "group relative aspect-[4/5] w-[40vw] shrink-0 snap-start sm:w-auto rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
 
             const cardBody = (
               <>
