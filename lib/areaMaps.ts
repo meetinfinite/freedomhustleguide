@@ -539,18 +539,8 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
     ]
   },
 
-  dubai: {
-    center: [25.16, 55.24],
-    zoom: 10.8,
-    areas: [
-      { name: "Dubai Marina / JBR", color: "#e07a5f", hint: "Waterfront towers, beach life", polygon: [[25.085, 55.125], [25.085, 55.145], [25.070, 55.145], [25.070, 55.125]] },
-      { name: "JLT", color: "#d16ba5", hint: "Marina's cheaper neighbour", polygon: [[25.070, 55.135], [25.070, 55.155], [25.055, 55.155], [25.055, 55.135]] },
-      { name: "Downtown", color: "#7c6bd1", hint: "Burj views, walkable core", polygon: [[25.205, 55.265], [25.205, 55.285], [25.185, 55.285], [25.185, 55.265]] },
-      { name: "Business Bay", color: "#d4b85a", hint: "Downtown value option", polygon: [[25.190, 55.255], [25.190, 55.275], [25.175, 55.275], [25.175, 55.255]] },
-      { name: "Jumeirah", color: "#5fc98a", hint: "Low-rise villas near the beach", polygon: [[25.230, 55.230], [25.230, 55.260], [25.190, 55.260], [25.190, 55.230]] },
-      { name: "Deira", color: "#5fb8c9", hint: "Old Dubai - souks + creek", polygon: [[25.280, 55.300], [25.280, 55.330], [25.260, 55.330], [25.260, 55.300]] }
-    ]
-  },
+// dubai retired 2026-09-17 (replaced by Sidemen in the registry;
+  // build a sidemen map when that guide is written)
 
   "koh-tao": {
     center: [10.09, 99.828],
