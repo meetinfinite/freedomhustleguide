@@ -196,8 +196,7 @@ export default async function GuideLandingPage({
             What's inside
           </p>
           <h2 className="font-display text-4xl sm:text-5xl tracking-tight">
-            Everything you wish someone had told you before you booked the
-            flight to {guide.city}.
+            Everything we wish we knew before travelling to {guide.city}.
           </h2>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
