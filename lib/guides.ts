@@ -38,6 +38,11 @@ export interface GuideMeta {
    */
   myMapsId?: string;
   heroImage: string;
+  /**
+   * CSS background-position for the landing hero crop, e.g. "center 78%"
+   * to favour the bottom of a tall scene. Defaults to center.
+   */
+  heroPosition?: string;
   /** Square-ish image used on the homepage guide card. */
   cardImage: string;
   /**
@@ -398,6 +403,8 @@ export const GUIDES: GuideMeta[] = [
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
     myMapsId: "14Gx_CAxOgKx5VuHQvQAWPM5qQQdMltI",
+    // Tuk-tuks live in the bottom third of the photo
+    heroPosition: "center 78%",
     heroImage:
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2400&q=80",
     cardImage:
@@ -624,6 +631,8 @@ export const GUIDES: GuideMeta[] = [
     price: "£5.99",
     stripePriceId: process.env.STRIPE_PRICE_DA_NANG || null,
     status: "live",
+    // Golden Bridge: the fingers are in the top third of the photo
+    heroPosition: "center 30%",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1559592413-7cec4d0cae2b?auto=format&fit=crop&w=1400&q=80",

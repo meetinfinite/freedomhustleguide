@@ -22,10 +22,13 @@ export function Hero({
   return (
     <section className="relative overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover"
         style={
           guide.heroImage
-            ? { backgroundImage: `url(${guide.heroImage})` }
+            ? {
+                backgroundImage: `url(${guide.heroImage})`,
+                backgroundPosition: guide.heroPosition ?? "center"
+              }
             : undefined
         }
       />
