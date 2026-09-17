@@ -127,24 +127,19 @@ export default async function HomePage() {
         id="guides"
         className="max-w-6xl mx-auto px-6 pt-20 pb-12 scroll-mt-20"
       >
-        <div className="mb-10">
-          <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
-            Available guides
-          </p>
-          <h2 className="font-display text-2xl sm:text-3xl tracking-tight">
-            Freedom Hustle Guide to…
-          </h2>
-        </div>
+        <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-8">
+          Guide to…
+        </p>
 
-        <div className="space-y-12">
+        <div className="space-y-14">
           {countryGroups.map((group) => (
             <div key={group.country}>
-              <p className="text-xs uppercase tracking-[0.18em] text-ink-500 font-semibold mb-4 flex items-center gap-2">
-                <span aria-hidden className="text-base leading-none">
+              <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-5 flex items-center gap-3">
+                <span aria-hidden className="text-2xl leading-none">
                   {group.flag}
                 </span>
                 <span>{group.country}</span>
-              </p>
+              </h2>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {group.guides.map((g) => {
             // Launching guides (written, awaiting Stripe) and founder
