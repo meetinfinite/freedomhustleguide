@@ -125,7 +125,7 @@ export default async function HomePage() {
       {/* ----- Available guides ----- */}
       <section
         id="guides"
-        className="max-w-6xl mx-auto px-6 pt-10 sm:pt-20 pb-12 scroll-mt-20"
+        className="max-w-6xl mx-auto px-6 pt-8 sm:pt-10 pb-12 scroll-mt-20"
       >
         <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-4 sm:mb-8">
           Guide to…
