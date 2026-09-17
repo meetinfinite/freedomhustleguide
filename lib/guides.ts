@@ -403,10 +403,11 @@ export const GUIDES: GuideMeta[] = [
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
     myMapsId: "14Gx_CAxOgKx5VuHQvQAWPM5qQQdMltI",
-    // Tuk-tuks live in the bottom third of the photo
-    heroPosition: "center 78%",
+    // Valeria's pick (2026-09-17): two tuk-tuks centre-frame under the
+    // neon - Unsplash DPiWd_pGGYk. Tuk-tuks sit just below the middle.
+    heroPosition: "center 55%",
     heroImage:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=2400&q=80",
+      "https://images.unsplash.com/photo-1669874322794-a2bb7a60441d?auto=format&fit=crop&w=2400&q=80",
     cardImage:
       "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
