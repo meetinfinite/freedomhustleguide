@@ -67,12 +67,15 @@ export default async function HomePage() {
             </p>
             <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50 [text-shadow:0_2px_28px_rgba(15,14,10,0.85),0_1px_4px_rgba(15,14,10,0.55)]">
               Travel guides for{" "}
-              <span className="block text-electric-300">remote workers</span>
+              <span className="block text-electric-300">
+                your trip to Asia
+              </span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed [text-shadow:0_1px_14px_rgba(15,14,10,0.9)]">
-              Built from years of travelling full time. Best cafes, best
-              places to stay, best restaurants - and everything you need to
-              know before travelling.
+              Built from our experience of travelling full time in 30+
+              destinations across Asia. Best cafes, best places to stay,
+              best restaurants, how much we paid - and everything you need
+              to know before travelling to Asia.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
