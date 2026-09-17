@@ -32,6 +32,23 @@ export default async function HomePage() {
     member?.lifetime ? listPreviewGuides().map((g) => g.slug) : []
   );
 
+  // Group guides by country for the grid - the registry keeps each
+  // country's cities contiguous, so first-appearance order is the
+  // display order (Thailand and Vietnam lead with the finished guides).
+  const countryGroups: {
+    country: string;
+    flag: string;
+    guides: typeof guides;
+  }[] = [];
+  for (const g of guides) {
+    const last = countryGroups[countryGroups.length - 1];
+    if (last && last.country === g.country) {
+      last.guides.push(g);
+    } else {
+      countryGroups.push({ country: g.country, flag: g.flag, guides: [g] });
+    }
+  }
+
   return (
     <main className="min-h-screen bg-sand-50">
       <Suspense fallback={null}>
@@ -119,8 +136,17 @@ export default async function HomePage() {
           </h2>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {guides.map((g) => {
+        <div className="space-y-12">
+          {countryGroups.map((group) => (
+            <div key={group.country}>
+              <p className="text-xs uppercase tracking-[0.18em] text-ink-500 font-semibold mb-4 flex items-center gap-2">
+                <span aria-hidden className="text-base leading-none">
+                  {group.flag}
+                </span>
+                <span>{group.country}</span>
+              </p>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {group.guides.map((g) => {
             // Launching guides (written, awaiting Stripe) and founder
             // previews present exactly like live ones on the card.
             const showReady =
@@ -197,6 +223,9 @@ export default async function HomePage() {
               </div>
             );
           })}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

@@ -464,6 +464,150 @@ export const GUIDES: GuideMeta[] = [
     sections: CHIANG_MAI_SECTIONS
   },
   {
+    slug: "koh-samui",
+    title: "Freedom Hustle Guide to Koh Samui",
+    city: "Koh Samui",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Island life with the edges sanded off - palm roads, quiet coves and real comfort.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Island life without roughing it" },
+      { label: "Monthly budget", value: "£1,000–£2,000" },
+      { label: "Internet", value: "Good (area-dependent)" },
+      { label: "Transport", value: "Scooter / Bolt / ferry + flights" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Tropical, slow, ocean-led" }
+    ],
+    sections: KOH_SAMUI_SECTIONS
+  },
+  {
+    slug: "koh-phangan",
+    title: "Freedom Hustle Guide to Koh Phangan",
+    city: "Koh Phangan",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "The island of full moons and slow mornings - jungle, yoga and beaches that empty by ten.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1579211975029-8aa27c32fa75?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Yoga + beach community" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
+      { label: "Internet", value: "Improving" },
+      { label: "Transport", value: "Scooter / songthaew / ferry" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Yoga, jungle, sunset" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "phuket",
+    title: "Freedom Hustle Guide to Phuket",
+    city: "Phuket",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Thailand's big island - fifty beaches, jungle viewpoints and sunsets that earn the hype.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Beach life + full infrastructure" },
+      { label: "Monthly budget", value: "£1,000–£2,200" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Scooter / Grab / Bolt" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Tropical, polished, tourist-touched" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "krabi",
+    title: "Freedom Hustle Guide to Krabi",
+    city: "Krabi",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Limestone towers, jungle trails and longtail rides to beaches with no roads.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Beaches + rock climbing" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Scooter / Grab / longtail" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Cliff, beach, laid-back" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "koh-tao",
+    title: "Freedom Hustle Guide to Koh Tao",
+    city: "Koh Tao",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "A dive licence, a scooter loop and sunsets from Sairee - island life at its simplest.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1688625548814-d7bb114d344e?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Diving + budget island life" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
+      { label: "Internet", value: "Good in town" },
+      { label: "Transport", value: "Scooter / ferry" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Diving, island, low-key" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "phi-phi-islands",
+    title: "Freedom Hustle Guide to the Phi Phi Islands",
+    city: "Phi Phi Islands",
+    country: "Thailand",
+    flag: "🇹🇭",
+    tagline:
+      "Cliffs rising straight from turquoise water - the island postcard that's real.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Boat days + beach nights" },
+      { label: "Monthly budget", value: "£1,100–£1,900" },
+      { label: "Internet", value: "Patchy - SIM + backup" },
+      { label: "Transport", value: "Walking / longtail / ferry" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Turquoise, cliffs, party" }
+    ],
+    sections: buildSections()
+  },
+  {
     slug: "da-nang",
     title: "Freedom Hustle Guide to Da Nang",
     city: "Da Nang",
@@ -507,98 +651,74 @@ export const GUIDES: GuideMeta[] = [
     sections: DA_NANG_SECTIONS
   },
   {
-    slug: "ubud",
-    title: "Freedom Hustle Guide to Ubud",
-    city: "Ubud",
-    country: "Bali",
-    flag: "🇮🇩",
+    slug: "hoi-an",
+    title: "Freedom Hustle Guide to Hoi An",
+    city: "Hoi An",
+    country: "Vietnam",
+    flag: "🇻🇳",
     tagline:
-      "Jungle mornings, rice-terrace walks and a green kind of quiet that rewires you.",
+      "Lantern light on the river and an old town that glows after dark - Vietnam at its most romantic.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1526139334526-f591a54b477c?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Wellness + jungle slow living" },
-      { label: "Monthly budget", value: "£1,000–£1,800" },
-      { label: "Internet", value: "Patchy - plan for it" },
-      { label: "Transport", value: "Scooter / Gojek / Grab" },
-      { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Slow, green, spiritual" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "koh-samui",
-    title: "Freedom Hustle Guide to Koh Samui",
-    city: "Koh Samui",
-    country: "Thailand",
-    flag: "🇹🇭",
-    tagline:
-      "Island life with the edges sanded off - palm roads, quiet coves and real comfort.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Island life without roughing it" },
-      { label: "Monthly budget", value: "£1,000–£2,000" },
-      { label: "Internet", value: "Good (area-dependent)" },
-      { label: "Transport", value: "Scooter / Bolt / ferry + flights" },
+      { label: "Best for", value: "Old-town charm + slow weeks" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
+      { label: "Internet", value: "Good" },
+      { label: "Transport", value: "Bike / scooter / Grab" },
       { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Tropical, slow, ocean-led" }
-    ],
-    sections: KOH_SAMUI_SECTIONS
-  },
-  {
-    slug: "kuala-lumpur",
-    title: "Freedom Hustle Guide to Kuala Lumpur",
-    city: "Kuala Lumpur",
-    country: "Malaysia",
-    flag: "🇲🇾",
-    tagline:
-      "Three cuisines deep and half the price of Singapore - Asia's most underrated big city.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "City comfort on a budget" },
-      { label: "Monthly budget", value: "£1,000–£1,700" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "LRT / MRT / Grab" },
-      { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Urban, multicultural, food-led" }
+      { label: "Vibe", value: "Historic, lanterns, riverside" }
     ],
     sections: buildSections()
   },
   {
-    slug: "seoul",
-    title: "Freedom Hustle Guide to Seoul",
-    city: "Seoul",
-    country: "South Korea",
-    flag: "🇰🇷",
+    slug: "hanoi",
+    title: "Freedom Hustle Guide to Hanoi",
+    city: "Hanoi",
+    country: "Vietnam",
+    flag: "🇻🇳",
     tagline:
-      "A city moving at double speed - neon nights, mountain trails at the metro's end, and café culture done seriously.",
+      "A thousand years of street life - egg coffee, ancient alleys and motorbike ballet.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Fast city + café culture" },
-      { label: "Monthly budget", value: "£1,500–£3,000" },
-      { label: "Internet", value: "World-class" },
-      { label: "Transport", value: "Subway / Kakao T" },
+      { label: "Best for", value: "Café culture + street food" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Scooter / Grab / Be" },
       { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Fast, modern, intense" }
+      { label: "Vibe", value: "Chaotic, romantic, historic" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "ho-chi-minh",
+    title: "Freedom Hustle Guide to Ho Chi Minh City",
+    city: "Ho Chi Minh City",
+    country: "Vietnam",
+    flag: "🇻🇳",
+    tagline:
+      "Eight million motorbikes and energy that never quits - Vietnam's engine room, heavily caffeinated.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1580835267732-2d232d3d2655?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Big-city hustle on a budget" },
+      { label: "Monthly budget", value: "£1,000–£1,600" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Scooter / Grab / Be" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Energetic, cheap, food-led" }
     ],
     sections: buildSections()
   },
@@ -627,78 +747,6 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "phuket",
-    title: "Freedom Hustle Guide to Phuket",
-    city: "Phuket",
-    country: "Thailand",
-    flag: "🇹🇭",
-    tagline:
-      "Thailand's big island - fifty beaches, jungle viewpoints and sunsets that earn the hype.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1589394815804-964ed0be2eb5?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Beach life + full infrastructure" },
-      { label: "Monthly budget", value: "£1,000–£2,200" },
-      { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Scooter / Grab / Bolt" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Tropical, polished, tourist-touched" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "coron",
-    title: "Freedom Hustle Guide to Coron",
-    city: "Coron",
-    country: "Philippines",
-    flag: "🇵🇭",
-    tagline:
-      "Lagoons so blue they look edited - Palawan's wild, cinematic corner.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Island-hopping + diving" },
-      { label: "Monthly budget", value: "£1,000–£1,700" },
-      { label: "Internet", value: "Improving - plan for it" },
-      { label: "Transport", value: "Tricycle / boats / domestic flights" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Wild, cinematic, remote" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "el-nido",
-    title: "Freedom Hustle Guide to El Nido",
-    city: "El Nido",
-    country: "Philippines",
-    flag: "🇵🇭",
-    tagline:
-      "Karst cliffs, hidden beaches and island-hopping that ruins other beaches for you.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1728042880915-0dd755899018?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Lagoons + off-grid resets" },
-      { label: "Monthly budget", value: "£1,000–£1,800" },
-      { label: "Internet", value: "Patchy - SIM + backup" },
-      { label: "Transport", value: "Tricycle / boats / domestic flights" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Wild, paradise, slow" }
-    ],
-    sections: buildSections()
-  },
-  {
     slug: "kyoto",
     title: "Freedom Hustle Guide to Kyoto",
     city: "Kyoto",
@@ -723,50 +771,74 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "boracay",
-    title: "Freedom Hustle Guide to Boracay",
-    city: "Boracay",
-    country: "Philippines",
-    flag: "🇵🇭",
+    slug: "osaka",
+    title: "Freedom Hustle Guide to Osaka",
+    city: "Osaka",
+    country: "Japan",
+    flag: "🇯🇵",
     tagline:
-      "Four kilometres of powder-white sand and the friendliest sunsets in the Philippines.",
+      "Japan's kitchen and its loudest laugh - neon canyons, street food and zero pretension.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1684419206253-3a934ec0bd6d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1571242352061-7611fbafbd42?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Beach days + social nights" },
-      { label: "Monthly budget", value: "£1,000–£1,800" },
-      { label: "Internet", value: "Good (area-dependent)" },
-      { label: "Transport", value: "E-trike / ferry + flights" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Tropical, social, sunset-led" }
+      { label: "Best for", value: "Street food + neon nights" },
+      { label: "Monthly budget", value: "£1,600–£3,000" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "Subway / JR" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Neon, food, playful" }
     ],
     sections: buildSections()
   },
   {
-    slug: "mirissa",
-    title: "Freedom Hustle Guide to Mirissa",
-    city: "Mirissa",
-    country: "Sri Lanka",
-    flag: "🇱🇰",
+    slug: "nara",
+    title: "Freedom Hustle Guide to Nara",
+    city: "Nara",
+    country: "Japan",
+    flag: "🇯🇵",
     tagline:
-      "Whales at breakfast, surf at noon, Coconut Tree Hill at sunset - Sri Lanka's south at its sweetest.",
+      "Sacred deer, giant Buddhas and Japan's first capital - an hour from Kyoto, a world quieter.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1550303435-1703d8811aaa?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Surf + whale season" },
-      { label: "Monthly budget", value: "£1,000–£1,500" },
-      { label: "Internet", value: "Good in cafés" },
-      { label: "Transport", value: "Scooter / tuk-tuk / PickMe" },
+      { label: "Best for", value: "Quiet culture + Kyoto next door" },
+      { label: "Monthly budget", value: "£1,400–£2,500" },
+      { label: "Internet", value: "Excellent" },
+      { label: "Transport", value: "JR / bus / bike" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Ancient, quiet, green" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "ubud",
+    title: "Freedom Hustle Guide to Ubud",
+    city: "Ubud",
+    country: "Bali",
+    flag: "🇮🇩",
+    tagline:
+      "Jungle mornings, rice-terrace walks and a green kind of quiet that rewires you.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Wellness + jungle slow living" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
+      { label: "Internet", value: "Patchy - plan for it" },
+      { label: "Transport", value: "Scooter / Gojek / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Surf, chill, coastal" }
+      { label: "Vibe", value: "Slow, green, spiritual" }
     ],
     sections: buildSections()
   },
@@ -819,146 +891,26 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "osaka",
-    title: "Freedom Hustle Guide to Osaka",
-    city: "Osaka",
-    country: "Japan",
-    flag: "🇯🇵",
+    slug: "seminyak",
+    title: "Freedom Hustle Guide to Seminyak",
+    city: "Seminyak",
+    country: "Bali",
+    flag: "🇮🇩",
     tagline:
-      "Japan's kitchen and its loudest laugh - neon canyons, street food and zero pretension.",
+      "Bali, polished - beach clubs, boutique villas and sunsets with table service.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1571242352061-7611fbafbd42?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1571984405176-5958bd9ac31d?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Street food + neon nights" },
-      { label: "Monthly budget", value: "£1,600–£3,000" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Subway / JR" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Neon, food, playful" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "hoi-an",
-    title: "Freedom Hustle Guide to Hoi An",
-    city: "Hoi An",
-    country: "Vietnam",
-    flag: "🇻🇳",
-    tagline:
-      "Lantern light on the river and an old town that glows after dark - Vietnam at its most romantic.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1526139334526-f591a54b477c?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Old-town charm + slow weeks" },
-      { label: "Monthly budget", value: "£1,000–£1,500" },
-      { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Bike / scooter / Grab" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Historic, lanterns, riverside" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "krabi",
-    title: "Freedom Hustle Guide to Krabi",
-    city: "Krabi",
-    country: "Thailand",
-    flag: "🇹🇭",
-    tagline:
-      "Limestone towers, jungle trails and longtail rides to beaches with no roads.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1519451241324-20b4ea2c4220?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Beaches + rock climbing" },
-      { label: "Monthly budget", value: "£1,000–£1,700" },
-      { label: "Internet", value: "Good" },
-      { label: "Transport", value: "Scooter / Grab / longtail" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Cliff, beach, laid-back" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "singapore",
-    title: "Freedom Hustle Guide to Singapore",
-    city: "Singapore",
-    country: "Singapore",
-    flag: "🇸🇬",
-    tagline:
-      "The future, air-conditioned - hawker food, garden towers and a city where everything simply works.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Speed, safety + business" },
-      { label: "Monthly budget", value: "£2,500–£4,500" },
-      { label: "Internet", value: "World-class" },
-      { label: "Transport", value: "MRT / Grab" },
+      { label: "Best for", value: "Beach clubs + polished comfort" },
+      { label: "Monthly budget", value: "£1,200–£2,400" },
+      { label: "Internet", value: "Very good" },
+      { label: "Transport", value: "Scooter / Gojek / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Efficient, futuristic, expensive" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "koh-phangan",
-    title: "Freedom Hustle Guide to Koh Phangan",
-    city: "Koh Phangan",
-    country: "Thailand",
-    flag: "🇹🇭",
-    tagline:
-      "The island of full moons and slow mornings - jungle, yoga and beaches that empty by ten.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1579211975029-8aa27c32fa75?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Yoga + beach community" },
-      { label: "Monthly budget", value: "£1,000–£1,600" },
-      { label: "Internet", value: "Improving" },
-      { label: "Transport", value: "Scooter / songthaew / ferry" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Yoga, jungle, sunset" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "hanoi",
-    title: "Freedom Hustle Guide to Hanoi",
-    city: "Hanoi",
-    country: "Vietnam",
-    flag: "🇻🇳",
-    tagline:
-      "A thousand years of street life - egg coffee, ancient alleys and motorbike ballet.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1555921015-5532091f6026?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Café culture + street food" },
-      { label: "Monthly budget", value: "£1,000–£1,500" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Scooter / Grab / Be" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Chaotic, romantic, historic" }
+      { label: "Vibe", value: "Beach clubs, sunset, refined" }
     ],
     sections: buildSections()
   },
@@ -987,74 +939,170 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "dubai",
-    title: "Freedom Hustle Guide to Dubai",
-    city: "Dubai",
-    country: "UAE",
-    flag: "🇦🇪",
+    slug: "sidemen",
+    title: "Freedom Hustle Guide to Sidemen",
+    city: "Sidemen",
+    country: "Bali",
+    flag: "\ud83c\uddee\ud83c\udde9",
     tagline:
-      "A glass skyline out of the desert - beach mornings, souk evenings and a city built on ambition.",
-    price: "£5.99",
+      "Bali before the crowds - emerald rice terraces, Mount Agung mornings and a valley that still moves at village speed.",
+    price: "\u00a35.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1635857161777-2383f2e4a82d?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1555400038-63f5ba517a47?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Tax-friendly base + big-city polish" },
-      { label: "Monthly budget", value: "£2,000–£4,500" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Metro / Careem / Uber" },
+      { label: "Best for", value: "Slow living + rice-terrace views" },
+      { label: "Monthly budget", value: "\u00a3900\u2013\u00a31,500" },
+      { label: "Internet", value: "Good - check your villa" },
+      { label: "Transport", value: "Scooter" },
       { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Fast, polished, tax-friendly" }
+      { label: "Vibe", value: "Quiet, green, village-pace" }
     ],
     sections: buildSections()
   },
   {
-    slug: "koh-tao",
-    title: "Freedom Hustle Guide to Koh Tao",
-    city: "Koh Tao",
-    country: "Thailand",
-    flag: "🇹🇭",
+    slug: "kuala-lumpur",
+    title: "Freedom Hustle Guide to Kuala Lumpur",
+    city: "Kuala Lumpur",
+    country: "Malaysia",
+    flag: "🇲🇾",
     tagline:
-      "A dive licence, a scooter loop and sunsets from Sairee - island life at its simplest.",
+      "Three cuisines deep and half the price of Singapore - Asia's most underrated big city.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1688625548814-d7bb114d344e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Diving + budget island life" },
-      { label: "Monthly budget", value: "£1,000–£1,500" },
-      { label: "Internet", value: "Good in town" },
-      { label: "Transport", value: "Scooter / ferry" },
-      { label: "Difficulty", value: "Easy" },
-      { label: "Vibe", value: "Diving, island, low-key" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "ho-chi-minh",
-    title: "Freedom Hustle Guide to Ho Chi Minh City",
-    city: "Ho Chi Minh City",
-    country: "Vietnam",
-    flag: "🇻🇳",
-    tagline:
-      "Eight million motorbikes and energy that never quits - Vietnam's engine room, heavily caffeinated.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1580835267732-2d232d3d2655?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Big-city hustle on a budget" },
-      { label: "Monthly budget", value: "£1,000–£1,600" },
+      { label: "Best for", value: "City comfort on a budget" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
       { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "Scooter / Grab / Be" },
+      { label: "Transport", value: "LRT / MRT / Grab" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Urban, multicultural, food-led" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "seoul",
+    title: "Freedom Hustle Guide to Seoul",
+    city: "Seoul",
+    country: "South Korea",
+    flag: "🇰🇷",
+    tagline:
+      "A city moving at double speed - neon nights, mountain trails at the metro's end, and café culture done seriously.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Fast city + café culture" },
+      { label: "Monthly budget", value: "£1,500–£3,000" },
+      { label: "Internet", value: "World-class" },
+      { label: "Transport", value: "Subway / Kakao T" },
       { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Energetic, cheap, food-led" }
+      { label: "Vibe", value: "Fast, modern, intense" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "coron",
+    title: "Freedom Hustle Guide to Coron",
+    city: "Coron",
+    country: "Philippines",
+    flag: "🇵🇭",
+    tagline:
+      "Lagoons so blue they look edited - Palawan's wild, cinematic corner.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Island-hopping + diving" },
+      { label: "Monthly budget", value: "£1,000–£1,700" },
+      { label: "Internet", value: "Improving - plan for it" },
+      { label: "Transport", value: "Tricycle / boats / domestic flights" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Wild, cinematic, remote" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "el-nido",
+    title: "Freedom Hustle Guide to El Nido",
+    city: "El Nido",
+    country: "Philippines",
+    flag: "🇵🇭",
+    tagline:
+      "Karst cliffs, hidden beaches and island-hopping that ruins other beaches for you.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1728042880915-0dd755899018?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Lagoons + off-grid resets" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
+      { label: "Internet", value: "Patchy - SIM + backup" },
+      { label: "Transport", value: "Tricycle / boats / domestic flights" },
+      { label: "Difficulty", value: "Intermediate" },
+      { label: "Vibe", value: "Wild, paradise, slow" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "boracay",
+    title: "Freedom Hustle Guide to Boracay",
+    city: "Boracay",
+    country: "Philippines",
+    flag: "🇵🇭",
+    tagline:
+      "Four kilometres of powder-white sand and the friendliest sunsets in the Philippines.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1684419206253-3a934ec0bd6d?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Beach days + social nights" },
+      { label: "Monthly budget", value: "£1,000–£1,800" },
+      { label: "Internet", value: "Good (area-dependent)" },
+      { label: "Transport", value: "E-trike / ferry + flights" },
+      { label: "Difficulty", value: "Easy" },
+      { label: "Vibe", value: "Tropical, social, sunset-led" }
+    ],
+    sections: buildSections()
+  },
+  {
+    slug: "mirissa",
+    title: "Freedom Hustle Guide to Mirissa",
+    city: "Mirissa",
+    country: "Sri Lanka",
+    flag: "🇱🇰",
+    tagline:
+      "Whales at breakfast, surf at noon, Coconut Tree Hill at sunset - Sri Lanka's south at its sweetest.",
+    price: "£5.99",
+    stripePriceId: null,
+    status: "soon",
+    heroImage: "",
+    cardImage:
+      "https://images.unsplash.com/photo-1646894232861-a0ad84f1ad5d?auto=format&fit=crop&w=1400&q=80",
+    quickStats: [
+      { label: "Best for", value: "Surf + whale season" },
+      { label: "Monthly budget", value: "£1,000–£1,500" },
+      { label: "Internet", value: "Good in cafés" },
+      { label: "Transport", value: "Scooter / tuk-tuk / PickMe" },
+      { label: "Difficulty", value: "Beginner-friendly" },
+      { label: "Vibe", value: "Surf, chill, coastal" }
     ],
     sections: buildSections()
   },
@@ -1083,77 +1131,29 @@ export const GUIDES: GuideMeta[] = [
     sections: buildSections()
   },
   {
-    slug: "phi-phi-islands",
-    title: "Freedom Hustle Guide to the Phi Phi Islands",
-    city: "Phi Phi Islands",
-    country: "Thailand",
-    flag: "🇹🇭",
+    slug: "singapore",
+    title: "Freedom Hustle Guide to Singapore",
+    city: "Singapore",
+    country: "Singapore",
+    flag: "🇸🇬",
     tagline:
-      "Cliffs rising straight from turquoise water - the island postcard that's real.",
+      "The future, air-conditioned - hawker food, garden towers and a city where everything simply works.",
     price: "£5.99",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
     cardImage:
-      "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1400&q=80",
     quickStats: [
-      { label: "Best for", value: "Boat days + beach nights" },
-      { label: "Monthly budget", value: "£1,100–£1,900" },
-      { label: "Internet", value: "Patchy - SIM + backup" },
-      { label: "Transport", value: "Walking / longtail / ferry" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Turquoise, cliffs, party" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "nara",
-    title: "Freedom Hustle Guide to Nara",
-    city: "Nara",
-    country: "Japan",
-    flag: "🇯🇵",
-    tagline:
-      "Sacred deer, giant Buddhas and Japan's first capital - an hour from Kyoto, a world quieter.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1550303435-1703d8811aaa?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Quiet culture + Kyoto next door" },
-      { label: "Monthly budget", value: "£1,400–£2,500" },
-      { label: "Internet", value: "Excellent" },
-      { label: "Transport", value: "JR / bus / bike" },
-      { label: "Difficulty", value: "Intermediate" },
-      { label: "Vibe", value: "Ancient, quiet, green" }
-    ],
-    sections: buildSections()
-  },
-  {
-    slug: "seminyak",
-    title: "Freedom Hustle Guide to Seminyak",
-    city: "Seminyak",
-    country: "Bali",
-    flag: "🇮🇩",
-    tagline:
-      "Bali, polished - beach clubs, boutique villas and sunsets with table service.",
-    price: "£5.99",
-    stripePriceId: null,
-    status: "soon",
-    heroImage: "",
-    cardImage:
-      "https://images.unsplash.com/photo-1571984405176-5958bd9ac31d?auto=format&fit=crop&w=1400&q=80",
-    quickStats: [
-      { label: "Best for", value: "Beach clubs + polished comfort" },
-      { label: "Monthly budget", value: "£1,200–£2,400" },
-      { label: "Internet", value: "Very good" },
-      { label: "Transport", value: "Scooter / Gojek / Grab" },
+      { label: "Best for", value: "Speed, safety + business" },
+      { label: "Monthly budget", value: "£2,500–£4,500" },
+      { label: "Internet", value: "World-class" },
+      { label: "Transport", value: "MRT / Grab" },
       { label: "Difficulty", value: "Beginner-friendly" },
-      { label: "Vibe", value: "Beach clubs, sunset, refined" }
+      { label: "Vibe", value: "Efficient, futuristic, expensive" }
     ],
     sections: buildSections()
-  }
+  },
 ];
 
 export function listGuides(): GuideMeta[] {
