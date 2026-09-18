@@ -131,7 +131,7 @@ export default async function HomePage() {
           Guide to…
         </p>
 
-        <div className="space-y-10 sm:space-y-14">
+        <div className="space-y-7 sm:space-y-14">
           {countryGroups.map((group) => (
             <div key={group.country}>
               <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-3 sm:mb-5 flex items-center gap-3">
@@ -150,7 +150,7 @@ export default async function HomePage() {
             // Card wrapper - uses clip-path for GPU-composited rounded clip
             // (avoids the overflow-hidden + transform corner-flicker bug).
             const cardClass =
-              "group relative aspect-[4/5] w-[40vw] shrink-0 snap-start sm:w-auto rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
+              "group relative aspect-[4/5] w-[60vw] shrink-0 snap-start sm:w-auto rounded-3xl shadow-card hover:shadow-pop transition [clip-path:inset(0_round_1.5rem)]";
 
             const cardBody = (
               <>
@@ -176,17 +176,17 @@ export default async function HomePage() {
                   </div>
                 ) : null}
 
-                <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
+                <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
                   <div className="flex items-center gap-2 text-sand-100/80 text-xs uppercase tracking-wider font-semibold mb-1.5">
                     <span className="text-base leading-none">{g.flag}</span>
                     <span>{g.region ?? g.country}</span>
                   </div>
-                  <h3 className="font-display text-2xl sm:text-4xl tracking-tight text-sand-50 leading-none">
+                  <h3 className="font-display text-3xl sm:text-4xl tracking-tight text-sand-50 leading-none">
                     {g.city}
                   </h3>
                   <div className="mt-2">
                     {showReady ? (
-                      <span className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-card bg-electric-500 text-white">
+                      <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-electric-500 text-white">
                         Explore →
                       </span>
                     ) : (
@@ -194,7 +194,7 @@ export default async function HomePage() {
                       // stops propagation so the card link never fires.
                       <NotifyButton
                         city={g.city}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-card bg-sand-50 text-ink-900 hover:bg-white transition"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full text-sm font-semibold shadow-card bg-sand-50 text-ink-900 hover:bg-white transition"
                       />
                     )}
                   </div>

@@ -1,6 +1,12 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  // hover: styles only apply on devices that can really hover. On phones
+  // a hover effect can swallow the first tap on a card, so touch screens
+  // skip hover styling entirely.
+  future: {
+    hoverOnlyWhenSupported: true
+  },
   content: [
     "./app/**/*.{ts,tsx,mdx}",
     "./components/**/*.{ts,tsx}",
