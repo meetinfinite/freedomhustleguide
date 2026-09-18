@@ -39,7 +39,10 @@ export function GuideAppShell({
 
   return (
     <div className="min-h-screen bg-sand-50">
-      {/* Top bar */}
+      {/* Top bar. No back arrow here on purpose: section pages already
+          have a labelled "<- Overview" link, and the All sections drawer
+          plus the My Guides menu cover the rest - a header arrow would
+          duplicate them. */}
       <header className="glass sticky top-0 z-40 border-b border-ink-100">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 sm:gap-5">
