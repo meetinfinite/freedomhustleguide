@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { getGuide } from "@/lib/guides";
+import { getGuide, listGuides } from "@/lib/guides";
 import { GuideAppShell } from "@/components/GuideAppShell";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember, hasGuideAccess } from "@/lib/members";
@@ -26,10 +26,11 @@ export default async function GuideAppLayout({
     redirect(`/guides/${guide.slug}/access?next=/guides/${guide.slug}/app`);
   }
 
+  const member = await getMember(user.email);
+
   // Soon guides are founder-preview only: lifetime members get the full
   // app while the guide is being written; everyone else 404s.
   if (guide.status !== "live") {
-    const member = await getMember(user.email);
     if (!member?.lifetime) notFound();
   }
 
@@ -42,7 +43,13 @@ export default async function GuideAppLayout({
   const basePath = `/guides/${guide.slug}/app`;
 
   return (
-    <GuideAppShell guide={guide} basePath={basePath} userEmail={user.email}>
+    <GuideAppShell
+      guide={guide}
+      basePath={basePath}
+      userEmail={user.email}
+      allGuides={listGuides()}
+      member={member}
+    >
       {children}
     </GuideAppShell>
   );
