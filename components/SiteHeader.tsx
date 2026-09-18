@@ -23,17 +23,30 @@ export async function SiteHeader() {
 
   return (
     <nav className="glass sticky top-0 z-40 border-b border-ink-100">
+      {/* Wide screens (1400px+): logo pinned to the far-left corner,
+          outside the content column; Home takes its old spot. Below that
+          the gutter is too narrow, so the logo stays inline. */}
+      <Link
+        href="/"
+        aria-label="Freedom Hustle - home"
+        className="hidden min-[1400px]:flex absolute left-8 inset-y-0 items-center"
+      >
+        <BrandLogo height={40} />
+      </Link>
+
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          aria-label="Freedom Hustle - home"
-          className="flex items-center"
-        >
-          <BrandLogo height={40} />
-        </Link>
+        <div className="flex items-center gap-3 sm:gap-5">
+          <Link
+            href="/"
+            aria-label="Freedom Hustle - home"
+            className="flex items-center min-[1400px]:hidden"
+          >
+            <BrandLogo height={40} />
+          </Link>
+          <HomeLink />
+        </div>
 
         <div className="flex items-center gap-4 sm:gap-5">
-          <HomeLink />
           {user && member ? (
             <>
               <MyGuidesDropdown guides={guides} member={member} />
