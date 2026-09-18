@@ -8,6 +8,7 @@ import { SectionNav } from "./SectionNav";
 import { MobileSectionNav } from "./MobileSectionNav";
 import { BrandLogo } from "./BrandLogo";
 import { MyGuidesDropdown } from "./MyGuidesDropdown";
+import { HomeLink } from "./HomeLink";
 import { getSupabaseBrowser } from "@/lib/supabase/client";
 
 interface GuideAppShellProps {
@@ -51,8 +52,8 @@ export function GuideAppShell({
         <div className="max-w-7xl mx-auto px-5 sm:px-6 h-16 flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 sm:gap-5">
             <Link
-              href="/my"
-              aria-label="Freedom Hustle - my guides"
+              href="/"
+              aria-label="Freedom Hustle - home"
               className="flex items-center"
             >
               <BrandLogo height={32} />
@@ -79,7 +80,8 @@ export function GuideAppShell({
               <span className="hidden sm:inline">{backLabel}</span>
             </Link>
           </div>
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-3 sm:gap-4">
+            <HomeLink />
             {member ? (
               <MyGuidesDropdown guides={allGuides} member={member} />
             ) : null}

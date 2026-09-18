@@ -6,6 +6,7 @@ import { GuidesDropdown } from "./GuidesDropdown";
 import { MyGuidesDropdown } from "./MyGuidesDropdown";
 import { SignOutButton } from "./SignOutButton";
 import { BrandLogo } from "./BrandLogo";
+import { HomeLink } from "./HomeLink";
 
 /**
  * Site-wide header. Auth-aware - detects the signed-in user server-side
@@ -31,7 +32,8 @@ export async function SiteHeader() {
           <BrandLogo height={40} />
         </Link>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-4 sm:gap-5">
+          <HomeLink />
           {user && member ? (
             <>
               <MyGuidesDropdown guides={guides} member={member} />
