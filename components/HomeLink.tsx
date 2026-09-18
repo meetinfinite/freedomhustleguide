@@ -5,18 +5,18 @@ import { usePathname } from "next/navigation";
 
 /**
  * Explicit "Home" link for the headers - the logo also goes home, but
- * visitors don't reliably know that. Icon-only on phones, where the
- * header is tight; the enlarged padding keeps the tap target comfortable.
+ * visitors don't reliably know that. Hidden on the homepage itself.
+ * Icon-only on phones, where the header is tight; the enlarged padding
+ * keeps the tap target comfortable.
  */
 export function HomeLink({ className = "" }: { className?: string }) {
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  if (pathname === "/") return null;
 
   return (
     <Link
       href="/"
       aria-label="Home"
-      aria-current={isHome ? "page" : undefined}
       className={`inline-flex items-center gap-1.5 -m-1.5 p-1.5 sm:m-0 sm:p-0 text-sm text-ink-600 hover:text-ink-900 transition ${className}`}
     >
       <svg
