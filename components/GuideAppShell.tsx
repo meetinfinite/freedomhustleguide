@@ -34,6 +34,8 @@ export function GuideAppShell({
   // Back always goes one level up rather than browser-back: buyers often
   // land here straight from the sign-in email, where history-back would
   // drop them out of the site. Section -> overview, overview -> My guides.
+  // Icon-only, and hidden on desktop where the sidebar already has
+  // Overview + All my guides and the header has the My Guides menu.
   const onOverview = pathname === basePath || pathname === `${basePath}/`;
   const backHref = onOverview ? "/my" : basePath;
   const backLabel = onOverview ? "My guides" : "Overview";
@@ -61,12 +63,12 @@ export function GuideAppShell({
             <Link
               href={backHref}
               aria-label={`Back to ${backLabel}`}
-              className="order-first sm:order-none inline-flex items-center justify-center gap-1.5 w-9 h-9 sm:w-auto sm:h-auto -ml-2 sm:ml-0 rounded-full text-sm text-ink-700 hover:text-ink-900 hover:bg-sand-100 sm:hover:bg-transparent transition"
+              className="order-first inline-flex lg:hidden items-center justify-center w-9 h-9 -ml-2 rounded-full text-ink-700 hover:text-ink-900 hover:bg-sand-100 transition"
             >
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="w-5 h-5 sm:w-3.5 sm:h-3.5"
+                className="w-5 h-5"
                 aria-hidden
               >
                 <path
@@ -77,7 +79,6 @@ export function GuideAppShell({
                   strokeLinejoin="round"
                 />
               </svg>
-              <span className="hidden sm:inline">{backLabel}</span>
             </Link>
           </div>
           <div className="flex items-center gap-3 sm:gap-4">
