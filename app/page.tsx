@@ -84,7 +84,9 @@ export default async function HomePage() {
             </p>
             <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50 [text-shadow:0_2px_28px_rgba(15,14,10,0.85),0_1px_4px_rgba(15,14,10,0.55)]">
               Travel guides for{" "}
-              <span className="block text-electric-300">
+              {/* Same terracotta hue as electric-300, more saturated so it
+                  holds its own over the hero video */}
+              <span className="block text-[#EC8751]">
                 your trip to Asia
               </span>
             </h1>
