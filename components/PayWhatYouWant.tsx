@@ -210,14 +210,11 @@ export function PayWhatYouWant({
           </div>
         ) : (
           <form onSubmit={onSubmit}>
-            <p className="text-[11px] uppercase tracking-[0.18em] text-electric-600 font-semibold">
-              Pay what you want
-            </p>
             <h3
               id="pwyw-title"
-              className="font-display text-3xl tracking-tight mt-1 pr-8"
+              className="font-display text-3xl tracking-tight pr-8"
             >
-              Get the {guide.city} guide.
+              Get the {guide.city} guide
             </h3>
             <p className="text-ink-600 mt-2 leading-relaxed">
               Pay £0 or whatever feels right. 🧡
@@ -277,10 +274,10 @@ export function PayWhatYouWant({
                 </span>
                 <input
                   required
-                  autoComplete="given-name"
+                  autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="First name"
+                  placeholder="Full name"
                   className="mt-1 w-full px-4 py-3 rounded-xl border border-ink-200 bg-white focus:border-electric-500 focus:outline-none focus:ring-4 focus:ring-electric-100 transition"
                 />
               </label>
@@ -338,7 +335,7 @@ export function PayWhatYouWant({
             </button>
             {!isFree ? (
               <p className="mt-3 text-xs text-ink-400 text-center">
-                Secure payment by Stripe. Want it free? Choose amount, type 0.
+                Secure payment by Stripe
               </p>
             ) : null}
           </form>
