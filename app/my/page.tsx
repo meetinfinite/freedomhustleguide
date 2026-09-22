@@ -5,7 +5,7 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
-import { BuyButton } from "@/components/BuyButton";
+import { PayWhatYouWant } from "@/components/PayWhatYouWant";
 
 export const dynamic = "force-dynamic";
 
@@ -20,6 +20,13 @@ export default async function MyDashboardPage() {
   }
 
   const member = await getMember(user.email);
+  // Name typed into the pay-what-you-want form (stored on the auth user
+  // when they first sign up), else a guess from the email address.
+  const typedName =
+    typeof user.user_metadata?.name === "string"
+      ? user.user_metadata.name.trim().split(/\s+/)[0]
+      : "";
+  const firstName = typedName || greetingName(user.email);
   const guides = listGuides();
   const liveGuides = guides.filter((g) => g.status === "live");
   const ownsAll = Boolean(member?.lifetime);
@@ -43,8 +50,8 @@ export default async function MyDashboardPage() {
           Your dashboard
         </p>
         <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-          {greetingName(user.email) ? (
-            <>Welcome back, {greetingName(user.email)}.</>
+          {firstName ? (
+            <>Welcome back, {firstName}.</>
           ) : (
             <>Welcome back.</>
           )}
@@ -54,7 +61,7 @@ export default async function MyDashboardPage() {
             ? "You have lifetime access to every guide - current and future."
             : `You own ${unlocked.length} ${
                 unlocked.length === 1 ? "guide" : "guides"
-              }. Click below to open or buy more.`}
+              }. Click below to open or add more.`}
         </p>
       </section>
 
@@ -114,7 +121,7 @@ export default async function MyDashboardPage() {
       {!ownsAll && upgradable.length > 0 ? (
         <section className="max-w-6xl mx-auto px-6 pb-16">
           <h2 className="font-display text-2xl sm:text-3xl tracking-tight mb-6">
-            Or buy individually
+            Add another city
           </h2>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {upgradable.map((g) => (
@@ -140,14 +147,14 @@ export default async function MyDashboardPage() {
                   <h3 className="font-display text-3xl tracking-tight text-sand-50 leading-none mb-4">
                     {g.city}
                   </h3>
-                  <BuyButton
-                    product={g.slug}
+                  <PayWhatYouWant
+                    guide={g}
                     returnPath="/my"
                     customerEmail={user.email}
                     className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-electric-500 text-white text-sm font-semibold shadow-card"
                   >
-                    Buy - {g.price}
-                  </BuyButton>
+                    Get it - pay what you want
+                  </PayWhatYouWant>
                 </div>
               </div>
             ))}
