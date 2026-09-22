@@ -66,7 +66,7 @@ export default function TermsPage() {
               product, no download required, and no app to install.
             </p>
             <p className="mt-3">
-              Access is delivered via your purchase email. You can sign in any
+              Access is delivered via the email you gave us when you got the guide. You can sign in any
               time using a magic link sent to that email.
             </p>
           </section>
@@ -76,7 +76,10 @@ export default function TermsPage() {
               3. Price &amp; payment
             </h2>
             <p>
-              Prices are shown in GBP (£) and are inclusive of VAT where
+              City guides are pay what you want: you choose the amount,
+              and £0 is a valid choice that gets you the full guide. Any
+              amount you choose to pay is a payment for the guide, not a
+              donation. Prices are shown in GBP (£) and are inclusive of VAT where
               applicable. Payment is handled by Stripe; we never see or store
               your full card details. A purchase is complete when Stripe
               confirms a successful payment.

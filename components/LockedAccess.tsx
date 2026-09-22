@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import Link from "next/link";
 import type { GuideMeta } from "@/lib/guides";
-import { BuyButton } from "./BuyButton";
+import { PayWhatYouWant } from "./PayWhatYouWant";
 import { BrandLogo } from "./BrandLogo";
 
 interface LockedAccessProps {
@@ -98,7 +98,7 @@ export function LockedAccess({
                   Sign in.
                 </h1>
                 <p className="text-ink-600 mt-3 leading-relaxed">
-                  Enter the email you used to buy. We'll send a one-tap
+                  Enter the email you got the guide with. We'll send a one-tap
                   sign-in link - no password.
                 </p>
 
@@ -106,20 +106,20 @@ export function LockedAccess({
                   <div className="rounded-xl bg-sand-100 border border-sand-200 text-ink-700 text-sm px-4 py-3 mt-5">
                     You're signed in, but this email doesn't have access to
                     the {guide.city} guide.{" "}
-                    <BuyButton
-                      product={guide.slug}
+                    <PayWhatYouWant
+                      guide={guide}
                       returnPath={`/guides/${guide.slug}`}
                       className="text-electric-600 font-medium hover:underline cursor-pointer"
                     >
-                      Buy it now - {guide.price} →
-                    </BuyButton>
+                      Get it now - pay what you want →
+                    </PayWhatYouWant>
                   </div>
                 ) : null}
 
                 <form onSubmit={onSubmit} className="mt-8 space-y-3">
                   <label className="block">
                     <span className="text-xs uppercase tracking-wider text-ink-500 font-semibold">
-                      Purchase email
+                      Your email
                     </span>
                     <input
                       type="email"
@@ -150,13 +150,13 @@ export function LockedAccess({
 
                 <div className="mt-6 text-sm text-ink-500 flex flex-wrap items-center gap-2">
                   <span>Don't have it yet?</span>
-                  <BuyButton
-                    product={guide.slug}
+                  <PayWhatYouWant
+                    guide={guide}
                     returnPath={`/guides/${guide.slug}`}
                     className="text-electric-600 font-medium hover:underline cursor-pointer"
                   >
-                    Get the {guide.city} guide - {guide.price}
-                  </BuyButton>
+                    Get the {guide.city} guide - pay what you want
+                  </PayWhatYouWant>
                   {/* Lifetime offer paused until the guide library is bigger
                       (Valeria, 2026-08-05) - this CTA was missed by #131 and
                       kept the £79 checkout reachable. Restore alongside

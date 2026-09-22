@@ -399,7 +399,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "Welcome to the Big Mango - excitement on every level, from street stalls to sky bars, golden temples at sunrise, rooftops at midnight, and the best street food on earth in between. The excitement starts here...",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: process.env.STRIPE_PRICE_BANGKOK || null,
     status: "live",
     myMapsId: "14Gx_CAxOgKx5VuHQvQAWPM5qQQdMltI",
@@ -445,7 +445,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "The mountain city that turns two-week trips into two-year stays - temples, coffee and cool air.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: process.env.STRIPE_PRICE_CHIANG_MAI || null,
     status: "live",
     heroImage:
@@ -486,7 +486,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "Island life with the edges sanded off - palm roads, quiet coves and real comfort.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -510,7 +510,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "The island of full moons and slow mornings - jungle, yoga and beaches that empty by ten.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -534,7 +534,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "Thailand's big island - fifty beaches, jungle viewpoints and sunsets that earn the hype.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -558,7 +558,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "Limestone towers, jungle trails and longtail rides to beaches with no roads.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -582,7 +582,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "A dive licence, a scooter loop and sunsets from Sairee - island life at its simplest.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -606,7 +606,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇹🇭",
     tagline:
       "Cliffs rising straight from turquoise water - the island postcard that's real.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -630,7 +630,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇻🇳",
     tagline:
       "Vietnam's easiest life - beach mornings, mountain weekends, and a coffee scene that outclasses most capitals.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: process.env.STRIPE_PRICE_DA_NANG || null,
     status: "live",
     // Golden Bridge: the fingers are in the top third of the photo
@@ -675,7 +675,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇻🇳",
     tagline:
       "Lantern light on the river and an old town that glows after dark - Vietnam at its most romantic.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -699,7 +699,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇻🇳",
     tagline:
       "A thousand years of street life - egg coffee, ancient alleys and motorbike ballet.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -723,7 +723,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇻🇳",
     tagline:
       "Eight million motorbikes and energy that never quits - Vietnam's engine room, heavily caffeinated.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -747,7 +747,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇯🇵",
     tagline:
       "The city that does everything better - and still finds ways to surprise you on day ninety.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -771,7 +771,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇯🇵",
     tagline:
       "A thousand years of Japan within walking distance - temples, tea houses and streets that slow your pulse.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -795,7 +795,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇯🇵",
     tagline:
       "Japan's kitchen and its loudest laugh - neon canyons, street food and zero pretension.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -819,7 +819,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇯🇵",
     tagline:
       "Sacred deer, giant Buddhas and Japan's first capital - an hour from Kyoto, a world quieter.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -844,7 +844,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇮🇩",
     tagline:
       "Jungle mornings, rice-terrace walks and a green kind of quiet that rewires you.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -869,7 +869,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇮🇩",
     tagline:
       "Surf before breakfast, smoothie bowls after - Bali's busiest little village of big plans.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -894,7 +894,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇮🇩",
     tagline:
       "Clifftop sunsets, world-class waves and temples hanging over the sea.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -919,7 +919,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇮🇩",
     tagline:
       "Bali, polished - beach clubs, boutique villas and sunsets with table service.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -969,7 +969,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇮🇩",
     tagline:
       "No cars, no traffic lights, no hurry - three islands running on bicycle time.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -993,7 +993,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇵🇭",
     tagline:
       "Lagoons so blue they look edited - Palawan's wild, cinematic corner.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1017,7 +1017,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇵🇭",
     tagline:
       "Karst cliffs, hidden beaches and island-hopping that ruins other beaches for you.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1041,7 +1041,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇵🇭",
     tagline:
       "Four kilometres of powder-white sand and the friendliest sunsets in the Philippines.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1065,7 +1065,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇲🇾",
     tagline:
       "Three cuisines deep and half the price of Singapore - Asia's most underrated big city.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1090,7 +1090,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇲🇾",
     tagline:
       "Borneo's easy-going capital - island-hopping mornings, the famous waterfront sunsets and Mount Kinabalu on the horizon.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1114,7 +1114,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇱🇰",
     tagline:
       "Whales at breakfast, surf at noon, Coconut Tree Hill at sunset - Sri Lanka's south at its sweetest.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1138,7 +1138,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇱🇰",
     tagline:
       "One horseshoe bay, one surf break, one perfect routine - Sri Lanka's slowest little town.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1162,7 +1162,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇱🇰",
     tagline:
       "The whole island in one circle - tea-country trains, leopard safaris, ancient cities and the south-coast surf, in the order that actually works.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1186,7 +1186,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇰🇷",
     tagline:
       "A city moving at double speed - neon nights, mountain trails at the metro's end, and café culture done seriously.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",
@@ -1210,7 +1210,7 @@ export const GUIDES: GuideMeta[] = [
     flag: "🇸🇬",
     tagline:
       "The future, air-conditioned - hawker food, garden towers and a city where everything simply works.",
-    price: "£5.99",
+    price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
     heroImage: "",

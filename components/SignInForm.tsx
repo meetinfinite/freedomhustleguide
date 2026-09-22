@@ -86,7 +86,7 @@ export function SignInForm({ nextPath }: SignInFormProps) {
                   Sign in.
                 </h1>
                 <p className="text-ink-600 mt-3 leading-relaxed">
-                  Enter the email you used to buy any Freedom Hustle guide.
+                  Enter the email you got your Freedom Hustle guide with.
                   We'll send a one-tap sign-in link - no password.
                 </p>
 

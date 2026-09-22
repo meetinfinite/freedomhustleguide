@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { getGuide, listGuides } from "@/lib/guides";
 import { Hero } from "@/components/Hero";
 import { CTASection } from "@/components/CTASection";
-import { BuyButton } from "@/components/BuyButton";
+import { PayWhatYouWant } from "@/components/PayWhatYouWant";
 import { NotifyButton } from "@/components/NotifyButton";
 import { PurchaseSuccessBanner } from "@/components/PurchaseSuccessBanner";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -37,7 +37,11 @@ const TRUST_CARDS = [
 const FAQ_LIVE = [
   {
     q: "When do I get access?",
-    a: "Instantly. After checkout you'll receive a confirmation email, and you'll be able to enter that same email on the access page to unlock the guide."
+    a: "Instantly. Pick what you'd like to pay - £0 is fine - add your email, and we'll send a one-tap sign-in link that opens the guide."
+  },
+  {
+    q: "Is it really free?",
+    a: "Yes. Every guide is pay what you want, and £0 gets you the full guide - same as everyone else. If it helps you and you'd like to chip in, that's what keeps new city guides coming."
   },
   {
     q: "Is this just a Notion doc?",
@@ -53,7 +57,7 @@ const FAQ_LIVE = [
   },
   {
     q: "Will there be more destinations?",
-    a: "Yes - 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Each guide is bought separately - pick the city you need, when you need it."
+    a: "Yes - 30 destinations across Asia and beyond are on the roadmap, from Da Nang to Tokyo to Dubai. Every guide is pay what you want - pick the city you need, when you need it."
   }
 ];
 
@@ -61,7 +65,7 @@ function buildSoonFAQ(city: string) {
   return [
     {
       q: `When will the ${city} guide launch?`,
-      a: `We don't lock in a public date until we're confident the guide is genuinely useful. Waitlisters get an email the moment it goes live, with a founders discount that only the waitlist gets.`
+      a: `We don't lock in a public date until we're confident the guide is genuinely useful. Waitlisters get an email the moment it goes live.`
     },
     {
       q: "Is this just a Notion doc?",
@@ -76,12 +80,12 @@ function buildSoonFAQ(city: string) {
       a: "Yes - same structure: areas to stay, cafes, coworking, gyms, transport, weekend trips, mistakes to avoid, the lot. Tailored to the city, not copy-pasted."
     },
     {
-      q: "What does the founders discount look like?",
-      a: "Waitlisters get a meaningful discount on launch day - historically around 30%. You'll see the exact number in the launch email."
+      q: "How much will it cost?",
+      a: "Whatever you want. Every guide is pay what you want, and £0 gets you the full guide."
     },
     {
       q: "Will there be more destinations?",
-      a: "Yes - 30 destinations across Asia and beyond are on the roadmap. Each guide is bought separately - pick the city you need, when you need it."
+      a: "Yes - 30 destinations across Asia and beyond are on the roadmap. Every guide is pay what you want - pick the city you need, when you need it."
     }
   ];
 }
@@ -131,7 +135,7 @@ export default async function GuideLandingPage({
 
   // Primary CTA branches on three states:
   //  - owned (live + signed in + entitled) → straight to the app
-  //  - live, not owned → Stripe Checkout
+  //  - live, not owned → pay-what-you-want picker (£0 or Stripe)
   //  - soon → waitlist modal
   const primaryCTA = (className: string, label?: string) => {
     if (ownedView) {
@@ -147,19 +151,19 @@ export default async function GuideLandingPage({
       // without it they see only a buy button and purchase again.
       return (
         <div className="flex flex-col items-start gap-2">
-          <BuyButton
-            product={guide.slug}
+          <PayWhatYouWant
+            guide={guide}
             returnPath={`/guides/${guide.slug}`}
             customerEmail={customerEmail}
             className={className}
           >
-            {label ?? `Get the guide - ${guide.price}`}
-          </BuyButton>
+            {label ?? "Get the guide - pay what you want"}
+          </PayWhatYouWant>
           <Link
             href="/signin"
             className="text-xs text-sand-200/80 hover:text-sand-50 transition [text-shadow:0_1px_8px_rgba(15,14,10,0.7)]"
           >
-            Already bought it? Sign in →
+            Already have it? Sign in →
           </Link>
         </div>
       );
@@ -336,7 +340,7 @@ export default async function GuideLandingPage({
                 {ownedView
                   ? "You own this"
                   : isLive
-                    ? "One-time payment"
+                    ? "Pay what you want"
                     : "Waitlist"}
               </p>
               <h2 className="font-display text-4xl sm:text-5xl tracking-tight">
@@ -351,7 +355,7 @@ export default async function GuideLandingPage({
                   ? "You've got the full guide - pick up wherever you left off."
                   : isLive
                     ? "Instant access. Use it for your whole stay."
-                    : `Get the ${guide.city} guide the moment it's ready, with a founders discount only the waitlist gets.`}
+                    : `Get the ${guide.city} guide the moment it's ready, and like every guide, it'll be pay what you want.`}
               </p>
               <div className="mt-7">
                 {primaryCTA(
@@ -423,8 +427,8 @@ export default async function GuideLandingPage({
           ownedView
             ? "Pick up wherever you left off."
             : isLive
-              ? "Get the guide once. Use it for your whole stay."
-              : "We'll email you the moment it's live, with a founders discount."
+              ? "Pay what you want. Use it for your whole stay."
+              : "We'll email you the moment it's live. Pay what you want, even £0."
         }
         primaryAction={primaryCTA(
           "px-6 py-3 rounded-full bg-sand-50 text-ink-900 font-medium hover:bg-white transition cursor-pointer"

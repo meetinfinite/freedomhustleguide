@@ -47,6 +47,9 @@ export async function POST(req: NextRequest) {
     .toLowerCase();
   const product = session.metadata?.product as "lifetime" | "guide" | undefined;
   const guideSlug = session.metadata?.guide_slug;
+  // Set by /api/claim (pay what you want). Absent on older checkouts.
+  const buyerName = session.metadata?.name?.trim() || null;
+  const isPwyw = session.metadata?.pwyw === "1";
   const stripeCustomerId =
     typeof session.customer === "string" ? session.customer : null;
 
@@ -84,10 +87,10 @@ export async function POST(req: NextRequest) {
       productLabel:
         product === "lifetime"
           ? "Lifetime Access"
-          : `${getGuide(guideSlug || "")?.city ?? guideSlug} guide`,
+          : `${getGuide(guideSlug || "")?.city ?? guideSlug} guide${isPwyw ? " (pay what you want)" : ""}`,
       amountMinor: session.amount_total,
       currency: session.currency ?? "gbp",
-      email,
+      email: buyerName ? `${email} (${buyerName})` : email,
       isUpgrade
     });
 
@@ -106,7 +109,8 @@ export async function POST(req: NextRequest) {
         email,
         options: {
           shouldCreateUser: true,
-          emailRedirectTo: redirectTo
+          emailRedirectTo: redirectTo,
+          ...(buyerName ? { data: { name: buyerName } } : {})
         }
       });
       if (otpErr) {

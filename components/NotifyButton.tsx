@@ -138,9 +138,8 @@ export function NotifyButton({ city, className = "" }: NotifyButtonProps) {
                     : `You're on the list for ${city}.`}
                 </h3>
                 <p className="text-ink-600 mt-2 leading-relaxed">
-                  We'll email you the second the {city} guide goes live -
-                  usually a few weeks ahead of public launch with a small
-                  founders discount.
+                  We'll email you the second the {city} guide goes live. Like
+                  every guide, it'll be pay what you want.
                 </p>
                 <button
                   type="button"
@@ -163,7 +162,7 @@ export function NotifyButton({ city, className = "" }: NotifyButtonProps) {
                 </h3>
                 <p className="text-ink-600 mt-2 leading-relaxed">
                   Drop your email and we'll send it the moment it's ready -
-                  with a founders discount that only the waitlist gets.
+                  pay what you want, even £0.
                 </p>
 
                 <form onSubmit={onSubmit} className="mt-6 space-y-3">
