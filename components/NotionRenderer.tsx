@@ -7,6 +7,7 @@ import { ProTip } from "./ProTip";
 import { Checklist } from "./Checklist";
 import { PlaceCard } from "./PlaceCard";
 import { EmbedCard } from "./EmbedCard";
+import { GMAPS_HOST_RE } from "@/lib/gmaps";
 
 /**
  * Render a Notion page's blocks as React.
@@ -215,9 +216,6 @@ function checklistId(sectionPageId: string, index: number) {
   return `notion-${sectionPageId.slice(-6)}-${index}`;
 }
 
-/** Match Google Maps URLs we know how to resolve into PlaceCards. */
-const GMAPS_HOST_RE =
-  /^https?:\/\/(www\.)?(google\.[^/]+\/maps|maps\.google\.[^/]+|maps\.app\.goo\.gl|goo\.gl\/maps|share\.google)/i;
 
 /**
  * If a bulleted_list_item begins with a bold rich-text segment whose

@@ -17,7 +17,7 @@ instead of reconstructing it each time.
 | **Supabase** | Member accounts, auth, lifetime access (`members` table) | one Supabase project | `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `SUPABASE_SERVICE_ROLE_KEY` |
 | **Stripe** | Payments — lifetime + per-city | one Stripe account | `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_LIFETIME`, `STRIPE_PRICE_<CITY>` |
 | **Resend** | Sends sign-in / magic-link emails | Resend account | `RESEND_API_KEY`, `RESEND_FROM_EMAIL` |
-| **Google Places** | `<PlaceCard>` venue lookups (name, photo, rating) | Google Cloud project | `GOOGLE_PLACES_API_KEY` |
+| **Google Places** | Snapshot script only (`scripts/places-snapshot.ts`) - **never the live site** | Google Cloud project StepForward | `GOOGLE_PLACES_API_KEY` in `.env.local` only - not Vercel |
 | **GetYourGuide** (optional) | Affiliate attribution on activity-link cards | partner.getyourguide.com | `GETYOURGUIDE_PARTNER_ID` |
 
 Airbnb / GetYourGuide links pasted into Notion render as native cards (see

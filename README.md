@@ -225,7 +225,7 @@ Wired up automatically in [`components/MdxRenderer.tsx`](components/MdxRenderer.
 | `<VideoBlock />` | Placeholder for your own video content |
 | `<ProTip />` | A blue-highlighted tip block |
 | `<MapPlaceholder />` | Faux map (swap for a real embed later) |
-| `<PlaceCard url="..." />` | Paste any Google Maps URL → auto-fills name, photo, rating, address (requires `GOOGLE_PLACES_API_KEY`; degrades to a basic link card without it) |
+| `<PlaceCard url="..." />` | Google Maps URL → name, photo, rating, address from the place snapshot (`data/places.json`, built by `scripts/places-snapshot.ts`); unknown links render a basic link card |
 
 Editing a section is just:
 
