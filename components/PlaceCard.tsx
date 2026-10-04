@@ -35,6 +35,9 @@ interface PlaceCardProps {
 interface CarouselPhoto {
   src: string;
   isOwn: boolean;
+  /** Google contributor credit for copied Google photos. */
+  author?: string;
+  authorUri?: string;
 }
 
 interface PlaceData {
@@ -43,8 +46,7 @@ interface PlaceData {
   address: string;
   rating?: number;
   userRatingCount?: number;
-  priceLevel?: number;
-  photoNames: string[];
+  photos: { src: string; author?: string; authorUri?: string }[];
   googleMapsUri: string;
 }
 
@@ -137,13 +139,7 @@ export function PlaceCard({
             <h4 className="font-display text-lg tracking-tight !mt-0.5 !mb-1 !text-ink-900">
               {nameOverride || "Open in Maps"}
             </h4>
-            <p className="text-sm text-ink-500 !my-0 break-all">{url}</p>
-            {state.status === "missing" || state.status === "error" ? (
-              <p className="text-[11px] text-ink-400 mt-2 !my-0">
-                Set <code>GOOGLE_PLACES_API_KEY</code> to auto-fill name,
-                rating, and photo.
-              </p>
-            ) : null}
+            <p className="text-sm text-ink-500 !my-0">Open in Google Maps</p>
           </div>
           <span className="!text-electric-600 text-lg shrink-0">↗</span>
         </div>
@@ -158,13 +154,12 @@ export function PlaceCard({
   // When the editor supplies their own photos, show ONLY those - mixing a
   // curated shot with random Google review photos reads as a glitch.
   // Google's gallery is the fallback for venues without our own photo.
-  const googleList = ownList.length > 0 ? [] : p.photoNames || [];
+  // Google photos are copies in public/places/ (scripts/places-snapshot.ts)
+  // - the live site never fetches from Google.
+  const googleList = ownList.length > 0 ? [] : p.photos || [];
   const photos: CarouselPhoto[] = [
     ...ownList.map((src) => ({ src, isOwn: true })),
-    ...googleList.map((name) => ({
-      src: `/api/place-photo?name=${encodeURIComponent(name)}&w=1400`,
-      isOwn: false
-    }))
+    ...googleList.map((ph) => ({ ...ph, isOwn: false }))
   ];
   const hasPhotos = photos.length > 0;
   const safeIdx = Math.min(photoIdx, Math.max(0, photos.length - 1));
@@ -192,6 +187,26 @@ export function PlaceCard({
             className="relative w-full h-full object-contain fade-up"
             loading="lazy"
           />
+
+          {/* Photographer credit on copied Google photos */}
+          {!currentPhoto.isOwn && currentPhoto.author ? (
+            <div className="absolute top-3 left-3 max-w-[70%] truncate px-2 py-0.5 rounded-full bg-ink-900/55 backdrop-blur text-[10px] text-white/90">
+              Photo:{" "}
+              {currentPhoto.authorUri ? (
+                <a
+                  href={currentPhoto.authorUri}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="!text-white/90 !no-underline hover:!underline"
+                >
+                  {currentPhoto.author}
+                </a>
+              ) : (
+                currentPhoto.author
+              )}{" "}
+              · Google
+            </div>
+          ) : null}
 
           {/* "Original" badge - only on photos the editor uploaded */}
           {currentPhoto.isOwn ? (

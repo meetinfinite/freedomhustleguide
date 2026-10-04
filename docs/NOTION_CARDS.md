@@ -6,7 +6,7 @@ the first thing in a bullet point**, optionally followed by a note.
 
 | Paste this kind of link | You get |
 |---|---|
-| Google Maps place | A venue card — photo, ★ Google rating, address, Directions button |
+| Google Maps place | A venue card — photo, ★ Google rating, address, Directions button. **New venues show as a plain "Open in Google Maps" card until the place snapshot is refreshed** (see below). |
 | **Airbnb** listing (`airbnb.com/rooms/…`) | An accommodation card — photo, listing name, ★ rating, beds/baths, "View on Airbnb" |
 | **GetYourGuide** activity (`getyourguide.com/…`) | A native activity card — photo, ★ rating + reviews, duration, price, "Book on GetYourGuide" — with your affiliate ID attached. Consecutive activities lay out two-per-row. |
 
@@ -25,10 +25,25 @@ the first thing in a bullet point**, optionally followed by a note.
 
 That's it. Save in Notion, and the live site shows the card within ~60s.
 
+### New Google Maps venues need a snapshot refresh
+
+The site never calls Google live (it ran up a ~£178 bill). Venue name,
+address, rating and 2 photos are captured once into `data/places.json` +
+`public/places/`. After adding venues, a dev runs:
+
+```
+npx tsx scripts/places-snapshot.ts            # free dry run: lists new venues + est. cost
+npx tsx scripts/places-snapshot.ts --commit   # calls Google - COSTS MONEY
+```
+
+**Only run `--commit` with Arni's explicit OK.** Then commit both paths
+and open a PR. Ratings are deliberately never refreshed.
+
 ---
 
 **Behind the scenes (for devs):** detection + routing in
-`components/NotionRenderer.tsx`. Google → `lib/places.ts` + `PlaceCard`.
+`components/NotionRenderer.tsx`. Google → `lib/places.ts` (reads the
+snapshot only, no network) + `PlaceCard`.
 Airbnb → `lib/embeds.ts` (Open Graph) + `EmbedCard`. GetYourGuide → also
 `EmbedCard`, but the data is fetched server-side from GYG's
 `activities.frame` widget endpoint (the public page is 403; the frame

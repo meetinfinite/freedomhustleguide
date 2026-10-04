@@ -108,8 +108,10 @@ Check:
 1. Commit on a branch → PR → merge.
 2. Confirm **Vercel env vars** exist: `NOTION_TOKEN`, `STRIPE_SECRET_KEY`,
    `STRIPE_PRICE_LIFETIME`, `STRIPE_PRICE_<CITY>`, `NEXT_PUBLIC_SUPABASE_URL`,
-   `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`,
-   `GOOGLE_PLACES_API_KEY`.
+   `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+   (`GOOGLE_PLACES_API_KEY` is NOT needed on Vercel - venue cards come
+   from the snapshot; see docs/NOTION_CARDS.md. New-city venues need a
+   snapshot run, which costs money: get Arni's OK first.)
 3. Deploy. **A status flip only goes live in production after deploy** —
    editing `lib/guides.ts` locally does nothing for the live site.
    Section pages revalidate from Notion every 60s (`revalidate = 60`).

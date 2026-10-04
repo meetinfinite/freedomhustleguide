@@ -1,14 +1,11 @@
 import { Client } from "@notionhq/client";
 import { getPlaceFromUrl, type PlaceData } from "./places";
+import { GMAPS_HOST_RE } from "./gmaps";
 import {
   getEmbedFromUrl,
   embedKindForUrl,
   type EmbedData
 } from "./embeds";
-
-/** URL pattern: links the team uses for venue place lookups. */
-const GMAPS_HOST_RE =
-  /^https?:\/\/(www\.)?(google\.[^/]+\/maps|maps\.google\.[^/]+|maps\.app\.goo\.gl|goo\.gl\/maps)/i;
 
 let cachedClient: Client | null = null;
 
@@ -191,10 +188,8 @@ export async function fetchSectionPage(pageId: string): Promise<NotionPage | nul
 
   // Prefetch place + embed data for every venue / accommodation / activity
   // bullet in parallel, so the client renders straight from these maps.
-  const [places, embeds] = await Promise.all([
-    prefetchVenuePlaces(blocks),
-    prefetchEmbeds(blocks)
-  ]);
+  const places = prefetchVenuePlaces(blocks);
+  const embeds = await prefetchEmbeds(blocks);
 
   return { id: pageId, title, description, blocks, places, embeds };
 }
@@ -243,19 +238,15 @@ async function prefetchEmbeds(
 }
 
 /** Walk the blocks, find venue-style bullets (bold + linked text whose
- *  href looks like a Google Maps URL), resolve each href to PlaceData
- *  via the existing places client. Returns a URL → place map. */
-async function prefetchVenuePlaces(
-  blocks: NotionBlock[]
-): Promise<Record<string, PlaceData>> {
-  // Collect distinct venue URLs from the page
-  const urls: string[] = [];
+ *  href looks like a Google Maps URL) and look each one up in the place
+ *  snapshot (data/places.json). No network - see lib/places.ts. */
+function prefetchVenuePlaces(blocks: NotionBlock[]): Record<string, PlaceData> {
+  const out: Record<string, PlaceData> = {};
   for (const b of blocks) {
     if (b.type !== "bulleted_list_item") continue;
     const rt = (
       b.data as {
         rich_text?: {
-          plain_text?: string;
           href?: string | null;
           annotations?: { bold?: boolean };
         }[];
@@ -264,26 +255,8 @@ async function prefetchVenuePlaces(
     const first = rt?.[0];
     if (!first || !first.annotations?.bold) continue;
     if (!first.href || !GMAPS_HOST_RE.test(first.href)) continue;
-    if (!urls.includes(first.href)) urls.push(first.href);
+    const data = getPlaceFromUrl(first.href);
+    if (data) out[first.href] = data;
   }
-  if (urls.length === 0) return {};
-
-  const out: Record<string, PlaceData> = {};
-  const queue = urls.slice();
-  const concurrency = Math.min(5, queue.length);
-  await Promise.all(
-    Array.from({ length: concurrency }, async () => {
-      while (queue.length) {
-        const url = queue.shift();
-        if (!url) return;
-        try {
-          const data = await getPlaceFromUrl(url);
-          if (data) out[url] = data;
-        } catch (err) {
-          console.warn(`[notion] place prefetch failed for ${url}:`, err);
-        }
-      }
-    })
-  );
   return out;
 }
