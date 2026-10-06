@@ -485,7 +485,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "Island life with the edges sanded off - palm roads, quiet coves and real comfort.",
+      "Island life at its most convenient - palm roads, beautiful beaches, great food and restaurants, real comfort, and a Grab or a 7-Eleven wherever you are.",
     price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
