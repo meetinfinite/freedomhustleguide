@@ -96,14 +96,14 @@ export interface GuideSection {
  */
 export const SECTION_TEMPLATE: GuideSection[] = [
   {
-    // Opt-in - first decision people make, so it leads the guide.
+    // First decision people make, so it leads every guide (Valeria,
+    // 2026-10-09). Notion page is "00 · Best Time to Visit".
     slug: "best-time-to-visit",
     title: "Best Time to Visit",
     description:
       "Weather, seasons and prices month by month - pick the right time before you book.",
     icon: "🌤️",
-    readingTime: "3 min",
-    optional: true
+    readingTime: "3 min"
   },
   {
     slug: "first-24-hours",
@@ -246,6 +246,7 @@ export function buildSections(
  * scripts/notion-probe.mjs.
  */
 const BANGKOK_SECTION_OVERRIDES: SectionOverrides = {
+  "best-time-to-visit": { notionPageId: "3f457b19-7874-8193-8382-ff536b3b4e74" },
   "first-24-hours": {
     notionPageId: "41c57b19-7874-82d8-a0fc-81a76e3afe32"
   },
@@ -301,6 +302,7 @@ const BANGKOK_SECTIONS = buildSections(BANGKOK_SECTION_OVERRIDES);
  * 37857b19-7874-81d5-b56b-f42a8603b3b9).
  */
 const CHIANG_MAI_SECTION_OVERRIDES: SectionOverrides = {
+  "best-time-to-visit": { notionPageId: "3f457b19-7874-8143-812d-e069b412939b" },
   "first-24-hours": {
     notionPageId: "37857b19-7874-815d-b0f6-c59cda0ab6c2"
   },
@@ -363,6 +365,7 @@ export const SHARED_SECTIONS_TEMPLATE = SECTION_TEMPLATE;
  * preview the in-app pages before launch.
  */
 const DA_NANG_SECTION_OVERRIDES: SectionOverrides = {
+  "best-time-to-visit": { notionPageId: "3f457b19-7874-814e-9e9a-db8ef1843396" },
   "first-24-hours": { notionPageId: "39f57b19-7874-81b7-93ad-ddf129007262" },
   "areas-to-stay": { notionPageId: "39f57b19-7874-81f8-9a65-e798c53b184e" },
   "monthly-budget": { notionPageId: "39f57b19-7874-815a-b6b3-de7710a64fef" },
