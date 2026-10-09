@@ -75,6 +75,11 @@ export interface GuideSection {
    * content/guides/<city>/<slug>.mdx.
    */
   notionPageId?: string;
+  /**
+   * Opt-in section: only appears in a guide that gives it a notionPageId
+   * (so guides without the content never link to a 404).
+   */
+  optional?: boolean;
 }
 
 /**
@@ -90,6 +95,16 @@ export interface GuideSection {
  * here propagates to every guide. That's the point.
  */
 export const SECTION_TEMPLATE: GuideSection[] = [
+  {
+    // Opt-in - first decision people make, so it leads the guide.
+    slug: "best-time-to-visit",
+    title: "Best Time to Visit",
+    description:
+      "Weather, seasons and prices month by month - pick the right time before you book.",
+    icon: "🌤️",
+    readingTime: "3 min",
+    optional: true
+  },
   {
     slug: "first-24-hours",
     title: "First 24 Hours",
@@ -210,14 +225,15 @@ export const SECTION_TEMPLATE: GuideSection[] = [
  */
 type SectionOverrides = Partial<Record<string, Partial<GuideSection>>>;
 
-/** Apply per-section overrides to the template, preserving order. */
+/** Apply per-section overrides to the template, preserving order.
+ *  Optional sections are dropped unless the guide wires up their page. */
 export function buildSections(
   overrides: SectionOverrides = {}
 ): GuideSection[] {
   return SECTION_TEMPLATE.map((s) => ({
     ...s,
     ...overrides[s.slug]
-  }));
+  })).filter((s) => !s.optional || s.notionPageId);
 }
 
 /**
@@ -372,6 +388,7 @@ const DA_NANG_SECTIONS = buildSections(DA_NANG_SECTION_OVERRIDES);
  * lifetime members preview it, the public keeps the waitlist.
  */
 const KOH_SAMUI_SECTION_OVERRIDES: SectionOverrides = {
+  "best-time-to-visit": { notionPageId: "3f457b19-7874-81cc-888a-cb572196d676" },
   "first-24-hours": { notionPageId: "3ca57b19-7874-81db-b8d6-d6ae97ac73b6" },
   "visa-immigration": { notionPageId: "3ca57b19-7874-8139-baf0-f18cba2b4e94" },
   "areas-to-stay": { notionPageId: "3ca57b19-7874-81cd-ba94-dc5e54588255" },
