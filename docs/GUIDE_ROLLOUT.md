@@ -24,8 +24,11 @@ Studio*). The site reads structure from `lib/guides.ts`.
 
 1. Author the guide as a top-level page **"Master <City> - The Freedom
    Hustle Guide"** with one subpage per section, named like the Bangkok
-   tree: `01 · First 24 Hours`, `02 · Visa & Immigration`, … (the `NN ·`
-   prefix is stripped automatically for the page H1).
+   tree: `00 · Best Time to Visit`, `01 · First 24 Hours`,
+   `02 · Visa & Immigration`, … (the `NN ·` prefix is stripped
+   automatically for the page H1). **Every guide gets a Best Time to
+   Visit page** - short answer, month by month, tips for month-long
+   stays - and it leads the sidebar.
 2. **Connect the master page to the integration:** open the master page →
    `⋯` menu → **Connections** → add **"Freedom Hustle Site"**. Subpages
    inherit the connection. Until this is done the site sees nothing.
