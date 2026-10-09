@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import https from "node:https";
 import path from "node:path";
+import bookingPhotos from "@/data/booking-photos.json";
 
 /**
  * Link-embed integration - the Airbnb / GetYourGuide counterpart to the
@@ -344,6 +345,30 @@ async function resolveGetYourGuide(
 
 
 /**
+ * Booking.com blocks our server from reading its pages, so its cards
+ * would be text-only. data/booking-photos.json maps a property's path
+ * (language suffix stripped) to a photo saved under public/uploads/stays,
+ * collected by hand from a real browser.
+ */
+function bookingPhotoFor(url: string): string | undefined {
+  try {
+    const key = new URL(url).pathname.replace(
+      /(\.[a-z]{2}(-[a-z]{2})?)?\.html$/i,
+      ""
+    );
+    return (bookingPhotos as Record<string, string>)[key];
+  } catch {
+    return undefined;
+  }
+}
+
+function withBookingPhoto(data: EmbedData): EmbedData {
+  if (data.kind !== "booking" || data.image) return data;
+  const photo = bookingPhotoFor(data.url);
+  return photo ? { ...data, image: photo } : data;
+}
+
+/**
  * Booking.com property → EmbedData from Open Graph tags. Booking's OG
  * title is usually the property name; og:image is the lead photo.
  * Booking is aggressive about bots - when the fetch is blocked we fall
@@ -398,7 +423,7 @@ export async function getEmbedFromUrl(
     cached &&
     Date.now() - cached.fetchedAt < CACHE_TTL_MS
   ) {
-    return cached;
+    return withBookingPhoto(cached);
   }
 
   const resolvedUrl = await resolveShortUrl(rawUrl);
@@ -431,5 +456,5 @@ export async function getEmbedFromUrl(
 
   cache[key] = data;
   await saveCache(cache);
-  return data;
+  return withBookingPhoto(data);
 }
