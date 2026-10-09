@@ -123,7 +123,10 @@ export function PlaceCard({
   }
 
   // ----- No data - clean fallback card -----
+  // Venues not yet in data/places.json land here. The editor's notes
+  // still show - they're the actual recommendation, photo or not.
   if (state.status !== "ok" || !state.place) {
+    const notes = (lovePoints || []).filter((x) => x && x.trim().length > 0);
     return (
       <a
         href={url}
@@ -132,14 +135,25 @@ export function PlaceCard({
         className={`block rounded-2xl border border-ink-100 bg-white shadow-card p-5 !no-underline hover:shadow-pop transition ${my}`}
       >
         <div className="flex items-start justify-between gap-3">
-          <div>
-            <p className="text-[11px] uppercase tracking-wider text-ink-400 font-semibold">
+          <div className="min-w-0">
+            <p className="text-[11px] uppercase tracking-wider text-ink-400 font-semibold !my-0">
+              {ourPick ? (
+                <span className="text-electric-600">Our pick · </span>
+              ) : null}
               Google Maps
             </p>
             <h4 className="font-display text-lg tracking-tight !mt-0.5 !mb-1 !text-ink-900">
               {nameOverride || "Open in Maps"}
             </h4>
-            <p className="text-sm text-ink-500 !my-0">Open in Google Maps</p>
+            {notes.map((pt, i) => (
+              <p
+                key={i}
+                className="!text-sm !text-ink-700 !leading-snug !mt-2 !mb-0"
+              >
+                {pt}
+              </p>
+            ))}
+            <p className="text-sm text-ink-500 !mt-3 !mb-0">Open in Google Maps</p>
           </div>
           <span className="!text-electric-600 text-lg shrink-0">↗</span>
         </div>
