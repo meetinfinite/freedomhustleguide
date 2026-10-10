@@ -32,7 +32,7 @@ interface PlaceCardProps {
   bare?: boolean;
 }
 
-interface CarouselPhoto {
+interface CardPhoto {
   src: string;
   isOwn: boolean;
   /** Google contributor credit for copied Google photos. */
@@ -61,7 +61,6 @@ export function PlaceCard({
   ourRating,
   ourPick,
   ownPhotos,
-  loveLabel,
   lovePoints,
   prefetched,
   bare
@@ -79,15 +78,12 @@ export function PlaceCard({
       ? { status: "ok", place: prefetched as PlaceData }
       : { status: "idle" }
   );
-  const [photoIdx, setPhotoIdx] = useState(0);
-
   useEffect(() => {
     if (!url) return;
     // Already prefetched - nothing to do
     if (prefetched) return;
     let cancelled = false;
     setState({ status: "loading" });
-    setPhotoIdx(0);
     fetch(`/api/place?url=${encodeURIComponent(url)}`)
       .then(async (r) => {
         if (cancelled) return;
@@ -164,115 +160,57 @@ export function PlaceCard({
   // ----- Full rich card -----
   const p = state.place;
   const displayName = nameOverride || p.name;
-  const ownList = (ownPhotos || []).filter((x) => x && x.trim().length > 0);
-  // When the editor supplies their own photos, show ONLY those - mixing a
-  // curated shot with random Google review photos reads as a glitch.
-  // Google's gallery is the fallback for venues without our own photo.
-  // Google photos are copies in public/places/ (scripts/places-snapshot.ts)
-  // - the live site never fetches from Google.
-  const googleList = ownList.length > 0 ? [] : p.photos || [];
-  const photos: CarouselPhoto[] = [
-    ...ownList.map((src) => ({ src, isOwn: true })),
-    ...googleList.map((ph) => ({ ...ph, isOwn: false }))
-  ];
-  const hasPhotos = photos.length > 0;
-  const safeIdx = Math.min(photoIdx, Math.max(0, photos.length - 1));
-  const currentPhoto = hasPhotos ? photos[safeIdx] : null;
-  const label = loveLabel || "Why we love this place";
-  const points = (lovePoints || []).filter((x) => x && x.trim().length > 0);
+  const photo = pickPhoto(p, ownPhotos);
+  // One photo per card (Valeria, 2026-10-10) - no carousel. The editor's
+  // notes aren't shown on a full card either: photo, name, rating,
+  // address and the two buttons say enough.
 
   return (
     <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
-      {hasPhotos && currentPhoto ? (
-        <div className={`relative ${imgAspect} w-full overflow-hidden bg-ink-900 group`}>
+      {photo ? (
+        <div className={`relative ${imgAspect} w-full overflow-hidden bg-ink-900`}>
           {/* Blurred fill behind the photo - handles portrait photos in a landscape frame */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={currentPhoto.src}
+            src={photo.src}
             alt=""
             aria-hidden
             className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60 pointer-events-none"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            key={currentPhoto.src}
-            src={currentPhoto.src}
-            alt={`${displayName} - photo ${safeIdx + 1} of ${photos.length}`}
+            src={photo.src}
+            alt={displayName}
             className="relative w-full h-full object-contain fade-up"
             loading="lazy"
           />
 
           {/* Photographer credit on copied Google photos */}
-          {!currentPhoto.isOwn && currentPhoto.author ? (
+          {!photo.isOwn && photo.author ? (
             <div className="absolute top-3 left-3 max-w-[70%] truncate px-2 py-0.5 rounded-full bg-ink-900/55 backdrop-blur text-[10px] text-white/90">
               Photo:{" "}
-              {currentPhoto.authorUri ? (
+              {photo.authorUri ? (
                 <a
-                  href={currentPhoto.authorUri}
+                  href={photo.authorUri}
                   target="_blank"
                   rel="noreferrer"
                   className="!text-white/90 !no-underline hover:!underline"
                 >
-                  {currentPhoto.author}
+                  {photo.author}
                 </a>
               ) : (
-                currentPhoto.author
+                photo.author
               )}{" "}
               · Google
             </div>
           ) : null}
 
           {/* "Original" badge - only on photos the editor uploaded */}
-          {currentPhoto.isOwn ? (
+          {photo.isOwn ? (
             <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-electric-500/95 backdrop-blur text-[10px] font-bold text-white uppercase tracking-wider shadow-card flex items-center gap-1.5">
               <CameraTick />
               Original
             </div>
-          ) : null}
-
-          {photos.length > 1 ? (
-            <>
-              <button
-                type="button"
-                onClick={() =>
-                  setPhotoIdx((i) => (i - 1 + photos.length) % photos.length)
-                }
-                aria-label="Previous photo"
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white grid place-items-center shadow-card opacity-0 group-hover:opacity-100 transition"
-              >
-                <Chevron dir="left" />
-              </button>
-              <button
-                type="button"
-                onClick={() =>
-                  setPhotoIdx((i) => (i + 1) % photos.length)
-                }
-                aria-label="Next photo"
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 hover:bg-white grid place-items-center shadow-card opacity-0 group-hover:opacity-100 transition"
-              >
-                <Chevron dir="right" />
-              </button>
-
-              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 px-3 py-1.5 rounded-full bg-ink-900/50 backdrop-blur">
-                {photos.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setPhotoIdx(i)}
-                    aria-label={`Go to photo ${i + 1}`}
-                    className={`h-1.5 rounded-full transition-all ${
-                      i === safeIdx
-                        ? "w-6 bg-white"
-                        : "w-1.5 bg-white/50 hover:bg-white/80"
-                    }`}
-                  />
-                ))}
-              </div>
-
-              <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-ink-900/60 backdrop-blur text-[11px] font-semibold text-white">
-                {safeIdx + 1} / {photos.length}
-              </div>
-            </>
           ) : null}
         </div>
       ) : null}
@@ -339,27 +277,6 @@ export function PlaceCard({
             <Pin />
             <span>{p.address}</span>
           </p>
-        ) : null}
-
-        {points.length > 0 ? (
-          <div className="mt-5 rounded-2xl bg-sand-50 p-4 sm:p-5">
-            <div className="!text-[11px] !uppercase !tracking-wider !text-electric-600 !font-semibold !my-0 !mb-2">
-              {label}
-            </div>
-            <ul className="!space-y-1 list-none !pl-0 !my-0">
-              {points.map((pt, i) => (
-                <li
-                  key={i}
-                  className="!pl-0 before:hidden flex gap-2 items-start !text-sm !text-ink-700 !leading-snug"
-                >
-                  <span className="!text-electric-600 !font-semibold shrink-0">
-                    +
-                  </span>
-                  <span>{pt}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
         ) : null}
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -498,23 +415,15 @@ function DirectionsIcon() {
   );
 }
 
-function Chevron({ dir }: { dir: "left" | "right" }) {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="none"
-      className="w-5 h-5 text-ink-900"
-      aria-hidden
-    >
-      <path
-        d={dir === "left" ? "M15 18l-6-6 6-6" : "M9 18l6-6-6-6"}
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
+/**
+ * The one photo a card shows: the editor's own photo, else the first
+ * snapshot photo (lib/places.ts puts any hand-picked photo first).
+ */
+function pickPhoto(p: PlaceData, ownPhotos?: string[]): CardPhoto | null {
+  const own = (ownPhotos || []).find((x) => x && x.trim().length > 0);
+  if (own) return { src: own, isOwn: true };
+  const first = (p.photos || [])[0];
+  return first ? { ...first, isOwn: false } : null;
 }
 
 function formatCount(n: number): string {

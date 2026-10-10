@@ -1,6 +1,5 @@
 import { Image } from "expo-image";
-import { useState } from "react";
-import { FlatList, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { openLink } from "../lib/links";
 import type { EmbedData, PlaceData } from "../lib/types";
 import { colors, fonts, radius, shadow } from "../theme";
@@ -23,10 +22,6 @@ export function PlaceCard({
   ourPick?: boolean;
   place?: PlaceData;
 }) {
-  const { width } = useWindowDimensions();
-  const cardWidth = width - 40;
-  const [idx, setIdx] = useState(0);
-
   if (!place) {
     return (
       <Pressable style={[styles.card, styles.linkCard]} onPress={() => openLink(url)}>
@@ -40,44 +35,28 @@ export function PlaceCard({
     );
   }
 
-  const photos = place.photos || [];
-  const current = photos[idx];
+  // One photo per card, same as the website (Valeria, 2026-10-10). The
+  // API already puts any hand-picked photo first.
+  const photo = (place.photos || [])[0];
 
   return (
     <View style={styles.card}>
-      {photos.length ? (
+      {photo ? (
         <View>
-          <FlatList
-            data={photos}
-            horizontal
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            keyExtractor={(p) => p.src}
-            onMomentumScrollEnd={(e) => setIdx(Math.round(e.nativeEvent.contentOffset.x / cardWidth))}
-            renderItem={({ item }) => (
-              <Image
-                source={{ uri: item.src }}
-                style={{ width: cardWidth, aspectRatio: 16 / 10, backgroundColor: colors.sand100 }}
-                contentFit="cover"
-                transition={150}
-              />
-            )}
+          <Image
+            source={{ uri: photo.src }}
+            style={{ width: "100%", aspectRatio: 16 / 10, backgroundColor: colors.sand100 }}
+            contentFit="cover"
+            transition={150}
           />
-          {current?.author ? (
+          {photo.author ? (
             <Text style={styles.credit} numberOfLines={1}>
-              Photo: {current.author} · Google
+              Photo: {photo.author} · Google
             </Text>
           ) : null}
           {ourPick ? (
             <View style={styles.pick}>
               <Text style={styles.pickText}>Our pick</Text>
-            </View>
-          ) : null}
-          {photos.length > 1 ? (
-            <View style={styles.dots}>
-              {photos.map((p, i) => (
-                <View key={p.src} style={[styles.dot, i === idx && styles.dotOn]} />
-              ))}
             </View>
           ) : null}
         </View>
@@ -97,12 +76,6 @@ export function PlaceCard({
               on Google{place.userRatingCount ? ` (${place.userRatingCount.toLocaleString()})` : ""}
             </Text>
           </Text>
-        ) : null}
-        {notes ? (
-          <View style={styles.noteBox}>
-            <Text style={styles.noteLabel}>Good to know</Text>
-            <Text style={styles.notes}>{notes}</Text>
-          </View>
         ) : null}
         <Pressable style={styles.cta} onPress={() => openLink(place.googleMapsUri || url)}>
           <Text style={styles.ctaText}>Open in Google Maps ↗</Text>
@@ -171,7 +144,8 @@ export function EmbedCard({
             ) : null}
           </Text>
         ) : null}
-        {notes ? <Text style={[styles.notes, { marginTop: 6 }]}>{notes}</Text> : null}
+        {/* Notes only on link cards without a photo, same as the website */}
+        {notes && !embed?.image ? <Text style={[styles.notes, { marginTop: 6 }]}>{notes}</Text> : null}
         <View style={styles.cta}>
           <Text style={styles.ctaText}>View on {label} ↗</Text>
         </View>

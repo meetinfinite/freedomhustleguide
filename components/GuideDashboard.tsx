@@ -17,7 +17,7 @@ export function GuideDashboard({ guide, basePath }: GuideDashboardProps) {
           {guide.city}, made simple.
         </h1>
         <p className="text-ink-600 mt-3 max-w-2xl text-lg">
-          Jump into any section. Your checklists save automatically.
+          Jump into any section.
         </p>
       </div>
 

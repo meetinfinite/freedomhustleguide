@@ -4,7 +4,6 @@ import type { PlaceData } from "@/lib/places";
 import { embedKindForUrl, type EmbedData, type EmbedKind } from "@/lib/embeds";
 import { WarningCard } from "./WarningCard";
 import { ProTip } from "./ProTip";
-import { Checklist } from "./Checklist";
 import { PlaceCard } from "./PlaceCard";
 import { EmbedCard } from "./EmbedCard";
 import { GMAPS_HOST_RE } from "@/lib/gmaps";
@@ -13,8 +12,7 @@ import { GMAPS_HOST_RE } from "@/lib/gmaps";
  * Render a Notion page's blocks as React.
  *
  * Convention-driven smart mapping:
- *   - Consecutive `to_do` blocks are grouped into one <Checklist> with
- *     localStorage progress tracking.
+ *   - Consecutive `to_do` blocks render as a plain bulleted list.
  *   - `quote` blocks read their leading text to choose a style:
  *       "DON'T -"        → <WarningCard severity="warn">
  *       "HEADS UP -"     → <WarningCard severity="warn">
@@ -211,10 +209,6 @@ function blockText(block: NotionBlock): NotionRichText[] | undefined {
   return (block.data as NotionRichBlockData)?.rich_text;
 }
 
-/** Build a stable Checklist id from a section page id + index. */
-function checklistId(sectionPageId: string, index: number) {
-  return `notion-${sectionPageId.slice(-6)}-${index}`;
-}
 
 
 /**
@@ -293,30 +287,25 @@ export function NotionRenderer({
   /** URL → prefetched Airbnb / GetYourGuide embed data. */
   embeds?: Record<string, EmbedData>;
 }) {
-  // First pass: group consecutive to_do blocks into Checklist clusters.
+  // Single pass over the blocks, grouping runs (to-dos, card bullets, callouts).
   const out: React.ReactNode[] = [];
   let i = 0;
-  let checklistIndex = 0;
 
   while (i < blocks.length) {
     const b = blocks[i];
 
-    // Group consecutive to_dos into a Checklist
+    // to_do blocks render as plain bullets - nobody ticks boxes while
+    // reading (Valeria, 2026-10-10). The Checklist component is kept in
+    // case we ever want it back.
     if (b.type === "to_do") {
       const start = i;
-      const items: string[] = [];
+      const items: React.ReactNode[] = [];
       while (i < blocks.length && blocks[i].type === "to_do") {
         const d = blocks[i].data as NotionTodoData;
-        items.push(richTextToString(d.rich_text).trim());
+        items.push(<li key={i}>{richTextToReact(d.rich_text)}</li>);
         i++;
       }
-      out.push(
-        <Checklist
-          key={`cl-${start}`}
-          id={checklistId(pageId, checklistIndex++)}
-          items={items.join("|")}
-        />
-      );
+      out.push(<ul key={`todo-${start}`}>{items}</ul>);
       continue;
     }
 

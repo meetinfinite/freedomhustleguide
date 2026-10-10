@@ -205,8 +205,10 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     readingTime: "4 min"
   },
   {
+    // Renamed from "Digital Nomad Toolkit" (Valeria, 2026-10-10); the slug
+    // stays so existing links keep working.
     slug: "digital-nomad-toolkit",
-    title: "Digital Nomad Toolkit",
+    title: "Apps + Travel Essentials",
     description:
       "What apps to use, gear, banking, insurance and tools - the stack that actually works.",
     icon: "🧰",

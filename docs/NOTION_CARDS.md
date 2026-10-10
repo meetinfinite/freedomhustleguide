@@ -16,8 +16,10 @@ the first thing in a bullet point**, optionally followed by a note.
 • [paste the link here] — your short note about why you recommend it
 ```
 
-- The **link goes first**. Whatever you type after a dash (`—`) becomes the
-  card's "Good to know" note.
+- The **link goes first**. Whatever you type after it stays in Notion, but
+  cards that have a photo don't show it (one photo, name, rating, address
+  and buttons is enough - Valeria, 2026-10-10). It only shows on plain link
+  cards, e.g. a Google venue that isn't in the snapshot yet.
 - The card's title/photo/rating come from the listing itself, so you don't
   need to retype them. The link text can be anything (the place name is fine).
 - For Google Maps venues, make the link **bold** and add `(our pick)` in the
@@ -29,7 +31,9 @@ That's it. Save in Notion, and the live site shows the card within ~60s.
 
 The site never calls Google live (it ran up a ~£178 bill). Venue name,
 address, rating and 2 photos are captured once into `data/places.json` +
-`public/places/`. After adding venues, a dev runs:
+`public/places/`. Cards show **one** photo - the first, unless
+`data/place-photo-picks.json` picks another (place id → photo index, or a
+hosted image path). After adding venues, a dev runs:
 
 ```
 npx tsx scripts/places-snapshot.ts            # free dry run: lists new venues + est. cost
