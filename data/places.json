@@ -23,7 +23,7 @@
   "https://www.google.com/maps/place/piri+piri+mediterranean+flaming+grill+koh+samui/@9.4634281,100.0409184,17z/data=!3m1!4b1!4m6!3m5!1s0x3054f1cb51c048cf:0x84e4c8bc908ffcfd!8m2!3d9.4634228!4d100.0434933!16s%2fg%2f11ddxj89jt": {
     "placeId": "ChIJz0jAUcvxVDAR_fyPkLzI5IQ",
     "name": "Piri Piri Mediterranean Flaming Grill Koh Samui",
-    "address": "",
+    "address": "124, 148 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJz0jAUcvxVDAR_fyPkLzI5IQ-1.webp",
@@ -32,12 +32,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Piri%20Piri%20Mediterranean%20Flaming%20Grill%20Koh%20Samui&query_place_id=ChIJz0jAUcvxVDAR_fyPkLzI5IQ",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.2,
+    "userRatingCount": 222
   },
   "https://www.google.com/maps/place/rest+massage/@9.4627119,100.0430646,17z/data=!4m6!3m5!1s0x3054f3e5cc0dd249:0xbb2e065f64b49b43!8m2!3d9.4627119!4d100.0430646!16s%2fg%2f11t7z9g_cp": {
     "placeId": "ChIJSdINzOXzVDARQ5u0ZF8GLrs",
     "name": "Rest Massage",
-    "address": "",
+    "address": "124, 540 Moo 3, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJSdINzOXzVDARQ5u0ZF8GLrs-1.webp",
@@ -46,7 +48,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Rest%20Massage&query_place_id=ChIJSdINzOXzVDARQ5u0ZF8GLrs",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 250
   },
   "https://www.google.com/maps/place/taiyo+apartment+and+hotel/@16.0502985,108.2442908,17z/data=!3m1!4b1!4m9!3m8!1s0x3142173fd31e911d:0x89a8c95dc1373eca!5m2!4m1!1i2!8m2!3d16.0502934!4d108.2468657!16s%2fg%2f11l71zlhd5?entry=ttu&g_ep=egoymdi2mdcxmy4wikxmdsoasafqaw%3d%3d": {
     "placeId": "ChIJHZEe0z8XQjERyj43wV3JqIk",
@@ -114,7 +118,7 @@
   "https://www.google.com/maps/search/2%20fishes%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJT1HgEIzwVDARZtEEQzVAuz4",
     "name": "2 Fishes",
-    "address": "",
+    "address": "109,15, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJT1HgEIzwVDARZtEEQzVAuz4-1.webp",
@@ -123,7 +127,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=2%20Fishes&query_place_id=ChIJT1HgEIzwVDARZtEEQzVAuz4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 935
   },
   "https://www.google.com/maps/search/2%20ladies%20kitchen%20da%20nang": {
     "placeId": "ChIJY85vJ38XQjERH_adasSZ7Ts",
@@ -170,7 +176,7 @@
   "https://www.google.com/maps/search/absolute%20sanctuary%20koh%20samui": {
     "placeId": "ChIJb6126x7wVDAROdYTDT_RVGM",
     "name": "Absolute Sanctuary",
-    "address": "",
+    "address": "88, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJb6126x7wVDAROdYTDT_RVGM-1.webp",
@@ -179,7 +185,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Absolute%20Sanctuary&query_place_id=ChIJb6126x7wVDAROdYTDT_RVGM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 196
   },
   "https://www.google.com/maps/search/accha%20nimman%20chiang%20mai": {
     "placeId": "ChIJH_HYXTw72jARsc-dNQfGJzM",
@@ -394,7 +402,7 @@
   "https://www.google.com/maps/search/andaman%20thai%20food%20%26%20seafood%20restaurant%20chaweng": {
     "placeId": "ChIJkZqXGNXxVDARXWaSoxTFwhI",
     "name": "Andaman Thai Food & Seafood",
-    "address": "",
+    "address": "162 86 หมู่ที่ 2 ตำบล บ่อผุด Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJkZqXGNXxVDARXWaSoxTFwhI-1.webp",
@@ -403,12 +411,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Andaman%20Thai%20Food%20%26%20Seafood&query_place_id=ChIJkZqXGNXxVDARXWaSoxTFwhI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1586
   },
   "https://www.google.com/maps/search/ang%20thong%20national%20marine%20park": {
     "placeId": "ChIJ5x4DAX7-VDARkJi8xghaoRg",
     "name": "Ang Thong National Marine Park",
-    "address": "",
+    "address": "Ang Thong, Ko Samui District, Surat Thani 84280, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ5x4DAX7-VDARkJi8xghaoRg-1.webp",
@@ -417,12 +427,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Ang%20Thong%20National%20Marine%20Park&query_place_id=ChIJ5x4DAX7-VDARkJi8xghaoRg",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 4729
   },
   "https://www.google.com/maps/search/annie%20eatery%20sweetery%20lamai%20koh%20samui": {
     "placeId": "ChIJKUsz-I7zVDARb17Qp8zWiFo",
     "name": "ANNIE Eatery & Sweetery",
-    "address": "",
+    "address": "124 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJKUsz-I7zVDARb17Qp8zWiFo-1.webp",
@@ -431,7 +443,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=ANNIE%20Eatery%20%26%20Sweetery&query_place_id=ChIJKUsz-I7zVDARb17Qp8zWiFo",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 2538
   },
   "https://www.google.com/maps/search/appia%20bangkok": {
     "placeId": "ChIJ80v5rv2e4jARVS2emNHKH50",
@@ -499,7 +513,7 @@
   "https://www.google.com/maps/search/arkbar%20beach%20club%20chaweng": {
     "placeId": "ChIJA2a4nsvxVDARigM6TQ2VLmM",
     "name": "ARKbar Beach Club",
-    "address": "",
+    "address": "4/1, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJA2a4nsvxVDARigM6TQ2VLmM-1.webp",
@@ -508,7 +522,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=ARKbar%20Beach%20Club&query_place_id=ChIJA2a4nsvxVDARigM6TQ2VLmM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.3,
+    "userRatingCount": 8159
   },
   "https://www.google.com/maps/search/armenio%20modern%20grandma%20bangkok": {
     "placeId": "ChIJ29JGW2if4jARCjVU6F91zDc",
@@ -723,7 +739,7 @@
   "https://www.google.com/maps/search/bandon%20international%20hospital%20koh%20samui": {
     "placeId": "ChIJsWHE3lnwVDAR0sXaLAjHqlQ",
     "name": "Bandon International Hospital",
-    "address": "",
+    "address": "123 1 Moo 1 Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJsWHE3lnwVDAR0sXaLAjHqlQ-1.webp",
@@ -732,12 +748,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Bandon%20International%20Hospital&query_place_id=ChIJsWHE3lnwVDAR0sXaLAjHqlQ",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 5,
+    "userRatingCount": 23
   },
   "https://www.google.com/maps/search/bangkok%20hospital%20samui": {
     "placeId": "ChIJ2YB6-bzxVDARXWdZOo7EODs",
     "name": "Bangkok Hospital Samui",
-    "address": "",
+    "address": "57 หมู่ที่ 3 ถ. ทวีราษฎร์ภักดี Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ2YB6-bzxVDARXWdZOo7EODs-1.webp",
@@ -746,7 +764,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Bangkok%20Hospital%20Samui&query_place_id=ChIJ2YB6-bzxVDARXWdZOo7EODs",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 3.8,
+    "userRatingCount": 714
   },
   "https://www.google.com/maps/search/banh%20xeo%2076%20da%20nang": {
     "placeId": "ChIJyyYpNmMXQjERpF7o-AgLzb4",
@@ -772,7 +792,7 @@
   "https://www.google.com/maps/search/banyan%20tree%20samui": {
     "placeId": "ChIJEUZMUxXxVDARb9rjLvIV4TI",
     "name": "Banyan Tree Samui",
-    "address": "",
+    "address": "99, 9 ตำบล มะเร็ต อำเภอเกาะสมุย สุราษฎร์ธานี 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJEUZMUxXxVDARb9rjLvIV4TI-1.webp",
@@ -781,12 +801,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Banyan%20Tree%20Samui&query_place_id=ChIJEUZMUxXxVDARb9rjLvIV4TI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1825
   },
   "https://www.google.com/maps/search/baobab%20lamai%20beach%20koh%20samui": {
     "placeId": "ChIJA48YcE7yVDAR6Ha8IUyKx8M",
     "name": "Baobab",
-    "address": "",
+    "address": "127 64 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJA48YcE7yVDAR6Ha8IUyKx8M-1.webp",
@@ -795,7 +817,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Baobab&query_place_id=ChIJA48YcE7yVDAR6Ha8IUyKx8M",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 1449
   },
   "https://www.google.com/maps/search/bar.san%20chiang%20mai": {
     "placeId": "ChIJFwojs_Q72jARqGChQvHrDfQ",
@@ -863,7 +887,7 @@
   "https://www.google.com/maps/search/beautique%20salon%20chaweng%20koh%20samui": {
     "placeId": "ChIJJcjdwerxVDARZSg42KFrQg8",
     "name": "Beautique Salon",
-    "address": "",
+    "address": "161, 1 Chaweng Beach Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJJcjdwerxVDARZSg42KFrQg8-1.webp",
@@ -872,7 +896,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Beautique%20Salon&query_place_id=ChIJJcjdwerxVDARZSg42KFrQg8",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 421
   },
   "https://www.google.com/maps/search/benjakitti%20forest%20park%20bangkok": {
     "placeId": "ChIJmfMfvBuf4jAR9rugvZd5Lyc",
@@ -940,7 +966,7 @@
   "https://www.google.com/maps/search/big%20buddha%20wat%20phra%20yai%20koh%20samui": {
     "placeId": "ChIJGycOnAzwVDAR4IZEMPSKJds",
     "name": "Big Buddha (Wat Phra Yai)",
-    "address": "",
+    "address": "H3C6+87P, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJGycOnAzwVDAR4IZEMPSKJds-1.webp",
@@ -949,12 +975,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Big%20Buddha%20(Wat%20Phra%20Yai)&query_place_id=ChIJGycOnAzwVDAR4IZEMPSKJds",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 11640
   },
   "https://www.google.com/maps/search/big%20horn%20restaurant%20chaweng": {
     "placeId": "ChIJiT-19TLwVDAR0qcjhyWZxNs",
     "name": "Big Horn Restaurant",
-    "address": "",
+    "address": "167, BoPhut, 36 Chaweng Beach Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJiT-19TLwVDAR0qcjhyWZxNs-1.webp",
@@ -963,7 +991,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Big%20Horn%20Restaurant&query_place_id=ChIJiT-19TLwVDAR0qcjhyWZxNs",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1360
   },
   "https://www.google.com/maps/search/bkk%20social%20club%20bangkok": {
     "placeId": "ChIJLwlh74qZ4jARfZDqGK5qtE4",
@@ -989,7 +1019,7 @@
   "https://www.google.com/maps/search/black%20pearl%20lamai%20beach%20koh%20samui": {
     "placeId": "ChIJX9nSDE7yVDARPZU48ENbopM",
     "name": "Black Pearl",
-    "address": "",
+    "address": "127/64 Moo 3, Maret Lamai Beach, ตำบล มะเร็ต Koh Samui, สุราษฎร์ธานี 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJX9nSDE7yVDARPZU48ENbopM-1.webp",
@@ -998,7 +1028,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Black%20Pearl&query_place_id=ChIJX9nSDE7yVDARPZU48ENbopM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 842
   },
   "https://www.google.com/maps/search/blackitch%20artisan%20kitchen%20chiang%20mai": {
     "placeId": "ChIJU9Y16Ik62jARJnrozimcTLc",
@@ -1171,7 +1203,7 @@
   "https://www.google.com/maps/search/cabanas%20beach%20club%20koh%20samui": {
     "placeId": "ChIJ4d556T7xVDARCz-MEsmohDk",
     "name": "Cabanas Beach Club",
-    "address": "",
+    "address": "Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ4d556T7xVDARCz-MEsmohDk-1.webp",
@@ -1180,7 +1212,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Cabanas%20Beach%20Club&query_place_id=ChIJ4d556T7xVDARCz-MEsmohDk",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 301
   },
   "https://www.google.com/maps/search/camp%20maya%20chiang%20mai": {
     "placeId": "ChIJVRYatWE62jARA52IbLWUhPQ",
@@ -1206,7 +1240,7 @@
   "https://www.google.com/maps/search/cape%20fahn%20hotel%20koh%20samui": {
     "placeId": "ChIJyd3e3fjvVDARpWf4OCa-qEg",
     "name": "Cape Fahn Hotel",
-    "address": "",
+    "address": "24/269, ตำบล บ่อผุด Koh Samui, สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJyd3e3fjvVDARpWf4OCa-qEg-1.webp",
@@ -1215,7 +1249,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Cape%20Fahn%20Hotel&query_place_id=ChIJyd3e3fjvVDARpWf4OCa-qEg",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 383
   },
   "https://www.google.com/maps/search/capella%20bangkok": {
     "placeId": "ChIJqcNXkyaZ4jAR6PgpLK1RNzI",
@@ -1493,7 +1529,7 @@
   "https://www.google.com/maps/search/chaweng%20beach%20koh%20samui": {
     "placeId": "ChIJi44-Cb_xVDAR3HBn-sXIoho",
     "name": "Chaweng",
-    "address": "",
+    "address": "Chaweng Beach, Surat Thani, Thailand",
     "photos": [
       {
         "src": "/places/ChIJi44-Cb_xVDAR3HBn-sXIoho-1.webp",
@@ -1502,12 +1538,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Chaweng&query_place_id=ChIJi44-Cb_xVDAR3HBn-sXIoho",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.3,
+    "userRatingCount": 2208
   },
   "https://www.google.com/maps/search/chaweng%20boxing%20stadium%20koh%20samui": {
     "placeId": "ChIJRZh3hbfxVDARB5Xu8p6I2Uk",
     "name": "Chaweng Boxing Stadium",
-    "address": "",
+    "address": "G3C4+XF3, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJRZh3hbfxVDARB5Xu8p6I2Uk-1.webp",
@@ -1516,12 +1554,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Chaweng%20Boxing%20Stadium&query_place_id=ChIJRZh3hbfxVDARB5Xu8p6I2Uk",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 812
   },
   "https://www.google.com/maps/search/chaweng%20night%20market%20koh%20samui": {
     "placeId": "ChIJyfo5TTXxVDARWWhCC4uY3J4",
     "name": "Chaweng Night Market",
-    "address": "",
+    "address": "G3M6+458, 171, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJyfo5TTXxVDARWWhCC4uY3J4-1.webp",
@@ -1530,7 +1570,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Chaweng%20Night%20Market&query_place_id=ChIJyfo5TTXxVDARWWhCC4uY3J4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1655
   },
   "https://www.google.com/maps/search/chenin%20bangkok": {
     "placeId": "ChIJqbWdQdWf4jARcwbFVOkosL4",
@@ -1577,7 +1619,7 @@
   "https://www.google.com/maps/search/chi%20samui%20bophut": {
     "placeId": "ChIJe6CGAYLxVDAR6R7szCZtNfo",
     "name": "Chi Samui",
-    "address": "",
+    "address": "16 H25X+2HW 4, H25X+2HW, 4 ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJe6CGAYLxVDAR6R7szCZtNfo-1.webp",
@@ -1586,7 +1628,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Chi%20Samui&query_place_id=ChIJe6CGAYLxVDAR6R7szCZtNfo",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 1188
   },
   "https://www.google.com/maps/search/chiang%20mai%20night%20bazaar": {
     "placeId": "ChIJW0qnDKY62jARHbAmfwD1Lgs",
@@ -1633,7 +1677,7 @@
   "https://www.google.com/maps/search/chill%20inn%20co%20working%20koh%20samui": {
     "placeId": "ChIJc-lqukrxVDARzYqTwfWoEvQ",
     "name": "Chill Inn Co Working",
-    "address": "",
+    "address": "147, 23 Moo3, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJc-lqukrxVDARzYqTwfWoEvQ-1.webp",
@@ -1642,12 +1686,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Chill%20Inn%20Co%20Working&query_place_id=ChIJc-lqukrxVDARzYqTwfWoEvQ",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 248
   },
   "https://www.google.com/maps/search/choeng%20mon%20beach%20koh%20samui": {
     "placeId": "ChIJEU_FMP7vVDARQzq1TzjsT0w",
     "name": "Choeng Mon",
-    "address": "",
+    "address": "Pure Beach Club Rd, Thesaban Nakhon Ko Samui, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJEU_FMP7vVDARQzq1TzjsT0w-1.webp",
@@ -1656,7 +1702,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Choeng%20Mon&query_place_id=ChIJEU_FMP7vVDARQzq1TzjsT0w",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 1579
   },
   "https://www.google.com/maps/search/chom%20cafe%20and%20restaurant%20chiang%20mai": {
     "placeId": "ChIJxT3FucIw2jARm41spon0Shw",
@@ -1682,7 +1730,7 @@
   "https://www.google.com/maps/search/chom%20chada%20cocktail%20bar%20bistro%20chaweng": {
     "placeId": "ChIJD2brGmbxVDARbLJL7ZTIN18",
     "name": "Chom Chada Cocktail Bar & Bistro",
-    "address": "",
+    "address": "167, 64 ถนนหาดเฉวง Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJD2brGmbxVDARbLJL7ZTIN18-1.webp",
@@ -1691,7 +1739,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Chom%20Chada%20Cocktail%20Bar%20%26%20Bistro&query_place_id=ChIJD2brGmbxVDARbLJL7ZTIN18",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 1397
   },
   "https://www.google.com/maps/search/circo%20da%20nang%20city%20centre": {
     "placeId": "ChIJyUhe61MZQjER5cJJJYidlfY",
@@ -1738,7 +1788,7 @@
   "https://www.google.com/maps/search/coco%20tam%27s%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJw5sfgI7wVDARk5OM9OwgcSc",
     "name": "Coco Tam's",
-    "address": "",
+    "address": "62 Thesaban Nakhon Ko Samui, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJw5sfgI7wVDARk5OM9OwgcSc-1.webp",
@@ -1747,7 +1797,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Coco%20Tam's&query_place_id=ChIJw5sfgI7wVDARk5OM9OwgcSc",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 6908
   },
   "https://www.google.com/maps/search/coconut%20market%20kad%20ba%20pao%20chiang%20mai": {
     "placeId": "ChIJ17wP5wo72jARo8mP57b2j14",
@@ -1794,7 +1846,7 @@
   "https://www.google.com/maps/search/conrad%20koh%20samui": {
     "placeId": "ChIJ-2eHfPX1VDARiF6gnWsYiIY",
     "name": "Conrad Koh Samui",
-    "address": "",
+    "address": "49/8-9 หมู่ที่ 4 Hillcrest Road Tambon Taling Ngam, Amphoe Ko Samui, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ-2eHfPX1VDARiF6gnWsYiIY-1.webp",
@@ -1803,12 +1855,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Conrad%20Koh%20Samui&query_place_id=ChIJ-2eHfPX1VDARiF6gnWsYiIY",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1755
   },
   "https://www.google.com/maps/search/coral%20cove%20beach%20koh%20samui": {
     "placeId": "ChIJEfdXbA7xVDARfFIyIZ500K4",
     "name": "Coral Cove Beach",
-    "address": "",
+    "address": "F3R6+6GC, 4169, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJEfdXbA7xVDARfFIyIZ500K4-1.webp",
@@ -1817,7 +1871,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Coral%20Cove%20Beach&query_place_id=ChIJEfdXbA7xVDARfFIyIZ500K4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 1917
   },
   "https://www.google.com/maps/search/coworking%20danang": {
     "placeId": "ChIJa_-hrXwXQjERS_7JzgXZHz8",
@@ -1927,7 +1983,7 @@
   "https://www.google.com/maps/search/day%20and%20night%20of%20koh%20samui": {
     "placeId": "ChIJk_6Ej4_xVDARZXVClnD9nro",
     "name": "Day & Night of Koh Samui",
-    "address": "",
+    "address": "G3J7+P3, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJk_6Ej4_xVDARZXVClnD9nro-1.webp",
@@ -1936,12 +1992,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Day%20%26%20Night%20of%20Koh%20Samui&query_place_id=ChIJk_6Ej4_xVDARZXVClnD9nro",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 2630
   },
   "https://www.google.com/maps/search/delish%20cafe%20restaurant%20chaweng%20koh%20samui": {
     "placeId": "ChIJQ2zm4p_xVDARSkn9M_iTT0A",
     "name": "Delish Cafe & Restaurant",
-    "address": "",
+    "address": "155/32,58,63, Chaweng Beach Rd, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJQ2zm4p_xVDARSkn9M_iTT0A-1.webp",
@@ -1950,12 +2008,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Delish%20Cafe%20%26%20Restaurant&query_place_id=ChIJQ2zm4p_xVDARSkn9M_iTT0A",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1110
   },
   "https://www.google.com/maps/search/desk%20and%20chair%20co-working%20space%20samui": {
     "placeId": "ChIJiX6NS6DzVDARkJlvJXgb6rI",
     "name": "Desk+Chair Samui",
-    "address": "",
+    "address": "1 54, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJiX6NS6DzVDARkJlvJXgb6rI-1.webp",
@@ -1964,7 +2024,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Desk%2BChair%20Samui&query_place_id=ChIJiX6NS6DzVDARkJlvJXgb6rI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 85
   },
   "https://www.google.com/maps/search/divana%20nurture%20spa%20bangkok": {
     "placeId": "ChIJbUT1tOie4jAR38N7M1cRf1c",
@@ -2032,7 +2094,7 @@
   "https://www.google.com/maps/search/dr%20frogs%20bar%20and%20grill%20koh%20samui": {
     "placeId": "ChIJ5fX-BZbxVDARXhhX94DU34s",
     "name": "Dr Frogs Bar & Grill",
-    "address": "",
+    "address": "103 B, Moo Bophut 3 Chaweng Noi Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ5fX-BZbxVDARXhhX94DU34s-1.webp",
@@ -2041,7 +2103,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Dr%20Frogs%20Bar%20%26%20Grill&query_place_id=ChIJ5fX-BZbxVDARXhhX94DU34s",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1052
   },
   "https://www.google.com/maps/search/dragon%20ball%20rooftop%20da%20nang": {
     "placeId": "ChIJH5rHq2cZQjERco2Fp6DewNg",
@@ -2172,7 +2236,7 @@
   "https://www.google.com/maps/search/elephant%20beach%20club%20koh%20samui": {
     "placeId": "ChIJAVQo7czxVDARRinjM7ou6Uo",
     "name": "Elephant Beach Club",
-    "address": "",
+    "address": "159 moo2, Thesaban Nakhon Ko Samui, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJAVQo7czxVDARRinjM7ou6Uo-1.webp",
@@ -2181,7 +2245,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Elephant%20Beach%20Club&query_place_id=ChIJAVQo7czxVDARRinjM7ou6Uo",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 2299
   },
   "https://www.google.com/maps/search/elephant%20nature%20park%20chiang%20mai": {
     "placeId": "ChIJc8S16aE62jARUXKBvK2Xu8I",
@@ -2207,7 +2273,7 @@
   "https://www.google.com/maps/search/elite%20gym%20and%20fitness%20exclusive%20chaweng": {
     "placeId": "ChIJkwPzQMrxVDAR0Gf_TiFAd-M",
     "name": "Elite Gym and Fitness Exclusive",
-    "address": "",
+    "address": "202, Chaweng Beach Rd, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJkwPzQMrxVDAR0Gf_TiFAd-M-1.webp",
@@ -2216,7 +2282,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Elite%20Gym%20and%20Fitness%20Exclusive&query_place_id=ChIJkwPzQMrxVDAR0Gf_TiFAd-M",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 688
   },
   "https://www.google.com/maps/search/emquartier%20bangkok": {
     "placeId": "ChIJcWLOjAGf4jARWrAvcZ1YFDM",
@@ -2242,7 +2310,7 @@
   "https://www.google.com/maps/search/eranda%20spa%20koh%20samui": {
     "placeId": "ChIJOUUkCCXwVDARgJ48p11Sr6c",
     "name": "Eranda Spa",
-    "address": "",
+    "address": "9 37, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJOUUkCCXwVDARgJ48p11Sr6c-1.webp",
@@ -2251,7 +2319,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Eranda%20Spa&query_place_id=ChIJOUUkCCXwVDARgJ48p11Sr6c",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 676
   },
   "https://www.google.com/maps/search/erawan%20museum%20bangkok": {
     "placeId": "ChIJL-1RuzKh4jARd-9ZboreTeA",
@@ -2403,7 +2473,7 @@
   "https://www.google.com/maps/search/fisherman%27s%20village%20bophut%20koh%20samui": {
     "placeId": "ChIJX5anyo3wVDARupr7atqyDZ4",
     "name": "Fisherman's Village",
-    "address": "",
+    "address": "H25J+9HJ, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJX5anyo3wVDARupr7atqyDZ4-1.webp",
@@ -2412,12 +2482,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Fisherman's%20Village&query_place_id=ChIJX5anyo3wVDARupr7atqyDZ4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 5972
   },
   "https://www.google.com/maps/search/fisherman%27s%20village%20night%20market%20koh%20samui": {
     "placeId": "ChIJX5anyo3wVDARupr7atqyDZ4",
     "name": "Fisherman's Village",
-    "address": "",
+    "address": "H25J+9HJ, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJX5anyo3wVDARupr7atqyDZ4-1.webp",
@@ -2426,12 +2498,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Fisherman's%20Village&query_place_id=ChIJX5anyo3wVDARupr7atqyDZ4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 5972
   },
   "https://www.google.com/maps/search/flo%20coffee%20roaster%20chaweng%20koh%20samui": {
     "placeId": "ChIJIV8MmGfxVDARBSqyuoQm9zI",
     "name": "Flo Coffee Roaster",
-    "address": "",
+    "address": "33/1, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJIV8MmGfxVDARBSqyuoQm9zI-1.webp",
@@ -2440,7 +2514,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Flo%20Coffee%20Roaster&query_place_id=ChIJIV8MmGfxVDARBSqyuoQm9zI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 557
   },
   "https://www.google.com/maps/search/forest%20coffee%20da%20nang": {
     "placeId": "ChIJK8UFAQAXQjERdQi2W5xC3r4",
@@ -2508,7 +2584,7 @@
   "https://www.google.com/maps/search/four%20seasons%20resort%20koh%20samui": {
     "placeId": "ChIJJ0wEK_P3VDARccizdcVtXEA",
     "name": "Four Seasons Resort Koh Samui",
-    "address": "",
+    "address": "219, Moo 5, Tambon Mae Nam, Angthong, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJJ0wEK_P3VDARccizdcVtXEA-1.webp",
@@ -2517,7 +2593,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Four%20Seasons%20Resort%20Koh%20Samui&query_place_id=ChIJJ0wEK_P3VDARccizdcVtXEA",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1043
   },
   "https://www.google.com/maps/search/foxhole%20bkk%20tanao%20bangkok": {
     "placeId": "ChIJ75oPTBKZ4jARNJOaeC8tlhY",
@@ -2648,7 +2726,7 @@
   "https://www.google.com/maps/search/garrya%20tongsai%20bay%20samui": {
     "placeId": "ChIJe6Zy9L3xVDARi9dn3Yl34CY",
     "name": "Garrya Tongsai Bay",
-    "address": "",
+    "address": "84, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJe6Zy9L3xVDARi9dn3Yl34CY-1.webp",
@@ -2657,7 +2735,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Garrya%20Tongsai%20Bay&query_place_id=ChIJe6Zy9L3xVDARi9dn3Yl34CY",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1041
   },
   "https://www.google.com/maps/search/ginger%20farm%20kitchen%20one%20nimman%20chiang%20mai": {
     "placeId": "ChIJI7OL9GE62jARTIo-coWTeBw",
@@ -2788,7 +2868,7 @@
   "https://www.google.com/maps/search/gusto%20italiano%20fisherman%20village%20koh%20samui": {
     "placeId": "ChIJRzRwD4zwVDARt3VmVdx1yFo",
     "name": "Gusto Italiano",
-    "address": "",
+    "address": "73/3 Moo 1 Fisherman Village, ตำบล บ่อผุด อำเภอเกาะสมุย Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJRzRwD4zwVDARt3VmVdx1yFo-1.webp",
@@ -2797,7 +2877,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Gusto%20Italiano&query_place_id=ChIJRzRwD4zwVDARt3VmVdx1yFo",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 2513
   },
   "https://www.google.com/maps/search/gypsy%20rooftop%20restaurant%20bar%20da%20nang": {
     "placeId": "ChIJ76XtSwwZQjERJapWgs-OVhQ",
@@ -2844,7 +2926,7 @@
   "https://www.google.com/maps/search/hair%20farah%20lamai%20koh%20samui": {
     "placeId": "ChIJn-m0P0nyVDARkiH_NDpBP8g",
     "name": "Hair Farah",
-    "address": "",
+    "address": "124/155. ม 3 ต Tambon Maret, อ.เกาะสมุย, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJn-m0P0nyVDARkiH_NDpBP8g-1.webp",
@@ -2853,7 +2935,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Hair%20Farah&query_place_id=ChIJn-m0P0nyVDARkiH_NDpBP8g",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 282
   },
   "https://www.google.com/maps/search/hang%20ganh%20da%20nang": {
     "placeId": "ChIJqV9FZtgXQjERsH-EF2geJk8",
@@ -2879,7 +2963,7 @@
   "https://www.google.com/maps/search/happy%20elephant%20restaurant%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJT5zxD4zwVDARDWOgFXjdWLw",
     "name": "Happy Elephant",
-    "address": "",
+    "address": "79 9, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJT5zxD4zwVDARDWOgFXjdWLw-1.webp",
@@ -2888,7 +2972,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Happy%20Elephant&query_place_id=ChIJT5zxD4zwVDARDWOgFXjdWLw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 2081
   },
   "https://www.google.com/maps/search/harnn%20heritage%20spa%20centralworld%20bangkok": {
     "placeId": "ChIJu8z2g8Of4jARQgT5xmJtWM0",
@@ -2935,7 +3021,7 @@
   "https://www.google.com/maps/search/haven%20elephant%20cafe%20restaurant%20koh%20samui": {
     "placeId": "ChIJrQhijUrxVDARxJ_AB2sfk1c",
     "name": "Haven Elephant Café & Restaurant",
-    "address": "",
+    "address": "137/31 Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJrQhijUrxVDARxJ_AB2sfk1c-1.webp",
@@ -2944,7 +3030,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Haven%20Elephant%20Caf%C3%A9%20%26%20Restaurant&query_place_id=ChIJrQhijUrxVDARxJ_AB2sfk1c",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1026
   },
   "https://www.google.com/maps/search/health%20land%20spa%20massage%20asok%20bangkok": {
     "placeId": "ChIJNz1Q9OSe4jARTFpSkCWBabw",
@@ -3033,7 +3121,7 @@
   "https://www.google.com/maps/search/hin%20ta%20and%20hin%20yai%20rocks%20koh%20samui": {
     "placeId": "ChIJi_MqvFPyVDARyZQrKj0jYtw",
     "name": "Hin Ta & Hin Yai Rocks",
-    "address": "",
+    "address": "92 84310, 126/92 Moo 3, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJi_MqvFPyVDARyZQrKj0jYtw-1.webp",
@@ -3042,7 +3130,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Hin%20Ta%20%26%20Hin%20Yai%20Rocks&query_place_id=ChIJi_MqvFPyVDARyZQrKj0jYtw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.2,
+    "userRatingCount": 11395
   },
   "https://www.google.com/maps/search/hoi%20an%20ancient%20town": {
     "placeId": "ChIJE3yuYgAPQjERnAMwgxxwoN4",
@@ -3194,7 +3284,7 @@
   "https://www.google.com/maps/search/imchai%20thai%20food%20lamai%20koh%20samui": {
     "placeId": "ChIJVdZKQEzyVDARYatguC0rmQ4",
     "name": "Imchai Thai Food",
-    "address": "",
+    "address": "4169, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJVdZKQEzyVDARYatguC0rmQ4-1.webp",
@@ -3203,7 +3293,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Imchai%20Thai%20Food&query_place_id=ChIJVdZKQEzyVDARYatguC0rmQ4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1654
   },
   "https://www.google.com/maps/search/ink%20and%20lion%20cafe%20ekkamai%20bangkok": {
     "placeId": "ChIJ22MGza-f4jARbxOuZ7kJwO0",
@@ -3250,7 +3342,7 @@
   "https://www.google.com/maps/search/isla%20cafe%20brunch%20koh%20samui": {
     "placeId": "ChIJswYAUSLxVDARBVE7K6BxpL4",
     "name": "Isla Cafe & Brunch",
-    "address": "",
+    "address": "4, Ground Floor, 38, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJswYAUSLxVDARBVE7K6BxpL4-1.webp",
@@ -3259,12 +3351,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Isla%20Cafe%20%26%20Brunch&query_place_id=ChIJswYAUSLxVDARBVE7K6BxpL4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 314
   },
   "https://www.google.com/maps/search/izzy%27s%20specialty%20coffee%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJszhAI4DxVDAR2IAOFd7moUM",
     "name": "Izzy's Specialty Coffee",
-    "address": "",
+    "address": "H26c+jh6 Fisherman’s Village, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJszhAI4DxVDAR2IAOFd7moUM-1.webp",
@@ -3273,7 +3367,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Izzy's%20Specialty%20Coffee&query_place_id=ChIJszhAI4DxVDAR2IAOFd7moUM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 5,
+    "userRatingCount": 1197
   },
   "https://www.google.com/maps/search/jae%20wan%20banthat%20thong%20bangkok": {
     "placeId": "ChIJFzK8PimZ4jARnkqwKGrzLts",
@@ -3488,7 +3584,7 @@
   "https://www.google.com/maps/search/kamalaya%20koh%20samui": {
     "placeId": "ChIJLYLoEELzVDARK6bVhO2VmzU",
     "name": "Kamalaya",
-    "address": "",
+    "address": "102 9 Laem-Set Rd, Tambon Na Mueang, Amphoe Ko Samui, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJLYLoEELzVDARK6bVhO2VmzU-1.webp",
@@ -3497,7 +3593,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Kamalaya&query_place_id=ChIJLYLoEELzVDARK6bVhO2VmzU",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 195
   },
   "https://www.google.com/maps/search/karmakamet%20diner%20sukhumvit%2024%20bangkok": {
     "placeId": "ChIJtf9bwgOf4jARoYCCQW2EJjs",
@@ -3565,7 +3663,7 @@
   "https://www.google.com/maps/search/khao%20hua%20jook%20pagoda%20koh%20samui": {
     "placeId": "ChIJLeH69jXwVDARZ2icrbzItkM",
     "name": "Khao Hua Jook Pagoda",
-    "address": "",
+    "address": "G3P5+RGX, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJLeH69jXwVDARZ2icrbzItkM-1.webp",
@@ -3574,7 +3672,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Khao%20Hua%20Jook%20Pagoda&query_place_id=ChIJLeH69jXwVDARZ2icrbzItkM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 1371
   },
   "https://www.google.com/maps/search/khao%20kha%20moo%20chang%20phueak%20chiang%20mai": {
     "placeId": "ChIJG9eEK5E62jARDb2Ukq5XTNM",
@@ -3705,7 +3805,7 @@
   "https://www.google.com/maps/search/khaw%20glong%20thai%20chaweng%20koh%20samui": {
     "placeId": "ChIJ2XMVG8vxVDAR0bezjItrpLk",
     "name": "Khaw Glong Thai",
-    "address": "",
+    "address": "200, 12 ตำบล บ่อผุด Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ2XMVG8vxVDAR0bezjItrpLk-1.webp",
@@ -3714,7 +3814,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Khaw%20Glong%20Thai&query_place_id=ChIJ2XMVG8vxVDAR0bezjItrpLk",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1465
   },
   "https://www.google.com/maps/search/kif%20bkk%20ekkamai%20bangkok": {
     "placeId": "ChIJ4QGle8Sf4jARXb8JwZrV9eQ",
@@ -3761,7 +3863,7 @@
   "https://www.google.com/maps/search/kimpton%20kitalay%20samui": {
     "placeId": "ChIJgz3e9V7vVDARkHAE6gTm4Rg",
     "name": "Kimpton Kitalay Samui",
-    "address": "",
+    "address": "10, 79, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJgz3e9V7vVDARkHAE6gTm4Rg-1.webp",
@@ -3770,12 +3872,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Kimpton%20Kitalay%20Samui&query_place_id=ChIJgz3e9V7vVDARkHAE6gTm4Rg",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 1312
   },
   "https://www.google.com/maps/search/king%20of%20bread%20bophut%20koh%20samui": {
     "placeId": "ChIJt99a2_TwVDARR4vsfef52mY",
     "name": "King of Bread (Café K.O.B)",
-    "address": "",
+    "address": "122/11 Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJt99a2_TwVDARR4vsfef52mY-1.webp",
@@ -3784,12 +3888,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=King%20of%20Bread%20(Caf%C3%A9%20K.O.B)&query_place_id=ChIJt99a2_TwVDARR4vsfef52mY",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 1250
   },
   "https://www.google.com/maps/search/koh%20fit%20samui": {
     "placeId": "ChIJgXHMQi7yVDARtRYMjoB3jlI",
     "name": "Koh Fit",
-    "address": "",
+    "address": "79/30 M.6, ตำบล มะเร็ต Koh Samui, Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJgXHMQi7yVDARtRYMjoB3jlI-1.webp",
@@ -3798,12 +3904,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Koh%20Fit&query_place_id=ChIJgXHMQi7yVDARtRYMjoB3jlI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 614
   },
   "https://www.google.com/maps/search/koh%20madsum%20pig%20island": {
     "placeId": "ChIJaYNk97v3VDARefP7W_NF6to",
     "name": "Koh Madsum (Pig Island)",
-    "address": "",
+    "address": "53, Angthong 6, Tambon Ang Thong, Koh Samui, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJaYNk97v3VDARefP7W_NF6to-1.webp",
@@ -3812,12 +3920,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Koh%20Madsum%20(Pig%20Island)&query_place_id=ChIJaYNk97v3VDARefP7W_NF6to",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 3.1,
+    "userRatingCount": 85
   },
   "https://www.google.com/maps/search/koh%20phangan": {
     "placeId": "ChIJ73cD-pb9VDAR_q95XhqN_dM",
     "name": "Koh Phangan",
-    "address": "",
+    "address": "Ko Pha Ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ73cD-pb9VDAR_q95XhqN_dM-1.webp",
@@ -3826,12 +3936,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Koh%20Phangan&query_place_id=ChIJ73cD-pb9VDAR_q95XhqN_dM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 2179
   },
   "https://www.google.com/maps/search/koh%20samui%20hospital%20nathon": {
     "placeId": "ChIJmWj8zUT2VDARz1OtWX_tDb4",
     "name": "Koh Samui Hospital",
-    "address": "",
+    "address": "61, Tambon Ang Thong, Amphoe Ko Samui, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJmWj8zUT2VDARz1OtWX_tDb4-1.webp",
@@ -3840,12 +3952,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Koh%20Samui%20Hospital&query_place_id=ChIJmWj8zUT2VDARz1OtWX_tDb4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 3.1,
+    "userRatingCount": 248
   },
   "https://www.google.com/maps/search/koh%20tao": {
     "placeId": "ChIJ53AuMsChVTARQVNuu1Tz1Yo",
     "name": "Koh Tao",
-    "address": "",
+    "address": "Ko Tao, Surat Thani, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ53AuMsChVTARQVNuu1Tz1Yo-1.webp",
@@ -3854,12 +3968,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Koh%20Tao&query_place_id=ChIJ53AuMsChVTARQVNuu1Tz1Yo",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1799
   },
   "https://www.google.com/maps/search/koh%20thai%20kitchen%20four%20seasons%20koh%20samui": {
     "placeId": "ChIJZWfIAfP3VDARnl4Gqh3dnAw",
     "name": "KOH Thai Kitchen & Bar",
-    "address": "",
+    "address": "219, Moo 5, Tambon Mae Nam, Angthong, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJZWfIAfP3VDARnl4Gqh3dnAw-1.webp",
@@ -3868,7 +3984,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=KOH%20Thai%20Kitchen%20%26%20Bar&query_place_id=ChIJZWfIAfP3VDARnl4Gqh3dnAw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 143
   },
   "https://www.google.com/maps/search/krua%20apsorn%20dinso%20bangkok": {
     "placeId": "ChIJN8lqeBSZ4jAReT6qXHgmoas",
@@ -3936,7 +4054,7 @@
   "https://www.google.com/maps/search/lad%20koh%20viewpoint%20koh%20samui": {
     "placeId": "ChIJ-_Jjl_LxVDARR2XQFCVCHo4",
     "name": "Lad Koh Viewpoint",
-    "address": "",
+    "address": "F3X5+JX5, Bo Put, Ko Samui District, Surat Thani, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ-_Jjl_LxVDARR2XQFCVCHo4-1.webp",
@@ -3945,7 +4063,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Lad%20Koh%20Viewpoint&query_place_id=ChIJ-_Jjl_LxVDARR2XQFCVCHo4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 4394
   },
   "https://www.google.com/maps/search/lady%20buddha%20linh%20ung%20pagoda%20da%20nang": {
     "placeId": "ChIJabEOcucXQjER-8MNU9FNODw",
@@ -3992,7 +4112,7 @@
   "https://www.google.com/maps/search/lamai%20beach%20koh%20samui": {
     "placeId": "ChIJRaxlSU_yVDARaN2w-bDYhfk",
     "name": "Lamai",
-    "address": "",
+    "address": "Lamai Beach, Surat Thani, Thailand",
     "photos": [
       {
         "src": "/places/ChIJRaxlSU_yVDARaN2w-bDYhfk-1.webp",
@@ -4001,12 +4121,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Lamai&query_place_id=ChIJRaxlSU_yVDARaN2w-bDYhfk",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 3777
   },
   "https://www.google.com/maps/search/lamai%20muaythai%20koh%20samui": {
     "placeId": "ChIJUa2QJkzyVDARooesHo_8a68",
     "name": "Lamai Muaythai",
-    "address": "",
+    "address": "82, 2 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJUa2QJkzyVDARooesHo_8a68-1.webp",
@@ -4015,12 +4137,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Lamai%20Muaythai&query_place_id=ChIJUa2QJkzyVDARooesHo_8a68",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 364
   },
   "https://www.google.com/maps/search/lamai%20night%20market%20koh%20samui": {
     "placeId": "ChIJAfusWELzVDARf4OIfVcPtpk",
     "name": "Lamai Night Market",
-    "address": "",
+    "address": "139, 2, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJAfusWELzVDARf4OIfVcPtpk-1.webp",
@@ -4029,7 +4153,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Lamai%20Night%20Market&query_place_id=ChIJAfusWELzVDARf4OIfVcPtpk",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.3,
+    "userRatingCount": 2802
   },
   "https://www.google.com/maps/search/lay%20lao%20ari%20bangkok": {
     "placeId": "ChIJ44AEpx2c4jARZKaM12f1HQI",
@@ -4097,7 +4223,7 @@
   "https://www.google.com/maps/search/le%20steak%20frites%20koh%20samui": {
     "placeId": "ChIJ8axz60vxVDAR0huOFCy_Shw",
     "name": "Le Steak Frites",
-    "address": "",
+    "address": "32 ถนน บ่อผุด, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ8axz60vxVDAR0huOFCy_Shw-1.webp",
@@ -4106,12 +4232,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Le%20Steak%20Frites&query_place_id=ChIJ8axz60vxVDAR0huOFCy_Shw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 434
   },
   "https://www.google.com/maps/search/legacy%20muscle%20universe%20koh%20samui": {
     "placeId": "ChIJjxJ_NQDvVDARmGLx7OaECWg",
     "name": "Legacy Muscle Universe",
-    "address": "",
+    "address": "H38M+99H, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJjxJ_NQDvVDARmGLx7OaECWg-1.webp",
@@ -4120,12 +4248,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Legacy%20Muscle%20Universe&query_place_id=ChIJjxJ_NQDvVDARmGLx7OaECWg",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 666
   },
   "https://www.google.com/maps/search/legend%20x%20fitness%20koh%20samui": {
     "placeId": "ChIJMbUErB3xVDAR7cGYnrV-j3Q",
     "name": "Legend X Fitness",
-    "address": "",
+    "address": "15, 27 beach road, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJMbUErB3xVDAR7cGYnrV-j3Q-1.webp",
@@ -4134,7 +4264,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Legend%20X%20Fitness&query_place_id=ChIJMbUErB3xVDAR7cGYnrV-j3Q",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 5,
+    "userRatingCount": 753
   },
   "https://www.google.com/maps/search/lets%20relax%20spa%20chiang%20mai": {
     "placeId": "ChIJu8WE92E62jARaLXptdtLTRE",
@@ -4223,7 +4355,7 @@
   "https://www.google.com/maps/search/lipa%20noi%20beach%20koh%20samui": {
     "placeId": "ChIJWZd5EN31VDARcWYHGu7esTI",
     "name": "Lipa Noi",
-    "address": "",
+    "address": "Lipa Noi Beach, Ko Samui District, Surat Thani, Thailand",
     "photos": [
       {
         "src": "/places/ChIJWZd5EN31VDARcWYHGu7esTI-1.webp",
@@ -4232,7 +4364,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Lipa%20Noi&query_place_id=ChIJWZd5EN31VDARcWYHGu7esTI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4,
+    "userRatingCount": 130
   },
   "https://www.google.com/maps/search/liti%20nail%20hair%202%20da%20nang": {
     "placeId": "ChIJe0JW1WkXQjERpLcOqYr4T0E",
@@ -4384,7 +4518,7 @@
   "https://www.google.com/maps/search/maenam%20beach%20koh%20samui": {
     "placeId": "ChIJgU34p6_wVDARVjhnzgmFOfA",
     "name": "Maenam",
-    "address": "",
+    "address": "Maenam Beach, 2 Tambon Mae Nam, Amphoe Ko Samui, Chang Wat Surat Thani 84330, Thailand",
     "photos": [
       {
         "src": "/places/ChIJgU34p6_wVDARVjhnzgmFOfA-1.webp",
@@ -4393,7 +4527,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Maenam&query_place_id=ChIJgU34p6_wVDARVjhnzgmFOfA",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 683
   },
   "https://www.google.com/maps/search/magnolia%20cafe%20chiang%20mai": {
     "placeId": "ChIJGaxEJLk62jAR0qLCpNDcjzk",
@@ -4503,7 +4639,7 @@
   "https://www.google.com/maps/search/malee%20kitchen%20chaweng": {
     "placeId": "ChIJ8bFwZzLwVDARCbKUOd-A-_w",
     "name": "Malee Kitchen",
-    "address": "",
+    "address": "17/58 Moo 3, Chaweng Beach, ตำบล บ่อผุด Koh Samui, สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ8bFwZzLwVDARCbKUOd-A-_w-1.webp",
@@ -4512,7 +4648,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Malee%20Kitchen&query_place_id=ChIJ8bFwZzLwVDARCbKUOd-A-_w",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 1056
   },
   "https://www.google.com/maps/search/mandarin%20oriental%20bangkok": {
     "placeId": "ChIJs6CnycSY4jAR5cqJZjPOsgs",
@@ -4538,7 +4676,7 @@
   "https://www.google.com/maps/search/mantra%20samui%20resort%20koh%20samui": {
     "placeId": "ChIJs0dkYLnwVDARFPPENKRlt2U",
     "name": "Mantra Samui Resort - Adults Only",
-    "address": "",
+    "address": "9/123-124, Tambon Mae Nam, Amphoe Ko Samui, Chang Wat Surat Thani 84330, Thailand",
     "photos": [
       {
         "src": "/places/ChIJs0dkYLnwVDARFPPENKRlt2U-1.webp",
@@ -4547,7 +4685,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Mantra%20Samui%20Resort%20-%20Adults%20Only&query_place_id=ChIJs0dkYLnwVDARFPPENKRlt2U",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 1046
   },
   "https://www.google.com/maps/search/manu%20manu%20bangkok": {
     "placeId": "ChIJ-d2y6ddjHTERbM3vFkCvBE8",
@@ -4741,7 +4881,7 @@
   "https://www.google.com/maps/search/mit%20samui%20restaurant%20chaweng": {
     "placeId": "ChIJw1nn5rnxVDARY4kQOzQu1HI",
     "name": "Mit Samui",
-    "address": "",
+    "address": "G3M7+JQC ตลาดพังบัว Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJw1nn5rnxVDARY4kQOzQu1HI-1.webp",
@@ -4750,12 +4890,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Mit%20Samui&query_place_id=ChIJw1nn5rnxVDARY4kQOzQu1HI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1619
   },
   "https://www.google.com/maps/search/monami%20cafe%20bangrak%20koh%20samui": {
     "placeId": "ChIJ5XIjrNrxVDARIMeYYBtNxfY",
     "name": "MonAmi Café",
-    "address": "",
+    "address": "33, Bangrak, 109, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ5XIjrNrxVDARIMeYYBtNxfY-1.webp",
@@ -4764,7 +4906,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=MonAmi%20Caf%C3%A9&query_place_id=ChIJ5XIjrNrxVDARIMeYYBtNxfY",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 386
   },
   "https://www.google.com/maps/search/mont%20nom%20sod%20bangkok": {
     "placeId": "ChIJ0QDC8BOZ4jARY7WqIrAOkck",
@@ -4853,7 +4997,7 @@
   "https://www.google.com/maps/search/na%20muang%20waterfall%20koh%20samui": {
     "placeId": "ChIJs4JYrs3zVDAR8YtHyZlFJ_M",
     "name": "Na Muang Waterfall",
-    "address": "",
+    "address": "4169, Tambon Na Mueang, Amphoe Ko Samui, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJs4JYrs3zVDAR8YtHyZlFJ_M-1.webp",
@@ -4862,7 +5006,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Na%20Muang%20Waterfall&query_place_id=ChIJs4JYrs3zVDAR8YtHyZlFJ_M",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 3.8,
+    "userRatingCount": 4600
   },
   "https://www.google.com/maps/search/nahm%20bangkok": {
     "placeId": "ChIJHULm2C-f4jAR-phOAtQVND4",
@@ -4888,7 +5034,7 @@
   "https://www.google.com/maps/search/nahm%20koh%20samui": {
     "placeId": "ChIJwyxfQfLzVDARX78NvhDzWac",
     "name": "Nahm",
-    "address": "",
+    "address": "16/9, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJwyxfQfLzVDARX78NvhDzWac-1.webp",
@@ -4897,7 +5043,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Nahm&query_place_id=ChIJwyxfQfLzVDARX78NvhDzWac",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 693
   },
   "https://www.google.com/maps/search/nai%20uan%20yentafo%20sao%20chingcha%20bangkok": {
     "placeId": "ChIJo7-3exGZ4jAR_bRU8sOfCuo",
@@ -5007,7 +5155,7 @@
   "https://www.google.com/maps/search/nana%20tam%20lamai%20koh%20samui": {
     "placeId": "ChIJkbFcujnyVDARh9R3X_XGf7A",
     "name": "Nana Tam",
-    "address": "",
+    "address": "83/25 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJkbFcujnyVDARh9R3X_XGf7A-1.webp",
@@ -5016,7 +5164,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Nana%20Tam&query_place_id=ChIJkbFcujnyVDARh9R3X_XGf7A",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 1417
   },
   "https://www.google.com/maps/search/natura%20cafe%20bangkok": {
     "placeId": "ChIJ8wpY8NiZ4jAR9ke7bdw2Guc",
@@ -5084,7 +5234,7 @@
   "https://www.google.com/maps/search/nid%27s%20nails%202%20lamai": {
     "placeId": "ChIJ52QKmZTzVDARtR1Vvb87bGA",
     "name": "Nid's Nails 2 @Lamai",
-    "address": "",
+    "address": "124/558moo3, ถนน หาดละไม ตำบล มะเร็ต อำเภอเกาะสมุย สุราษฎร์ธานี 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ52QKmZTzVDARtR1Vvb87bGA-1.webp",
@@ -5093,7 +5243,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Nid's%20Nails%202%20%40Lamai&query_place_id=ChIJ52QKmZTzVDARtR1Vvb87bGA",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 296
   },
   "https://www.google.com/maps/search/nine%20one%20coffee%20nimman%20chiang%20mai": {
     "placeId": "ChIJU4lYWWI62jARPaj8eacVGYw",
@@ -5453,7 +5605,7 @@
   "https://www.google.com/maps/search/paupau%20coffee%20roaster%20koh%20samui": {
     "placeId": "ChIJVzYCGCbxVDARp7O7wfTCbss",
     "name": "Paupau Coffee Roaster",
-    "address": "",
+    "address": "Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJVzYCGCbxVDARp7O7wfTCbss-1.webp",
@@ -5462,7 +5614,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Paupau%20Coffee%20Roaster&query_place_id=ChIJVzYCGCbxVDARp7O7wfTCbss",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 260
   },
   "https://www.google.com/maps/search/penthouse%20bar%20grill%20park%20hyatt%20bangkok": {
     "placeId": "ChIJofdvmNye4jARlv5unoZTqP4",
@@ -5551,7 +5705,7 @@
   "https://www.google.com/maps/search/pi%20samui%20beach%20club%20and%20restaurant": {
     "placeId": "ChIJfSDhz0rvVDAR79kOGa2WeXY",
     "name": "Pi Samui Beach Club and Restaurant",
-    "address": "",
+    "address": "24, 84, Thesaban Nakhon Ko Samui, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJfSDhz0rvVDAR79kOGa2WeXY-1.webp",
@@ -5560,7 +5714,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Pi%20Samui%20Beach%20Club%20and%20Restaurant&query_place_id=ChIJfSDhz0rvVDAR79kOGa2WeXY",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 1313
   },
   "https://www.google.com/maps/search/pig%20gym%20da%20nang": {
     "placeId": "ChIJw6u8ivIZQjER-jEvDr_7tv0",
@@ -5754,7 +5910,7 @@
   "https://www.google.com/maps/search/prego%20samui": {
     "placeId": "ChIJYa6CCTLwVDAR4_Trvx1gxwo",
     "name": "Prego Samui",
-    "address": "",
+    "address": "Chaweng Beach, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJYa6CCTLwVDAR4_Trvx1gxwo-1.webp",
@@ -5763,7 +5919,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Prego%20Samui&query_place_id=ChIJYa6CCTLwVDAR4_Trvx1gxwo",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 2708
   },
   "https://www.google.com/maps/search/premier%20village%20danang%20resort": {
     "placeId": "ChIJaSo3v2gXQjERFcTOnbPKUiE",
@@ -5803,7 +5961,7 @@
   "https://www.google.com/maps/search/punch%20it%20gym%20lamai%20koh%20samui": {
     "placeId": "ChIJTdvKKDTyVDARvLuwjLkXQN8",
     "name": "Punch it Gym",
-    "address": "",
+    "address": "Maret, Ko Samui District, Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJTdvKKDTyVDARvLuwjLkXQN8-1.webp",
@@ -5812,12 +5970,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Punch%20it%20Gym&query_place_id=ChIJTdvKKDTyVDARvLuwjLkXQN8",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 918
   },
   "https://www.google.com/maps/search/punch%20it%20healthy%20cafe%20koh%20samui": {
     "placeId": "ChIJC8-fAwbzVDARWeCSVm8DM3w",
     "name": "Punch It Healthy Cafe",
-    "address": "",
+    "address": "124, 666, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJC8-fAwbzVDARWeCSVm8DM3w-1.webp",
@@ -5826,7 +5986,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Punch%20It%20Healthy%20Cafe&query_place_id=ChIJC8-fAwbzVDARWeCSVm8DM3w",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 1139
   },
   "https://www.google.com/maps/search/queen%20spa%20da%20nang": {
     "placeId": "ChIJjwHqn9UZQjERfjpTNTc-qEU",
@@ -5957,7 +6119,7 @@
   "https://www.google.com/maps/search/red%20moon%20fisherman%20village%20koh%20samui": {
     "placeId": "ChIJfajMuYvwVDARkYB2eU_6GdE",
     "name": "Red Moon",
-    "address": "",
+    "address": "12 Moo 1 Thanon Haad, Fisherman village, เทศบาลนครเกาะสมุย Suratthani, สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJfajMuYvwVDARkYB2eU_6GdE-1.webp",
@@ -5966,7 +6128,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Red%20Moon&query_place_id=ChIJfajMuYvwVDARkYB2eU_6GdE",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1382
   },
   "https://www.google.com/maps/search/red%20sky%20centara%20grand%20bangkok": {
     "placeId": "ChIJaWYJu8-e4jARCqFsNRnGKxo",
@@ -6034,7 +6198,7 @@
   "https://www.google.com/maps/search/ritz%20carlton%20koh%20samui": {
     "placeId": "ChIJt1Xl86z6VDARG51Euazds5A",
     "name": "The Ritz-Carlton, Koh Samui",
-    "address": "",
+    "address": "9/123, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJt1Xl86z6VDARG51Euazds5A-1.webp",
@@ -6043,7 +6207,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Ritz-Carlton%2C%20Koh%20Samui&query_place_id=ChIJt1Xl86z6VDARG51Euazds5A",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1222
   },
   "https://www.google.com/maps/search/roast%20coffee%20eats%20the%20commons%20bangkok": {
     "placeId": "ChIJicwRRFOe4jARAcJ7qJDLIe8",
@@ -6258,7 +6424,7 @@
   "https://www.google.com/maps/search/sabienglae%20lamai%20koh%20samui": {
     "placeId": "ChIJNU4rLlPyVDARb2TEqsPPqyQ",
     "name": "Sabienglae",
-    "address": "",
+    "address": "438, 82 หมู่ 1 ถ. ทวีราษฎร์ภักดี Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJNU4rLlPyVDARb2TEqsPPqyQ-1.webp",
@@ -6267,7 +6433,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Sabienglae&query_place_id=ChIJNU4rLlPyVDARb2TEqsPPqyQ",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.3,
+    "userRatingCount": 2660
   },
   "https://www.google.com/maps/search/sala%20rattanakosin%20eatery%20and%20bar%20bangkok": {
     "placeId": "ChIJx9xD64yZ4jAR_dCldXx1l8c",
@@ -6293,7 +6461,7 @@
   "https://www.google.com/maps/search/salathai%20restaurant%20lamai%20koh%20samui": {
     "placeId": "ChIJa5yUB0nyVDARY-ZbsdPuzkw",
     "name": "Sala Thai",
-    "address": "",
+    "address": "124 173 Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJa5yUB0nyVDARY-ZbsdPuzkw-1.webp",
@@ -6302,12 +6470,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Sala%20Thai&query_place_id=ChIJa5yUB0nyVDARY-ZbsdPuzkw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 1070
   },
   "https://www.google.com/maps/search/salt%20society%20beach%20bar%20kitchen%20centara%20reserve%20koh%20samui": {
     "placeId": "ChIJD-Nw6gDxVDARyMtG6vryDpM",
     "name": "Salt Society - Beach Bar & Kitchen",
-    "address": "",
+    "address": "38/2 Moo 3 Borpud, Chaweng Beach, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJD-Nw6gDxVDARyMtG6vryDpM-1.webp",
@@ -6316,7 +6486,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Salt%20Society%20-%20Beach%20Bar%20%26%20Kitchen&query_place_id=ChIJD-Nw6gDxVDARyMtG6vryDpM",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 591
   },
   "https://www.google.com/maps/search/samlor%20charoen%20krung%20bangkok": {
     "placeId": "ChIJT3YcokmZ4jAR7vtBsFlKJAU",
@@ -6384,7 +6556,7 @@
   "https://www.google.com/maps/search/sareeraya%20villas%20and%20suites%20chaweng": {
     "placeId": "ChIJEUZMUxXxVDAR3bTc5PtBJiU",
     "name": "Sareeraya Villas & Suites",
-    "address": "",
+    "address": "100, 1 Chaweng Beach Rd, Thesaban Nakhon Ko Samui, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJEUZMUxXxVDAR3bTc5PtBJiU-1.webp",
@@ -6393,7 +6565,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Sareeraya%20Villas%20%26%20Suites&query_place_id=ChIJEUZMUxXxVDAR3bTc5PtBJiU",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4,
+    "userRatingCount": 221
   },
   "https://www.google.com/maps/search/sarnies%20bangkok": {
     "placeId": "ChIJUXT3NL6Z4jARwh3cJq_bkog",
@@ -6440,7 +6614,7 @@
   "https://www.google.com/maps/search/secret%20buddha%20garden%20koh%20samui": {
     "placeId": "ChIJ3372BPnzVDARcS8YSmZEUjs",
     "name": "Secret Buddha Garden",
-    "address": "",
+    "address": "FXMV+5Q9, Na Mueang, Ko Samui District, Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ3372BPnzVDARcS8YSmZEUjs-1.webp",
@@ -6449,7 +6623,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Secret%20Buddha%20Garden&query_place_id=ChIJ3372BPnzVDARcS8YSmZEUjs",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 6613
   },
   "https://www.google.com/maps/search/shilla%20monogram%20quangnam%20danang": {
     "placeId": "ChIJQT4SLJwRQjERvym-dW5QWJ0",
@@ -6496,7 +6672,7 @@
   "https://www.google.com/maps/search/silver%20beach%20koh%20samui": {
     "placeId": "ChIJPzxggBDyVDARKfhbFYBsQsw",
     "name": "Silver Beach",
-    "address": "",
+    "address": "124 F3H8+4G2, 4, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJPzxggBDyVDARKfhbFYBsQsw-1.webp",
@@ -6505,12 +6681,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Silver%20Beach&query_place_id=ChIJPzxggBDyVDARKfhbFYBsQsw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.2,
+    "userRatingCount": 3040
   },
   "https://www.google.com/maps/search/silverbeach%20restaurant%20silver%20beach%20koh%20samui": {
     "placeId": "ChIJPzxggBDyVDARKfhbFYBsQsw",
     "name": "Silver Beach",
-    "address": "",
+    "address": "124 F3H8+4G2, 4, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJPzxggBDyVDARKfhbFYBsQsw-1.webp",
@@ -6519,7 +6697,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Silver%20Beach&query_place_id=ChIJPzxggBDyVDARKfhbFYBsQsw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.2,
+    "userRatingCount": 3040
   },
   "https://www.google.com/maps/search/sin%20rooftop%20bangkok": {
     "placeId": "ChIJVwZugw2Z4jARb9AqXVD9nRk",
@@ -6816,7 +6996,7 @@
   "https://www.google.com/maps/search/star%20gym%20chaweng%20koh%20samui": {
     "placeId": "ChIJTdKvBsbxVDARAUcMmrkd8Rw",
     "name": "Star Gym",
-    "address": "",
+    "address": "14, 102 Chaweng Beach Rd, Tambon Bo Put, Koh Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJTdKvBsbxVDARAUcMmrkd8Rw-1.webp",
@@ -6825,7 +7005,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Star%20Gym&query_place_id=ChIJTdKvBsbxVDARAUcMmrkd8Rw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 773
   },
   "https://www.google.com/maps/search/stella%20maris%20rooftop%20da%20nang": {
     "placeId": "ChIJd7nma-oZQjERtu-Ew59M2bs",
@@ -6914,7 +7096,7 @@
   "https://www.google.com/maps/search/superpro%20samui": {
     "placeId": "ChIJfeIUdL3xVDARsrtGOA99OEw",
     "name": "Superpro Samui",
-    "address": "",
+    "address": "48, 10, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJfeIUdL3xVDARsrtGOA99OEw-1.webp",
@@ -6923,7 +7105,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Superpro%20Samui&query_place_id=ChIJfeIUdL3xVDARsrtGOA99OEw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 490
   },
   "https://www.google.com/maps/search/sw1%20market%20asok%20sukhumvit%20bangkok": {
     "placeId": "ChIJMSSVbwCf4jARMQeZPaFCjGo",
@@ -6949,7 +7133,7 @@
   "https://www.google.com/maps/search/sweet%20basil%20lamai%20koh%20samui": {
     "placeId": "ChIJ9Z5dDwDzVDARYkpT9QhMypQ",
     "name": "Sweet Basil",
-    "address": "",
+    "address": "128, 64 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ9Z5dDwDzVDARYkpT9QhMypQ-1.webp",
@@ -6958,7 +7142,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Sweet%20Basil&query_place_id=ChIJ9Z5dDwDzVDARYkpT9QhMypQ",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 384
   },
   "https://www.google.com/maps/search/sweet%20home%20coffee%20a%20little%20corner%20chiang%20mai": {
     "placeId": "ChIJ4yCWiP472jARrkBiZS2GQ-4",
@@ -6984,7 +7170,7 @@
   "https://www.google.com/maps/search/talay%20beach%20restaurant%20samui": {
     "placeId": "ChIJVZ1TKwzxVDAR11NATqux5A8",
     "name": "Talay Beach Restaurant",
-    "address": "",
+    "address": "90 1, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJVZ1TKwzxVDAR11NATqux5A8-1.webp",
@@ -6993,12 +7179,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Talay%20Beach%20Restaurant&query_place_id=ChIJVZ1TKwzxVDAR11NATqux5A8",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 1318
   },
   "https://www.google.com/maps/search/tamarind%20springs%20koh%20samui": {
     "placeId": "ChIJmwUGlD3yVDAR9oSf3FIYCwU",
     "name": "Tamarind Springs",
-    "address": "",
+    "address": "265, 1, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJmwUGlD3yVDAR9oSf3FIYCwU-1.webp",
@@ -7007,7 +7195,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Tamarind%20Springs&query_place_id=ChIJmwUGlD3yVDAR9oSf3FIYCwU",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 706
   },
   "https://www.google.com/maps/search/tamarind%20village%20chiang%20mai": {
     "placeId": "ChIJSZfql5g62jARmEB8luWeFTs",
@@ -7054,7 +7244,7 @@
   "https://www.google.com/maps/search/tandoori%20nights%20lamai%20koh%20samui": {
     "placeId": "ChIJdR7yTzjyVDAR64xm_1sQSKU",
     "name": "Tandoori Nights",
-    "address": "",
+    "address": "หมู่ที่ 3, 130/1 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJdR7yTzjyVDAR64xm_1sQSKU-1.webp",
@@ -7063,7 +7253,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Tandoori%20Nights&query_place_id=ChIJdR7yTzjyVDAR64xm_1sQSKU",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1942
   },
   "https://www.google.com/maps/search/terminal%2021%20asok%20bangkok": {
     "placeId": "ChIJuWuZbh6f4jAReZMEm2xxgzM",
@@ -7110,7 +7302,7 @@
   "https://www.google.com/maps/search/thai%20international%20hospital%20koh%20samui": {
     "placeId": "ChIJEdV4cFPwVDARcJdTGC5hSDg",
     "name": "Thai International Hospital",
-    "address": "",
+    "address": "25/25 Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJEdV4cFPwVDARcJdTGC5hSDg-1.webp",
@@ -7119,12 +7311,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Thai%20International%20Hospital&query_place_id=ChIJEdV4cFPwVDARcJdTGC5hSDg",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 587
   },
   "https://www.google.com/maps/search/thai%20tapas%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJz2ed9U_xVDARjhuzmQRV89I",
     "name": "Thai Tapas",
-    "address": "",
+    "address": "29, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJz2ed9U_xVDARjhuzmQRV89I-1.webp",
@@ -7133,7 +7327,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Thai%20Tapas&query_place_id=ChIJz2ed9U_xVDARjhuzmQRV89I",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1331
   },
   "https://www.google.com/maps/search/thapae%20grill%20chiang%20mai": {
     "placeId": "ChIJq1Ie3og72jARPAA1LHUD4AM",
@@ -7201,7 +7397,7 @@
   "https://www.google.com/maps/search/the%20cliff%20bar%20and%20grill%20koh%20samui": {
     "placeId": "ChIJL8e4qBvyVDARseufJgSHRVw",
     "name": "The Cliff Bar & Grill",
-    "address": "",
+    "address": "124/2 Tambon Maret, Suratthani, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJL8e4qBvyVDARseufJgSHRVw-1.webp",
@@ -7210,12 +7406,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Cliff%20Bar%20%26%20Grill&query_place_id=ChIJL8e4qBvyVDARseufJgSHRVw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 1463
   },
   "https://www.google.com/maps/search/the%20cocoon%20samui%20viewpoint": {
     "placeId": "ChIJK1GS-3HxVDAR1O5MEwpWfgw",
     "name": "The Cocoon - Samui Viewpoint",
-    "address": "",
+    "address": "33, 67, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJK1GS-3HxVDAR1O5MEwpWfgw-1.webp",
@@ -7224,7 +7422,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Cocoon%20-%20Samui%20Viewpoint&query_place_id=ChIJK1GS-3HxVDAR1O5MEwpWfgw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 10996
   },
   "https://www.google.com/maps/search/the%20coffee%20club%20bangkok": {
     "placeId": "ChIJBY2F7PKf4jARlu350C8P93M",
@@ -7250,7 +7450,7 @@
   "https://www.google.com/maps/search/the%20coffee%20club%20fisherman%20village%20samui": {
     "placeId": "ChIJGTrXbP7xVDARE8upLkQdkHY",
     "name": "The Coffee Club - Fisherman's Village",
-    "address": "",
+    "address": "Room D2, Fisherman Village, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJGTrXbP7xVDARE8upLkQdkHY-1.webp",
@@ -7259,7 +7459,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Coffee%20Club%20-%20Fisherman's%20Village&query_place_id=ChIJGTrXbP7xVDARE8upLkQdkHY",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 199
   },
   "https://www.google.com/maps/search/the%20continental%20bar%20nimman%20chiang%20mai": {
     "placeId": "ChIJmTM9tCo72jAR2OtT_QVjlSs",
@@ -7348,7 +7550,7 @@
   "https://www.google.com/maps/search/the%20hub%20samui%20lamai": {
     "placeId": "ChIJ6yuOmFHzVDARl_nbfnoTgFc",
     "name": "The Hub Samui",
-    "address": "",
+    "address": "82 Thanon Had Lamai, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ6yuOmFHzVDARl_nbfnoTgFc-1.webp",
@@ -7357,12 +7559,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Hub%20Samui&query_place_id=ChIJ6yuOmFHzVDARl_nbfnoTgFc",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 634
   },
   "https://www.google.com/maps/search/the%20hungry%20wolf%20chaweng%20koh%20samui": {
     "placeId": "ChIJq6qqqrnxVDARyco6g8uh7Xk",
     "name": "The Hungry Wolf",
-    "address": "",
+    "address": "17 46 Tambon Bo Put, Koh Samui Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJq6qqqrnxVDARyco6g8uh7Xk-1.webp",
@@ -7371,12 +7575,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Hungry%20Wolf&query_place_id=ChIJq6qqqrnxVDARyco6g8uh7Xk",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1803
   },
   "https://www.google.com/maps/search/the%20jungle%20club%20koh%20samui": {
     "placeId": "ChIJJSri5I_xVDARUh4dEZIRFiU",
     "name": "The Jungle Club",
-    "address": "",
+    "address": "44, 11 หมู่ที่ 3 ตําบล, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJJSri5I_xVDARUh4dEZIRFiU-1.webp",
@@ -7385,12 +7591,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Jungle%20Club&query_place_id=ChIJJSri5I_xVDARUh4dEZIRFiU",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.3,
+    "userRatingCount": 6935
   },
   "https://www.google.com/maps/search/the%20library%20koh%20samui": {
     "placeId": "ChIJe6Zy9L3xVDARhkRSFK9Hhng",
     "name": "The Library",
-    "address": "",
+    "address": "14 1 ตำบล บ่อผุด Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJe6Zy9L3xVDARhkRSFK9Hhng-1.webp",
@@ -7399,7 +7607,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Library&query_place_id=ChIJe6Zy9L3xVDARhkRSFK9Hhng",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 945
   },
   "https://www.google.com/maps/search/the%20little%20sunday%20cafe%20chiang%20mai": {
     "placeId": "ChIJ01LXGDw72jARusTp6FHDULI",
@@ -7425,7 +7635,7 @@
   "https://www.google.com/maps/search/the%20mango%20tree%20bar%20and%20bistro%20lamai%20koh%20samui": {
     "placeId": "ChIJT5AFqwvzVDARubkVOXiIjvU",
     "name": "The Mango Tree Bar and Bistro",
-    "address": "",
+    "address": "101/47, Lamai, ตำบล มะเร็ต อำเภอเกาะสมุย สุราษฎร์ธานี 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJT5AFqwvzVDARubkVOXiIjvU-1.webp",
@@ -7434,7 +7644,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Mango%20Tree%20Bar%20and%20Bistro&query_place_id=ChIJT5AFqwvzVDARubkVOXiIjvU",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 48
   },
   "https://www.google.com/maps/search/the%20meatchop%20bangkok": {
     "placeId": "ChIJT-oxkyWf4jARUeH8Uz2J_to",
@@ -7481,7 +7693,7 @@
   "https://www.google.com/maps/search/the%20oyster%20bar%20x%20samui": {
     "placeId": "ChIJHd4-RoPzVDAR7W3R62psQ9w",
     "name": "The Oyster Bar X Samui",
-    "address": "",
+    "address": "84/34 M.3, ถนน หาดละไม ตำบล มะเร็ต Koh Samui, สุราษฎร์ธานี 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJHd4-RoPzVDAR7W3R62psQ9w-1.webp",
@@ -7490,7 +7702,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Oyster%20Bar%20X%20Samui&query_place_id=ChIJHd4-RoPzVDAR7W3R62psQ9w",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 1612
   },
   "https://www.google.com/maps/search/the%20peninsula%20bangkok": {
     "placeId": "ChIJp8e_7NOY4jARN83NYCd7tVc",
@@ -7537,7 +7751,7 @@
   "https://www.google.com/maps/search/the%20roof%20samui": {
     "placeId": "ChIJ358sT57xVDARq8xNI7QtRAc",
     "name": "The Roof Samui",
-    "address": "",
+    "address": "55, 23, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ358sT57xVDARq8xNI7QtRAc-1.webp",
@@ -7546,12 +7760,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Roof%20Samui&query_place_id=ChIJ358sT57xVDARq8xNI7QtRAc",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 1855
   },
   "https://www.google.com/maps/search/the%20shack%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJsxzMEIzwVDARFB-DYIQ54_U",
     "name": "The Shack",
-    "address": "",
+    "address": "88/3 Moo 1 Fisherman's Village, ตำบล บ่อผุด อำเภอเกาะสมุย สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJsxzMEIzwVDARFB-DYIQ54_U-1.webp",
@@ -7560,7 +7776,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=The%20Shack&query_place_id=ChIJsxzMEIzwVDARFB-DYIQ54_U",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 1381
   },
   "https://www.google.com/maps/search/the%20siam%20hotel%20bangkok": {
     "placeId": "ChIJbw__g9-b4jAR3iYpzC9gRoI",
@@ -7796,7 +8014,7 @@
   "https://www.google.com/maps/search/tiki%20beach%20club%20and%20bungalows%20samui": {
     "placeId": "ChIJYWnRH37zVDAR-Rk6Yrmlsd4",
     "name": "Tiki Beach Club",
-    "address": "",
+    "address": "125/41 ม.3 Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJYWnRH37zVDAR-Rk6Yrmlsd4-1.webp",
@@ -7805,12 +8023,14 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Tiki%20Beach%20Club&query_place_id=ChIJYWnRH37zVDAR-Rk6Yrmlsd4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 379
   },
   "https://www.google.com/maps/search/to%20be%20sweet%20koh%20samui": {
     "placeId": "ChIJWwqGyWfxVDARXIbn2USXTy0",
     "name": "To Be Sweet",
-    "address": "",
+    "address": "4169, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJWwqGyWfxVDARXIbn2USXTy0-1.webp",
@@ -7819,7 +8039,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=To%20Be%20Sweet&query_place_id=ChIJWwqGyWfxVDARXIbn2USXTy0",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 1083
   },
   "https://www.google.com/maps/search/toong%20coworking%20da%20nang": {
     "placeId": "ChIJQyqXaKGsNTER4HmYZxfYcw8",
@@ -7929,7 +8151,7 @@
   "https://www.google.com/maps/search/tropical%20murphy%27s%20chaweng%20koh%20samui": {
     "placeId": "ChIJ5cOjPsrxVDARCWnhk8uW8ew",
     "name": "Tropical Murphy's",
-    "address": "",
+    "address": "14, 40 หมู่ที่ 2 ถนน เฉวงบีช, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ5cOjPsrxVDARCWnhk8uW8ew-1.webp",
@@ -7938,7 +8160,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Tropical%20Murphy's&query_place_id=ChIJ5cOjPsrxVDARCWnhk8uW8ew",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.4,
+    "userRatingCount": 750
   },
   "https://www.google.com/maps/search/true%20digital%20park%20bangkok": {
     "placeId": "ChIJsRsYadKe4jARdjyYungxDAY",
@@ -7985,7 +8209,7 @@
   "https://www.google.com/maps/search/ultra%20bodies%20gym%20lamai": {
     "placeId": "ChIJ6ZzAaqjzVDARMPeKuwUwsEI",
     "name": "Ultra Bodies Gym",
-    "address": "",
+    "address": "139 / 48-49 Moo 4 Thambon Maret Lamai Thambon Maret Lamai, ตำบล มะเร็ต อำเภอเกาะสมุย สุราษฎร์ธานี 84310, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ6ZzAaqjzVDARMPeKuwUwsEI-1.webp",
@@ -7994,7 +8218,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Ultra%20Bodies%20Gym&query_place_id=ChIJ6ZzAaqjzVDARMPeKuwUwsEI",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 312
   },
   "https://www.google.com/maps/search/uncle%20liu%20er%20phra%20khanong%20bangkok": {
     "placeId": "ChIJ_947cbuf4jAR5j3QRqdjhwQ",
@@ -8125,7 +8351,7 @@
   "https://www.google.com/maps/search/w%20nail%20studio%20chaweng": {
     "placeId": "ChIJ3_v4V9bxVDARrA9ndZGODfE",
     "name": "W Nail Studio - Chaweng",
-    "address": "",
+    "address": "167 55 Chaweng Beach Rd, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJ3_v4V9bxVDARrA9ndZGODfE-1.webp",
@@ -8134,7 +8360,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=W%20Nail%20Studio%20-%20Chaweng&query_place_id=ChIJ3_v4V9bxVDARrA9ndZGODfE",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.8,
+    "userRatingCount": 271
   },
   "https://www.google.com/maps/search/warorot%20market%20chiang%20mai": {
     "placeId": "ChIJUXF8Lzo72jARQGy1_Bh_wCQ",
@@ -8223,7 +8451,7 @@
   "https://www.google.com/maps/search/wat%20khunaram%20koh%20samui": {
     "placeId": "ChIJEUti54LzVDAR_QcBNK-lTQw",
     "name": "Wat Khunaram",
-    "address": "",
+    "address": "C2X2+R49 วัดคุณาราม Tambon Na Mueang, Amphoe Ko Samui, Chang Wat Surat Thani 84140, Thailand",
     "photos": [
       {
         "src": "/places/ChIJEUti54LzVDAR_QcBNK-lTQw-1.webp",
@@ -8232,7 +8460,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Wat%20Khunaram&query_place_id=ChIJEUti54LzVDAR_QcBNK-lTQw",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.5,
+    "userRatingCount": 2588
   },
   "https://www.google.com/maps/search/wat%20lok%20molee%20chiang%20mai": {
     "placeId": "ChIJdQDDAJE62jARAEom00EUJDc",
@@ -8384,7 +8614,7 @@
   "https://www.google.com/maps/search/wat%20plai%20laem%20koh%20samui": {
     "placeId": "ChIJQc1OzAjwVDARv0towXonUM8",
     "name": "Wat Plai Laem",
-    "address": "",
+    "address": "Wat Plai Laem, 4171, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJQc1OzAjwVDARv0towXonUM8-1.webp",
@@ -8393,7 +8623,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Wat%20Plai%20Laem&query_place_id=ChIJQc1OzAjwVDARv0towXonUM8",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.7,
+    "userRatingCount": 8554
   },
   "https://www.google.com/maps/search/wat%20sri%20suphan%20silver%20temple%20chiang%20mai": {
     "placeId": "ChIJ81yeUHYw2jARY_cUFjY3Yxk",
@@ -8629,7 +8861,7 @@
   "https://www.google.com/maps/search/zazen%20boutique%20resort%20and%20spa%20samui": {
     "placeId": "ChIJi7VWX5fwVDARFvdvOlZeMi4",
     "name": "Zazen Boutique Resort & Spa",
-    "address": "",
+    "address": "177 Beach Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJi7VWX5fwVDARFvdvOlZeMi4-1.webp",
@@ -8638,7 +8870,9 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Zazen%20Boutique%20Resort%20%26%20Spa&query_place_id=ChIJi7VWX5fwVDARFvdvOlZeMi4",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.6,
+    "userRatingCount": 700
   },
   "https://www.google.com/maps/search/zira%20spa%20chiang%20mai": {
     "placeId": "ChIJyyGI5aI62jARNyUulomat4E",
@@ -8685,7 +8919,7 @@
   "https://www.google.com/maps/search/zoi%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJKXhwGozwVDAR5s2ePMIhSzQ",
     "name": "ZOI",
-    "address": "",
+    "address": "73/1 Moo 1 Fisherman's Village, ตำบล บ่อผุด Koh Samui, สุราษฎร์ธานี 84320, Thailand",
     "photos": [
       {
         "src": "/places/ChIJKXhwGozwVDAR5s2ePMIhSzQ-1.webp",
@@ -8694,6 +8928,8 @@
       }
     ],
     "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=ZOI&query_place_id=ChIJKXhwGozwVDAR5s2ePMIhSzQ",
-    "fetchedAt": "2026-10-10"
+    "fetchedAt": "2026-10-10",
+    "rating": 4.9,
+    "userRatingCount": 1563
   }
 }
