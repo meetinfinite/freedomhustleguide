@@ -129,7 +129,8 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "trips-and-activities",
     title: "Trips & Activities",
     description: "Trip gems and tourist traps. What's worth your weekend.",
-    icon: "🏝️",
+    // Map, not a palm tree - works for cities as well as islands
+    icon: "🗺️",
     readingTime: "6 min"
   },
   {
