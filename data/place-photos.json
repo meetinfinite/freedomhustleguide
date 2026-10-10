@@ -1,43 +1,8 @@
 {
-  "https://www.google.com/maps/search/coco%20tam%27s%20fisherman%27s%20village%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/coco-tams.webp",
-    "credit": "Coco Tam's",
-    "creditUri": "https://www.facebook.com/CoCoTams"
-  },
-  "https://www.google.com/maps/search/flo%20coffee%20roaster%20chaweng%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/flo-coffee-roaster.webp",
-    "credit": "Flo Coffee Roaster",
-    "creditUri": "https://www.facebook.com/flocoffeeexperience"
-  },
-  "https://www.google.com/maps/search/izzy%27s%20specialty%20coffee%20fisherman%27s%20village%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/izzys-coffee.webp",
-    "credit": "Izzy's Coffee",
-    "creditUri": "https://www.instagram.com/izzy.coffee/"
-  },
-  "https://www.google.com/maps/search/king%20of%20bread%20bophut%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/king-of-bread-bophut.webp",
-    "credit": "King of Bread",
-    "creditUri": "https://kingofbread.co/"
-  },
-  "https://www.google.com/maps/search/monami%20cafe%20bangrak%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/monami-cafe.webp",
-    "credit": "MonAmi Café",
-    "creditUri": "https://monamisamui.com/"
-  },
   "https://www.google.com/maps/search/silverbeach%20restaurant%20silver%20beach%20koh%20samui": {
     "src": "/uploads/places/koh-samui/silver-beach.webp",
     "credit": "Fabio Achilli",
     "creditUri": "https://commons.wikimedia.org/wiki/File:Thong_Ta_Kian_Beach,_Koh_Samui_(48107244261).jpg",
     "via": "CC BY 2.0"
-  },
-  "https://www.google.com/maps/search/the%20cocoon%20samui%20viewpoint": {
-    "src": "/uploads/places/koh-samui/the-cocoon.webp",
-    "credit": "The Cocoon",
-    "creditUri": "https://cocoon-samui.com/"
-  },
-  "https://www.google.com/maps/search/the%20hub%20samui%20lamai": {
-    "src": "/uploads/places/koh-samui/the-hub-samui.webp",
-    "credit": "The Hub Samui",
-    "creditUri": "https://www.thehubsamui.com/"
   }
 }

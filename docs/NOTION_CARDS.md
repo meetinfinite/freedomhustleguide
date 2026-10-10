@@ -27,33 +27,51 @@ the first thing in a bullet point**, optionally followed by a note.
 
 That's it. Save in Notion, and the live site shows the card within ~60s.
 
-### New Google Maps venues need a snapshot refresh
+### New Google Maps venues: the photo + stars routine
 
-The site never calls Google live (it ran up a ~£178 bill). Venue name,
-address, rating and 2 photos are captured once into `data/places.json` +
-`public/places/`. Cards show **one** photo - the first, unless
-`data/place-photo-picks.json` picks another (place id → photo index, or a
-hosted image path). After adding venues, a dev runs:
+The site never calls Google live (it ran up a ~£178 bill). Each venue's
+photo, stars, rating count and address are fetched **once** into
+`data/places.json` + `public/places/`. New venues show as a plain "Open in
+Google Maps" card until this routine is run. Venues already done are never
+fetched (or charged) again; deleting a venue in Notion costs nothing.
 
-```
-npx tsx scripts/places-snapshot.ts --city koh-samui --photos-only            # free dry run
-npx tsx scripts/places-snapshot.ts --city koh-samui --photos-only --commit   # $0 - see below
-```
+**Step by step** (Arni or Valeria, or their Claude session):
 
-**New guides use `--photos-only` (Valeria, 2026-10-11 - guides are free, so
-no spend).** It asks Google for just the place id + photos, which Google
-bills as "IDs Only" - unlimited and free. Only the photo downloads count,
-and Google gives **1,000 free a month**; the script stops if a run would
-go over (one guide at a time with `--city`; `--allow-paid` overrides).
-The card then shows photo + Google credit, the name from Notion, Open in
-Maps and Directions - no star rating. Pick a people-free photo per place
-in `data/place-photo-picks.json`.
+1. Add the venues in Notion as usual (bold Google Maps link first).
+2. `git pull` - always, so you have this month's counter.
+3. Dry run (free, no Google): 
+   `npx tsx scripts/places-snapshot.ts --city <slug> --photos 3`
+   It prints how many new venues, this month's usage and the cost. It
+   must say **"Estimated cost: £0"** - if it says "Stopping", wait for
+   next month or ask Arni.
+4. Switch **Places API (New)** ON: Google Cloud → project **StepForward**
+   → Google Maps Platform → APIs & Services → Places API (New) → Enable.
+5. Run it: same command + `--commit`.
+6. Switch Places API (New) **OFF** again (same page → Disable). Check it
+   shows "Enable".
+7. Pick a photo without people: the run saved up to 3 candidates per
+   venue (`public/places/<placeId>-1/2/3.webp`). Look at them and record
+   the people-free one in `data/place-photo-picks.json` (place id → 0, 1
+   or 2). Default is the first.
+8. Commit `data/places.json`, `data/places-usage.json`,
+   `data/place-photo-picks.json` and `public/places/` → PR → merge.
 
-The full mode (no `--photos-only`) also fetches stars, review counts and
-names, which Google bills (Enterprise, 1,000 free a month, then paid) -
-**only with Arni's explicit OK.** Either way, run the key from
-`.env.local` only, commit both paths and open a PR. Ratings are
-deliberately never refreshed.
+**What it fetches per new venue:** 1 Google lookup (stars, rating count,
+address) + up to 3 photo downloads. Google gives 1,000 of each **free per
+month**; a ~120-venue guide uses ~120 lookups + ~360 photos.
+
+**The counter** (`data/places-usage.json`) tallies every paid-type call
+before it's made and **stops the run at 900 of the free 1,000** each month
+- so it can't go over, even across several runs. Only `--spend-up-to <£>`
+lets it go past 1,000, and **only with Arni's explicit OK**. It's shared
+through git, so: one person runs it at a time, `--commit` refuses unless
+you're up to date with GitHub, and you commit the counter straight after.
+
+Other options: `--ratings` tops up stars/address for venues that have a
+photo but no stars; `--photos-only` skips stars/address (fully free
+lookups); `--photos 1` downloads a single photo. Photos copied from
+venues' own websites or social media need the venue's permission - don't
+scrape them; a CC-licensed photo with credit is fine.
 
 ---
 

@@ -2,28 +2,40 @@
  * Snapshot Google Places data for every venue card, so the live site
  * never calls Google (see lib/places.ts for why).
  *
- *   npx tsx scripts/places-snapshot.ts            # dry run: what's missing + est. cost
+ *   npx tsx scripts/places-snapshot.ts            # dry run: what's missing + this month's usage
  *   npx tsx scripts/places-snapshot.ts --commit   # fetch the missing venues
  *
+ * For each NEW venue it fetches 1 photo + stars, rating count and address
+ * (Arni, 2026-10-11). The name always comes from Notion.
+ *
  * Options:
- *   --city <slug>   only this guide (e.g. --city bangkok)
- *   --refresh       re-fetch venues already in the snapshot (costs money)
- *   --prune         drop snapshot entries no longer linked from Notion
- *   --photos-only   FREE mode (default for new guides): fetch only the
- *                   place id + photos - no name/address/stars. Google bills
- *                   that lookup as "IDs Only" (unlimited, free); only the
- *                   photo downloads count, and the first 1,000 a month are
- *                   free. Cards show photo, name (from Notion), Open in Maps
- *                   and Directions - no star rating (Valeria, 2026-10-11).
- *   --photos <n>    photos per place (default 2) - extra candidates let us
- *                   pick one without people via data/place-photo-picks.json
- *   --allow-paid    let a photos-only run go past 1,000 photo downloads
+ *   --city <slug>      only this guide (e.g. --city bangkok)
+ *   --ratings          top up stars/rating count/address for venues already
+ *                      in the snapshot that lack them (keeps their photo)
+ *   --photos-only      skip stars/address: the lookup is then free and only
+ *                      the photo download counts
+ *   --photos <n>       photos per venue (default 1 - cards show one)
+ *   --refresh          re-fetch venues already in the snapshot
+ *   --prune            drop snapshot entries no longer linked from Notion
+ *   --spend-up-to <£>  allow going past Google's free 1,000 a month, up to
+ *                      this many pounds at list price. Default £0. Only
+ *                      with Arni's explicit OK.
+ *
+ * MONTHLY COUNTER (data/places-usage.json): every billable Google call is
+ * counted BEFORE it is made, per Google billing month. The run stops at
+ * 900 of the free 1,000 (a 100 buffer) unless --spend-up-to allows more.
+ * The counter is shared through git, so: one person runs at a time, the
+ * script refuses --commit unless you're up to date with origin/main, and
+ * you commit + push data/places-usage.json straight after the run.
+ * Reconcile it with Google's Billing → Reports ("SKUs – this month") now
+ * and then - if Google's number is higher, raise ours to match.
  *
  * Reads GOOGLE_PLACES_API_KEY + NOTION_TOKEN from .env.local. Writes
- * data/places.json and public/places/<placeId>-<n>.webp. Commit both.
+ * data/places.json, data/places-usage.json and public/places/<placeId>-<n>.webp.
  *
  * Only this script talks to Google. Never import it from app code.
  */
+import { execSync } from "node:child_process";
 import fs from "node:fs";
 import fsp from "node:fs/promises";
 import https from "node:https";
@@ -40,29 +52,43 @@ for (const line of fs
 }
 
 const args = process.argv.slice(2);
-const COMMIT = args.includes("--commit");
-const REFRESH = args.includes("--refresh");
-const PRUNE = args.includes("--prune");
-const CITY = args.includes("--city") ? args[args.indexOf("--city") + 1] : null;
-const PHOTOS_ONLY = args.includes("--photos-only");
-const ALLOW_PAID = args.includes("--allow-paid");
-// Google's free monthly allowance for photo downloads (Place Details Photos)
-const FREE_PHOTOS_PER_MONTH = 1000;
+const flag = (name: string) => args.includes(name);
+const value = (name: string) =>
+  args.includes(name) ? args[args.indexOf(name) + 1] : null;
+
+const COMMIT = flag("--commit");
+const REFRESH = flag("--refresh");
+const PRUNE = flag("--prune");
+const RATINGS = flag("--ratings");
+const PHOTOS_ONLY = flag("--photos-only");
+const CITY = value("--city");
+const PHOTOS_PER_PLACE = Math.max(1, Number(value("--photos")) || 1);
+const SPEND_GBP = Math.max(0, Number(value("--spend-up-to")) || 0);
+if (flag("--allow-paid")) {
+  throw new Error("--allow-paid is gone - use --spend-up-to <£> (Arni's OK only).");
+}
 
 const SNAPSHOT_PATH = path.join(ROOT, "data", "places.json");
+const USAGE_PATH = path.join(ROOT, "data", "places-usage.json");
 const PHOTO_DIR = path.join(ROOT, "public", "places");
-const PHOTOS_PER_PLACE = args.includes("--photos")
-  ? Math.max(1, Number(args[args.indexOf("--photos") + 1]) || 2)
-  : 2;
 const PHOTO_WIDTH = 1000;
 const API = "https://places.googleapis.com/v1";
-// Rating + review count are Enterprise-tier fields; Arni chose to keep
-// them (captured once, never refreshed). No priceLevel - nothing shows it.
+
+// rating/userRatingCount make the lookup "Place Details Enterprise"; the
+// address and Maps link ride along at no extra cost (one charge per
+// lookup, at the highest tier asked for). No displayName: Notion names it.
+const ENTERPRISE_FIELDS = "id,formattedAddress,googleMapsUri,rating,userRatingCount";
 const DETAIL_FIELDS = PHOTOS_ONLY
   ? "id,photos" // "Place Details Essentials (IDs Only)" - unlimited, free
-  : "id,displayName,formattedAddress,googleMapsUri,rating,userRatingCount,photos";
-// Approx. list prices (USD per lookup), before Google's free allowance.
-const COST = { details: 0.02, photo: 0.007 };
+  : `${ENTERPRISE_FIELDS},photos`;
+
+// Google's free monthly allowance per SKU, and where we stop inside it.
+const FREE_PER_MONTH = 1000;
+const SAFE_PER_MONTH = 900;
+// List price per call in GBP, rounded UP (USD $0.007 / $0.02).
+const GBP_EACH = { photos: 0.006, enterprise: 0.017 };
+
+type Sku = "photos" | "enterprise";
 
 interface PlacePhoto {
   src: string;
@@ -80,6 +106,71 @@ interface PlaceData {
   fetchedAt: string;
 }
 
+// ---- monthly counter -------------------------------------------------------
+
+/** Google bills Maps usage by calendar month in US Pacific time. */
+function billingMonth(): string {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit"
+  }).formatToParts(new Date());
+  const get = (t: string) => parts.find((p) => p.type === t)?.value;
+  return `${get("year")}-${get("month")}`;
+}
+
+class LimitReached extends Error {}
+
+class Usage {
+  private file: Record<string, Record<string, unknown>>;
+  readonly month = billingMonth();
+  constructor() {
+    this.file = JSON.parse(fs.readFileSync(USAGE_PATH, "utf8"));
+    this.file[this.month] ??= { photos: 0, enterprise: 0 };
+  }
+  used(sku: Sku): number {
+    return Number(this.file[this.month][sku] ?? 0);
+  }
+  /** Most calls allowed this month: 900 free, or past 1,000 with --spend-up-to. */
+  ceiling(sku: Sku): number {
+    if (SPEND_GBP <= 0) return SAFE_PER_MONTH;
+    return FREE_PER_MONTH + Math.floor(SPEND_GBP / GBP_EACH[sku]);
+  }
+  left(sku: Sku): number {
+    return Math.max(0, this.ceiling(sku) - this.used(sku));
+  }
+  /** Count a call BEFORE making it (a failed call still counts - safer). */
+  take(sku: Sku): void {
+    if (this.used(sku) + 1 > this.ceiling(sku)) {
+      throw new LimitReached(
+        `${sku}: ${this.used(sku)} used this month, limit ${this.ceiling(sku)}`
+      );
+    }
+    this.file[this.month][sku] = this.used(sku) + 1;
+    fs.writeFileSync(USAGE_PATH, JSON.stringify(this.file, null, 2) + "\n");
+  }
+  summary(): string {
+    return (["photos", "enterprise"] as Sku[])
+      .map((k) => `${k} ${this.used(k)}/${FREE_PER_MONTH} free`)
+      .join(" · ");
+  }
+}
+
+/** --commit only from an up-to-date main, so the shared counter is current. */
+function assertUpToDate() {
+  try {
+    execSync("git fetch -q origin main", { cwd: ROOT, stdio: "ignore" });
+    execSync("git merge-base --is-ancestor origin/main HEAD", {
+      cwd: ROOT,
+      stdio: "ignore"
+    });
+  } catch {
+    throw new Error(
+      "Not up to date with origin/main - run `git pull` first so the usage counter (data/places-usage.json) is current."
+    );
+  }
+}
+
 async function main() {
   const { listGuides } = await import("../lib/guides");
   const { fetchSectionPage } = await import("../lib/notion");
@@ -88,6 +179,7 @@ async function main() {
   const snapshot: Record<string, PlaceData> = JSON.parse(
     await fsp.readFile(SNAPSHOT_PATH, "utf8")
   );
+  const usage = new Usage();
 
   // 1. Every venue link the site renders (same rule as lib/notion.ts).
   const guides = listGuides().filter((g) => !CITY || g.slug === CITY);
@@ -119,31 +211,57 @@ async function main() {
     if (n) console.log(`${g.slug}: ${n} venue links`);
   }
 
-  const todo = [...linked.entries()].filter(
-    ([key]) => REFRESH || !snapshot[key]
-  );
-  const photoCalls = todo.length * PHOTOS_PER_PLACE;
-  const est = PHOTOS_ONLY
-    ? photoCalls * COST.photo
-    : todo.length * (COST.details + PHOTOS_PER_PLACE * COST.photo);
-  console.log(
-    `\n${linked.size} distinct venues · ${linked.size - todo.length} already in snapshot · ${todo.length} to fetch (≈ $${est.toFixed(2)} at list price)`
-  );
-  if (PHOTOS_ONLY) {
-    console.log(
-      `Photos-only: place lookups are free; ${photoCalls} photo downloads, inside Google's ${FREE_PHOTOS_PER_MONTH} free a month if nothing else used them this month → $0.`
-    );
-    if (photoCalls > FREE_PHOTOS_PER_MONTH && !ALLOW_PAID) {
-      console.log(
-        `\nStopping: that's more than the free ${FREE_PHOTOS_PER_MONTH}. Use --city to do one guide at a time, fewer --photos, or --allow-paid.`
-      );
-      return;
+  // 2. What this run would do, and what it would cost.
+  const todo = [...linked.entries()].filter(([key]) => REFRESH || !snapshot[key]);
+  // --ratings: venues we already have but without stars/address. Distinct
+  // places only - several Notion links can share one.
+  const ratingIds = new Set<string>();
+  if (RATINGS) {
+    for (const [k] of linked) {
+      const p = snapshot[k];
+      if (p?.placeId && !p.address) ratingIds.add(p.placeId);
     }
   }
+  const need: Record<Sku, number> = {
+    photos: todo.length * PHOTOS_PER_PLACE,
+    enterprise: (PHOTOS_ONLY ? 0 : todo.length) + ratingIds.size
+  };
+  console.log(
+    `\n${linked.size} distinct venues · ${linked.size - todo.length} already in snapshot · ${todo.length} new` +
+      (RATINGS ? ` · ${ratingIds.size} to top up with stars/address` : "")
+  );
+  console.log(`This month (${usage.month}) so far: ${usage.summary()}`);
+  console.log(
+    `This run: up to ${need.photos} photo downloads + ${need.enterprise} star/address lookups`
+  );
 
-  const stale = CITY
-    ? []
-    : Object.keys(snapshot).filter((k) => !linked.has(k));
+  const over = (["photos", "enterprise"] as Sku[]).filter(
+    (k) => need[k] > usage.left(k)
+  );
+  if (over.length) {
+    for (const k of over) {
+      console.log(
+        `\nStopping: ${k} would reach ${usage.used(k) + need[k]}, past this month's limit of ${usage.ceiling(k)}.`
+      );
+    }
+    console.log(
+      "Options: --city to do one guide at a time, wait until next month, or (Arni's OK only) --spend-up-to <£>."
+    );
+    return;
+  }
+  const extra = (["photos", "enterprise"] as Sku[]).reduce(
+    (sum, k) =>
+      sum +
+      Math.max(0, usage.used(k) + need[k] - FREE_PER_MONTH) * GBP_EACH[k],
+    0
+  );
+  console.log(
+    extra > 0
+      ? `Estimated cost: up to £${extra.toFixed(2)} (allowed by --spend-up-to £${SPEND_GBP}).`
+      : "Estimated cost: £0 - inside Google's free monthly allowance."
+  );
+
+  const stale = CITY ? [] : Object.keys(snapshot).filter((k) => !linked.has(k));
   if (stale.length) {
     console.log(
       `${stale.length} snapshot entries no longer linked from Notion${PRUNE ? " - pruning" : " (run with --prune to drop)"}`
@@ -153,35 +271,38 @@ async function main() {
   if (!COMMIT) {
     for (const [, url] of todo.slice(0, 20)) console.log("  would fetch", url);
     if (todo.length > 20) console.log(`  …and ${todo.length - 20} more`);
-    console.log("\nDry run - nothing fetched. Re-run with --commit.");
+    console.log("\nDry run - nothing fetched, nothing counted. Re-run with --commit.");
     return;
   }
 
+  assertUpToDate();
   const key = process.env.GOOGLE_PLACES_API_KEY;
   if (!key) throw new Error("GOOGLE_PLACES_API_KEY missing from .env.local");
   await fsp.mkdir(PHOTO_DIR, { recursive: true });
 
-  // 2. Fetch. Several Notion links can point at one place - reuse it.
+  // 3. Fetch. Several Notion links can point at one place - reuse it.
   const byPlaceId = new Map<string, PlaceData>();
   for (const p of Object.values(snapshot)) byPlaceId.set(p.placeId, p);
   const failed: string[] = [];
+  let stopped: string | null = null;
   let done = 0;
   const queue = todo.slice();
   await Promise.all(
     Array.from({ length: 4 }, async () => {
-      while (queue.length) {
+      while (queue.length && !stopped) {
         const [k, url] = queue.shift()!;
         try {
           const placeId = await resolvePlaceId(url, key);
           if (!placeId) throw new Error("no place found");
           let data = !REFRESH ? byPlaceId.get(placeId) : undefined;
           if (!data) {
-            data = await fetchPlace(placeId, key, linkedName.get(k));
+            data = await fetchPlace(placeId, key, usage, linkedName.get(k));
             byPlaceId.set(placeId, data);
           }
           snapshot[k] = data;
         } catch (err) {
-          failed.push(`${url}  (${err instanceof Error ? err.message : err})`);
+          if (err instanceof LimitReached) stopped = err.message;
+          else failed.push(`${url}  (${err instanceof Error ? err.message : err})`);
         }
         done++;
         if (done % 25 === 0) {
@@ -191,6 +312,25 @@ async function main() {
       }
     })
   );
+
+  // 4. --ratings: top up stars/address on places we already have.
+  let toppedUp = 0;
+  for (const placeId of ratingIds) {
+    if (stopped) break;
+    try {
+      const extraData = await fetchRatings(placeId, key, usage);
+      for (const p of Object.values(snapshot)) {
+        if (p.placeId !== placeId) continue;
+        if (!p.address) p.address = extraData.address;
+        if (typeof extraData.rating === "number") p.rating = extraData.rating;
+        if (extraData.userRatingCount) p.userRatingCount = extraData.userRatingCount;
+      }
+      toppedUp++;
+    } catch (err) {
+      if (err instanceof LimitReached) stopped = err.message;
+      else failed.push(`${placeId}  (${err instanceof Error ? err.message : err})`);
+    }
+  }
 
   if (PRUNE) {
     for (const k of stale) delete snapshot[k];
@@ -204,7 +344,12 @@ async function main() {
 
   await save(snapshot);
   console.log(
-    `\nDone: ${todo.length - failed.length} fetched, ${failed.length} failed.`
+    `\nDone: ${done - failed.length} new fetched, ${toppedUp} topped up, ${failed.length} failed.`
+  );
+  if (stopped) console.log(`STOPPED at the monthly limit - ${stopped}.`);
+  console.log(`This month (${usage.month}) now: ${usage.summary()}`);
+  console.log(
+    "Commit + push data/places-usage.json (and the snapshot/photos) now, so the next run sees this month's count."
   );
   for (const f of failed) console.log("  ✗", f);
   if (failed.length) {
@@ -226,15 +371,16 @@ async function save(snapshot: Record<string, PlaceData>) {
 async function fetchPlace(
   placeId: string,
   key: string,
+  usage: Usage,
   notionName?: string
 ): Promise<PlaceData> {
+  if (!PHOTOS_ONLY) usage.take("enterprise");
   const res = await fetch(`${API}/places/${encodeURIComponent(placeId)}`, {
     headers: { "X-Goog-Api-Key": key, "X-Goog-FieldMask": DETAIL_FIELDS }
   });
   if (!res.ok) throw new Error(`details ${res.status}: ${(await res.text()).slice(0, 120)}`);
   const p = (await res.json()) as {
     id: string;
-    displayName?: { text?: string };
     formattedAddress?: string;
     googleMapsUri?: string;
     rating?: number;
@@ -248,6 +394,7 @@ async function fetchPlace(
   const photos: PlacePhoto[] = [];
   for (const [i, ph] of (p.photos ?? []).slice(0, PHOTOS_PER_PLACE).entries()) {
     const file = `${safeName(p.id)}-${i + 1}.webp`;
+    usage.take("photos");
     const img = await fetch(
       `${API}/${ph.name}/media?maxWidthPx=${PHOTO_WIDTH}&key=${key}`
     );
@@ -266,9 +413,7 @@ async function fetchPlace(
 
   return {
     placeId: p.id,
-    // Photos-only runs don't ask Google for the name (that would bill) -
-    // the card shows the bold name from Notion anyway.
-    name: p.displayName?.text || notionName || "Unknown place",
+    name: notionName || "Unknown place",
     address: p.formattedAddress || "",
     ...(typeof p.rating === "number" ? { rating: p.rating } : {}),
     ...(p.userRatingCount ? { userRatingCount: p.userRatingCount } : {}),
@@ -280,6 +425,29 @@ async function fetchPlace(
         notionName || p.id
       )}&query_place_id=${p.id}`,
     fetchedAt: new Date().toISOString().slice(0, 10)
+  };
+}
+
+/** Stars, rating count and address for a place we already have (no photo). */
+async function fetchRatings(
+  placeId: string,
+  key: string,
+  usage: Usage
+): Promise<{ address: string; rating?: number; userRatingCount?: number }> {
+  usage.take("enterprise");
+  const res = await fetch(`${API}/places/${encodeURIComponent(placeId)}`, {
+    headers: { "X-Goog-Api-Key": key, "X-Goog-FieldMask": ENTERPRISE_FIELDS }
+  });
+  if (!res.ok) throw new Error(`details ${res.status}: ${(await res.text()).slice(0, 120)}`);
+  const p = (await res.json()) as {
+    formattedAddress?: string;
+    rating?: number;
+    userRatingCount?: number;
+  };
+  return {
+    address: p.formattedAddress || "",
+    rating: p.rating,
+    userRatingCount: p.userRatingCount
   };
 }
 

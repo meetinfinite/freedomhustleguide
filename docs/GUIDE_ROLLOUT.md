@@ -114,7 +114,8 @@ Check:
    `SUPABASE_SERVICE_ROLE_KEY`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
    (`GOOGLE_PLACES_API_KEY` is NOT needed on Vercel - venue cards come
    from the snapshot; see docs/NOTION_CARDS.md. New-city venues need a
-   snapshot run - use the free `--photos-only` mode, one city at a time.)
+   run of the photo + stars routine in docs/NOTION_CARDS.md - £0 inside
+   the free monthly allowance, which the script enforces.)
 3. Deploy. **A status flip only goes live in production after deploy** —
    editing `lib/guides.ts` locally does nothing for the live site.
    Section pages revalidate from Notion every 60s (`revalidate = 60`).

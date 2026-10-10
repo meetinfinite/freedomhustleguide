@@ -67,5 +67,7 @@ This is the "staging": every PR gets its own throwaway preview site.
 3. Only register a guide section that has Notion (or MDX) content, or it
    404s on the dashboard.
 4. **Never call Google Places (or any paid API) from the live site.**
-   Venue cards read `data/places.json`. `scripts/places-snapshot.ts
-   --commit` costs money - only run it when Arni explicitly says so.
+   Venue cards read `data/places.json`. New venues: follow the routine in
+   `docs/NOTION_CARDS.md` (API on → run → API off). `scripts/places-snapshot.ts`
+   keeps a monthly counter and stops inside Google's free allowance;
+   `--spend-up-to` (actually paying) only with Arni's explicit OK.
