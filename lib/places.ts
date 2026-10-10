@@ -63,10 +63,11 @@ function withPickedPhoto(place: PlaceData): PlaceData {
 }
 
 /**
- * Photos for venues with no Google data (no API - Valeria, 2026-10-11):
+ * Photos we choose ourselves (Valeria's own, Unsplash, the venue's own):
  * data/place-photos.json maps the Notion link (as pasted) to a photo we
- * host. The card shows photo + credit, the Notion name, Open in Maps and
- * Directions - no stars or address.
+ * host. It replaces Google's photo when the snapshot has the place, and
+ * stands in for Google entirely when it doesn't (photo + credit, Notion
+ * name, Open in Maps, Directions - no stars or address).
  */
 interface FreePhoto {
   src: string;
@@ -82,22 +83,27 @@ export function getPlaceFromUrl(rawUrl: string): PlaceData | null {
   if (!rawUrl) return null;
   const key = placeKey(rawUrl);
   const place = SNAPSHOT[key];
-  if (place) return withPickedPhoto(place);
   const free = FREE[key];
+  // A photo we chose (Valeria's own, Unsplash, the venue's) beats Google's;
+  // Google's name, stars and address still show when we have them.
+  if (place && free) return { ...place, photos: [freePhoto(free)] };
+  if (place) return withPickedPhoto(place);
   if (!free) return null;
   return {
     placeId: "",
     name: "",
     address: "",
-    photos: [
-      {
-        src: free.src,
-        ...(free.credit ? { author: free.credit } : {}),
-        ...(free.creditUri ? { authorUri: free.creditUri } : {}),
-        via: free.via ?? ""
-      }
-    ],
+    photos: [freePhoto(free)],
     googleMapsUri: rawUrl,
     fetchedAt: ""
+  };
+}
+
+function freePhoto(free: FreePhoto): PlacePhoto {
+  return {
+    src: free.src,
+    ...(free.credit ? { author: free.credit } : {}),
+    ...(free.creditUri ? { authorUri: free.creditUri } : {}),
+    via: free.via ?? ""
   };
 }
