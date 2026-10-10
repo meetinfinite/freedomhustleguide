@@ -4,6 +4,8 @@ import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
 import { GuideDashboard } from "@/components/GuideDashboard";
 import { MyMapEmbed } from "@/components/MyMapEmbed";
+import { DesktopSectionRedirect } from "@/components/DesktopSectionRedirect";
+import Link from "next/link";
 
 export const dynamic = "force-dynamic";
 
@@ -28,17 +30,31 @@ export default async function GuideAppDashboard({
   if (guide.status !== "live" && !member?.lifetime) notFound();
   const showUpsell = Boolean(member && !member.lifetime);
   const basePath = `/guides/${guide.slug}/app`;
+  const first = guide.sections[0];
+  const firstHref = first ? `${basePath}/${first.slug}` : basePath;
 
   return (
     <>
-      {/* Lifetime upsell paused until the guide library is bigger
-          (Valeria, 2026-08-05) - restore LifetimeUpsellBanner here. */}
-      <GuideDashboard guide={guide} basePath={basePath} />
-      {guide.myMapsId ? (
-        <div className="mt-12">
-          <MyMapEmbed mid={guide.myMapsId} city={guide.city} />
+      {/* Desktop skips the overview (the sidebar lists every section) and
+          opens the first section; phones keep it. */}
+      {first ? <DesktopSectionRedirect href={firstHref} /> : null}
+      {first ? (
+        <div className="hidden lg:block text-ink-500">
+          <Link href={firstHref} className="hover:text-ink-900">
+            Opening {first.title} →
+          </Link>
         </div>
       ) : null}
+      <div className={first ? "lg:hidden" : undefined}>
+        {/* Lifetime upsell paused until the guide library is bigger
+            (Valeria, 2026-08-05) - restore LifetimeUpsellBanner here. */}
+        <GuideDashboard guide={guide} basePath={basePath} />
+        {guide.myMapsId ? (
+          <div className="mt-12">
+            <MyMapEmbed mid={guide.myMapsId} city={guide.city} />
+          </div>
+        ) : null}
+      </div>
     </>
   );
 }

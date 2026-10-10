@@ -105,7 +105,8 @@ export default async function GuideSectionPage({ params }: PageProps) {
 
   return (
     <div>
-      <div className="mb-5 text-sm text-ink-500">
+      {/* Phones only - desktop has no overview (the sidebar replaces it) */}
+      <div className="mb-5 text-sm text-ink-500 lg:hidden">
         <Link href={basePath} className="hover:text-ink-900">
           ← Overview
         </Link>
