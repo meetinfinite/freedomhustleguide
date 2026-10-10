@@ -31,7 +31,12 @@ export function FoundersCityStrip({
       </div>
 
       <div className="relative overflow-hidden marquee-mask">
-        <div className="flex gap-4 w-max animate-marquee">
+        {/* ~3.5s per photo - a bit faster than the homepage strip, and the
+            same speed whatever the number of photos (Valeria, 2026-10-10) */}
+        <div
+          className="flex gap-4 w-max animate-marquee"
+          style={{ animationDuration: `${images.length * 3.5}s` }}
+        >
           {doubled.map((img, i) => (
             <div
               key={i}
