@@ -5,14 +5,13 @@ import type { EmbedData, NotionBlock, NotionRichText, PlaceData } from "../lib/t
 import { colors, fonts, radius } from "../theme";
 import { Callout } from "./Callout";
 import { EmbedCard, PlaceCard } from "./Cards";
-import { Checklist } from "./Checklist";
 import { RichText, richTextToString } from "./RichText";
 
 /**
  * Native port of the website's components/NotionRenderer.tsx. Same
  * authoring conventions, so editors write a section once in Notion and it
  * renders properly on web AND in the app:
- *   - consecutive to_do blocks       → interactive Checklist
+ *   - consecutive to_do blocks       → plain bullets
  *   - bold Google Maps link bullet   → PlaceCard (from places.json snapshot)
  *   - Airbnb / GYG / Booking bullet  → EmbedCard
  *   - "DON'T - …", "PRO TIP - …" etc → Callout (following quotes = body)
@@ -91,21 +90,29 @@ export function NotionBlocks({
   embeds: Record<string, EmbedData>;
 }) {
   const out: ReactNode[] = [];
-  let checklistIndex = 0;
   let i = 0;
 
   while (i < blocks.length) {
     const b = blocks[i];
 
+    // to_do blocks render as plain bullets, same as the website
+    // (Valeria, 2026-10-10 - nobody ticks boxes while reading).
     if (b.type === "to_do") {
-      const start = i;
-      const items: string[] = [];
+      const items: NotionBlock[] = [];
       while (i < blocks.length && blocks[i].type === "to_do") {
-        items.push(richTextToString(blockText(blocks[i])).trim());
+        items.push(blocks[i]);
         i++;
       }
-      // Same id scheme as the web Checklist, so the key stays stable.
-      out.push(<Checklist key={`cl-${start}`} id={`notion-${pageId.slice(-6)}-${checklistIndex++}`} items={items} />);
+      out.push(
+        <View key={`todo-${items[0].id}`} style={styles.list}>
+          {items.map((it) => (
+            <View key={it.id} style={styles.listItem}>
+              <Text style={styles.bullet}>•</Text>
+              <RichText rt={blockText(it)} style={[styles.p, { flex: 1, marginVertical: 0 }]} />
+            </View>
+          ))}
+        </View>
+      );
       continue;
     }
 

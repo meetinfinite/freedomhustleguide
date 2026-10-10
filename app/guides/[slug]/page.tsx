@@ -46,11 +46,11 @@ const FAQ_LIVE = [
   },
   {
     q: "Is this just a Notion doc?",
-    a: "No. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
+    a: "No. It's a full guide app - sticky navigation, Google pins, direct links and section pages designed to be skimmed quickly."
   },
   {
     q: "Is this just a PDF?",
-    a: "No. This is not a PDF with fluff and pictures of us. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
+    a: "No. This is not a PDF with fluff and pictures of us. It's a full guide app - sticky navigation, Google pins, direct links and section pages designed to be skimmed quickly."
   },
   {
     q: "Do I need it if I've already been there as a tourist?",
@@ -70,11 +70,11 @@ function buildSoonFAQ(city: string) {
     },
     {
       q: "Is this just a Notion doc?",
-      a: "No. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
+      a: "No. It's a full guide app - sticky navigation, Google pins, direct links and section pages designed to be skimmed quickly."
     },
     {
       q: "Is this just a PDF?",
-      a: "No. This is not a PDF with fluff and pictures of us. It's a full guide app - sticky navigation, interactive checklists, Google pins, direct links and section pages designed to be skimmed quickly."
+      a: "No. This is not a PDF with fluff and pictures of us. It's a full guide app - sticky navigation, Google pins, direct links and section pages designed to be skimmed quickly."
     },
     {
       q: `Will the ${city} guide cover everything Bangkok does?`,
@@ -192,8 +192,15 @@ export default async function GuideLandingPage({
         )}
       />
 
+      {/* Founders photo strip - our own shots from this city, straight
+          under the hero so people see it's real before they scroll
+          (Valeria, 2026-10-10) */}
+      {guide.foundersStrip ? (
+        <FoundersCityStrip city={guide.city} images={guide.foundersStrip} />
+      ) : null}
+
       {/* What's inside */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-6 pt-12 pb-20">
         <div className="max-w-2xl mb-12">
           <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
             What's inside
@@ -226,12 +233,6 @@ export default async function GuideLandingPage({
           ))}
         </div>
       </section>
-
-      {/* Founders photo strip - our own shots from this city, between
-          What's inside and Who it's for (Valeria, 2026-09-17) */}
-      {guide.foundersStrip ? (
-        <FoundersCityStrip city={guide.city} images={guide.foundersStrip} />
-      ) : null}
 
       {/* Who it's for */}
       <section className="max-w-6xl mx-auto px-6 py-12">
@@ -377,7 +378,7 @@ export default async function GuideLandingPage({
               {[
                 "Every section, mobile-friendly app",
                 "Monthly/Weekly budget of how much we actually spent",
-                "Living checklists that save your progress",
+                "Google Maps pins for every recommendation",
                 "Best Cafes + Restaurants + Top Ten Activities",
                 "Best Areas to Stay + Gyms & Wellness + Mistakes to Avoid",
                 "Written from tons of researching and experiencing it"

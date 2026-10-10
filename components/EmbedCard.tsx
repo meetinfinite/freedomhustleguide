@@ -249,7 +249,8 @@ export function EmbedCard({
                 .join("  ·  ")}
             </p>
           ) : null}
-          {NotesBox}
+          {/* No notes on a card with a photo (Valeria, 2026-10-10) - the
+              photo, rating and price say enough. Link cards keep them. */}
           <div className="mt-auto pt-4">{Cta}</div>
         </div>
       </div>

@@ -23,7 +23,7 @@ Notion ──► website (Next.js on Vercel) ──► /api/app/* JSON ──►
   `status: "soon"` guides show as "Coming soon" cards.
 - **Rendering:** `mobile/src/components/NotionBlocks.tsx` is the native
   version of `components/NotionRenderer.tsx`, with the same Notion
-  conventions (checklists, `PRO TIP -` callouts, Maps / Airbnb / GYG cards).
+  conventions (to-dos as bullets, `PRO TIP -` callouts, Maps / Airbnb / GYG cards).
   **If you change a convention in one, change it in the other.**
 
 | Route | What |

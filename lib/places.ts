@@ -1,4 +1,5 @@
 import snapshot from "@/data/places.json";
+import photoPicks from "@/data/place-photo-picks.json";
 import { placeKey } from "./gmaps";
 
 /**
@@ -37,7 +38,29 @@ export interface PlaceData {
 
 const SNAPSHOT = snapshot as unknown as Record<string, PlaceData>;
 
+const PICKS = photoPicks as Record<string, number | string>;
+
+/**
+ * Cards show one photo - the first in the list (Valeria, 2026-10-10).
+ * data/place-photo-picks.json, keyed by Google place id, chooses it:
+ * a number picks which snapshot photo leads, a string is a hosted image
+ * path (e.g. /uploads/places/...) that replaces the Google photos.
+ */
+function withPickedPhoto(place: PlaceData): PlaceData {
+  const pick = PICKS[place.placeId];
+  if (typeof pick === "string") return { ...place, photos: [{ src: pick }] };
+  if (typeof pick === "number" && place.photos?.[pick]) {
+    const chosen = place.photos[pick];
+    return {
+      ...place,
+      photos: [chosen, ...place.photos.filter((_, i) => i !== pick)]
+    };
+  }
+  return place;
+}
+
 export function getPlaceFromUrl(rawUrl: string): PlaceData | null {
   if (!rawUrl) return null;
-  return SNAPSHOT[placeKey(rawUrl)] ?? null;
+  const place = SNAPSHOT[placeKey(rawUrl)];
+  return place ? withPickedPhoto(place) : null;
 }
