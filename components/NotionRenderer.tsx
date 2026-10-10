@@ -62,6 +62,85 @@ function richTextToReact(rt: NotionRichText[] | undefined) {
   });
 }
 
+// ---------- Two-column tables (budgets) ----------
+
+/** "Coworking (£0 if you work from home)" → main + muted sub-line. Only
+ *  for plain-text labels - formatted/linked ones render as written. */
+function splitTrailingNote(
+  rt: NotionRichText[]
+): { main: React.ReactNode; note: string | null } {
+  const plain = rt.every((r) => !r.href && !Object.values(r.annotations || {}).some(Boolean));
+  const m = plain ? richTextToString(rt).match(/^(.*\S)\s*\(([^()]+)\)\s*$/s) : null;
+  return m ? { main: m[1], note: m[2] } : { main: richTextToReact(rt), note: null };
+}
+
+const TOTAL_ROW_RE = /^(monthly\s+|grand\s+)?total\b/i;
+
+/**
+ * Label → value tables (every Monthly Budget) as a card of rows: label on
+ * the left, amount on the right on one line, bracketed notes as a small
+ * grey line, and the total as a dark bar. The old grid wrapped "£800-
+ * 1,200" over two lines on phones (Valeria, 2026-10-10). Rows after the
+ * total (the local-currency line) are styled as a quiet footnote.
+ */
+function renderPairTable(
+  key: string,
+  header: NotionRichText[][] | null,
+  rows: NotionRichText[][][]
+) {
+  const totalIdx = rows.findIndex((c) => TOTAL_ROW_RE.test(richTextToString(c[0]).trim()));
+  return (
+    <div
+      key={key}
+      className="my-6 rounded-2xl bg-white border border-ink-100 shadow-card overflow-hidden"
+    >
+      {header ? (
+        <div className="flex items-baseline justify-between gap-4 px-4 sm:px-5 py-2.5 bg-sand-100 text-[11px] uppercase tracking-[0.14em] font-semibold text-ink-500">
+          <span>{richTextToReact(header[0])}</span>
+          <span className="text-right">{richTextToReact(header[1])}</span>
+        </div>
+      ) : null}
+      <div className="divide-y divide-ink-100">
+        {rows.map((cells, i) => {
+          const { main, note } = splitTrailingNote(cells[0]);
+          const total = i === totalIdx;
+          const after = totalIdx >= 0 && i > totalIdx;
+          return (
+            <div
+              key={i}
+              className={`flex items-center justify-between gap-4 px-4 sm:px-5 ${
+                total
+                  ? "py-3.5 bg-ink-900 text-sand-50"
+                  : after
+                    ? "py-2.5 bg-sand-50 text-ink-500 text-sm"
+                    : "py-3 text-ink-900"
+              }`}
+            >
+              <div className="min-w-0 leading-snug">
+                <div className={total ? "font-semibold" : after ? "" : "font-medium"}>
+                  {main}
+                </div>
+                {note ? (
+                  <div className={`text-xs mt-0.5 ${total ? "text-sand-200" : "text-ink-400"}`}>
+                    {note}
+                  </div>
+                ) : null}
+              </div>
+              <div
+                className={`shrink-0 whitespace-nowrap tabular-nums text-right ${
+                  total ? "font-semibold text-lg" : after ? "" : "font-semibold"
+                }`}
+              >
+                {richTextToReact(cells[1])}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 // ---------- Quote → callout mapping ----------
 
 /** Detect a "tagged" quote - one whose text starts with an uppercase tag
@@ -510,6 +589,14 @@ function renderBlock(b: NotionBlock, key: string): React.ReactNode {
       const rows = (b.children || []).filter((c) => c.type === "table_row");
       if (rows.length === 0) return null;
       const hasHeader = Boolean(tbl.has_column_header);
+      const cellsOf = (r: NotionBlock) => (r.data as TableRowData).cells || [];
+      if (rows.every((r) => cellsOf(r).length === 2)) {
+        return renderPairTable(
+          key,
+          hasHeader ? cellsOf(rows[0]) : null,
+          (hasHeader ? rows.slice(1) : rows).map(cellsOf)
+        );
+      }
       return (
         <div key={key} className="my-6 overflow-x-auto">
           <table className="w-full text-sm border-collapse">
