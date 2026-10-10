@@ -296,6 +296,14 @@ function Table({ b }: { b: NotionBlock }) {
   if (!rows.length) return null;
   const hasHeader = Boolean((b.data as { has_column_header?: boolean })?.has_column_header);
   const cells = (r: NotionBlock) => (r.data as { cells?: NotionRichText[][] })?.cells || [];
+  if (rows.every((r) => cells(r).length === 2)) {
+    return (
+      <PairTable
+        header={hasHeader ? cells(rows[0]) : null}
+        rows={(hasHeader ? rows.slice(1) : rows).map(cells)}
+      />
+    );
+  }
   // One fixed width for every cell so columns line up across rows: share the
   // screen width, but never narrower than 140 - wide tables scroll sideways.
   const cols = Math.max(1, ...rows.map((r) => cells(r).length));
@@ -326,6 +334,50 @@ function Table({ b }: { b: NotionBlock }) {
         })}
       </View>
     </ScrollView>
+  );
+}
+
+const TOTAL_ROW_RE = /^(monthly\s+|grand\s+)?total\b/i;
+
+/** Mirrors renderPairTable on the website: label → value tables (every
+ *  Monthly Budget) as rows with the amount on one line, bracketed notes
+ *  as a muted sub-line and the total as a dark bar. */
+function PairTable({ header, rows }: { header: NotionRichText[][] | null; rows: NotionRichText[][][] }) {
+  const totalIdx = rows.findIndex((c) => TOTAL_ROW_RE.test(richTextToString(c[0]).trim()));
+  return (
+    <View style={styles.pairCard}>
+      {header ? (
+        <View style={[styles.pairRow, styles.pairHead]}>
+          <Text style={styles.pairHeadText}>{richTextToString(header[0])}</Text>
+          <Text style={[styles.pairHeadText, { textAlign: "right" }]}>{richTextToString(header[1])}</Text>
+        </View>
+      ) : null}
+      {rows.map((c, i) => {
+        const label = richTextToString(c[0]);
+        const m = label.match(/^(.*\S)\s*\(([^()]+)\)\s*$/s);
+        const total = i === totalIdx;
+        const after = totalIdx >= 0 && i > totalIdx;
+        return (
+          <View
+            key={i}
+            style={[styles.pairRow, total && styles.pairTotal, after && styles.pairAfter, i === rows.length - 1 && { borderBottomWidth: 0 }]}
+          >
+            <View style={{ flex: 1 }}>
+              <Text style={[styles.pairLabel, total && { color: colors.sand50 }, after && styles.pairMuted]}>
+                {m ? m[1] : label}
+              </Text>
+              {m ? <Text style={[styles.pairNote, total && { color: colors.sand200 }]}>{m[2]}</Text> : null}
+            </View>
+            <Text
+              numberOfLines={1}
+              style={[styles.pairValue, total && { color: colors.sand50, fontSize: 17 }, after && styles.pairMuted]}
+            >
+              {richTextToString(c[1])}
+            </Text>
+          </View>
+        );
+      })}
+    </View>
   );
 }
 
@@ -361,5 +413,36 @@ const styles = StyleSheet.create({
   tr: { flexDirection: "row", borderBottomWidth: 1, borderBottomColor: colors.ink100 },
   thRow: { backgroundColor: colors.sand100 },
   td: { paddingHorizontal: 12, paddingVertical: 10 },
-  tdText: { fontFamily: fonts.sans, fontSize: 14, lineHeight: 20, color: colors.ink700 }
+  tdText: { fontFamily: fonts.sans, fontSize: 14, lineHeight: 20, color: colors.ink700 },
+  pairCard: {
+    marginVertical: 12,
+    borderWidth: 1,
+    borderColor: colors.ink100,
+    borderRadius: radius.lg,
+    backgroundColor: colors.white,
+    overflow: "hidden"
+  },
+  pairRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 14,
+    paddingHorizontal: 14,
+    paddingVertical: 11,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.ink100
+  },
+  pairHead: { backgroundColor: colors.sand100, paddingVertical: 8 },
+  pairHeadText: {
+    fontFamily: fonts.sansSemi,
+    fontSize: 10.5,
+    letterSpacing: 1,
+    textTransform: "uppercase",
+    color: colors.ink500
+  },
+  pairTotal: { backgroundColor: colors.ink900 },
+  pairAfter: { backgroundColor: colors.sand50, paddingVertical: 9 },
+  pairLabel: { fontFamily: fonts.sansMedium, fontSize: 15, lineHeight: 20, color: colors.ink900 },
+  pairNote: { fontFamily: fonts.sans, fontSize: 12, lineHeight: 16, color: colors.ink400, marginTop: 1 },
+  pairValue: { fontFamily: fonts.sansSemi, fontSize: 15, color: colors.ink900 },
+  pairMuted: { fontFamily: fonts.sans, fontSize: 13, color: colors.ink500 }
 });
