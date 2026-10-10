@@ -93,6 +93,10 @@ export interface GuideSection {
  *
  * Adding a section here adds it to every guide. Renaming/reordering
  * here propagates to every guide. That's the point.
+ *
+ * Order (Valeria, 2026-10-10): plan the trip first (when, arrival, where
+ * to stay, what to do, what to avoid, budget), then daily life (eat,
+ * work, go out, keep fit), then the practical reference sections.
  */
 export const SECTION_TEMPLATE: GuideSection[] = [
   {
@@ -101,7 +105,7 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     slug: "best-time-to-visit",
     title: "Best Time to Visit",
     description:
-      "Weather, seasons and prices month by month - pick the right time before you book.",
+      "Seasons, weather and what to avoid - pick the right time before you book.",
     icon: "🌤️",
     readingTime: "3 min"
   },
@@ -120,67 +124,6 @@ export const SECTION_TEMPLATE: GuideSection[] = [
       "Where to actually stay. Location is key for the best experience and quality of your travels.",
     icon: "🏙️",
     readingTime: "8 min"
-  },
-  {
-    slug: "monthly-budget",
-    title: "Monthly Budget",
-    description:
-      "What we actually spent per month - a real figure from mid-range full-time travellers.",
-    icon: "💸",
-    readingTime: "6 min"
-  },
-  {
-    slug: "cafes",
-    title: "Cafés",
-    description:
-      "Love coffee? Start every day right. Recommendations from coffee lovers.",
-    icon: "☕",
-    readingTime: "7 min"
-  },
-  {
-    slug: "coworking",
-    title: "Coworking Spaces",
-    description: "Where it's worth it, where it's not. Is it worth your money?",
-    icon: "🧑‍💻",
-    readingTime: "5 min"
-  },
-  {
-    slug: "restaurants",
-    title: "Restaurants",
-    description:
-      "From street-stall legends to Michelin nods. The ones worth the trip.",
-    icon: "🍜",
-    readingTime: "6 min"
-  },
-  {
-    slug: "nightlife",
-    title: "Nightlife",
-    description:
-      "Rooftop bars, cocktail places, live music - where to have the best time.",
-    icon: "🍸",
-    readingTime: "5 min"
-  },
-  {
-    slug: "gyms",
-    title: "Gyms & Wellness",
-    description: "Spa, gyms, strength - relax and stay fit while you travel.",
-    icon: "🥊",
-    readingTime: "5 min"
-  },
-  {
-    slug: "visa-immigration",
-    title: "Visa & Immigration",
-    description: "Getting in, staying longer, the paperwork that matters.",
-    icon: "🛂",
-    readingTime: "5 min"
-  },
-  {
-    slug: "getting-around",
-    title: "Getting Around",
-    description:
-      "Transit, ride-shares, taxis, scooters - the boring part that's actually important.",
-    icon: "🚇",
-    readingTime: "6 min"
   },
   {
     slug: "trips-and-activities",
@@ -203,6 +146,67 @@ export const SECTION_TEMPLATE: GuideSection[] = [
     description: "Every mistake we made, so you don't.",
     icon: "⚠️",
     readingTime: "4 min"
+  },
+  {
+    slug: "monthly-budget",
+    title: "Monthly Budget",
+    description:
+      "What we actually spent per month - a real figure from mid-range full-time travellers.",
+    icon: "💸",
+    readingTime: "6 min"
+  },
+  {
+    slug: "cafes",
+    title: "Cafés",
+    description:
+      "Love coffee? Start every day right. Recommendations from coffee lovers.",
+    icon: "☕",
+    readingTime: "7 min"
+  },
+  {
+    slug: "restaurants",
+    title: "Restaurants",
+    description:
+      "From street-stall legends to Michelin nods. The ones worth the trip.",
+    icon: "🍜",
+    readingTime: "6 min"
+  },
+  {
+    slug: "coworking",
+    title: "Coworking Spaces",
+    description: "Where it's worth it, where it's not. Is it worth your money?",
+    icon: "🧑‍💻",
+    readingTime: "5 min"
+  },
+  {
+    slug: "nightlife",
+    title: "Nightlife",
+    description:
+      "Rooftop bars, cocktail places, live music - where to have the best time.",
+    icon: "🍸",
+    readingTime: "5 min"
+  },
+  {
+    slug: "gyms",
+    title: "Gyms & Wellness",
+    description: "Spa, gyms, strength - relax and stay fit while you travel.",
+    icon: "🥊",
+    readingTime: "5 min"
+  },
+  {
+    slug: "getting-around",
+    title: "Getting Around",
+    description:
+      "Transit, ride-shares, taxis, scooters - the boring part that's actually important.",
+    icon: "🚇",
+    readingTime: "6 min"
+  },
+  {
+    slug: "visa-immigration",
+    title: "Visa & Immigration",
+    description: "Getting in, staying longer, the paperwork that matters.",
+    icon: "🛂",
+    readingTime: "5 min"
   },
   {
     // Renamed from "Digital Nomad Toolkit" (Valeria, 2026-10-10); the slug
