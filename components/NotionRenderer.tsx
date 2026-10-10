@@ -69,7 +69,11 @@ function richTextToReact(rt: NotionRichText[] | undefined) {
 function splitTrailingNote(
   rt: NotionRichText[]
 ): { main: React.ReactNode; note: string | null } {
-  const plain = rt.every((r) => !r.href && !Object.values(r.annotations || {}).some(Boolean));
+  // Notion sends color: "default" on every run, so check the style flags only
+  const plain = rt.every((r) => {
+    const a = r.annotations || {};
+    return !r.href && !a.bold && !a.italic && !a.strikethrough && !a.underline && !a.code;
+  });
   const m = plain ? richTextToString(rt).match(/^(.*\S)\s*\(([^()]+)\)\s*$/s) : null;
   return m ? { main: m[1], note: m[2] } : { main: richTextToReact(rt), note: null };
 }
