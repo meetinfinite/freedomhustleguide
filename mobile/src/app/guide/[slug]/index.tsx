@@ -84,12 +84,9 @@ export default function GuideScreen() {
                 </View>
                 <View style={{ flex: 1 }}>
                   <Text style={styles.rowNum}>
-                    {String(i + 1).padStart(2, "0")} · {s.readingTime}
+                    {String(i + 1).padStart(2, "0")}
                   </Text>
                   <Text style={styles.rowTitle}>{s.title}</Text>
-                  <Text style={styles.rowDesc} numberOfLines={2}>
-                    {s.description}
-                  </Text>
                 </View>
                 <Text style={styles.chev}>›</Text>
               </Pressable>
