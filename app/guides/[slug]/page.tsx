@@ -215,15 +215,10 @@ export default async function GuideLandingPage({
               key={s.slug}
               className="rounded-2xl bg-white border border-ink-100 shadow-card p-6"
             >
-              <div className="flex items-start justify-between mb-3">
-                <div className="w-11 h-11 rounded-xl bg-sand-100 grid place-items-center text-xl">
+              <h3 className="font-display text-lg tracking-tight text-ink-900 flex items-center gap-2.5">
+                <span aria-hidden className="text-xl leading-none">
                   {s.icon}
-                </div>
-                <span className="text-[11px] uppercase tracking-wider text-ink-400 font-semibold">
-                  {s.readingTime}
                 </span>
-              </div>
-              <h3 className="font-display text-lg tracking-tight text-ink-900">
                 {s.title}
               </h3>
               <p className="text-sm text-ink-500 mt-1">

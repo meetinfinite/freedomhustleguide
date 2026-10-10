@@ -105,22 +105,20 @@ export default async function GuideSectionPage({ params }: PageProps) {
 
   return (
     <div>
-      <div className="mb-8 flex items-center gap-3 text-sm text-ink-500">
+      <div className="mb-5 text-sm text-ink-500">
         <Link href={basePath} className="hover:text-ink-900">
           ← Overview
         </Link>
-        <span>·</span>
-        <span>{section.readingTime}</span>
       </div>
 
+      {/* Emoji sits on the title line - no separate icon block or reading
+          time, less dead space on phones (Valeria, 2026-10-10) */}
       <header className="mb-8">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-12 h-12 rounded-2xl bg-sand-100 grid place-items-center text-2xl">
+        <h1 className="font-display text-4xl sm:text-5xl tracking-tight flex items-center gap-3">
+          <span aria-hidden className="text-3xl sm:text-4xl leading-none shrink-0">
             {section.icon}
-          </div>
-        </div>
-        <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
-          {title}
+          </span>
+          <span>{title}</span>
         </h1>
         {description ? (
           <p className="text-ink-600 mt-3 text-lg">{description}</p>

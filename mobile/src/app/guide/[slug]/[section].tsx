@@ -49,7 +49,6 @@ export default function SectionScreen() {
             <View style={styles.icon}>
               <Text style={{ fontSize: 26 }}>{data.section.icon}</Text>
             </View>
-            <Text style={styles.meta}>{data.section.readingTime} read</Text>
             <Text style={styles.title}>{data.section.title}</Text>
             {data.section.description ? <Text style={styles.desc}>{data.section.description}</Text> : null}
           </View>
