@@ -1,0 +1,76 @@
+# What EAS (mobile app builds) uploads. Replaces .gitignore for EAS, so it
+# repeats it, then drops website-only folders the app build never needs.
+
+node_modules
+.next
+out
+dist
+.env
+.env.local
+.DS_Store
+*.log
+.vercel
+.turbo
+
+# TinaCMS — auto-generated, regenerated on every dev/build
+tina/__generated__
+public/admin
+
+# Original photo/video drops (kept locally, only the *-web.* copies ship)
+public/uploads/wfa*.JPG
+!public/uploads/wfa*-web.jpg
+public/uploads/Hero.mp4
+
+# Place / embed caches — re-fetched on demand
+tina/.place-cache.json
+tina/.embed-cache.json
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+
+public/uploads/bangkok*
+!public/uploads/bangkok-*-web.jpg
+public/uploads/chiangmai*
+!public/uploads/chiangmai-*-web.jpg
+public/uploads/danang*
+!public/uploads/danang-*-web.jpg
+
+# mobile/.gitignore
+mobile/node_modules/
+.expo/
+mobile/dist/
+mobile/web-build/
+mobile/expo-env.d.ts
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+mobile/npm-debug.*
+mobile/yarn-debug.*
+mobile/yarn-error.*
+.DS_Store
+*.pem
+.env*.local
+*.tsbuildinfo
+mobile/ios
+mobile/android
+mobile/node_modules/
+mobile/.expo/
+mobile/.env*.local
+
+# Website-only
+/app
+/components
+/lib
+/content
+/data
+/public
+/scripts
+/tina
+/docs
+/marketing
+/middleware.ts

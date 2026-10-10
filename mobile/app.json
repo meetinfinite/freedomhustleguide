@@ -43,6 +43,13 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "owner": "infinite-studio",
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "a877accd-c678-4b65-8b23-1d19dd6fdc1d"
+      }
     }
   }
 }
