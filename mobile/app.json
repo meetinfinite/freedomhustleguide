@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Freedom Hustle",
+    "slug": "freedom-hustle",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "scheme": "freedomhustle",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.freedomhustleguide.app",
+      "supportsTablet": true,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.freedomhustleguide.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#BF5627",
+        "foregroundImage": "./assets/adaptive-icon.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-image",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#BF5627",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 140
+        }
+      ],
+      "expo-web-browser"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
