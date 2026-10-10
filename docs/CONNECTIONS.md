@@ -18,6 +18,8 @@ instead of reconstructing it each time.
 | **Stripe** | Payments — lifetime + per-city | one Stripe account | `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_LIFETIME`, `STRIPE_PRICE_<CITY>` |
 | **Resend** | Sends sign-in / magic-link emails | Resend account | `RESEND_API_KEY`, `RESEND_FROM_EMAIL` |
 | **Google Places** | Snapshot script only (`scripts/places-snapshot.ts`) - **never the live site** | Google Cloud project StepForward | `GOOGLE_PLACES_API_KEY` in `.env.local` only - not Vercel |
+| **App stores** (optional until launch) | Guide pages show "Download the app" once set - see [MOBILE_APP.md](MOBILE_APP.md) | App Store Connect / Google Play Console | `NEXT_PUBLIC_IOS_APP_URL`, `NEXT_PUBLIC_ANDROID_APP_URL` |
+| **Expo / EAS** | Builds + submits the mobile app (`mobile/`) | Expo account (not set up yet) | `mobile/eas.json` (public Supabase URL + publishable key only) |
 | **GetYourGuide** (optional) | Affiliate attribution on activity-link cards | partner.getyourguide.com | `GETYOURGUIDE_PARTNER_ID` |
 
 Airbnb / GetYourGuide links pasted into Notion render as native cards (see

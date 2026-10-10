@@ -31,6 +31,8 @@ This is the "staging": every PR gets its own throwaway preview site.
 - `docs/GUIDE_ROLLOUT.md` — step-by-step to launch a new city guide.
 - `docs/CONNECTIONS.md` — every external service + which env var drives it.
 - `docs/NOTION_CARDS.md` — how links become cards (editor guide).
+- `docs/MOBILE_APP.md` — the iOS/Android app in `mobile/`: how it reads
+  guides, sign-up, running it, shipping to the stores.
 
 ## Commands
 
@@ -45,6 +47,10 @@ This is the "staging": every PR gets its own throwaway preview site.
   `lib/places.ts` — link-card data. `lib/members.ts` — Supabase auth/access.
 - `components/NotionRenderer.tsx` — turns Notion blocks into React.
 - `app/page.tsx` — homepage. `app/guides/[slug]/...` — landing + gated app.
+- `app/api/app/*` + `lib/appApi.ts` — JSON API the mobile app reads.
+- `mobile/` — Expo app (separate package; own `npm install`). Its
+  `src/components/NotionBlocks.tsx` mirrors `NotionRenderer.tsx` - keep the
+  Notion conventions in sync.
 
 ## Golden rules
 

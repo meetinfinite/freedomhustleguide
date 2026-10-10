@@ -12,6 +12,8 @@ import { MoreCities } from "@/components/MoreCities";
 import { FoundersCityStrip } from "@/components/FoundersCityStrip";
 import { getSupabaseServer } from "@/lib/supabase/server";
 import { getMember } from "@/lib/members";
+import { getAppLinks } from "@/lib/appLinks";
+import { GetTheApp } from "@/components/GetTheApp";
 import { Suspense } from "react";
 
 export function generateStaticParams() {
@@ -115,6 +117,9 @@ export default async function GuideLandingPage({
   // guides - matches the preview gate on the /app pages.
   const canPreview = Boolean(!isLive && member?.lifetime);
   const ownedView = ownsGuide || canPreview;
+  // Once the app is in the stores, live guides are read in the app (free
+  // with sign-up) instead of claimed here. Existing owners keep web access.
+  const appLinks = isLive && !ownedView ? getAppLinks() : null;
 
   // Most guides declare no heroImage - fall back to cardImage so the
   // hero always has a photo (live guides included; Chiang Mai shipped
@@ -143,6 +148,9 @@ export default async function GuideLandingPage({
           {label ?? "View guide →"}
         </Link>
       );
+    }
+    if (appLinks) {
+      return <GetTheApp links={appLinks} className={className} />;
     }
     if (isLive) {
       // The small sign-in link below the CTA is the escape hatch for
@@ -337,7 +345,9 @@ export default async function GuideLandingPage({
               <p className="text-xs uppercase tracking-[0.18em] text-electric-300 font-semibold mb-3">
                 {ownedView
                   ? "You own this"
-                  : isLive
+                  : appLinks
+                    ? "Free in the app"
+                    : isLive
                     ? "Pay what you want"
                     : "Waitlist"}
               </p>
@@ -351,7 +361,9 @@ export default async function GuideLandingPage({
               <p className="text-sand-200 mt-4 text-lg leading-relaxed">
                 {ownedView
                   ? "You've got the full guide - pick up wherever you left off."
-                  : isLive
+                  : appLinks
+                    ? "Download the Freedom Hustle app and sign up - this guide and every other one are yours, free."
+                    : isLive
                     ? "Instant access. Use it for your whole stay."
                     : `Get the ${guide.city} guide the moment it's ready, and like every guide, it'll be pay what you want.`}
               </p>
