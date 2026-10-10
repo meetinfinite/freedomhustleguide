@@ -40,6 +40,8 @@ interface CardPhoto {
   /** Google contributor credit for copied Google photos. */
   author?: string;
   authorUri?: string;
+  /** Text after the credit - "Google" unless the photo says otherwise. */
+  via?: string;
 }
 
 interface PlaceData {
@@ -48,7 +50,7 @@ interface PlaceData {
   address: string;
   rating?: number;
   userRatingCount?: number;
-  photos: { src: string; author?: string; authorUri?: string }[];
+  photos: { src: string; author?: string; authorUri?: string; via?: string }[];
   googleMapsUri: string;
 }
 
@@ -205,8 +207,8 @@ export function PlaceCard({
                 </a>
               ) : (
                 photo.author
-              )}{" "}
-              · Google
+              )}
+              {photo.via === undefined ? " · Google" : photo.via ? ` · ${photo.via}` : ""}
             </div>
           ) : null}
 
@@ -318,7 +320,7 @@ export function PlaceCard({
             <span aria-hidden className="text-white/80">↗</span>
           </a>
           <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(displayName)}&destination_place_id=${encodeURIComponent(p.placeId)}`}
+            href={directionsUrl(displayName, p.placeId, url)}
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white border border-ink-200 !text-ink-800 text-sm font-semibold hover:border-ink-400 hover:bg-sand-50 transition !no-underline"
@@ -428,6 +430,25 @@ function CameraTick() {
       <path d="M9 2L7.17 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-3.17L15 2H9zm3 15a5 5 0 110-10 5 5 0 010 10zm-1.41-3.59L8.41 11.24l-1.41 1.41L10.59 16l5.66-5.66-1.41-1.41-4.24 4.24z" />
     </svg>
   );
+}
+
+/** Google Maps directions. Without a place id (no Google data), aim at
+ *  the Notion search text - it carries the area ("… Lamai Koh Samui"). */
+function directionsUrl(name: string, placeId: string, notionUrl: string) {
+  const base = "https://www.google.com/maps/dir/?api=1&destination=";
+  if (placeId) {
+    return `${base}${encodeURIComponent(name)}&destination_place_id=${encodeURIComponent(placeId)}`;
+  }
+  const q = notionUrl.match(/\/maps\/search\/([^/?@]+)/)?.[1];
+  let dest = name;
+  if (q) {
+    try {
+      dest = decodeURIComponent(q).replace(/\+/g, " ");
+    } catch {
+      /* keep the name */
+    }
+  }
+  return `${base}${encodeURIComponent(dest)}`;
 }
 
 function DirectionsIcon() {

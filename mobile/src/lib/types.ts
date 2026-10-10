@@ -52,7 +52,7 @@ export interface PlaceData {
   address: string;
   rating?: number;
   userRatingCount?: number;
-  photos: { src: string; author?: string; authorUri?: string }[];
+  photos: { src: string; author?: string; authorUri?: string; via?: string }[];
   googleMapsUri: string;
 }
 
