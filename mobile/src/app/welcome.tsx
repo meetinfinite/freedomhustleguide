@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { StatusBar } from "expo-status-bar";
 import { Button } from "../components/ui";
 import { openLink } from "../lib/links";
-import { PRIVACY_URL, TERMS_URL } from "../lib/config";
+import { PRIVACY_URL, REVIEW_EMAIL, TERMS_URL } from "../lib/config";
 import { supabase } from "../lib/supabase";
 import { colors, fonts, radius } from "../theme";
 
@@ -23,16 +23,26 @@ export default function Welcome() {
   const [hasAccount, setHasAccount] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const cleanEmail = email.trim().toLowerCase();
-  const valid = EMAIL_RE.test(cleanEmail) && (hasAccount || name.trim().length > 0);
+  const isReviewer = hasAccount && cleanEmail === REVIEW_EMAIL;
+  const valid =
+    EMAIL_RE.test(cleanEmail) && (hasAccount || name.trim().length > 0) && (!isReviewer || password.length > 0);
 
   async function submit() {
     if (!valid) return;
     setBusy(true);
     setError(null);
+    if (isReviewer) {
+      // Store review account only - see REVIEW_EMAIL.
+      const { error } = await supabase.auth.signInWithPassword({ email: cleanEmail, password });
+      setBusy(false);
+      if (error) setError(error.message);
+      return;
+    }
     const { error } = await supabase.auth.signInWithOtp({
       email: cleanEmail,
       options: {
@@ -106,9 +116,22 @@ export default function Welcome() {
             onSubmitEditing={submit}
             style={styles.input}
           />
+          {isReviewer ? (
+            <TextInput
+              value={password}
+              onChangeText={setPassword}
+              placeholder="Password"
+              placeholderTextColor={colors.ink400}
+              secureTextEntry
+              autoCapitalize="none"
+              returnKeyType="go"
+              onSubmitEditing={submit}
+              style={styles.input}
+            />
+          ) : null}
           {error ? <Text style={styles.error}>{error}</Text> : null}
           <Button
-            label={hasAccount ? "Email me a sign-in code" : "Create free account"}
+            label={isReviewer ? "Sign in" : hasAccount ? "Email me a sign-in code" : "Create free account"}
             variant="terra"
             onPress={submit}
             loading={busy}

@@ -1,3 +1,6 @@
+# What EAS (mobile app builds) uploads. Replaces .gitignore for EAS, so it
+# repeats it, then drops website-only folders the app build never needs.
+
 node_modules
 .next
 out
@@ -31,4 +34,43 @@ public/uploads/chiangmai*
 !public/uploads/chiangmai-*-web.jpg
 public/uploads/danang*
 !public/uploads/danang-*-web.jpg
-review-login.local.txt
+
+# mobile/.gitignore
+mobile/node_modules/
+.expo/
+mobile/dist/
+mobile/web-build/
+mobile/expo-env.d.ts
+.kotlin/
+*.orig.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+.metro-health-check*
+mobile/npm-debug.*
+mobile/yarn-debug.*
+mobile/yarn-error.*
+.DS_Store
+*.pem
+.env*.local
+*.tsbuildinfo
+mobile/ios
+mobile/android
+mobile/node_modules/
+mobile/.expo/
+mobile/.env*.local
+
+# Website-only
+/app
+/components
+/lib
+/content
+/data
+/public
+/scripts
+/tina
+/docs
+/marketing
+/middleware.ts

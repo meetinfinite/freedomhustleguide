@@ -21,7 +21,7 @@ export default function PrivacyPage() {
         <h1 className="font-display text-4xl sm:text-5xl tracking-tight">
           Privacy Policy
         </h1>
-        <p className="text-ink-500 mt-3 text-sm">Last updated: 25 May 2026</p>
+        <p className="text-ink-500 mt-3 text-sm">Last updated: 10 October 2026</p>
 
         <div className="mt-10 space-y-8 text-ink-700 leading-relaxed">
           <section>
@@ -33,7 +33,9 @@ export default function PrivacyPage() {
               <Link href="/" className="underline hover:text-ink-900">
                 freedomhustleguide.com
               </Link>{" "}
-              (the &ldquo;Site&rdquo;) and the Freedom Hustle digital guides.
+              (the &ldquo;Site&rdquo;), the Freedom Hustle mobile app for iOS and
+              Android (the &ldquo;App&rdquo;) and the Freedom Hustle digital
+              guides.
               We are the data controller for the purposes of UK GDPR.
             </p>
           </section>
@@ -64,7 +66,12 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>
                 <strong>Email address</strong> - when you buy a guide, sign in
-                with a magic link, or join a waitlist.
+                with a magic link or one-time code, create an account in the
+                App, or join a waitlist.
+              </li>
+              <li>
+                <strong>First name</strong> - when you create an account in the
+                App, so we can greet you.
               </li>
               <li>
                 <strong>Payment details</strong> - handled directly by Stripe.
@@ -81,6 +88,11 @@ export default function PrivacyPage() {
                 <strong>Authentication cookies</strong> - set by Supabase Auth
                 to keep you signed in. Strictly necessary; expires when your
                 session ends.
+              </li>
+              <li>
+                <strong>On your device (App)</strong> - your sign-in session
+                and your checklist progress are stored on your phone only. The
+                App has no ads, no tracking and no third-party analytics.
               </li>
             </ul>
           </section>
@@ -193,6 +205,26 @@ export default function PrivacyPage() {
                 support@freedomhustleguide.com
               </a>{" "}
               and we&apos;ll action it within 30 days.
+            </p>
+            <h3
+              id="delete-account"
+              className="font-semibold text-ink-900 mt-6 mb-2 scroll-mt-24"
+            >
+              Deleting your account
+            </h3>
+            <p>
+              In the App, go to <strong>Account &rarr; Delete account</strong>.
+              This permanently deletes your sign-in and your member record
+              straight away. You can also email{" "}
+              <a
+                href="mailto:support@freedomhustleguide.com"
+                className="underline hover:text-ink-900"
+              >
+                support@freedomhustleguide.com
+              </a>{" "}
+              from the address you signed up with and we&apos;ll delete it for
+              you within 30 days. Purchase records we must keep for tax reasons
+              (see section 5) are retained; everything else is removed.
             </p>
             <p className="mt-3">
               You also have the right to complain to the UK Information
