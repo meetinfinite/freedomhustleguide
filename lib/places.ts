@@ -1,5 +1,6 @@
 import snapshot from "@/data/places.json";
 import photoPicks from "@/data/place-photo-picks.json";
+import placePhotos from "@/data/place-photos.json";
 import { placeKey } from "./gmaps";
 
 /**
@@ -21,6 +22,8 @@ export interface PlacePhoto {
   /** Google contributor who took it - shown as the photo credit. */
   author?: string;
   authorUri?: string;
+  /** Where the credit points - "Google" when absent (snapshot photos). */
+  via?: string;
 }
 
 export interface PlaceData {
@@ -59,8 +62,42 @@ function withPickedPhoto(place: PlaceData): PlaceData {
   return place;
 }
 
+/**
+ * Photos for venues with no Google data (no API - Valeria, 2026-10-11):
+ * data/place-photos.json maps the Notion link (as pasted) to a photo we
+ * host. The card shows photo + credit, the Notion name, Open in Maps and
+ * Directions - no stars or address.
+ */
+interface FreePhoto {
+  src: string;
+  /** Credit line, e.g. the venue's name or the photographer. */
+  credit?: string;
+  creditUri?: string;
+  /** Text after the credit, e.g. "website". Omit for none. */
+  via?: string;
+}
+const FREE = placePhotos as Record<string, FreePhoto>;
+
 export function getPlaceFromUrl(rawUrl: string): PlaceData | null {
   if (!rawUrl) return null;
-  const place = SNAPSHOT[placeKey(rawUrl)];
-  return place ? withPickedPhoto(place) : null;
+  const key = placeKey(rawUrl);
+  const place = SNAPSHOT[key];
+  if (place) return withPickedPhoto(place);
+  const free = FREE[key];
+  if (!free) return null;
+  return {
+    placeId: "",
+    name: "",
+    address: "",
+    photos: [
+      {
+        src: free.src,
+        ...(free.credit ? { author: free.credit } : {}),
+        ...(free.creditUri ? { authorUri: free.creditUri } : {}),
+        via: free.via ?? ""
+      }
+    ],
+    googleMapsUri: rawUrl,
+    fetchedAt: ""
+  };
 }

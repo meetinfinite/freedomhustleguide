@@ -53,7 +53,8 @@ export function PlaceCard({
           />
           {photo.author ? (
             <Text style={styles.credit} numberOfLines={1}>
-              Photo: {photo.author} · Google
+              Photo: {photo.author}
+              {photo.via === undefined ? " · Google" : photo.via ? ` · ${photo.via}` : ""}
             </Text>
           ) : null}
           {ourPick ? (
