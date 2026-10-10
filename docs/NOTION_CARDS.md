@@ -36,12 +36,24 @@ address, rating and 2 photos are captured once into `data/places.json` +
 hosted image path). After adding venues, a dev runs:
 
 ```
-npx tsx scripts/places-snapshot.ts            # free dry run: lists new venues + est. cost
-npx tsx scripts/places-snapshot.ts --commit   # calls Google - COSTS MONEY
+npx tsx scripts/places-snapshot.ts --city koh-samui --photos-only            # free dry run
+npx tsx scripts/places-snapshot.ts --city koh-samui --photos-only --commit   # $0 - see below
 ```
 
-**Only run `--commit` with Arni's explicit OK.** Then commit both paths
-and open a PR. Ratings are deliberately never refreshed.
+**New guides use `--photos-only` (Valeria, 2026-10-11 - guides are free, so
+no spend).** It asks Google for just the place id + photos, which Google
+bills as "IDs Only" - unlimited and free. Only the photo downloads count,
+and Google gives **1,000 free a month**; the script stops if a run would
+go over (one guide at a time with `--city`; `--allow-paid` overrides).
+The card then shows photo + Google credit, the name from Notion, Open in
+Maps and Directions - no star rating. Pick a people-free photo per place
+in `data/place-photo-picks.json`.
+
+The full mode (no `--photos-only`) also fetches stars, review counts and
+names, which Google bills (Enterprise, 1,000 free a month, then paid) -
+**only with Arni's explicit OK.** Either way, run the key from
+`.env.local` only, commit both paths and open a PR. Ratings are
+deliberately never refreshed.
 
 ---
 

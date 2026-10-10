@@ -9,6 +9,15 @@
  *   --city <slug>   only this guide (e.g. --city bangkok)
  *   --refresh       re-fetch venues already in the snapshot (costs money)
  *   --prune         drop snapshot entries no longer linked from Notion
+ *   --photos-only   FREE mode (default for new guides): fetch only the
+ *                   place id + photos - no name/address/stars. Google bills
+ *                   that lookup as "IDs Only" (unlimited, free); only the
+ *                   photo downloads count, and the first 1,000 a month are
+ *                   free. Cards show photo, name (from Notion), Open in Maps
+ *                   and Directions - no star rating (Valeria, 2026-10-11).
+ *   --photos <n>    photos per place (default 2) - extra candidates let us
+ *                   pick one without people via data/place-photo-picks.json
+ *   --allow-paid    let a photos-only run go past 1,000 photo downloads
  *
  * Reads GOOGLE_PLACES_API_KEY + NOTION_TOKEN from .env.local. Writes
  * data/places.json and public/places/<placeId>-<n>.webp. Commit both.
@@ -35,16 +44,23 @@ const COMMIT = args.includes("--commit");
 const REFRESH = args.includes("--refresh");
 const PRUNE = args.includes("--prune");
 const CITY = args.includes("--city") ? args[args.indexOf("--city") + 1] : null;
+const PHOTOS_ONLY = args.includes("--photos-only");
+const ALLOW_PAID = args.includes("--allow-paid");
+// Google's free monthly allowance for photo downloads (Place Details Photos)
+const FREE_PHOTOS_PER_MONTH = 1000;
 
 const SNAPSHOT_PATH = path.join(ROOT, "data", "places.json");
 const PHOTO_DIR = path.join(ROOT, "public", "places");
-const PHOTOS_PER_PLACE = 2;
+const PHOTOS_PER_PLACE = args.includes("--photos")
+  ? Math.max(1, Number(args[args.indexOf("--photos") + 1]) || 2)
+  : 2;
 const PHOTO_WIDTH = 1000;
 const API = "https://places.googleapis.com/v1";
 // Rating + review count are Enterprise-tier fields; Arni chose to keep
 // them (captured once, never refreshed). No priceLevel - nothing shows it.
-const DETAIL_FIELDS =
-  "id,displayName,formattedAddress,googleMapsUri,rating,userRatingCount,photos";
+const DETAIL_FIELDS = PHOTOS_ONLY
+  ? "id,photos" // "Place Details Essentials (IDs Only)" - unlimited, free
+  : "id,displayName,formattedAddress,googleMapsUri,rating,userRatingCount,photos";
 // Approx. list prices (USD per lookup), before Google's free allowance.
 const COST = { details: 0.02, photo: 0.007 };
 
@@ -76,6 +92,7 @@ async function main() {
   // 1. Every venue link the site renders (same rule as lib/notion.ts).
   const guides = listGuides().filter((g) => !CITY || g.slug === CITY);
   const linked = new Map<string, string>(); // key → url as pasted
+  const linkedName = new Map<string, string>(); // key → bold name in Notion
   for (const g of guides) {
     let n = 0;
     for (const s of g.sections) {
@@ -85,12 +102,17 @@ async function main() {
         if (b.type !== "bulleted_list_item") continue;
         const first = (
           b.data as {
-            rich_text?: { href?: string | null; annotations?: { bold?: boolean } }[];
+            rich_text?: {
+              href?: string | null;
+              plain_text?: string;
+              annotations?: { bold?: boolean };
+            }[];
           }
         )?.rich_text?.[0];
         if (!first?.annotations?.bold || !first.href) continue;
         if (!GMAPS_HOST_RE.test(first.href)) continue;
         linked.set(placeKey(first.href), first.href);
+        if (first.plain_text) linkedName.set(placeKey(first.href), first.plain_text.trim());
         n++;
       }
     }
@@ -100,10 +122,24 @@ async function main() {
   const todo = [...linked.entries()].filter(
     ([key]) => REFRESH || !snapshot[key]
   );
-  const est = todo.length * (COST.details + PHOTOS_PER_PLACE * COST.photo);
+  const photoCalls = todo.length * PHOTOS_PER_PLACE;
+  const est = PHOTOS_ONLY
+    ? photoCalls * COST.photo
+    : todo.length * (COST.details + PHOTOS_PER_PLACE * COST.photo);
   console.log(
     `\n${linked.size} distinct venues · ${linked.size - todo.length} already in snapshot · ${todo.length} to fetch (≈ $${est.toFixed(2)} at list price)`
   );
+  if (PHOTOS_ONLY) {
+    console.log(
+      `Photos-only: place lookups are free; ${photoCalls} photo downloads, inside Google's ${FREE_PHOTOS_PER_MONTH} free a month if nothing else used them this month → $0.`
+    );
+    if (photoCalls > FREE_PHOTOS_PER_MONTH && !ALLOW_PAID) {
+      console.log(
+        `\nStopping: that's more than the free ${FREE_PHOTOS_PER_MONTH}. Use --city to do one guide at a time, fewer --photos, or --allow-paid.`
+      );
+      return;
+    }
+  }
 
   const stale = CITY
     ? []
@@ -140,7 +176,7 @@ async function main() {
           if (!placeId) throw new Error("no place found");
           let data = !REFRESH ? byPlaceId.get(placeId) : undefined;
           if (!data) {
-            data = await fetchPlace(placeId, key);
+            data = await fetchPlace(placeId, key, linkedName.get(k));
             byPlaceId.set(placeId, data);
           }
           snapshot[k] = data;
@@ -187,7 +223,11 @@ async function save(snapshot: Record<string, PlaceData>) {
 
 // ---- Google ----------------------------------------------------------------
 
-async function fetchPlace(placeId: string, key: string): Promise<PlaceData> {
+async function fetchPlace(
+  placeId: string,
+  key: string,
+  notionName?: string
+): Promise<PlaceData> {
   const res = await fetch(`${API}/places/${encodeURIComponent(placeId)}`, {
     headers: { "X-Goog-Api-Key": key, "X-Goog-FieldMask": DETAIL_FIELDS }
   });
@@ -226,13 +266,19 @@ async function fetchPlace(placeId: string, key: string): Promise<PlaceData> {
 
   return {
     placeId: p.id,
-    name: p.displayName?.text || "Unknown place",
+    // Photos-only runs don't ask Google for the name (that would bill) -
+    // the card shows the bold name from Notion anyway.
+    name: p.displayName?.text || notionName || "Unknown place",
     address: p.formattedAddress || "",
     ...(typeof p.rating === "number" ? { rating: p.rating } : {}),
     ...(p.userRatingCount ? { userRatingCount: p.userRatingCount } : {}),
     photos,
     googleMapsUri:
-      p.googleMapsUri || `https://www.google.com/maps/place/?q=place_id:${p.id}`,
+      p.googleMapsUri ||
+      // Google's documented Maps URL: opens this exact place
+      `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+        notionName || p.id
+      )}&query_place_id=${p.id}`,
     fetchedAt: new Date().toISOString().slice(0, 10)
   };
 }
