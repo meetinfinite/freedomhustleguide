@@ -38,8 +38,9 @@ export function AreaMap({
   const loadedRef = useRef(false);
   const stayAreas = map.areas.filter((a) => !a.avoid);
   const avoidAreas = map.areas.filter((a) => a.avoid);
+  // Our own pick opens first, else the first stay area
   const [selected, setSelected] = useState<string>(
-    stayAreas[0]?.name ?? map.areas[0]?.name ?? ""
+    map.areas.find((a) => a.pick)?.name ?? stayAreas[0]?.name ?? map.areas[0]?.name ?? ""
   );
   const selectedArea = map.areas.find((a) => a.name === selected);
   // Latest selection, readable inside the map's load handler
@@ -220,6 +221,15 @@ export function AreaMap({
           }
         />
         {a.name}
+        {a.pick ? (
+          <span
+            className={`text-[10px] uppercase tracking-wider font-semibold ${
+              active ? "text-electric-300" : "text-electric-600"
+            }`}
+          >
+            Our pick
+          </span>
+        ) : null}
       </button>
     );
   };
@@ -258,6 +268,11 @@ export function AreaMap({
           className="mt-4 rounded-2xl bg-white border border-ink-100 shadow-card p-4 sm:p-5 border-l-4"
           style={{ borderLeftColor: selectedArea.color }}
         >
+          {selectedArea.pick ? (
+            <p className="text-[11px] uppercase tracking-[0.14em] text-electric-600 font-semibold !my-0 !mb-1">
+              Our pick
+            </p>
+          ) : null}
           <p className="font-display text-lg tracking-tight text-ink-900 !my-0">
             {selectedArea.name}
           </p>

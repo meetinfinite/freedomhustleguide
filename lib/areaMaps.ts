@@ -25,6 +25,8 @@ export interface AreaDef {
    * are on the map without reading as recommendations.
    */
   avoid?: boolean;
+  /** Where we chose to stay - labelled "Our pick" and selected first. */
+  pick?: boolean;
   /** Polygon outline as [lat, lng] pairs. */
   polygon: [number, number][];
 }
@@ -321,7 +323,7 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
     zoom: 11.6,
     areas: [
       { name: "Chaweng", color: "#e07a5f", hint: "Main beach, nightlife, everything", polygon: [[9.560, 100.055], [9.560, 100.066], [9.525, 100.066], [9.525, 100.055]] },
-      { name: "Lamai", color: "#d16ba5", hint: "Calmer second beach", polygon: [[9.480, 100.040], [9.480, 100.056], [9.460, 100.056], [9.460, 100.040]] },
+      { name: "Lamai", color: "#d16ba5", pick: true, hint: "Where we chose to stay - a calmer beach, and we love the conveniences", bestFor: "A quieter beach base with cafés, gyms, massages and good food all close by", polygon: [[9.480, 100.040], [9.480, 100.056], [9.460, 100.056], [9.460, 100.040]] },
       { name: "Bophut", color: "#7c6bd1", hint: "Fisherman's Village, boutique feel", polygon: [[9.565, 100.020], [9.565, 100.040], [9.550, 100.040], [9.550, 100.020]] },
       { name: "Maenam", color: "#5fc98a", hint: "Quiet, long-stay favourite", polygon: [[9.575, 99.990], [9.575, 100.015], [9.560, 100.015], [9.560, 99.990]] },
       { name: "Bang Rak", color: "#d4b85a", hint: "Near the pier + airport", polygon: [[9.570, 100.040], [9.570, 100.056], [9.555, 100.056], [9.555, 100.040]] },
