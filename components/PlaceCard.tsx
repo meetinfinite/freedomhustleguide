@@ -30,6 +30,8 @@ interface PlaceCardProps {
   /** Drop the card's own vertical margin + use a grid-friendly image
    *  aspect (when laid out two-up in a grid). */
   bare?: boolean;
+  /** Show lovePoints on a card that has data (Best Areas to Stay only). */
+  showNotes?: boolean;
 }
 
 interface CardPhoto {
@@ -63,7 +65,8 @@ export function PlaceCard({
   ownPhotos,
   lovePoints,
   prefetched,
-  bare
+  bare,
+  showNotes
 }: PlaceCardProps) {
   const my = bare ? "" : "my-6";
   const imgAspect = bare
@@ -162,8 +165,10 @@ export function PlaceCard({
   const displayName = nameOverride || p.name;
   const photo = pickPhoto(p, ownPhotos);
   // One photo per card (Valeria, 2026-10-10) - no carousel. The editor's
-  // notes aren't shown on a full card either: photo, name, rating,
-  // address and the two buttons say enough.
+  // notes only show where the section asks for them (stays).
+  const points = showNotes
+    ? (lovePoints || []).filter((x) => x && x.trim().length > 0)
+    : [];
 
   return (
     <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
@@ -277,6 +282,27 @@ export function PlaceCard({
             <Pin />
             <span>{p.address}</span>
           </p>
+        ) : null}
+
+        {points.length > 0 ? (
+          <div className="mt-5 rounded-2xl bg-sand-50 p-4 sm:p-5">
+            <div className="!text-[11px] !uppercase !tracking-wider !text-electric-600 !font-semibold !my-0 !mb-2">
+              Good to know
+            </div>
+            <ul className="!space-y-1 list-none !pl-0 !my-0">
+              {points.map((pt, i) => (
+                <li
+                  key={i}
+                  className="!pl-0 before:hidden flex gap-2 items-start !text-sm !text-ink-700 !leading-snug"
+                >
+                  <span className="!text-electric-600 !font-semibold shrink-0">
+                    +
+                  </span>
+                  <span>{pt}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         ) : null}
 
         <div className="mt-6 flex flex-wrap gap-2">

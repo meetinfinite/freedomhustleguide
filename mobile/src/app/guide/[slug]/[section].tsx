@@ -59,6 +59,7 @@ export default function SectionScreen() {
             blocks={data.page.blocks}
             places={data.page.places}
             embeds={data.page.embeds}
+            showCardNotes={section === "areas-to-stay"}
           />
 
           <View style={styles.pager}>

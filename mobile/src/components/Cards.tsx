@@ -13,12 +13,14 @@ export function PlaceCard({
   url,
   name,
   notes,
+  showNotes,
   ourPick,
   place
 }: {
   url: string;
   name: string;
   notes?: string;
+  showNotes?: boolean;
   ourPick?: boolean;
   place?: PlaceData;
 }) {
@@ -77,6 +79,12 @@ export function PlaceCard({
             </Text>
           </Text>
         ) : null}
+        {notes && showNotes ? (
+          <View style={styles.noteBox}>
+            <Text style={styles.noteLabel}>Good to know</Text>
+            <Text style={styles.notes}>{notes}</Text>
+          </View>
+        ) : null}
         <Pressable style={styles.cta} onPress={() => openLink(place.googleMapsUri || url)}>
           <Text style={styles.ctaText}>Open in Google Maps ↗</Text>
         </Pressable>
@@ -97,6 +105,7 @@ export function EmbedCard({
   kind,
   name,
   notes,
+  showNotes,
   ourPick,
   embed
 }: {
@@ -104,6 +113,7 @@ export function EmbedCard({
   kind: EmbedData["kind"];
   name: string;
   notes?: string;
+  showNotes?: boolean;
   ourPick?: boolean;
   embed?: EmbedData;
 }) {
@@ -144,8 +154,8 @@ export function EmbedCard({
             ) : null}
           </Text>
         ) : null}
-        {/* Notes only on link cards without a photo, same as the website */}
-        {notes && !embed?.image ? <Text style={[styles.notes, { marginTop: 6 }]}>{notes}</Text> : null}
+        {/* Notes on link cards, and on stays (showNotes) - same as the website */}
+        {notes && (showNotes || !embed?.image) ? <Text style={[styles.notes, { marginTop: 6 }]}>{notes}</Text> : null}
         <View style={styles.cta}>
           <Text style={styles.ctaText}>View on {label} ↗</Text>
         </View>
