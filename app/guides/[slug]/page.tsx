@@ -200,8 +200,10 @@ export default async function GuideLandingPage({
       ) : null}
 
       {/* What's inside */}
-      <section className="max-w-6xl mx-auto px-6 pt-12 pb-20">
-        <div className="max-w-2xl mb-12">
+      {/* Mobile spacing between sections is tighter than desktop - the
+          desktop padding left big empty gaps on phones (Valeria, 2026-10-10) */}
+      <section className="max-w-6xl mx-auto px-6 pt-10 pb-6 sm:pt-12 sm:pb-20">
+        <div className="max-w-2xl mb-8 sm:mb-12">
           <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
             What's inside
           </p>
@@ -230,7 +232,7 @@ export default async function GuideLandingPage({
       </section>
 
       {/* Who it's for */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <section className="max-w-6xl mx-auto px-6 py-4 sm:py-12">
         <div className="rounded-3xl bg-white border border-ink-100 shadow-card p-8 sm:p-12">
           <div className="grid lg:grid-cols-2 gap-10">
             <div>
@@ -270,7 +272,7 @@ export default async function GuideLandingPage({
       </section>
 
       {/* Why trust */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <section className="max-w-6xl mx-auto px-6 py-4 sm:py-12">
         {guide.foundersPhoto ? (
           <div className="grid lg:grid-cols-[1fr_1.4fr] gap-6 items-stretch">
             {/* Real proof: Arni + Valeria in this exact city */}
@@ -320,7 +322,7 @@ export default async function GuideLandingPage({
       </section>
 
       {/* Price / waitlist - dark panel with city image hinted in the background */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      <section className="max-w-6xl mx-auto px-6 py-6 sm:py-16">
         <div className="rounded-3xl bg-ink-900 text-sand-50 p-8 sm:p-14 relative overflow-hidden">
           {/* City photo hint at the bottom of the layer stack */}
           {guide.cardImage ? (
@@ -394,7 +396,7 @@ export default async function GuideLandingPage({
       </section>
 
       {/* FAQ */}
-      <section className="max-w-3xl mx-auto px-6 py-16">
+      <section className="max-w-3xl mx-auto px-6 py-8 sm:py-16">
         <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3 text-center">
           FAQ
         </p>
