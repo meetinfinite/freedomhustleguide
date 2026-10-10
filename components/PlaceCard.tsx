@@ -305,24 +305,26 @@ export function PlaceCard({
           </div>
         ) : null}
 
+        {/* Open in Maps leads - it's the one Valeria actually uses
+            (2026-10-11); Directions stays as the secondary button */}
         <div className="mt-6 flex flex-wrap gap-2">
-          <a
-            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(displayName)}&destination_place_id=${encodeURIComponent(p.placeId)}`}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-electric-500 !text-white text-sm font-semibold hover:bg-electric-600 transition !no-underline shadow-card"
-          >
-            <DirectionsIcon />
-            Directions
-          </a>
           <a
             href={p.googleMapsUri}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white border border-ink-200 !text-ink-800 text-sm font-semibold hover:border-ink-400 hover:bg-sand-50 transition !no-underline"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-electric-500 !text-white text-sm font-semibold hover:bg-electric-600 transition !no-underline shadow-card"
           >
             Open in Maps
-            <span aria-hidden className="text-ink-400">↗</span>
+            <span aria-hidden className="text-white/80">↗</span>
+          </a>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(displayName)}&destination_place_id=${encodeURIComponent(p.placeId)}`}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full bg-white border border-ink-200 !text-ink-800 text-sm font-semibold hover:border-ink-400 hover:bg-sand-50 transition !no-underline"
+          >
+            <DirectionsIcon />
+            Directions
           </a>
         </div>
       </div>
