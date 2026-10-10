@@ -19,6 +19,8 @@ interface EmbedCardProps {
   prefetched?: EmbedData;
   /** Drop the card's own vertical margin (when laid out in a grid). */
   bare?: boolean;
+  /** Show the notes on a card with a photo (Best Areas to Stay only). */
+  showNotes?: boolean;
 }
 
 interface FetchState {
@@ -69,7 +71,8 @@ export function EmbedCard({
   notes,
   prefetched,
   bare,
-  ourPick
+  ourPick,
+  showNotes
 }: EmbedCardProps) {
   const my = bare ? "" : "my-6";
   const [state, setState] = useState<FetchState>(() =>
@@ -249,8 +252,10 @@ export function EmbedCard({
                 .join("  ·  ")}
             </p>
           ) : null}
-          {/* No notes on a card with a photo (Valeria, 2026-10-10) - the
-              photo, rating and price say enough. Link cards keep them. */}
+          {/* Notes on a photo card only where the section wants them -
+              the stay write-ups in Best Areas to Stay (Valeria,
+              2026-10-10). Link cards always keep them. */}
+          {showNotes ? NotesBox : null}
           <div className="mt-auto pt-4">{Cta}</div>
         </div>
       </div>

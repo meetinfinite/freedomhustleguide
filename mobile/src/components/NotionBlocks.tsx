@@ -82,12 +82,15 @@ export function NotionBlocks({
   pageId,
   blocks,
   places,
-  embeds
+  embeds,
+  showCardNotes = false
 }: {
   pageId: string;
   blocks: NotionBlock[];
   places: Record<string, PlaceData>;
   embeds: Record<string, EmbedData>;
+  /** Notes on photo cards - Best Areas to Stay only, same as the website. */
+  showCardNotes?: boolean;
 }) {
   const out: ReactNode[] = [];
   let i = 0;
@@ -125,6 +128,7 @@ export function NotionBlocks({
             url={card.url}
             name={card.name}
             notes={card.notes}
+            showNotes={showCardNotes}
             ourPick={card.isPick}
             place={places[card.url]}
           />
@@ -135,6 +139,7 @@ export function NotionBlocks({
             kind={card.embedKind}
             name={card.name}
             notes={card.notes}
+            showNotes={showCardNotes}
             ourPick={card.isPick}
             embed={embeds[card.url]}
           />

@@ -63,6 +63,7 @@ export default async function GuideSectionPage({ params }: PageProps) {
         blocks={notionPage.blocks}
         places={notionPage.places}
         embeds={notionPage.embeds}
+        showCardNotes={params.section === "areas-to-stay"}
       />
     );
   } else {

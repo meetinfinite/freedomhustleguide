@@ -277,10 +277,15 @@ export function NotionRenderer({
   pageId,
   blocks,
   places = {},
-  embeds = {}
+  embeds = {},
+  showCardNotes = false
 }: {
   pageId: string;
   blocks: NotionBlock[];
+  /** Show the editor's notes on cards that have a photo. Only Best Areas
+   *  to Stay does - the stay write-ups are real reviews, unlike the
+   *  one-liners on cafés and restaurants (Valeria, 2026-10-10). */
+  showCardNotes?: boolean;
   /** URL → prefetched place data, supplied by fetchSectionPage so the
    *  client doesn't need to round-trip /api/place for each card. */
   places?: Record<string, PlaceData>;
@@ -349,6 +354,7 @@ export function NotionRenderer({
                 ourPick={venue.isPick}
                 loveLabel="Good to know"
                 lovePoints={notesText ? [notesText] : undefined}
+                showNotes={showCardNotes}
                 prefetched={places[venue.url]}
                 bare={gridded}
               />
@@ -367,6 +373,7 @@ export function NotionRenderer({
               notes={noteText ? [noteText] : undefined}
               ourPick={e.isPick}
               prefetched={embeds[e.url]}
+              showNotes={showCardNotes}
               bare={gridded}
             />
           );
