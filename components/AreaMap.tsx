@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "maplibre-gl/dist/maplibre-gl.css";
-import type { CityAreaMap } from "@/lib/areaMaps";
+import type { AreaDef, CityAreaMap } from "@/lib/areaMaps";
 
 /**
  * Interactive neighbourhood map for "Best Areas to Stay".
@@ -14,7 +14,12 @@ import type { CityAreaMap } from "@/lib/areaMaps";
  * Thai.
  *
  * cooperativeGestures keeps normal page scrolling (Cmd/two-finger to
- * zoom). Areas are clickable for a one-line take.
+ * zoom).
+ *
+ * The areas are listed as tappable colour chips under the map, with the
+ * selected area's take in a card below them - a hover popup was
+ * unreadable on phones (Valeria, 2026-10-10). Tapping an area on the map
+ * selects it too, and the map zooms to whichever area you pick.
  */
 export function AreaMap({
   map,
@@ -29,6 +34,17 @@ export function AreaMap({
   showIntro?: boolean;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const mapRef = useRef<import("maplibre-gl").Map | null>(null);
+  const loadedRef = useRef(false);
+  const stayAreas = map.areas.filter((a) => !a.avoid);
+  const avoidAreas = map.areas.filter((a) => a.avoid);
+  const [selected, setSelected] = useState<string>(
+    stayAreas[0]?.name ?? map.areas[0]?.name ?? ""
+  );
+  const selectedArea = map.areas.find((a) => a.name === selected);
+  // Latest selection, readable inside the map's load handler
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
 
   useEffect(() => {
     let disposed = false;
@@ -45,6 +61,7 @@ export function AreaMap({
         zoom: map.zoom - 0.4,
         cooperativeGestures: true
       });
+      mapRef.current = instance;
       instance.addControl(
         new maplibregl.NavigationControl({ showCompass: false }),
         "top-right"
@@ -79,8 +96,6 @@ export function AreaMap({
               type: "Feature" as const,
               properties: {
                 name: a.name,
-                hint: a.hint ?? "",
-                bestFor: a.bestFor ?? "",
                 color: a.color,
                 avoid: a.avoid ?? false
               },
@@ -101,8 +116,7 @@ export function AreaMap({
           source: "areas",
           paint: {
             "fill-color": ["get", "color"],
-            // Avoid-zones stay faint - present but clearly not the point
-            "fill-opacity": ["case", ["get", "avoid"], 0.16, 0.35]
+            "fill-opacity": fillOpacity(selectedRef.current)
           }
         });
         instance.addLayer({
@@ -125,54 +139,90 @@ export function AreaMap({
             "line-dasharray": [2, 2]
           }
         });
-
-        // One shared popup: follows the cursor on desktop hover, and
-        // opens on tap for touch devices (no hover there).
-        const popup = new maplibregl.Popup({
-          closeButton: false,
-          maxWidth: "280px"
+        // Thick outline on the selected area
+        instance.addLayer({
+          id: "areas-selected",
+          type: "line",
+          source: "areas",
+          filter: ["==", ["get", "name"], selectedRef.current],
+          paint: { "line-color": ["get", "color"], "line-width": 4 }
         });
-        const showCard = (e: maplibregl.MapLayerMouseEvent) => {
-          const f = e.features?.[0];
-          if (!f || !instance) return;
-          const { name, hint, bestFor } = f.properties as {
-            name: string;
-            hint: string;
-            bestFor: string;
-          };
-          popup
-            .setLngLat(e.lngLat)
-            .setHTML(
-              `<div style="line-height:1.45">` +
-                `<strong style="font-size:13px">${name}</strong>` +
-                (hint
-                  ? `<br/><em style="color:#5a5346">${hint}</em>`
-                  : "") +
-                (bestFor
-                  ? `<br/><span><strong>Best for:</strong> ${bestFor}</span>`
-                  : "") +
-                `</div>`
-            )
-            .addTo(instance);
-        };
-        instance.on("click", "areas-fill", showCard);
-        instance.on("mousemove", "areas-fill", (e) => {
+
+        instance.on("click", "areas-fill", (e) => {
+          const name = e.features?.[0]?.properties?.name as string | undefined;
+          if (name) setSelected(name);
+        });
+        instance.on("mouseenter", "areas-fill", () => {
           if (instance) instance.getCanvas().style.cursor = "pointer";
-          showCard(e);
         });
         instance.on("mouseleave", "areas-fill", () => {
-          if (!instance) return;
-          instance.getCanvas().style.cursor = "";
-          popup.remove();
+          if (instance) instance.getCanvas().style.cursor = "";
         });
+        loadedRef.current = true;
       });
     })();
 
     return () => {
       disposed = true;
+      loadedRef.current = false;
+      mapRef.current = null;
       instance?.remove();
     };
   }, [map]);
+
+  // Highlight the selected area on the map
+  useEffect(() => {
+    const m = mapRef.current;
+    if (!m || !loadedRef.current) return;
+    m.setPaintProperty("areas-fill", "fill-opacity", fillOpacity(selected));
+    m.setFilter("areas-selected", ["==", ["get", "name"], selected]);
+  }, [selected]);
+
+  // Picking from the list also moves the map to that area
+  const pick = (area: AreaDef) => {
+    setSelected(area.name);
+    const m = mapRef.current;
+    if (!m) return;
+    const lats = area.polygon.map(([lat]) => lat);
+    const lngs = area.polygon.map(([, lng]) => lng);
+    m.fitBounds(
+      [
+        [Math.min(...lngs), Math.min(...lats)],
+        [Math.max(...lngs), Math.max(...lats)]
+      ],
+      { padding: 60, maxZoom: map.zoom + 1.5, duration: 600 }
+    );
+  };
+
+  const chip = (a: AreaDef) => {
+    const active = a.name === selected;
+    return (
+      <button
+        key={a.name}
+        type="button"
+        onClick={() => pick(a)}
+        aria-pressed={active}
+        className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition ${
+          active
+            ? "bg-ink-900 border-ink-900 text-sand-50"
+            : a.avoid
+              ? "bg-white border-ink-100 text-ink-500 hover:border-ink-300"
+              : "bg-white border-ink-100 text-ink-800 hover:border-ink-300"
+        }`}
+      >
+        <span
+          aria-hidden
+          className={`w-3 h-3 rounded-sm shrink-0 ${a.avoid ? "border border-dashed" : ""}`}
+          style={
+            a.avoid
+              ? { borderColor: a.color, backgroundColor: `${a.color}40` }
+              : { backgroundColor: a.color }
+          }
+        />
+        {a.name}
+      </button>
+    );
+  };
 
   return (
     <figure className="my-8">
@@ -181,64 +231,67 @@ export function AreaMap({
           {map.intro}
         </p>
       ) : null}
-      {/* isolate: MapLibre + the legend use high z-indexes internally;
-          without a contained stacking context they paint over the
-          sticky site header on scroll (mobile bug, 2026-08-05) */}
+      {/* isolate: MapLibre uses high z-indexes internally; without a
+          contained stacking context it paints over the sticky site
+          header on scroll (mobile bug, 2026-08-05) */}
       <div className="relative isolate z-0 rounded-2xl overflow-hidden border border-ink-100 shadow-card">
-        <div ref={containerRef} className="h-[380px] sm:h-[460px] w-full z-0" />
+        <div ref={containerRef} className="h-[320px] sm:h-[440px] w-full z-0" />
+      </div>
 
-        {/* Legend */}
-        <div className="absolute bottom-3 right-3 z-[500] rounded-xl bg-white/95 backdrop-blur border border-ink-100 shadow-card px-4 py-3">
-          <p className="text-[10px] uppercase tracking-[0.14em] text-ink-400 font-semibold mb-2">
-            Stay here
+      <div className="mt-4">
+        <p className="text-[11px] uppercase tracking-[0.14em] text-ink-400 font-semibold mb-2">
+          Stay here - tap an area
+        </p>
+        <div className="flex flex-wrap gap-2">{stayAreas.map(chip)}</div>
+        {avoidAreas.length ? (
+          <>
+            <p className="text-[11px] uppercase tracking-[0.14em] text-ink-400 font-semibold mt-4 mb-2">
+              Visit, don&apos;t stay
+            </p>
+            <div className="flex flex-wrap gap-2">{avoidAreas.map(chip)}</div>
+          </>
+        ) : null}
+      </div>
+
+      {selectedArea ? (
+        <div
+          className="mt-4 rounded-2xl bg-white border border-ink-100 shadow-card p-4 sm:p-5 border-l-4"
+          style={{ borderLeftColor: selectedArea.color }}
+        >
+          <p className="font-display text-lg tracking-tight text-ink-900 !my-0">
+            {selectedArea.name}
           </p>
-          <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
-            {map.areas
-              .filter((a) => !a.avoid)
-              .map((a) => (
-                <li
-                  key={a.name}
-                  className="flex items-center gap-2 text-xs text-ink-800"
-                >
-                  <span
-                    aria-hidden
-                    className="w-3 h-3 rounded-sm shrink-0"
-                    style={{ backgroundColor: a.color }}
-                  />
-                  <span>{a.name}</span>
-                </li>
-              ))}
-          </ul>
-          {map.areas.some((a) => a.avoid) ? (
-            <>
-              <p className="text-[10px] uppercase tracking-[0.14em] text-ink-400 font-semibold mt-3 mb-2">
-                Visit, don&apos;t stay
-              </p>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-1.5">
-                {map.areas
-                  .filter((a) => a.avoid)
-                  .map((a) => (
-                    <li
-                      key={a.name}
-                      className="flex items-center gap-2 text-xs text-ink-500"
-                    >
-                      <span
-                        aria-hidden
-                        className="w-3 h-3 rounded-sm shrink-0 border border-dashed"
-                        style={{ borderColor: a.color, backgroundColor: `${a.color}40` }}
-                      />
-                      <span>{a.name}</span>
-                    </li>
-                  ))}
-              </ul>
-            </>
+          {selectedArea.hint ? (
+            <p className="text-sm text-ink-600 !mt-1 !mb-0">{selectedArea.hint}</p>
+          ) : null}
+          {selectedArea.bestFor ? (
+            <p className="text-sm text-ink-800 !mt-2 !mb-0">
+              <strong>Best for:</strong> {selectedArea.bestFor}
+            </p>
+          ) : null}
+          {selectedArea.avoid ? (
+            <p className="text-sm text-ink-500 !mt-2 !mb-0">
+              Worth a visit, but not where we&apos;d stay.
+            </p>
           ) : null}
         </div>
-      </div>
-      <figcaption className="text-xs text-ink-400 mt-2">
-        Tap an area for a quick take. Borders are approximate - real
-        neighbourhoods blur into each other.
+      ) : null}
+
+      <figcaption className="text-xs text-ink-400 mt-3">
+        Borders are approximate - real neighbourhoods blur into each other.
       </figcaption>
     </figure>
   );
+}
+
+/** Selected area stands out; avoid-zones stay faint. */
+function fillOpacity(selected: string) {
+  return [
+    "case",
+    ["==", ["get", "name"], selected],
+    0.55,
+    ["get", "avoid"],
+    0.12,
+    0.28
+  ] as unknown as number;
 }
