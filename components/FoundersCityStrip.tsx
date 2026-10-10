@@ -23,8 +23,10 @@ export function FoundersCityStrip({
     <section className="pt-12 pb-4 sm:pt-16 sm:pb-6">
       {/* Left-aligned to match the "What's inside" heading below it */}
       <div className="max-w-6xl mx-auto px-6 mb-6 sm:mb-8">
-        <h2 className="font-display text-2xl sm:text-3xl tracking-tight">
-          Discover the best of {city}
+        {/* Same size and style as the "Everything we wish we knew..."
+            heading below, so the page reads as one system */}
+        <h2 className="font-display text-4xl sm:text-5xl tracking-tight">
+          Discover the best of {city}.
         </h2>
       </div>
 
