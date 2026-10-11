@@ -24,10 +24,7 @@
     "own": true
   },
   "https://www.google.com/maps/search/koh%20phangan": {
-    "src": "/uploads/places/koh-samui/unsplash-koh-phangan.webp",
-    "credit": "Johnny Africa",
-    "creditUri": "https://unsplash.com/photos/IzkxzMQXIow",
-    "via": "Unsplash"
+    "src": "/uploads/places/koh-samui/unsplash-koh-phangan.webp"
   },
   "https://www.google.com/maps/search/koh%20tao": {
     "src": "/uploads/places/koh-samui/top10-koh-tao.webp",
@@ -40,10 +37,7 @@
     "own": true
   },
   "https://www.google.com/maps/search/samui%20elephant%20sanctuary%20bophut": {
-    "src": "/uploads/places/koh-samui/unsplash-elephant.webp",
-    "credit": "Chris Tweten",
-    "creditUri": "https://unsplash.com/photos/YykcIARCb04",
-    "via": "Unsplash"
+    "src": "/uploads/places/koh-samui/unsplash-elephant.webp"
   },
   "https://www.google.com/maps/search/silver%20beach%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-silver-beach.webp",
