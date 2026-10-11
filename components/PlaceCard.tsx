@@ -174,53 +174,7 @@ export function PlaceCard({
 
   return (
     <div className={`rounded-3xl overflow-hidden border border-ink-100 bg-white shadow-card ${my}`}>
-      {photo ? (
-        <div className={`relative ${imgAspect} w-full overflow-hidden bg-ink-900`}>
-          {/* Blurred fill behind the photo - handles portrait photos in a landscape frame */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={photo.src}
-            alt=""
-            aria-hidden
-            className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60 pointer-events-none"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={photo.src}
-            alt={displayName}
-            className="relative w-full h-full object-contain fade-up"
-            loading="lazy"
-          />
-
-          {/* Photographer credit on copied Google photos */}
-          {!photo.isOwn && photo.author ? (
-            <div className="absolute top-3 left-3 max-w-[70%] truncate px-2 py-0.5 rounded-full bg-ink-900/55 backdrop-blur text-[10px] text-white/90">
-              Photo:{" "}
-              {photo.authorUri ? (
-                <a
-                  href={photo.authorUri}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="!text-white/90 !no-underline hover:!underline"
-                >
-                  {photo.author}
-                </a>
-              ) : (
-                photo.author
-              )}
-              {photo.via === undefined ? " · Google" : photo.via ? ` · ${photo.via}` : ""}
-            </div>
-          ) : null}
-
-          {/* "Original" badge - only on photos the editor uploaded */}
-          {photo.isOwn ? (
-            <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-electric-500/95 backdrop-blur text-[10px] font-bold text-white uppercase tracking-wider shadow-card flex items-center gap-1.5">
-              <CameraTick />
-              Original
-            </div>
-          ) : null}
-        </div>
-      ) : null}
+      {photo ? <CardPhotoFrame photo={photo} alt={displayName} aspect={imgAspect} /> : null}
 
       <div className="p-5 sm:p-7 relative">
         {ourPick ? (
@@ -338,6 +292,102 @@ export function PlaceCard({
 // Helpers
 // ---------------------------------------------------------------------------
 
+/**
+ * The card's one photo, with nothing written over it (Valeria,
+ * 2026-10-11: no names in the corners, no "Original" badge). Tapping it
+ * opens the full-size photo with the photographer credit underneath -
+ * Google's terms let thumbnails drop the credit as long as a larger
+ * version shows it.
+ */
+function CardPhotoFrame({
+  photo,
+  alt,
+  aspect
+}: {
+  photo: CardPhoto;
+  alt: string;
+  aspect: string;
+}) {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+  const credit = !photo.isOwn && photo.author ? photo : null;
+
+  return (
+    <>
+      <button
+        type="button"
+        onClick={() => setOpen(true)}
+        aria-label={`View photo of ${alt}`}
+        className={`relative block ${aspect} w-full overflow-hidden bg-ink-900 cursor-zoom-in`}
+      >
+        {/* Blurred fill behind the photo - handles portrait photos in a landscape frame */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={photo.src}
+          alt=""
+          aria-hidden
+          className="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-60 pointer-events-none"
+        />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={photo.src}
+          alt={alt}
+          className="relative w-full h-full object-contain fade-up"
+          loading="lazy"
+        />
+      </button>
+
+      {open ? (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={alt}
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-[60] bg-ink-900/90 backdrop-blur-sm flex flex-col items-center justify-center p-4 cursor-zoom-out"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={photo.src}
+            alt={alt}
+            className="max-w-full max-h-[82vh] object-contain rounded-xl shadow-pop"
+          />
+          {credit ? (
+            <p className="!mt-3 !mb-0 text-xs text-white/80">
+              Photo:{" "}
+              {credit.authorUri ? (
+                <a
+                  href={credit.authorUri}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="!text-white/90 underline underline-offset-2"
+                >
+                  {credit.author}
+                </a>
+              ) : (
+                credit.author
+              )}
+              {credit.via === undefined ? " · Google" : credit.via ? ` · ${credit.via}` : ""}
+            </p>
+          ) : null}
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            className="absolute top-4 right-4 text-sm font-medium text-white/90 px-3 py-1 rounded-full bg-white/10 hover:bg-white/20"
+          >
+            Close
+          </button>
+        </div>
+      ) : null}
+    </>
+  );
+}
+
 function Stars({ rating }: { rating: number }) {
   return (
     <div
@@ -419,18 +469,6 @@ function Pin() {
   );
 }
 
-function CameraTick() {
-  return (
-    <svg
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      className="w-3 h-3"
-      aria-hidden
-    >
-      <path d="M9 2L7.17 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2h-3.17L15 2H9zm3 15a5 5 0 110-10 5 5 0 010 10zm-1.41-3.59L8.41 11.24l-1.41 1.41L10.59 16l5.66-5.66-1.41-1.41-4.24 4.24z" />
-    </svg>
-  );
-}
 
 /** Google Maps directions. Without a place id (no Google data), aim at
  *  the Notion search text - it carries the area ("… Lamai Koh Samui"). */
