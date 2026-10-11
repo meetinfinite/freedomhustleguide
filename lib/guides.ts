@@ -527,6 +527,39 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, slow, ocean-led" }
     ],
+    // Valeria's 28 photos (2026-10-11): cropped 4:5, light colour lift,
+    // ~90 KB WebP each. Order alternates beach / food / us / stays so the
+    // marquee never shows two similar scenes side by side.
+    foundersStrip: [
+      { src: "/uploads/samui-1-web.webp", alt: "Arni on a white-sand beach under a blue sky" },
+      { src: "/uploads/samui-2-web.webp", alt: "Mango sticky rice with an orchid on the side" },
+      { src: "/uploads/samui-3-web.webp", alt: "Floating in a turquoise rock pool between the boulders" },
+      { src: "/uploads/samui-4-web.webp", alt: "Working from the bungalow balcony" },
+      { src: "/uploads/samui-5-web.webp", alt: "Valeria on a beach swing" },
+      { src: "/uploads/samui-6-web.webp", alt: "Pad thai and fresh coconuts at a roadside café" },
+      { src: "/uploads/samui-7-web.webp", alt: "Granite boulders and a clear tide pool" },
+      { src: "/uploads/samui-8-web.webp", alt: "Arni and Valeria heading off on the scooter" },
+      { src: "/uploads/samui-9-web.webp", alt: "A hammock strung between the palms on the beach" },
+      { src: "/uploads/samui-10-web.webp", alt: "Morning coffee looking out to the sea" },
+      { src: "/uploads/samui-11-web.webp", alt: "Valeria in a private plunge pool in the jungle" },
+      { src: "/uploads/samui-12-web.webp", alt: "Arni making friends on Pig Island" },
+      { src: "/uploads/samui-13-web.webp", alt: "A quiet cove on the east coast on a grey morning" },
+      { src: "/uploads/samui-14-web.webp", alt: "Thai dinner and a glass of wine by the sea" },
+      { src: "/uploads/samui-15-web.webp", alt: "Valeria walking past the boulders on Silver Beach" },
+      { src: "/uploads/samui-16-web.webp", alt: "Arni at a café under paper lanterns" },
+      { src: "/uploads/samui-17-web.webp", alt: "Palm trees above the beach bungalows" },
+      { src: "/uploads/samui-18-web.webp", alt: "Arni and Valeria on the beach" },
+      { src: "/uploads/samui-19-web.webp", alt: "Valeria by the villa pool" },
+      { src: "/uploads/samui-20-web.webp", alt: "Sunset drinks above the bay" },
+      { src: "/uploads/samui-21-web.webp", alt: "Valeria on the rocks at dusk" },
+      { src: "/uploads/samui-22-web.webp", alt: "Arni at a beach café looking out over the swings" },
+      { src: "/uploads/samui-23-web.webp", alt: "Our bright room with a balcony on the hillside" },
+      { src: "/uploads/samui-24-web.webp", alt: "Valeria with fresh coconuts on the beach-club beanbags" },
+      { src: "/uploads/samui-25-web.webp", alt: "Valeria looking out over the bay" },
+      { src: "/uploads/samui-26-web.webp", alt: "Our little bungalow on a quiet street in Lamai" },
+      { src: "/uploads/samui-27-web.webp", alt: "Valeria on a garden path between the bungalows" },
+      { src: "/uploads/samui-28-web.webp", alt: "Welcome to Samui at the island's garden airport" }
+    ],
     sections: KOH_SAMUI_SECTIONS
   },
   {
