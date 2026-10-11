@@ -50,7 +50,7 @@ interface PlaceData {
   address: string;
   rating?: number;
   userRatingCount?: number;
-  photos: { src: string; author?: string; authorUri?: string; via?: string }[];
+  photos: { src: string; author?: string; authorUri?: string; via?: string; own?: boolean }[];
   googleMapsUri: string;
 }
 
@@ -472,7 +472,7 @@ function pickPhoto(p: PlaceData, ownPhotos?: string[]): CardPhoto | null {
   const own = (ownPhotos || []).find((x) => x && x.trim().length > 0);
   if (own) return { src: own, isOwn: true };
   const first = (p.photos || [])[0];
-  return first ? { ...first, isOwn: false } : null;
+  return first ? { ...first, isOwn: Boolean(first.own) } : null;
 }
 
 function formatCount(n: number): string {

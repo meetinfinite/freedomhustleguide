@@ -24,6 +24,8 @@ export interface PlacePhoto {
   authorUri?: string;
   /** Where the credit points - "Google" when absent (snapshot photos). */
   via?: string;
+  /** Valeria & Arni's own photo - shows the "Original" badge, no credit. */
+  own?: boolean;
 }
 
 export interface PlaceData {
@@ -63,7 +65,7 @@ function withPickedPhoto(place: PlaceData): PlaceData {
 }
 
 /**
- * Photos we choose ourselves (Valeria's own, Unsplash, the venue's own):
+ * Photos we choose ourselves (Valeria's own, Unsplash, Wikimedia):
  * data/place-photos.json maps the Notion link (as pasted) to a photo we
  * host. It replaces Google's photo when the snapshot has the place, and
  * stands in for Google entirely when it doesn't (photo + credit, Notion
@@ -76,6 +78,8 @@ interface FreePhoto {
   creditUri?: string;
   /** Text after the credit, e.g. "website". Omit for none. */
   via?: string;
+  /** Our own photo - "Original" badge instead of a credit. */
+  own?: boolean;
 }
 const FREE = placePhotos as Record<string, FreePhoto>;
 
@@ -84,7 +88,7 @@ export function getPlaceFromUrl(rawUrl: string): PlaceData | null {
   const key = placeKey(rawUrl);
   const place = SNAPSHOT[key];
   const free = FREE[key];
-  // A photo we chose (Valeria's own, Unsplash, the venue's) beats Google's;
+  // A photo we chose (Valeria's own, Unsplash, Wikimedia) beats Google's;
   // Google's name, stars and address still show when we have them.
   if (place && free) return { ...place, photos: [freePhoto(free)] };
   if (place) return withPickedPhoto(place);
@@ -104,6 +108,7 @@ function freePhoto(free: FreePhoto): PlacePhoto {
     src: free.src,
     ...(free.credit ? { author: free.credit } : {}),
     ...(free.creditUri ? { authorUri: free.creditUri } : {}),
-    via: free.via ?? ""
+    via: free.via ?? "",
+    ...(free.own ? { own: true } : {})
   };
 }

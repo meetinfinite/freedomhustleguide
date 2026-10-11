@@ -11,17 +11,23 @@
     "creditUri": "https://commons.wikimedia.org/wiki/File:Budda_kuju.jpg",
     "via": "CC BY-SA 3.0"
   },
+  "https://www.google.com/maps/search/haven%20elephant%20cafe%20restaurant%20koh%20samui": {
+    "src": "/uploads/places/koh-samui/own-elephant-cafe.webp",
+    "own": true
+  },
   "https://www.google.com/maps/search/hin%20ta%20and%20hin%20yai%20rocks%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/top10-hin-ta-hin-yai.webp",
-    "credit": "Dirk Enthoven",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Hin_ta_-_panoramio.jpg",
-    "via": "CC BY 3.0"
+    "src": "/uploads/places/koh-samui/own-hin-ta.webp",
+    "own": true
+  },
+  "https://www.google.com/maps/search/koh%20madsum%20pig%20island": {
+    "src": "/uploads/places/koh-samui/own-pig-island.webp",
+    "own": true
   },
   "https://www.google.com/maps/search/koh%20phangan": {
-    "src": "/uploads/places/koh-samui/top10-koh-phangan.webp",
-    "credit": "Андреев А.В.",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Ko_Pha_Ngan_beach.JPG",
-    "via": "CC BY-SA 3.0"
+    "src": "/uploads/places/koh-samui/unsplash-koh-phangan.webp",
+    "credit": "Johnny Africa",
+    "creditUri": "https://unsplash.com/photos/IzkxzMQXIow",
+    "via": "Unsplash"
   },
   "https://www.google.com/maps/search/koh%20tao": {
     "src": "/uploads/places/koh-samui/top10-koh-tao.webp",
@@ -30,28 +36,22 @@
     "via": "CC BY-SA 4.0"
   },
   "https://www.google.com/maps/search/na%20muang%20waterfall%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/top10-na-muang-waterfall.webp",
-    "credit": "Koudkeu",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Namuang_waterfall_2.jpg",
-    "via": "CC BY-SA 4.0"
+    "src": "/uploads/places/koh-samui/own-na-muang.webp",
+    "own": true
   },
-  "https://www.google.com/maps/search/secret%20buddha%20garden%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/top10-secret-buddha-garden.webp",
-    "credit": "אברהם שוורץ",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Secret_Buddha_Garden.jpg",
-    "via": "CC BY-SA 4.0"
+  "https://www.google.com/maps/search/samui%20elephant%20sanctuary%20bophut": {
+    "src": "/uploads/places/koh-samui/unsplash-elephant.webp",
+    "credit": "Chris Tweten",
+    "creditUri": "https://unsplash.com/photos/YykcIARCb04",
+    "via": "Unsplash"
   },
   "https://www.google.com/maps/search/silver%20beach%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/silver-beach.webp",
-    "credit": "Fabio Achilli",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Thong_Ta_Kian_Beach,_Koh_Samui_(48107244261).jpg",
-    "via": "CC BY 2.0"
+    "src": "/uploads/places/koh-samui/own-silver-beach.webp",
+    "own": true
   },
   "https://www.google.com/maps/search/silverbeach%20restaurant%20silver%20beach%20koh%20samui": {
-    "src": "/uploads/places/koh-samui/silver-beach.webp",
-    "credit": "Fabio Achilli",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Thong_Ta_Kian_Beach,_Koh_Samui_(48107244261).jpg",
-    "via": "CC BY 2.0"
+    "src": "/uploads/places/koh-samui/own-silver-beach.webp",
+    "own": true
   },
   "https://www.google.com/maps/search/wat%20plai%20laem%20koh%20samui": {
     "src": "/uploads/places/koh-samui/top10-wat-plai-laem.webp",
