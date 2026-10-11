@@ -52,7 +52,10 @@ fetched (or charged) again; deleting a venue in Notion costs nothing.
 7. Pick a photo without people: the run saved up to 3 candidates per
    venue (`public/places/<placeId>-1/2/3.webp`). Look at them and record
    the people-free one in `data/place-photo-picks.json` (place id → 0, 1
-   or 2). Default is the first.
+   or 2). Default is the first. Then run
+   `npx tsx scripts/places-tidy.ts --commit` (free) - it keeps only the
+   chosen photo and deletes the spares, so they don't bloat every Vercel
+   deployment (10 GB free limit).
 8. Commit `data/places.json`, `data/places-usage.json`,
    `data/place-photo-picks.json` and `public/places/` → PR → merge.
 
