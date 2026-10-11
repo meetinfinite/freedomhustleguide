@@ -40,12 +40,19 @@ export function FoundersCityStrip({
           {doubled.map((img, i) => (
             <div
               key={i}
-              className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card"
+              className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card bg-sand-100"
             >
+              {/* Photos are pre-sized for the strip (440x550 WebP, ~40 KB
+                  in public/uploads/strip), so skip on-the-fly resizing and
+                  load them straight away - lazy loading left blank tiles
+                  as the marquee scrolled them into view (Valeria,
+                  2026-10-11). The second copy reuses the same files. */}
               <Image
                 src={img.src}
                 alt={i < images.length ? img.alt : ""}
                 fill
+                unoptimized
+                loading="eager"
                 sizes="(min-width: 640px) 220px, 180px"
                 className="object-cover"
               />
