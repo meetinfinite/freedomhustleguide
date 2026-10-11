@@ -303,6 +303,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=12211908088202749556&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/ammatara%20pura%20koh%20samui": {
+    "placeId": "ChIJLfFhik7yVDARezO-N8_zBY4",
+    "name": "Ammatara Pura",
+    "address": "128/75-76 Moo 3, Tambon Maret, Amphoe Ko Samui, Chang Wat Surat Thani 84310, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 321,
+    "photos": [
+      {
+        "src": "/places/ChIJLfFhik7yVDARezO-N8_zBY4-3.webp",
+        "author": "Ammatara Pura",
+        "authorUri": "https://maps.google.com/maps/contrib/100670171966266105563"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10233853799588311931&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-11"
+  },
+  "https://www.google.com/maps/search/anantara%20bophut%20koh%20samui%20resort": {
+    "placeId": "ChIJG0BQF47wVDARW2D-SYflHl0",
+    "name": "Anantara Bophut Koh Samui Resort",
+    "address": "99, Island, 9 Bophut Bay, Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1599,
+    "photos": [
+      {
+        "src": "/places/ChIJG0BQF47wVDARW2D-SYflHl0-3.webp",
+        "author": "Shahzad Ismail",
+        "authorUri": "https://maps.google.com/maps/contrib/100433496086055292401"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6710052864053370971&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-11"
+  },
   "https://www.google.com/maps/search/anantara%20chiang%20mai%20resort": {
     "placeId": "ChIJT-F9SKg62jARLeYUQc3AwcE",
     "name": "Anantara Chiang Mai Resort",
@@ -2019,33 +2051,33 @@
     "placeId": "ChIJX5anyo3wVDARupr7atqyDZ4",
     "name": "Fisherman's Village",
     "address": "H25J+9HJ, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 5972,
     "photos": [
       {
-        "src": "/places/ChIJX5anyo3wVDARupr7atqyDZ4-1.webp",
-        "author": "Ralf Schmitz",
-        "authorUri": "https://maps.google.com/maps/contrib/109006168123503191555"
+        "src": "/places/ChIJX5anyo3wVDARupr7atqyDZ4-2.webp",
+        "author": "Nutter Service",
+        "authorUri": "https://maps.google.com/maps/contrib/111441787565448920503"
       }
     ],
-    "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Fisherman's%20Village&query_place_id=ChIJX5anyo3wVDARupr7atqyDZ4",
-    "fetchedAt": "2026-10-10",
-    "rating": 4.4,
-    "userRatingCount": 5972
+    "googleMapsUri": "https://maps.google.com/?cid=11388955683857341114&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-11"
   },
   "https://www.google.com/maps/search/fisherman%27s%20village%20night%20market%20koh%20samui": {
     "placeId": "ChIJX5anyo3wVDARupr7atqyDZ4",
     "name": "Fisherman's Village",
     "address": "H25J+9HJ, Bo Put, Ko Samui District, Surat Thani 84320, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 5972,
     "photos": [
       {
-        "src": "/places/ChIJX5anyo3wVDARupr7atqyDZ4-1.webp",
-        "author": "Ralf Schmitz",
-        "authorUri": "https://maps.google.com/maps/contrib/109006168123503191555"
+        "src": "/places/ChIJX5anyo3wVDARupr7atqyDZ4-2.webp",
+        "author": "Nutter Service",
+        "authorUri": "https://maps.google.com/maps/contrib/111441787565448920503"
       }
     ],
-    "googleMapsUri": "https://www.google.com/maps/search/?api=1&query=Fisherman's%20Village&query_place_id=ChIJX5anyo3wVDARupr7atqyDZ4",
-    "fetchedAt": "2026-10-10",
-    "rating": 4.4,
-    "userRatingCount": 5972
+    "googleMapsUri": "https://maps.google.com/?cid=11388955683857341114&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-11"
   },
   "https://www.google.com/maps/search/flo%20coffee%20roaster%20chaweng%20koh%20samui": {
     "placeId": "ChIJIV8MmGfxVDARBSqyuoQm9zI",
@@ -5290,6 +5322,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=370502818420882414&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/samui%20elephant%20sanctuary%20bophut": {
+    "placeId": "ChIJ-QoV4ljwVDARCdcQsx0m4W0",
+    "name": "Samui Elephant Sanctuary",
+    "address": "Samui Elephant Sanctuary 108/52 ถ. ทวีราษฎร์ภักดี Tambon Bo Put, Amphoe Ko Samui, Chang Wat Surat Thani 84320, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 2261,
+    "photos": [
+      {
+        "src": "/places/ChIJ-QoV4ljwVDARCdcQsx0m4W0-1.webp",
+        "author": "Samui Elephant Sanctuary",
+        "authorUri": "https://maps.google.com/maps/contrib/106903972386027102509"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7917651528894174985&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-11"
   },
   "https://www.google.com/maps/search/sanctuary%20rooftop%20bangkok": {
     "placeId": "ChIJ7UCSGJmf4jARfePMK8tF_2A",
