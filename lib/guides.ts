@@ -514,8 +514,8 @@ export const GUIDES: GuideMeta[] = [
     tagline:
       "Island life at its most convenient - palm roads, beautiful beaches, great food and restaurants, real comfort, and a Grab or a 7-Eleven wherever you are.",
     price: "Pay what you want",
-    stripePriceId: null,
-    status: "soon",
+    stripePriceId: process.env.STRIPE_PRICE_KOH_SAMUI || null,
+    status: "live",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1537956965359-7573183d1f57?auto=format&fit=crop&w=1400&q=80",
