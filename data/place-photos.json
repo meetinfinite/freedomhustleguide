@@ -1,10 +1,4 @@
 {
-  "https://www.google.com/maps/search/ang%20thong%20national%20marine%20park": {
-    "src": "/uploads/places/koh-samui/top10-ang-thong.webp",
-    "credit": "Vyacheslav Argenberg",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Mu_Ko_Ang_Thong,_Islands_in_the_sea_2,_Thailand.jpg",
-    "via": "CC BY 4.0"
-  },
   "https://www.google.com/maps/search/big%20buddha%20wat%20phra%20yai%20koh%20samui": {
     "src": "/uploads/places/koh-samui/top10-big-buddha.webp",
     "credit": "Abrget47j",
@@ -22,15 +16,6 @@
   "https://www.google.com/maps/search/koh%20madsum%20pig%20island": {
     "src": "/uploads/places/koh-samui/own-pig-island.webp",
     "own": true
-  },
-  "https://www.google.com/maps/search/koh%20phangan": {
-    "src": "/uploads/places/koh-samui/unsplash-koh-phangan.webp"
-  },
-  "https://www.google.com/maps/search/koh%20tao": {
-    "src": "/uploads/places/koh-samui/top10-koh-tao.webp",
-    "credit": "kallerna",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:John-Suwan_Viewpoint_Ko_Tao_3.jpg",
-    "via": "CC BY-SA 4.0"
   },
   "https://www.google.com/maps/search/na%20muang%20waterfall%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-na-muang.webp",
