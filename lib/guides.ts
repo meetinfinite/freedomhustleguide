@@ -527,12 +527,11 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Tropical, slow, ocean-led" }
     ],
-    // Valeria's 28 photos (2026-10-11): cropped 4:5, light colour lift,
+    // Valeria's 27 photos (2026-10-11): cropped 4:5, light colour lift,
     // ~90 KB WebP each. Order alternates beach / food / us / stays so the
     // marquee never shows two similar scenes side by side.
     foundersStrip: [
       { src: "/uploads/strip/samui-1-web.webp", alt: "Arni on a white-sand beach under a blue sky" },
-      { src: "/uploads/strip/samui-2-web.webp", alt: "Mango sticky rice with an orchid on the side" },
       { src: "/uploads/strip/samui-3-web.webp", alt: "Floating in a turquoise rock pool between the boulders" },
       { src: "/uploads/strip/samui-4-web.webp", alt: "Working from the bungalow balcony" },
       { src: "/uploads/strip/samui-5-web.webp", alt: "Valeria on a beach swing" },
