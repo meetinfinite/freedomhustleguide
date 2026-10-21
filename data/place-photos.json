@@ -5,6 +5,30 @@
     "creditUri": "https://commons.wikimedia.org/wiki/File:Budda_kuju.jpg",
     "via": "CC BY-SA 3.0"
   },
+  "https://www.google.com/maps/search/bottle%20beach%20koh%20phangan": {
+    "src": "/uploads/places/koh-phangan/top10-bottle-beach.webp",
+    "credit": "kallerna",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Bottle_beach_Ko_Phangan.jpg",
+    "via": "CC BY-SA 4.0"
+  },
+  "https://www.google.com/maps/search/haad%20rin%20sunrise%20beach%20koh%20phangan": {
+    "src": "/uploads/places/koh-phangan/top10-haad-rin.webp",
+    "credit": "zhaffsky",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Hat_Rin_from_above.jpg",
+    "via": "CC BY-SA 2.0"
+  },
+  "https://www.google.com/maps/search/haad%20salad%20beach%20koh%20phangan": {
+    "src": "/uploads/places/koh-phangan/top10-haad-salad.webp",
+    "credit": "Christophe95",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Salad_Beach.jpg",
+    "via": "CC BY-SA 4.0"
+  },
+  "https://www.google.com/maps/search/haad%20yao%20beach%20koh%20phangan": {
+    "src": "/uploads/places/koh-phangan/top10-haad-yao.webp",
+    "credit": "Renek78",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Haad_Yao,_Ko_Phangan_in_2023_2.jpg",
+    "via": "CC BY-SA 4.0"
+  },
   "https://www.google.com/maps/search/haven%20elephant%20cafe%20restaurant%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-elephant-cafe.webp",
     "own": true
@@ -17,9 +41,21 @@
     "src": "/uploads/places/koh-samui/own-pig-island.webp",
     "own": true
   },
+  "https://www.google.com/maps/search/koh%20raham%20koh%20phangan": {
+    "src": "/uploads/places/koh-phangan/top10-koh-raham.webp",
+    "credit": "Renek78",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Haad_Son_(Secret_Beach),_Ko_Phangan_in_2023_1.jpg",
+    "via": "CC BY-SA 4.0"
+  },
   "https://www.google.com/maps/search/na%20muang%20waterfall%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-na-muang.webp",
     "own": true
+  },
+  "https://www.google.com/maps/search/phasawan%20viewpoint%20bottle%20beach%20koh%20phangan": {
+    "src": "/uploads/places/koh-phangan/top10-phasawan.webp",
+    "credit": "kallerna",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Phasawan_viewpoint_Ko_Pha_Ngan_1.jpg",
+    "via": "CC BY-SA 4.0"
   },
   "https://www.google.com/maps/search/silver%20beach%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-silver-beach.webp",
