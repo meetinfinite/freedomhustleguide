@@ -203,7 +203,10 @@ export default async function GuideLandingPage({
       {/* Mobile spacing between sections is tighter than desktop - the
           desktop padding left big empty gaps on phones (Valeria, 2026-10-10) */}
       <section className="max-w-6xl mx-auto px-6 pt-10 pb-6 sm:pt-12 sm:pb-20">
-        <div className="max-w-2xl mb-8 sm:mb-12">
+        {/* Wide enough that "...before travelling to <City>." fits on two
+            lines on desktop, even for longer names like Koh Phangan
+            (Valeria, 2026-10-21) */}
+        <div className="max-w-4xl mb-8 sm:mb-12">
           <p className="text-xs uppercase tracking-[0.18em] text-electric-600 font-semibold mb-3">
             What's inside
           </p>
