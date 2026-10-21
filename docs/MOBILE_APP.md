@@ -48,10 +48,14 @@ keep reading it on the web.
 
 ## One-time setup before the app can sign people in
 
-The sign-in email must contain the code. In **Supabase → Authentication →
-Email Templates**, paste `docs/magic-link-email.html` into **Magic Link**
-*and* **Confirm signup**. It now contains `{{ .Token }}` (the app's code)
-as well as the web link, so it works for both.
+The sign-in email must contain the code. **It doesn't yet:** Valeria took the
+code line out of `docs/magic-link-email.html` on 2026-10-21 because the app
+isn't out and web readers found it confusing. Before the app launches, add
+back one small line with `{{ .Token }}` (e.g. "Using the Freedom Hustle app?
+Enter this code instead: {{ .Token }}" - see git history of that file), then
+paste the file into **Supabase → Authentication → Email Templates** →
+**Magic Link** *and* **Confirm signup**. Without it the app's code screen
+(`mobile/src/app/verify.tsx`) has nothing to enter.
 
 ## Run it locally
 
