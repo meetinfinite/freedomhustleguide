@@ -145,7 +145,7 @@ export default async function GuideLandingPage({
     if (ownedView) {
       return (
         <Link href={`/guides/${guide.slug}/app`} className={className}>
-          {label ?? "View guide →"}
+          {label ?? (canPreview ? "Explore →" : "View guide →")}
         </Link>
       );
     }
