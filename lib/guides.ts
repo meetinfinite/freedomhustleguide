@@ -594,7 +594,7 @@ export const GUIDES: GuideMeta[] = [
     country: "Thailand",
     flag: "🇹🇭",
     tagline:
-      "The island of full moons and slow mornings - jungle, yoga and beaches that empty by ten.",
+      "Island life at its most laid-back - quiet beaches, jungle viewpoints, yoga and healthy cafés, west-coast sunsets, and the Full Moon Party if you want it.",
     price: "Pay what you want",
     stripePriceId: null,
     status: "soon",
