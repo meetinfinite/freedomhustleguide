@@ -331,6 +331,21 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
     ]
   },
 
+  // Approximate boxes from OpenStreetMap place centres (2026-10-21)
+  "koh-phangan": {
+    center: [9.742, 100.02],
+    zoom: 11.9,
+    areas: [
+      { name: "Thong Sala", color: "#e07a5f", hint: "The town and main pier - practical, close to everything", bestFor: "Convenience, and anyone not riding a scooter", polygon: [[9.722, 99.982], [9.722, 100.000], [9.700, 100.000], [9.700, 99.982]] },
+      { name: "Srithanu", color: "#5fc98a", hint: "Yoga, healthy cafés and long stays", bestFor: "Yoga, healthy food and remote workers staying for months", polygon: [[9.768, 99.955], [9.768, 99.975], [9.745, 99.975], [9.745, 99.955]] },
+      { name: "Haad Yao / Haad Salad", color: "#5fb8c9", hint: "Pretty bays, calm water, sunsets", bestFor: "A proper beach base", polygon: [[9.795, 99.966], [9.795, 99.990], [9.770, 99.990], [9.770, 99.966]] },
+      { name: "Chaloklum / Mae Haad", color: "#7c6bd1", hint: "Fishing village and Koh Ma snorkelling", bestFor: "Peace and quiet, and the best snorkelling", polygon: [[9.810, 99.988], [9.810, 100.016], [9.785, 100.016], [9.785, 99.988]] },
+      { name: "Thong Nai Pan", color: "#d16ba5", hint: "Two horseshoe bays, remote resorts", bestFor: "A beautiful, remote beach holiday", polygon: [[9.800, 100.050], [9.800, 100.075], [9.770, 100.075], [9.770, 100.050]] },
+      { name: "Baan Tai / Baan Kai", color: "#d4b85a", hint: "Affordable, ten minutes from the pier", bestFor: "Value and easy access", polygon: [[9.710, 100.002], [9.710, 100.045], [9.690, 100.045], [9.690, 100.002]] },
+      { name: "Haad Rin", color: "#9aa0a6", avoid: true, hint: "Home of the Full Moon Party - loud around the full moon", polygon: [[9.682, 100.055], [9.682, 100.075], [9.662, 100.075], [9.662, 100.055]] }
+    ]
+  },
+
   "kuala-lumpur": {
     center: [3.148, 101.685],
     zoom: 12.0,
@@ -504,18 +519,6 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       { name: "Kampong Glam", color: "#d4b85a", hint: "Haji Lane, mosques, texture", polygon: [[1.308, 103.855], [1.308, 103.865], [1.298, 103.865], [1.298, 103.855]] },
       { name: "Katong", color: "#5fc98a", hint: "Peranakan east, food streets", polygon: [[1.315, 103.895], [1.315, 103.910], [1.300, 103.910], [1.300, 103.895]] },
       { name: "Holland Village", color: "#5fb8c9", hint: "Leafy expat standby", polygon: [[1.315, 103.790], [1.315, 103.800], [1.305, 103.800], [1.305, 103.790]] }
-    ]
-  },
-
-  "koh-phangan": {
-    center: [9.73, 100.02],
-    zoom: 11.8,
-    areas: [
-      { name: "Sri Thanu", color: "#e07a5f", hint: "Yoga + conscious-community hub", polygon: [[9.775, 99.970], [9.775, 99.985], [9.755, 99.985], [9.755, 99.970]] },
-      { name: "Thong Sala", color: "#d16ba5", hint: "Main town, pier, markets", polygon: [[9.720, 99.990], [9.720, 100.005], [9.705, 100.005], [9.705, 99.990]] },
-      { name: "Baan Tai", color: "#7c6bd1", hint: "Long beach between town + party", polygon: [[9.715, 100.010], [9.715, 100.035], [9.700, 100.035], [9.700, 100.010]] },
-      { name: "Haad Rin", color: "#d4b85a", hint: "Full Moon corner", polygon: [[9.680, 100.060], [9.680, 100.075], [9.660, 100.075], [9.660, 100.060]] },
-      { name: "Chaloklum", color: "#5fc98a", hint: "Fishing village north, quiet", polygon: [[9.790, 100.005], [9.790, 100.025], [9.775, 100.025], [9.775, 100.005]] }
     ]
   },
 

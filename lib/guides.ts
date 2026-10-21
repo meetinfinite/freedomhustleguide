@@ -417,6 +417,32 @@ const KOH_SAMUI_SECTION_OVERRIDES: SectionOverrides = {
 
 const KOH_SAMUI_SECTIONS = buildSections(KOH_SAMUI_SECTION_OVERRIDES);
 
+/**
+ * Koh Phangan - Notion page IDs from the "Master Koh Phangan - The Freedom
+ * Hustle Guide" tree (master 40057b19-7874-814c-8e94-c5d36f30b97a, 🌙),
+ * scaffolded 2026-10-21. Stays status:"soon" while Valeria writes it:
+ * founders (lifetime) preview it, the public keeps the waitlist.
+ */
+const KOH_PHANGAN_SECTION_OVERRIDES: SectionOverrides = {
+  "best-time-to-visit": { notionPageId: "40057b19-7874-81e3-b566-c0887bc53126" },
+  "first-24-hours": { notionPageId: "40057b19-7874-8108-bf5c-ecf5f6a71471" },
+  "visa-immigration": { notionPageId: "40057b19-7874-819f-9874-ef59b89d0fdc" },
+  "areas-to-stay": { notionPageId: "40057b19-7874-8167-b42d-e5673d69c544" },
+  "monthly-budget": { notionPageId: "40057b19-7874-81ab-ad22-e1f20b871fd8" },
+  cafes: { notionPageId: "40057b19-7874-8152-9cad-e36b37f50472" },
+  coworking: { notionPageId: "40057b19-7874-81f7-8fa0-ca8cfdcb3e81" },
+  restaurants: { notionPageId: "40057b19-7874-814e-98eb-f9f9429f7093" },
+  nightlife: { notionPageId: "40057b19-7874-81aa-af39-ffd7ded37df7" },
+  gyms: { notionPageId: "40057b19-7874-8114-b2f4-e1473e849252" },
+  "getting-around": { notionPageId: "40057b19-7874-811f-aaf3-d78795652d96" },
+  "trips-and-activities": { notionPageId: "40057b19-7874-8130-a663-ffeb1eafd557" },
+  "top-ten": { notionPageId: "40057b19-7874-81d2-b03f-cffd3813bc40" },
+  "mistakes-to-avoid": { notionPageId: "40057b19-7874-8132-ac8a-c6b981a9458c" },
+  "digital-nomad-toolkit": { notionPageId: "40057b19-7874-8105-8fb4-fae8f1453279" }
+};
+
+const KOH_PHANGAN_SECTIONS = buildSections(KOH_PHANGAN_SECTION_OVERRIDES);
+
 export const GUIDES: GuideMeta[] = [
   {
     slug: "bangkok",
@@ -583,7 +609,7 @@ export const GUIDES: GuideMeta[] = [
       { label: "Difficulty", value: "Easy" },
       { label: "Vibe", value: "Yoga, jungle, sunset" }
     ],
-    sections: buildSections()
+    sections: KOH_PHANGAN_SECTIONS
   },
   {
     slug: "phuket",
