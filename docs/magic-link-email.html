@@ -56,8 +56,9 @@
                 <p
                   style="margin: 0; font-size: 16px; line-height: 1.5; color: #3d372d;"
                 >
-                  Tap the button below to open your Freedom Hustle guide. No
-                  password required — your session will last 30 days.
+                  {{ if .Data.name }}Hi {{ .Data.name }}, tap{{ else }}Tap{{ end }}
+                  the button below to open your Freedom Hustle guide. No
+                  password needed, and you'll stay signed in for 30 days.
                 </p>
               </td>
             </tr>
@@ -81,7 +82,7 @@
                         href="{{ .ConfirmationURL }}"
                         target="_blank"
                         style="display: inline-block; padding: 14px 32px; font-size: 16px; font-weight: 600; color: #fbf8f1; text-decoration: none; border-radius: 999px; background-color: #0f0e0a;"
-                        >Open my guide →</a
+                        >Open my guide &rarr;</a
                       >
                     </td>
                   </tr>
@@ -89,37 +90,17 @@
               </td>
             </tr>
 
-            <!-- App sign-in code (the mobile app signs in with this, not the link) -->
-            <tr>
-              <td align="center" style="padding: 0 32px 28px;">
-                <p
-                  style="margin: 0 0 8px; font-size: 13px; line-height: 1.5; color: #8a8170;"
-                >
-                  Signing in on the app? Enter this code:
-                </p>
-                <p
-                  style="margin: 0; display: inline-block; padding: 12px 22px; border-radius: 14px; background-color: #f3ecdc; font-size: 28px; font-weight: 700; letter-spacing: 6px; color: #0f0e0a; font-family: 'SFMono-Regular', Menlo, Consolas, monospace;"
-                >
-                  {{ .Token }}
-                </p>
-              </td>
-            </tr>
-
-            <!-- Fallback link -->
+            <!-- Fallback: a short link, not the raw URL (Valeria, 2026-10-21) -->
             <tr>
               <td style="padding: 0 32px 32px;" align="center">
                 <p
-                  style="margin: 0 0 6px; font-size: 13px; line-height: 1.5; color: #8a8170;"
+                  style="margin: 0; font-size: 13px; line-height: 1.5; color: #8a8170;"
                 >
-                  Button not working? Paste this link into your browser:
-                </p>
-                <p
-                  style="margin: 0; font-size: 12px; line-height: 1.5; color: #C2562B; word-break: break-all;"
-                >
+                  Button not working?
                   <a
                     href="{{ .ConfirmationURL }}"
                     style="color: #C2562B; text-decoration: underline;"
-                    >{{ .ConfirmationURL }}</a
+                    >Open your guide here</a
                   >
                 </p>
               </td>
@@ -139,9 +120,31 @@
                 <p
                   style="margin: 0; font-size: 13px; line-height: 1.6; color: #5a5346;"
                 >
-                  This link and code expire in 1 hour. If you didn't request this,
-                  you can safely ignore the email — no account changes will
-                  be made.
+                  This link expires in 1 hour. If you didn't ask for it, you
+                  can ignore this email - nothing will change on your account.
+                </p>
+              </td>
+            </tr>
+          </table>
+
+          <!-- App code: the Freedom Hustle app signs in with this, not the
+               link (mobile/src/app/verify.tsx). Kept small and last so web
+               readers aren't confused by it. -->
+          <table
+            role="presentation"
+            width="100%"
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            style="max-width: 480px; margin-top: 20px;"
+          >
+            <tr>
+              <td align="center" style="padding: 0 32px;">
+                <p
+                  style="margin: 0; font-size: 12px; line-height: 1.5; color: #8a8170;"
+                >
+                  Using the Freedom Hustle app? Enter this code instead:
+                  <strong style="color: #3d372d; letter-spacing: 2px;">{{ .Token }}</strong>
                 </p>
               </td>
             </tr>
@@ -171,7 +174,7 @@
                 <p
                   style="margin: 0; font-size: 11px; line-height: 1.6; color: #b9b0a0;"
                 >
-                  © Infinite Studio Ltd · Company no. 11804978 · Registered
+                  &copy; Infinite Studio Ltd &middot; Company no. 11804978 &middot; Registered
                   in England and Wales
                 </p>
               </td>
