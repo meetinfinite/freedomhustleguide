@@ -58,7 +58,10 @@ export default async function HomePage() {
       <SiteHeader />
 
       {/* ----- Video hero ----- */}
-      <section className="relative overflow-hidden bg-ink-900 lg:min-h-[calc(100svh-7.5rem)] lg:flex lg:flex-col lg:justify-center">
+      {/* Phones keep the hero as tall as it was with the old 6-line intro
+          (Valeria, 2026-10-23): shorter copy shows more of the video, with
+          the text sitting low over the darker end of the gradient */}
+      <section className="relative overflow-hidden bg-ink-900 min-h-[42rem] flex flex-col justify-end lg:min-h-[calc(100svh-7.5rem)] lg:justify-center">
         <video
           className="absolute inset-0 w-full h-full object-cover bg-ink-900"
           src={HERO_VIDEO_SRC}
@@ -89,10 +92,8 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed [text-shadow:0_1px_14px_rgba(15,14,10,0.9)]">
-              Built from our experience travelling full-time across 30+
-              destinations in Asia. Best cafés, best places to stay, best
-              restaurants, how much we paid - and everything you need to
-              know before travelling to Asia.
+              Built from travelling full-time across 30+ destinations in
+              Asia - only the places we&apos;d send our friends.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">

@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { SwipeMarquee } from "./SwipeMarquee";
 
 export type FoundersStripImage = { src: string; alt: string };
 
 /**
  * Auto-scrolling strip of the founders' own photos in one city - the
- * visual proof behind the trust cards. Same marquee treatment as the
+ * visual proof behind the trust cards. Same swipeable marquee as the
  * homepage WorkFromAnywhereStrip, but per-guide.
  */
 export function FoundersCityStrip({
@@ -15,9 +16,6 @@ export function FoundersCityStrip({
   images: FoundersStripImage[];
 }) {
   if (!images.length) return null;
-
-  // Duplicate so the -50% translate loops seamlessly
-  const doubled = [...images, ...images];
 
   return (
     <section className="pt-12 pb-4 sm:pt-16 sm:pb-6">
@@ -30,36 +28,32 @@ export function FoundersCityStrip({
         </h2>
       </div>
 
-      <div className="relative overflow-hidden marquee-mask">
-        {/* ~3.5s per photo - a bit faster than the homepage strip, and the
-            same speed whatever the number of photos (Valeria, 2026-10-10) */}
-        <div
-          className="flex gap-4 w-max animate-marquee"
-          style={{ animationDuration: `${images.length * 3.5}s` }}
-        >
-          {doubled.map((img, i) => (
-            <div
-              key={i}
-              className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card bg-sand-100"
-            >
-              {/* Photos are pre-sized for the strip (440x550 WebP, ~40 KB
-                  in public/uploads/strip), so skip on-the-fly resizing and
-                  load them straight away - lazy loading left blank tiles
-                  as the marquee scrolled them into view (Valeria,
-                  2026-10-11). The second copy reuses the same files. */}
-              <Image
-                src={img.src}
-                alt={i < images.length ? img.alt : ""}
-                fill
-                unoptimized
-                loading="eager"
-                sizes="(min-width: 640px) 220px, 180px"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* ~2.5s per photo (a bit faster again, Valeria 2026-10-23), the
+          same speed whatever the number of photos - and swipeable */}
+      <SwipeMarquee secondsPerItem={2.5}>
+        {images.map((img) => (
+          <div
+            key={img.src}
+            className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card bg-sand-100"
+          >
+            {/* Photos are pre-sized for the strip (440x550 WebP, ~40 KB
+                in public/uploads/strip), so skip on-the-fly resizing and
+                load them straight away - lazy loading left blank tiles
+                as the marquee scrolled them into view (Valeria,
+                2026-10-11). The second copy reuses the same files. */}
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              unoptimized
+              loading="eager"
+              draggable={false}
+              sizes="(min-width: 640px) 220px, 180px"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </SwipeMarquee>
     </section>
   );
 }

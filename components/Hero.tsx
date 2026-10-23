@@ -40,9 +40,11 @@ export function Hero({
           <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-sand-200 font-semibold mb-5 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur border border-white/15">
             <span>Freedom Hustle Guide to&hellip;</span>
           </div>
+          {/* City and country on two lines, no flag (Valeria,
+              2026-10-23) - country in the homepage hero's accent */}
           <h1 className="font-display text-5xl sm:text-7xl leading-[1.02] tracking-tight text-sand-50">
-            <span className="mr-3">{guide.flag}</span>
-            {guide.city}, {guide.country}
+            {guide.city}
+            <span className="block text-[#EC8751]">{guide.country}</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed">
             {guide.tagline}
