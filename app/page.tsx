@@ -92,8 +92,16 @@ export default async function HomePage() {
               </span>
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed [text-shadow:0_1px_14px_rgba(15,14,10,0.9)]">
-              Built from travelling full-time across 30+ destinations in
-              Asia.
+              {/* Phones get the first sentence only, so more of the video
+                  shows (Valeria, 2026-10-23) */}
+              Built from our experience travelling full-time across 30+
+              destinations in Asia.
+              <span className="hidden sm:inline">
+                {" "}
+                Best cafés, best places to stay, best restaurants, how much
+                we paid - and everything you need to know before travelling
+                to Asia.
+              </span>
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
