@@ -342,7 +342,6 @@ export const AREA_MAPS: Record<string, CityAreaMap> = {
       { name: "Chaloklum / Mae Haad", color: "#7c6bd1", hint: "Fishing village and Koh Ma snorkelling", bestFor: "Peace and quiet, and the best snorkelling", polygon: [[9.810, 99.988], [9.810, 100.016], [9.785, 100.016], [9.785, 99.988]] },
       { name: "Thong Nai Pan", color: "#d16ba5", hint: "Two horseshoe bays, remote resorts", bestFor: "A beautiful, remote beach holiday", polygon: [[9.800, 100.050], [9.800, 100.075], [9.770, 100.075], [9.770, 100.050]] },
       { name: "Baan Tai / Baan Kai", color: "#d4b85a", hint: "Affordable, ten minutes from the pier", bestFor: "Value and easy access", polygon: [[9.710, 100.002], [9.710, 100.045], [9.690, 100.045], [9.690, 100.002]] },
-      { name: "Haad Rin", color: "#9aa0a6", avoid: true, hint: "Home of the Full Moon Party - loud around the full moon", polygon: [[9.682, 100.055], [9.682, 100.075], [9.662, 100.075], [9.662, 100.055]] }
     ]
   },
 
