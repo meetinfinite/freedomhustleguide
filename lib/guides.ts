@@ -602,30 +602,30 @@ export const GUIDES: GuideMeta[] = [
     cardImage:
       "https://images.unsplash.com/photo-1579211975029-8aa27c32fa75?auto=format&fit=crop&w=1400&q=80",
     // Valeria's 21 photos (2026-10-23): cropped 4:5, very light colour and
-    // vibrance lift, ~55 KB WebP each. Ordered so similar scenes never sit
-    // side by side in the marquee.
+    // vibrance lift, ~55 KB WebP each. Ordered so photos of us alternate with
+    // places and food, and Valeria never appears twice in a row.
     foundersStrip: [
       { src: "/uploads/strip/phangan-1-web.webp", alt: "Valeria on a beach swing under the trees" },
       { src: "/uploads/strip/phangan-2-web.webp", alt: "Sunset over a calm sea" },
-      { src: "/uploads/strip/phangan-3-web.webp", alt: "A full breakfast plate at a café" },
       { src: "/uploads/strip/phangan-4-web.webp", alt: "Arni on the scooter" },
-      { src: "/uploads/strip/phangan-5-web.webp", alt: "Looking down over the bay from the hillside" },
-      { src: "/uploads/strip/phangan-6-web.webp", alt: "A mango shake at Koh Raham, over the water" },
-      { src: "/uploads/strip/phangan-7-web.webp", alt: "Working at the beach bar with a sea view" },
-      { src: "/uploads/strip/phangan-8-web.webp", alt: "Arni on the beach swing" },
-      { src: "/uploads/strip/phangan-9-web.webp", alt: "A fresh coconut and mango sticky rice on the beach" },
-      { src: "/uploads/strip/phangan-10-web.webp", alt: "Our bungalow at Phangan Beach Resort" },
-      { src: "/uploads/strip/phangan-11-web.webp", alt: "Valeria and Arni by the rocks" },
-      { src: "/uploads/strip/phangan-12-web.webp", alt: "A quiet curve of white sand and jungle" },
-      { src: "/uploads/strip/phangan-13-web.webp", alt: "Fresh coconuts and Thai dishes by the sea" },
-      { src: "/uploads/strip/phangan-14-web.webp", alt: "Laptop and coconuts on the beach" },
+      { src: "/uploads/strip/phangan-3-web.webp", alt: "A full breakfast plate at a café" },
       { src: "/uploads/strip/phangan-15-web.webp", alt: "Valeria on a giant rope swing on the beach" },
-      { src: "/uploads/strip/phangan-16-web.webp", alt: "A fresh coconut at Phangan Beach Resort" },
-      { src: "/uploads/strip/phangan-17-web.webp", alt: "Arni at a café" },
+      { src: "/uploads/strip/phangan-5-web.webp", alt: "Looking down over the bay from the hillside" },
+      { src: "/uploads/strip/phangan-11-web.webp", alt: "Valeria and Arni by the rocks" },
+      { src: "/uploads/strip/phangan-6-web.webp", alt: "A mango shake at Koh Raham, over the water" },
       { src: "/uploads/strip/phangan-18-web.webp", alt: "Reading on a beach daybed under the palms" },
-      { src: "/uploads/strip/phangan-19-web.webp", alt: "Coffee at a beach café under the palms" },
+      { src: "/uploads/strip/phangan-9-web.webp", alt: "A fresh coconut and mango sticky rice on the beach" },
+      { src: "/uploads/strip/phangan-8-web.webp", alt: "Arni on the beach swing" },
+      { src: "/uploads/strip/phangan-10-web.webp", alt: "Our bungalow at Phangan Beach Resort" },
       { src: "/uploads/strip/phangan-20-web.webp", alt: "A scooter selfie in our helmets" },
-      { src: "/uploads/strip/phangan-21-web.webp", alt: "Valeria at Koh Raham above the turquoise water" }
+      { src: "/uploads/strip/phangan-12-web.webp", alt: "A quiet curve of white sand and jungle" },
+      { src: "/uploads/strip/phangan-21-web.webp", alt: "Valeria at Koh Raham above the turquoise water" },
+      { src: "/uploads/strip/phangan-13-web.webp", alt: "Fresh coconuts and Thai dishes by the sea" },
+      { src: "/uploads/strip/phangan-17-web.webp", alt: "Arni at a café" },
+      { src: "/uploads/strip/phangan-7-web.webp", alt: "Working at the beach bar with a sea view" },
+      { src: "/uploads/strip/phangan-16-web.webp", alt: "A fresh coconut at Phangan Beach Resort" },
+      { src: "/uploads/strip/phangan-19-web.webp", alt: "Coffee at a beach café under the palms" },
+      { src: "/uploads/strip/phangan-14-web.webp", alt: "Laptop and coconuts on the beach" }
     ],
     quickStats: [
       { label: "Best for", value: "Yoga + beach community" },
