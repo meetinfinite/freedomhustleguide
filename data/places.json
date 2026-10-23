@@ -79,6 +79,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=15117879287713088018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
   },
+  "https://www.google.com/maps/search/?api=1&query=lost%20n%20found%20beach%20bar&query_place_id=chijyu3m9pmbvtarhp7wwfi1qd8": {
+    "placeId": "ChIJyU3m9PMBVTARHp7wWfi1qD8",
+    "name": "Lost 'N Found Beach Bar",
+    "address": "51, 69, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 1185,
+    "photos": [
+      {
+        "src": "/places/ChIJyU3m9PMBVTARHp7wWfi1qD8-2.webp",
+        "author": "Secret Beach: Lost 'N Found Beach Bar",
+        "authorUri": "https://maps.google.com/maps/contrib/111737962635725875047"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4587116298742308382&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/?api=1&query=mama%20kop&query_place_id=chijlyl33b7_vdar6actq9vghkk": {
     "placeId": "ChIJLYl33b7_VDAR6acTQ9VGhkk",
     "name": "Mama Kop",
@@ -111,6 +127,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=11635136699795090400&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
   },
+  "https://www.google.com/maps/search/?api=1&query=phangan%20sunset%20bar%20%26%20restaurant&query_place_id=chij2sbu7dl9vdaranj5ksyif-i": {
+    "placeId": "ChIJ2SBu7dL9VDARAnJ5ksYIF-I",
+    "name": "Phangan Sunset Bar & Restaurant",
+    "address": "111, 2, Tambon Ban Tai, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 1246,
+    "photos": [
+      {
+        "src": "/places/ChIJ2SBu7dL9VDARAnJ5ksYIF-I-3.webp",
+        "author": "Phangan Sunset Bar & Restaurant",
+        "authorUri": "https://maps.google.com/maps/contrib/109371666531699267481"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16291499825990038018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=pure%20vegan%20heaven&query_place_id=chijzweipd8bvtarso8ntvhrzc8": {
+    "placeId": "ChIJzweIpd8BVTARSO8NtVHrZc8",
+    "name": "Pure Vegan Heaven",
+    "address": "42/5 Moo 4, Woktum Koh​​phangan Koh phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1080,
+    "photos": [
+      {
+        "src": "/places/ChIJzweIpd8BVTARSO8NtVHrZc8-2.webp",
+        "author": "Pure Vegan Heaven",
+        "authorUri": "https://maps.google.com/maps/contrib/117846445931169429249"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14944609674661326664&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/?api=1&query=the%20yoga%20house&query_place_id=chijo6sggmp9vdar24mt7ay5qem": {
     "placeId": "ChIJO6SgGMP9VDAR24Mt7Ay5QEM",
     "name": "The Yoga House",
@@ -125,6 +173,22 @@
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4846076664203805659&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=vertigo%20resto%20bar&query_place_id=chijow96vnx9vdard-yp4ug8rsk": {
+    "placeId": "ChIJoW96vNX9VDARd-Yp4ug8Rsk",
+    "name": "Vertigo Resto Bar",
+    "address": "130, 58, Had Rin, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 1520,
+    "photos": [
+      {
+        "src": "/places/ChIJoW96vNX9VDARd-Yp4ug8Rsk-2.webp",
+        "author": "Vertigo Resto Bar",
+        "authorUri": "https://maps.google.com/maps/contrib/104280255683029220638"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14503346620917737079&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/137%20pillars%20house%20chiang%20mai": {
