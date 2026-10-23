@@ -59,9 +59,9 @@ export default async function HomePage() {
 
       {/* ----- Video hero ----- */}
       {/* Phones keep the hero as tall as it was with the old 6-line intro
-          (Valeria, 2026-10-23): shorter copy shows more of the video, with
-          the text sitting low over the darker end of the gradient */}
-      <section className="relative overflow-hidden bg-ink-900 min-h-[42rem] flex flex-col justify-end lg:min-h-[calc(100svh-7.5rem)] lg:justify-center">
+          (36rem, Valeria 2026-10-23) so the shorter copy shows more of the
+          video; text sits centred - low down looked empty at the top */}
+      <section className="relative overflow-hidden bg-ink-900 min-h-[36rem] flex flex-col justify-center lg:min-h-[calc(100svh-7.5rem)]">
         <video
           className="absolute inset-0 w-full h-full object-cover bg-ink-900"
           src={HERO_VIDEO_SRC}
