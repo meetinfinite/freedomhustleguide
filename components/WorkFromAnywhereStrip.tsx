@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { SwipeMarquee } from "./SwipeMarquee";
 
 const IMAGES = Array.from(
   { length: 12 },
@@ -6,9 +7,6 @@ const IMAGES = Array.from(
 );
 
 export function WorkFromAnywhereStrip() {
-  // Duplicate so the -50% translate loops seamlessly
-  const doubled = [...IMAGES, ...IMAGES];
-
   return (
     <section className="py-16">
       <div className="max-w-6xl mx-auto px-6 mb-8 text-center">
@@ -20,24 +18,25 @@ export function WorkFromAnywhereStrip() {
         </h2>
       </div>
 
-      <div className="relative overflow-hidden marquee-mask">
-        <div className="flex gap-4 w-max animate-marquee">
-          {doubled.map((src, i) => (
-            <div
-              key={i}
-              className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card"
-            >
-              <Image
-                src={src}
-                alt=""
-                fill
-                sizes="(min-width: 640px) 220px, 180px"
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* ~3.5s per photo - a little faster than the old 5s, and swipeable
+          (Valeria, 2026-10-23) */}
+      <SwipeMarquee secondsPerItem={3.5}>
+        {IMAGES.map((src) => (
+          <div
+            key={src}
+            className="relative w-[180px] sm:w-[220px] aspect-[4/5] shrink-0 rounded-2xl overflow-hidden shadow-card"
+          >
+            <Image
+              src={src}
+              alt=""
+              fill
+              draggable={false}
+              sizes="(min-width: 640px) 220px, 180px"
+              className="object-cover"
+            />
+          </div>
+        ))}
+      </SwipeMarquee>
     </section>
   );
 }
