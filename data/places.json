@@ -127,6 +127,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=4318276686599550495&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/420%20club%20koh%20phangan": {
+    "placeId": "ChIJoyfbIYIBVTARNdU2c4L1oD0",
+    "name": "420 Club Phangan",
+    "address": "85 2 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 1801,
+    "photos": [
+      {
+        "src": "/places/ChIJoyfbIYIBVTARNdU2c4L1oD0-1.webp",
+        "author": "420 Club Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/117986599501065541535"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4440819173214836021&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/abar%20rooftop%20marriott%20marquis%20queens%20park%20bangkok": {
     "placeId": "ChIJ24od8aKf4jARsHC53iFa3Sk",
     "name": "ABar Rooftop",
@@ -206,6 +222,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17655880063570314785&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/aim%20aroi%20restaurant/@9.7086158,99.9968144,18z": {
+    "placeId": "ChIJb9eW7_39VDARJaFWIhT4SGM",
+    "name": "AIM AROI",
+    "address": "161 51, ตำบล อำเภอ เกาะพะงัน, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 315,
+    "photos": [
+      {
+        "src": "/places/ChIJb9eW7_39VDARJaFWIhT4SGM-1.webp",
+        "author": "Arthit Methasasinon",
+        "authorUri": "https://maps.google.com/maps/contrib/114671065330135961491"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7154240773437169957&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/akara%20sky%20hanuman%20one%20city%20centre%20ploenchit%20bangkok": {
     "placeId": "ChIJkxdwWiyf4jARdUV1zHHjqlo",
@@ -319,6 +351,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=10233853799588311931&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-11"
   },
+  "https://www.google.com/maps/search/amstardam%20bar/@9.724728,99.9788598,18z": {
+    "placeId": "ChIJJ2p6NW7-VDARn6PGkxu21UE",
+    "name": "Amsterdam Bar",
+    "address": "PXFH+VGX, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4,
+    "userRatingCount": 3381,
+    "photos": [
+      {
+        "src": "/places/ChIJJ2p6NW7-VDARn6PGkxu21UE-1.webp",
+        "author": "Simon Bents",
+        "authorUri": "https://maps.google.com/maps/contrib/101603048108109291316"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4743898012064326559&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/anantara%20bophut%20koh%20samui%20resort": {
     "placeId": "ChIJG0BQF47wVDARW2D-SYflHl0",
     "name": "Anantara Bophut Koh Samui Resort",
@@ -351,6 +399,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=13961652307617965613&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/anantara%20rasananda%20koh%20phangan": {
+    "placeId": "ChIJZ-YSNOoCVTAR0YNeV-d-i9U",
+    "name": "Anantara Rasananda Koh Phangan Villas",
+    "address": "5/5 Moo 5 Thong Nai Pan Noi Beach, ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1272,
+    "photos": [
+      {
+        "src": "/places/ChIJZ-YSNOoCVTAR0YNeV-d-i9U-1.webp",
+        "author": "Anantara Rasananda Koh Phangan Villas",
+        "authorUri": "https://maps.google.com/maps/contrib/105986941325584870240"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15387532083909788625&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/anantara%20rasananda%20koh%20phangan%20villas/@9.7792992,100.0554169,18z": {
+    "placeId": "ChIJZ-YSNOoCVTAR0YNeV-d-i9U",
+    "name": "Anantara Rasananda Koh Phangan Villas",
+    "address": "5/5 Moo 5 Thong Nai Pan Noi Beach, ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1272,
+    "photos": [
+      {
+        "src": "/places/ChIJZ-YSNOoCVTAR0YNeV-d-i9U-1.webp",
+        "author": "Anantara Rasananda Koh Phangan Villas",
+        "authorUri": "https://maps.google.com/maps/contrib/105986941325584870240"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15387532083909788625&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/andaman%20thai%20food%20%26%20seafood%20restaurant%20chaweng": {
     "placeId": "ChIJkZqXGNXxVDARXWaSoxTFwhI",
     "name": "Andaman Thai Food & Seafood",
@@ -366,6 +446,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.8,
     "userRatingCount": 1586
+  },
+  "https://www.google.com/maps/search/ando%20loco%20mexican%20restaurant%20koh%20phangan": {
+    "placeId": "ChIJuylx7yr8VDARmd7U_h0Ubh4",
+    "name": "Ando Loco",
+    "address": "90, 15 Taladkao Road, Koh Pha-Ngan, koh Pha-Ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 845,
+    "photos": [
+      {
+        "src": "/places/ChIJuylx7yr8VDARmd7U_h0Ubh4-1.webp",
+        "author": "Nils van Wanderberts",
+        "authorUri": "https://maps.google.com/maps/contrib/101538186955661557017"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2192712187637980825&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/ang%20thong%20national%20marine%20park": {
     "placeId": "ChIJ5x4DAX7-VDARkJi8xghaoRg",
@@ -495,6 +591,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9114135232931579541&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/art%20market/@9.7080432,99.9945481,18z": {
+    "placeId": "ChIJI1OFDjP9VDARjncbvG8xLV0",
+    "name": "Art Market",
+    "address": "PX5V+6R7, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84820, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 77,
+    "photos": [
+      {
+        "src": "/places/ChIJI1OFDjP9VDARjncbvG8xLV0-1.webp",
+        "author": "Cultural Nymph",
+        "authorUri": "https://maps.google.com/maps/contrib/116527568083115662670"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6714076975446325134&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/asia%20herb%20association%20bangkok": {
     "placeId": "ChIJOwsnQASf4jAR_no5JyVXV1s",
     "name": "Asia Herb Association Sukhumvit 24 Phrom-Phong Shop",
@@ -559,6 +671,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=15413180030746840492&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/auntie%27s%20restaurant/@9.7116271,99.9867341,18z": {
+    "placeId": "ChIJVSTmGX7-VDAROb_RPTaiv00",
+    "name": "Auntie's Restaurant",
+    "address": "PX6P+JP2, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 832,
+    "photos": [
+      {
+        "src": "/places/ChIJVSTmGX7-VDAROb_RPTaiv00-1.webp",
+        "author": "Florian Dietzsch",
+        "authorUri": "https://maps.google.com/maps/contrib/115909106936586181454"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5602374815321276217&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/ba%20hao%20tian%20mi%20yaowarat%20bangkok": {
     "placeId": "ChIJ2dYIoeeZ4jARgBOBTWYpMrw",
     "name": "Ba Hao Tian Mi - Yaowarat",
@@ -574,6 +702,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=13560946947329692544&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/baan%20boontom%20somtum%20%26%20gallery/@9.7220058,100.001432,18z": {
+    "placeId": "ChIJgZJNfn_-VDARps6ATWE8uZ8",
+    "name": "Baan Boontom Somtum & Gallery",
+    "address": "P2C2+QGP, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 182,
+    "photos": [
+      {
+        "src": "/places/ChIJgZJNfn_-VDARps6ATWE8uZ8-1.webp",
+        "author": "Pepe",
+        "authorUri": "https://maps.google.com/maps/contrib/117161764179505006815"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11509296711331794598&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/baan%20kang%20wat%20chiang%20mai": {
     "placeId": "ChIJdxPPqzUx2jARn86GcuRsD1s",
@@ -622,6 +766,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=1454925153809679927&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/bamboo%20bay%20pilates/@9.7515547,99.9660113,18z": {
+    "placeId": "ChIJpRv8weX9VDARCpv9vNg1kOI",
+    "name": "Bamboo Bay Pilates",
+    "address": "Bamboo Bay Pilates Studio 14/1, Srithanu, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 59,
+    "photos": [
+      {
+        "src": "/places/ChIJpRv8weX9VDARCpv9vNg1kOI-1.webp",
+        "author": "Bamboo Bay Pilates",
+        "authorUri": "https://maps.google.com/maps/contrib/114379441562006265244"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16325607854217992970&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/bandon%20international%20hospital%20koh%20samui": {
     "placeId": "ChIJsWHE3lnwVDAR0sXaLAjHqlQ",
@@ -735,6 +895,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=15783513763509030853&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/beachub%20coworking%20koh%20phangan": {
+    "placeId": "ChIJkZoQvtgBVTAR6fZuHLksTig",
+    "name": "Beachub",
+    "address": "Moo 8 Koh Phangan, Koh Phangan, Srithanu, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 143,
+    "photos": [
+      {
+        "src": "/places/ChIJkZoQvtgBVTAR6fZuHLksTig-1.webp",
+        "author": "Beachub",
+        "authorUri": "https://maps.google.com/maps/contrib/107646583276720426491"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2904307983258154729&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/beastie%20bangkok": {
     "placeId": "ChIJ674Ti6-f4jAR1BpJJcG7KKE",
     "name": "Beastie",
@@ -766,6 +942,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.7,
     "userRatingCount": 421
+  },
+  "https://www.google.com/maps/search/bee%27s%20kitchen/@9.7538359,99.9660192,18z": {
+    "placeId": "ChIJo-tCXiD-VDARoNlki4Kbn68",
+    "name": "Bee's Kitchen",
+    "address": "17, 12, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 448,
+    "photos": [
+      {
+        "src": "/places/ChIJo-tCXiD-VDARoNlki4Kbn68-1.webp",
+        "author": "prakaipan ถนัดโซ้ย",
+        "authorUri": "https://maps.google.com/maps/contrib/116856016304429710816"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12655004462921079200&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/benjakitti%20forest%20park%20bangkok": {
     "placeId": "ChIJmfMfvBuf4jAR9rugvZd5Lyc",
@@ -895,6 +1087,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=13208103510549756454&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/bluerama/@9.7230956,99.9797739,18z": {
+    "placeId": "ChIJffqdUmX-VDARcFlZnLM0rMk",
+    "name": "Bluerama",
+    "address": "162, Nai Wok, หมู่ที่ 1, KOH PHANGAN, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 1226,
+    "photos": [
+      {
+        "src": "/places/ChIJffqdUmX-VDARcFlZnLM0rMk-1.webp",
+        "author": "Bluerama",
+        "authorUri": "https://maps.google.com/maps/contrib/112724585798780742789"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14532048043644639600&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/bob%20coffee%20and%20space%20chiang%20mai": {
     "placeId": "ChIJPVCRjZE72jARsC3ny39S-KY",
     "name": "BOB Coffee",
@@ -910,6 +1118,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=12031457113355529648&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/bottle%20beach%20koh%20phangan": {
+    "placeId": "ChIJf7nT9VUCVTARahDzKODC10g",
+    "name": "Bottle Beach (Haad Khuad)",
+    "address": "Bottle Beach, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 1558,
+    "photos": [
+      {
+        "src": "/places/ChIJf7nT9VUCVTARahDzKODC10g-1.webp",
+        "author": "Andrei Tsikhamirau",
+        "authorUri": "https://maps.google.com/maps/contrib/109107378406646184506"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5248878158739083370&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/boy%20blues%20bar%20chiang%20mai": {
     "placeId": "ChIJPb6UEKY62jARe6cCFWMwT6o",
@@ -975,6 +1199,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=1515288809925795551&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/bubba%27s%20coffee%20baan%20tai": {
+    "placeId": "ChIJpbAG5r79VDARYvFdLxxixRU",
+    "name": "Bubba's Coffee Baan Tai",
+    "address": "59, 4 ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1654,
+    "photos": [
+      {
+        "src": "/places/ChIJpbAG5r79VDARYvFdLxxixRU-1.webp",
+        "author": "Bubba's Coffee Baan Tai",
+        "authorUri": "https://maps.google.com/maps/contrib/110364351544512973740"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=1568767918401778018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/bubba%27s%20roastery/@9.7745094,99.9674955,18z": {
+    "placeId": "ChIJLwl5NcABVTARzDSHHb_FpAI",
+    "name": "Bubba's Roastery",
+    "address": "56/4 Moo 8 Haad Yao Koh Phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1395,
+    "photos": [
+      {
+        "src": "/places/ChIJLwl5NcABVTARzDSHHb_FpAI-1.webp",
+        "author": "Bubba's Coffee Roastery Haad Yao",
+        "authorUri": "https://maps.google.com/maps/contrib/107968053736476818751"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=190494508881229004&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/bun%20bo%20hue%20ba%20thuong%20da%20nang": {
     "placeId": "ChIJtZ-j_DIYQjERp4pBNhnHIww",
     "name": "Bún Bò Huế Bà Thương",
@@ -1007,6 +1263,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=15484905354261700686&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/buri%20rasa%20village%20phangan": {
+    "placeId": "ChIJzc-qU-oCVTARvx8p4mCRu3g",
+    "name": "Buri Rasa Village Phangan",
+    "address": "55 Moo 5, Thong Nai Pan Noi Beach, Baantai, Koh Phangan, Suratthani Koh Phangan, ตำบล บ้านใต้ อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 2091,
+    "photos": [
+      {
+        "src": "/places/ChIJzc-qU-oCVTARvx8p4mCRu3g-1.webp",
+        "author": "Buri Rasa Village Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/101216632271688519737"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8699706950493478847&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/c%26m%20culture%20centre%20koh%20phangan": {
+    "placeId": "ChIJ-zL-ed8BVTARwtZ1n7StWXo",
+    "name": "C&M Cooking School",
+    "address": "84, 4, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 480,
+    "photos": [
+      {
+        "src": "/places/ChIJ-zL-ed8BVTARwtZ1n7StWXo-1.webp",
+        "author": "\"C&M\" Koh Phangan Vocational School",
+        "authorUri": "https://maps.google.com/maps/contrib/101863966490400546050"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8816268736835475138&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/cabanas%20beach%20club%20koh%20samui": {
     "placeId": "ChIJ4d556T7xVDARCz-MEsmohDk",
     "name": "Cabanas Beach Club",
@@ -1022,6 +1310,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.8,
     "userRatingCount": 301
+  },
+  "https://www.google.com/maps/search/caf%c3%a9%20nostalgie/@9.7217294,99.9945584,18z": {
+    "placeId": "ChIJuYE8AGD9VDARbMoUd1aep_g",
+    "name": "Café Nostalgie",
+    "address": "180, 9, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 253,
+    "photos": [
+      {
+        "src": "/places/ChIJuYE8AGD9VDARbMoUd1aep_g-1.webp",
+        "author": "Café Nostalgie",
+        "authorUri": "https://maps.google.com/maps/contrib/118295332268221418146"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17917463736719034988&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/camp%20maya%20chiang%20mai": {
     "placeId": "ChIJVRYatWE62jARA52IbLWUhPQ",
@@ -1183,6 +1487,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=9294032666574863603&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/chaloklum%20beach%20koh%20phangan": {
+    "placeId": "ChIJRVWl5uMDVTARZowC_LRD5rU",
+    "name": "Chaloklum",
+    "address": "Q2P3+PPV, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 405,
+    "photos": [
+      {
+        "src": "/places/ChIJRVWl5uMDVTARZowC_LRD5rU-1.webp",
+        "author": "Toyo Rak-Thai",
+        "authorUri": "https://maps.google.com/maps/contrib/110891913255859292348"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13107238210109607014&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/chaloklum%20diving%20koh%20phangan": {
+    "placeId": "ChIJQ874jzoCVTARA39QxoF19bk",
+    "name": "Chaloklum Diving",
+    "address": "106, 48 Moo 7, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 367,
+    "photos": [
+      {
+        "src": "/places/ChIJQ874jzoCVTARA39QxoF19bk-1.webp",
+        "author": "Tourism Informatics",
+        "authorUri": "https://maps.google.com/maps/contrib/116797988664202531404"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13399745466549174019&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/changthong%20heritage%20park%20chiang%20mai": {
     "placeId": "ChIJVfyk5AI72jAR3BJFca9uTOA",
     "name": "Changthong Heritage Park",
@@ -1311,6 +1647,22 @@
     "rating": 4.4,
     "userRatingCount": 1655
   },
+  "https://www.google.com/maps/search/chaya%20wellness%20-%20facial%20massage%20%26%20treatment/@9.756151,99.9687052,18z": {
+    "placeId": "ChIJQV1zCOgBVTAR-9in6zJngYE",
+    "name": "Chaya Wellness",
+    "address": "23, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 110,
+    "photos": [
+      {
+        "src": "/places/ChIJQV1zCOgBVTAR-9in6zJngYE-1.webp",
+        "author": "Chaya Wellness",
+        "authorUri": "https://maps.google.com/maps/contrib/111912996467892491277"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9331853371288049915&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/chenin%20bangkok": {
     "placeId": "ChIJqbWdQdWf4jARcwbFVOkosL4",
     "name": "Chenin Restaurant",
@@ -1406,6 +1758,38 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.9,
     "userRatingCount": 248
+  },
+  "https://www.google.com/maps/search/chilli%20best%20thai%20cooking%20class%20koh%20phangan": {
+    "placeId": "ChIJXdzeCQ7_VDARBvcWu04vfSk",
+    "name": "Chilli Best Thai Cooking Class",
+    "address": "34, 13, Tambon Ko Pha-ngan, koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 574,
+    "photos": [
+      {
+        "src": "/places/ChIJXdzeCQ7_VDARBvcWu04vfSk-1.webp",
+        "author": "Chilli Best Thai Cooking Class",
+        "authorUri": "https://maps.google.com/maps/contrib/101787971689058044911"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2989597742836676358&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/chinnarach%20muaythai/@9.71864,99.9917097,18z": {
+    "placeId": "ChIJwaw37Hv-VDARgEkdGd8QSbQ",
+    "name": "Chinnarach Muay Thai",
+    "address": "148/22 M.1 ท้องศาลา Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 233,
+    "photos": [
+      {
+        "src": "/places/ChIJwaw37Hv-VDARgEkdGd8QSbQ-1.webp",
+        "author": "Chinnarach Muaythai",
+        "authorUri": "https://maps.google.com/maps/contrib/101450924639619259097"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12990933150512007552&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/choeng%20mon%20beach%20koh%20samui": {
     "placeId": "ChIJEU_FMP7vVDARQzq1TzjsT0w",
@@ -1519,6 +1903,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=6813936026664290723&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/common%20grounds%20coffee%20koh%20phangan": {
+    "placeId": "ChIJ05Vl6kv9VDAR6EQoL0pxAHo",
+    "name": "Common Grounds Coffee",
+    "address": "11/7, Moo 4, Middle Road, Wok Tum, Koh Phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 824,
+    "photos": [
+      {
+        "src": "/places/ChIJ05Vl6kv9VDAR6EQoL0pxAHo-1.webp",
+        "author": "Common Grounds Coffee",
+        "authorUri": "https://maps.google.com/maps/contrib/104285695854383054292"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8791151036059895016&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/cong%20ca%20phe%20da%20nang": {
     "placeId": "ChIJi0bpGjIYQjERRodYRF89PH8",
     "name": "Cộng Cà Phê",
@@ -1583,6 +1983,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=4548592767634898507&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/coworking%20space%20h24%20koh%20phangan": {
+    "placeId": "ChIJPQGcmiv9VDARoGzrXpvkQOs",
+    "name": "Coworking Space H24",
+    "address": "90 17, ตำบลเกาะพะงัน Ko PhanganSurat Thani, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 178,
+    "photos": [
+      {
+        "src": "/places/ChIJPQGcmiv9VDARoGzrXpvkQOs-1.webp",
+        "author": "T Berkvens",
+        "authorUri": "https://maps.google.com/maps/contrib/117357380594023731961"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16951800353386097824&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/cucina%20italiana%20chaloklum": {
+    "placeId": "ChIJC6J7hToCVTARQfZGXzozeYI",
+    "name": "Cucina Italiana",
+    "address": "86 Chaloklum 3, Tambon Ko Pha-ngan, Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 506,
+    "photos": [
+      {
+        "src": "/places/ChIJC6J7hToCVTARQfZGXzozeYI-1.webp",
+        "author": "JL Pc.",
+        "authorUri": "https://maps.google.com/maps/contrib/105131083248303135887"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9401602022912226881&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/da%27s%20crab%20yaowarat%20bangkok": {
     "placeId": "ChIJvwJRiyGZ4jARZxqtz5bpTfI",
     "name": "Da’s Crab",
@@ -1615,6 +2047,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=6997162495823260107&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/dani%20summer%20store/@9.756946,99.9665624,18z": {
+    "placeId": "ChIJv2eI2ekBVTARl0auPKumavs",
+    "name": "Dani Summer Store",
+    "address": "49, Srithanu, 49, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 67,
+    "photos": [
+      {
+        "src": "/places/ChIJv2eI2ekBVTARl0auPKumavs-1.webp",
+        "author": "Phatcha Prasertkul",
+        "authorUri": "https://maps.google.com/maps/contrib/109858232152836117441"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18116475705438914199&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/dantewada%20land%20of%20angels%20waterfall%20park": {
     "placeId": "ChIJEf2-gm8R2jARBALXYKKmJUU",
     "name": "Dantewada Land of Angels Waterfall Park",
@@ -1630,6 +2078,54 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4982571779094938116&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/dao%20by%20chef%20nir%20mesika%20koh%20phangan": {
+    "placeId": "ChIJI8SQawD_VDARYY5iC-W_4R4",
+    "name": "DAO by Chef Nir Mesika",
+    "address": "83 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 326,
+    "photos": [
+      {
+        "src": "/places/ChIJI8SQawD_VDARYY5iC-W_4R4-1.webp",
+        "author": "DAO by Chef Nir Mesika",
+        "authorUri": "https://maps.google.com/maps/contrib/118281589225250132015"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2225270681357160033&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/dar%20mansour%20koh%20phangan": {
+    "placeId": "ChIJRalb6gv_VDAR2ctvNW90FV0",
+    "name": "Dar Mansour",
+    "address": "5, 4, Sri Thanu, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 366,
+    "photos": [
+      {
+        "src": "/places/ChIJRalb6gv_VDAR2ctvNW90FV0-1.webp",
+        "author": "Dar Mansour - Morocco's kitchen",
+        "authorUri": "https://maps.google.com/maps/contrib/111338651461163680745"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6707395241024932825&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/darin%20boutique/@9.7098958,99.9903049,18z": {
+    "placeId": "ChIJyWJWcw__VDARNTzx5ipzL2M",
+    "name": "Darin Boutique",
+    "address": "91/3 เกาะพะงัน Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 83,
+    "photos": [
+      {
+        "src": "/places/ChIJyWJWcw__VDARNTzx5ipzL2M-1.webp",
+        "author": "הדסה חזיזה",
+        "authorUri": "https://maps.google.com/maps/contrib/105333864410667956949"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7147057761760656437&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/dash%20teak%20house%20chiang%20mai": {
     "placeId": "ChIJYXZDLqA62jARjhW8xmSUkjk",
@@ -1662,6 +2158,38 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.6,
     "userRatingCount": 2630
+  },
+  "https://www.google.com/maps/search/deksen%20restaurant%20koh%20phangan/@9.7257759,100.0030653,18z": {
+    "placeId": "ChIJxXSaudz9VDAR9NeV2nnl7ZQ",
+    "name": "Deksen Restaurant",
+    "address": "1 สุรา ษ ฏ ร์ ธานี 84280 68 หมู่ 3 Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 38,
+    "photos": [
+      {
+        "src": "/places/ChIJxXSaudz9VDAR9NeV2nnl7ZQ-1.webp",
+        "author": "ดอกพร้าว ชาวเกาะ",
+        "authorUri": "https://maps.google.com/maps/contrib/114934788372489793419"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10731485798614816756&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/deli%20devi/@9.7509775,99.978185,18z": {
+    "placeId": "ChIJp1YGc7H_VDARLETa3ynBrv0",
+    "name": "Deli Devi",
+    "address": "45 Koh Phangan District, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1063,
+    "photos": [
+      {
+        "src": "/places/ChIJp1YGc7H_VDARLETa3ynBrv0-1.webp",
+        "author": "Deli Devi",
+        "authorUri": "https://maps.google.com/maps/contrib/118215818896947727751"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18279760323136865324&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/delish%20cafe%20restaurant%20chaweng%20koh%20samui": {
     "placeId": "ChIJQ2zm4p_xVDARSkn9M_iTT0A",
@@ -1742,6 +2270,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=904240630687538201&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/dots%20coffee%20koh%20phangan": {
+    "placeId": "ChIJofG8a37-VDARunXw041Pw_g",
+    "name": "Dots Coffee",
+    "address": "45/3, 4 ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 908,
+    "photos": [
+      {
+        "src": "/places/ChIJofG8a37-VDARunXw041Pw_g-1.webp",
+        "author": "Dots Coffee",
+        "authorUri": "https://maps.google.com/maps/contrib/108798125753385624176"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17925258412429440442&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/dr%20frogs%20bar%20and%20grill%20koh%20samui": {
     "placeId": "ChIJ5fX-BZbxVDARXhhX94DU34s",
@@ -1854,6 +2398,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=9455924634641103332&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/eat.co%20koh%20phangan": {
+    "placeId": "ChIJ-dfOCt8BVTAR8iZTxBaXVFo",
+    "name": "Eat.Co",
+    "address": "72, 1, ตำบล ศรีธนู, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 1145,
+    "photos": [
+      {
+        "src": "/places/ChIJ-dfOCt8BVTAR8iZTxBaXVFo-1.webp",
+        "author": "Eat.Co",
+        "authorUri": "https://maps.google.com/maps/contrib/109852916511678816532"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6508993485496067826&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/elephant%20beach%20club%20koh%20samui": {
     "placeId": "ChIJAVQo7czxVDARRinjM7ou6Uo",
@@ -1983,6 +2543,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=3113794275195289540&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/eva%20moon%20boutique/@9.7093261,99.9873192,18z": {
+    "placeId": "ChIJIQIlEur_VDARBsXgx94fEWA",
+    "name": "Eva Moon Boutique",
+    "address": "61, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 59,
+    "photos": [
+      {
+        "src": "/places/ChIJIQIlEur_VDARBsXgx94fEWA-1.webp",
+        "author": "peggy anke",
+        "authorUri": "https://maps.google.com/maps/contrib/107272195887376020017"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6922349143941760262&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/factory%20coffee%20phaya%20thai%20bangkok": {
     "placeId": "ChIJA-r3h7ae4jARcgEibgLyJyc",
     "name": "Factory Coffee - BKK",
@@ -2046,6 +2622,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=3489603691648719619&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/fisherman%27s%20restaurant%20and%20bar%20koh%20phangan": {
+    "placeId": "ChIJ64MaPE_8VDARxQF2ClPO1Pc",
+    "name": "Fisherman's Restaurant and Bar",
+    "address": "30, 6, Tambon Ban Tai, Koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1929,
+    "photos": [
+      {
+        "src": "/places/ChIJ64MaPE_8VDARxQF2ClPO1Pc-1.webp",
+        "author": "Fisherman's Restaurant and Bar",
+        "authorUri": "https://maps.google.com/maps/contrib/114139941926352847818"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17858125278483972549&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/fisherman%27s%20village%20bophut%20koh%20samui": {
     "placeId": "ChIJX5anyo3wVDARupr7atqyDZ4",
@@ -2223,6 +2815,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=11126774209849730514&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/fusion%20fashion/@9.6746698,100.0647887,18z": {
+    "placeId": "ChIJzwmMC0T9VDARMZF6FqJwk9I",
+    "name": "Fusion Fashion",
+    "address": "94/17 M.6 Haad Rin, ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 29,
+    "photos": [
+      {
+        "src": "/places/ChIJzwmMC0T9VDARMZF6FqJwk9I-1.webp",
+        "author": "Fusion Fashion",
+        "authorUri": "https://maps.google.com/maps/contrib/103221258316063730269"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15173595411005477169&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/gaggan%20bangkok": {
     "placeId": "ChIJi_nHcf-f4jARAI6VOXH0wII",
     "name": "Gaggan",
@@ -2238,6 +2846,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=9421799187593661952&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/gaia%20cafe%20koh%20phangan/@9.7092966,99.9874859,18z": {
+    "placeId": "ChIJ_7FNCv__VDARrJmEHcqyi-k",
+    "name": "Gaia Cafe",
+    "address": "1, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 401,
+    "photos": [
+      {
+        "src": "/places/ChIJ_7FNCv__VDARrJmEHcqyi-k-1.webp",
+        "author": "Gaia",
+        "authorUri": "https://maps.google.com/maps/contrib/102573371663476034346"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16828741013748357548&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/gallery%20drip%20coffee%20bacc%20bangkok": {
     "placeId": "ChIJ6e7hT82e4jAR4HgD4RW37Tk",
@@ -2303,6 +2927,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=4413973500699753151&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/go%20tum%20restaurant/@9.7220339,99.9981698,18z": {
+    "placeId": "ChIJEcTKXQD9VDARFKVZ5SA7JPI",
+    "name": "Go Tum",
+    "address": "Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 68,
+    "photos": [
+      {
+        "src": "/places/ChIJEcTKXQD9VDARFKVZ5SA7JPI-1.webp",
+        "author": "ครัวโกตั้ม",
+        "authorUri": "https://maps.google.com/maps/contrib/118019463831167494640"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17448135868812993812&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/gogym%20chiang%20mai": {
     "placeId": "ChIJOeCiIvI62jAR0p3YFdMYjxU",
     "name": "GoGym",
@@ -2350,6 +2990,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=8372535899983747569&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/grasshopper%20beach%20bar/@9.757357,99.9611791,18z": {
+    "placeId": "ChIJFXMYluMBVTARNee-mEnyWkU",
+    "name": "Grasshopper Beach Bar",
+    "address": "QX46+WFV, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 225,
+    "photos": [
+      {
+        "src": "/places/ChIJFXMYluMBVTARNee-mEnyWkU-1.webp",
+        "author": "kov",
+        "authorUri": "https://maps.google.com/maps/contrib/117018554497663941252"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4997573134430168885&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/grok%201970%20soi%20somkid%20bangkok": {
     "placeId": "ChIJf924TgCf4jAR1YKBjThVqkU",
@@ -2399,6 +3055,118 @@
     "googleMapsUri": "https://maps.google.com/?cid=1465515750651767333&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/haad%20khom%20beach%20koh%20phangan": {
+    "placeId": "ChIJ9dYoN7UDVTAR6HoS9ZQeZJU",
+    "name": "Haad Khom",
+    "address": "Haad Khom Beach, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 423,
+    "photos": [
+      {
+        "src": "/places/ChIJ9dYoN7UDVTAR6HoS9ZQeZJU-1.webp",
+        "author": "Augusto Passos Santana",
+        "authorUri": "https://maps.google.com/maps/contrib/100153024068627107288"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10764762634437950184&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/haad%20khom%20viewpoint%20koh%20phangan": {
+    "placeId": "ChIJuywkLl0DVTAR-QQZ4ig8O_Q",
+    "name": "Haad Khom Viewpoint",
+    "address": "Q2W9+XMJ, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.3,
+    "userRatingCount": 83,
+    "photos": [
+      {
+        "src": "/places/ChIJuywkLl0DVTAR-QQZ4ig8O_Q-1.webp",
+        "author": "pakinai kasiwat",
+        "authorUri": "https://maps.google.com/maps/contrib/116059651352885395455"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17598726115169993977&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/haad%20rin%20sunrise%20beach%20koh%20phangan": {
+    "placeId": "ChIJBTY-7br8VDARpSjm6DFK6vA",
+    "name": "Full Moon Party",
+    "address": "Haad Rin, Ban Tai, Ko Pha-ngan District, Surat Thani, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1481,
+    "photos": [
+      {
+        "src": "/places/ChIJBTY-7br8VDARpSjm6DFK6vA-1.webp",
+        "author": "robert Trebor",
+        "authorUri": "https://maps.google.com/maps/contrib/114882919629175133663"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17359769291874248869&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/haad%20sadet%20beach%20koh%20phangan": {
+    "placeId": "ChIJ732RLFT9VDARJl11lAQ37_0",
+    "name": "Haad Sadet",
+    "address": "Haad Sadet Beach หาดธารเสด็จ ตำบล บ้านใต้ สุราษฎร์ธานี Thailand",
+    "rating": 4.4,
+    "userRatingCount": 1058,
+    "photos": [
+      {
+        "src": "/places/ChIJ732RLFT9VDARJl11lAQ37_0-1.webp",
+        "author": "Benj GVA",
+        "authorUri": "https://maps.google.com/maps/contrib/116472223113142296183"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18297904303839730982&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/haad%20salad%20beach%20koh%20phangan": {
+    "placeId": "ChIJjUw5I5cBVTAR0T8rl0NVyFw",
+    "name": "Haad Salad (Salad Beach)",
+    "address": "64 31 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 714,
+    "photos": [
+      {
+        "src": "/places/ChIJjUw5I5cBVTAR0T8rl0NVyFw-1.webp",
+        "author": "Haad Salad Resort",
+        "authorUri": "https://maps.google.com/maps/contrib/108932231098309331740"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6685687395618865105&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/haad%20son%20secret%20beach%20koh%20phangan": {
+    "placeId": "ChIJjTq4QsQBVTAR0pH_bUoISeg",
+    "name": "Haad Son (Secret Beach)",
+    "address": "อำเภอเกาะพะงัน อำเภอ เกาะพะงัน สุราษฎร์ธานี 84280 Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 78,
+    "photos": [
+      {
+        "src": "/places/ChIJjTq4QsQBVTAR0pH_bUoISeg-1.webp",
+        "author": "pakinai kasiwat",
+        "authorUri": "https://maps.google.com/maps/contrib/116059651352885395455"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16737918605865226706&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/haad%20yao%20beach%20koh%20phangan": {
+    "placeId": "ChIJi1bCXcABVTARjlrXqEYw8Ng",
+    "name": "Haad Yao",
+    "address": "7-11 หาดยาว ถนน Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 936,
+    "photos": [
+      {
+        "src": "/places/ChIJi1bCXcABVTARjlrXqEYw8Ng-1.webp",
+        "author": "Laelia Milleri Photography",
+        "authorUri": "https://maps.google.com/maps/contrib/103111517368312508165"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15632047386641521294&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/hai%20stylist%20hair%20salon%20da%20nang": {
     "placeId": "ChIJUyEekRMXQjERrb_PdB3WrUk",
     "name": "HAI STYLIST Hair Salon",
@@ -2431,6 +3199,22 @@
     "rating": 4.6,
     "userRatingCount": 282
   },
+  "https://www.google.com/maps/search/half%20moon%20festival%20koh%20phangan": {
+    "placeId": "ChIJocFEdaz9VDARB01YGSd97H4",
+    "name": "Half Moon Festival",
+    "address": "72 39, Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 892,
+    "photos": [
+      {
+        "src": "/places/ChIJocFEdaz9VDARB01YGSd97H4-1.webp",
+        "author": "Gleb Altshifter",
+        "authorUri": "https://maps.google.com/maps/contrib/102297189092398610297"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9145822550165048583&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/hang%20ganh%20da%20nang": {
     "placeId": "ChIJqV9FZtgXQjERsH-EF2geJk8",
     "name": "Hang Ganh",
@@ -2462,6 +3246,38 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.4,
     "userRatingCount": 2081
+  },
+  "https://www.google.com/maps/search/hari%20om%20yoga%20koh%20phangan/@9.7332082,100.0454169,18z": {
+    "placeId": "ChIJVX0spC79VDARQRVorc16fqk",
+    "name": "Hari Om Yoga",
+    "address": "34 3 บ้านใต้ Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 117,
+    "photos": [
+      {
+        "src": "/places/ChIJVX0spC79VDARQRVorc16fqk-1.webp",
+        "author": "Hari Om Yoga Koh Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/103067295968995205108"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12213334263271527745&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/hari%20om%20yoga%20thong%20nai%20pan%20noi/@9.7781425,100.0535485,18z": {
+    "placeId": "ChIJI8PiC38DVTAR49qMWt-2ikQ",
+    "name": "Hari Om Yoga Thong Nai Pan Noi",
+    "address": "9°46'41.8\"N 100°, 03'12.2\"E, Koh Phangan, ตำบล บ้านใต้ อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 63,
+    "photos": [
+      {
+        "src": "/places/ChIJI8PiC38DVTAR49qMWt-2ikQ-1.webp",
+        "author": "Hari Om Yoga Thong Nai Pan Noi",
+        "authorUri": "https://maps.google.com/maps/contrib/104850547609592983264"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4938961011778312931&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/harnn%20heritage%20spa%20centralworld%20bangkok": {
     "placeId": "ChIJu8z2g8Of4jARQgT5xmJtWM0",
@@ -2575,6 +3391,54 @@
     "googleMapsUri": "https://maps.google.com/?cid=10844497164153839399&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/hide%20on%20high%20koh%20phangan": {
+    "placeId": "ChIJ4QMyAvYDVTAR8JNIlglvOHg",
+    "name": "Hide on High",
+    "address": "Q33F+HR5, Ban Tai, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 423,
+    "photos": [
+      {
+        "src": "/places/ChIJ4QMyAvYDVTAR8JNIlglvOHg-1.webp",
+        "author": "Yannik Bauer",
+        "authorUri": "https://maps.google.com/maps/contrib/112881598722567317022"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8662795970213876720&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/hin%20kong%20beach/@9.74554,99.9760332,18z": {
+    "placeId": "ChIJ_xuUtaX_VDARPmKNUw88UGo",
+    "name": "Hin Kong",
+    "address": "PXWG+6C7, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 508,
+    "photos": [
+      {
+        "src": "/places/ChIJ_xuUtaX_VDARPmKNUw88UGo-1.webp",
+        "author": "Jayeon Lee",
+        "authorUri": "https://maps.google.com/maps/contrib/111840813761229597024"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7660689002681164350&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/hin%20kong%20sandbank/@9.7437571,99.9747279,18z": {
+    "placeId": "ChIJt-Ip_gz_VDAReHGUQdmOZUs",
+    "name": "Hin Kong Sandbank",
+    "address": "PXVF+GV, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 58,
+    "photos": [
+      {
+        "src": "/places/ChIJt-Ip_gz_VDAReHGUQdmOZUs-1.webp",
+        "author": "Gabriel Rey",
+        "authorUri": "https://maps.google.com/maps/contrib/102930868394507565347"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5432905589251666296&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/hin%20ta%20and%20hin%20yai%20rocks%20koh%20samui": {
     "placeId": "ChIJi_MqvFPyVDARyZQrKj0jYtw",
     "name": "Hin Ta & Hin Yai Rocks",
@@ -2687,6 +3551,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=5931652883148881047&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/hundred%20islands%20coffee%20bar%20koh%20phangan": {
+    "placeId": "ChIJX8HmCzP8VDARmqvOQL4N2kA",
+    "name": "Hundred Islands Coffee Bar",
+    "address": "113/21, Moo 1, ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 797,
+    "photos": [
+      {
+        "src": "/places/ChIJX8HmCzP8VDARmqvOQL4N2kA-1.webp",
+        "author": "iPaFa DB",
+        "authorUri": "https://maps.google.com/maps/contrib/101254908229311684145"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4673062674132544410&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/iconsiam%20bangkok": {
     "placeId": "ChIJFRjwgc2Z4jAR9JIadoa9YBY",
     "name": "ICONSIAM",
@@ -2719,6 +3599,22 @@
     "rating": 4.8,
     "userRatingCount": 1654
   },
+  "https://www.google.com/maps/search/indigo%20specialty%20coffee%20%26%20bakery/@9.7490936,99.9753358,18z": {
+    "placeId": "ChIJibO3RYn_VDARfs7A2pCPm9g",
+    "name": "Indigo Specialty Coffee & Bakery",
+    "address": "7/24 moo6 Koh phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1703,
+    "photos": [
+      {
+        "src": "/places/ChIJibO3RYn_VDARfs7A2pCPm9g-1.webp",
+        "author": "Indigo Specialty Coffee & Bakery",
+        "authorUri": "https://maps.google.com/maps/contrib/108828357685585158276"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15608226785890717310&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/ink%20and%20lion%20cafe%20ekkamai%20bangkok": {
     "placeId": "ChIJ22MGza-f4jARbxOuZ7kJwO0",
     "name": "Ink & Lion Cafe",
@@ -2734,6 +3630,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17131703674430428015&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/inner%20space%20coworking%20koh%20phangan": {
+    "placeId": "ChIJoRLjJ14BVTARFE7aDbmgF3g",
+    "name": "Inner Space Coworking",
+    "address": "81, 5, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 134,
+    "photos": [
+      {
+        "src": "/places/ChIJoRLjJ14BVTARFE7aDbmgF3g-1.webp",
+        "author": "Mateusz Zawada",
+        "authorUri": "https://maps.google.com/maps/contrib/107830984940294895594"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8653561925677501972&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/intercontinental%20danang%20sun%20peninsula%20resort": {
     "placeId": "ChIJmZHsE5U9QjERDa3a1CuK3lo",
@@ -2927,6 +3839,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=1879480900184167701&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/kaif/@9.7867236,100.0038719,18z": {
+    "placeId": "ChIJtwZoMYsDVTARsZQD3iQUgf4",
+    "name": "Kaif",
+    "address": "97/2 Moo 7, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 945,
+    "photos": [
+      {
+        "src": "/places/ChIJtwZoMYsDVTARsZQD3iQUgf4-1.webp",
+        "author": "Kaif",
+        "authorUri": "https://maps.google.com/maps/contrib/118028190130606681346"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18338961306205525169&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/kaizen%20coffee%20co.%20ekkamai%20bangkok": {
     "placeId": "ChIJgQ0MLEye4jARHJXN1f_K5a0",
     "name": "Kaizen Coffee Ekamai",
@@ -2943,6 +3871,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=12530644738380764444&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/kali%20boutique%20koh%20phangan/@9.7094675,99.9870607,18z": {
+    "placeId": "ChIJiX1ShFL_VDARN41AYk0Z5t0",
+    "name": "Kali Boutique",
+    "address": "80, Moo 1, Thong Sala, Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 92,
+    "photos": [
+      {
+        "src": "/places/ChIJiX1ShFL_VDARN41AYk0Z5t0-1.webp",
+        "author": "Kali Boutique",
+        "authorUri": "https://maps.google.com/maps/contrib/110930795380312491048"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15989495347177098551&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/kamalaya%20koh%20samui": {
     "placeId": "ChIJLYLoEELzVDARK6bVhO2VmzU",
     "name": "Kamalaya",
@@ -2958,6 +3902,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.7,
     "userRatingCount": 195
+  },
+  "https://www.google.com/maps/search/kanda%20massage/@9.7110184,99.9868241,18z": {
+    "placeId": "ChIJWV8AGX7-VDAR69NQizhZh7Y",
+    "name": "Kanda Massage",
+    "address": "79/28 kanda massage Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 1201,
+    "photos": [
+      {
+        "src": "/places/ChIJWV8AGX7-VDAR69NQizhZh7Y-1.webp",
+        "author": "Kanda Massage & Waxing",
+        "authorUri": "https://maps.google.com/maps/contrib/105613618492477640941"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13152579336149193707&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/karmakamet%20diner%20sukhumvit%2024%20bangkok": {
     "placeId": "ChIJtf9bwgOf4jARoYCCQW2EJjs",
@@ -3135,6 +4095,22 @@
     "rating": 4.8,
     "userRatingCount": 1465
   },
+  "https://www.google.com/maps/search/kia%20ora%20caf%c3%a9/@9.7563188,99.9657114,18z": {
+    "placeId": "ChIJk0Upm2sBVTARbcSXtKzFNLA",
+    "name": "Kia Ora Café",
+    "address": "20 12 Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 1833,
+    "photos": [
+      {
+        "src": "/places/ChIJk0Upm2sBVTARbcSXtKzFNLA-1.webp",
+        "author": "Kia Ora Café Koh Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/107934438443981880528"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12696990595019162733&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/kif%20bkk%20ekkamai%20bangkok": {
     "placeId": "ChIJ4QGle8Sf4jARXb8JwZrV9eQ",
     "name": "KIF",
@@ -3150,6 +4126,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=16498327670582001501&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/kikekla%20bar%20%26%20restaurant/@9.7472521,99.9755896,18z": {
+    "placeId": "ChIJa2pQmP__VDARfHwKqxIBFsQ",
+    "name": "Kikekla Bar & Restaurant",
+    "address": "Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 731,
+    "photos": [
+      {
+        "src": "/places/ChIJa2pQmP__VDARfHwKqxIBFsQ-1.webp",
+        "author": "Kikekla Bar & Restaurant",
+        "authorUri": "https://maps.google.com/maps/contrib/111621824486585375857"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14129482060612140156&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/kim%20jeong%20un%20grill%20bangkok": {
     "placeId": "ChIJ62U9ahuf4jAR4oI0c8NETZk",
@@ -3215,6 +4207,22 @@
     "rating": 4.6,
     "userRatingCount": 614
   },
+  "https://www.google.com/maps/search/koh%20ma%20koh%20phangan": {
+    "placeId": "ChIJd_gy9ncBVTAR45XH163AeMk",
+    "name": "Mae Haad and Koh Ma",
+    "address": "106, 3, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 1758,
+    "photos": [
+      {
+        "src": "/places/ChIJd_gy9ncBVTAR45XH163AeMk-1.webp",
+        "author": "Mark Khaolak",
+        "authorUri": "https://maps.google.com/maps/contrib/104119321674905539907"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14517565251710850531&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/koh%20madsum%20pig%20island": {
     "placeId": "ChIJaYNk97v3VDARefP7W_NF6to",
     "name": "Koh Madsum (Pig Island)",
@@ -3246,6 +4254,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.6,
     "userRatingCount": 2179
+  },
+  "https://www.google.com/maps/search/koh%20raham%20koh%20phangan": {
+    "placeId": "ChIJKaDcHcQBVTARZGuCfCsdHII",
+    "name": "Koh Raham",
+    "address": "QXC6+RJJ, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 2522,
+    "photos": [
+      {
+        "src": "/places/ChIJKaDcHcQBVTARZGuCfCsdHII-1.webp",
+        "author": "Jack Chen",
+        "authorUri": "https://maps.google.com/maps/contrib/103686968313789312095"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9375400596888251236&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/koh%20samui%20hospital%20nathon": {
     "placeId": "ChIJmWj8zUT2VDARz1OtWX_tDb4",
@@ -3326,6 +4350,54 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=11955134405891233470&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/kuan%20yin%20chinese%20temple%20koh%20phangan": {
+    "placeId": "ChIJ1eSxnxECVTARK_0Rp5kYrew",
+    "name": "Kuan Yin Temple (Chinese Temple)",
+    "address": "Q294+3P7, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 197,
+    "photos": [
+      {
+        "src": "/places/ChIJ1eSxnxECVTARK_0Rp5kYrew-1.webp",
+        "author": "Hayden",
+        "authorUri": "https://maps.google.com/maps/contrib/104436256596365323593"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17054314412133973291&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/kupu%20kupu%20phangan%20beach%20villas%20%26%20spa": {
+    "placeId": "ChIJwZ82-27-VDARqHDNrej3lgE",
+    "name": "Kupu Kupu Phangan Beach Villas & Spa",
+    "address": "69, 13 Naiwok, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 1548,
+    "photos": [
+      {
+        "src": "/places/ChIJwZ82-27-VDARqHDNrej3lgE-1.webp",
+        "author": "Kupu Kupu Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/113388146256499906567"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=114551419264921768&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/l%27alcove%20koh%20phangan/@9.7466815,99.9757396,18z": {
+    "placeId": "ChIJ6fh3Shr-VDARyacjypRgv64",
+    "name": "L'Alcove",
+    "address": "15 Hinkong beach 1, Tambon Ko Pha-ngan, Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 2179,
+    "photos": [
+      {
+        "src": "/places/ChIJ6fh3Shr-VDARyacjypRgv64-1.webp",
+        "author": "Alcove restaurant",
+        "authorUri": "https://maps.google.com/maps/contrib/100531031228312193215"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12591889275313956809&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/la%20maison%201888%20intercontinental%20danang": {
     "placeId": "ChIJdRIphoo9QjERmdeVIV3SAw0",
@@ -3438,6 +4510,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.3,
     "userRatingCount": 2802
+  },
+  "https://www.google.com/maps/search/lavella%20spa%20koh%20phangan": {
+    "placeId": "ChIJkStmjYz9VDARadulNAMf5uQ",
+    "name": "Lavella Spa",
+    "address": "114, 11, Tambon Ban Tai, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 2182,
+    "photos": [
+      {
+        "src": "/places/ChIJkStmjYz9VDARadulNAMf5uQ-1.webp",
+        "author": "Maxime “Owney Media” Biot",
+        "authorUri": "https://maps.google.com/maps/contrib/101756330572283365187"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16493904783919668073&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/lay%20lao%20ari%20bangkok": {
     "placeId": "ChIJ44AEpx2c4jARZKaM12f1HQI",
@@ -3679,6 +4767,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=12394383396962920758&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/m19%20muay%20thai/@9.7206583,100.0032424,18z": {
+    "placeId": "ChIJfX7a97f9VDAR00HRVPLEuf4",
+    "name": "M19 Muay Thai",
+    "address": "38, 63 Moo2, Ban Nai Suan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 230,
+    "photos": [
+      {
+        "src": "/places/ChIJfX7a97f9VDAR00HRVPLEuf4-1.webp",
+        "author": "M19 Muay Thai",
+        "authorUri": "https://maps.google.com/maps/contrib/106426857903736596457"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18354918301409296851&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/maaterr%20talat%20noi%20bangkok": {
     "placeId": "ChIJz5i-O5CZ4jARZnCa2duqP4o",
     "name": "Maaterr : มาเต้อะ",
@@ -3807,6 +4911,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=10568636219027931477&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/makalulu%20by%20atman/@9.7106783,99.9867093,18z": {
+    "placeId": "ChIJW5qE0zv9VDARahayJfUsm_k",
+    "name": "Makalulu by ATMAN",
+    "address": "74/16, Moo 1, Thongsala Thongsala Koh Phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 496,
+    "photos": [
+      {
+        "src": "/places/ChIJW5qE0zv9VDARahayJfUsm_k-1.webp",
+        "author": "Makalulu by ATMAN",
+        "authorUri": "https://maps.google.com/maps/contrib/112647798508149815115"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17986018968245245546&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/makkha%20health%20and%20spa%20chiang%20mai": {
     "placeId": "ChIJGV4FvZw62jARNmHqRY-PPyQ",
     "name": "Makkha Health & Spa Chiang Mai (Ancient House)",
@@ -3838,6 +4958,70 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.7,
     "userRatingCount": 1056
+  },
+  "https://www.google.com/maps/search/malka%20-%20caf%c3%a9%20%26%20cultura/@9.7776669,100.0069504,18z": {
+    "placeId": "ChIJ4_T-IzkDVTARZDxSLotOlk0",
+    "name": "Malka - Café & Cultura",
+    "address": "Q2H4+3Q7, Unnamed Road, Tambon Ko Pha-ngan, koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 196,
+    "photos": [
+      {
+        "src": "/places/ChIJ4_T-IzkDVTARZDxSLotOlk0-1.webp",
+        "author": "Malka - Café & Cultura",
+        "authorUri": "https://maps.google.com/maps/contrib/101411229186646305655"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5590742347111611492&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/mama%20noi.%20mango%20sticky%20rice%20koh%20phangan": {
+    "placeId": "ChIJ7zCxQ3n_VDAR8d1MSS4nOfs",
+    "name": "Mama Noi Mango Sticky Rice",
+    "address": "17/16 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 246,
+    "photos": [
+      {
+        "src": "/places/ChIJ7zCxQ3n_VDAR8d1MSS4nOfs-1.webp",
+        "author": "Mama Noi. Mango Sticky Rice",
+        "authorUri": "https://maps.google.com/maps/contrib/116109327519290294737"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18102543256944172529&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/mama%20thai%20food%20%26%20drink/@9.7047011,100.0109968,18z": {
+    "placeId": "ChIJqVc37lT9VDAR6PPUrk1wCAY",
+    "name": "Mama Thai Food & Drink",
+    "address": "18, Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 487,
+    "photos": [
+      {
+        "src": "/places/ChIJqVc37lT9VDAR6PPUrk1wCAY-1.webp",
+        "author": "Mama Thai food & Drink",
+        "authorUri": "https://maps.google.com/maps/contrib/111105007104167535788"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=434720842989237224&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/mamaema/@9.7305906,99.9816138,18z": {
+    "placeId": "ChIJlZqJ7Zn_VDARASzuJR84Ca0",
+    "name": "MaMaeMa",
+    "address": "52, 3, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 97,
+    "photos": [
+      {
+        "src": "/places/ChIJlZqJ7Zn_VDARASzuJR84Ca0-1.webp",
+        "author": "MaMaeMa",
+        "authorUri": "https://maps.google.com/maps/contrib/112968925196488973387"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12468558749783436289&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/mandarin%20oriental%20bangkok": {
     "placeId": "ChIJs6CnycSY4jAR5cqJZjPOsgs",
@@ -3903,6 +5087,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=13577824764986909893&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/matahari%20silk/@9.7569545,99.9665859,18z": {
+    "placeId": "ChIJwY3_KMwBVTARUr59vNsj9yo",
+    "name": "Matahari Silk",
+    "address": "49, Srithanu, 48, Tambon Ko Pha-ngan, Koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 320,
+    "photos": [
+      {
+        "src": "/places/ChIJwY3_KMwBVTARUr59vNsj9yo-1.webp",
+        "author": "Matahari Silk",
+        "authorUri": "https://maps.google.com/maps/contrib/101129337625561385597"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=3095982695507672658&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/maxx%20fitness%20maya%20chiang%20mai": {
     "placeId": "ChIJqayQyWE62jARJ7sJkrRHjmE",
     "name": "Maxx Fitness",
@@ -3966,6 +5166,38 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=10963829562777282619&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/mimi%e2%80%99s%20caf%c3%a9/@9.7556103,99.9656675,18z": {
+    "placeId": "ChIJfauDft8BVTARI3WWm2o8CA0",
+    "name": "Mimi's Café",
+    "address": "20/22 Moo 8 Srithanu Koh Phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 1026,
+    "photos": [
+      {
+        "src": "/places/ChIJfauDft8BVTARI3WWm2o8CA0-1.webp",
+        "author": "Mimi’s Café",
+        "authorUri": "https://maps.google.com/maps/contrib/104192476501003088951"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=939066950881277219&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/mingalaba%20road%20trip%20koh%20phangan": {
+    "placeId": "ChIJq74gTbH9VDARPz_mzhkiZxE",
+    "name": "Mingalaba Road Trip",
+    "address": "70/8, Moo6, HaadRin Nai Tambon Ban Tai, Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 151,
+    "photos": [
+      {
+        "src": "/places/ChIJq74gTbH9VDARPz_mzhkiZxE-1.webp",
+        "author": "Mingalaba Road Trip (Main office)",
+        "authorUri": "https://maps.google.com/maps/contrib/100080549755936679575"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=1254008515486695231&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/miri%20hom%20vietnamese%20cuisine%20da%20nang": {
     "placeId": "ChIJ5RFqPQAXQjERkY_wyh0qZ3E",
@@ -4063,6 +5295,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=14524406422905206115&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/moonlight%20clothes%20store%20koh%20phangan/@9.7569428,99.9664886,18z": {
+    "placeId": "ChIJ1w6pQWUBVTAR2owf2D_h1lU",
+    "name": "Moonlight",
+    "address": "49/51 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 31,
+    "photos": [
+      {
+        "src": "/places/ChIJ1w6pQWUBVTAR2owf2D_h1lU-1.webp",
+        "author": "Moonlight clothes store Koh phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/101743674833203277913"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6185378802565090522&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/mother%20roaster%20talad%20noi%20bangkok": {
     "placeId": "ChIJ1bQYQayZ4jARpphLAIGHblQ",
     "name": "Mother Roaster Talat Noi",
@@ -4095,6 +5343,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=3516380331464776405&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/my%20home%20sal/@9.7170369,99.9948891,18z": {
+    "placeId": "ChIJ2avvsJb_VDARZ5ivNr75Y1c",
+    "name": "My home Sal",
+    "address": "203/1 Next ตรงข้ามสำนักงานเทศบาลเกาะพะงัน ท้องศาลา 1 1, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 369,
+    "photos": [
+      {
+        "src": "/places/ChIJ2avvsJb_VDARZ5ivNr75Y1c-1.webp",
+        "author": "My home Sal",
+        "authorUri": "https://maps.google.com/maps/contrib/103425546277462256027"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6297151299350665319&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/my%20khe%20beach%20da%20nang": {
     "placeId": "ChIJ4w7694IXQjERrFXucqKL--o",
     "name": "My Khe Beach",
@@ -4110,6 +5374,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=16932280753858696620&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/mythai%20burgers%20chaloklum": {
+    "placeId": "ChIJASW2RHIDVTARUf8YCyFStrc",
+    "name": "MYTHAI Burgers",
+    "address": "69, Chaloklum, 17 Moo 7, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 638,
+    "photos": [
+      {
+        "src": "/places/ChIJASW2RHIDVTARUf8YCyFStrc-1.webp",
+        "author": "MYTHAI BURGERS Chaloklum",
+        "authorUri": "https://maps.google.com/maps/contrib/117669109659495178260"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13237858456575737681&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/na%20muang%20waterfall%20koh%20samui": {
     "placeId": "ChIJs4JYrs3zVDAR8YtHyZlFJ_M",
@@ -4158,6 +5438,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.7,
     "userRatingCount": 693
+  },
+  "https://www.google.com/maps/search/nahm%20talay/@9.767114,99.962131,18z": {
+    "placeId": "ChIJg_NST9sBVTARQjZEfdm1_PQ",
+    "name": "Nahm Talay",
+    "address": "81/5 Koh Phangan Suratthani, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 329,
+    "photos": [
+      {
+        "src": "/places/ChIJg_NST9sBVTARQjZEfdm1_PQ-1.webp",
+        "author": "Nahm Talay Thai Restaurant and Bar",
+        "authorUri": "https://maps.google.com/maps/contrib/112327311290935083380"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17653184585099654722&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/nai%20uan%20yentafo%20sao%20chingcha%20bangkok": {
     "placeId": "ChIJo7-3exGZ4jAR_bRU8sOfCuo",
@@ -4255,6 +5551,22 @@
     "rating": 4.6,
     "userRatingCount": 1417
   },
+  "https://www.google.com/maps/search/nap%20relax%20health%20massage/@9.7163989,99.9859179,18z": {
+    "placeId": "ChIJX_C6MwD_VDARahQdnWz9J_U",
+    "name": "NAP Relax Health Massage",
+    "address": "113, 36, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 182,
+    "photos": [
+      {
+        "src": "/places/ChIJX_C6MwD_VDARahQdnWz9J_U-1.webp",
+        "author": "NAP RELAX",
+        "authorUri": "https://maps.google.com/maps/contrib/114768719263873057813"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17665366706318283882&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/natura%20cafe%20bangkok": {
     "placeId": "ChIJ8wpY8NiZ4jAR9ke7bdw2Guc",
     "name": "Natura Café",
@@ -4286,6 +5598,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=8551481328389375797&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/nena%20locanda%20italiana%20koh%20phangan": {
+    "placeId": "ChIJQTKNUTX_VDARp6a-M0KHyv0",
+    "name": "NENA Locanda Italiana",
+    "address": "38, 5 wok tum road moo.4, ko phangan Ko phangan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 603,
+    "photos": [
+      {
+        "src": "/places/ChIJQTKNUTX_VDARp6a-M0KHyv0-1.webp",
+        "author": "Palin Matwangsang",
+        "authorUri": "https://maps.google.com/maps/contrib/113733984946157726636"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18287577955297044135&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/nhong%20rim%20klong%20ekkamai%20bangkok": {
     "placeId": "ChIJa_aFzXKf4jARvZFqO3bSkRs",
@@ -4335,6 +5663,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=10095123848778000445&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/nira%27s%20home%20bakery%20koh%20phangan": {
+    "placeId": "ChIJZWizpYD-VDARjQc6MZpa29Q",
+    "name": "Nira's Home Bakery",
+    "address": "74/10 หมู่ที่ 1 หมู่บ้านท้องศาลา ถนน หน้าท่าเรือเฟอรี่ ตำบล เกาะพงัน Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 2731,
+    "photos": [
+      {
+        "src": "/places/ChIJZWizpYD-VDARjQc6MZpa29Q-1.webp",
+        "author": "Nira's Home Bakery",
+        "authorUri": "https://maps.google.com/maps/contrib/103953294589920918425"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15337952574237706125&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/nobu%20bangkok%20empire%20tower": {
     "placeId": "ChIJ-3M9uQef4jARp9qON9Gb2Oo",
     "name": "Nobu Bangkok",
@@ -4350,6 +5694,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=16922446922727217831&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/nok%27s%20kitchen/@9.7586965,99.9657909,18z": {
+    "placeId": "ChIJF5_o-d4BVTARDSHaM7mtQ0Q",
+    "name": "Nok's Kitchen",
+    "address": "Unnamed Road,, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 393,
+    "photos": [
+      {
+        "src": "/places/ChIJF5_o-d4BVTARDSHaM7mtQ0Q-1.webp",
+        "author": "Irie Micha",
+        "authorUri": "https://maps.google.com/maps/contrib/107994377565814264245"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4918966228969201933&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/norma%20hotel%20sathorn%20bangkok": {
     "placeId": "ChIJq2ZuUDCf4jARaV7quqnkOaQ",
@@ -4383,6 +5743,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9348133670994822705&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/nucha%20health%20massage%20srithanu": {
+    "placeId": "ChIJkxRniHb_VDARPx7NYkll8-c",
+    "name": "Nucha Health Massage",
+    "address": "86, 11, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 120,
+    "photos": [
+      {
+        "src": "/places/ChIJkxRniHb_VDARPx7NYkll8-c-1.webp",
+        "author": "Nikoletta Viktória Ács",
+        "authorUri": "https://maps.google.com/maps/contrib/103455857337411947921"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16713814007966670399&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/nusara%20bangkok": {
     "placeId": "ChIJe_d6d0OZ4jARL0uQgNHQRPI",
     "name": "Nusara",
@@ -4398,6 +5774,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17457307653818567471&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/nuturella%20-%20vegan%20deli%20%26%20bakery/@9.7034953,100.0221886,18z": {
+    "placeId": "ChIJWzXTsfb_VDARGFsWND6qq_U",
+    "name": "Nuturella",
+    "address": "52/40, Baan Tai, ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 217,
+    "photos": [
+      {
+        "src": "/places/ChIJWzXTsfb_VDARGFsWND6qq_U-1.webp",
+        "author": "Nuturella - vegan deli & bakery",
+        "authorUri": "https://maps.google.com/maps/contrib/112554978564348042277"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17702429944448441112&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/oasis%20spa%20nimman%20chiang%20mai": {
     "placeId": "ChIJJ7Nm9AA72jARQh-8HuCwcOg",
@@ -4495,6 +5887,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=16542270105263557353&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/orion%20healing%20centre%20koh%20phangan": {
+    "placeId": "ChIJ__zgCCH-VDARXiKqT6BtWf4",
+    "name": "Orion Healing",
+    "address": "15/2 Moo8 Srithanu Koh-phangan Koh Phangan, 15 2 ตำบลเกาะพะงัน Koh Phangan สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 793,
+    "photos": [
+      {
+        "src": "/places/ChIJ__zgCCH-VDARXiKqT6BtWf4-1.webp",
+        "author": "Orion Healing",
+        "authorUri": "https://maps.google.com/maps/contrib/106400021727345009567"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18327800693859689054&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/pacamara%20coffee%20roasters%20thonglor%20bangkok": {
     "placeId": "ChIJHWGWeFGe4jARspjtHR4xgDs",
     "name": "Pacamara Coffee Roaster Thonglor 25",
@@ -4510,6 +5918,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4287480850677602482&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/padel%20tennis%20oxygen%20village/@9.7248058,99.9992432,18z": {
+    "placeId": "ChIJacoaS9X9VDAR30YcBEkmf3Q",
+    "name": "Padel OXYGEN Village",
+    "address": "Ko Pha-ngan Sub-district, Ko Pha-ngan District, Ko Phan-gan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 113,
+    "photos": [
+      {
+        "src": "/places/ChIJacoaS9X9VDAR30YcBEkmf3Q-1.webp",
+        "author": "Ottmar Jung",
+        "authorUri": "https://maps.google.com/maps/contrib/109110084571098939099"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8394470325485323999&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/pai%20thailand": {
     "placeId": "ChIJ66we6bCB2jAR352TyECeB0A",
@@ -4556,6 +5980,38 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4088308998534727097&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/pantip%20night%20market%20koh%20phangan": {
+    "placeId": "ChIJD5WTQX7-VDARPD-n3gEhHtE",
+    "name": "Pantip Market",
+    "address": "PX6P+VRW, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 3983,
+    "photos": [
+      {
+        "src": "/places/ChIJD5WTQX7-VDARPD-n3gEhHtE-1.webp",
+        "author": "Aromagrass (AROGRA)",
+        "authorUri": "https://maps.google.com/maps/contrib/110984539358987761925"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15068517695142444860&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/panviman%20resort%20koh%20phangan": {
+    "placeId": "ChIJSVwN5FUCVTAR0602vI2eKpM",
+    "name": "Panviman Resort",
+    "address": "22/1 หมู่ 5 หาดท้องนายปานน้อย, 22 1 ตำบล บ้านใต้ อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1701,
+    "photos": [
+      {
+        "src": "/places/ChIJSVwN5FUCVTAR0602vI2eKpM-1.webp",
+        "author": "Panviman Resort Koh Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/111492175930773642074"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10604462604182531539&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/panya%20chicken%20noodle%20sala%20daeng%20bangkok": {
     "placeId": "ChIJ-80YvSqf4jARlz0Pmju0NIA",
@@ -4621,6 +6077,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=18350008519369883286&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/peppercorn%20koh%20phangan": {
+    "placeId": "ChIJSeCbhRv-VDARovvRsq0SZ0A",
+    "name": "Peppercorn",
+    "address": "58, 28, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 477,
+    "photos": [
+      {
+        "src": "/places/ChIJSeCbhRv-VDARovvRsq0SZ0A-1.webp",
+        "author": "Jorrit Monné",
+        "authorUri": "https://maps.google.com/maps/contrib/105320725481457570505"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4640698478267333538&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/peppina%20sukhumvit%2033%20bangkok": {
     "placeId": "ChIJQ0cFbPye4jARKjjpGD8_chs",
     "name": "Peppina (Sukhumvit Flagship Branch)",
@@ -4636,6 +6108,118 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=1977712726602496042&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/phaeng%20noi%20waterfall%20koh%20phangan": {
+    "placeId": "ChIJJ2Qk2pT9VDARXJQlOj7MEbU",
+    "name": "Phaeng Noi Waterfall",
+    "address": "Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 960,
+    "photos": [
+      {
+        "src": "/places/ChIJJ2Qk2pT9VDARXJQlOj7MEbU-1.webp",
+        "author": "Phaeng Noi Waterfall",
+        "authorUri": "https://maps.google.com/maps/contrib/113439129933596143224"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13047434163104617564&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/phangan%20food%20court": {
+    "placeId": "ChIJubHbH4D-VDARp7iv4nCZcbs",
+    "name": "Phangan Food Court",
+    "address": "Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 2040,
+    "photos": [
+      {
+        "src": "/places/ChIJubHbH4D-VDARp7iv4nCZcbs-1.webp",
+        "author": "Luc De VERDIER",
+        "authorUri": "https://maps.google.com/maps/contrib/102767665438908754318"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13506745467579381927&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/phangan%20padel%20club/@9.7056809,100.0115658,18z": {
+    "placeId": "ChIJy_PqjQD9VDARSKC_3Y52CvQ",
+    "name": "Phangan Padel Club",
+    "address": "111, Bantai road, Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 82,
+    "photos": [
+      {
+        "src": "/places/ChIJy_PqjQD9VDARSKC_3Y52CvQ-1.webp",
+        "author": "Phangan Arena",
+        "authorUri": "https://maps.google.com/maps/contrib/114005395069052621695"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17584998050999279688&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/phangan%20zipline": {
+    "placeId": "ChIJAa_uWSIDVTARpaJp07urrw4",
+    "name": "Phangan Zipline",
+    "address": "104 13 Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 1448,
+    "photos": [
+      {
+        "src": "/places/ChIJAa_uWSIDVTARpaJp07urrw4-1.webp",
+        "author": "Phangan Zipline - Come fly with us",
+        "authorUri": "https://maps.google.com/maps/contrib/102126592927013297282"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=1058253260649505445&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/phanganism/@9.7233261,99.998599,18z": {
+    "placeId": "ChIJNZrrrYr9VDAReuXgFbl0Wsg",
+    "name": "Phanganism",
+    "address": "Near 45, tambon ko pha-ngan, Koh phangan, Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 58,
+    "photos": [
+      {
+        "src": "/places/ChIJNZrrrYr9VDAReuXgFbl0Wsg-1.webp",
+        "author": "Phanganism",
+        "authorUri": "https://maps.google.com/maps/contrib/111219041861077993482"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14436979893774378362&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/pharaoh%20spa/@9.7061777,100.0042755,18z": {
+    "placeId": "ChIJA7tfEzL8VDARa_hBOoU7zGA",
+    "name": "Pharaoh Spa",
+    "address": "145 Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 114,
+    "photos": [
+      {
+        "src": "/places/ChIJA7tfEzL8VDARa_hBOoU7zGA-1.webp",
+        "author": "Pharaoh Spa Koh Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/110948351961758046242"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6975015366284146795&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/phasawan%20viewpoint%20bottle%20beach%20koh%20phangan": {
+    "placeId": "ChIJlT9MnvkCVTAR9A1Y9pxRKWo",
+    "name": "Phasawan Viewpoint (Bottle Beach Viewpoint)",
+    "address": "Q2QR+G49, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 912,
+    "photos": [
+      {
+        "src": "/places/ChIJlT9MnvkCVTAR9A1Y9pxRKWo-1.webp",
+        "author": "Pumpi The One",
+        "authorUri": "https://maps.google.com/maps/contrib/102559538014460732184"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7649735176655212020&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/phra%20nakhon%20capella%20bangkok": {
     "placeId": "ChIJBWliwcGZ4jAR0Mu8JTLN5eQ",
@@ -4765,6 +6349,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=8006025648679338542&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/podium%20gym%20crossfit/@9.7168432,99.9952124,18z": {
+    "placeId": "ChIJK4zCmSz8VDAR-z6QEV6TBsE",
+    "name": "Podium Gym & CrossFit",
+    "address": "203, 13, Koh Phagan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 1663,
+    "photos": [
+      {
+        "src": "/places/ChIJK4zCmSz8VDAR-z6QEV6TBsE-1.webp",
+        "author": "PODIUM GYM CROSSFIT",
+        "authorUri": "https://maps.google.com/maps/contrib/102272639222082347016"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13908966531411230459&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/polo%20fried%20chicken%20bangkok": {
     "placeId": "ChIJ--rTNief4jARBGLQAL_tfHw",
     "name": "Polo Fried Chicken (Soi Polo)",
@@ -4875,6 +6475,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=17067052497767242333&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/pum%20pui%20restaurant/@9.7575918,99.970398,18z": {
+    "placeId": "ChIJX7QeZEYBVTARiP_1EkT4c2E",
+    "name": "Pum Pui Restaurant",
+    "address": "Koh phangan Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1497,
+    "photos": [
+      {
+        "src": "/places/ChIJX7QeZEYBVTARiP_1EkT4c2E-1.webp",
+        "author": "Nopporn Wongharimart",
+        "authorUri": "https://maps.google.com/maps/contrib/106027973317196180144"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7022229215260311432&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/pun%20pun%20thai%20foods/@9.6753203,100.0643153,18z": {
+    "placeId": "ChIJR__kq-_9VDARadHEIQtTwTg",
+    "name": "Pun Pun Thai Foods",
+    "address": "95 เกาะพงัน 15 บ้านใต้ Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 177,
+    "photos": [
+      {
+        "src": "/places/ChIJR__kq-_9VDARadHEIQtTwTg-1.webp",
+        "author": "Maytinee S",
+        "authorUri": "https://maps.google.com/maps/contrib/100580806367283588609"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4089641243905413481&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/punch%20it%20gym%20lamai%20koh%20samui": {
     "placeId": "ChIJTdvKKDTyVDARvLuwjLkXQN8",
     "name": "Punch it Gym",
@@ -4906,6 +6538,70 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.9,
     "userRatingCount": 1139
+  },
+  "https://www.google.com/maps/search/pura%20vida%20cafe%20haad%20yao": {
+    "placeId": "ChIJEeOrNcABVTAR_HVTgHXDCQs",
+    "name": "Pura Vida Cafe",
+    "address": "53 21 Haad Yao Moo 8 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 800,
+    "photos": [
+      {
+        "src": "/places/ChIJEeOrNcABVTAR_HVTgHXDCQs-1.webp",
+        "author": "Pura vida cafe & Restaurant",
+        "authorUri": "https://maps.google.com/maps/contrib/104949610103233800721"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=795381718639146492&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/pure%20relax%20massage%20%26%20spa/@9.7169198,99.9853837,18z": {
+    "placeId": "ChIJGcI243v-VDARBDy273uUIMs",
+    "name": "Pure Relax Massage & Spa",
+    "address": "145 7 thong sala koh phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 2779,
+    "photos": [
+      {
+        "src": "/places/ChIJGcI243v-VDARBDy273uUIMs-1.webp",
+        "author": "Pure Relax Massage & Spa",
+        "authorUri": "https://maps.google.com/maps/contrib/113281858041733872196"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14636862048977697796&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/pyramid%20yogashala%20koh%20phangan": {
+    "placeId": "ChIJVVVVVZX9VDARPZnRAjWoa9Q",
+    "name": "Pyramid Yoga",
+    "address": "58/34, moo 8, Koh Phangan, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 121,
+    "photos": [
+      {
+        "src": "/places/ChIJVVVVVZX9VDARPZnRAjWoa9Q-1.webp",
+        "author": "Dominic Simonelli",
+        "authorUri": "https://maps.google.com/maps/contrib/105494853676864312734"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15306512704182786365&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/q%e2%80%99s/@9.7577416,99.9666163,18z": {
+    "placeId": "ChIJJY3OV9QBVTARsHlr_b36jOA",
+    "name": "Q's",
+    "address": "84, 69, ตำบล เกาะพงัน, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 447,
+    "photos": [
+      {
+        "src": "/places/ChIJJY3OV9QBVTARsHlr_b36jOA-1.webp",
+        "author": "Q’s",
+        "authorUri": "https://maps.google.com/maps/contrib/105182266763609396663"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16180583255142791600&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/queen%20spa%20da%20nang": {
     "placeId": "ChIJjwHqn9UZQjERfjpTNTc-qEU",
@@ -4987,6 +6683,54 @@
     "googleMapsUri": "https://maps.google.com/?cid=12263655698563947712&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/rajanon%20muaythaigym/@9.699891,100.0286988,18z": {
+    "placeId": "ChIJecuXrWf9VDARau5C6Si_wOQ",
+    "name": "Rajanon Muay Thai",
+    "address": "บ้านใต้ Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 152,
+    "photos": [
+      {
+        "src": "/places/ChIJecuXrWf9VDARau5C6Si_wOQ-1.webp",
+        "author": "Rajanon Muaythaigym",
+        "authorUri": "https://maps.google.com/maps/contrib/104191524570231647803"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16483384818609090154&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/rasta%20baby/@9.7778731,100.0535697,18z": {
+    "placeId": "ChIJ__Xqm-sCVTAR4gSsN-bGlHE",
+    "name": "Rasta Baby",
+    "address": "7/9 Moo5, Thong Nai Pan Noi, Ban Tai, อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 394,
+    "photos": [
+      {
+        "src": "/places/ChIJ__Xqm-sCVTAR4gSsN-bGlHE-1.webp",
+        "author": "roger wüthrich",
+        "authorUri": "https://maps.google.com/maps/contrib/107065673338341911850"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8184385114917831906&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/rasta%20home%20koh%20phangan": {
+    "placeId": "ChIJw-sIdJUBVTARjS5HcshxS0g",
+    "name": "Rasta Home",
+    "address": "7-11 หาดยาว ถนน Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 579,
+    "photos": [
+      {
+        "src": "/places/ChIJw-sIdJUBVTARjS5HcshxS0g-1.webp",
+        "author": "Lou Fortus",
+        "authorUri": "https://maps.google.com/maps/contrib/107105719608086438728"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5209382499708776077&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/raya%20heritage%20chiang%20mai": {
     "placeId": "ChIJieYgBzM82jARGOIe2G6_Bbo",
     "name": "Raya Heritage",
@@ -5051,6 +6795,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=14231960410062864029&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/retro%20mountain%20koh%20phangan": {
+    "placeId": "ChIJ7U9JMQD9VDARwMZtunZFrnc",
+    "name": "Retro Mountain Jungle Club",
+    "address": "P2CQ+J39, Ban Tai, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 356,
+    "photos": [
+      {
+        "src": "/places/ChIJ7U9JMQD9VDARwMZtunZFrnc-1.webp",
+        "author": "Fafa Mbodji",
+        "authorUri": "https://maps.google.com/maps/contrib/108668873384579878472"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8623906712697292480&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/revive%20massage/@9.7586441,99.9693286,18z": {
+    "placeId": "ChIJfVMuhOABVTARCi3lGMccMzQ",
+    "name": "REVIVE Massage",
+    "address": "Mo 8 76/8 Ko Pha-ngan Srithanu, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 539,
+    "photos": [
+      {
+        "src": "/places/ChIJfVMuhOABVTARCi3lGMccMzQ-1.webp",
+        "author": "REVIVE Massage",
+        "authorUri": "https://maps.google.com/maps/contrib/104485394375812271059"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=3761381755226238218&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/ristr8to%20nimman%20chiang%20mai": {
     "placeId": "ChIJIdQIQbc72jARb7Z3AF_aLSg",
     "name": "Ristr8to Original",
@@ -5066,6 +6842,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=2895210237033690735&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/rittisak%20muay%20thai%20gym/@9.780426,100.0074603,18z": {
+    "placeId": "ChIJ4zuAyiYDVTAR-Ftwe_cU5Dw",
+    "name": "Rittisak Muay Thai",
+    "address": "10/1 Moo 7, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 206,
+    "photos": [
+      {
+        "src": "/places/ChIJ4zuAyiYDVTAR-Ftwe_cU5Dw-1.webp",
+        "author": "Rittisak Muay Thai Gym",
+        "authorUri": "https://maps.google.com/maps/contrib/105513072034796433789"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4387654990126144504&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/ritz%20carlton%20koh%20samui": {
     "placeId": "ChIJt1Xl86z6VDARG51Euazds5A",
@@ -5147,6 +6939,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9328930420397787268&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/romanzo%20tropicale%20koh%20phangan": {
+    "placeId": "ChIJSdvcShr-VDAR1hY7laDAuGo",
+    "name": "Romanzo Tropicale",
+    "address": "15, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1048,
+    "photos": [
+      {
+        "src": "/places/ChIJSdvcShr-VDAR1hY7laDAuGo-1.webp",
+        "author": "Romanzo Tropicale",
+        "authorUri": "https://maps.google.com/maps/contrib/115118675367776062214"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7690108159666099926&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/roots%20coffee%20da%20nang": {
     "placeId": "ChIJAc8D7xwXQjERg_lCDxkqvAg",
     "name": "Roots Plant-Based Cafe - healthy vegan restaurant",
@@ -5194,6 +7002,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4577844799844742212&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/rose%20de%20boheme%20boutique/@9.7113157,99.9866766,18z": {
+    "placeId": "ChIJM59GZQT_VDARsUoOZxQF5wI",
+    "name": "Rose de Boheme",
+    "address": "79, 2, Tambon Ko Pha-ngan, Thongsala, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 42,
+    "photos": [
+      {
+        "src": "/places/ChIJM59GZQT_VDARsUoOZxQF5wI-1.webp",
+        "author": "Rose de Boheme Boutique",
+        "authorUri": "https://maps.google.com/maps/contrib/105876200726626171941"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=209141492882492081&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/rosewood%20bangkok": {
     "placeId": "ChIJJUys49ye4jAR-TlV_Qsxx3Y",
@@ -5355,6 +7179,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=6989381885617824637&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/sand%20%26%20tan%20koh%20phangan": {
+    "placeId": "ChIJI8q3IWX9VDARv3z77MZRRlk",
+    "name": "Sand & Tan",
+    "address": "141, Tambon Ban Tai, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1085,
+    "photos": [
+      {
+        "src": "/places/ChIJI8q3IWX9VDARv3z77MZRRlk-1.webp",
+        "author": "Sand & Tan",
+        "authorUri": "https://maps.google.com/maps/contrib/113226485595045569809"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6432919032566611135&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/sane%20phuthong%20bangkok": {
     "placeId": "ChIJSUyBWQCZ4jARtQykUR0nE20",
     "name": "Sané Phuthong",
@@ -5370,6 +7210,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=7859668781568887989&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/santhiya%20koh%20phangan%20resort%20%26%20spa": {
+    "placeId": "ChIJHVY-_FD8VDARHrtRAEHa8tM",
+    "name": "Santhiya Koh Phangan Resort & Spa",
+    "address": "22/7 Moo 5 Bantai District, ตำบล บ้านใต้ อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 2298,
+    "photos": [
+      {
+        "src": "/places/ChIJHVY-_FD8VDARHrtRAEHa8tM-1.webp",
+        "author": "Santhiya Koh Phangan Resort & Spa",
+        "authorUri": "https://maps.google.com/maps/contrib/116349260725813514732"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15272509259079858974&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/sareeraya%20villas%20and%20suites%20chaweng": {
     "placeId": "ChIJEUZMUxXxVDAR3bTc5PtBJiU",
@@ -5403,6 +7259,70 @@
     "googleMapsUri": "https://maps.google.com/?cid=9841169681075674562&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/sati%20yoga/@9.7618907,99.9672901,18z": {
+    "placeId": "ChIJNWPZdL0BVTARs9RJONgUYQM",
+    "name": "Sati Yoga",
+    "address": "51, Srithanu, 56, Tambon Ko Pha-ngan, Ko Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 76,
+    "photos": [
+      {
+        "src": "/places/ChIJNWPZdL0BVTARs9RJONgUYQM-1.webp",
+        "author": "Sati Yoga",
+        "authorUri": "https://maps.google.com/maps/contrib/105012595605863022061"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=243498773744571571&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/satowa/@9.7006352,100.0201658,18z": {
+    "placeId": "ChIJC9rKHPj9VDARXkII3wSjxnI",
+    "name": "Satowa",
+    "address": "65 Koh Phangan 10, Tambon Ban Tai, Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 124,
+    "photos": [
+      {
+        "src": "/places/ChIJC9rKHPj9VDARXkII3wSjxnI-1.webp",
+        "author": "Satowa",
+        "authorUri": "https://maps.google.com/maps/contrib/107996624535578081506"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8270477007029551710&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/scuba%20wear/@9.709032,99.9893096,18z": {
+    "placeId": "ChIJmbDwQoD-VDARt3bIXCi4vYc",
+    "name": "Scuba Wear",
+    "address": "32 Thongsara, 3, Tambon Ko Pha-ngan, Koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 164,
+    "photos": [
+      {
+        "src": "/places/ChIJmbDwQoD-VDARt3bIXCi4vYc-1.webp",
+        "author": "Scuba Wear",
+        "authorUri": "https://maps.google.com/maps/contrib/116642103394540840661"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9781176449213429431&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/seasalt%20and%20sage/@9.7534342,99.9662942,18z": {
+    "placeId": "ChIJQ15YUCP9VDARTKZ0e97fyJ8",
+    "name": "Seasalt and Sage",
+    "address": "11, Srithanu, 2, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 401,
+    "photos": [
+      {
+        "src": "/places/ChIJQ15YUCP9VDARTKZ0e97fyJ8-1.webp",
+        "author": "Sins Of Wanderlust",
+        "authorUri": "https://maps.google.com/maps/contrib/109980983887256381482"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11513698594019649100&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/seaview%20coworking%20da%20nang": {
     "placeId": "ChIJww8d-kQXQjERK7EmHUCL_fk",
     "name": "Seaview Coworking Space Da Nang",
@@ -5435,6 +7355,22 @@
     "rating": 4.4,
     "userRatingCount": 6613
   },
+  "https://www.google.com/maps/search/secret%20mountain/@9.7211823,100.0142359,18z": {
+    "placeId": "ChIJKQJZA7j9VDARx_93X_b-gIY",
+    "name": "Secret Mountain",
+    "address": "42, 3 Moo 2, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1028,
+    "photos": [
+      {
+        "src": "/places/ChIJKQJZA7j9VDARx_93X_b-gIY-1.webp",
+        "author": "Fidel Сastro",
+        "authorUri": "https://maps.google.com/maps/contrib/101725644436561179936"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9692026732218417095&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/shilla%20monogram%20quangnam%20danang": {
     "placeId": "ChIJQT4SLJwRQjERvym-dW5QWJ0",
     "name": "Shilla Monogram Danang",
@@ -5450,6 +7386,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=11337900497257245119&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/siam%20heritage%2c%20massage%20%26%20spa%20treatments/@9.7087232,99.9930491,18z": {
+    "placeId": "ChIJnVQDhvP9VDAR4S8hSsGYSY8",
+    "name": "Siam Heritage",
+    "address": "99, 90 หมู่ที่ 1 ถนน ท้องศาลา, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 2091,
+    "photos": [
+      {
+        "src": "/places/ChIJnVQDhvP9VDAR4S8hSsGYSY8-1.webp",
+        "author": "Siam Heritage, Massage & SPA treatments",
+        "authorUri": "https://maps.google.com/maps/contrib/100886211706598732070"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10324951576663371745&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/siam%20paragon%20bangkok": {
     "placeId": "ChIJIeWu482e4jARYymvLJqTQ58",
@@ -5530,6 +7482,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=6033676426434317542&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/siri%e2%80%99s%20island%20caf%c3%a9/@9.726291,99.9776339,18z": {
+    "placeId": "ChIJXyXAJNX_VDARD4Go0bSEzh0",
+    "name": "Siri's Island Café",
+    "address": "56, 9, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 870,
+    "photos": [
+      {
+        "src": "/places/ChIJXyXAJNX_VDARD4Go0bSEzh0-1.webp",
+        "author": "SIRI's Island cafe'ศิริอาหารและเครื่องดื่ม",
+        "authorUri": "https://maps.google.com/maps/contrib/100482920366546323027"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2147799984448766223&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/sirocco%20lebua%20bangkok": {
     "placeId": "ChIJVTBnbMWY4jARie6HLhtKuCU",
@@ -5705,6 +7673,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=15987838903530905033&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/sri%20pai%20massage/@9.7084322,99.9948293,18z": {
+    "placeId": "ChIJYTGbdOX9VDARXoO2l8VSJ9E",
+    "name": "Sri Pai Massage",
+    "address": "215, 22 ม.1, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 474,
+    "photos": [
+      {
+        "src": "/places/ChIJYTGbdOX9VDARXoO2l8VSJ9E-1.webp",
+        "author": "Sri Pai Massage",
+        "authorUri": "https://maps.google.com/maps/contrib/111139276704067119632"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15071105686626009950&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/sri%20trat%20restaurant%20and%20bar%20sukhumvit%2033%20bangkok": {
     "placeId": "ChIJoc-7O_ye4jARa2GblY_w4Bo",
     "name": "Sri Trat Restaurant and Bar",
@@ -5753,6 +7737,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=13535934404102516662&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/sticky%20island%20cafe/@9.7532138,99.9745131,18z": {
+    "placeId": "ChIJBVfYE87_VDARNgswO-o6Fm8",
+    "name": "Sticky Island Cafe",
+    "address": "52, Srithanu, 3, Tambon Ko Pha-ngan, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 910,
+    "photos": [
+      {
+        "src": "/places/ChIJBVfYE87_VDARNgswO-o6Fm8-1.webp",
+        "author": "Sticky Island Cafe",
+        "authorUri": "https://maps.google.com/maps/contrib/115789853375808166078"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8004650165387397942&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/suhring%20bangkok": {
     "placeId": "ChIJa4FyWkef4jARYosTC995W8U",
     "name": "Sühring",
@@ -5768,6 +7768,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=14221094247222971234&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/sunday%20market%20chaloklum": {
+    "placeId": "ChIJd2AejgoDVTARcFYEE7c4GXk",
+    "name": "Chaloklum Sunday Market",
+    "address": "Q2P4+JC, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 156,
+    "photos": [
+      {
+        "src": "/places/ChIJd2AejgoDVTARcFYEE7c4GXk-1.webp",
+        "author": "Daton Chris",
+        "authorUri": "https://maps.google.com/maps/contrib/103550285099895120609"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8726068111956268656&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/sunday%20walking%20street%20chiang%20mai": {
     "placeId": "ChIJcw-RKNA72jARFqCee_2Hr7E",
@@ -5929,6 +7945,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=14058076997829579851&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/tanaporn%20massage%20koh%20phangan": {
+    "placeId": "ChIJD9ilpusCVTAR54dZ3iYJRLE",
+    "name": "Tanaporn",
+    "address": "8/29 moo5 ,Ban Tai,Koh Phangan, ตำบล บ้านใต้ อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 346,
+    "photos": [
+      {
+        "src": "/places/ChIJD9ilpusCVTAR54dZ3iYJRLE-1.webp",
+        "author": "Tanaporn Massage House",
+        "authorUri": "https://maps.google.com/maps/contrib/101018021240351020482"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12773344505673385959&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/tandoori%20nights%20lamai%20koh%20samui": {
     "placeId": "ChIJdR7yTzjyVDAR64xm_1sQSKU",
     "name": "Tandoori Nights",
@@ -6008,6 +8040,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.8,
     "userRatingCount": 1331
+  },
+  "https://www.google.com/maps/search/than%20sadet%20waterfall%20koh%20phangan": {
+    "placeId": "ChIJI8hmjV39VDAR64XgrHnaB84",
+    "name": "Than Sadet Waterfall",
+    "address": "P3W5+7P3, Ban Tai, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 1083,
+    "photos": [
+      {
+        "src": "/places/ChIJI8hmjV39VDAR64XgrHnaB84-1.webp",
+        "author": "Bestlmayer",
+        "authorUri": "https://maps.google.com/maps/contrib/100993496601228933647"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14846074912776422891&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/thapae%20grill%20chiang%20mai": {
     "placeId": "ChIJq1Ie3og72jARPAA1LHUD4AM",
@@ -6136,6 +8184,38 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=3140525192536910808&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/the%20dome%20sauna%20koh%20phangan": {
+    "placeId": "ChIJ17O1cYYBVTARGG3ASGC_grs",
+    "name": "The Dome Sauna",
+    "address": "Unnamed Rd, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 359,
+    "photos": [
+      {
+        "src": "/places/ChIJ17O1cYYBVTARGG3ASGC_grs-1.webp",
+        "author": "Анастасия",
+        "authorUri": "https://maps.google.com/maps/contrib/111666614201738380661"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13511572252323245336&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/the%20fat%20cat%20coffee%20koh%20phangan": {
+    "placeId": "ChIJ-QJ8QYD-VDARFR7o_iglZ6w",
+    "name": "The Fat Cat Coffee & More",
+    "address": "38, Walking Street Saturday Market, Taladkao Road, Thong Sala, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 567,
+    "photos": [
+      {
+        "src": "/places/ChIJ-QJ8QYD-VDARFR7o_iglZ6w-1.webp",
+        "author": "Masataka Nakashima",
+        "authorUri": "https://maps.google.com/maps/contrib/105088801807714473130"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12422938955130347029&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/the%20great%20room%20gaysorn%20bangkok": {
     "placeId": "ChIJIwI6ULWf4jARLXyjDdUgJLU",
@@ -6377,6 +8457,22 @@
     "rating": 4.4,
     "userRatingCount": 1855
   },
+  "https://www.google.com/maps/search/the%20sanctuary%20thailand%20koh%20phangan": {
+    "placeId": "ChIJQ42YwM38VDAR7METLy6JVU8",
+    "name": "The Sanctuary",
+    "address": "153/14 M3WG+G75 หมู่ที่ 6 Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 489,
+    "photos": [
+      {
+        "src": "/places/ChIJQ42YwM38VDAR7METLy6JVU8-1.webp",
+        "author": "The Sanctuary",
+        "authorUri": "https://maps.google.com/maps/contrib/111486966471120870119"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5716626133468037612&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/the%20shack%20fisherman%27s%20village%20koh%20samui": {
     "placeId": "ChIJsxzMEIzwVDARFB-DYIQ54_U",
     "name": "The Shack",
@@ -6457,6 +8553,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=18419132077682347874&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/the%20wave%20sunset%20restaurant%20and%20bar/@9.7691666,99.9615129,18z": {
+    "placeId": "ChIJT1fOb2QBVTARZMpYb9M21bE",
+    "name": "The Wave",
+    "address": "Haad Phrao Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 443,
+    "photos": [
+      {
+        "src": "/places/ChIJT1fOb2QBVTARZMpYb9M21bE-1.webp",
+        "author": "The Wave Sunset restaurant and bar",
+        "authorUri": "https://maps.google.com/maps/contrib/116635728776406922571"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=12814208596486703716&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/the%20work%20loft%20silom%20bangkok": {
     "placeId": "ChIJ8UI3DSyf4jARARZlmXaiFLQ",
     "name": "The Work Loft Silom",
@@ -6504,6 +8616,54 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=7605461113463140286&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/thong%20nai%20pan%20noi%20beach%20koh%20phangan": {
+    "placeId": "ChIJWdrxU-oCVTARRWiblhgBoPs",
+    "name": "Thong Nai Pan Noi",
+    "address": "Thong Nai Pan Beach, Surat Thani, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 1633,
+    "photos": [
+      {
+        "src": "/places/ChIJWdrxU-oCVTARRWiblhgBoPs-1.webp",
+        "author": "Sandra B",
+        "authorUri": "https://maps.google.com/maps/contrib/109706201863037116244"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18131493304911226949&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/thong%20sala%20local%20market/@9.7091347,99.9898124,18z": {
+    "placeId": "ChIJVZeWPmH_VDARCKrfCERuNWw",
+    "name": "Thong Sala Local Market",
+    "address": "Unnamed Road, 30 2, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 277,
+    "photos": [
+      {
+        "src": "/places/ChIJVZeWPmH_VDARCKrfCERuNWw-1.webp",
+        "author": "VANESSA BERTHE",
+        "authorUri": "https://maps.google.com/maps/contrib/116696717996115610858"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7797259568347589128&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/thong%20sala%20stadium%20koh%20phangan": {
+    "placeId": "ChIJ2134xH3-VDARtCbb7BwcZeY",
+    "name": "Thong Sala Stadium",
+    "address": "Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 64,
+    "photos": [
+      {
+        "src": "/places/ChIJ2134xH3-VDARtCbb7BwcZeY-1.webp",
+        "author": "Thong Sala Stadium",
+        "authorUri": "https://maps.google.com/maps/contrib/111940784969185509507"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16601706511929648820&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/three%20kings%20monument%20chiang%20mai": {
     "placeId": "ChIJv5Cgrpk62jAR0kPJO7ozd9I",
@@ -6585,6 +8745,22 @@
     "rating": 4.7,
     "userRatingCount": 379
   },
+  "https://www.google.com/maps/search/tiki%20beach%20koh%20phangan": {
+    "placeId": "ChIJz-AfToD-VDAR_nkGbtfE8e8",
+    "name": "Tiki Beach",
+    "address": "145, 11, Tambon Ban Tai, Koh Phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 774,
+    "photos": [
+      {
+        "src": "/places/ChIJz-AfToD-VDAR_nkGbtfE8e8-1.webp",
+        "author": "Tiki Beach - Resort, Beach Bar, Restaurant, Co-working",
+        "authorUri": "https://maps.google.com/maps/contrib/103295801182642676244"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17289816873994975742&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/to%20be%20sweet%20koh%20samui": {
     "placeId": "ChIJWwqGyWfxVDARXIbn2USXTy0",
     "name": "To Be Sweet",
@@ -6616,6 +8792,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=1113471127924537824&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/top%20rock%20bar/@9.7233382,99.9774799,18z": {
+    "placeId": "ChIJkReFu2_-VDAR3FmD3RcrE7g",
+    "name": "Top Rock Bar",
+    "address": "68, 2, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1123,
+    "photos": [
+      {
+        "src": "/places/ChIJkReFu2_-VDAR3FmD3RcrE7g-1.webp",
+        "author": "U",
+        "authorUri": "https://maps.google.com/maps/contrib/108459199683191441201"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13263992709036857820&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/toy%20kuay%20teow%20ruea%20victory%20monument%20bangkok": {
     "placeId": "ChIJV3n3-rGe4jARrUnDLO8V4gY",
@@ -6777,6 +8969,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=16138843365381371689&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/vannee%20golden%20sands%20beachfront%20resort": {
+    "placeId": "ChIJc6lM-wb9VDARk2XNRJJqE8I",
+    "name": "Vannee Golden Sands Beachfront Resort",
+    "address": "120 M3H7+67P 1 Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 5466,
+    "photos": [
+      {
+        "src": "/places/ChIJc6lM-wb9VDARk2XNRJJqE8I-1.webp",
+        "author": "Vannee Golden Sands",
+        "authorUri": "https://maps.google.com/maps/contrib/113089942059895069839"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13984638444367603091&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/vesper%20convent%20road%20bangkok": {
     "placeId": "ChIJN4leQSyf4jARHG0tQIiRjic",
     "name": "Vesper",
@@ -6808,6 +9016,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=6868818484369265042&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/vintage%20night%20market%20koh%20phangan": {
+    "placeId": "ChIJuyXhVzj9VDARhb006bUZtTU",
+    "name": "Vintage Night Market",
+    "address": "1, 18 Moo1, Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 932,
+    "photos": [
+      {
+        "src": "/places/ChIJuyXhVzj9VDARhb006bUZtTU-1.webp",
+        "author": "Eyal Marcus",
+        "authorUri": "https://maps.google.com/maps/contrib/111636213856282565386"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=3870027723887132037&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/virgin%20active%20emquartier%20bangkok": {
     "placeId": "ChIJp1pLlwGf4jAR7SFBtqcye0o",
@@ -6856,6 +9080,22 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.8,
     "userRatingCount": 271
+  },
+  "https://www.google.com/maps/search/walking%20street%20koh%20phangan": {
+    "placeId": "ChIJQ9ws64D-VDAR3CnoxavtvVk",
+    "name": "Thong Sala Walking Street",
+    "address": "Unnamed Road PX5P+PV5, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 856,
+    "photos": [
+      {
+        "src": "/places/ChIJQ9ws64D-VDAR3CnoxavtvVk-1.webp",
+        "author": "kov",
+        "authorUri": "https://maps.google.com/maps/contrib/117018554497663941252"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6466585961989417436&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/warorot%20market%20chiang%20mai": {
     "placeId": "ChIJUXF8Lzo72jARQGy1_Bh_wCQ",
@@ -7017,6 +9257,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9076048512320389678&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/wat%20pho%20herbal%20sauna%20koh%20phangan": {
+    "placeId": "ChIJuxTnMVL8VDARkUNaY4Zvjpw",
+    "name": "Wat Pho Herbal Sauna",
+    "address": "P23G+VVC, Ban Tai, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 119,
+    "photos": [
+      {
+        "src": "/places/ChIJuxTnMVL8VDARkUNaY4Zvjpw-1.webp",
+        "author": "imasashi",
+        "authorUri": "https://maps.google.com/maps/contrib/112227703591226503344"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11281076739592831889&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/wat%20phra%20singh%20chiang%20mai": {
     "placeId": "ChIJbyRKbps62jAR6VTNF-fZVpY",
     "name": "Wat Phra Singh Woramahawihan",
@@ -7048,6 +9304,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=11350843871786794529&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/wat%20phu%20khao%20noi%20koh%20phangan": {
+    "placeId": "ChIJ0TA3fwr-VDARieBEeayKyZE",
+    "name": "Wat Phu Khao Noi",
+    "address": "PXMR+M44, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 322,
+    "photos": [
+      {
+        "src": "/places/ChIJ0TA3fwr-VDARieBEeayKyZE-1.webp",
+        "author": "Martin Dorigatti",
+        "authorUri": "https://maps.google.com/maps/contrib/114695171551794181572"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10505080079191957641&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/wat%20plai%20laem%20koh%20samui": {
     "placeId": "ChIJQc1OzAjwVDARv0towXonUM8",
@@ -7129,6 +9401,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=14232098512374090755&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/what%27s%20cup%20koh%20phangan": {
+    "placeId": "ChIJ_YBYXpMBVTAR2Uu0odsMso4",
+    "name": "What's Cup",
+    "address": "54, 30 หมู่ที่ 8, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 1657,
+    "photos": [
+      {
+        "src": "/places/ChIJ_YBYXpMBVTAR2Uu0odsMso4-1.webp",
+        "author": "What's cup!",
+        "authorUri": "https://maps.google.com/maps/contrib/108730482116526832319"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10282295036690582489&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/white%20wood%20green%20spa%20wellness%20ekkamai%20bangkok": {
     "placeId": "ChIJt4hQPK2f4jARzkSNRRAICfU",
     "name": "White Wood Green Spa & Wellness, Ekkamai",
@@ -7144,6 +9432,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17656652680062125262&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/wonderland%20healing%20center%20koh%20phangan": {
+    "placeId": "ChIJm9UOOfD9VDARKqDZTgjdQ6A",
+    "name": "Wonderland Healing Center",
+    "address": "77, 7, Koh Phangan, Koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 444,
+    "photos": [
+      {
+        "src": "/places/ChIJm9UOOfD9VDARKqDZTgjdQ6A-1.webp",
+        "author": "Wonderland Center",
+        "authorUri": "https://maps.google.com/maps/contrib/117186985422726905792"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11548316897260445738&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/wua%20lai%20saturday%20walking%20street%20chiang%20mai": {
     "placeId": "ChIJ_5-9gHUw2jARGOGQoIf_O4Q",
@@ -7161,6 +9465,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9528490394611933464&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/xantiva/@9.7507764,99.9736005,18z": {
+    "placeId": "ChIJjWcd0r__VDARy79q50ObXMQ",
+    "name": "Xantiva",
+    "address": "Hin Kong Rd, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.2,
+    "userRatingCount": 678,
+    "photos": [
+      {
+        "src": "/places/ChIJjWcd0r__VDARy79q50ObXMQ-1.webp",
+        "author": "Xantiva",
+        "authorUri": "https://maps.google.com/maps/contrib/100076347649369914528"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14149354845238902731&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/xliii%20specialty%20coffee%20da%20nang": {
     "placeId": "ChIJ7xtm7rMXQjER7ye2fxPfbFE",
     "name": "XLIII Specialty Coffee",
@@ -7176,6 +9496,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=5867309689396930543&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
+  },
+  "https://www.google.com/maps/search/yang%20na%20yai%20big%20tree%20koh%20phangan": {
+    "placeId": "ChIJjd2Mv1P8VDARkpYn_5P6GTI",
+    "name": "Yang Na Yai Tree",
+    "address": "P24H+4HC, Unnamed Rd, Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 390,
+    "photos": [
+      {
+        "src": "/places/ChIJjd2Mv1P8VDARkpYn_5P6GTI-1.webp",
+        "author": "stefan müller",
+        "authorUri": "https://maps.google.com/maps/contrib/103952774021326410531"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=3610192089862084242&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/yankii%20robatayaki%20bangkok": {
     "placeId": "ChIJRx_TR-Wf4jARAP__FTYaQz4",
@@ -7225,6 +9561,54 @@
     "googleMapsUri": "https://maps.google.com/?cid=5482786552546786842&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/ying%20ying%27s%20kitchen/@9.7860535,99.9828038,18z": {
+    "placeId": "ChIJL-HjmZYBVTARlDLEbHlcSfk",
+    "name": "Ying Ying's Kitchen",
+    "address": "65/2, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 953,
+    "photos": [
+      {
+        "src": "/places/ChIJL-HjmZYBVTARlDLEbHlcSfk-1.webp",
+        "author": "Busaba Wanchana",
+        "authorUri": "https://maps.google.com/maps/contrib/115318087310414787082"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17962990265329529492&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/yong%20health%20massage/@9.7084056,99.9950078,18z": {
+    "placeId": "ChIJg6kIMqX8VDARJG4MW0rMYO4",
+    "name": "Yong Health Massage",
+    "address": "90 19, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 258,
+    "photos": [
+      {
+        "src": "/places/ChIJg6kIMqX8VDARJG4MW0rMYO4-1.webp",
+        "author": "iana vishnevski",
+        "authorUri": "https://maps.google.com/maps/contrib/116483754046784073698"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17176953598518259236&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/yummy%20thai%20restaurant%20koh%20phangan/@9.7150052,99.9935299,18z": {
+    "placeId": "ChIJecrtGAD9VDARZg-GENSbfng",
+    "name": "YUMMY",
+    "address": "PX8V+5G2, Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 277,
+    "photos": [
+      {
+        "src": "/places/ChIJecrtGAD9VDARZg-GENSbfng-1.webp",
+        "author": "yariv photography",
+        "authorUri": "https://maps.google.com/maps/contrib/117428945709581950932"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8682548466729488230&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/zabb%20e%20lee%20thai%20cooking%20school%20chiang%20mai": {
     "placeId": "ChIJ3x3B6ZA62jARvdzTBB6KPUg",
     "name": "Zabb E Lee Thai Cooking School",
@@ -7256,6 +9640,38 @@
     "fetchedAt": "2026-10-10",
     "rating": 4.6,
     "userRatingCount": 700
+  },
+  "https://www.google.com/maps/search/zen%20beach%20srithanu%20koh%20phangan": {
+    "placeId": "ChIJp-V4zRMBVTARtyzAaO_p_4A",
+    "name": "Zen Beach",
+    "address": "QX46+WG9 Zen Beach, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 2196,
+    "photos": [
+      {
+        "src": "/places/ChIJp-V4zRMBVTARtyzAaO_p_4A-1.webp",
+        "author": "kov",
+        "authorUri": "https://maps.google.com/maps/contrib/117018554497663941252"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9295405370379873463&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/zen%20padel%20phangan/@9.7484105,99.979323,18z": {
+    "placeId": "ChIJYa0WfvP_VDARG2XRMZAv7Wk",
+    "name": "Zen Padel",
+    "address": "93, 5, Tambon Ko Pha-ngan, Koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 113,
+    "photos": [
+      {
+        "src": "/places/ChIJYa0WfvP_VDARG2XRMZAv7Wk-1.webp",
+        "author": "Zen Padel Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/110852075951215757534"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=7632809239820461339&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
   },
   "https://www.google.com/maps/search/zira%20spa%20chiang%20mai": {
     "placeId": "ChIJyyGI5aI62jARNyUulomat4E",

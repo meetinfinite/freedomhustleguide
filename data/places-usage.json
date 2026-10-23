@@ -1,8 +1,8 @@
 {
   "_readme": "Billable Google Places calls per Google billing month (US Pacific). Maintained by scripts/places-snapshot.ts - it stops at 900 of the free 1,000. Commit + push after every run. If Google's Billing > Reports > 'SKUs - this month' shows more, raise these to match.",
   "2026-10": {
-    "photos": 873,
-    "enterprise": 531,
+    "photos": 1028,
+    "enterprise": 686,
     "note": "Seeded 11 Oct from Google's billing report (743 photos, 411 Place Details Enterprise) + 118 photos from the 11 Oct Koh Samui run."
   }
 }
