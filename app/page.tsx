@@ -93,7 +93,7 @@ export default async function HomePage() {
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-sand-100/90 max-w-2xl leading-relaxed [text-shadow:0_1px_14px_rgba(15,14,10,0.9)]">
               Built from travelling full-time across 30+ destinations in
-              Asia - only the places we&apos;d send our friends.
+              Asia.
             </p>
 
             <div className="mt-9 flex flex-wrap items-center gap-4">
