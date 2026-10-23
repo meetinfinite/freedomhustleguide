@@ -5,7 +5,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://freedomhustleguide.com"),
   title: {
-    default: "Freedom Hustle - Real guides for working abroad",
+    default: "Freedom Hustle - Travel Guides for Your Asia Trip",
     template: "%s | Freedom Hustle"
   },
   description:
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     type: "website",
     url: "https://freedomhustleguide.com",
     siteName: "Freedom Hustle",
-    title: "Freedom Hustle - Real guides for working abroad",
+    title: "Freedom Hustle - Travel Guides for Your Asia Trip",
     description:
       "Personal nomad playbooks from years of living it. Cafes, coworking, neighbourhoods, gyms - skip to the life you came for.",
     locale: "en_GB"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Freedom Hustle - Real guides for working abroad",
+    title: "Freedom Hustle - Travel Guides for Your Asia Trip",
     description:
       "Personal nomad playbooks. Skip to the life you came for."
   }
