@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { EmbedData, EmbedKind } from "@/lib/embeds";
+import { CardStamp } from "./CardStamp";
 
 interface EmbedCardProps {
   url: string;
@@ -15,6 +16,8 @@ interface EmbedCardProps {
   notes?: string[];
   /** Round "Our pick" stamp - set when the editor writes "(our pick)". */
   ourPick?: boolean;
+  /** Round "PR stay" stamp - set when the editor writes "(PR stay)". */
+  prStay?: boolean;
   /** Server-resolved data (NotionRenderer passes this in to skip the fetch). */
   prefetched?: EmbedData;
   /** Drop the card's own vertical margin (when laid out in a grid). */
@@ -72,6 +75,7 @@ export function EmbedCard({
   prefetched,
   bare,
   ourPick,
+  prStay,
   showNotes
 }: EmbedCardProps) {
   const my = bare ? "" : "my-6";
@@ -147,27 +151,12 @@ export function EmbedCard({
     ) : null;
 
 
-  const PickStamp = ourPick ? (
-    <div
-      className="absolute top-4 right-4 shrink-0 z-10"
-      aria-label="Our pick"
-    >
-      <div
-        className="relative w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full bg-electric-500 text-white flex items-center justify-center text-center font-display tracking-tight shadow-card rotate-[-8deg]"
-        style={{ lineHeight: 1.05 }}
-      >
-        <div>
-          <div className="text-[9px] sm:text-[10px] uppercase tracking-[0.18em] font-semibold opacity-90">
-            Our
-          </div>
-          <div className="!text-[18px] sm:!text-[22px] font-semibold !leading-none mt-0.5">
-            Pick
-          </div>
-        </div>
-        <div className="absolute inset-1.5 rounded-full border border-white/30 pointer-events-none" />
+  const PickStamp =
+    ourPick || prStay ? (
+      <div className="absolute top-4 right-4 shrink-0 z-10">
+        <CardStamp pr={prStay} />
       </div>
-    </div>
-  ) : null;
+    ) : null;
 
   const HostChip = (
     <span

@@ -15,6 +15,7 @@ export function PlaceCard({
   notes,
   showNotes,
   ourPick,
+  prStay,
   place
 }: {
   url: string;
@@ -22,6 +23,8 @@ export function PlaceCard({
   notes?: string;
   showNotes?: boolean;
   ourPick?: boolean;
+  /** "(PR stay)" in Notion - shows "PR stay" instead of "Our pick" */
+  prStay?: boolean;
   place?: PlaceData;
 }) {
   if (!place) {
@@ -57,9 +60,9 @@ export function PlaceCard({
               {photo.via === undefined ? " · Google" : photo.via ? ` · ${photo.via}` : ""}
             </Text>
           ) : null}
-          {ourPick ? (
+          {ourPick || prStay ? (
             <View style={styles.pick}>
-              <Text style={styles.pickText}>Our pick</Text>
+              <Text style={styles.pickText}>{prStay ? "PR stay" : "Our pick"}</Text>
             </View>
           ) : null}
         </View>
@@ -108,6 +111,7 @@ export function EmbedCard({
   notes,
   showNotes,
   ourPick,
+  prStay,
   embed
 }: {
   url: string;
@@ -116,6 +120,8 @@ export function EmbedCard({
   notes?: string;
   showNotes?: boolean;
   ourPick?: boolean;
+  /** "(PR stay)" in Notion - shows "PR stay" instead of "Our pick" */
+  prStay?: boolean;
   embed?: EmbedData;
 }) {
   const label = EMBED_LABEL[kind];
@@ -131,9 +137,9 @@ export function EmbedCard({
             contentFit="cover"
             transition={150}
           />
-          {ourPick ? (
+          {ourPick || prStay ? (
             <View style={styles.pick}>
-              <Text style={styles.pickText}>Our pick</Text>
+              <Text style={styles.pickText}>{prStay ? "PR stay" : "Our pick"}</Text>
             </View>
           ) : null}
         </View>

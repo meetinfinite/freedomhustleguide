@@ -50,8 +50,8 @@ function calloutTitle(tag: string, title: string) {
 }
 
 type CardBullet =
-  | { kind: "venue"; url: string; name: string; notes: string; isPick: boolean }
-  | { kind: "embed"; embedKind: EmbedData["kind"]; url: string; name: string; notes: string; isPick: boolean };
+  | { kind: "venue"; url: string; name: string; notes: string; isPick: boolean; isPR: boolean }
+  | { kind: "embed"; embedKind: EmbedData["kind"]; url: string; name: string; notes: string; isPick: boolean; isPR: boolean };
 
 function parseCardBullet(b: NotionBlock): CardBullet | null {
   if (b.type !== "bulleted_list_item") return null;
@@ -61,8 +61,10 @@ function parseCardBullet(b: NotionBlock): CardBullet | null {
   const name = (first.plain_text || "").trim();
   const rest = richTextToString(rt!.slice(1));
   const isPick = rest.toLowerCase().includes("our pick");
+  // "(PR stay)" = a hosted stay - same rule as the web NotionRenderer
+  const isPR = /\bpr stay\b/i.test(rest);
   if (GMAPS_HOST_RE.test(first.href) && first.annotations?.bold && name) {
-    return { kind: "venue", url: first.href, name, notes: rest.replace(/^\s*[·•]\s*/, "").trim(), isPick };
+    return { kind: "venue", url: first.href, name, notes: rest.replace(/^\s*[·•]\s*/, "").trim(), isPick, isPR };
   }
   const embedKind = embedKindForUrl(first.href);
   if (embedKind) {
@@ -72,7 +74,8 @@ function parseCardBullet(b: NotionBlock): CardBullet | null {
       url: first.href,
       name,
       notes: rest.replace(/^\s*[·•—–-]\s*/, "").trim(),
-      isPick
+      isPick,
+      isPR
     };
   }
   return null;
@@ -130,6 +133,7 @@ export function NotionBlocks({
             notes={card.notes}
             showNotes={showCardNotes}
             ourPick={card.isPick}
+            prStay={card.isPR}
             place={places[card.url]}
           />
         ) : (
@@ -141,6 +145,7 @@ export function NotionBlocks({
             notes={card.notes}
             showNotes={showCardNotes}
             ourPick={card.isPick}
+            prStay={card.isPR}
             embed={embeds[card.url]}
           />
         )
