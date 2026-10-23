@@ -63,6 +63,70 @@
     "googleMapsUri": "https://maps.google.com/?cid=9919399583794282186&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/?api=1&query=banana%20cafe'&query_place_id=chije1kpcvidvtaresjfpr1_zde": {
+    "placeId": "ChIJe1kPcvIDVTAREsJfPR1_zdE",
+    "name": "Banana Cafe'",
+    "address": "80, 11 ม.5, Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 5,
+    "userRatingCount": 618,
+    "photos": [
+      {
+        "src": "/places/ChIJe1kPcvIDVTAREsJfPR1_zdE-1.webp",
+        "author": "Bobin Lee",
+        "authorUri": "https://maps.google.com/maps/contrib/108663566831188430771"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15117879287713088018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=mama%20kop&query_place_id=chijlyl33b7_vdar6actq9vghkk": {
+    "placeId": "ChIJLYl33b7_VDAR6acTQ9VGhkk",
+    "name": "Mama Kop",
+    "address": "19 Hin Kong Rd, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 702,
+    "photos": [
+      {
+        "src": "/places/ChIJLYl33b7_VDAR6acTQ9VGhkk-1.webp",
+        "author": "Ivo van der Werk",
+        "authorUri": "https://maps.google.com/maps/contrib/109465693465718446731"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5297999893415307241&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=om%20ganesh%20indian%20restaurant&query_place_id=chijqsctvbn9vdar4ktl0c5peke": {
+    "placeId": "ChIJqSCtvbn9VDAR4Ktl0C5PeKE",
+    "name": "OM Ganesh",
+    "address": "110/37 หมู่ 1 Ban Tai, Ko Pha-ngan District, Surat Thani 84280 BanTai, ตำบล บ้านใต้ Koh Phangan, สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 309,
+    "photos": [
+      {
+        "src": "/places/ChIJqSCtvbn9VDAR4Ktl0C5PeKE-2.webp",
+        "author": "OM GANESH INDIAN RESTAURANT 1997 | BaanTai Koh Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/108444074597058928461"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11635136699795090400&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=the%20yoga%20house&query_place_id=chijo6sggmp9vdar24mt7ay5qem": {
+    "placeId": "ChIJO6SgGMP9VDAR24Mt7Ay5QEM",
+    "name": "The Yoga House",
+    "address": "78 37, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 239,
+    "photos": [
+      {
+        "src": "/places/ChIJO6SgGMP9VDAR24Mt7Ay5QEM-3.webp",
+        "author": "The Yoga House",
+        "authorUri": "https://maps.google.com/maps/contrib/114681128585451386784"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=4846076664203805659&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-23"
+  },
   "https://www.google.com/maps/search/137%20pillars%20house%20chiang%20mai": {
     "placeId": "ChIJfRzfKbA62jAR_EzhsXTmMY4",
     "name": "137 Pillars House Chiang Mai",
@@ -135,7 +199,7 @@
     "userRatingCount": 1801,
     "photos": [
       {
-        "src": "/places/ChIJoyfbIYIBVTARNdU2c4L1oD0-1.webp",
+        "src": "/places/ChIJoyfbIYIBVTARNdU2c4L1oD0-3.webp",
         "author": "420 Club Phangan",
         "authorUri": "https://maps.google.com/maps/contrib/117986599501065541535"
       }
@@ -359,9 +423,9 @@
     "userRatingCount": 3381,
     "photos": [
       {
-        "src": "/places/ChIJJ2p6NW7-VDARn6PGkxu21UE-1.webp",
-        "author": "Simon Bents",
-        "authorUri": "https://maps.google.com/maps/contrib/101603048108109291316"
+        "src": "/places/ChIJJ2p6NW7-VDARn6PGkxu21UE-3.webp",
+        "author": "tehila yazdi",
+        "authorUri": "https://maps.google.com/maps/contrib/108011762624740661652"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4743898012064326559&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -775,7 +839,7 @@
     "userRatingCount": 59,
     "photos": [
       {
-        "src": "/places/ChIJpRv8weX9VDARCpv9vNg1kOI-1.webp",
+        "src": "/places/ChIJpRv8weX9VDARCpv9vNg1kOI-3.webp",
         "author": "Bamboo Bay Pilates",
         "authorUri": "https://maps.google.com/maps/contrib/114379441562006265244"
       }
@@ -1207,7 +1271,7 @@
     "userRatingCount": 1654,
     "photos": [
       {
-        "src": "/places/ChIJpbAG5r79VDARYvFdLxxixRU-1.webp",
+        "src": "/places/ChIJpbAG5r79VDARYvFdLxxixRU-2.webp",
         "author": "Bubba's Coffee Baan Tai",
         "authorUri": "https://maps.google.com/maps/contrib/110364351544512973740"
       }
@@ -1495,9 +1559,9 @@
     "userRatingCount": 405,
     "photos": [
       {
-        "src": "/places/ChIJRVWl5uMDVTARZowC_LRD5rU-1.webp",
-        "author": "Toyo Rak-Thai",
-        "authorUri": "https://maps.google.com/maps/contrib/110891913255859292348"
+        "src": "/places/ChIJRVWl5uMDVTARZowC_LRD5rU-2.webp",
+        "author": "Mayukh Chakrabarty",
+        "authorUri": "https://maps.google.com/maps/contrib/102443384982138243296"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=13107238210109607014&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -1767,9 +1831,9 @@
     "userRatingCount": 574,
     "photos": [
       {
-        "src": "/places/ChIJXdzeCQ7_VDARBvcWu04vfSk-1.webp",
-        "author": "Chilli Best Thai Cooking Class",
-        "authorUri": "https://maps.google.com/maps/contrib/101787971689058044911"
+        "src": "/places/ChIJXdzeCQ7_VDARBvcWu04vfSk-2.webp",
+        "author": "Jorik van Beek",
+        "authorUri": "https://maps.google.com/maps/contrib/115656924867981044580"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=2989597742836676358&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -1783,9 +1847,9 @@
     "userRatingCount": 233,
     "photos": [
       {
-        "src": "/places/ChIJwaw37Hv-VDARgEkdGd8QSbQ-1.webp",
-        "author": "Chinnarach Muaythai",
-        "authorUri": "https://maps.google.com/maps/contrib/101450924639619259097"
+        "src": "/places/ChIJwaw37Hv-VDARgEkdGd8QSbQ-2.webp",
+        "author": "Henry Johnson",
+        "authorUri": "https://maps.google.com/maps/contrib/113479039769457969898"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=12990933150512007552&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -2183,7 +2247,7 @@
     "userRatingCount": 1063,
     "photos": [
       {
-        "src": "/places/ChIJp1YGc7H_VDARLETa3ynBrv0-1.webp",
+        "src": "/places/ChIJp1YGc7H_VDARLETa3ynBrv0-2.webp",
         "author": "Deli Devi",
         "authorUri": "https://maps.google.com/maps/contrib/118215818896947727751"
       }
@@ -3207,9 +3271,9 @@
     "userRatingCount": 892,
     "photos": [
       {
-        "src": "/places/ChIJocFEdaz9VDARB01YGSd97H4-1.webp",
-        "author": "Gleb Altshifter",
-        "authorUri": "https://maps.google.com/maps/contrib/102297189092398610297"
+        "src": "/places/ChIJocFEdaz9VDARB01YGSd97H4-3.webp",
+        "author": "sharon welner",
+        "authorUri": "https://maps.google.com/maps/contrib/111884456593689677159"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=9145822550165048583&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -3255,9 +3319,9 @@
     "userRatingCount": 117,
     "photos": [
       {
-        "src": "/places/ChIJVX0spC79VDARQRVorc16fqk-1.webp",
-        "author": "Hari Om Yoga Koh Phangan",
-        "authorUri": "https://maps.google.com/maps/contrib/103067295968995205108"
+        "src": "/places/ChIJVX0spC79VDARQRVorc16fqk-3.webp",
+        "author": "Mariia",
+        "authorUri": "https://maps.google.com/maps/contrib/105178001357437012917"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=12213334263271527745&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -3271,7 +3335,7 @@
     "userRatingCount": 63,
     "photos": [
       {
-        "src": "/places/ChIJI8PiC38DVTAR49qMWt-2ikQ-1.webp",
+        "src": "/places/ChIJI8PiC38DVTAR49qMWt-2ikQ-3.webp",
         "author": "Hari Om Yoga Thong Nai Pan Noi",
         "authorUri": "https://maps.google.com/maps/contrib/104850547609592983264"
       }
@@ -3431,9 +3495,9 @@
     "userRatingCount": 58,
     "photos": [
       {
-        "src": "/places/ChIJt-Ip_gz_VDAReHGUQdmOZUs-1.webp",
-        "author": "Gabriel Rey",
-        "authorUri": "https://maps.google.com/maps/contrib/102930868394507565347"
+        "src": "/places/ChIJt-Ip_gz_VDAReHGUQdmOZUs-3.webp",
+        "author": "John Holzgräbe",
+        "authorUri": "https://maps.google.com/maps/contrib/118004812693230272149"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=5432905589251666296&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -4967,7 +5031,7 @@
     "userRatingCount": 196,
     "photos": [
       {
-        "src": "/places/ChIJ4_T-IzkDVTARZDxSLotOlk0-1.webp",
+        "src": "/places/ChIJ4_T-IzkDVTARZDxSLotOlk0-2.webp",
         "author": "Malka - Café & Cultura",
         "authorUri": "https://maps.google.com/maps/contrib/101411229186646305655"
       }
@@ -4983,7 +5047,7 @@
     "userRatingCount": 246,
     "photos": [
       {
-        "src": "/places/ChIJ7zCxQ3n_VDAR8d1MSS4nOfs-1.webp",
+        "src": "/places/ChIJ7zCxQ3n_VDAR8d1MSS4nOfs-2.webp",
         "author": "Mama Noi. Mango Sticky Rice",
         "authorUri": "https://maps.google.com/maps/contrib/116109327519290294737"
       }
@@ -4999,7 +5063,7 @@
     "userRatingCount": 487,
     "photos": [
       {
-        "src": "/places/ChIJqVc37lT9VDAR6PPUrk1wCAY-1.webp",
+        "src": "/places/ChIJqVc37lT9VDAR6PPUrk1wCAY-2.webp",
         "author": "Mama Thai food & Drink",
         "authorUri": "https://maps.google.com/maps/contrib/111105007104167535788"
       }
@@ -5191,9 +5255,9 @@
     "userRatingCount": 151,
     "photos": [
       {
-        "src": "/places/ChIJq74gTbH9VDARPz_mzhkiZxE-1.webp",
-        "author": "Mingalaba Road Trip (Main office)",
-        "authorUri": "https://maps.google.com/maps/contrib/100080549755936679575"
+        "src": "/places/ChIJq74gTbH9VDARPz_mzhkiZxE-3.webp",
+        "author": "C W",
+        "authorUri": "https://maps.google.com/maps/contrib/105036748570123625770"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=1254008515486695231&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -5447,9 +5511,9 @@
     "userRatingCount": 329,
     "photos": [
       {
-        "src": "/places/ChIJg_NST9sBVTARQjZEfdm1_PQ-1.webp",
-        "author": "Nahm Talay Thai Restaurant and Bar",
-        "authorUri": "https://maps.google.com/maps/contrib/112327311290935083380"
+        "src": "/places/ChIJg_NST9sBVTARQjZEfdm1_PQ-3.webp",
+        "author": "Eyal Barkai",
+        "authorUri": "https://maps.google.com/maps/contrib/109169647627639140301"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17653184585099654722&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -5751,9 +5815,9 @@
     "userRatingCount": 120,
     "photos": [
       {
-        "src": "/places/ChIJkxRniHb_VDARPx7NYkll8-c-1.webp",
-        "author": "Nikoletta Viktória Ács",
-        "authorUri": "https://maps.google.com/maps/contrib/103455857337411947921"
+        "src": "/places/ChIJkxRniHb_VDARPx7NYkll8-c-3.webp",
+        "author": "Moe Dee",
+        "authorUri": "https://maps.google.com/maps/contrib/108354873409874058249"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=16713814007966670399&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -5895,9 +5959,9 @@
     "userRatingCount": 793,
     "photos": [
       {
-        "src": "/places/ChIJ__zgCCH-VDARXiKqT6BtWf4-1.webp",
-        "author": "Orion Healing",
-        "authorUri": "https://maps.google.com/maps/contrib/106400021727345009567"
+        "src": "/places/ChIJ__zgCCH-VDARXiKqT6BtWf4-3.webp",
+        "author": "Avital Ben lulu",
+        "authorUri": "https://maps.google.com/maps/contrib/102422840971976243754"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=18327800693859689054&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -6149,9 +6213,9 @@
     "userRatingCount": 82,
     "photos": [
       {
-        "src": "/places/ChIJy_PqjQD9VDARSKC_3Y52CvQ-1.webp",
-        "author": "Phangan Arena",
-        "authorUri": "https://maps.google.com/maps/contrib/114005395069052621695"
+        "src": "/places/ChIJy_PqjQD9VDARSKC_3Y52CvQ-3.webp",
+        "author": "La Ha",
+        "authorUri": "https://maps.google.com/maps/contrib/106888771060314524083"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17584998050999279688&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -6197,9 +6261,9 @@
     "userRatingCount": 114,
     "photos": [
       {
-        "src": "/places/ChIJA7tfEzL8VDARa_hBOoU7zGA-1.webp",
-        "author": "Pharaoh Spa Koh Phangan",
-        "authorUri": "https://maps.google.com/maps/contrib/110948351961758046242"
+        "src": "/places/ChIJA7tfEzL8VDARa_hBOoU7zGA-2.webp",
+        "author": "Sam Karazi",
+        "authorUri": "https://maps.google.com/maps/contrib/102170941136483670154"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=6975015366284146795&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -6496,10 +6560,10 @@
     "name": "Pun Pun Thai Foods",
     "address": "95 เกาะพงัน 15 บ้านใต้ Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
     "rating": 4.6,
-    "userRatingCount": 177,
+    "userRatingCount": 178,
     "photos": [
       {
-        "src": "/places/ChIJR__kq-_9VDARadHEIQtTwTg-1.webp",
+        "src": "/places/ChIJR__kq-_9VDARadHEIQtTwTg-2.webp",
         "author": "Maytinee S",
         "authorUri": "https://maps.google.com/maps/contrib/100580806367283588609"
       }
@@ -6547,7 +6611,7 @@
     "userRatingCount": 800,
     "photos": [
       {
-        "src": "/places/ChIJEeOrNcABVTAR_HVTgHXDCQs-1.webp",
+        "src": "/places/ChIJEeOrNcABVTAR_HVTgHXDCQs-2.webp",
         "author": "Pura vida cafe & Restaurant",
         "authorUri": "https://maps.google.com/maps/contrib/104949610103233800721"
       }
@@ -6563,9 +6627,9 @@
     "userRatingCount": 2779,
     "photos": [
       {
-        "src": "/places/ChIJGcI243v-VDARBDy273uUIMs-1.webp",
-        "author": "Pure Relax Massage & Spa",
-        "authorUri": "https://maps.google.com/maps/contrib/113281858041733872196"
+        "src": "/places/ChIJGcI243v-VDARBDy273uUIMs-2.webp",
+        "author": "Leland Brun",
+        "authorUri": "https://maps.google.com/maps/contrib/107805832508682721604"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=14636862048977697796&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -6595,7 +6659,7 @@
     "userRatingCount": 447,
     "photos": [
       {
-        "src": "/places/ChIJJY3OV9QBVTARsHlr_b36jOA-1.webp",
+        "src": "/places/ChIJJY3OV9QBVTARsHlr_b36jOA-3.webp",
         "author": "Q’s",
         "authorUri": "https://maps.google.com/maps/contrib/105182266763609396663"
       }
@@ -6707,9 +6771,9 @@
     "userRatingCount": 394,
     "photos": [
       {
-        "src": "/places/ChIJ__Xqm-sCVTAR4gSsN-bGlHE-1.webp",
-        "author": "roger wüthrich",
-        "authorUri": "https://maps.google.com/maps/contrib/107065673338341911850"
+        "src": "/places/ChIJ__Xqm-sCVTAR4gSsN-bGlHE-3.webp",
+        "author": "Rasta Baby",
+        "authorUri": "https://maps.google.com/maps/contrib/116702336455764051742"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=8184385114917831906&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -7267,7 +7331,7 @@
     "userRatingCount": 76,
     "photos": [
       {
-        "src": "/places/ChIJNWPZdL0BVTARs9RJONgUYQM-1.webp",
+        "src": "/places/ChIJNWPZdL0BVTARs9RJONgUYQM-2.webp",
         "author": "Sati Yoga",
         "authorUri": "https://maps.google.com/maps/contrib/105012595605863022061"
       }
@@ -7745,7 +7809,7 @@
     "userRatingCount": 910,
     "photos": [
       {
-        "src": "/places/ChIJBVfYE87_VDARNgswO-o6Fm8-1.webp",
+        "src": "/places/ChIJBVfYE87_VDARNgswO-o6Fm8-2.webp",
         "author": "Sticky Island Cafe",
         "authorUri": "https://maps.google.com/maps/contrib/115789853375808166078"
       }
@@ -8049,7 +8113,7 @@
     "userRatingCount": 1083,
     "photos": [
       {
-        "src": "/places/ChIJI8hmjV39VDAR64XgrHnaB84-1.webp",
+        "src": "/places/ChIJI8hmjV39VDAR64XgrHnaB84-2.webp",
         "author": "Bestlmayer",
         "authorUri": "https://maps.google.com/maps/contrib/100993496601228933647"
       }
@@ -8657,9 +8721,9 @@
     "userRatingCount": 64,
     "photos": [
       {
-        "src": "/places/ChIJ2134xH3-VDARtCbb7BwcZeY-1.webp",
-        "author": "Thong Sala Stadium",
-        "authorUri": "https://maps.google.com/maps/contrib/111940784969185509507"
+        "src": "/places/ChIJ2134xH3-VDARtCbb7BwcZeY-3.webp",
+        "author": "Aaron Harris",
+        "authorUri": "https://maps.google.com/maps/contrib/118056444190200796983"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=16601706511929648820&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -9089,9 +9153,9 @@
     "userRatingCount": 856,
     "photos": [
       {
-        "src": "/places/ChIJQ9ws64D-VDAR3CnoxavtvVk-1.webp",
-        "author": "kov",
-        "authorUri": "https://maps.google.com/maps/contrib/117018554497663941252"
+        "src": "/places/ChIJQ9ws64D-VDAR3CnoxavtvVk-2.webp",
+        "author": "Stuart Farleigh",
+        "authorUri": "https://maps.google.com/maps/contrib/107089328332497473543"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=6466585961989417436&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -9265,9 +9329,9 @@
     "userRatingCount": 119,
     "photos": [
       {
-        "src": "/places/ChIJuxTnMVL8VDARkUNaY4Zvjpw-1.webp",
-        "author": "imasashi",
-        "authorUri": "https://maps.google.com/maps/contrib/112227703591226503344"
+        "src": "/places/ChIJuxTnMVL8VDARkUNaY4Zvjpw-2.webp",
+        "author": "hirock",
+        "authorUri": "https://maps.google.com/maps/contrib/110802493726805370648"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=11281076739592831889&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -9585,9 +9649,9 @@
     "userRatingCount": 258,
     "photos": [
       {
-        "src": "/places/ChIJg6kIMqX8VDARJG4MW0rMYO4-1.webp",
-        "author": "iana vishnevski",
-        "authorUri": "https://maps.google.com/maps/contrib/116483754046784073698"
+        "src": "/places/ChIJg6kIMqX8VDARJG4MW0rMYO4-2.webp",
+        "author": "Daria",
+        "authorUri": "https://maps.google.com/maps/contrib/100539680654664844922"
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=17176953598518259236&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
@@ -9649,7 +9713,7 @@
     "userRatingCount": 2196,
     "photos": [
       {
-        "src": "/places/ChIJp-V4zRMBVTARtyzAaO_p_4A-1.webp",
+        "src": "/places/ChIJp-V4zRMBVTARtyzAaO_p_4A-2.webp",
         "author": "kov",
         "authorUri": "https://maps.google.com/maps/contrib/117018554497663941252"
       }
@@ -9665,7 +9729,7 @@
     "userRatingCount": 113,
     "photos": [
       {
-        "src": "/places/ChIJYa0WfvP_VDARG2XRMZAv7Wk-1.webp",
+        "src": "/places/ChIJYa0WfvP_VDARG2XRMZAv7Wk-2.webp",
         "author": "Zen Padel Phangan",
         "authorUri": "https://maps.google.com/maps/contrib/110852075951215757534"
       }

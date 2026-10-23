@@ -14,12 +14,18 @@
   "https://www.google.com/maps/search/haad%20salad%20beach%20koh%20phangan": {
     "src": "/uploads/places/koh-phangan/top10-haad-salad.webp",
     "credit": "Christophe95",
-    "creditUri": "https://commons.wikimedia.org/wiki/File:Salad_Beach.jpg",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Salad_Beach_2.jpg",
     "via": "CC BY-SA 4.0"
   },
   "https://www.google.com/maps/search/haven%20elephant%20cafe%20restaurant%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-elephant-cafe.webp",
     "own": true
+  },
+  "https://www.google.com/maps/search/hin%20kong%20beach/@9.74554,99.9760332,18z": {
+    "src": "/uploads/places/koh-phangan/top10-hin-kong.webp",
+    "credit": "Christophe95",
+    "creditUri": "https://commons.wikimedia.org/wiki/File:Hin_Kong_Beach.jpg",
+    "via": "CC BY-SA 4.0"
   },
   "https://www.google.com/maps/search/hin%20ta%20and%20hin%20yai%20rocks%20koh%20samui": {
     "src": "/uploads/places/koh-samui/own-hin-ta.webp",
