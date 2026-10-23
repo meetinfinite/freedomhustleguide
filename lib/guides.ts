@@ -596,8 +596,8 @@ export const GUIDES: GuideMeta[] = [
     tagline:
       "Island life at its most laid-back - quiet beaches, jungle viewpoints, yoga and healthy cafés, west-coast sunsets, and the Full Moon Party if you want it.",
     price: "Pay what you want",
-    stripePriceId: null,
-    status: "soon",
+    stripePriceId: process.env.STRIPE_PRICE_KOH_PHANGAN || null,
+    status: "live",
     heroImage: "",
     cardImage:
       "https://images.unsplash.com/photo-1579211975029-8aa27c32fa75?auto=format&fit=crop&w=1400&q=80",
