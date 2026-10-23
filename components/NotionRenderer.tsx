@@ -300,6 +300,9 @@ function blockText(block: NotionBlock): NotionRichText[] | undefined {
  * and surface it as a PlaceCard. The rest of the rich text (after the
  * bold link) becomes the descriptive notes.
  */
+/** "(PR stay)" in a card bullet - shows the PR stay stamp. */
+const PR_STAY_RE = /\bpr stay\b/i;
+
 interface VenueBullet {
   url: string;
   name: string;
@@ -307,6 +310,8 @@ interface VenueBullet {
   notes: NotionRichText[];
   /** True when the team marked the entry "(our pick)" - we use it to set a default rating. */
   isPick: boolean;
+  /** True when the team marked the entry "(PR stay)" - a hosted stay we must disclose. */
+  isPR: boolean;
 }
 
 function parseVenueBullet(rt: NotionRichText[] | undefined): VenueBullet | null {
@@ -322,7 +327,7 @@ function parseVenueBullet(rt: NotionRichText[] | undefined): VenueBullet | null 
   const tail = richTextToString(notes).toLowerCase();
   const isPick = tail.includes("our pick");
 
-  return { url: first.href, name, notes, isPick };
+  return { url: first.href, name, notes, isPick, isPR: PR_STAY_RE.test(tail) };
 }
 
 interface EmbedBullet {
@@ -333,6 +338,7 @@ interface EmbedBullet {
   /** Rest of the bullet (after the link) → card notes. */
   notes: NotionRichText[];
   isPick: boolean;
+  isPR: boolean;
 }
 
 /**
@@ -352,7 +358,8 @@ function parseEmbedBullet(rt: NotionRichText[] | undefined): EmbedBullet | null 
     kind,
     name: (first.plain_text || "").trim(),
     notes: rt.slice(1),
-    isPick: richTextToString(rt.slice(1)).toLowerCase().includes("our pick")
+    isPick: richTextToString(rt.slice(1)).toLowerCase().includes("our pick"),
+    isPR: PR_STAY_RE.test(richTextToString(rt.slice(1)))
   };
 }
 
@@ -435,6 +442,7 @@ export function NotionRenderer({
                 url={venue.url}
                 name={venue.name}
                 ourPick={venue.isPick}
+                prStay={venue.isPR}
                 loveLabel="Good to know"
                 lovePoints={notesText ? [notesText] : undefined}
                 showNotes={showCardNotes}
@@ -455,6 +463,7 @@ export function NotionRenderer({
               name={e.name}
               notes={noteText ? [noteText] : undefined}
               ourPick={e.isPick}
+              prStay={e.isPR}
               prefetched={embeds[e.url]}
               showNotes={showCardNotes}
               bare={gridded}
