@@ -63,6 +63,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9919399583794282186&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/?api=1&query=balance%20specialty%20coffee%20koh%20phangan&query_place_id=chijizrimyr9vdar8tywkk89khe": {
+    "placeId": "ChIJIZrIMyr9VDAR8Tywkk89kHE",
+    "name": "Balance Specialty Coffee",
+    "address": "112 Moo 3 Tambon Ko Tao, Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 578,
+    "photos": [
+      {
+        "src": "/places/ChIJIZrIMyr9VDAR8Tywkk89kHE-1.webp",
+        "author": "Balance Specialty Coffee",
+        "authorUri": "https://maps.google.com/maps/contrib/100809723514386291371"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8183107934904925425&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=banana%20cafe'&query_place_id=chije1kpcvidvtaresjfpr1_zde": {
     "placeId": "ChIJe1kPcvIDVTAREsJfPR1_zdE",
     "name": "Banana Cafe'",
@@ -78,6 +94,38 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=15117879287713088018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=carte%20blanche%20koh%20phangan&query_place_id=chij467kme0bvtarogv6eqt_4_m": {
+    "placeId": "ChIJ467KMe0BVTAROGV6EQT_4_M",
+    "name": "Carte Blanche",
+    "address": "Moo 57/7 Koh phangan Haad yao, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 248,
+    "photos": [
+      {
+        "src": "/places/ChIJ467KMe0BVTAROGV6EQT_4_M-1.webp",
+        "author": "Carte blanche",
+        "authorUri": "https://maps.google.com/maps/contrib/115603902984424212936"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17574170563867993400&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=diamond%20muay%20thai%20koh%20phangan&query_place_id=chijuvcwxhn-vdar1ez1g8adjke": {
+    "placeId": "ChIJUVcWXHn-VDAR1ez1g8adJKE",
+    "name": "Diamond Muay Thai",
+    "address": "145/8 Moo 1 Nai Wok Koh Phangan, ตำบลเกาะพะงัน อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 217,
+    "photos": [
+      {
+        "src": "/places/ChIJUVcWXHn-VDAR1ez1g8adJKE-1.webp",
+        "author": "Diamond Muay Thai",
+        "authorUri": "https://maps.google.com/maps/contrib/118167777133423940191"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11611579215210998997&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=lost%20n%20found%20beach%20bar&query_place_id=chijyu3m9pmbvtarhp7wwfi1qd8": {
     "placeId": "ChIJyU3m9PMBVTARHp7wWfi1qD8",
@@ -111,6 +159,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=5297999893415307241&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
   },
+  "https://www.google.com/maps/search/?api=1&query=nongnook%20seafood%20koh%20phangan&query_place_id=chijpxq9htocvtard0h2knjwins": {
+    "placeId": "ChIJpxq9hToCVTARd0H2KnjWins",
+    "name": "Nongnook Seafood",
+    "address": "Ko Pha-ngan, Ko Pha-ngan District, Surat Thani 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 313,
+    "photos": [
+      {
+        "src": "/places/ChIJpxq9hToCVTARd0H2KnjWins-1.webp",
+        "author": "Nongnook Seafood ( น้องนุ๊กซีฟู๊ด)",
+        "authorUri": "https://maps.google.com/maps/contrib/117002714761169705694"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8902163425056407927&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=om%20ganesh%20indian%20restaurant&query_place_id=chijqsctvbn9vdar4ktl0c5peke": {
     "placeId": "ChIJqSCtvbn9VDAR4Ktl0C5PeKE",
     "name": "OM Ganesh",
@@ -126,6 +190,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=11635136699795090400&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=phangan%20muay%20thai%20koh%20phangan&query_place_id=chije_3rkh_-vdarrosgp1awv5m": {
+    "placeId": "ChIJE_3rkH_-VDARrOsGp1Awv5M",
+    "name": "Phangan Muay Thai",
+    "address": "214/9 M.1 Thongsala, Koh Phangan, อำเภอเกาะพะงัน สุราษฎร์ธานี 84280, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 150,
+    "photos": [
+      {
+        "src": "/places/ChIJE_3rkH_-VDARrOsGp1Awv5M-1.webp",
+        "author": "Phangan Muay Thai",
+        "authorUri": "https://maps.google.com/maps/contrib/103455037658065247149"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=10646281167084907436&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=phangan%20sunset%20bar%20%26%20restaurant&query_place_id=chij2sbu7dl9vdaranj5ksyif-i": {
     "placeId": "ChIJ2SBu7dL9VDARAnJ5ksYIF-I",
@@ -158,6 +238,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=14944609674661326664&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=taste%20from%20heaven%20koh%20phangan&query_place_id=chijv0zxseibvtartohtqh28nvm": {
+    "placeId": "ChIJV0zxsEIBVTARtoHTqh28NVM",
+    "name": "Taste From Heaven",
+    "address": "Haad yao, Koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 427,
+    "photos": [
+      {
+        "src": "/places/ChIJV0zxsEIBVTARtoHTqh28NVM-1.webp",
+        "author": "Taste from heaven 1",
+        "authorUri": "https://maps.google.com/maps/contrib/107402104402031359826"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=5995905314519744950&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=the%20yoga%20house&query_place_id=chijo6sggmp9vdar24mt7ay5qem": {
     "placeId": "ChIJO6SgGMP9VDAR24Mt7Ay5QEM",
