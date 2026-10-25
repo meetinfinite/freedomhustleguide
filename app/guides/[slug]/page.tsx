@@ -243,23 +243,25 @@ export default async function GuideLandingPage({
                 Who it's for
               </p>
               <h2 className="font-display text-3xl sm:text-4xl tracking-tight">
-                Digital nomads, remote workers, experienced travellers.
+                First-timers, digital nomads and remote workers.
               </h2>
               <p className="text-ink-600 mt-4 text-lg leading-relaxed">
-                Freedom Hustle isn't a travel blog. It's a collection of deep
-                destination guides for people who want to base themselves
-                somewhere and work remotely - and land properly instead of
-                guessing for two weeks.
+                Freedom Hustle isn't a travel blog. We've travelled and worked
+                across 30+ destinations in Asia, and each guide is everything
+                we wish we'd known on our first visit - organised, curated and
+                explained in detail, so you can skip the hours of research.
               </p>
             </div>
             <div className="grid sm:grid-cols-2 gap-3">
               {[
-                "First-time digital nomads planning their first base abroad",
-                "Remote employees taking a quarter somewhere warmer",
-                "Freelancers who need to be online for client time zones from day one",
-                "Founders who need fast WiFi and a good chair by Monday",
-                "Experienced travellers who want depth, not recycled blog fluff",
-                "For those not having enough time to do the research - everything in one place. Made easy"
+                // First-timers first (Valeria, 2026-10-25) - "experienced
+                // travellers" was too narrow a niche
+                "First-time visitors who want every step explained, from the first 24 hours onwards",
+                "Digital nomads choosing their next base in Asia",
+                "Remote workers who need good WiFi and a place to work from day one",
+                "Anyone short on time - the hours of research done for you, all in one place",
+                "People who want hand-picked places, not endless lists",
+                "Anyone staying a while - a week, a month or a whole season"
               ].map((x) => (
                 <div
                   key={x}
