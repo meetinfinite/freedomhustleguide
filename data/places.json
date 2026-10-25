@@ -111,6 +111,53 @@
     "googleMapsUri": "https://maps.google.com/?cid=15117879287713088018&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
   },
+  "https://www.google.com/maps/search/?api=1&query=caf%c3%a9%20de%20oasis%20%26%20toby's%20pizza%20chiang%20mai&query_place_id=chijx_exofi62jaryz8pk1zivs8": {
+    "placeId": "ChIJx_ExOFI62jARyZ8Pk1zIVs8",
+    "name": "Café de Oasis & Toby's Pizza",
+    "address": "131 25 Moo 1, Tambon Chang Phueak, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50300, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 2536,
+    "photos": [
+      {
+        "src": "/places/ChIJx_ExOFI62jARyZ8Pk1zIVs8-1.webp",
+        "author": "Cafe de Oasis & Toby's Pizza",
+        "authorUri": "https://maps.google.com/maps/contrib/116649288418193935996"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14940349113778020297&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=caramellow%20cafe%20chiang%20mai&query_place_id=chij36nwxscx2jarh63elgqpqv8": {
+    "placeId": "ChIJ36Nwxscx2jARH63elgQPQv8",
+    "name": "Caramellow Cafe",
+    "address": "Caramellow, 223 Thanon Mahidol, Tambon Pa Daet, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50100, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 3431,
+    "photos": [
+      {
+        "src": "/places/ChIJ36Nwxscx2jARH63elgQPQv8-1.webp",
+        "author": "Photos are copyrighted by their owners"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=18393280340519988511&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=carp%20cafe%20chiang%20mai&query_place_id=chij4vxp-9kx2jarcw5cwwly5ru": {
+    "placeId": "ChIJ4VXP-9kx2jARcW5CwwLy5RU",
+    "name": "Carp Café",
+    "address": "118 Tambon Nong Kwai, Amphoe Hang Dong, Chang Wat Chiang Mai 50230, Thailand",
+    "rating": 4,
+    "userRatingCount": 3868,
+    "photos": [
+      {
+        "src": "/places/ChIJ4VXP-9kx2jARcW5CwwLy5RU-2.webp",
+        "author": "คาร์พ คาเฟ่",
+        "authorUri": "https://maps.google.com/maps/contrib/101462087244950521215"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=1577933338142994033&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-04"
+  },
   "https://www.google.com/maps/search/?api=1&query=carte%20blanche%20koh%20phangan&query_place_id=chij467kme0bvtarogv6eqt_4_m": {
     "placeId": "ChIJ467KMe0BVTAROGV6EQT_4_M",
     "name": "Carte Blanche",
@@ -127,6 +174,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=17574170563867993400&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
+  "https://www.google.com/maps/search/?api=1&query=chai%20lai%20orchid%20cafe%20chiang%20mai&query_place_id=chijprsqpl9s2jar8zws5ncj-4a": {
+    "placeId": "ChIJPRSqPl9S2jAR8zwS5ncJ-4A",
+    "name": "Chai Lai Orchid Eco Lodge and Cafe",
+    "address": "172 m 5 T. Mae Sapok A, ตำบล แม่วิน อำเภอ แม่วาง เชียงใหม่ 50360, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 2582,
+    "photos": [
+      {
+        "src": "/places/ChIJPRSqPl9S2jAR8zwS5ncJ-4A-1.webp",
+        "author": "Chai Lai Orchid Eco Lodge and Cafe",
+        "authorUri": "https://maps.google.com/maps/contrib/113826380219427447690"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=9294032666574863603&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-04"
+  },
   "https://www.google.com/maps/search/?api=1&query=charlie's%20koh%20phangan&query_place_id=chijz0jzpgf_vdardu_wlz0omi4": {
     "placeId": "ChIJz0jZPgf_VDARdU_wlZ0Omi4",
     "name": "Charlie's",
@@ -142,6 +205,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=3358012542146334581&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=chom%20cafe%20%26%20restaurant%20chiang%20mai&query_place_id=chijxt3fuciw2jarm41spon0shw": {
+    "placeId": "ChIJxT3FucIw2jARm41spon0Shw",
+    "name": "Chom Cafe and Restaurant",
+    "address": "2 13 ม.2 Somphot Chiang Mai 700 Pi Rd, Tambon Mae Hia, เมือง Chang Wat Chiang Mai 50100, Thailand",
+    "rating": 4.3,
+    "userRatingCount": 4571,
+    "photos": [
+      {
+        "src": "/places/ChIJxT3FucIw2jARm41spon0Shw-2.webp",
+        "author": "Chom Cafe and Restaurant",
+        "authorUri": "https://maps.google.com/maps/contrib/109731995773886565907"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2038710653378399643&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-04"
   },
   "https://www.google.com/maps/search/?api=1&query=croissant%20%26%20ko%20koh%20phangan&query_place_id=chijqritdwd9vdarbnprahqwpe4": {
     "placeId": "ChIJQRItDwD9VDARbnpRAHqwpe4",
@@ -175,6 +254,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=11611579215210998997&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
+  "https://www.google.com/maps/search/?api=1&query=early%20owls%20chiang%20mai&query_place_id=chijx8jb0no72jarmgmrf9makao": {
+    "placeId": "ChIJx8jb0No72jARMGmRf9MAKAo",
+    "name": "Early Owls",
+    "address": "13 Muan Dam Pra Kot Rd, Tambon Chang Phueak, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50300, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 2079,
+    "photos": [
+      {
+        "src": "/places/ChIJx8jb0No72jARMGmRf9MAKAo-2.webp",
+        "author": "Teresa Li",
+        "authorUri": "https://maps.google.com/maps/contrib/107764464230656018111"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=731835847826041136&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=ethos%20wholefood%20cafe%20%26%20shala%20koh%20phangan&query_place_id=chijy9pwipmbvtar6cb3okxe3m4": {
     "placeId": "ChIJy9PWIpMBVTAR6cB3OKXE3M4",
     "name": "ETHOS Wholefood Cafe & Shala",
@@ -189,6 +284,70 @@
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=14906005080585519337&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=fern%20forest%20cafe%20chiang%20mai&query_place_id=chij2xinj5o62jarvgtpw7fwjts": {
+    "placeId": "ChIJ2xINj5o62jARvGTpW7fWjts",
+    "name": "Fern Forest Cafe",
+    "address": "54, 1 Singharat Rd Old City Tambon Si Phum, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 3626,
+    "photos": [
+      {
+        "src": "/places/ChIJ2xINj5o62jARvGTpW7fWjts-3.webp",
+        "author": "เฟิร์นฟอเรสต์คาเฟ่",
+        "authorUri": "https://maps.google.com/maps/contrib/104990500047916293099"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=15820818624008512700&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=fleur%20cafe%20%26%20eatery%20chiang%20mai&query_place_id=chijm4iiwf8_2jarrmkhvh4pppu": {
+    "placeId": "ChIJm4Iiwf8_2jARRmkHVH4pPPU",
+    "name": "Fleur Cafe & Eatery",
+    "address": "Tung Lung Soi 4, Tambon Mae Raem, Amphoe Mae Rim, Chang Wat Chiang Mai 50180, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 1941,
+    "photos": [
+      {
+        "src": "/places/ChIJm4Iiwf8_2jARRmkHVH4pPPU-1.webp",
+        "author": "NATT SK",
+        "authorUri": "https://maps.google.com/maps/contrib/116981459656453006942"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17671044660447373638&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=fohhide%20chiang%20mai&query_place_id=chijyz5ur0e72jar60ig88vbs54": {
+    "placeId": "ChIJyz5Ur0E72jAR60Ig88vBs54",
+    "name": "Fohhide",
+    "address": "14/2 ชั้น 5 Nimmana Haeminda Rd Lane 5 Nimmanhaemin Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 707,
+    "photos": [
+      {
+        "src": "/places/ChIJyz5Ur0E72jAR60Ig88vBs54-2.webp",
+        "author": "FOHHIDE",
+        "authorUri": "https://maps.google.com/maps/contrib/105480299720093445852"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=11435696960525320939&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=graph%20ground%20chiang%20mai&query_place_id=chijy6xb1gu72jarbq7mcbvfpoy": {
+    "placeId": "ChIJy6xB1GU72jARbQ7McbVFPOY",
+    "name": "GRAPH ground",
+    "address": "41 Siri Mangkalajarn Rd Lane 1, Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 511,
+    "photos": [
+      {
+        "src": "/places/ChIJy6xB1GU72jARbQ7McbVFPOY-1.webp",
+        "author": "HUN KIM",
+        "authorUri": "https://maps.google.com/maps/contrib/104490842568215655362"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16590211772926660205&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=la%20ceviche's%20koh%20phangan&query_place_id=chijuxhnvp7_vdarcrjdkkppniq": {
@@ -223,6 +382,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=4587116298742308382&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
   },
+  "https://www.google.com/maps/search/?api=1&query=maled%20coffee%20roasters%20chiang%20mai&query_place_id=chijdzmgkns62jarwqv4egmouhs": {
+    "placeId": "ChIJdzmGkns62jARwQV4eGmoUHs",
+    "name": "Maled Coffee Roasters",
+    "address": "18 ถนนสนามบินเก่า Tambon Su Thep, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 385,
+    "photos": [
+      {
+        "src": "/places/ChIJdzmGkns62jARwQV4eGmoUHs-1.webp",
+        "author": "Ak",
+        "authorUri": "https://maps.google.com/maps/contrib/102873738934801008402"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=8885787235748152769&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=mama%20kop&query_place_id=chijlyl33b7_vdar6actq9vghkk": {
     "placeId": "ChIJLYl33b7_VDAR6acTQ9VGhkk",
     "name": "Mama Kop",
@@ -238,6 +413,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=5297999893415307241&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=mars%20chiang%20mai&query_place_id=chij27l1ece72jarh6ep3liztv8": {
+    "placeId": "ChIJ27l1eCE72jARH6Ep3LIzTV8",
+    "name": "MARS",
+    "address": "27 Thanon Arak Old City Tambon Si Phum, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.4,
+    "userRatingCount": 1236,
+    "photos": [
+      {
+        "src": "/places/ChIJ27l1eCE72jARH6Ep3LIzTV8-2.webp",
+        "author": "Poomsuk Pruthsahasopon",
+        "authorUri": "https://maps.google.com/maps/contrib/114930547477291990868"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6867201850100785439&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=monnalisa%20koh%20phangan&query_place_id=chijn0wrsat8vdarnj4k0_qjbsa": {
     "placeId": "ChIJn0WRsaT8VDARnj4K0_qjBSA",
@@ -367,6 +558,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=409759394305670008&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
+  "https://www.google.com/maps/search/?api=1&query=roast8ry%20coffee%20flagship%20store%20chiang%20mai&query_place_id=chijuwbvrp072jarfsob81lnjfq": {
+    "placeId": "ChIJUwbvRP072jARfsOb81lnJFQ",
+    "name": "Roast8ry Coffee Flagship Store",
+    "address": "24, 9 Nimmanhaemin Soi 17, Tambon Su Thep, Muang, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 1391,
+    "photos": [
+      {
+        "src": "/places/ChIJUwbvRP072jARfsOb81lnJFQ-2.webp",
+        "author": "Roast8ry Coffee Flagship Store",
+        "authorUri": "https://maps.google.com/maps/contrib/113422660678914558893"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6063084634384352126&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=sirtaki%20taverna%20koh%20phangan&query_place_id=chijq1kwatwbvtarqqg6wccn-bu": {
     "placeId": "ChIJQ1KWatwBVTARQQg6wccn-bU",
     "name": "Sirtaki Taverna",
@@ -381,6 +588,22 @@
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=13112555528959690817&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=sunday%20baker%20chiang%20mai&query_place_id=chijzv4zmg072jarzo-8n_sf3ea": {
+    "placeId": "ChIJzV4zMG072jARZO-8n_Sf3eA",
+    "name": "Sunday Baker",
+    "address": "35 Thanon Bumrung Buri Old City Tambon Phra Sing, Amphoe Mueang Chiang Mai, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 607,
+    "photos": [
+      {
+        "src": "/places/ChIJzV4zMG072jARZO-8n_Sf3eA-1.webp",
+        "author": "Sunday Baker",
+        "authorUri": "https://maps.google.com/maps/contrib/118291236856568845333"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16203282907349708644&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=taste%20from%20heaven%20koh%20phangan&query_place_id=chijv0zxseibvtartohtqh28nvm": {
@@ -399,6 +622,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=5995905314519744950&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
+  "https://www.google.com/maps/search/?api=1&query=the%20baristro%20at%20ping%20river%20chiang%20mai&query_place_id=chijs8tpyvk72jarhjnllxbwfh4": {
+    "placeId": "ChIJS8TPyvk72jARhJnllxbwfh4",
+    "name": "The Baristro at Ping River",
+    "address": "62 Patan Road Tambon Pa Tan, Muang Chang Wat Chiang Mai 50300, Thailand",
+    "rating": 4.6,
+    "userRatingCount": 2702,
+    "photos": [
+      {
+        "src": "/places/ChIJS8TPyvk72jARhJnllxbwfh4-1.webp",
+        "author": "The Baristro at Ping River",
+        "authorUri": "https://maps.google.com/maps/contrib/101489496604053407846"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2197457648031734148&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=the%20yoga%20house&query_place_id=chijo6sggmp9vdar24mt7ay5qem": {
     "placeId": "ChIJO6SgGMP9VDAR24Mt7Ay5QEM",
     "name": "The Yoga House",
@@ -414,6 +653,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=4846076664203805659&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=transit%20number%208%20chiang%20mai&query_place_id=chijdunebva72jarutuyop7yq-k": {
+    "placeId": "ChIJDUneBvA72jARUtuYop7yQ-k",
+    "name": "Transit Number 8",
+    "address": "56, 19 Soi Sanam Bin Kao 8, Tambon Su Thep, เมือง, Chang Wat Chiang Mai 50200, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 2627,
+    "photos": [
+      {
+        "src": "/places/ChIJDUneBvA72jARUtuYop7yQ-k-2.webp",
+        "author": "EatsWithNie",
+        "authorUri": "https://maps.google.com/maps/contrib/107788253884247916179"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=16808544997423504210&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=vertigo%20resto%20bar&query_place_id=chijow96vnx9vdard-yp4ug8rsk": {
     "placeId": "ChIJoW96vNX9VDARd-Yp4ug8Rsk",
