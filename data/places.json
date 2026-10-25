@@ -63,6 +63,22 @@
     "googleMapsUri": "https://maps.google.com/?cid=9919399583794282186&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-04"
   },
+  "https://www.google.com/maps/search/?api=1&query=at%20chiang%20mai%20koh%20phangan&query_place_id=chijixga9lf9vdarfcvbbwxkolo": {
+    "placeId": "ChIJixgA9lf9VDARfCvBbWXkOlo",
+    "name": "At Chiang Mai",
+    "address": "Near 136 Ta mar saklay, 20 หมู่ 1 Tambon Ban Tai, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 695,
+    "photos": [
+      {
+        "src": "/places/ChIJixgA9lf9VDARfCvBbWXkOlo-1.webp",
+        "author": "At Chiang Mai - Garden",
+        "authorUri": "https://maps.google.com/maps/contrib/100044909113914847611"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6501760136346938236&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=balance%20specialty%20coffee%20koh%20phangan&query_place_id=chijizrimyr9vdar8tywkk89khe": {
     "placeId": "ChIJIZrIMyr9VDAR8Tywkk89kHE",
     "name": "Balance Specialty Coffee",
@@ -111,6 +127,38 @@
     "googleMapsUri": "https://maps.google.com/?cid=17574170563867993400&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
+  "https://www.google.com/maps/search/?api=1&query=charlie's%20koh%20phangan&query_place_id=chijz0jzpgf_vdardu_wlz0omi4": {
+    "placeId": "ChIJz0jZPgf_VDARdU_wlZ0Omi4",
+    "name": "Charlie's",
+    "address": "19 18 Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 833,
+    "photos": [
+      {
+        "src": "/places/ChIJz0jZPgf_VDARdU_wlZ0Omi4-3.webp",
+        "author": "Charlie's",
+        "authorUri": "https://maps.google.com/maps/contrib/106757581945278103010"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=3358012542146334581&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=croissant%20%26%20ko%20koh%20phangan&query_place_id=chijqritdwd9vdarbnprahqwpe4": {
+    "placeId": "ChIJQRItDwD9VDARbnpRAHqwpe4",
+    "name": "Croissant & Ko",
+    "address": "116, 3, Tambon Ko Pha-ngan, Thong Sala, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 1231,
+    "photos": [
+      {
+        "src": "/places/ChIJQRItDwD9VDARbnpRAHqwpe4-1.webp",
+        "author": "Croissant & Ko Phangan, Tongsala",
+        "authorUri": "https://maps.google.com/maps/contrib/108115186599005108614"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=17196344790221945454&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
   "https://www.google.com/maps/search/?api=1&query=diamond%20muay%20thai%20koh%20phangan&query_place_id=chijuvcwxhn-vdar1ez1g8adjke": {
     "placeId": "ChIJUVcWXHn-VDAR1ez1g8adJKE",
     "name": "Diamond Muay Thai",
@@ -125,6 +173,38 @@
       }
     ],
     "googleMapsUri": "https://maps.google.com/?cid=11611579215210998997&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=ethos%20wholefood%20cafe%20%26%20shala%20koh%20phangan&query_place_id=chijy9pwipmbvtar6cb3okxe3m4": {
+    "placeId": "ChIJy9PWIpMBVTAR6cB3OKXE3M4",
+    "name": "ETHOS Wholefood Cafe & Shala",
+    "address": "20 Srithanu Kitchen, 34, Tambon Ko Pha-ngan, Koh Phangan Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 452,
+    "photos": [
+      {
+        "src": "/places/ChIJy9PWIpMBVTAR6cB3OKXE3M4-2.webp",
+        "author": "ETHOS Wholefood Cafe & Shala",
+        "authorUri": "https://maps.google.com/maps/contrib/117241425104102805684"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=14906005080585519337&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=la%20ceviche's%20koh%20phangan&query_place_id=chijuxhnvp7_vdarcrjdkkppniq": {
+    "placeId": "ChIJUxHNVP7_VDARCrjdkkppNiQ",
+    "name": "La Ceviche's",
+    "address": "PX6Q+54R, Ko Pha-ngan, Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 560,
+    "photos": [
+      {
+        "src": "/places/ChIJUxHNVP7_VDARCrjdkkppNiQ-3.webp",
+        "author": "La Ceviche's - ceviche bar",
+        "authorUri": "https://maps.google.com/maps/contrib/111375621788965531815"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2609388803120281610&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=lost%20n%20found%20beach%20bar&query_place_id=chijyu3m9pmbvtarhp7wwfi1qd8": {
@@ -158,6 +238,22 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=5297999893415307241&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=monnalisa%20koh%20phangan&query_place_id=chijn0wrsat8vdarnj4k0_qjbsa": {
+    "placeId": "ChIJn0WRsaT8VDARnj4K0_qjBSA",
+    "name": "Monnalisa",
+    "address": "haad rin, Tambon Ban Tai, koh phangan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.5,
+    "userRatingCount": 1118,
+    "photos": [
+      {
+        "src": "/places/ChIJn0WRsaT8VDARnj4K0_qjBSA-2.webp",
+        "author": "Monnalisa ristorante italiano",
+        "authorUri": "https://maps.google.com/maps/contrib/114799108879451790292"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=2307430681775062686&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=nongnook%20seafood%20koh%20phangan&query_place_id=chijpxq9htocvtard0h2knjwins": {
     "placeId": "ChIJpxq9hToCVTARd0H2KnjWins",
@@ -238,6 +334,54 @@
     ],
     "googleMapsUri": "https://maps.google.com/?cid=14944609674661326664&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
     "fetchedAt": "2026-10-23"
+  },
+  "https://www.google.com/maps/search/?api=1&query=ratatouille%20koh%20phangan&query_place_id=chijk2v-ofd8vdar3rq5yg2t7lc": {
+    "placeId": "ChIJk2V-OFD8VDAR3rQ5yG2t7lc",
+    "name": "Ratatouille",
+    "address": "166, 2, Thong Sala, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.7,
+    "userRatingCount": 762,
+    "photos": [
+      {
+        "src": "/places/ChIJk2V-OFD8VDAR3rQ5yG2t7lc-3.webp",
+        "author": "Ratatouille Restaurant Koh Phangan",
+        "authorUri": "https://maps.google.com/maps/contrib/111696505150263963866"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=6336192412779132126&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=restaurant%20sunshine%20koh%20phangan&query_place_id=chij32hwft8bvtarepv3hp_brwu": {
+    "placeId": "ChIJ32hwft8BVTARePv3hP_BrwU",
+    "name": "Restaurant Sunshine",
+    "address": "26/14 Moo 8, Srithanu, Koh Pahngan Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.9,
+    "userRatingCount": 598,
+    "photos": [
+      {
+        "src": "/places/ChIJ32hwft8BVTARePv3hP_BrwU-1.webp",
+        "author": "Paul",
+        "authorUri": "https://maps.google.com/maps/contrib/117198519157242924273"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=409759394305670008&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
+  },
+  "https://www.google.com/maps/search/?api=1&query=sirtaki%20taverna%20koh%20phangan&query_place_id=chijq1kwatwbvtarqqg6wccn-bu": {
+    "placeId": "ChIJQ1KWatwBVTARQQg6wccn-bU",
+    "name": "Sirtaki Taverna",
+    "address": "126 3, Tambon Ko Pha-ngan, Amphoe Ko Pha-ngan, Chang Wat Surat Thani 84280, Thailand",
+    "rating": 4.8,
+    "userRatingCount": 625,
+    "photos": [
+      {
+        "src": "/places/ChIJQ1KWatwBVTARQQg6wccn-bU-2.webp",
+        "author": "Sirtaki Taverna",
+        "authorUri": "https://maps.google.com/maps/contrib/117153940026887346206"
+      }
+    ],
+    "googleMapsUri": "https://maps.google.com/?cid=13112555528959690817&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAIYBCAA",
+    "fetchedAt": "2026-10-25"
   },
   "https://www.google.com/maps/search/?api=1&query=taste%20from%20heaven%20koh%20phangan&query_place_id=chijv0zxseibvtartohtqh28nvm": {
     "placeId": "ChIJV0zxsEIBVTARtoHTqh28NVM",
