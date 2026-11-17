@@ -139,6 +139,18 @@ section{display:flex;flex-direction:column;gap:16px}
 .fname b{display:block;font-weight:500;font-size:12px;opacity:.9;font-variant-numeric:tabular-nums}
 .fname{position:absolute;right:0;top:calc(12% + 97px);width:116px;text-align:center;z-index:3;font:600 14px -apple-system,"SF Pro Text","Helvetica Neue",Arial,sans-serif;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.35)}
 
+.wl{background:var(--card);border:1.5px solid var(--pink-line);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.wl-row{display:grid;grid-template-columns:1fr 1.4fr auto;gap:8px}
+@media (max-width:640px){.wl-row{grid-template-columns:1fr}}
+.wl input{font:16px var(--body);color:var(--ink);background:var(--bg);border:1.5px solid var(--ink);border-radius:999px;padding:11px 16px;min-width:0;width:100%;box-sizing:border-box}
+.wl input:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.wl-btn{font:700 15px var(--body);color:var(--on-red);background:var(--red);border:1.5px solid var(--ink);border-radius:999px;padding:11px 18px;cursor:pointer;white-space:nowrap}
+.wl-btn[disabled]{opacity:.6;cursor:default}
+.wl-msg{font-weight:700;min-height:0}
+.wl-msg:empty{display:none}
+.wl-msg.err{color:var(--red)}
+.wl-fine{font-size:13px;color:var(--soft)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 </style>
 </head>
 <body>
@@ -476,7 +488,21 @@ Apply these and remember them for every next batch.</pre></div>
     <span class="tag">Coming next</span>
     <h3>Your own footage library</h3>
     <p>Sorted folders are step one. Next I'm building a catalogue on top of them: a library of my own footage where I can search and filter, a bit like a stock video site but with only my clips. Type "sunset, vertical, the good ones" and there they are. 🎬</p>
-    <p>I'll share exactly how I build it, prompts included. Follow along so you don't miss it:</p>
+    <p>I'll share exactly how I build it, prompts included.</p>
+    <form class="wl" id="wl" novalidate hidden>
+      <h3>Get on the waitlist 💌</h3>
+      <p class="small">Leave your name and email and I'll tell you the day the library is ready.</p>
+      <div class="wl-row">
+        <label class="sr" for="wl-name">Your first name</label>
+        <input id="wl-name" name="name" type="text" autocomplete="given-name" placeholder="Your first name" maxlength="60">
+        <label class="sr" for="wl-email">Your email</label>
+        <input id="wl-email" name="email" type="email" autocomplete="email" placeholder="Your email" required>
+        <button class="wl-btn pop" id="wl-btn" type="submit">Tell me when it's ready</button>
+      </div>
+      <p class="wl-msg" id="wl-msg" role="status" aria-live="polite"></p>
+      <p class="wl-fine">I'll only email you about the footage library. Unsubscribe any time. <a href="/privacy">Privacy</a></p>
+    </form>
+    <p>Follow along so you don't miss it:</p>
     <div class="shop"><a class="pop" href="https://www.instagram.com/the.freedom.hustle/">Follow @the.freedom.hustle on Instagram</a></div>
   </div>
 </section>
@@ -573,6 +599,28 @@ document.querySelectorAll('.copy').forEach(function(b){
   }
   if('IntersectionObserver' in window){new IntersectionObserver(function(e){visible=e[0].isIntersecting;if(visible&&!timer&&!reduce)cycle();}).observe(viz);}
   cycle();
+})();
+(function(){
+  var f=document.getElementById('wl');if(!f)return;
+  var host=location.hostname;
+  // The sign-up saves to the Freedom Hustle site, so it only shows there.
+  if(!(/(^|\.)freedomhustleguide\.com$/.test(host)||host==='localhost'||host==='127.0.0.1'))return;
+  f.hidden=false;
+  var msg=document.getElementById('wl-msg'),btn=document.getElementById('wl-btn');
+  function say(t,err){msg.textContent=t;msg.className='wl-msg'+(err?' err':'');}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('wl-name').value.trim(),email=document.getElementById('wl-email').value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){say('Please enter a valid email.',true);return;}
+    btn.disabled=true;say('Adding you…');
+    fetch('/api/notify',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email:email,city:'Footage Library',source:'sort-guide'+(name?' | name: '+name:'')})})
+    .then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j};});})
+    .then(function(x){
+      if(x.ok&&x.j&&x.j.ok){say(x.j.alreadySubscribed?"You're already on the list. I'll email you when it's ready.":"You're on the list"+(name?', '+name:'')+". I'll email you when it's ready. 🎉");f.querySelector('.wl-row').hidden=true;}
+      else{say((x.j&&x.j.error)||'Something went wrong. Please try again.',true);btn.disabled=false;}
+    }).catch(function(){say('Something went wrong. Please try again.',true);btn.disabled=false;});
+  });
 })();
 </script>
 </body>
