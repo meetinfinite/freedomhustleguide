@@ -286,7 +286,13 @@ Download the originals only, keep the dates, and don't delete anything from iClo
 
   <div class="step" id="step-1"><span class="num">1</span><div>
     <h3>Get your footage off your phone</h3>
-    <p>Always export the <strong>full-quality originals</strong>. If you want to post on social media or edit your footage with Claude later, you need the highest resolution you have. You can always make smaller copies, but you can't add quality back. Pick your setup:</p>
+    <p>Always export the <strong>full-quality originals</strong>. If you want to post on social media or edit your footage with Claude later, you need the highest resolution you have. You can always make smaller copies, but you can't add quality back.</p>
+    <p><strong>First, check where your originals live.</strong> On an iPhone open <strong>Settings → your name → iCloud → Photos</strong>.</p>
+    <ul>
+      <li><strong>iCloud Photos is on:</strong> your full-quality originals are in iCloud, and the phone often keeps only small versions. Download from iCloud (the Mac, Automatic or Windows tab), not from the phone by cable.</li>
+      <li><strong>iCloud Photos is off:</strong> your originals are on the phone itself. Use the cable steps at the bottom of the Mac or Windows tab, or the Just my phone tab.</li>
+    </ul>
+    <p>Pick your setup:</p>
     <div class="tabs" role="tablist" aria-label="Your setup">
       <button type="button" role="tab" id="tab-mac" aria-controls="p-mac" aria-selected="true">Mac</button>
       <button type="button" role="tab" id="tab-auto" aria-controls="p-auto" aria-selected="false">Automatic</button>
@@ -306,6 +312,15 @@ Download the originals only, keep the dates, and don't delete anything from iClo
         <li>Save into <strong>To sort</strong> and wait until the little progress circle at the top of Photos is gone.</li>
       </ol>
       <p class="note">Batch size: start with a few hundred to learn it, then 1,000 to 2,000 at a time. For me about 500 arrive per hour.</p>
+      <p><strong>Photos only on the iPhone, not in iCloud?</strong></p>
+      <ol>
+        <li>On the phone go to <strong>Settings → Photos → Transfer to Mac or PC → Keep Originals</strong>.</li>
+        <li>Plug the phone into the Mac, unlock it and tap <strong>Trust</strong>.</li>
+        <li>Open the <strong>Image Capture</strong> app on the Mac and click your iPhone in the left bar.</li>
+        <li>At the bottom, open <strong>Import To</strong>, choose <strong>Other</strong> and pick the <strong>To sort</strong> folder on your drive.</li>
+        <li>Select a batch (the count shows at the bottom), write the number down and click <strong>Download</strong>.</li>
+      </ol>
+      <p class="note">Live Photos arrive as two files, a picture and a short clip. That's normal.</p>
     </div>
 
     <div class="panel" id="p-auto" role="tabpanel" aria-labelledby="tab-auto" hidden>
@@ -332,28 +347,39 @@ Download the originals only, keep the dates, and don't delete anything from iClo
         <li>Right-click the selection and choose <strong>Always keep on this device</strong>. Wait until every file shows a green tick. That means the full-quality original has arrived.</li>
         <li>Copy the selection into <strong>To sort</strong> on your drive and wait for the copy to finish.</li>
       </ol>
-      <p><strong>Photos only on the iPhone, not in iCloud?</strong> On the phone go to <strong>Settings → Photos → Transfer to Mac or PC → Keep Originals</strong>. Plug it in, tap Trust, open the Windows <strong>Photos</strong> app, choose <strong>Import → From a connected device</strong> and save to <strong>To sort</strong>.</p>
+      <p><strong>Photos only on the iPhone, not in iCloud?</strong> Windows has its own Photos app, and it can pull them off the phone.</p>
+      <ol>
+        <li>On the phone go to <strong>Settings → Photos → Transfer to Mac or PC → Keep Originals</strong>.</li>
+        <li>Plug the phone into the PC, unlock it and tap <strong>Trust</strong> or <strong>Allow</strong>.</li>
+        <li>Open the Windows <strong>Photos</strong> app and click <strong>Import</strong>, then choose your iPhone.</li>
+        <li>Select a batch, change the destination to the <strong>To sort</strong> folder on your drive, and import.</li>
+      </ol>
+      <p><strong>No app installs allowed on this computer?</strong> Go to <strong>icloud.com/photos</strong> in a browser, select a batch, click the download button and choose <strong>Unmodified Originals</strong>. It takes up to 1,000 at a time and arrives as a zip file. Unzip it into <strong>To sort</strong>. This works on a Mac too.</p>
       <p class="note">I'm on a Mac, so I haven't done the Windows route myself. If a button has a different name on your PC, use the prompt below and Claude will walk you through it.</p>
     </div>
 
     <div class="panel" id="p-and" role="tabpanel" aria-labelledby="tab-and" hidden>
+      <p><strong>Android + Windows PC.</strong></p>
       <ol>
-        <li><strong>With Windows:</strong> plug the phone in and choose <strong>File transfer</strong> on the phone. In File Explorer open the phone, then <strong>Internal storage → DCIM → Camera</strong>, and copy to <strong>To sort</strong>.</li>
-        <li><strong>With a Mac:</strong> Macs can't open Android phones on their own. Use a free file-transfer app such as OpenMTP, then copy the same Camera folder.</li>
-        <li><strong>From Google Photos:</strong> go to takeout.google.com, select only Google Photos and export. Unzip everything into <strong>To sort</strong>.</li>
+        <li>Plug the phone into the PC. On the phone, tap the USB notification and choose <strong>File transfer</strong>.</li>
+        <li>In <strong>File Explorer</strong>, open your phone, then <strong>Internal storage → DCIM → Camera</strong>.</li>
+        <li>Select a batch, note how many items are selected (bottom-left corner), and copy them into <strong>To sort</strong> on your drive.</li>
       </ol>
+      <p><strong>Android + Mac.</strong> Macs can't open Android phones on their own. Install a free file-transfer app such as <strong>OpenMTP</strong>, then copy the same <strong>DCIM → Camera</strong> folder into <strong>To sort</strong>.</p>
+      <p><strong>Photos in Google Photos (any phone, any computer).</strong> Go to <strong>takeout.google.com</strong>, untick everything except <strong>Google Photos</strong>, and export. Your originals arrive as zip files. Unzip them into <strong>To sort</strong>. Each photo comes with a small .json file holding its date and place, so add this line to your sorting prompt: <em>"Read the .json file next to each photo or video for its date and location."</em></p>
     </div>
 
     <div class="panel" id="p-flash" role="tabpanel" aria-labelledby="tab-flash" hidden>
       <p><strong>No laptop, or you just want to sort from your phone.</strong></p>
       <ol>
-        <li>Plug the flash drive into your phone.</li>
-        <li><strong>iPhone with USB-C:</strong> in Photos, select what you want, tap <strong>Share</strong>, choose <strong>Export Unmodified Original</strong> and save it to the drive in the Files app.</li>
-        <li><strong>Older iPhone:</strong> use the app that comes with the drive (SanDisk's is called iXpand Drive) and follow its backup button.</li>
-        <li><strong>Android:</strong> open the Files app, go to <strong>DCIM → Camera</strong>, select, and copy to the drive.</li>
+        <li>Plug the flash drive or SSD into your phone.</li>
+        <li><strong>iPhone 15 or newer (USB-C):</strong> in Photos, select a batch, tap <strong>Share</strong>, choose <strong>Export Unmodified Original</strong>, then pick your drive under Locations and save.</li>
+        <li><strong>Older iPhone (Lightning):</strong> use a drive made for it, with its own app. SanDisk's is called iXpand Drive. Follow its backup button.</li>
+        <li><strong>Android:</strong> open the Files app, go to <strong>DCIM → Camera</strong>, select a batch and copy it to the drive.</li>
         <li>You can make folders right there in the Files app and sort by hand.</li>
       </ol>
-      <p class="note">Claude can't sort files on a phone. For the automatic sorting in the next steps, plug the same flash drive into a computer.</p>
+      <p class="note">Two things to know. The drive has to be in exFAT format for an iPhone to save to it. And if iCloud Photos is on, the phone has to download each original first, so do small batches on Wi-Fi.</p>
+      <p class="note">Claude can't sort files on a phone. For the automatic sorting in the next steps, plug the same drive into a computer.</p>
     </div>
     <h3>Leaving it overnight? Keep the laptop awake 🌙</h3>
     <p>If the laptop falls asleep, the export stops. Before you go to bed:</p>
@@ -381,8 +407,16 @@ Write me the exact steps for my setup, with the real names of the buttons and me
   </div></div>
 
   <div class="step" id="step-2"><span class="num">2</span><div>
-    <h3>Open Claude and point it at your drive</h3>
-    <p>This part is the same on Mac and Windows. In the Claude desktop app, open the <strong>Code</strong> tab, start a <strong>New session</strong> and choose your drive as the folder. Claude asks permission before it does anything. Read each request and approve it. Then paste:</p>
+    <h3>Open Claude Code and point it at your drive</h3>
+    <p>Claude Code is the part of Claude that can work with files. It's built into the desktop app, and it's the same on Mac and Windows.</p>
+    <ol>
+      <li>Download the <strong>Claude desktop app</strong> from <strong>claude.com/download</strong> and sign in with your paid plan.</li>
+      <li>Plug in your drive.</li>
+      <li>In the app, click the <strong>Code</strong> tab at the top.</li>
+      <li>Choose <strong>New session</strong>. When it asks for a folder, pick your drive, or the footage folder on it.</li>
+      <li>Claude asks permission before it runs anything. Read each request and approve it. That's normal.</li>
+      <li>Paste the prompt below into the message box.</li>
+    </ol>
     <div class="prompt"><header><span class="label">Paste this</span><button class="copy pop" id="copy-setup" type="button">Copy</button></header>
 <pre>IMPORTANT: only work inside this folder on my external drive. Don't read, move or change anything else on my computer.
 
@@ -402,6 +436,14 @@ To decide where things go, use each file's date and the folder names the export 
 [paste a simple list, for example your trips with dates, or just write "by month"]
 
 Don't move anything yet. Show me the folder layout you would make and wait for my OK.</pre></div>
+    <h3>Not sure which folders you want? Let Claude suggest them 💡</h3>
+    <p>You don't have to plan anything. Put everything in one big folder and ask Claude to look through it and propose the categories.</p>
+    <div class="prompt"><header><span class="label">Paste this</span><button class="copy pop" id="copy-suggest" type="button">Copy</button></header>
+<pre>Everything from my phone is in the "To sort" folder, all mixed together.
+
+Look through it without moving anything: the dates, the places in the folder names, and the types of file. Then suggest a folder structure that fits what's actually there, for example by trip, by year, or by type (videos of me talking, travel clips, food, screenshots).
+
+Show me the folders you'd create and roughly how many files would go in each. Wait for my OK before you move anything.</pre></div>
     <button class="donebtn pop" type="button" id="done-2" data-step="2" aria-pressed="false">Mark step 2 done</button>
   </div></div>
 
