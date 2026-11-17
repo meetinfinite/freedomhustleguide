@@ -157,7 +157,7 @@ section{display:flex;flex-direction:column;gap:16px}
   </div>
   </div>
   <div class="sticker"><b>☁️ iCloud Storage Is Full</b>Upgrade your plan to keep saving photos and videos.</div>
-  <p>Me, every single year. 😩 I had more than 35,000 photos and videos sitting on my phone and in iCloud, around 2 TB of them. I paid for more storage every year and still couldn't find the one clip I wanted when I sat down to edit. Now it's all on one drive, in folders that make sense.</p>
+  <p>Me, every single year. 😩 I had 77,408 photos and videos sitting on my phone and in iCloud, around 2 TB of them. I paid for more storage every year and still couldn't find the one clip I wanted when I sat down to edit. Now it's all on one drive, in folders that make sense.</p>
   <p>If I can do a job this big without being techy, you can do yours. Here is the exact setup, step by step, with every prompt to copy. AI does the boring part. ✨</p>
 </div>
 
@@ -567,7 +567,7 @@ document.querySelectorAll('.copy').forEach(function(b){
       var mid='translate('+f.fx+'px,'+f.fy+'px) rotate(0deg) scale(.75)';
       var end='translate('+f.fx+'px,'+(f.fy+28)+'px) rotate(0deg) scale(.6)';
       var an=t.animate([{transform:from,opacity:1},{transform:mid,opacity:1,offset:.78},{transform:end,opacity:0}],{duration:430,delay:800+i*20,fill:'forwards',easing:'cubic-bezier(.5,0,.3,1)'});
-      an.onfinish=function(){total++;cnt.textContent=fmt(Math.round(35000*total/N));};
+      an.onfinish=function(){total++;cnt.textContent=fmt(Math.round(77408*total/N));};
     });
     timer=setTimeout(function(){tiles.forEach(function(t){t.getAnimations().forEach(function(a){a.cancel();});});if(visible)cycle();else timer=null;},800+N*20+430+1300);
   }
